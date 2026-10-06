@@ -105,3 +105,8 @@ The technical Alpha extends the run spine across Forest, Castle and Caves with 1
 ## RQ-008 production-facing systems
 
 The project now has persisted accessibility/settings defaults, onboarding state, EN/pt-BR localization source structure and a narrative/lore contract. Human comprehension, final audio licensing and cultural representation review remain explicit release gates.
+
+
+## RQ-009 Beta hardening
+
+The technical Beta layer uses save schema v2 with v1 migration, previous-good recovery, deterministic content validation and encounter-cap checks. Physical Android profiling, lifecycle validation and 20 tester runs remain manual Beta gates.
