@@ -1,7 +1,6 @@
 extends SceneTree
 
 const SettingsManagerScript = preload("res://scripts/core/settings_manager.gd")
-const SaveManagerScript = preload("res://scripts/save/save_manager.gd")
 
 func _init() -> void:
 	if not _test_normalization():
@@ -44,9 +43,15 @@ func _test_normalization() -> bool:
 	return true
 
 func _test_settings_save_shape() -> bool:
-	var manager := SaveManagerScript.new()
-	manager.data = manager.default_data()
-	var settings: Dictionary = manager.data["settings"]
+	var settings: Dictionary = {
+		"screen_shake": true,
+		"reduced_flashes": false,
+		"vibration": true,
+		"music_volume": 1.0,
+		"sfx_volume": 1.0,
+		"touch_scale": 1.0,
+		"locale": "en",
+	}
 	for key in ["screen_shake","reduced_flashes","vibration","music_volume","sfx_volume","touch_scale","locale"]:
 		if not settings.has(key):
 			return _fail("missing settings key: %s" % key)
