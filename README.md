@@ -1,7 +1,7 @@
 # Rasta Quest
 
 > **Canonical product:** Rasta Quest  
-> **Phase:** approved pre-production plan → RQ-001 project bootstrap  
+> **Phase:** RQ-001 bootstrap green → RQ-002 player feel  
 > **Engine:** Godot 4.5.1, GDScript, no .NET  
 > **Primary release:** Android, landscape  
 > **Genre:** 2D action-platformer + light roguelike
@@ -54,9 +54,11 @@ When sources conflict, the higher item in this list wins unless an approved ADR 
 
 ## Current execution point
 
-**RQ-000 — Canonicalization and planning** is complete after merge of the approved plan.
+**RQ-000 — Canonicalization and planning** is complete.
 
-The next implementation gate is **RQ-001 — Godot project bootstrap & CI**. No gameplay feature should jump ahead of the sequence in `docs/roadmap/MASTER_RELEASE_PLAN.md`.
+**RQ-001 — Godot project bootstrap & CI** is green: the real Godot project exists, imports headlessly and boots its main scene through CI.
+
+The next implementation gate is **RQ-002 — Player feel prototype**. No combat/content wave should jump ahead of movement/input validation in `docs/roadmap/MASTER_RELEASE_PLAN.md`.
 
 ## Historical names
 

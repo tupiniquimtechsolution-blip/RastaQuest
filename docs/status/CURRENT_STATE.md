@@ -6,9 +6,9 @@
 ## Executive status
 
 - **Product:** Rasta Quest
-- **Phase:** approved pre-production plan
-- **Active wave:** RQ-001 next
-- **Playable implementation committed:** No
+- **Phase:** implementation bootstrap complete
+- **Active wave:** RQ-002 next
+- **Playable implementation committed:** Bootstrap scene only; gameplay not started
 - **Engine decision:** Godot 4.5.1 / GDScript
 - **Primary target:** Android landscape
 - **Perspective:** 2D side-scrolling action-platformer
@@ -68,8 +68,22 @@ The source contains accumulated working material and later expansions, so it is 
 
 Documento Mestre v3.0 and Planejamento 2.0 referenced by the old PE roadmap are still absent. They are useful for archive completeness but are **no longer implementation blockers** because the owner approved the new integrated canonical plan.
 
+## RQ-001 evidence
+
+- real `game/project.godot` committed;
+- canonical project directories materialized;
+- InputMap action contract declared;
+- minimal main scene and boot controller committed;
+- Android Debug export preset and clean-clone instructions documented;
+- GitHub Actions run `37460705294` — **Godot Project CI: SUCCESS**;
+- engine version verification: PASS;
+- headless project import/parse: PASS;
+- main-scene smoke boot: PASS;
+- tracked Godot-cache rejection: PASS;
+- Repository Health: PASS.
+
 ## Next action
 
-Start **RQ-001 — Godot project bootstrap & CI** exactly as defined in `docs/roadmap/MASTER_RELEASE_PLAN.md`.
+Start **RQ-002 — Player feel prototype** exactly as defined in `docs/roadmap/MASTER_RELEASE_PLAN.md`.
 
-No content-heavy implementation should begin before the project skeleton and reproducible CI/import path are green.
+The next work is movement/input/game-feel validation. Combat, enemy and content production remain gated behind RQ-002.

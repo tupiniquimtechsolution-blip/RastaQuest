@@ -74,14 +74,16 @@ This roadmap replaces the former PE-000→PE-016 plan as the active 1.0 executio
 
 ### DoD
 
-- [ ] project opens without import errors;
-- [ ] main scene starts;
-- [ ] CI parses/imports project successfully;
-- [ ] Android debug export path is documented;
-- [ ] no generated editor caches tracked;
-- [ ] clean clone can follow README to boot the project.
+- [x] project opens/imports without errors in headless CI;
+- [x] main scene starts and emits the RQ-001 smoke marker;
+- [x] CI parses/imports project successfully;
+- [x] Android debug export path is documented;
+- [x] no generated editor caches are tracked;
+- [x] clean clone instructions document editor boot and headless smoke test.
 
-**Gate:** no gameplay content until the skeleton is reproducible.
+**Evidence:** PR #7; Godot Project CI run `37460705294` completed successfully on Godot 4.5.1.
+
+**Gate:** PASSED — gameplay may proceed to RQ-002; combat/content remains gated.
 
 ---
 
