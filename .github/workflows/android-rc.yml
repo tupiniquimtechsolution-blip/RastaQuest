@@ -1,0 +1,95 @@
+name: Android Technical RC
+
+on:
+  pull_request:
+    paths:
+      - "game/**"
+      - ".github/workflows/android-rc.yml"
+      - "docs/release/rc/**"
+  push:
+    branches: [main]
+    paths:
+      - "game/**"
+      - ".github/workflows/android-rc.yml"
+      - "docs/release/rc/**"
+
+permissions:
+  contents: read
+
+env:
+  GODOT_VERSION: "4.5.1"
+  GODOT_BIN: /tmp/godot/Godot_v4.5.1-stable_linux.x86_64
+
+jobs:
+  debug-apk:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify Android/JDK runner prerequisites
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${ANDROID_HOME:-}"
+          test -d "${ANDROID_HOME}"
+          test -n "${JAVA_HOME:-}"
+          java -version
+          test -x "${ANDROID_HOME}/platform-tools/adb"
+
+      - name: Download official Godot editor and export templates
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/godot /tmp/templates
+          curl --fail --location --retry 3             -o /tmp/godot.zip             "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          python3 -m zipfile -e /tmp/godot.zip /tmp/godot
+          chmod +x "${GODOT_BIN}"
+
+          curl --fail --location --retry 3             -o /tmp/templates.tpz             "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_export_templates.tpz"
+          python3 -m zipfile -e /tmp/templates.tpz /tmp/templates
+          mkdir -p "${HOME}/.local/share/godot/export_templates/4.5.1.stable"
+          cp -a /tmp/templates/templates/. "${HOME}/.local/share/godot/export_templates/4.5.1.stable/"
+
+      - name: Configure ephemeral Android debug signing
+        shell: bash
+        run: |
+          set -euo pipefail
+          keytool -genkeypair -v             -keystore /tmp/rastaquest-debug.keystore             -storepass android -keypass android             -alias androiddebugkey             -keyalg RSA -keysize 2048 -validity 10000             -dname "CN=Android Debug,O=RastaQuest CI,C=US"
+
+          mkdir -p "${HOME}/.config/godot"
+          cat > "${HOME}/.config/godot/editor_settings-4.5.tres" <<EOF
+          [gd_resource type="EditorSettings" format=3]
+
+          [resource]
+          export/android/java_sdk_path = "${JAVA_HOME}"
+          export/android/android_sdk_path = "${ANDROID_HOME}"
+          export/android/debug_keystore = "/tmp/rastaquest-debug.keystore"
+          export/android/debug_keystore_user = "androiddebugkey"
+          export/android/debug_keystore_pass = "android"
+          export/android/shutdown_adb_on_exit = true
+          EOF
+
+      - name: Export debug APK
+        shell: bash
+        env:
+          GODOT_ANDROID_KEYSTORE_DEBUG_PATH: /tmp/rastaquest-debug.keystore
+          GODOT_ANDROID_KEYSTORE_DEBUG_USER: androiddebugkey
+          GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/rq-android
+          "${GODOT_BIN}" --headless --path game --export-debug "Android Debug" /tmp/rq-android/rasta-quest-1.0.0-rc.1-debug.apk
+          test -s /tmp/rq-android/rasta-quest-1.0.0-rc.1-debug.apk
+          sha256sum /tmp/rq-android/rasta-quest-1.0.0-rc.1-debug.apk | tee /tmp/rq-android/SHA256SUMS.txt
+
+      - name: Upload debug APK evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: rasta-quest-1.0.0-rc.1-debug
+          path: |
+            /tmp/rq-android/rasta-quest-1.0.0-rc.1-debug.apk
+            /tmp/rq-android/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 7

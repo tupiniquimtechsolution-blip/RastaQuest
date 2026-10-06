@@ -4,7 +4,7 @@ config_version=5
 
 [application]
 config/name="Rasta Quest"
-config/version="0.1.0-dev"
+config/version="1.0.0-rc.1"
 run/main_scene="res://scenes/main/Main.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 

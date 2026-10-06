@@ -100,6 +100,12 @@ jobs:
           set -euo pipefail
           timeout 30s "${GODOT_BIN}" --headless --path game --script res://tests/beta_hardening_smoke.gd 2>&1 | tee /tmp/rq009-beta.log
           grep -q "RQ009_BETA_TECH_OK schema=2 rooms=18 upgrades=18" /tmp/rq009-beta.log
+      - name: Release candidate preparation smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout 30s "${GODOT_BIN}" --headless --path game --script res://tests/release_readiness_smoke.gd 2>&1 | tee /tmp/rq010-rc.log
+          grep -q "RQ010_RC_PREP_OK version=1.0.0-rc.1 arm64=1" /tmp/rq010-rc.log
       - name: Reject tracked Godot cache
         shell: bash
         run: |
