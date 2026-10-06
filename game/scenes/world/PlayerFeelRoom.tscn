@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/ui/TouchControls.tscn" id="2_touch"]
 [ext_resource type="Script" path="res://scripts/player/death_plane.gd" id="3_death"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/TrainingDummy.tscn" id="4_dummy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
 size = Vector2(1400, 80)
@@ -42,6 +43,9 @@ color = Color(0.29, 0.34, 0.28, 1)
 [node name="Player" parent="." instance=ExtResource("1_player")]
 position = Vector2(220, 600)
 
+[node name="TrainingDummy" parent="." instance=ExtResource("4_dummy")]
+position = Vector2(430, 605)
+
 [node name="DeathPlane" type="Area2D" parent="."]
 position = Vector2(640, 850)
 script = ExtResource("3_death")
@@ -56,6 +60,6 @@ shape = SubResource("RectangleShape2D_death")
 [node name="Label" type="Label" parent="Instructions"]
 offset_left = 24.0
 offset_top = 24.0
-offset_right = 640.0
-offset_bottom = 92.0
-text = "RQ-002 PLAYER FEEL\nA/D or arrows • Space to jump • Gamepad/touch supported"
+offset_right = 760.0
+offset_bottom = 110.0
+text = "RQ-003 COMBAT GRAYBOX\nMove: A/D or arrows • Jump: Space • Attack: J • Gamepad/touch supported"
