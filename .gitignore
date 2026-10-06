@@ -37,6 +37,7 @@ compile_commands.json
 .import/
 export.cfg
 export_presets.cfg
+!game/export_presets.cfg
 
 # Unity/editor generated material
 [Ll]ibrary/

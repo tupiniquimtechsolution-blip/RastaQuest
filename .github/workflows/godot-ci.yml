@@ -1,0 +1,67 @@
+name: Godot Project CI
+
+on:
+  pull_request:
+    paths:
+      - "game/**"
+      - ".github/workflows/godot-ci.yml"
+      - ".gitignore"
+  push:
+    branches: [main]
+    paths:
+      - "game/**"
+      - ".github/workflows/godot-ci.yml"
+      - ".gitignore"
+
+permissions:
+  contents: read
+
+env:
+  GODOT_VERSION: "4.5.1"
+  GODOT_BIN: /tmp/godot/Godot_v4.5.1-stable_linux.x86_64
+
+jobs:
+  headless-bootstrap:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download official Godot
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/godot
+          curl --fail --location --retry 3             --output /tmp/godot.zip             "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          python3 -m zipfile -e /tmp/godot.zip /tmp/godot
+          chmod +x "${GODOT_BIN}"
+
+      - name: Verify pinned engine version
+        shell: bash
+        run: |
+          set -euo pipefail
+          "${GODOT_BIN}" --version | tee /tmp/godot-version.txt
+          grep -q "^4.5.1" /tmp/godot-version.txt
+
+      - name: Import and parse project headlessly
+        shell: bash
+        run: |
+          set -euo pipefail
+          "${GODOT_BIN}" --headless --path game --editor --quit
+
+      - name: Boot main scene smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          "${GODOT_BIN}" --headless --path game -- --smoke-test 2>&1 | tee /tmp/rasta-quest-smoke.log
+          grep -q "RASTA_QUEST_BOOT_OK" /tmp/rasta-quest-smoke.log
+
+      - name: Reject tracked Godot cache
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-files | grep -E '(^|/)\.godot(/|$)'; then
+            echo "Tracked .godot cache detected."
+            exit 1
+          fi
