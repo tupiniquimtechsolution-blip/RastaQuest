@@ -10,6 +10,9 @@
 - [x] arm64-v8a enabled
 - [x] release keys excluded from Git
 - [x] debug CI export uses ephemeral credentials only
+- [x] debug APK generated and verified by `apksigner`
+- [x] debug APK SHA-256 recorded: `631995b2db3b5940b6a8a03d33949fdd47a146efae0d44f2eb99acf8db4174dc`
+- [x] GitHub Actions evidence: run `37479496762`, artifact `11420956791`
 
 ## Still required for accepted RC
 
