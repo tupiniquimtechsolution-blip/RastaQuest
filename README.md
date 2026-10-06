@@ -1,7 +1,7 @@
 # Rasta Quest
 
 > **Canonical product:** Rasta Quest  
-> **Phase:** RQ-001 bootstrap green → RQ-002 player feel  
+> **Phase:** RQ-002 player feel — automated implementation green, device/playtest validation pending  
 > **Engine:** Godot 4.5.1, GDScript, no .NET  
 > **Primary release:** Android, landscape  
 > **Genre:** 2D action-platformer + light roguelike
@@ -58,7 +58,9 @@ When sources conflict, the higher item in this list wins unless an approved ADR 
 
 **RQ-001 — Godot project bootstrap & CI** is green: the real Godot project exists, imports headlessly and boots its main scene through CI.
 
-The next implementation gate is **RQ-002 — Player feel prototype**. No combat/content wave should jump ahead of movement/input validation in `docs/roadmap/MASTER_RELEASE_PLAN.md`.
+**RQ-002 — Player feel prototype** now has a working graybox controller, touch prototype and automated state/input checks. The wave remains open until Android performance and external playtest evidence are recorded.
+
+RQ-003 combat remains gated behind those RQ-002 manual acceptance criteria.
 
 ## Historical names
 

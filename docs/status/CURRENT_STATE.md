@@ -6,9 +6,9 @@
 ## Executive status
 
 - **Product:** Rasta Quest
-- **Phase:** implementation bootstrap complete
-- **Active wave:** RQ-002 next
-- **Playable implementation committed:** Bootstrap scene only; gameplay not started
+- **Phase:** player-feel prototype validation
+- **Active wave:** RQ-002
+- **Playable implementation committed:** Yes — graybox movement prototype; combat not started
 - **Engine decision:** Godot 4.5.1 / GDScript
 - **Primary target:** Android landscape
 - **Perspective:** 2D side-scrolling action-platformer
@@ -82,8 +82,26 @@ Documento Mestre v3.0 and Planejamento 2.0 referenced by the old PE roadmap are 
 - tracked Godot-cache rejection: PASS;
 - Repository Health: PASS.
 
+## RQ-002 automated evidence
+
+- CharacterBody2D controller implemented;
+- left/right acceleration/deceleration, gravity, jump and fall implemented;
+- coyote time and jump buffering implemented;
+- Idle/Run/Jump/Fall state resolver implemented;
+- facing and Camera2D follow implemented;
+- death-plane respawn implemented;
+- keyboard/gamepad defaults are centralized behind InputMap;
+- Android-style touch left/right/jump prototype uses the same InputMap actions;
+- graybox player-feel room boots through the normal main scene;
+- GitHub Actions run `37461430703` — **Godot Project CI: SUCCESS**;
+- 100 full state-transition cycles: PASS.
+
+## RQ-002 remaining acceptance
+
+- [ ] measure 60 FPS target on a reference Android device;
+- [ ] verify two-thumb phone-scale controls;
+- [ ] record movement feedback from at least 3 external playtesters.
+
 ## Next action
 
-Start **RQ-002 — Player feel prototype** exactly as defined in `docs/roadmap/MASTER_RELEASE_PLAN.md`.
-
-The next work is movement/input/game-feel validation. Combat, enemy and content production remain gated behind RQ-002.
+Perform the RQ-002 device/playtest acceptance. **RQ-003 combat remains gated** until these criteria are evidenced.

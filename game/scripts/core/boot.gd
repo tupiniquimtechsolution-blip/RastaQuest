@@ -1,12 +1,13 @@
-extends Control
+extends Node2D
 
-const WAVE: String = "RQ-001"
+const InputDefaults = preload("res://scripts/core/input_defaults.gd")
 
-@onready var status_label: Label = $CenterContainer/VBoxContainer/StatusLabel
+const WAVE: String = "RQ-002"
 
 func _ready() -> void:
+	InputDefaults.ensure_defaults()
+
 	var version: String = str(ProjectSettings.get_setting("application/config/version"))
-	status_label.text = "%s Bootstrap\n%s" % [WAVE, version]
 	print("RASTA_QUEST_BOOT_OK wave=%s version=%s" % [WAVE, version])
 
 	if "--smoke-test" in OS.get_cmdline_user_args():

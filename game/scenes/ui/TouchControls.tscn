@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/touch_controls.gd" id="1_touch"]
+
+[node name="TouchControls" type="CanvasLayer"]
+script = ExtResource("1_touch")
+
+[node name="LeftButton" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 590.0
+offset_right = 112.0
+offset_bottom = 690.0
+focus_mode = 0
+text = "LEFT"
+
+[node name="RightButton" type="Button" parent="."]
+offset_left = 124.0
+offset_top = 590.0
+offset_right = 224.0
+offset_bottom = 690.0
+focus_mode = 0
+text = "RIGHT"
+
+[node name="JumpButton" type="Button" parent="."]
+offset_left = 1100.0
+offset_top = 570.0
+offset_right = 1256.0
+offset_bottom = 690.0
+focus_mode = 0
+text = "JUMP"

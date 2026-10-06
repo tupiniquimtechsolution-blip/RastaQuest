@@ -71,3 +71,27 @@ Do not copy files from repository-root `assets/legacy/` directly into the shippi
 ## RQ-001 CI evidence
 
 GitHub Actions run `37460705294` validated the pinned Godot 4.5.1 engine, clean headless import/parse and main-scene smoke boot on the RQ-001 branch.
+
+## RQ-002 development controls
+
+The player prototype configures development bindings at runtime through `InputMap`; gameplay code never reads physical keys directly.
+
+- Move: `A/D`, arrow keys, or left gamepad stick
+- Jump: `Space` or gamepad south/A button
+- Pause: `Esc` or gamepad Start
+- Interact: `E` or gamepad west/X button
+- Attack action is reserved/mapped for the next combat wave
+
+The touch prototype exposes left/right/jump buttons wired to the same `InputMap` actions.
+
+Automated player-state check:
+
+```bash
+godot --headless --path game --script res://tests/player_state_smoke.gd
+```
+
+This exercises 100 complete Idle → Run → Jump → Fall → Idle cycles and validates that development InputMap defaults exist. Physical Android FPS and human feel remain manual RQ-002 gates.
+
+## RQ-002 CI evidence
+
+GitHub Actions run `37461430703` passed headless import/boot and `100` complete player movement-state cycles. Device FPS and human game-feel checks are intentionally not represented by CI.

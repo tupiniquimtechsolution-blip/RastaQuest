@@ -119,9 +119,11 @@ This roadmap replaces the former PE-000→PE-016 plan as the active 1.0 executio
 ### DoD
 
 - [ ] 60 FPS target met in empty gameplay scene on reference Android device;
-- [ ] no stuck movement/animation states in 100 repeated transitions;
-- [ ] input works through InputMap, not hard-coded device keys;
+- [x] no stuck movement-state resolution in 100 repeated transition cycles;
+- [x] gameplay input works through InputMap, not hard-coded device keys;
 - [ ] at least 3 external playtesters complete the movement test and feedback is recorded.
+
+**Automated evidence:** PR #9; Godot Project CI run `37461430703` passed project boot plus 100 state cycles. Android FPS/two-thumb usability and external playtest evidence remain blocking.
 
 ---
 

@@ -57,6 +57,13 @@ jobs:
           "${GODOT_BIN}" --headless --path game -- --smoke-test 2>&1 | tee /tmp/rasta-quest-smoke.log
           grep -q "RASTA_QUEST_BOOT_OK" /tmp/rasta-quest-smoke.log
 
+      - name: Player state transition smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          "${GODOT_BIN}" --headless --path game --script res://tests/player_state_smoke.gd 2>&1 | tee /tmp/rq002-player-state.log
+          grep -q "RQ002_PLAYER_STATE_OK cycles=100" /tmp/rq002-player-state.log
+
       - name: Reject tracked Godot cache
         shell: bash
         run: |
