@@ -4,7 +4,7 @@ config_version=5
 
 [application]
 config/name="Rasta Quest"
-config/version="0.1.0-dev"
+config/version="1.0.0-rc.1"
 run/main_scene="res://scenes/main/Main.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
@@ -24,6 +24,7 @@ window/handheld/orientation=0
 [rendering]
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 
 [input]
 move_left={

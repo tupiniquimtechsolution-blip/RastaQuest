@@ -1,0 +1,39 @@
+{
+  "product": "Rasta Quest",
+  "version": "1.0.0-rc.1",
+  "version_code": 1000001,
+  "application_id": "com.tupiniquimtechsolution.rastaquest",
+  "engine": "Godot 4.5.1",
+  "language": "GDScript",
+  "primary_platform": "Android landscape",
+  "architectures": [
+    "arm64-v8a"
+  ],
+  "candidate_status": "technical-preparation-not-release-approved",
+  "release_signed": false,
+  "distribution_published": false,
+  "core_offline_gameplay": true,
+  "analytics": false,
+  "ads": false,
+  "iap": false,
+  "declared_permissions": [],
+  "save_schema": 2,
+  "blockers": [
+    "physical Android performance/support-matrix acceptance",
+    "20-run beta tester evidence",
+    "new-player comprehension and aspect-ratio QA",
+    "final licensed art/audio inventory",
+    "Rastafari and Xango-inspired cultural review",
+    "final store icon/splash/screenshots",
+    "external release signing key and signed AAB clean-install test"
+  ],
+  "technical_debug_apk": {
+    "workflow_run": 37479496762,
+    "artifact_id": 11420956791,
+    "artifact_name": "rasta-quest-1.0.0-rc.1-debug",
+    "apk_sha256": "631995b2db3b5940b6a8a03d33949fdd47a146efae0d44f2eb99acf8db4174dc",
+    "artifact_archive_digest": "sha256:b4cf100a81f115e97a46d1df0ebf384be3675a83e415586414feed7ff71517b8",
+    "signing": "ephemeral-debug-only",
+    "evidence_expires_at": "2026-10-13T14:30:54Z"
+  }
+}
