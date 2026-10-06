@@ -1,0 +1,52 @@
+name: Repository Health
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify canonical documents
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f README.md
+          test -f AGENTS.md
+          test -f docs/status/CURRENT_STATE.md
+          test -f docs/legacy/INDEX.md
+          test -f docs/roadmap/PE_EXECUTION_WAVES.md
+          test -f docs/adr/0001-core-engine-agnostic.md
+
+      - name: Reject generated project files at repository root
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find . -maxdepth 1 -type f \( -name '*.sln' -o -name '*.csproj' \) | grep -q .; then
+            echo "Generated Unity/Visual Studio files must not live at repository root."
+            exit 1
+          fi
+
+      - name: Reject tracked engine cache directories
+        shell: bash
+        run: |
+          set -euo pipefail
+          forbidden='(^|/)(Library|Temp|Obj|UserSettings|\.godot)(/|$)'
+          if git ls-files | grep -E "$forbidden"; then
+            echo "Tracked engine cache/editor state detected."
+            exit 1
+          fi
+
+      - name: Confirm archived Unity metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f docs/legacy/unity/PortalAscendant/PortalAscendant.sln
+          test -f docs/legacy/unity/PortalAscendant/Assembly-CSharp.csproj
