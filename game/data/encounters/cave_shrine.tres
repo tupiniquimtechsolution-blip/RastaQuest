@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RoomTemplateData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/roguelike/room_template_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"cave_shrine"
+title = "Buried Shrine"
+enemy_archetypes = Array[String](["controller", "charger", "ranged"])
+spawn_positions = Array[Vector2]([Vector2(520, 610), Vector2(670, 610), Vector2(820, 610)])
+background_color = Color(0.06, 0.05, 0.09, 1)
+elite_room = false

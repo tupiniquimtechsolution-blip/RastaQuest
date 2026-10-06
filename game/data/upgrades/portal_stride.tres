@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/roguelike/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"portal_stride"
+title = "Portal Stride"
+description = "+18 movement speed"
+effect_key = &"move_speed"
+effect_value = 18.0
+tags = Array[StringName]([&"mobility"])

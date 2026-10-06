@@ -82,6 +82,12 @@ jobs:
           set -euo pipefail
           "${GODOT_BIN}" --headless --path game --script res://tests/vertical_slice_smoke.gd 2>&1 | tee /tmp/rq006-slice.log
           grep -q "RQ006_VERTICAL_SLICE_TECH_OK rooms=6 save_recovery=pass" /tmp/rq006-slice.log
+      - name: Alpha campaign technical smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          "${GODOT_BIN}" --headless --path game --script res://tests/alpha_campaign_smoke.gd 2>&1 | tee /tmp/rq007-alpha.log
+          grep -q "RQ007_ALPHA_TECH_OK rooms=18 upgrades=18 biomes=3" /tmp/rq007-alpha.log
       - name: Reject tracked Godot cache
         shell: bash
         run: |

@@ -4,6 +4,8 @@ const SYNERGY_RULES := {
 	&"thunder_web": [&"electric", &"chain"],
 	&"execution_storm": [&"electric", &"execution"],
 	&"stormrunner": [&"electric", &"mobility"],
+	&"iron_tempest": [&"defense", &"electric"],
+	&"echo_warrior": [&"power", &"echo"],
 }
 
 var seed_value: int = 1
@@ -44,18 +46,16 @@ func choose_room(room_ids: Array[StringName]) -> StringName:
 		return &""
 	var index := _rng.randi_range(0, room_ids.size() - 1)
 	var room_id: StringName = room_ids[index]
-	debug_log.append("room depth=%d id=%s" % [depth, room_id])
+	debug_log.append("room depth=%d biome=%s id=%s" % [depth, biome, room_id])
 	return room_id
 
 func sample_upgrades(catalog: Array, count: int = 3) -> Array:
 	if catalog.is_empty() or count <= 0:
 		return []
-
 	var available: Array = []
 	for upgrade in catalog:
 		if upgrade != null and not applied_upgrade_ids.has(upgrade.id):
 			available.append(upgrade)
-
 	var result: Array = []
 	while not available.is_empty() and result.size() < count:
 		var index := _rng.randi_range(0, available.size() - 1)
@@ -87,13 +87,22 @@ func active_synergies() -> Array[StringName]:
 
 func advance_encounter() -> int:
 	depth += 1
-	debug_log.append("advance depth=%d" % depth)
+	biome = biome_for_depth(depth)
+	debug_log.append("advance depth=%d biome=%s" % [depth, biome])
 	return depth
+
+static func biome_for_depth(encounter_depth: int) -> StringName:
+	if encounter_depth >= 12:
+		return &"caves"
+	if encounter_depth >= 6:
+		return &"castle"
+	return &"forest"
 
 func reset_after_death() -> void:
 	debug_log.append("run_end depth=%d" % depth)
 	run_active = false
 	depth = 0
+	biome = &"forest"
 	applied_upgrade_ids.clear()
 	_tags.clear()
 	for key in modifiers.keys():

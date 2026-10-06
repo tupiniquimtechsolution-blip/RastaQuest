@@ -1,10 +1,10 @@
 extends Node2D
 
 const EnemyScene = preload("res://scenes/enemies/EnemyBase.tscn")
-const BossScene = preload("res://scenes/boss/StormWarden.tscn")
+const FinalBossScene = preload("res://scenes/boss/RiftSovereign.tscn")
 const RoomCatalog = preload("res://scripts/roguelike/room_catalog.gd")
 
-const BOSS_DEPTH: int = 5
+const FINAL_BOSS_DEPTH: int = 18
 const ENEMY_DATA := {
 	"chaser": preload("res://data/enemies/chaser.tres"),
 	"ranged": preload("res://data/enemies/ranged.tres"),
@@ -26,7 +26,6 @@ const ENEMY_DATA := {
 
 var _alive_enemies: int = 0
 var _pending_choices: Array = []
-var _forest_rooms: Array = []
 var _boss_active: bool = false
 
 func _ready() -> void:
@@ -34,11 +33,8 @@ func _ready() -> void:
 	player.get_node("Health").died.connect(_on_player_died)
 	for index in range(reward_buttons.size()):
 		reward_buttons[index].pressed.connect(_on_upgrade_selected.bind(index))
-
-	_forest_rooms = RoomCatalog.load_forest()
 	if not RunManager.state.run_active:
 		RunManager.start_run(424242)
-
 	_apply_run_modifiers()
 	_start_encounter()
 
@@ -46,21 +42,18 @@ func _start_encounter() -> void:
 	reward_panel.visible = false
 	portal.set_locked(true)
 	_clear_enemies()
-
-	if RunManager.state.depth >= BOSS_DEPTH:
-		_start_boss()
+	if RunManager.state.depth >= FINAL_BOSS_DEPTH:
+		_start_final_boss()
 		return
-
 	_boss_active = false
-	var room_id := RunManager.state.choose_room(RoomCatalog.ids(_forest_rooms))
-	var room: RoomTemplateData = RoomCatalog.by_id(_forest_rooms, room_id)
+	var rooms := RoomCatalog.load_biome(RunManager.state.biome)
+	var room_id := RunManager.state.choose_room(RoomCatalog.ids(rooms))
+	var room: RoomTemplateData = RoomCatalog.by_id(rooms, room_id)
 	if room == null:
 		status_label.text = "Invalid room template"
 		return
-
 	backdrop.color = room.background_color
 	_alive_enemies = room.enemy_archetypes.size()
-
 	for index in range(room.enemy_archetypes.size()):
 		var enemy := EnemyScene.instantiate()
 		var behavior := room.enemy_archetypes[index]
@@ -69,18 +62,18 @@ func _start_encounter() -> void:
 		enemy.position = room.spawn_positions[index] if index < room.spawn_positions.size() else Vector2(600 + index * 140, 610)
 		enemy.enemy_defeated.connect(_on_enemy_defeated)
 		$Enemies.add_child(enemy)
+	status_label.text = "%s • %s • Encounter %d" % [room.title, String(RunManager.state.biome).capitalize(), RunManager.state.depth + 1]
 
-	status_label.text = "%s • Seed %d • Encounter %d" % [room.title, RunManager.state.seed_value, RunManager.state.depth + 1]
-
-func _start_boss() -> void:
+func _start_final_boss() -> void:
 	_boss_active = true
 	_alive_enemies = 1
-	backdrop.color = Color(0.07, 0.04, 0.10, 1.0)
-	var boss := BossScene.instantiate()
+	backdrop.color = Color(0.06, 0.02, 0.09, 1.0)
+	var boss := FinalBossScene.instantiate()
+	boss.target_path = NodePath("../../Player")
 	boss.position = Vector2(850, 585)
 	boss.boss_defeated.connect(_on_boss_defeated)
 	$Enemies.add_child(boss)
-	status_label.text = "Storm Warden • Forest guardian"
+	status_label.text = "Rift Sovereign • Final fracture"
 
 func _clear_enemies() -> void:
 	for child in $Enemies.get_children():
@@ -95,25 +88,23 @@ func _on_enemy_defeated(_enemy: Node) -> void:
 func _on_boss_defeated() -> void:
 	_alive_enemies = 0
 	portal.set_locked(false)
-	status_label.text = "Storm Warden defeated • Exit through the portal"
+	status_label.text = "Rift Sovereign defeated • Victory portal open"
 
 func _on_portal_entered() -> void:
 	portal.set_locked(true)
-
 	if _boss_active:
-		SaveManager.add_meta_shards(5)
+		SaveManager.add_meta_shards(25)
+		SaveManager.set_completion_flag(&"campaign_complete", true)
 		SaveManager.set_completion_flag(&"forest_vertical_slice_complete", true)
 		RunManager.end_run()
 		get_tree().change_scene_to_file("res://scenes/hub/Hub.tscn")
 		return
-
 	_pending_choices = RunManager.sample_upgrade_choices(3)
 	if _pending_choices.is_empty():
 		RunManager.advance_encounter()
 		player.respawn()
 		_start_encounter()
 		return
-
 	reward_panel.visible = true
 	for index in range(reward_buttons.size()):
 		var button := reward_buttons[index]
@@ -146,13 +137,11 @@ func _apply_run_modifiers() -> void:
 	var mods: Dictionary = RunManager.state.modifiers
 	var combat: Node = player.get_node("PlayerCombat")
 	var health: Node = player.get_node("Health")
-
 	player.move_speed = 260.0 + float(mods[&"move_speed"])
 	player.jump_velocity = -(560.0 + float(mods[&"jump_power"]))
 	health.max_health = 5 + int(mods[&"max_health"])
 	health.invulnerability_seconds = 0.35 + float(mods[&"invulnerability"])
 	health.restore_full()
-
 	combat.ground_damage = 1 + int(mods[&"damage"])
 	combat.air_damage = 1 + int(mods[&"damage"]) + int(mods[&"air_damage"])
 	combat.electrical_proc_chance = clampf(0.25 + float(mods[&"proc_chance"]), 0.0, 1.0)

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/roguelike/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"storm_crown"
+title = "Storm Crown"
+description = "+20% electrical proc"
+effect_key = &"proc_chance"
+effect_value = 0.20
+tags = Array[StringName]([&"electric"])
