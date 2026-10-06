@@ -71,6 +71,15 @@ jobs:
           export/android/shutdown_adb_on_exit = true
           EOF
 
+      - name: Diagnose Android export configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "ANDROID_HOME=${ANDROID_HOME}"
+          echo "JAVA_HOME=${JAVA_HOME}"
+          ls -la "${HOME}/.local/share/godot/export_templates/4.5.1.stable"
+          "${GODOT_BIN}" --headless --verbose --path game --editor --quit 2>&1 | tee /tmp/rq-android-editor.log
+
       - name: Export debug APK
         shell: bash
         env:
@@ -80,7 +89,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p /tmp/rq-android
-          "${GODOT_BIN}" --headless --path game --export-debug "Android Debug" /tmp/rq-android/rasta-quest-1.0.0-rc.1-debug.apk
+          "${GODOT_BIN}" --headless --verbose --path game --export-debug "Android Debug" /tmp/rq-android/rasta-quest-1.0.0-rc.1-debug.apk 2>&1 | tee /tmp/rq-android/export.log
           test -s /tmp/rq-android/rasta-quest-1.0.0-rc.1-debug.apk
           sha256sum /tmp/rq-android/rasta-quest-1.0.0-rc.1-debug.apk | tee /tmp/rq-android/SHA256SUMS.txt
 
