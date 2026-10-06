@@ -110,3 +110,8 @@ The project now has persisted accessibility/settings defaults, onboarding state,
 ## RQ-009 Beta hardening
 
 The technical Beta layer uses save schema v2 with v1 migration, previous-good recovery, deterministic content validation and encounter-cap checks. Physical Android profiling, lifecycle validation and 20 tester runs remain manual Beta gates.
+
+
+## RQ-010 Android technical RC
+
+Version `1.0.0-rc.1` is a CI/test candidate only. The Android RC workflow uses official Godot 4.5.1 templates and ephemeral debug signing to produce a short-lived test APK plus SHA-256 evidence. Public release signing and store distribution remain blocked until the canonical release criteria are green.
