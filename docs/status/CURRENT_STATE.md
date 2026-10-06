@@ -6,9 +6,9 @@
 ## Executive status
 
 - **Product:** Rasta Quest
-- **Phase:** player-feel prototype validation
-- **Active wave:** RQ-002
-- **Playable implementation committed:** Yes — graybox movement prototype; combat not started
+- **Phase:** technical release-candidate / Gold preflight
+- **Active wave:** RQ-011 acceptance (NO-GO)
+- **Playable implementation committed:** Yes — technical full-campaign graybox through final boss; production acceptance incomplete
 - **Engine decision:** Godot 4.5.1 / GDScript
 - **Primary target:** Android landscape
 - **Perspective:** 2D side-scrolling action-platformer
@@ -105,3 +105,47 @@ Documento Mestre v3.0 and Planejamento 2.0 referenced by the old PE roadmap are 
 ## Next action
 
 Perform the RQ-002 device/playtest acceptance. **RQ-003 combat remains gated** until these criteria are evidenced.
+
+
+## RQ-003 through RQ-010 technical progression
+
+The repository now contains and has CI evidence for the automated/technical portions of:
+
+- RQ-003 axe combat and electrical effects;
+- RQ-004 data-driven enemy framework;
+- RQ-005 seedable roguelike run core;
+- RQ-006 Corrupted Forest technical vertical slice;
+- RQ-007 three-biome technical Alpha campaign spine;
+- RQ-008 settings, accessibility, localization and narrative structure;
+- RQ-009 save migration/recovery and Beta technical hardening;
+- RQ-010 Android technical RC preparation and ephemeral debug APK evidence.
+
+These waves retain open human/device/production acceptance criteria in their GitHub issues and are not falsely marked complete in the master tracker.
+
+## RQ-011 Gold preflight
+
+- PR #33 merged as `a2a92c6`;
+- Gold Preflight run `37494134903`: SUCCESS;
+- full automated RQ-001→RQ-010 regression: PASS;
+- tracked release-key/keystore scan: PASS;
+- version under evaluation: `1.0.0-rc.1`;
+- save schema: `2`;
+- technical debug APK SHA-256: `631995b2db3b5940b6a8a03d33949fdd47a146efae0d44f2eb99acf8db4174dc`;
+- rollback technical RC source: `2c08f6be94e02402511021f4e96500b85a182235`;
+- formal decision: **NO-GO**.
+
+## Remaining blockers before Gold GO
+
+- physical Android performance, lifecycle and touch acceptance;
+- required external playtests and Beta-run evidence;
+- combat/run feel acceptance;
+- production-quality art/audio and final licensing inventory;
+- cultural representation review;
+- final store media/privacy/content-rating review;
+- external production signing key;
+- signed release AAB/APK clean-install validation;
+- zero known blocker/critical defects confirmed at final acceptance.
+
+## Next action
+
+Do not create `v1.0.0` or publish RQ-012 while RQ-011 is NO-GO. The correct continuation is to close the remaining device/human/production/signing acceptance evidence, then rerun Gold preflight on the exact final candidate.
