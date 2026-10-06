@@ -27,7 +27,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
       - name: Download official Godot
         shell: bash
         run: |
@@ -36,41 +35,41 @@ jobs:
           curl --fail --location --retry 3 --output /tmp/godot.zip "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
           python3 -m zipfile -e /tmp/godot.zip /tmp/godot
           chmod +x "${GODOT_BIN}"
-
       - name: Verify pinned engine version
         shell: bash
         run: |
           set -euo pipefail
           "${GODOT_BIN}" --version | tee /tmp/godot-version.txt
           grep -q "^4.5.1" /tmp/godot-version.txt
-
       - name: Import and parse project headlessly
         shell: bash
         run: |
           set -euo pipefail
           "${GODOT_BIN}" --headless --path game --editor --quit
-
       - name: Boot main scene smoke test
         shell: bash
         run: |
           set -euo pipefail
           "${GODOT_BIN}" --headless --path game -- --smoke-test 2>&1 | tee /tmp/rasta-quest-smoke.log
           grep -q "RASTA_QUEST_BOOT_OK" /tmp/rasta-quest-smoke.log
-
       - name: Player state transition smoke test
         shell: bash
         run: |
           set -euo pipefail
           "${GODOT_BIN}" --headless --path game --script res://tests/player_state_smoke.gd 2>&1 | tee /tmp/rq002-player-state.log
           grep -q "RQ002_PLAYER_STATE_OK cycles=100" /tmp/rq002-player-state.log
-
       - name: Combat contract smoke test
         shell: bash
         run: |
           set -euo pipefail
           "${GODOT_BIN}" --headless --path game --script res://tests/combat_smoke.gd 2>&1 | tee /tmp/rq003-combat.log
           grep -q "RQ003_COMBAT_OK" /tmp/rq003-combat.log
-
+      - name: Enemy framework smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          "${GODOT_BIN}" --headless --path game --script res://tests/enemy_framework_smoke.gd 2>&1 | tee /tmp/rq004-enemies.log
+          grep -q "RQ004_ENEMY_FRAMEWORK_OK" /tmp/rq004-enemies.log
       - name: Reject tracked Godot cache
         shell: bash
         run: |

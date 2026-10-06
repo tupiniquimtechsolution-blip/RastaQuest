@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Knight"
+behavior = "chaser"
+max_health = 4
+move_speed = 115.0
+attack_range = 62.0
+attack_cooldown = 0.9
+tell_seconds = 0.25
+encounter_cost = 1
+high_threat = false
+visual_color = Color(0.55, 0.18, 0.16, 1)
