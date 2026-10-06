@@ -1,0 +1,114 @@
+name: Gold Preflight
+
+on:
+  pull_request:
+    paths:
+      - "game/**"
+      - "docs/release/**"
+      - ".github/workflows/gold-preflight.yml"
+      - ".github/workflows/godot-ci.yml"
+  push:
+    branches: [main]
+    paths:
+      - "game/**"
+      - "docs/release/**"
+      - ".github/workflows/gold-preflight.yml"
+      - ".github/workflows/godot-ci.yml"
+
+permissions:
+  contents: read
+
+env:
+  GODOT_VERSION: "4.5.1"
+  GODOT_BIN: /tmp/godot/Godot_v4.5.1-stable_linux.x86_64
+
+jobs:
+  gold-preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate Gold decision manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          rc = json.loads(Path("docs/release/rc/RELEASE_MANIFEST.json").read_text())
+          gold = json.loads(Path("docs/release/gold/GOLD_MANIFEST.json").read_text())
+
+          assert gold["decision"] == "NO-GO"
+          assert gold["public_distribution_allowed"] is False
+          assert gold["release_signing_ready"] is False
+          assert gold["version"] == rc["version"] == "1.0.0-rc.1"
+          assert gold["save_schema"] == rc["save_schema"] == 2
+          assert gold["application_id"] == rc["application_id"]
+          assert gold["technical_debug_apk_sha256"] == rc["technical_debug_apk"]["apk_sha256"]
+          assert len(gold["blocking_categories"]) >= 1
+          PY
+
+      - name: Reject tracked release secrets and signing material
+        shell: bash
+        run: |
+          set -euo pipefail
+          forbidden='\.(jks|keystore|p12|pfx|pem|key)$'
+          if git ls-files | grep -Ei "$forbidden"; then
+            echo "Tracked signing/private-key material detected."
+            exit 1
+          fi
+          if git grep -nE '(BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY|storePassword[=:]|keyPassword[=:])' -- ':!docs/source/**' ':!docs/legacy/**'; then
+            echo "Potential release secret detected in tracked production files."
+            exit 1
+          fi
+
+      - name: Download official Godot
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/godot
+          curl --fail --location --retry 3             --output /tmp/godot.zip             "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          python3 -m zipfile -e /tmp/godot.zip /tmp/godot
+          chmod +x "${GODOT_BIN}"
+          "${GODOT_BIN}" --version | grep -q '^4.5.1'
+
+      - name: Import and boot candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          "${GODOT_BIN}" --headless --path game --editor --quit
+          "${GODOT_BIN}" --headless --path game -- --smoke-test 2>&1 | tee /tmp/gold-boot.log
+          grep -q 'RASTA_QUEST_BOOT_OK' /tmp/gold-boot.log
+
+      - name: Run complete automated release regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          run_test () {
+            local script="$1"
+            local marker="$2"
+            local log="/tmp/$(basename "$script" .gd).log"
+            timeout 30s "${GODOT_BIN}" --headless --path game --script "res://tests/$script" 2>&1 | tee "$log"
+            grep -q "$marker" "$log"
+          }
+
+          run_test player_state_smoke.gd 'RQ002_PLAYER_STATE_OK cycles=100'
+          run_test combat_smoke.gd 'RQ003_COMBAT_OK'
+          run_test enemy_framework_smoke.gd 'RQ004_ENEMY_FRAMEWORK_OK'
+          run_test roguelike_core_smoke.gd 'RQ005_ROGUELIKE_CORE_OK encounters=100 upgrades=12'
+          run_test vertical_slice_smoke.gd 'RQ006_VERTICAL_SLICE_TECH_OK rooms=6 save_recovery=pass'
+          run_test alpha_campaign_smoke.gd 'RQ007_ALPHA_TECH_OK rooms=18 upgrades=18 biomes=3'
+          run_test ux_accessibility_smoke.gd 'RQ008_UX_ACCESSIBILITY_TECH_OK locales=2 settings=7'
+          run_test beta_hardening_smoke.gd 'RQ009_BETA_TECH_OK schema=2 rooms=18 upgrades=18'
+          run_test release_readiness_smoke.gd 'RQ010_RC_PREP_OK version=1.0.0-rc.1 arm64=1'
+
+      - name: Confirm NO-GO is enforced
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q '^\*\*Decision:\*\* NO-GO' docs/release/gold/GOLD_DECISION.md
+          test ! -e .release-approved
+          echo 'RQ011_GOLD_PREFLIGHT_OK decision=NO-GO'
