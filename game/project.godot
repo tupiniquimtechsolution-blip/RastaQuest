@@ -13,6 +13,7 @@ RunManager="*res://scripts/roguelike/run_manager.gd"
 SaveManager="*res://scripts/save/save_manager.gd"
 AudioManager="*res://scripts/core/audio_manager.gd"
 SettingsManager="*res://scripts/core/settings_manager.gd"
+GameManager="*res://scripts/core/game_manager.gd"
 
 [display]
 window/size/viewport_width=1280
