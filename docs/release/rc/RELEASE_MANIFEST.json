@@ -26,5 +26,14 @@
     "Rastafari and Xango-inspired cultural review",
     "final store icon/splash/screenshots",
     "external release signing key and signed AAB clean-install test"
-  ]
+  ],
+  "technical_debug_apk": {
+    "workflow_run": 37479496762,
+    "artifact_id": 11420956791,
+    "artifact_name": "rasta-quest-1.0.0-rc.1-debug",
+    "apk_sha256": "631995b2db3b5940b6a8a03d33949fdd47a146efae0d44f2eb99acf8db4174dc",
+    "artifact_archive_digest": "sha256:b4cf100a81f115e97a46d1df0ebf384be3675a83e415586414feed7ff71517b8",
+    "signing": "ephemeral-debug-only",
+    "evidence_expires_at": "2026-10-13T14:30:54Z"
+  }
 }
