@@ -36,3 +36,11 @@ offset_right = 1086.0
 offset_bottom = 690.0
 focus_mode = 0
 text = "ATTACK"
+
+[node name="PauseButton" type="Button" parent="."]
+offset_left = 1180.0
+offset_top = 20.0
+offset_right = 1256.0
+offset_bottom = 72.0
+focus_mode = 0
+text = "II"
