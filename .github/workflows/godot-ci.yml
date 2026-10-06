@@ -70,6 +70,12 @@ jobs:
           set -euo pipefail
           "${GODOT_BIN}" --headless --path game --script res://tests/enemy_framework_smoke.gd 2>&1 | tee /tmp/rq004-enemies.log
           grep -q "RQ004_ENEMY_FRAMEWORK_OK" /tmp/rq004-enemies.log
+      - name: Roguelike core smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          "${GODOT_BIN}" --headless --path game --script res://tests/roguelike_core_smoke.gd 2>&1 | tee /tmp/rq005-roguelike.log
+          grep -q "RQ005_ROGUELIKE_CORE_OK encounters=100 upgrades=12" /tmp/rq005-roguelike.log
       - name: Reject tracked Godot cache
         shell: bash
         run: |

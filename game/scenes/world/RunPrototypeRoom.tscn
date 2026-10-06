@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/roguelike/run_room_controller.gd" id="1_controller"]
+[ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/ui/TouchControls.tscn" id="3_touch"]
+[ext_resource type="PackedScene" path="res://scenes/portals/Portal.tscn" id="4_portal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(1400, 80)
+
+[node name="RunPrototypeRoom" type="Node2D"]
+script = ExtResource("1_controller")
+
+[node name="Backdrop" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720)
+color = Color(0.035, 0.055, 0.04, 1)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(640, 680)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="GroundVisual" type="Polygon2D" parent="Ground"]
+polygon = PackedVector2Array(-700, -40, 700, -40, 700, 40, -700, 40)
+color = Color(0.18, 0.24, 0.18, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(180, 610)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Portal" parent="." instance=ExtResource("4_portal")]
+position = Vector2(1080, 590)
+
+[node name="TouchControls" parent="." instance=ExtResource("3_touch")]
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="Status" type="Label" parent="Hud"]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 800.0
+offset_bottom = 70.0
+text = "RQ-005 Run Prototype"
+
+[node name="RewardPanel" type="Panel" parent="Hud"]
+visible = false
+offset_left = 350.0
+offset_top = 160.0
+offset_right = 930.0
+offset_bottom = 560.0
+
+[node name="VBox" type="VBoxContainer" parent="Hud/RewardPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Hud/RewardPanel/VBox"]
+layout_mode = 2
+text = "Choose one upgrade"
+horizontal_alignment = 1
+
+[node name="Choice1" type="Button" parent="Hud/RewardPanel/VBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Choice 1"
+
+[node name="Choice2" type="Button" parent="Hud/RewardPanel/VBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Choice 2"
+
+[node name="Choice3" type="Button" parent="Hud/RewardPanel/VBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Choice 3"

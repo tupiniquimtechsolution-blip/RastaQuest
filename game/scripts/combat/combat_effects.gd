@@ -14,7 +14,14 @@ static func select_nearest_targets(origin: Vector2, candidates: Array, radius: f
 		var position: Vector2 = candidate.get("position", origin)
 		var distance := origin.distance_to(position)
 		if distance <= radius:
-			valid.append({"id": candidate.get("id", -1), "position": position, "distance": distance})
+			var normalized := {
+				"id": candidate.get("id", -1),
+				"position": position,
+				"distance": distance,
+			}
+			if candidate.has("node"):
+				normalized["node"] = candidate["node"]
+			valid.append(normalized)
 
 	valid.sort_custom(func(a: Dictionary, b: Dictionary) -> bool:
 		return float(a["distance"]) < float(b["distance"])
