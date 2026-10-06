@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Exploder"
+behavior = "exploder"
+max_health = 2
+move_speed = 145.0
+attack_range = 80.0
+attack_cooldown = 2.1
+tell_seconds = 0.8
+encounter_cost = 2
+high_threat = true
+visual_color = Color(0.72, 0.18, 0.55, 1)

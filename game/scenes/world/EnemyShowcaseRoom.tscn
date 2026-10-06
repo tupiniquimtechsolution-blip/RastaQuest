@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://scenes/ui/TouchControls.tscn" id="2_touch"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/EnemyBase.tscn" id="3_enemy"]
+[ext_resource type="Resource" path="res://data/enemies/chaser.tres" id="4_chaser"]
+[ext_resource type="Resource" path="res://data/enemies/ranged.tres" id="5_ranged"]
+[ext_resource type="Resource" path="res://data/enemies/charger.tres" id="6_charger"]
+[ext_resource type="Resource" path="res://data/enemies/controller.tres" id="7_controller"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(1800, 80)
+
+[node name="EnemyShowcaseRoom" type="Node2D"]
+
+[node name="Backdrop" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 1600, 0, 1600, 720, 0, 720)
+color = Color(0.04, 0.045, 0.04, 1)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(800, 680)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="GroundVisual" type="Polygon2D" parent="Ground"]
+polygon = PackedVector2Array(-900, -40, 900, -40, 900, 40, -900, 40)
+color = Color(0.18, 0.22, 0.18, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(180, 610)
+
+[node name="Chaser" parent="." instance=ExtResource("3_enemy")]
+position = Vector2(520, 610)
+data = ExtResource("4_chaser")
+target_path = NodePath("../Player")
+
+[node name="Ranged" parent="." instance=ExtResource("3_enemy")]
+position = Vector2(760, 610)
+data = ExtResource("5_ranged")
+target_path = NodePath("../Player")
+
+[node name="Charger" parent="." instance=ExtResource("3_enemy")]
+position = Vector2(1030, 610)
+data = ExtResource("6_charger")
+target_path = NodePath("../Player")
+
+[node name="Controller" parent="." instance=ExtResource("3_enemy")]
+position = Vector2(1280, 610)
+data = ExtResource("7_controller")
+target_path = NodePath("../Player")
+
+[node name="TouchControls" parent="." instance=ExtResource("2_touch")]
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="Hud"]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 900.0
+offset_bottom = 100.0
+text = "RQ-004 ENEMY FRAMEWORK\nGraybox behaviors: Chaser • Ranged • Charger • Controller"

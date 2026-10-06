@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Archer-Mage"
+behavior = "ranged"
+max_health = 3
+move_speed = 85.0
+attack_range = 220.0
+attack_cooldown = 1.25
+tell_seconds = 0.45
+encounter_cost = 2
+high_threat = false
+visual_color = Color(0.25, 0.35, 0.72, 1)
