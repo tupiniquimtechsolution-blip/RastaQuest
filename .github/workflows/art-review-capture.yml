@@ -1,0 +1,29 @@
+name: Art Review Capture
+
+on:
+  push:
+    branches: [ops/art-review-capture]
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stage new art uploads
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/art-review
+          cp "Bíblia Visual de Mundos Pixel Art.png" /tmp/art-review/
+          cp "Imagem do ChatGPT 6 de out. de 2026, 17_56_27-1.png" /tmp/art-review/
+          cp "Imagem do ChatGPT 6 de out. de 2026, 17_56_29-2.png" /tmp/art-review/
+          cp "Rasta Quest_ Catálogo de Inimigos em Pixel Art.png" /tmp/art-review/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rq-art-review
+          path: /tmp/art-review/*
+          if-no-files-found: error
+          retention-days: 1
