@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/pause_overlay.gd" id="1_pause"]
+
+[node name="PauseOverlay" type="CanvasLayer"]
+script = ExtResource("1_pause")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+offset_left = 430.0
+offset_top = 210.0
+offset_right = 850.0
+offset_bottom = 510.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="Panel/VBox"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+text = "Resume"

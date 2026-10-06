@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RoomTemplateData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/roguelike/room_template_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"forest_bridge"
+title = "Broken Bridge"
+enemy_archetypes = Array[String](["chaser", "ranged", "chaser"])
+spawn_positions = Array[Vector2]([Vector2(520, 610), Vector2(760, 610), Vector2(980, 610)])
+background_color = Color(0.05, 0.09, 0.055, 1)
+elite_room = false

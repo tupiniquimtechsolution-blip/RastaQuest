@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://scripts/roguelike/run_room_controller.gd" id="1_controller"]
 [ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="2_player"]
 [ext_resource type="PackedScene" path="res://scenes/ui/TouchControls.tscn" id="3_touch"]
 [ext_resource type="PackedScene" path="res://scenes/portals/Portal.tscn" id="4_portal"]
+[ext_resource type="PackedScene" path="res://scenes/ui/PauseOverlay.tscn" id="5_pause"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
 size = Vector2(1400, 80)
@@ -35,14 +36,16 @@ position = Vector2(1080, 590)
 
 [node name="TouchControls" parent="." instance=ExtResource("3_touch")]
 
+[node name="PauseOverlay" parent="." instance=ExtResource("5_pause")]
+
 [node name="Hud" type="CanvasLayer" parent="."]
 
 [node name="Status" type="Label" parent="Hud"]
 offset_left = 24.0
 offset_top = 24.0
-offset_right = 800.0
+offset_right = 900.0
 offset_bottom = 70.0
-text = "RQ-005 Run Prototype"
+text = "Corrupted Forest"
 
 [node name="RewardPanel" type="Panel" parent="Hud"]
 visible = false
