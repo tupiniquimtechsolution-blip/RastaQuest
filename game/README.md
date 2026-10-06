@@ -95,3 +95,8 @@ This exercises 100 complete Idle → Run → Jump → Fall → Idle cycles and v
 ## RQ-002 CI evidence
 
 GitHub Actions run `37461430703` passed headless import/boot and `100` complete player movement-state cycles. Device FPS and human game-feel checks are intentionally not represented by CI.
+
+
+## RQ-007 technical Alpha
+
+The technical Alpha extends the run spine across Forest, Castle and Caves with 18 room templates, 18 upgrades, five synergy rules and a final Rift Sovereign encounter. Production-content acceptance remains separate from this CI-validated graybox milestone.

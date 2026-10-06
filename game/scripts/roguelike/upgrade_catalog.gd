@@ -13,6 +13,12 @@ const UPGRADE_PATHS: Array[String] = [
 	"res://data/upgrades/quick_hands.tres",
 	"res://data/upgrades/heavy_axe.tres",
 	"res://data/upgrades/wind_dance.tres",
+	"res://data/upgrades/iron_roots.tres",
+	"res://data/upgrades/portal_stride.tres",
+	"res://data/upgrades/storm_crown.tres",
+	"res://data/upgrades/echo_axe.tres",
+	"res://data/upgrades/last_light.tres",
+	"res://data/upgrades/war_drum.tres",
 ]
 
 static func load_all() -> Array:

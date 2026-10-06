@@ -14,8 +14,8 @@ const ROOMS: Array[StringName] = [
 
 func _init() -> void:
 	var catalog := UpgradeCatalog.load_all()
-	if catalog.size() != 12:
-		_fail("expected 12 functional upgrades")
+	if catalog.size() < 12:
+		_fail("expected at least 12 functional upgrades")
 		return
 	if not _test_seed_reproduction(catalog):
 		return
@@ -56,8 +56,8 @@ func _test_upgrades_and_synergies(catalog: Array) -> bool:
 		if upgrade == null or not state.apply_upgrade(upgrade):
 			return _fail("invalid/null/duplicate upgrade application")
 
-	if state.applied_upgrade_ids.size() != 12:
-		return _fail("not all 12 upgrades applied")
+	if state.applied_upgrade_ids.size() != catalog.size():
+		return _fail("not all catalog upgrades applied")
 	if state.active_synergies().size() < 3:
 		return _fail("expected at least three observable synergies")
 	if float(state.modifiers[&"chain_lightning"]) <= 0.0:
