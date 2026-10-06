@@ -1,6 +1,15 @@
 extends Node
 
-const CURRENT_SCHEMA_VERSION: int = 1
+const CURRENT_SCHEMA_VERSION: int = 2
+const DEFAULT_SETTINGS := {
+	"screen_shake": true,
+	"reduced_flashes": false,
+	"vibration": true,
+	"music_volume": 1.0,
+	"sfx_volume": 1.0,
+	"touch_scale": 1.0,
+	"locale": "en",
+}
 
 var save_path: String = "user://rasta_quest_save.json"
 var backup_path: String = "user://rasta_quest_save.bak.json"
@@ -18,25 +27,56 @@ func default_data() -> Dictionary:
 		"schema_version": CURRENT_SCHEMA_VERSION,
 		"meta_shards": 0,
 		"unlocks": [],
-		"settings": {
-			"screen_shake": true,
-			"reduced_flashes": false,
-			"vibration": true,
-			"music_volume": 1.0,
-			"sfx_volume": 1.0,
-			"touch_scale": 1.0,
-			"locale": "en",
-		},
+		"settings": DEFAULT_SETTINGS.duplicate(true),
 		"completion_flags": {},
 	}
 
+static func migrate_data(candidate: Dictionary) -> Dictionary:
+	if candidate.is_empty():
+		return {}
+
+	var version := int(candidate.get("schema_version", -1))
+	if version < 1 or version > CURRENT_SCHEMA_VERSION:
+		return {}
+
+	var migrated := candidate.duplicate(true)
+	if version == 1:
+		var settings: Dictionary = migrated.get("settings", {})
+		for key in DEFAULT_SETTINGS:
+			if not settings.has(key):
+				settings[key] = DEFAULT_SETTINGS[key]
+		migrated["settings"] = settings
+		migrated["schema_version"] = 2
+		version = 2
+
+	if version == 2:
+		if not migrated.has("meta_shards"):
+			migrated["meta_shards"] = 0
+		if not migrated.has("unlocks") or typeof(migrated["unlocks"]) != TYPE_ARRAY:
+			migrated["unlocks"] = []
+		if not migrated.has("completion_flags") or typeof(migrated["completion_flags"]) != TYPE_DICTIONARY:
+			migrated["completion_flags"] = {}
+		var settings: Dictionary = migrated.get("settings", {})
+		for key in DEFAULT_SETTINGS:
+			if not settings.has(key):
+				settings[key] = DEFAULT_SETTINGS[key]
+		migrated["settings"] = settings
+
+	return migrated
+
 func load_save() -> Dictionary:
-	var primary := _read_valid(save_path)
+	var raw_primary := _read_raw(save_path)
+	var primary := migrate_data(raw_primary)
 	if not primary.is_empty():
+		var migrated := int(raw_primary.get("schema_version", -1)) != CURRENT_SCHEMA_VERSION
 		data = primary
+		if migrated:
+			_write_backup_raw(raw_primary)
+			save_current(true)
 		return data
 
-	var backup := _read_valid(backup_path)
+	var raw_backup := _read_raw(backup_path)
+	var backup := migrate_data(raw_backup)
 	if not backup.is_empty():
 		data = backup
 		save_current(true)
@@ -47,6 +87,9 @@ func load_save() -> Dictionary:
 	return data
 
 func save_current(skip_backup: bool = false) -> bool:
+	if data.is_empty():
+		data = default_data()
+	data = migrate_data(data)
 	if data.is_empty():
 		data = default_data()
 	data["schema_version"] = CURRENT_SCHEMA_VERSION
@@ -95,14 +138,18 @@ func set_completion_flag(flag: StringName, value: bool = true) -> void:
 	data["completion_flags"] = flags
 	save_current()
 
-func _read_valid(path: String) -> Dictionary:
+func _read_raw(path: String) -> Dictionary:
 	if not FileAccess.file_exists(path):
 		return {}
 	var text := FileAccess.get_file_as_string(path)
 	var parsed = JSON.parse_string(text)
 	if typeof(parsed) != TYPE_DICTIONARY:
 		return {}
-	var candidate: Dictionary = parsed
-	if int(candidate.get("schema_version", -1)) != CURRENT_SCHEMA_VERSION:
-		return {}
-	return candidate
+	return parsed
+
+func _write_backup_raw(candidate: Dictionary) -> void:
+	if candidate.is_empty():
+		return
+	var file := FileAccess.open(backup_path, FileAccess.WRITE)
+	if file != null:
+		file.store_string(JSON.stringify(candidate))
