@@ -28,3 +28,11 @@ offset_right = 1256.0
 offset_bottom = 690.0
 focus_mode = 0
 text = "JUMP"
+
+[node name="AttackButton" type="Button" parent="."]
+offset_left = 930.0
+offset_top = 590.0
+offset_right = 1086.0
+offset_bottom = 690.0
+focus_mode = 0
+text = "ATTACK"
