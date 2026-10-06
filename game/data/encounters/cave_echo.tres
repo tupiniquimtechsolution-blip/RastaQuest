@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RoomTemplateData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/roguelike/room_template_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = &"cave_echo"
+title = "Echo Gallery"
+enemy_archetypes = Array[String](["ranged", "ranged", "charger"])
+spawn_positions = Array[Vector2]([Vector2(520, 610), Vector2(790, 610), Vector2(1040, 610)])
+background_color = Color(0.045, 0.045, 0.085, 1)
+elite_room = false

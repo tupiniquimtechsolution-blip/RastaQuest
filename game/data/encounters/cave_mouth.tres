@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RoomTemplateData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/roguelike/room_template_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = &"cave_mouth"
+title = "Echo Mouth"
+enemy_archetypes = Array[String](["chaser", "controller"])
+spawn_positions = Array[Vector2]([Vector2(600, 610), Vector2(900, 610)])
+background_color = Color(0.04, 0.045, 0.075, 1)
+elite_room = false

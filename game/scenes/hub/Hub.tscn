@@ -20,9 +20,9 @@ text = "RASTA QUEST — REFÚGIO"
 
 [node name="Panel" type="Panel" parent="Hud"]
 offset_left = 400.0
-offset_top = 180.0
+offset_top = 160.0
 offset_right = 880.0
-offset_bottom = 540.0
+offset_bottom = 560.0
 
 [node name="VBox" type="VBoxContainer" parent="Hud/Panel"]
 layout_mode = 1
@@ -35,7 +35,7 @@ offset_right = -30.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 28
+theme_override_constants/separation = 22
 
 [node name="Heading" type="Label" parent="Hud/Panel/VBox"]
 layout_mode = 2
@@ -47,7 +47,12 @@ layout_mode = 2
 text = "Meta shards: 0"
 horizontal_alignment = 1
 
+[node name="Progress" type="Label" parent="Hud/Panel/VBox"]
+layout_mode = 2
+text = "Campaign: in progress"
+horizontal_alignment = 1
+
 [node name="StartRun" type="Button" parent="Hud/Panel/VBox"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-text = "Start Corrupted Forest Run"
+text = "Start / Restart Campaign Run"

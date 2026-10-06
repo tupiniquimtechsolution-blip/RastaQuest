@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RoomTemplateData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/roguelike/room_template_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = &"castle_tower"
+title = "Rift Tower"
+enemy_archetypes = Array[String](["ranged", "controller"])
+spawn_positions = Array[Vector2]([Vector2(650, 610), Vector2(980, 610)])
+background_color = Color(0.065, 0.055, 0.09, 1)
+elite_room = false

@@ -1,18 +1,15 @@
 extends RefCounted
 
 const UPGRADE_PATHS: Array[String] = [
-	"res://data/upgrades/raw_power.tres",
-	"res://data/upgrades/aerial_edge.tres",
-	"res://data/upgrades/fleet_step.tres",
-	"res://data/upgrades/sky_blessing.tres",
-	"res://data/upgrades/hard_skin.tres",
-	"res://data/upgrades/long_grace.tres",
-	"res://data/upgrades/storm_spark.tres",
-	"res://data/upgrades/chain_storm.tres",
-	"res://data/upgrades/thunder_fall.tres",
-	"res://data/upgrades/quick_hands.tres",
-	"res://data/upgrades/heavy_axe.tres",
-	"res://data/upgrades/wind_dance.tres",
+	"res://data/upgrades/raw_power.tres", "res://data/upgrades/aerial_edge.tres",
+	"res://data/upgrades/fleet_step.tres", "res://data/upgrades/sky_blessing.tres",
+	"res://data/upgrades/hard_skin.tres", "res://data/upgrades/long_grace.tres",
+	"res://data/upgrades/storm_spark.tres", "res://data/upgrades/chain_storm.tres",
+	"res://data/upgrades/thunder_fall.tres", "res://data/upgrades/quick_hands.tres",
+	"res://data/upgrades/heavy_axe.tres", "res://data/upgrades/wind_dance.tres",
+	"res://data/upgrades/stone_heart.tres", "res://data/upgrades/storm_focus.tres",
+	"res://data/upgrades/sky_breaker.tres", "res://data/upgrades/swift_current.tres",
+	"res://data/upgrades/deep_breath.tres", "res://data/upgrades/road_runner.tres",
 ]
 
 static func load_all() -> Array:

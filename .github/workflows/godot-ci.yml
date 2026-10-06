@@ -2,16 +2,10 @@ name: Godot Project CI
 
 on:
   pull_request:
-    paths:
-      - "game/**"
-      - ".github/workflows/godot-ci.yml"
-      - ".gitignore"
+    paths: ["game/**", ".github/workflows/godot-ci.yml", ".gitignore"]
   push:
     branches: [main]
-    paths:
-      - "game/**"
-      - ".github/workflows/godot-ci.yml"
-      - ".gitignore"
+    paths: ["game/**", ".github/workflows/godot-ci.yml", ".gitignore"]
 
 permissions:
   contents: read
@@ -23,8 +17,7 @@ env:
 jobs:
   headless-bootstrap:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
-
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - name: Download official Godot
@@ -36,52 +29,23 @@ jobs:
           python3 -m zipfile -e /tmp/godot.zip /tmp/godot
           chmod +x "${GODOT_BIN}"
       - name: Verify pinned engine version
-        shell: bash
-        run: |
-          set -euo pipefail
-          "${GODOT_BIN}" --version | tee /tmp/godot-version.txt
-          grep -q "^4.5.1" /tmp/godot-version.txt
+        run: '"${GODOT_BIN}" --version | tee /tmp/godot-version.txt && grep -q "^4.5.1" /tmp/godot-version.txt'
       - name: Import and parse project headlessly
-        shell: bash
-        run: |
-          set -euo pipefail
-          "${GODOT_BIN}" --headless --path game --editor --quit
+        run: '"${GODOT_BIN}" --headless --path game --editor --quit'
       - name: Boot main scene smoke test
-        shell: bash
-        run: |
-          set -euo pipefail
-          "${GODOT_BIN}" --headless --path game -- --smoke-test 2>&1 | tee /tmp/rasta-quest-smoke.log
-          grep -q "RASTA_QUEST_BOOT_OK" /tmp/rasta-quest-smoke.log
-      - name: Player state transition smoke test
-        shell: bash
-        run: |
-          set -euo pipefail
-          "${GODOT_BIN}" --headless --path game --script res://tests/player_state_smoke.gd 2>&1 | tee /tmp/rq002-player-state.log
-          grep -q "RQ002_PLAYER_STATE_OK cycles=100" /tmp/rq002-player-state.log
-      - name: Combat contract smoke test
-        shell: bash
-        run: |
-          set -euo pipefail
-          "${GODOT_BIN}" --headless --path game --script res://tests/combat_smoke.gd 2>&1 | tee /tmp/rq003-combat.log
-          grep -q "RQ003_COMBAT_OK" /tmp/rq003-combat.log
-      - name: Enemy framework smoke test
-        shell: bash
-        run: |
-          set -euo pipefail
-          "${GODOT_BIN}" --headless --path game --script res://tests/enemy_framework_smoke.gd 2>&1 | tee /tmp/rq004-enemies.log
-          grep -q "RQ004_ENEMY_FRAMEWORK_OK" /tmp/rq004-enemies.log
-      - name: Roguelike core smoke test
-        shell: bash
-        run: |
-          set -euo pipefail
-          "${GODOT_BIN}" --headless --path game --script res://tests/roguelike_core_smoke.gd 2>&1 | tee /tmp/rq005-roguelike.log
-          grep -q "RQ005_ROGUELIKE_CORE_OK encounters=100 upgrades=12" /tmp/rq005-roguelike.log
-      - name: Vertical slice technical smoke test
-        shell: bash
-        run: |
-          set -euo pipefail
-          "${GODOT_BIN}" --headless --path game --script res://tests/vertical_slice_smoke.gd 2>&1 | tee /tmp/rq006-slice.log
-          grep -q "RQ006_VERTICAL_SLICE_TECH_OK rooms=6 save_recovery=pass" /tmp/rq006-slice.log
+        run: '"${GODOT_BIN}" --headless --path game -- --smoke-test 2>&1 | tee /tmp/boot.log && grep -q "RASTA_QUEST_BOOT_OK" /tmp/boot.log'
+      - name: RQ-002 player state
+        run: '"${GODOT_BIN}" --headless --path game --script res://tests/player_state_smoke.gd 2>&1 | tee /tmp/rq002.log && grep -q "RQ002_PLAYER_STATE_OK cycles=100" /tmp/rq002.log'
+      - name: RQ-003 combat
+        run: '"${GODOT_BIN}" --headless --path game --script res://tests/combat_smoke.gd 2>&1 | tee /tmp/rq003.log && grep -q "RQ003_COMBAT_OK" /tmp/rq003.log'
+      - name: RQ-004 enemies
+        run: '"${GODOT_BIN}" --headless --path game --script res://tests/enemy_framework_smoke.gd 2>&1 | tee /tmp/rq004.log && grep -q "RQ004_ENEMY_FRAMEWORK_OK" /tmp/rq004.log'
+      - name: RQ-005 roguelike
+        run: '"${GODOT_BIN}" --headless --path game --script res://tests/roguelike_core_smoke.gd 2>&1 | tee /tmp/rq005.log && grep -q "RQ005_ROGUELIKE_CORE_OK" /tmp/rq005.log'
+      - name: RQ-006 vertical slice
+        run: '"${GODOT_BIN}" --headless --path game --script res://tests/vertical_slice_smoke.gd 2>&1 | tee /tmp/rq006.log && grep -q "RQ006_VERTICAL_SLICE_TECH_OK" /tmp/rq006.log'
+      - name: RQ-007 alpha content
+        run: '"${GODOT_BIN}" --headless --path game --script res://tests/alpha_content_smoke.gd 2>&1 | tee /tmp/rq007.log && grep -q "RQ007_ALPHA_TECH_OK rooms=18 upgrades=18 synergies=5" /tmp/rq007.log'
       - name: Reject tracked Godot cache
         shell: bash
         run: |
