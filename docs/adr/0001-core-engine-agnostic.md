@@ -1,32 +1,25 @@
 # ADR 0001 — Portable engine-agnostic gameplay core
 
-- **Status:** Accepted by the current PE execution roadmap; master-source verification pending
-- **Recorded:** 2026-10-06
-- **Source:** `docs/roadmap/PE_EXECUTION_WAVES.md`
+- **Status:** SUPERSEDED by ADR 0002
+- **Originally recorded:** 2026-10-06
+- **Historical source:** former Portal's Edge PE execution roadmap
 
-## Context
+## Historical decision
 
-The available PE roadmap explicitly calls for a gameplay core in pure C++, no Godot or PS3 dependencies inside `core/`, engine/platform integration through adapters, a Godot sandbox, and a separate PS3 feasibility gate.
+The former plan selected a pure C++ gameplay core with Godot and PS3 adapters and treated PS3 feasibility as an early gate.
 
-The repository also contains metadata from an earlier Unity prototype. That historical material conflicts with the newer execution architecture if treated as current guidance.
+## Why it was superseded
 
-The roadmap references Documento Mestre v3.0 and Planejamento 2.0, which are not currently committed.
+A later, more product-specific Rasta Quest source defines:
 
-## Decision
+- Godot 4.5.1;
+- GDScript without .NET;
+- 2D side-scrolling platformer gameplay;
+- Android landscape as primary target;
+- a compact mobile-first scope.
 
-Until superseded by an approved ADR:
+The approved integrated plan prioritizes shipping that product rather than preserving engine portability that would add substantial implementation complexity before game-feel validation.
 
-1. Gameplay/domain logic belongs in a portable C++ core.
-2. Engine/platform APIs must not leak into `core/`.
-3. Godot integration belongs in `adapters/godot/`.
-4. PS3-specific integration belongs in `adapters/ps3/`.
-5. Unity project metadata is legacy evidence, not the active architecture.
-6. Data-driven gameplay definitions belong in `data/` when their owning PE wave begins.
+No historical evidence is deleted; the old PE roadmap remains archived.
 
-## Consequences
-
-This reduces engine lock-in and isolates platform experiments, but adds up-front build and adapter complexity.
-
-## Follow-up
-
-Review this ADR when Documento Mestre v3.0 and Planejamento 2.0 are recovered. Contradictions must be handled by a superseding ADR rather than rewriting history.
+See ADR 0002 for the current decision.

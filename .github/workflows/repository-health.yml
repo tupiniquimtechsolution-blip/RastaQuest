@@ -20,10 +20,21 @@ jobs:
           set -euo pipefail
           test -f README.md
           test -f AGENTS.md
+          test -f docs/product/GAME_CANON.md
+          test -f docs/architecture/TECHNICAL_ARCHITECTURE.md
+          test -f docs/roadmap/MASTER_RELEASE_PLAN.md
+          test -f docs/release/RELEASE_CRITERIA.md
+          test -f docs/production/ART_PIPELINE.md
           test -f docs/status/CURRENT_STATE.md
-          test -f docs/legacy/INDEX.md
-          test -f docs/roadmap/PE_EXECUTION_WAVES.md
-          test -f docs/adr/0001-core-engine-agnostic.md
+          test -f docs/adr/0002-godot-gdscript-android-first.md
+          test -f docs/source/RASTA_QUEST_RAW.md
+          test -f docs/legacy/roadmap/PORTALS_EDGE_PE_EXECUTION_WAVES.md
+
+      - name: Reject raw planning dump at repository root
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -f "🎮 RASTA QUEST.md"
 
       - name: Reject generated project files at repository root
         shell: bash
