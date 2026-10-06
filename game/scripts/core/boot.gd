@@ -1,7 +1,7 @@
 extends Node2D
 
 const InputDefaults = preload("res://scripts/core/input_defaults.gd")
-const WAVE: String = "RQ-006"
+const WAVE: String = "RQ-007"
 
 func _ready() -> void:
 	InputDefaults.ensure_defaults()

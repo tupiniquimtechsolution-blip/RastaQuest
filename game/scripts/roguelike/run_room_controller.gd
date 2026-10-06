@@ -1,10 +1,11 @@
 extends Node2D
 
 const EnemyScene = preload("res://scenes/enemies/EnemyBase.tscn")
-const BossScene = preload("res://scenes/boss/StormWarden.tscn")
+const FinalBossScene = preload("res://scenes/boss/FractureKing.tscn")
 const RoomCatalog = preload("res://scripts/roguelike/room_catalog.gd")
+const LoreCatalog = preload("res://scripts/product/lore_catalog.gd")
 
-const BOSS_DEPTH: int = 5
+const ENCOUNTERS_PER_BIOME: int = 4
 const ENEMY_DATA := {
 	"chaser": preload("res://data/enemies/chaser.tres"),
 	"ranged": preload("res://data/enemies/ranged.tres"),
@@ -17,28 +18,20 @@ const ENEMY_DATA := {
 @onready var portal: Area2D = $Portal
 @onready var backdrop: Polygon2D = $Backdrop
 @onready var reward_panel: Control = $Hud/RewardPanel
-@onready var reward_buttons: Array[Button] = [
-	$Hud/RewardPanel/VBox/Choice1,
-	$Hud/RewardPanel/VBox/Choice2,
-	$Hud/RewardPanel/VBox/Choice3,
-]
+@onready var reward_buttons: Array[Button] = [$Hud/RewardPanel/VBox/Choice1, $Hud/RewardPanel/VBox/Choice2, $Hud/RewardPanel/VBox/Choice3]
 @onready var status_label: Label = $Hud/Status
 
 var _alive_enemies: int = 0
 var _pending_choices: Array = []
-var _forest_rooms: Array = []
-var _boss_active: bool = false
+var _final_boss_active: bool = false
 
 func _ready() -> void:
 	portal.portal_entered.connect(_on_portal_entered)
 	player.get_node("Health").died.connect(_on_player_died)
 	for index in range(reward_buttons.size()):
 		reward_buttons[index].pressed.connect(_on_upgrade_selected.bind(index))
-
-	_forest_rooms = RoomCatalog.load_forest()
 	if not RunManager.state.run_active:
 		RunManager.start_run(424242)
-
 	_apply_run_modifiers()
 	_start_encounter()
 
@@ -47,40 +40,58 @@ func _start_encounter() -> void:
 	portal.set_locked(true)
 	_clear_enemies()
 
-	if RunManager.state.depth >= BOSS_DEPTH:
-		_start_boss()
+	if RunManager.state.biome == &"cave" and RunManager.state.biome_depth >= ENCOUNTERS_PER_BIOME:
+		_start_final_boss()
 		return
 
-	_boss_active = false
-	var room_id := RunManager.state.choose_room(RoomCatalog.ids(_forest_rooms))
-	var room: RoomTemplateData = RoomCatalog.by_id(_forest_rooms, room_id)
+	_final_boss_active = false
+	var rooms := RoomCatalog.load_biome(RunManager.state.biome)
+	var room_id := RunManager.state.choose_room(RoomCatalog.ids(rooms))
+	var room: RoomTemplateData = RoomCatalog.by_id(rooms, room_id)
 	if room == null:
 		status_label.text = "Invalid room template"
 		return
 
 	backdrop.color = room.background_color
 	_alive_enemies = room.enemy_archetypes.size()
-
 	for index in range(room.enemy_archetypes.size()):
 		var enemy := EnemyScene.instantiate()
 		var behavior := room.enemy_archetypes[index]
-		enemy.data = ENEMY_DATA.get(behavior, ENEMY_DATA["chaser"])
+		var base_data: EnemyData = ENEMY_DATA.get(behavior, ENEMY_DATA["chaser"])
+		enemy.data = _biome_variant(base_data, RunManager.state.biome, room.elite_room and index == room.enemy_archetypes.size() - 1)
 		enemy.target_path = NodePath("../../Player")
 		enemy.position = room.spawn_positions[index] if index < room.spawn_positions.size() else Vector2(600 + index * 140, 610)
 		enemy.enemy_defeated.connect(_on_enemy_defeated)
 		$Enemies.add_child(enemy)
 
-	status_label.text = "%s • Seed %d • Encounter %d" % [room.title, RunManager.state.seed_value, RunManager.state.depth + 1]
+	status_label.text = "%s • %s • %s" % [LoreCatalog.title(RunManager.state.biome), room.title, LoreCatalog.intro(RunManager.state.biome)]
 
-func _start_boss() -> void:
-	_boss_active = true
+func _biome_variant(base_data: EnemyData, biome: StringName, elite: bool) -> EnemyData:
+	var result: EnemyData = base_data.duplicate()
+	if biome == &"castle":
+		result.max_health += 1
+		result.move_speed *= 1.08
+		result.attack_cooldown *= 0.92
+	elif biome == &"cave":
+		result.max_health += 2
+		result.move_speed *= 1.14
+		result.attack_cooldown *= 0.84
+	if elite:
+		result.max_health += 2
+		result.move_speed *= 1.15
+		result.encounter_cost += 1
+		result.high_threat = true
+	return result
+
+func _start_final_boss() -> void:
+	_final_boss_active = true
 	_alive_enemies = 1
-	backdrop.color = Color(0.07, 0.04, 0.10, 1.0)
-	var boss := BossScene.instantiate()
-	boss.position = Vector2(850, 585)
-	boss.boss_defeated.connect(_on_boss_defeated)
+	backdrop.color = Color(0.08, 0.035, 0.11, 1.0)
+	var boss := FinalBossScene.instantiate()
+	boss.position = Vector2(850, 580)
+	boss.boss_defeated.connect(_on_final_boss_defeated)
 	$Enemies.add_child(boss)
-	status_label.text = "Storm Warden • Forest guardian"
+	status_label.text = "Fracture King • Source of the collapsing portals"
 
 func _clear_enemies() -> void:
 	for child in $Enemies.get_children():
@@ -92,28 +103,24 @@ func _on_enemy_defeated(_enemy: Node) -> void:
 		portal.set_locked(false)
 		status_label.text = "Encounter clear • Enter the portal"
 
-func _on_boss_defeated() -> void:
+func _on_final_boss_defeated() -> void:
 	_alive_enemies = 0
 	portal.set_locked(false)
-	status_label.text = "Storm Warden defeated • Exit through the portal"
+	status_label.text = "Fracture King defeated • The rift stabilizes"
 
 func _on_portal_entered() -> void:
 	portal.set_locked(true)
-
-	if _boss_active:
-		SaveManager.add_meta_shards(5)
-		SaveManager.set_completion_flag(&"forest_vertical_slice_complete", true)
+	if _final_boss_active:
+		SaveManager.add_meta_shards(20)
+		SaveManager.set_completion_flag(&"campaign_complete", true)
 		RunManager.end_run()
 		get_tree().change_scene_to_file("res://scenes/hub/Hub.tscn")
 		return
 
 	_pending_choices = RunManager.sample_upgrade_choices(3)
 	if _pending_choices.is_empty():
-		RunManager.advance_encounter()
-		player.respawn()
-		_start_encounter()
+		_progress_after_reward()
 		return
-
 	reward_panel.visible = true
 	for index in range(reward_buttons.size()):
 		var button := reward_buttons[index]
@@ -127,9 +134,13 @@ func _on_portal_entered() -> void:
 func _on_upgrade_selected(index: int) -> void:
 	if index < 0 or index >= _pending_choices.size():
 		return
-	var upgrade: UpgradeData = _pending_choices[index]
-	RunManager.apply_upgrade(upgrade)
+	RunManager.apply_upgrade(_pending_choices[index])
+	_progress_after_reward()
+
+func _progress_after_reward() -> void:
 	RunManager.advance_encounter()
+	if RunManager.state.biome_depth >= ENCOUNTERS_PER_BIOME and RunManager.state.biome != &"cave":
+		RunManager.advance_biome()
 	_apply_run_modifiers()
 	player.respawn()
 	_start_encounter()
@@ -146,13 +157,11 @@ func _apply_run_modifiers() -> void:
 	var mods: Dictionary = RunManager.state.modifiers
 	var combat: Node = player.get_node("PlayerCombat")
 	var health: Node = player.get_node("Health")
-
 	player.move_speed = 260.0 + float(mods[&"move_speed"])
 	player.jump_velocity = -(560.0 + float(mods[&"jump_power"]))
 	health.max_health = 5 + int(mods[&"max_health"])
 	health.invulnerability_seconds = 0.35 + float(mods[&"invulnerability"])
 	health.restore_full()
-
 	combat.ground_damage = 1 + int(mods[&"damage"])
 	combat.air_damage = 1 + int(mods[&"damage"]) + int(mods[&"air_damage"])
 	combat.electrical_proc_chance = clampf(0.25 + float(mods[&"proc_chance"]), 0.0, 1.0)

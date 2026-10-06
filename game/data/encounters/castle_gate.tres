@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RoomTemplateData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/roguelike/room_template_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = &"castle_gate"
+title = "Fractured Gate"
+enemy_archetypes = Array[String](["chaser", "ranged"])
+spawn_positions = Array[Vector2]([Vector2(560, 610), Vector2(860, 610)])
+background_color = Color(0.075, 0.07, 0.08, 1)
+elite_room = false

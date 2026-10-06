@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/roguelike/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"road_runner"
+title = "Road Runner"
+description = "+20 movement speed"
+effect_key = &"move_speed"
+effect_value = 20.0
+tags = Array[StringName]([&"mobility", &"power"])

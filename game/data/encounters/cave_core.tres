@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RoomTemplateData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/roguelike/room_template_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = &"cave_core"
+title = "Portal Core"
+enemy_archetypes = Array[String](["charger", "exploder", "controller", "ranged"])
+spawn_positions = Array[Vector2]([Vector2(470, 610), Vector2(680, 610), Vector2(900, 610), Vector2(1090, 610)])
+background_color = Color(0.075, 0.025, 0.12, 1)
+elite_room = true

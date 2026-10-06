@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RoomTemplateData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/roguelike/room_template_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = &"cave_crystal"
+title = "Crystal Fault"
+enemy_archetypes = Array[String](["controller", "ranged", "chaser"])
+spawn_positions = Array[Vector2]([Vector2(500, 610), Vector2(780, 610), Vector2(1060, 610)])
+background_color = Color(0.045, 0.055, 0.10, 1)
+elite_room = false

@@ -5,6 +5,7 @@ const UpgradeCatalog = preload("res://scripts/roguelike/upgrade_catalog.gd")
 
 signal run_started(seed_value: int)
 signal encounter_advanced(depth: int)
+signal biome_advanced(biome: StringName)
 signal upgrade_applied(upgrade_id: StringName)
 signal run_ended
 
@@ -28,9 +29,15 @@ func apply_upgrade(upgrade: UpgradeData) -> bool:
 	return applied
 
 func advance_encounter() -> int:
-	var depth := state.advance_encounter()
-	encounter_advanced.emit(depth)
-	return depth
+	var current_depth := state.advance_encounter()
+	encounter_advanced.emit(current_depth)
+	return current_depth
+
+func advance_biome() -> bool:
+	var advanced := state.advance_biome()
+	if advanced:
+		biome_advanced.emit(state.biome)
+	return advanced
 
 func end_run() -> void:
 	state.reset_after_death()
