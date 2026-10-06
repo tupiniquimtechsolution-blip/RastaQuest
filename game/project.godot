@@ -12,6 +12,7 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 RunManager="*res://scripts/roguelike/run_manager.gd"
 SaveManager="*res://scripts/save/save_manager.gd"
 AudioManager="*res://scripts/core/audio_manager.gd"
+SettingsManager="*res://scripts/core/settings_manager.gd"
 
 [display]
 window/size/viewport_width=1280
@@ -48,3 +49,6 @@ interact={
 "deadzone": 0.5,
 "events": []
 }
+
+[internationalization]
+locale/fallback="en"
