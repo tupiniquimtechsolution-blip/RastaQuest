@@ -24,6 +24,8 @@ func default_data() -> Dictionary:
 			"vibration": true,
 			"music_volume": 1.0,
 			"sfx_volume": 1.0,
+			"touch_scale": 1.0,
+			"locale": "en",
 		},
 		"completion_flags": {},
 	}
@@ -70,6 +72,22 @@ func add_meta_shards(amount: int) -> void:
 
 func meta_shards() -> int:
 	return int(data.get("meta_shards", 0))
+
+func completion_flag(flag: StringName) -> bool:
+	var flags: Dictionary = data.get("completion_flags", {})
+	return bool(flags.get(String(flag), false))
+
+func set_setting(key: StringName, value: Variant) -> void:
+	if data.is_empty():
+		load_save()
+	var settings: Dictionary = data.get("settings", {})
+	settings[String(key)] = value
+	data["settings"] = settings
+	save_current()
+
+func setting(key: StringName, fallback: Variant = null) -> Variant:
+	var settings: Dictionary = data.get("settings", {})
+	return settings.get(String(key), fallback)
 
 func set_completion_flag(flag: StringName, value: bool = true) -> void:
 	var flags: Dictionary = data.get("completion_flags", {})

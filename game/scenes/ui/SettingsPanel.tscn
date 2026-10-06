@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/settings_panel.gd" id="1"]
+
+[node name="SettingsPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 360.0
+offset_top = 90.0
+offset_right = 920.0
+offset_bottom = 650.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 28.0
+offset_right = -28.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Panel/VBox"]
+text = "Settings / Accessibility"
+
+[node name="ScreenShake" type="CheckButton" parent="Panel/VBox"]
+text = "Screen shake"
+
+[node name="ReducedFlashes" type="CheckButton" parent="Panel/VBox"]
+text = "Reduce flashes"
+
+[node name="Vibration" type="CheckButton" parent="Panel/VBox"]
+text = "Vibration"
+
+[node name="MusicLabel" type="Label" parent="Panel/VBox"]
+text = "Music volume"
+[node name="Music" type="HSlider" parent="Panel/VBox"]
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SfxLabel" type="Label" parent="Panel/VBox"]
+text = "SFX volume"
+[node name="Sfx" type="HSlider" parent="Panel/VBox"]
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="TouchLabel" type="Label" parent="Panel/VBox"]
+text = "Touch control scale"
+[node name="TouchScale" type="HSlider" parent="Panel/VBox"]
+min_value = 0.75
+max_value = 1.5
+step = 0.05
+value = 1.0
+
+[node name="LocaleLabel" type="Label" parent="Panel/VBox"]
+text = "Language"
+[node name="Locale" type="OptionButton" parent="Panel/VBox"]

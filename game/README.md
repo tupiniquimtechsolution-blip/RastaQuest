@@ -100,3 +100,8 @@ GitHub Actions run `37461430703` passed headless import/boot and `100` complete 
 ## RQ-007 technical Alpha
 
 The technical Alpha extends the run spine across Forest, Castle and Caves with 18 room templates, 18 upgrades, five synergy rules and a final Rift Sovereign encounter. Production-content acceptance remains separate from this CI-validated graybox milestone.
+
+
+## RQ-008 production-facing systems
+
+The project now has persisted accessibility/settings defaults, onboarding state, EN/pt-BR localization source structure and a narrative/lore contract. Human comprehension, final audio licensing and cultural representation review remain explicit release gates.
