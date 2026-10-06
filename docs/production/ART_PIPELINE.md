@@ -122,3 +122,14 @@ Before final marketing assets and 1.0 release:
 - document approved iconography/terminology in an art/narrative appendix.
 
 This review is a release-quality requirement, not a gameplay-implementation blocker.
+
+
+## 9. Current canonical concept references
+
+Current approved visual-development references live under `assets/concepts/` and are indexed by `assets/concepts/README.md`.
+
+They are **direction references, not runtime assets**. The review that promoted them to canonical concept status is:
+
+- `docs/production/ART_DIRECTION_REVIEW_2026-10-06.md`.
+
+Do not import the full concept boards into the Godot runtime. Rebuild/export only the cleaned production assets required by the game.
