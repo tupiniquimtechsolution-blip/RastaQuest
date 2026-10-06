@@ -67,3 +67,7 @@ RQ-001 CI intentionally validates project import and boot only. A reproducible A
 ## Asset promotion rule
 
 Do not copy files from repository-root `assets/legacy/` directly into the shipping project. Assets enter `game/assets/` only after review for consistency, provenance/license and production readiness.
+
+## RQ-001 CI evidence
+
+GitHub Actions run `37460705294` validated the pinned Godot 4.5.1 engine, clean headless import/parse and main-scene smoke boot on the RQ-001 branch.
