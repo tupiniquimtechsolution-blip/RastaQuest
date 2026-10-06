@@ -92,7 +92,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          "${GODOT_BIN}" --headless --path game --script res://tests/ux_accessibility_smoke.gd 2>&1 | tee /tmp/rq008-ux.log
+          timeout 30s "${GODOT_BIN}" --headless --path game --script res://tests/ux_accessibility_smoke.gd 2>&1 | tee /tmp/rq008-ux.log
           grep -q "RQ008_UX_ACCESSIBILITY_TECH_OK locales=2 settings=7" /tmp/rq008-ux.log
       - name: Reject tracked Godot cache
         shell: bash
