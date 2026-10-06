@@ -1,6 +1,6 @@
 extends SceneTree
 
-const SettingsManagerScript = preload("res://scripts/core/settings_manager.gd")
+const SettingsPolicy = preload("res://scripts/core/settings_policy.gd")
 
 func _init() -> void:
 	if not _test_normalization():
@@ -23,7 +23,7 @@ func _init() -> void:
 	quit(0)
 
 func _test_normalization() -> bool:
-	var normalized := SettingsManagerScript.normalize({
+	var normalized := SettingsPolicy.normalize({
 		"music_volume": 2.0,
 		"sfx_volume": -1.0,
 		"touch_scale": 3.0,
