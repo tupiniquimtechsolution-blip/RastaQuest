@@ -2,8 +2,6 @@
 
 Legacy means “preserved historical input”, not “wrong”.
 
-The pre-normalization snapshot had **no exact duplicate Git blobs**. Similar image variants were retained because they are not byte-identical.
-
 ## Historical GDD
 
 | Archive path | Original filename |
@@ -20,15 +18,23 @@ The pre-normalization snapshot had **no exact duplicate Git blobs**. Similar ima
 
 ## Historical research
 
-`research/01-engine-mobile-research.docx` was originally `1.docx` and contains general engine/mobile development research.
+`research/01-engine-mobile-research.docx` contains general engine/mobile development research.
+
+## Historical roadmap
+
+`roadmap/PORTALS_EDGE_PE_EXECUTION_WAVES.md` preserves the former PE-000→PE-016 C++/Godot/PS3 execution plan. It is superseded for 1.0 by `../roadmap/MASTER_RELEASE_PLAN.md`.
 
 ## Unity prototype metadata
 
 - `unity/PortalAscendant/PortalAscendant.sln`
 - `unity/PortalAscendant/Assembly-CSharp.csproj`
 
-The latter references missing `Assets/Scripts/PlayerMovement.CS`; these files do not constitute a complete Unity project.
+These generated files reference missing Unity source and do not constitute a complete Unity project.
+
+## Raw current-source archive vs. legacy
+
+The large uploaded Rasta Quest working document is **not** stored here. It lives at `../source/RASTA_QUEST_RAW.md` because it directly informed the current canon, although it is raw/non-canonical.
 
 ## Art
 
-Historical art is grouped under `assets/legacy/` into character sources, processed variants, frame candidates, character concepts, environments and visual references.
+Historical visual material remains under repository-root `assets/legacy/`. Similar source/processed variants are intentionally retained unless a production review proves one can be discarded safely.

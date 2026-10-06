@@ -1,92 +1,75 @@
-# Current State — Evidence-backed audit
+# Current State — Rasta Quest
 
-**Audit date:** 2026-10-06  
-**Repository:** `tupiniquimtechsolution-blip/RastaQuest`  
-**Audited branch:** `main`
+**Date:** 2026-10-06  
+**Repository:** `tupiniquimtechsolution-blip/RastaQuest`
 
 ## Executive status
 
-- **Phase:** Pre-production / PE-000 normalization
-- **Playable build committed:** No
-- **Current implementation baseline committed:** No
-- **Historical design material:** Yes
-- **Current PE execution roadmap:** Yes
-- **Complete canonical master documentation:** No
+- **Product:** Rasta Quest
+- **Phase:** approved pre-production plan
+- **Active wave:** RQ-001 next
+- **Playable implementation committed:** No
+- **Engine decision:** Godot 4.5.1 / GDScript
+- **Primary target:** Android landscape
+- **Perspective:** 2D side-scrolling action-platformer
+- **Roguelike structure:** portal-linked runs + upgrades + light meta progression
 
-## Duplicate audit
+## What changed after the RASTA QUEST source upload
 
-The pre-normalization repository contained 50 blobs. Exact duplicate detection by Git blob SHA found **zero exact duplicate groups**.
+The uploaded raw document materially resolved the previous ambiguity around product direction. After full structural reading of the 4,830-line source document (including its embedded image payloads), the approved canon now favors the recurring explicit Rasta Quest direction:
 
-Several images are derivative/export variants (original vs. Photoroom/remove-background versions). They are grouped, not deleted, because their production role is not yet documented.
+- Godot 4.5.1;
+- GDScript/no .NET;
+- Android;
+- platformer movement;
+- stable baseline animation API;
+- axe/Xangô-inspired electrical identity;
+- forest/castle/cave content spine;
+- portal roguelike loop;
+- light meta progression.
 
-## Critical findings
+The source contains accumulated working material and later expansions, so it is preserved as raw evidence rather than treated line-for-line as a build specification.
 
-### Upload shape
+## Canonical decisions
 
-The 2026-10-06 upload commit added only:
+- Rasta Quest is the current product name.
+- Portal's Edge: Last Stand is design lineage/legacy.
+- PortalAscendant is an old Unity prototype codename.
+- ADR 0001 is superseded by ADR 0002.
+- C++ portable core is not a 1.0 requirement.
+- PS3 is not a 1.0 gate.
+- monetization/live-service systems are deferred from gameplay implementation.
+- three V1 biomes: forest, castle, cave.
+- one final production boss for 1.0.
+- historical extra dimensions are post-1.0 candidates.
 
-- `Assembly-CSharp.csproj`
-- `PortalAscendant.sln`
-- `portals-edge-ondas-PE-completo.md`
+## Repository source classification
 
-No `PortalAscendant/` directory exists in the audited Git tree.
+### Canonical
 
-### Incomplete Unity prototype metadata
+- `docs/product/GAME_CANON.md`
+- `docs/roadmap/MASTER_RELEASE_PLAN.md`
+- `docs/architecture/TECHNICAL_ARCHITECTURE.md`
+- `docs/adr/0002-godot-gdscript-android-first.md`
+- `docs/release/RELEASE_CRITERIA.md`
 
-The generated `Assembly-CSharp.csproj` identifies **Unity 6000.0.45f1** and references `Assets/Scripts/PlayerMovement.CS`. That source file is absent, as are the normal Unity `Assets/`, `Packages/` and `ProjectSettings/` directories.
+### Raw evidence
 
-The committed Unity files therefore do not form a recoverable Unity project by themselves.
+- `docs/source/RASTA_QUEST_RAW.md`
 
-### Architecture conflict
+### Legacy
 
-The available PE roadmap specifies a portable C++ core, Godot adapter and PS3 adapter/feasibility gate. Unity metadata is classified as legacy unless a newer approved source says otherwise.
+- DOCX GDD/research files;
+- Portal's Edge PE roadmap;
+- Unity/PortalAscendant generated metadata;
+- old concept/sprite exports under `assets/legacy/`.
 
-### Missing referenced canonical sources
+## Remaining non-blocking historical recovery
 
-The roadmap references **Documento Mestre v3.0** and **Planejamento 2.0**. Neither is currently present under those identities.
+Documento Mestre v3.0 and Planejamento 2.0 referenced by the old PE roadmap are still absent. They are useful for archive completeness but are **no longer implementation blockers** because the owner approved the new integrated canonical plan.
 
-### Naming conflict
+## Next action
 
-Three identities coexist:
+Start **RQ-001 — Godot project bootstrap & CI** exactly as defined in `docs/roadmap/MASTER_RELEASE_PLAN.md`.
 
-- repository: **RastaQuest**
-- historical GDD: **Portal's Edge: Last Stand**
-- old Unity prototype: **PortalAscendant**
-
-No current source explicitly reconciles them.
-
-### Platform strategy
-
-Historical documents emphasize mobile. The PE roadmap emphasizes PC first, a PS3 feasibility gate, and later QA including Android/iOS. Release priority requires a canonical decision.
-
-## Authority classification
-
-### Current / higher authority available
-- `AGENTS.md`
-- `docs/roadmap/PE_EXECUTION_WAVES.md`
-- approved ADRs
-
-### Legacy / preserved
-- original DOCX GDD files
-- engine/mobile research DOCX
-- concept art and sprite experiments
-- Unity-generated solution/project metadata
-
-## PE-000 status
-
-- [x] Preserve legacy material without destructive loss
-- [x] Separate current roadmap from legacy material
-- [x] Create legacy index
-- [x] Record ADR 0001
-- [x] Establish repository hygiene and contribution policy
-- [x] Add structural CI
-- [ ] Recover Documento Mestre v3.0
-- [ ] Recover Planejamento 2.0
-- [ ] Confirm complete intended source upload
-- [ ] Reconcile canonical product name
-- [ ] Verify exact target directory tree from the missing master source
-- [ ] Establish a real build gate when an implementation skeleton exists
-
-## Gate
-
-Do not start PE-001 as though the repository were complete until missing master sources are recovered or explicitly retired.
+No content-heavy implementation should begin before the project skeleton and reproducible CI/import path are green.
