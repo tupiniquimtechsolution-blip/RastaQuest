@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://scenes/ui/TouchControls.tscn" id="2_touch"]
+[ext_resource type="Script" path="res://scripts/player/death_plane.gd" id="3_death"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(1400, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_platform"]
+size = Vector2(260, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_death"]
+size = Vector2(2200, 120)
+
+[node name="PlayerFeelRoom" type="Node2D"]
+
+[node name="Backdrop" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720)
+color = Color(0.035, 0.043, 0.039, 1)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(640, 680)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="Visual" type="Polygon2D" parent="Ground"]
+polygon = PackedVector2Array(-700, -40, 700, -40, 700, 40, -700, 40)
+color = Color(0.19, 0.23, 0.20, 1)
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(640, 520)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Visual" type="Polygon2D" parent="Platform"]
+polygon = PackedVector2Array(-130, -14, 130, -14, 130, 14, -130, 14)
+color = Color(0.29, 0.34, 0.28, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(220, 600)
+
+[node name="DeathPlane" type="Area2D" parent="."]
+position = Vector2(640, 850)
+script = ExtResource("3_death")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathPlane"]
+shape = SubResource("RectangleShape2D_death")
+
+[node name="TouchControls" parent="." instance=ExtResource("2_touch")]
+
+[node name="Instructions" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="Instructions"]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 640.0
+offset_bottom = 92.0
+text = "RQ-002 PLAYER FEEL\nA/D or arrows • Space to jump • Gamepad/touch supported"
