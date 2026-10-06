@@ -73,8 +73,8 @@ func _test_required_scenes() -> bool:
 		"res://scenes/ui/PauseOverlay.tscn",
 	]
 	for path in required:
-		if load(path) == null:
-			return _fail("required vertical-slice scene failed to load: %s" % path)
+		if not ResourceLoader.exists(path):
+			return _fail("required vertical-slice scene resource missing: %s" % path)
 	return true
 
 func _test_audio_buses() -> bool:

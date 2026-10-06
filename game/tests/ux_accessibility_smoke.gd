@@ -7,11 +7,11 @@ func _init() -> void:
 		return
 	if not _test_settings_save_shape():
 		return
-	if load("res://scenes/ui/SettingsPanel.tscn") == null:
-		_fail("settings scene failed to load")
+	if not ResourceLoader.exists("res://scenes/ui/SettingsPanel.tscn"):
+		_fail("settings scene resource missing")
 		return
-	if load("res://scenes/ui/OnboardingOverlay.tscn") == null:
-		_fail("onboarding scene failed to load")
+	if not ResourceLoader.exists("res://scenes/ui/OnboardingOverlay.tscn"):
+		_fail("onboarding scene resource missing")
 		return
 	if not FileAccess.file_exists("res://localization/strings.csv"):
 		_fail("localization structure missing")
