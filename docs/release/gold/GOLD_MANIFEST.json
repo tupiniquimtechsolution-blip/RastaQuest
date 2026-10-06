@@ -1,0 +1,27 @@
+{
+  "product": "Rasta Quest",
+  "decision": "NO-GO",
+  "decision_date": "2026-10-06",
+  "technical_rc_source_commit": "2c08f6be94e02402511021f4e96500b85a182235",
+  "rollback_source_commit": "2c08f6be94e02402511021f4e96500b85a182235",
+  "version": "1.0.0-rc.1",
+  "save_schema": 2,
+  "application_id": "com.tupiniquimtechsolution.rastaquest",
+  "engine": "Godot 4.5.1",
+  "architecture": "arm64-v8a",
+  "technical_debug_apk_sha256": "631995b2db3b5940b6a8a03d33949fdd47a146efae0d44f2eb99acf8db4174dc",
+  "technical_debug_workflow_run": 37479496762,
+  "technical_debug_signing": "ephemeral-debug-only",
+  "release_signing_ready": false,
+  "public_distribution_allowed": false,
+  "blocking_categories": [
+    "physical-device performance and lifecycle",
+    "external playtest acceptance",
+    "combat and run feel acceptance",
+    "production art/audio and licensing",
+    "cultural representation review",
+    "production signing",
+    "signed release clean-install validation",
+    "store/privacy/content-rating review"
+  ]
+}
