@@ -8,6 +8,9 @@ config/version="0.1.0-dev"
 run/main_scene="res://scenes/main/Main.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
+[autoload]
+RunManager="*res://scripts/roguelike/run_manager.gd"
+
 [display]
 window/size/viewport_width=1280
 window/size/viewport_height=720
