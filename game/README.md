@@ -91,3 +91,7 @@ godot --headless --path game --script res://tests/player_state_smoke.gd
 ```
 
 This exercises 100 complete Idle → Run → Jump → Fall → Idle cycles and validates that development InputMap defaults exist. Physical Android FPS and human feel remain manual RQ-002 gates.
+
+## RQ-002 CI evidence
+
+GitHub Actions run `37461430703` passed headless import/boot and `100` complete player movement-state cycles. Device FPS and human game-feel checks are intentionally not represented by CI.
