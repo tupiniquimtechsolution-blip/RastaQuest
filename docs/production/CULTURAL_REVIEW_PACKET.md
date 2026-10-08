@@ -4,6 +4,8 @@ Date: 2026-10-08. Status: prepared questions and evidence protocol, NOT cultural
 
 Scope: canonical character bible, animation board, enemy roster and future marketing copies. Reference IDs and paths are in assets/concepts/README.md. No sacred symbol is authorized merely because a generated board includes it. This packet makes no factual claim about religious permissions or ownership.
 
+Owner decision update: Rodrigo selected himself as reviewer and explicitly approved the materials presented in this chat. See OWNER_APPROVAL_RECORD_2026-10-08.md and Issue #38 comment 6060196375. The table below preserves the original question/evidence protocol; presented-material owner acceptance is recorded separately. No detailed findings/rationale or expert/community endorsement were supplied. Final marketing and future final art versions remain pending; #38 remains open.
+
 | Item | Question for knowledgeable reviewer | Evidence required | Status |
 |---|---|---|---|
 | Rastafari identity | Does character design/text reduce identity to colors, hair or stereotypes? What should change? | annotated sheet region, intended identity text, reviewer rationale | pending |

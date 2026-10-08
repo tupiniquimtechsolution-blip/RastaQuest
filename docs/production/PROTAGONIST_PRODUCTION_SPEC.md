@@ -1,6 +1,6 @@
 # Protagonist production specification — issue #35
 
-Date: 2026-10-08. Status: proposed authoring contract, pending model lock and visual QA. No final sprite or human acceptance is supplied by this document.
+Date: 2026-10-08. Status: frame/body metrics approved by Rodrigo; corrected visual model, palette and visual QA pending. Approval evidence: OWNER_APPROVAL_RECORD_2026-10-08.md. No final sprite is supplied by this document.
 
 ## Grounded integration contract
 
@@ -8,7 +8,7 @@ Source direction: `assets/concepts/characters/protagonist/rq-protagonist-charact
 
 `game/scenes/player/Player.tscn` currently has a 28x52 collider, centered on the player origin; feet are local y=26. Visual is Node2D with placeholder polygons. `player_controller.gd` emits movement_state_changed; player_combat.gd emits attack_state_changed and electrical_proc_triggered. There is no final sprite player here. Preserve collider and combat geometry during first art integration.
 
-## Proposed model v0.1 (not approved)
+## Model v0.1 — approved metrics, visual details pending
 
 One authored pixel = one world unit at native 1280x720. Transparent 128x128 frame, centered origin (64,64), resting feet y=90; 52px resting body height, <=32px body width excluding hair/axe. No per-frame scaling. Record airborne feet displacement relative to the same origin rather than aligning jumps to a false floor.
 
@@ -39,4 +39,4 @@ Counts are starting budgets, not accepted final clips. Ground/air attack window 
 
 Use ART_PIPELINE naming and keep layered editable sources outside game/assets. Record frame bounds, origin, feet/contact markers, grip, blade centers and duration per frame in an accompanying manifest. Verify all ten exact clip names, transparent edges, rigid proportions, both facings and no weapon/body intersection. Test at native 1280x720 and reduced 640x360 with nearest-neighbor plus actual Android display evidence, including touch UI and overlapping enemies. Screenshots, device, scale and reviewer/date required; no test performed yet.
 
-Next: artist builds one neutral model and axe study; owner locks dimensions/palette; cultural reviewer resolves #38; rebuild clips; integrate separately; run Godot checks and phone QA. Issue remains open until production evidence satisfies every acceptance item. Provenance and license remain unresolved: record source author/tool/date/terms evidence for each exported asset, never inherit license from reference presence.
+Next: artist builds one corrected neutral model and axe study at approved frame/body metrics; owner locks palette and visual proportions; rebuild clips; integrate separately; run Godot checks and phone QA. Rodrigo approved the presented cultural materials; final versions and marketing still require review under #38. Issue remains open until production evidence satisfies every acceptance item. Provenance and license remain unresolved: record source author/tool/date/terms evidence for each exported asset, never inherit license from reference presence.

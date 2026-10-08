@@ -1,5 +1,9 @@
 # Execution ledger — Agenor tasks — 2026-10-08
 
+## Later owner decisions (supersede pending-answer statements below)
+
+Rodrigo approved frame 128x128, body 52px and tile 32x32 metrics, selected himself as cultural reviewer and approved the presented cultural materials. See OWNER_APPROVAL_RECORD_2026-10-08.md for exact scope and version evidence. TASK-119 continues with corrected model/palette authoring; TASK-120 and TASK-121 are ready for the next authoring step without a metric-approval block. Final marketing/art, technical export, Android QA and rights gates remain. PR #44 integrated into the #42 branch; combined integration awaits fresh CI. Earlier sections below preserve the initial execution evidence.
+
 ## TASK-118 — completed and revalidated
 
 PR #41 merged; Issue #40 closed. Checked root absence and SHA equality of four surviving canonical PNGs against original blobs at 11175f76. No second deletion performed.
