@@ -103,6 +103,7 @@ jobs:
           run_test alpha_campaign_smoke.gd 'RQ007_ALPHA_TECH_OK rooms=18 upgrades=18 biomes=3'
           run_test ux_accessibility_smoke.gd 'RQ008_UX_ACCESSIBILITY_TECH_OK locales=2 settings=7'
           run_test beta_hardening_smoke.gd 'RQ009_BETA_TECH_OK schema=2 rooms=18 upgrades=18'
+          run_test save_validation_smoke.gd 'RQ_SAVE_VALIDATION_OK'
           run_test release_readiness_smoke.gd 'RQ010_RC_PREP_OK version=1.0.0-rc.1 arm64=1'
 
       - name: Confirm NO-GO is enforced
