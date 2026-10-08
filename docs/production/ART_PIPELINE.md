@@ -133,3 +133,15 @@ They are **direction references, not runtime assets**. The review that promoted 
 - `docs/production/ART_DIRECTION_REVIEW_2026-10-06.md`.
 
 Do not import the full concept boards into the Godot runtime. Rebuild/export only the cleaned production assets required by the game.
+
+## 10. Production specification drafts (2026-10-08)
+
+These documents advance issues #35–#38 without supplying final art or declaring human acceptance:
+
+- [Protagonist production spec](PROTAGONIST_PRODUCTION_SPEC.md): candidate metrics/palette, ten clip contracts, current combat timing.
+- [Environment kit spec](ENVIRONMENT_KIT_SPEC.md): candidate tile/prop metrics, Forest inventory and proof-room protocol.
+- [Enemy production spec](ENEMY_PRODUCTION_SPEC.md): runtime timing map, first Chaser packet and integration prerequisites.
+- [Cultural review packet](CULTURAL_REVIEW_PACKET.md): human consultation questions and decision evidence.
+- [Verification record](ART_PRODUCTION_PROGRESS_2026-10-08.md): cleanup hashes, checks, risks and gates.
+
+Candidate metrics require model lock and phone-scale evidence before production approval. Issues remain open; no license or cultural clearance follows from these drafts.
