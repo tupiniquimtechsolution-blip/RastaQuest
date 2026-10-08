@@ -1,0 +1,50 @@
+[
+  {
+    "file": "assets\\production_drafts\\2026-10-08\\protagonist-neutral-study-v01.png",
+    "sha256": "d5f62bcfec8023cf6138c128acfe563ded050dda2a50c7dba298b77f5dbb0d1e",
+    "size": [
+      1376,
+      1143
+    ],
+    "alpha_bbox": [
+      33,
+      17,
+      1352,
+      1143
+    ],
+    "visible_colors": 118229,
+    "partial_alpha": true,
+    "errors": [
+      "frame_size_mismatch",
+      "palette_exceeds_limit",
+      "partial_alpha_requires_cleanup"
+    ],
+    "technical_export_pass": false,
+    "human_acceptance": "pending",
+    "rights_clearance": "pending"
+  },
+  {
+    "file": "assets\\production_drafts\\2026-10-08\\chaser-neutral-study-v01.png",
+    "sha256": "ed8e62f72b88f2516e4bd33b54193c6d427c8b2c1a2f6fb67b7c8de435d59758",
+    "size": [
+      1176,
+      1338
+    ],
+    "alpha_bbox": [
+      0,
+      19,
+      1158,
+      1338
+    ],
+    "visible_colors": 118944,
+    "partial_alpha": true,
+    "errors": [
+      "frame_size_mismatch",
+      "palette_exceeds_limit",
+      "partial_alpha_requires_cleanup"
+    ],
+    "technical_export_pass": false,
+    "human_acceptance": "pending",
+    "rights_clearance": "pending"
+  }
+]

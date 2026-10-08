@@ -1,6 +1,8 @@
 extends Node
 
 const CURRENT_SCHEMA_VERSION: int = 2
+const MAX_SAVE_BYTES: int = 1048576
+const SettingsPolicy = preload("res://scripts/core/settings_policy.gd")
 const DEFAULT_SETTINGS := {
 	"screen_shake": true,
 	"reduced_flashes": false,
@@ -34,6 +36,8 @@ func default_data() -> Dictionary:
 static func migrate_data(candidate: Dictionary) -> Dictionary:
 	if candidate.is_empty():
 		return {}
+	if not _valid_shape(candidate):
+		return {}
 
 	var version := int(candidate.get("schema_version", -1))
 	if version < 1 or version > CURRENT_SCHEMA_VERSION:
@@ -62,7 +66,46 @@ static func migrate_data(candidate: Dictionary) -> Dictionary:
 				settings[key] = DEFAULT_SETTINGS[key]
 		migrated["settings"] = settings
 
+	migrated["settings"] = SettingsPolicy.normalize(migrated["settings"])
 	return migrated
+
+static func _valid_shape(candidate: Dictionary) -> bool:
+	var version: Variant = candidate.get("schema_version")
+	if not _integer_number(version):
+		return false
+	var shards: Variant = candidate.get("meta_shards", 0)
+	if not _integer_number(shards) or float(shards) < 0.0:
+		return false
+	var settings: Variant = candidate.get("settings", {})
+	if typeof(settings) != TYPE_DICTIONARY:
+		return false
+	for key in ["screen_shake", "reduced_flashes", "vibration"]:
+		if settings.has(key) and typeof(settings[key]) != TYPE_BOOL:
+			return false
+	for key in ["music_volume", "sfx_volume", "touch_scale"]:
+		if settings.has(key) and not _finite_number(settings[key]):
+			return false
+	if settings.has("locale") and typeof(settings["locale"]) != TYPE_STRING:
+		return false
+	# Existing migration repairs invalid unlock/flag containers. Validate entries
+	# only when the container has the expected type, preserving that behavior.
+	var unlocks: Variant = candidate.get("unlocks", [])
+	if typeof(unlocks) == TYPE_ARRAY:
+		for item: Variant in unlocks:
+			if typeof(item) != TYPE_STRING:
+				return false
+	var flags: Variant = candidate.get("completion_flags", {})
+	if typeof(flags) == TYPE_DICTIONARY:
+		for value: Variant in flags.values():
+			if typeof(value) != TYPE_BOOL:
+				return false
+	return true
+
+static func _finite_number(value: Variant) -> bool:
+	return typeof(value) in [TYPE_INT, TYPE_FLOAT] and is_finite(float(value))
+
+static func _integer_number(value: Variant) -> bool:
+	return _finite_number(value) and float(value) == floorf(float(value)) and absf(float(value)) < 9223372036854775808.0
 
 func load_save() -> Dictionary:
 	var raw_primary := _read_raw(save_path)
@@ -141,7 +184,10 @@ func set_completion_flag(flag: StringName, value: bool = true) -> void:
 func _read_raw(path: String) -> Dictionary:
 	if not FileAccess.file_exists(path):
 		return {}
-	var text := FileAccess.get_file_as_string(path)
+	var file := FileAccess.open(path, FileAccess.READ)
+	if file == null or file.get_length() > MAX_SAVE_BYTES:
+		return {}
+	var text := file.get_as_text()
 	var parsed = JSON.parse_string(text)
 	if typeof(parsed) != TYPE_DICTIONARY:
 		return {}
