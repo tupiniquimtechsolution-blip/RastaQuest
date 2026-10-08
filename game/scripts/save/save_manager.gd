@@ -114,8 +114,8 @@ func load_save() -> Dictionary:
 		var migrated := int(raw_primary.get("schema_version", -1)) != CURRENT_SCHEMA_VERSION
 		data = primary
 		if migrated:
-			_write_backup_raw(raw_primary)
-			save_current(true)
+			if _write_backup_raw(raw_primary):
+				save_current(true)
 		return data
 
 	var raw_backup := _read_raw(backup_path)
@@ -132,22 +132,23 @@ func load_save() -> Dictionary:
 func save_current(skip_backup: bool = false) -> bool:
 	if data.is_empty():
 		data = default_data()
-	data = migrate_data(data)
-	if data.is_empty():
-		data = default_data()
-	data["schema_version"] = CURRENT_SCHEMA_VERSION
-
-	if not skip_backup and FileAccess.file_exists(save_path):
-		var existing := FileAccess.get_file_as_string(save_path)
-		if not existing.is_empty():
-			var backup_file := FileAccess.open(backup_path, FileAccess.WRITE)
-			if backup_file != null:
-				backup_file.store_string(existing)
-
-	var file := FileAccess.open(save_path, FileAccess.WRITE)
-	if file == null:
+	var candidate := migrate_data(data)
+	if candidate.is_empty() or save_path == backup_path:
 		return false
-	file.store_string(JSON.stringify(data))
+	candidate["schema_version"] = CURRENT_SCHEMA_VERSION
+	# Prepare and verify the complete replacement before touching either live file.
+	if not _stage_save(save_path, candidate):
+		return false
+	var existing := _read_raw(save_path)
+	if not migrate_data(existing).is_empty():
+		# Even skip_backup must retain a recovery copy when one does not exist.
+		# Godot's Windows rename removes an existing destination before moving.
+		if not skip_backup or migrate_data(_read_raw(backup_path)).is_empty():
+			if not _write_backup_raw(existing):
+				return false
+	if _commit_staged(save_path + ".tmp", save_path) != OK:
+		return false
+	data = candidate
 	return true
 
 func add_meta_shards(amount: int) -> void:
@@ -188,14 +189,30 @@ func _read_raw(path: String) -> Dictionary:
 	if file == null or file.get_length() > MAX_SAVE_BYTES:
 		return {}
 	var text := file.get_as_text()
-	var parsed = JSON.parse_string(text)
-	if typeof(parsed) != TYPE_DICTIONARY:
+	var parser := JSON.new()
+	if parser.parse(text) != OK or typeof(parser.data) != TYPE_DICTIONARY:
 		return {}
-	return parsed
+	return parser.data
 
-func _write_backup_raw(candidate: Dictionary) -> void:
-	if candidate.is_empty():
-		return
-	var file := FileAccess.open(backup_path, FileAccess.WRITE)
-	if file != null:
-		file.store_string(JSON.stringify(candidate))
+func _write_backup_raw(candidate: Dictionary) -> bool:
+	if migrate_data(candidate).is_empty() or not _stage_save(backup_path, candidate):
+		return false
+	return _commit_staged(backup_path + ".tmp", backup_path) == OK
+
+func _stage_save(path: String, candidate: Dictionary) -> bool:
+	var text := JSON.stringify(candidate)
+	if text.to_utf8_buffer().size() > MAX_SAVE_BYTES:
+		return false
+	var file := FileAccess.open(path + ".tmp", FileAccess.WRITE)
+	if file == null:
+		return false
+	file.store_string(text)
+	file.flush()
+	var error := file.get_error()
+	file.close()
+	if error != OK:
+		return false
+	return FileAccess.get_file_as_string(path + ".tmp") == text and not migrate_data(_read_raw(path + ".tmp")).is_empty()
+
+func _commit_staged(source: String, destination: String) -> Error:
+	return DirAccess.rename_absolute(ProjectSettings.globalize_path(source), ProjectSettings.globalize_path(destination))

@@ -106,6 +106,12 @@ jobs:
           set -euo pipefail
           timeout 30s "${GODOT_BIN}" --headless --path game --script res://tests/save_validation_smoke.gd 2>&1 | tee /tmp/rq-save-validation.log
           grep -q "RQ_SAVE_VALIDATION_OK" /tmp/rq-save-validation.log
+      - name: Staged save and previous-good recovery
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout 30s "${GODOT_BIN}" --headless --path game --script res://tests/save_atomic_smoke.gd 2>&1 | tee /tmp/rq-save-atomic.log
+          grep -q "RQ_SAVE_ATOMIC_OK" /tmp/rq-save-atomic.log
       - name: Release candidate preparation smoke test
         shell: bash
         run: |
