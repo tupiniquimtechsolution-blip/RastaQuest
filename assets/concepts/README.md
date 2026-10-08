@@ -21,4 +21,4 @@ A concept becomes a production/shipping asset only after:
 6. cultural review where applicable;
 7. explicit promotion into `game/assets/`.
 
-The original root uploads are retained temporarily to preserve the source commit exactly. They may be removed from the root only after explicit deletion approval under `AGENTS.md`.
+The four identical root uploads were removed after explicit owner authorization in PR #41 (Issue #40). Canonical copies remain unchanged; original uploads are recoverable from commit `11175f76a5dab340d3c4e80bfa1d1a63f52077fe`. This cleanup does not promote concepts to runtime assets.
