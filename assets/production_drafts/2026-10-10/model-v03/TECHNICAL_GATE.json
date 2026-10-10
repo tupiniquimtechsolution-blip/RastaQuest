@@ -50,7 +50,7 @@
         "partial_alpha_requires_cleanup"
       ],
       "technical_export_pass": false,
-      "human_acceptance": "pending",
+      "human_acceptance": "visual direction approved by Rodrigo 2026-10-10; native export pending",
       "rights_clearance": "pending"
     }
   ],
@@ -64,9 +64,19 @@
       "sha256": "3dc92810b1551bd994a67edd15c4c81d2678ece371f196f542af82b0fa7ba730"
     }
   ],
-  "human_visual_acceptance": "pending",
+  "human_visual_acceptance": "approved by Rodrigo 2026-10-10; visual direction only",
   "cultural_review_of_new_outputs": "pending Rodrigo",
   "rights_clearance": "pending",
   "native_frame_and_body_metrics": "not achieved; no native export",
-  "runtime_integration": false
+  "runtime_integration": false,
+  "visual_approval": {
+    "reviewer": "Rodrigo",
+    "date": "2026-10-10",
+    "statement": "Gostei do visual, está aprovado",
+    "file": "protagonist-neutral-study-v03.png",
+    "sha256": "152940d341a63fa65b64c8043675b4c63bfd5a19021e4f109c12fc0352279edd",
+    "presented_commit": "174ae8524be78526da1cb4e9af2495ed93837e3d",
+    "record": "OWNER_VISUAL_APPROVAL.md",
+    "scope": "visual direction; native export pending"
+  }
 }

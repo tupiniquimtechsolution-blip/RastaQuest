@@ -1,10 +1,12 @@
 # Protagonist production specification — issue #35
 
-Date: 2026-10-08. Status: frame/body metrics approved by Rodrigo; corrected visual model, palette and visual QA pending. Approval evidence: OWNER_APPROVAL_RECORD_2026-10-08.md. No final sprite is supplied by this document.
+Date: 2026-10-08; visual direction updated 2026-10-10. Status: frame/body metrics and protagonist v03 visual direction approved by Rodrigo; native model, exact palette and in-game visual QA pending. Approval evidence: OWNER_APPROVAL_RECORD_2026-10-08.md and assets/production_drafts/2026-10-10/model-v03/OWNER_VISUAL_APPROVAL.md. No final sprite is supplied by this document.
 
 ## Grounded integration contract
 
 Source direction: `assets/concepts/characters/protagonist/rq-protagonist-character-bible-v01.png` and `rq-protagonist-animation-board-v01.png`; see ART_DIRECTION_REVIEW_2026-10-06.md. Miniatures must be rebuilt, never cropped as runtime frames.
+
+Selected visual reference: `assets/production_drafts/2026-10-10/model-v03/protagonist-neutral-study-v03.png`, SHA-256 `152940d341a63fa65b64c8043675b4c63bfd5a19021e4f109c12fc0352279edd`, approved by Rodrigo with “Gostei do visual, está aprovado” after PR #47 was presented. Preserve its face/body volume, clothing, hair mass and axe silhouette in the native model. The reference itself fails native export requirements; approval does not establish exact palette, geometry, cultural/rights clearance or device QA.
 
 `game/scenes/player/Player.tscn` currently has a 28x52 collider, centered on the player origin; feet are local y=26. Visual is Node2D with placeholder polygons. `player_controller.gd` emits movement_state_changed; player_combat.gd emits attack_state_changed and electrical_proc_triggered. There is no final sprite player here. Preserve collider and combat geometry during first art integration.
 
