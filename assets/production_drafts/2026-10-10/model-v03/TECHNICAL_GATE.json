@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-10",
+  "base_commit": "22dce25b5812427d9a15f06595dd087801a640a8",
+  "source_batch_commit": "27acb4fe8b07111fb7150bb244a8e03288564fa7",
+  "tool": "built-in ImageGen",
+  "classification": "AUTHORING_STUDY",
+  "generated_outputs": [
+    {
+      "file": "assets\\production_drafts\\2026-10-10\\model-v03\\protagonist-neutral-attempt-01.png",
+      "sha256": "a25b3807a7844d7975da99a29bd224afed564045bff62015ae2aea13f849d35a",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_bbox": [
+        0,
+        17,
+        1254,
+        1254
+      ],
+      "visible_colors": 128995,
+      "partial_alpha": true,
+      "errors": [
+        "frame_size_mismatch",
+        "palette_exceeds_limit",
+        "partial_alpha_requires_cleanup"
+      ],
+      "technical_export_pass": false,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "assets\\production_drafts\\2026-10-10\\model-v03\\protagonist-neutral-study-v03.png",
+      "sha256": "152940d341a63fa65b64c8043675b4c63bfd5a19021e4f109c12fc0352279edd",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_bbox": [
+        0,
+        19,
+        1224,
+        1254
+      ],
+      "visible_colors": 105111,
+      "partial_alpha": true,
+      "errors": [
+        "frame_size_mismatch",
+        "palette_exceeds_limit",
+        "partial_alpha_requires_cleanup"
+      ],
+      "technical_export_pass": false,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    }
+  ],
+  "reference_copies": [
+    {
+      "file": "reference-uploaded-idle.png",
+      "sha256": "cbe4182375e6ddcea61e0af146ac7ea9b89c8e054c74d08ef402a0a79efb32e1"
+    },
+    {
+      "file": "reference-portal-study.png",
+      "sha256": "3dc92810b1551bd994a67edd15c4c81d2678ece371f196f542af82b0fa7ba730"
+    }
+  ],
+  "human_visual_acceptance": "pending",
+  "cultural_review_of_new_outputs": "pending Rodrigo",
+  "rights_clearance": "pending",
+  "native_frame_and_body_metrics": "not achieved; no native export",
+  "runtime_integration": false
+}
