@@ -1,0 +1,244 @@
+{
+  "repository_head": "22dce25b5812427d9a15f06595dd087801a640a8",
+  "reference_assets": [
+    "docs/production/PROTAGONIST_PRODUCTION_SPEC.md",
+    "assets/concepts/characters/protagonist/rq-protagonist-character-bible-v01.png",
+    "assets/concepts/characters/protagonist/rq-protagonist-animation-board-v01.png"
+  ],
+  "output_class": "AUTHORING STUDY",
+  "expected_size": [
+    128,
+    128
+  ],
+  "origin_xy": [
+    64,
+    64
+  ],
+  "resting_feet_y": 90,
+  "model_lock": "PENDING — no approved fixed visual model recorded in production spec",
+  "palette_lock": "PENDING",
+  "integration_hook": "PENDING",
+  "duration": "integration-owned; not encoded into image",
+  "provenance_status": "new pixel-grid illustrations authored with Pillow for this study; reference licensing and owner approval pending",
+  "technical_export_pass": false,
+  "visual_review": "PENDING model-reference / in-game / mobile review",
+  "notes": "No actual portal, scale reduction, body disappearance, morph, or VFX are drawn. These are not runtime assets; no gameplay changes.",
+  "frames": [
+    {
+      "file": "player_portal_enter_01.png",
+      "state": "approach_commitment",
+      "actual_size": [
+        128,
+        128
+      ],
+      "bbox_xyxy": [
+        10,
+        23,
+        95,
+        91
+      ],
+      "palette_count": 21,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "feet_xy": [
+        [
+          43,
+          90
+        ],
+        [
+          85,
+          90
+        ]
+      ],
+      "feet_max_y": 90,
+      "feet_visual_delta_vs_rest_px": 0,
+      "visual_last_pixel_y_including_weapon": 90,
+      "axe": {
+        "grip_xy": [
+          49,
+          73
+        ],
+        "head_center_xy": [
+          22,
+          73
+        ],
+        "handle_endpoints_xy": [
+          [
+            13,
+            73
+          ],
+          [
+            61,
+            73
+          ]
+        ],
+        "rotation_deg": 0
+      },
+      "native_grid_requirements_pass": true
+    },
+    {
+      "file": "player_portal_enter_02.png",
+      "state": "weight_transfer",
+      "actual_size": [
+        128,
+        128
+      ],
+      "bbox_xyxy": [
+        11,
+        23,
+        99,
+        93
+      ],
+      "palette_count": 21,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "feet_xy": [
+        [
+          50,
+          88
+        ],
+        [
+          90,
+          87
+        ]
+      ],
+      "feet_max_y": 88,
+      "feet_visual_delta_vs_rest_px": -2,
+      "visual_last_pixel_y_including_weapon": 92,
+      "axe": {
+        "grip_xy": [
+          51,
+          73
+        ],
+        "head_center_xy": [
+          24,
+          75
+        ],
+        "handle_endpoints_xy": [
+          [
+            15,
+            76
+          ],
+          [
+            63,
+            72
+          ]
+        ],
+        "rotation_deg": -5
+      },
+      "native_grid_requirements_pass": true
+    },
+    {
+      "file": "player_portal_enter_03.png",
+      "state": "body_passage",
+      "actual_size": [
+        128,
+        128
+      ],
+      "bbox_xyxy": [
+        13,
+        23,
+        102,
+        87
+      ],
+      "palette_count": 21,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "feet_xy": [
+        [
+          39,
+          84
+        ],
+        [
+          92,
+          83
+        ]
+      ],
+      "feet_max_y": 84,
+      "feet_visual_delta_vs_rest_px": -6,
+      "visual_last_pixel_y_including_weapon": 86,
+      "axe": {
+        "grip_xy": [
+          53,
+          72
+        ],
+        "head_center_xy": [
+          26,
+          71
+        ],
+        "handle_endpoints_xy": [
+          [
+            17,
+            70
+          ],
+          [
+            65,
+            73
+          ]
+        ],
+        "rotation_deg": 3
+      },
+      "native_grid_requirements_pass": true
+    },
+    {
+      "file": "player_portal_enter_04.png",
+      "state": "visual_exit_transition",
+      "actual_size": [
+        128,
+        128
+      ],
+      "bbox_xyxy": [
+        13,
+        22,
+        98,
+        90
+      ],
+      "palette_count": 21,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "feet_xy": [
+        [
+          52,
+          87
+        ],
+        [
+          88,
+          88
+        ]
+      ],
+      "feet_max_y": 88,
+      "feet_visual_delta_vs_rest_px": -2,
+      "visual_last_pixel_y_including_weapon": 89,
+      "axe": {
+        "grip_xy": [
+          52,
+          73
+        ],
+        "head_center_xy": [
+          25,
+          73
+        ],
+        "handle_endpoints_xy": [
+          [
+            16,
+            73
+          ],
+          [
+            64,
+            73
+          ]
+        ],
+        "rotation_deg": 0
+      },
+      "native_grid_requirements_pass": true
+    }
+  ]
+}

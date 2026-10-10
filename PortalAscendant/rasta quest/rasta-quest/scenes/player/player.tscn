@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2hnkmycxddor"]
+
+[ext_resource type="Script" uid="uid://che5otd5qq277" path="res://scripts/player/player.gd" id="1_lvxji"]
+[ext_resource type="Texture2D" uid="uid://cg1wu4hbgxsrl" path="res://scenes/player/player_idle.png" id="2_lvxji"]
+[ext_resource type="Texture2D" uid="uid://f6f5gy1v7go" path="res://scenes/player/jump_player.png" id="3_p47bc"]
+[ext_resource type="Texture2D" uid="uid://xaxl5grofbes" path="res://scenes/player/run_player.png" id="4_75vfm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0owmy"]
+animations = [{
+"frames": [{
+"duration": 1.01,
+"texture": ExtResource("2_lvxji")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_p47bc")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_75vfm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 11.0
+}]
+
+[node name="Player_tscn" type="Node2D" groups=["player"]]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+script = ExtResource("1_lvxji")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_0owmy")
+animation = &"jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

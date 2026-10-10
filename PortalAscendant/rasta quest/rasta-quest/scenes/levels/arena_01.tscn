@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://epxcvl5loof1"]
+
+[ext_resource type="Script" uid="uid://ctcye3ojpj41q" path="res://scripts/systems/game_manager.gd" id="1_43iuk"]
+[ext_resource type="PackedScene" uid="uid://b2hnkmycxddor" path="res://scenes/player/player.tscn" id="2_dhe0g"]
+[ext_resource type="PackedScene" uid="uid://cluqr2hsjaas1" path="res://scenes/portals/portal.tscn" id="3_oha72"]
+[ext_resource type="PackedScene" uid="uid://b03hpafbndmtf" path="res://scenes/ui/hud.tscn" id="4_r5cas"]
+
+[node name="Arena01" type="Node2D"]
+script = ExtResource("1_43iuk")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="Player_tscn" parent="." instance=ExtResource("2_dhe0g")]
+
+[node name="Portal" parent="." instance=ExtResource("3_oha72")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("4_r5cas")]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Hud"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 206.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Hud/MarginContainer"]
+layout_mode = 2
+
+[node name="LifeLabel" type="Label" parent="CanvasLayer/Hud/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "❤️ Vida: 100"
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Hud/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "⭐ Pontos: 0"
