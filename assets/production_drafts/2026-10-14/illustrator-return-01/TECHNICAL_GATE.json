@@ -1,0 +1,74 @@
+[
+  {
+    "file": "protagonist-revised-study.png",
+    "sha256": "8ae2fad730e42f05458e7c9a5c2b82d60169c594bec05701136433318f5aff41",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_bbox": [
+      0,
+      21,
+      1238,
+      1254
+    ],
+    "visible_colors": 188782,
+    "partial_alpha": true,
+    "errors": [
+      "frame_size_mismatch",
+      "palette_exceeds_limit",
+      "partial_alpha_requires_cleanup"
+    ],
+    "technical_export_pass": false,
+    "human_acceptance": "pending",
+    "rights_clearance": "pending"
+  },
+  {
+    "file": "axe-carried-study.png",
+    "sha256": "46ba5f34cd62388c23343f4d2aa04dafc36cdb229d284c8c24c922c8d6f8654c",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_bbox": [
+      25,
+      15,
+      1240,
+      1254
+    ],
+    "visible_colors": 89994,
+    "partial_alpha": true,
+    "errors": [
+      "frame_size_mismatch",
+      "palette_exceeds_limit",
+      "partial_alpha_requires_cleanup"
+    ],
+    "technical_export_pass": false,
+    "human_acceptance": "pending",
+    "rights_clearance": "pending"
+  },
+  {
+    "file": "axe-vertical-study.png",
+    "sha256": "76d36c52af32ed913f9b268ee53cba5d68feec2b483a21f004853f473829a094",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_bbox": [
+      0,
+      19,
+      1202,
+      1254
+    ],
+    "visible_colors": 95950,
+    "partial_alpha": true,
+    "errors": [
+      "frame_size_mismatch",
+      "palette_exceeds_limit",
+      "partial_alpha_requires_cleanup"
+    ],
+    "technical_export_pass": false,
+    "human_acceptance": "pending",
+    "rights_clearance": "pending"
+  }
+]

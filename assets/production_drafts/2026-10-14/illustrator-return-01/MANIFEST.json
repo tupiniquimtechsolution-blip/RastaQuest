@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-14",
+  "classification": "SUPPLIED_AUTHORING_STUDIES",
+  "source": "Three PNGs supplied by Rodrigo after illustrator prompt execution; tool/version/terms not independently supplied",
+  "base_commit": "d7e164d7fb84e98930e739ec6d6a005de3e24739",
+  "method": "unmodified copies; read-only image inspection",
+  "total_png_bytes": 1994039,
+  "files": [
+    {
+      "received_filename": "Imagem do ChatGPT 14 de out. de 2026, 08_55_52-1.png",
+      "file": "protagonist-revised-study.png",
+      "role": "revised protagonist",
+      "bytes": 1043869,
+      "sha256": "8ae2fad730e42f05458e7c9a5c2b82d60169c594bec05701136433318f5aff41",
+      "copy_hash_verified": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "visible_rgb_colors": 144761,
+      "visible_rgba_colors": 188782,
+      "alpha_level_count": 256,
+      "partial_alpha_pixels": 593203,
+      "transparent_pixels": 978665,
+      "alpha_bbox_max_exclusive": [
+        0,
+        21,
+        1238,
+        1254
+      ],
+      "technical_export_pass": false
+    },
+    {
+      "received_filename": "Imagem do ChatGPT 14 de out. de 2026, 08_55_59-2.png",
+      "file": "axe-carried-study.png",
+      "role": "isolated axe in carried orientation",
+      "bytes": 459923,
+      "sha256": "46ba5f34cd62388c23343f4d2aa04dafc36cdb229d284c8c24c922c8d6f8654c",
+      "copy_hash_verified": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "visible_rgb_colors": 71558,
+      "visible_rgba_colors": 89994,
+      "alpha_level_count": 256,
+      "partial_alpha_pixels": 251545,
+      "transparent_pixels": 1320243,
+      "alpha_bbox_max_exclusive": [
+        25,
+        15,
+        1240,
+        1254
+      ],
+      "technical_export_pass": false
+    },
+    {
+      "received_filename": "Imagem do ChatGPT 14 de out. de 2026, 08_56_14-3.png",
+      "file": "axe-vertical-study.png",
+      "role": "second orientation study; rigid rotation not verified",
+      "bytes": 490247,
+      "sha256": "76d36c52af32ed913f9b268ee53cba5d68feec2b483a21f004853f473829a094",
+      "copy_hash_verified": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "visible_rgb_colors": 74589,
+      "visible_rgba_colors": 95950,
+      "alpha_level_count": 256,
+      "partial_alpha_pixels": 267372,
+      "transparent_pixels": 1304642,
+      "alpha_bbox_max_exclusive": [
+        0,
+        19,
+        1202,
+        1254
+      ],
+      "technical_export_pass": false
+    }
+  ],
+  "rigid_rotation": "not_verified",
+  "owner_visual_acceptance": "not_recorded_for_this_batch",
+  "cultural_review": "pending_specific_version",
+  "rights_clearance": "pending",
+  "godot_qa": "not_run",
+  "android_qa": "not_run",
+  "runtime_promotion": "not_performed"
+}
