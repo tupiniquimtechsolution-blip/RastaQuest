@@ -2,6 +2,8 @@
 
 Date: 2026-10-08; visual direction updated 2026-10-10. Status: frame/body metrics and protagonist v03 visual direction approved by Rodrigo; native model, exact palette and in-game visual QA pending. Approval evidence: OWNER_APPROVAL_RECORD_2026-10-08.md and assets/production_drafts/2026-10-10/model-v03/OWNER_VISUAL_APPROVAL.md. No final sprite is supplied by this document.
 
+Owner feedback, 2026-10-14: the native Python v01 candidate was explicitly rejected as visually ugly and too blocky; passing technical dimensions did not satisfy the art target. Rodrigo requested fidelity to the first detailed model uploaded to GitHub and polished pixel-art finish. Evidence: assets/production_drafts/2026-10-14/native-python-v01/OWNER_REVIEW.json. The detailed uploaded idle is the direct reference for the new polish-v04 visual correction study, whose native export and owner approval remain pending. Preserve existing approved metrics; do not advance the rejected candidate to clips or runtime.
+
 ## Grounded integration contract
 
 Source direction: `assets/concepts/characters/protagonist/rq-protagonist-character-bible-v01.png` and `rq-protagonist-animation-board-v01.png`; see ART_DIRECTION_REVIEW_2026-10-06.md. Miniatures must be rebuilt, never cropped as runtime frames.

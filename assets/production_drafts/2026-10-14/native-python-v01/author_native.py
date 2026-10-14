@@ -306,6 +306,9 @@ def make_reviews(hero, vertical, horizontal):
 
 
 def main():
+    review_path = HERE / "OWNER_REVIEW.json"
+    owner_review = json.loads(review_path.read_text(encoding="utf-8")) if review_path.exists() else None
+    visual_status = owner_review["status"] if owner_review else "pending_owner_review"
     expected_ref = PALETTE["reference_sha256"]
     assert hashlib.sha256(REFERENCE.read_bytes()).hexdigest() == expected_ref
     axe_layers = make_axe()
@@ -348,6 +351,8 @@ def main():
     assert all(item["technical_export_pass"] for item in gate)
     for item in gate:
         item["file"] = Path(item["file"]).name
+        if owner_review:
+            item["human_acceptance"] = visual_status
     (HERE / "TECHNICAL_GATE.json").write_text(json.dumps(gate,indent=2)+"\n",encoding="utf-8",newline="\n")
     make_reviews(hero,vertical,horizontal)
     # Verify layered archives match the actual exports without claiming editor QA.
@@ -360,7 +365,8 @@ def main():
                         for item in reversed(list(stack))]
             assert composite(restored).tobytes() == image.tobytes()
     manifest = {
-        "date":"2026-10-14", "classification":"NATIVE_AUTHORING_CANDIDATE_NOT_APPROVED",
+        "date":"2026-10-14", "classification":"NATIVE_AUTHORING_CANDIDATE_VISUALLY_REJECTED" if visual_status == "rejected" else "NATIVE_AUTHORING_CANDIDATE_NOT_APPROVED",
+        "owner_review":owner_review,
         "authorization":{"reviewer":"Rodrigo","quote":"Reconstrução com Python","scope":"native review draft, not final acceptance"},
         "method":"authored integer pixel coordinates in Python/Pillow; no source downsampling/quantization",
         "source_author":"Codex AI; automated reconstruction draft for Rodrigo's review",
@@ -384,10 +390,10 @@ def main():
             "used_hex":sorted("#"+bytes(p[:3]).hex().upper() for p in union),
             "proposal":str(PROPOSAL.relative_to(ROOT)).replace("\\","/"),"lock":"pending"},
         "gate":{"basic_export_checks":"pass","geometry_assertions":"pass","ora_recomposition":"pass",
-            "visual_fidelity":"pending_owner_review","model_lock":"pending","palette_lock":"pending",
+            "visual_fidelity":visual_status,"model_lock":"pending","palette_lock":"pending",
             "cultural_review":"pending_specific_version",
             "rights_clearance":"pending","godot_qa":"not_run","android_qa":"not_run",
-            "clips":"not_authored","runtime_promotion":"not_performed"},
+            "clips":"not_authored","runtime_promotion":"prohibited_for_visually_rejected_candidate" if visual_status == "rejected" else "not_performed"},
         "art_risks":["Face/hair volume simplified at 52px; compare with owner-approved v03.",
             "Hair cluster count is authored structure, not human-confirmed readability.",
             "Carried axe uses two grips and candidate horizontal pose; no animation/intersection QA.",

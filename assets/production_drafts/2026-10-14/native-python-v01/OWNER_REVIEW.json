@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-14",
+  "reviewer": "Rodrigo",
+  "status": "rejected",
+  "scope": "native-python-v01 visual appearance; no native model or palette lock",
+  "quote": "Sim!, assim está muito feio, quero que o resultado final seja igual aquele primeiro modelo que anexei no github, assim todo quadrado não da, não parece um pixel art polido como um super mário bros por exemplo",
+  "reason": "Loss of original character volume, curved silhouette, facial/hair/clothing/axe detail and polished pixel-art finish.",
+  "technical_measurements_unchanged": true,
+  "runtime_promotion": "prohibited_for_this_rejected_candidate"
+}

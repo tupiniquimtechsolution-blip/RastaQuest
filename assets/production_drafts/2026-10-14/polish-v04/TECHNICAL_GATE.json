@@ -1,0 +1,26 @@
+[
+  {
+    "file": "protagonist-original-style-study-v04.png",
+    "sha256": "f08aff2e8f1cc1933b46d4ee2fb425617d123cc44848ee9a72d6482016305651",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_bbox": [
+      0,
+      16,
+      1246,
+      1254
+    ],
+    "visible_colors": 171072,
+    "partial_alpha": true,
+    "errors": [
+      "frame_size_mismatch",
+      "palette_exceeds_limit",
+      "partial_alpha_requires_cleanup"
+    ],
+    "technical_export_pass": false,
+    "human_acceptance": "pending",
+    "rights_clearance": "pending"
+  }
+]

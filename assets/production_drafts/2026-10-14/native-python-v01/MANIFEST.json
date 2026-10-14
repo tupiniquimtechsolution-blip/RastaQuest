@@ -1,6 +1,6 @@
 {
   "date": "2026-10-14",
-  "classification": "NATIVE_AUTHORING_CANDIDATE_NOT_APPROVED",
+  "classification": "NATIVE_AUTHORING_CANDIDATE_VISUALLY_REJECTED",
   "authorization": {
     "reviewer": "Rodrigo",
     "quote": "Reconstrução com Python",
@@ -344,7 +344,7 @@
     "basic_export_checks": "pass",
     "geometry_assertions": "pass",
     "ora_recomposition": "pass",
-    "visual_fidelity": "pending_owner_review",
+    "visual_fidelity": "rejected",
     "model_lock": "pending",
     "palette_lock": "pending",
     "cultural_review": "pending_specific_version",
@@ -352,7 +352,7 @@
     "godot_qa": "not_run",
     "android_qa": "not_run",
     "clips": "not_authored",
-    "runtime_promotion": "not_performed"
+    "runtime_promotion": "prohibited_for_visually_rejected_candidate"
   },
   "art_risks": [
     "Face/hair volume simplified at 52px; compare with owner-approved v03.",
@@ -378,7 +378,7 @@
       "partial_alpha": false,
       "errors": [],
       "technical_export_pass": true,
-      "human_acceptance": "pending",
+      "human_acceptance": "rejected",
       "rights_clearance": "pending"
     },
     {
@@ -398,7 +398,7 @@
       "partial_alpha": false,
       "errors": [],
       "technical_export_pass": true,
-      "human_acceptance": "pending",
+      "human_acceptance": "rejected",
       "rights_clearance": "pending"
     },
     {
@@ -418,7 +418,7 @@
       "partial_alpha": false,
       "errors": [],
       "technical_export_pass": true,
-      "human_acceptance": "pending",
+      "human_acceptance": "rejected",
       "rights_clearance": "pending"
     }
   ],
@@ -430,8 +430,8 @@
     },
     {
       "file": "author_native.py",
-      "bytes": 22060,
-      "sha256": "405e0ba3c56de2624422dc3db9e660ace75a3eaf4233fee0b4ea7f295cd2cad4"
+      "bytes": 22567,
+      "sha256": "fde9a84f08c839024d5acd6892f19c3803b52cb55ea0d13e1bb6c7c91a3a10d0"
     },
     {
       "file": "axe_neutral.ora",
@@ -514,6 +514,11 @@
       "sha256": "1afac18c786a47543267208bf4ff77aa2c9ec145eecf4eedb61666d9600b83d7"
     },
     {
+      "file": "OWNER_REVIEW.json",
+      "bytes": 627,
+      "sha256": "4f215a4a7a0a365aa45567d8ac598df8f4100e158ca4eb6642483db2a9ce452a"
+    },
+    {
       "file": "previews/axe_90_1x_dark.png",
       "bytes": 882,
       "sha256": "61f172f0b17cb06e09ee17c31f21761e1316b59b6941a6595f9a682b22c5b42f"
@@ -580,18 +585,18 @@
     },
     {
       "file": "README.md",
-      "bytes": 5844,
-      "sha256": "dea4d29ff80e822e364d50d4c747e8c466f0860033dd59e28c522a591ce9831c"
+      "bytes": 6290,
+      "sha256": "845a4cd1fe6303dd85c69f6525273413aa90ba474757a0ce12d0fa6797eca0fc"
     },
     {
       "file": "TECHNICAL_GATE.json",
-      "bytes": 1301,
-      "sha256": "453d3983c19a3bcd54b431042bd55056170870a21044b666d85a08d5694ca9b5"
+      "bytes": 1304,
+      "sha256": "39914f7cf1234a9a37e745ff05c439da786da00905fe5becee129d606d392cd9"
     },
     {
       "file": "verify_native.py",
-      "bytes": 4849,
-      "sha256": "e1ec386969d22bc103e270d9990378c7144aef6e21cbf5120692d71f9acbe5bb"
+      "bytes": 4875,
+      "sha256": "bf225b7f7394fd9263fbcd7fc1bad4c60e5c2312c768b0db2f126d1e7a53a899"
     },
     {
       "file": "weapon_double_axe_neutral_candidate_01.png",
@@ -603,5 +608,15 @@
       "bytes": 707,
       "sha256": "841e3b85a9758776e4f088a7770bc8fa22665d54d67cb70f07aa168a8d661a66"
     }
-  ]
+  ],
+  "owner_review": {
+    "date": "2026-10-14",
+    "reviewer": "Rodrigo",
+    "status": "rejected",
+    "scope": "native-python-v01 visual appearance; no native model or palette lock",
+    "quote": "Sim!, assim está muito feio, quero que o resultado final seja igual aquele primeiro modelo que anexei no github, assim todo quadrado não da, não parece um pixel art polido como um super mário bros por exemplo",
+    "reason": "Loss of original character volume, curved silhouette, facial/hair/clothing/axe detail and polished pixel-art finish.",
+    "technical_measurements_unchanged": true,
+    "runtime_promotion": "prohibited_for_this_rejected_candidate"
+  }
 }

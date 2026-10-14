@@ -1,5 +1,7 @@
 # Reconstrução Python v01 — candidato nativo para revisão
 
+**Estado atual: REJEITADO VISUALMENTE por Rodrigo em 2026-10-14.** Registro integral em `OWNER_REVIEW.json`. O usuário pediu fidelidade ao primeiro modelo detalhado enviado ao GitHub e acabamento de pixel art polido. O passe técnico abaixo não autoriza reutilização, animações ou promoção deste candidato. A correção de direção está em `../polish-v04/`; o restante deste documento preserva as evidências da construção original.
+
 Data: 2026-10-14. Rodrigo escolheu neste chat: **“Reconstrução com Python”**. Isso autoriza este rascunho, sem registrar aceite artístico do resultado. TASK-119 / Issue #35 continuam em andamento.
 
 ## Entrega

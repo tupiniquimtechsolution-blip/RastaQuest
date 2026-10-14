@@ -86,7 +86,7 @@ def main():
         "hair_envelope":[hb[2]-hb[0],hb[3]-hb[1]],"head_size":[32,18],
         "handle_rows":48,"quarter_turn":"pixel_exact_pass","carry_grips":"pass",
         "shared_visible_colors":len(union),"ora_recomposition":"pass",
-        "scale_board_nearest_2_to_1":"pass","human_visual_acceptance":"pending"},indent=2))
+        "scale_board_nearest_2_to_1":"pass","human_visual_acceptance":manifest["gate"]["visual_fidelity"]},indent=2))
 
 
 if __name__ == "__main__":

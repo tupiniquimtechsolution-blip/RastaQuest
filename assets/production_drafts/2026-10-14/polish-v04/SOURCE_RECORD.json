@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-14",
+  "tool": "ImageGen integrated",
+  "classification": "AUTHORING_STUDY_VISUAL_CORRECTION",
+  "reference_file": "assets/production_drafts/2026-10-10/model-v03/reference-uploaded-idle.png",
+  "reference_sha256": "cbe4182375e6ddcea61e0af146ac7ea9b89c8e054c74d08ef402a0a79efb32e1",
+  "generated_file": "exec-9ea6871b-a010-4def-9f7b-c313cb28ea8d.png",
+  "asset_sha256": "f08aff2e8f1cc1933b46d4ee2fb425617d123cc44848ee9a72d6482016305651",
+  "copy_hash_verified": true,
+  "prompt_file": "PROMPT.txt",
+  "owner_visual_acceptance": "pending",
+  "cultural_review": "pending_specific_version",
+  "rights_clearance": "pending",
+  "godot_qa": "not_run",
+  "android_qa": "not_run",
+  "runtime_promotion": "not_performed"
+}
