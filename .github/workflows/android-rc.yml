@@ -125,3 +125,15 @@ jobs:
             /tmp/rq-android/apk-badging.txt
           if-no-files-found: error
           retention-days: 30
+
+      - name: Preserve failed APK verification diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rasta-quest-android-test-diagnostics
+          path: |
+            /tmp/rq-android/export.log
+            /tmp/rq-android/signature-verification.txt
+            /tmp/rq-android/apk-badging.txt
+          if-no-files-found: warn
+          retention-days: 30

@@ -7,6 +7,8 @@ on:
       - "docs/release/**"
       - ".github/workflows/gold-preflight.yml"
       - ".github/workflows/godot-ci.yml"
+      - "tools/verify_android_test_apk.py"
+      - "tools/test_verify_android_test_apk.py"
   push:
     branches: [main]
     paths:
@@ -14,6 +16,8 @@ on:
       - "docs/release/**"
       - ".github/workflows/gold-preflight.yml"
       - ".github/workflows/godot-ci.yml"
+      - "tools/verify_android_test_apk.py"
+      - "tools/test_verify_android_test_apk.py"
 
 permissions:
   contents: read

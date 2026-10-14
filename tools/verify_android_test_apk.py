@@ -38,6 +38,15 @@ def validate_metadata(observed, expected, native_abis):
         raise ValueError("This verifier is restricted to unpublished debug test candidates")
 
 
+def signer_fingerprints(text):
+    # SDKs can label signers by ordinal or min/max Android version.
+    matches = re.findall(r"certificate SHA-256 digest:\s*([0-9a-fA-F: \t]+)\s*$", text, re.MULTILINE)
+    fingerprints = {re.sub(r"[:\s]", "", value).lower() for value in matches}
+    if not fingerprints or any(not re.fullmatch(r"[0-9a-f]{64}", value) for value in fingerprints):
+        raise ValueError("Verified APK signer certificate fingerprint missing or malformed")
+    return fingerprints
+
+
 def find_build_tools(sdk):
     versions = []
     for path in (sdk / "build-tools").iterdir():
@@ -62,18 +71,20 @@ def verify(apk, manifest_path, output, debug_keystore):
     sdk = find_build_tools(Path(os.environ["ANDROID_HOME"]))
     output.mkdir(parents=True, exist_ok=True)
     signature = run_text([str(sdk / "apksigner"), "verify", "--verbose", "--print-certs", str(apk)])
-    certificate_match = re.search(r"Signer #1 certificate SHA-256 digest: ([0-9a-fA-F]{64})", signature)
-    if certificate_match is None:
-        raise ValueError("Verified APK signer certificate fingerprint not found")
+    (output / "signature-verification.txt").write_text(signature, encoding="utf-8")
+    print(signature)
+    certificate_digests = signer_fingerprints(signature)
     keytool = Path(os.environ["JAVA_HOME"]) / "bin/keytool"
     # The password is the public CI debug convention, never a production credential.
     certificate = subprocess.run([str(keytool), "-exportcert", "-alias", "androiddebugkey",
         "-keystore", str(debug_keystore), "-storepass", "android"], check=True,
         capture_output=True, timeout=60).stdout
     certificate_sha256 = hashlib.sha256(certificate).hexdigest()
-    if certificate_match.group(1).lower() != certificate_sha256:
+    if certificate_digests != {certificate_sha256}:
         raise ValueError("APK signer differs from this job's ephemeral debug certificate")
     badging = run_text([str(sdk / "aapt2"), "dump", "badging", str(apk)])
+    (output / "apk-badging.txt").write_text(badging, encoding="utf-8")
+    print(badging)
     observed = parse_badging(badging)
     with zipfile.ZipFile(apk) as archive:
         if archive.testzip() is not None:
@@ -85,8 +96,6 @@ def verify(apk, manifest_path, output, debug_keystore):
     validate_metadata(observed, expected, native_abis)
     with apk.open("rb") as source:
         digest = hashlib.file_digest(source, "sha256").hexdigest()
-    (output / "signature-verification.txt").write_text(signature, encoding="utf-8")
-    (output / "apk-badging.txt").write_text(badging, encoding="utf-8")
     (output / "SHA256SUMS.txt").write_text(f"{digest}  {apk.name}\n", encoding="utf-8")
     report = {"product": "Rasta Quest", "classification": "technical-debug-test-only",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),

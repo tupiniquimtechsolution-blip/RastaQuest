@@ -1,6 +1,6 @@
 """Failure cases for decoded APK metadata; real signing is verified only in CI."""
 import unittest
-from verify_android_test_apk import parse_badging, validate_metadata
+from verify_android_test_apk import parse_badging, validate_metadata, signer_fingerprints
 
 BADGING = """package: name='com.tupiniquimtechsolution.rastaquest' versionCode='1000001' versionName='1.0.0-rc.1' platformBuildVersionName='15'
 application-label:'Rasta Quest'
@@ -44,6 +44,19 @@ class TestApkMetadata(unittest.TestCase):
         for flag in ("release_signed", "distribution_published"):
             with self.subTest(flag=flag), self.assertRaises(ValueError):
                 validate_metadata(parse_badging(BADGING),{**self.expected,flag:True},{"arm64-v8a"})
+
+    def test_signer_labels_and_repeated_sdk_ranges_preserve_fingerprint(self):
+        digest = "ab" * 32
+        for prefix in ("Signer #1", "Signer (minSdkVersion=24, maxSdkVersion=32)"):
+            with self.subTest(prefix=prefix):
+                text = f"{prefix} certificate SHA-256 digest: {digest}\n"
+                self.assertEqual(signer_fingerprints(text + text), {digest})
+        self.assertEqual(signer_fingerprints("Signer #1 certificate SHA-256 digest: " + ":".join(["AB"]*32)),{digest})
+
+    def test_missing_or_truncated_certificate_digest_is_rejected(self):
+        for text in ("Verifies\n", "Signer #1 certificate SHA-256 digest: ab12\n"):
+            with self.subTest(text=text), self.assertRaises(ValueError):
+                signer_fingerprints(text)
 
 
 if __name__ == "__main__":
