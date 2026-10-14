@@ -30,6 +30,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Record tested source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD | tee /tmp/gold-source.txt
+          test "$(git rev-parse HEAD)" = "${GITHUB_SHA}"
+
       - name: Validate Gold decision manifests
         shell: bash
         run: |
@@ -114,3 +121,15 @@ jobs:
           grep -q '^\*\*Decision:\*\* NO-GO' docs/release/gold/GOLD_DECISION.md
           test ! -e .release-approved
           echo 'RQ011_GOLD_PREFLIGHT_OK decision=NO-GO'
+
+      - name: Preserve complete regression evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rasta-quest-gold-preflight-evidence
+          path: |
+            /tmp/gold-source.txt
+            /tmp/gold-boot.log
+            /tmp/*_smoke.log
+          if-no-files-found: warn
+          retention-days: 30
