@@ -57,3 +57,5 @@ As tentativas anteriores do gerador produziram estudos grandes em vez de exports
 TASK-119 permanece Em Andamento. Próximos gates: produzir candidato nativo; conferir pixels/medidas; Rodrigo revisar fidelidade e paleta; revisão cultural específica e procedência; clips; integração e QA. Nenhum arquivo deste pacote vai para `game/assets/`, e colisões, hitbox e tempos de combate permanecem sob o contrato existente.
 
 Verificação deste pacote: JSON válido, 24 cores e IDs únicos, 16 tons da spec e oito novos tons propostos, alpha permitido 0/255 e hash da referência conferido. Isso valida a proposta documental; não é um resultado de gate técnico de sprite. CI e a escolha do método devem ser acompanhados no PR #47 e na TASK-119, sem declarar conclusão da produção.
+
+Atualização — 2026-10-14: Rodrigo escolheu **“Reconstrução com Python”**. O primeiro candidato nativo, suas fontes e medições estão em `../../2026-10-14/native-python-v01/`. A escolha do método foi resolvida; aceite visual e paleta continuam pendentes. O texto acima registra o estado deste pacote na data de criação.

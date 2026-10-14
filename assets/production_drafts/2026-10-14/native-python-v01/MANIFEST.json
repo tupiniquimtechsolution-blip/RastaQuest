@@ -1,0 +1,607 @@
+{
+  "date": "2026-10-14",
+  "classification": "NATIVE_AUTHORING_CANDIDATE_NOT_APPROVED",
+  "authorization": {
+    "reviewer": "Rodrigo",
+    "quote": "Reconstrução com Python",
+    "scope": "native review draft, not final acceptance"
+  },
+  "method": "authored integer pixel coordinates in Python/Pillow; no source downsampling/quantization",
+  "source_author": "Codex AI; automated reconstruction draft for Rodrigo's review",
+  "tools": {
+    "python": "3.12.14",
+    "pillow": "12.3.0",
+    "font_preview_only": "Windows Arial"
+  },
+  "reference": {
+    "file": "assets/production_drafts/2026-10-10/model-v03/protagonist-neutral-study-v03.png",
+    "sha256": "152940d341a63fa65b64c8043675b4c63bfd5a19021e4f109c12fc0352279edd"
+  },
+  "coordinates": "zero-based pixel indices; bounding box max exclusive; sole pixel row inclusive",
+  "protagonist": {
+    "origin": [
+      64,
+      64
+    ],
+    "body_bbox": [
+      52,
+      39,
+      81,
+      91
+    ],
+    "body_height": 52,
+    "body_width": 29,
+    "sole_row": 90,
+    "hair_bbox": [
+      44,
+      35,
+      62,
+      55
+    ],
+    "hair_cluster_count_authored": 6,
+    "hair_cluster_polygons": [
+      [
+        [
+          48,
+          35
+        ],
+        [
+          51,
+          35
+        ],
+        [
+          58,
+          39
+        ],
+        [
+          61,
+          42
+        ],
+        [
+          59,
+          44
+        ],
+        [
+          55,
+          41
+        ],
+        [
+          50,
+          39
+        ],
+        [
+          47,
+          37
+        ]
+      ],
+      [
+        [
+          45,
+          38
+        ],
+        [
+          49,
+          38
+        ],
+        [
+          55,
+          40
+        ],
+        [
+          60,
+          42
+        ],
+        [
+          59,
+          45
+        ],
+        [
+          54,
+          43
+        ],
+        [
+          48,
+          42
+        ],
+        [
+          44,
+          41
+        ],
+        [
+          44,
+          39
+        ]
+      ],
+      [
+        [
+          46,
+          43
+        ],
+        [
+          51,
+          42
+        ],
+        [
+          58,
+          42
+        ],
+        [
+          60,
+          44
+        ],
+        [
+          56,
+          46
+        ],
+        [
+          50,
+          47
+        ],
+        [
+          45,
+          49
+        ],
+        [
+          44,
+          47
+        ]
+      ],
+      [
+        [
+          49,
+          46
+        ],
+        [
+          53,
+          44
+        ],
+        [
+          59,
+          43
+        ],
+        [
+          60,
+          46
+        ],
+        [
+          56,
+          49
+        ],
+        [
+          50,
+          52
+        ],
+        [
+          46,
+          52
+        ],
+        [
+          46,
+          50
+        ]
+      ],
+      [
+        [
+          53,
+          46
+        ],
+        [
+          57,
+          44
+        ],
+        [
+          61,
+          44
+        ],
+        [
+          59,
+          48
+        ],
+        [
+          56,
+          52
+        ],
+        [
+          52,
+          54
+        ],
+        [
+          49,
+          54
+        ],
+        [
+          50,
+          51
+        ]
+      ],
+      [
+        [
+          59,
+          44
+        ],
+        [
+          61,
+          45
+        ],
+        [
+          61,
+          50
+        ],
+        [
+          60,
+          53
+        ],
+        [
+          57,
+          54
+        ],
+        [
+          55,
+          53
+        ],
+        [
+          57,
+          49
+        ]
+      ]
+    ],
+    "body_measurement_mask": "layers/protagonist/body_measurement_mask.png",
+    "carry_translation": [
+      33,
+      25
+    ],
+    "carried_head_center": [
+      96.5,
+      70.5
+    ],
+    "left_grip": [
+      55.5,
+      70.5
+    ],
+    "right_grip": [
+      76.5,
+      70.5
+    ]
+  },
+  "axe": {
+    "neutral_head_bbox": [
+      48,
+      37,
+      80,
+      55
+    ],
+    "neutral_handle_bbox": [
+      60,
+      55,
+      68,
+      103
+    ],
+    "handle_occupied_rows": 48,
+    "head_size": [
+      32,
+      18
+    ],
+    "neutral_grip": [
+      63.5,
+      86.5
+    ],
+    "neutral_secondary_grip": [
+      63.5,
+      65.5
+    ],
+    "head_center": [
+      63.5,
+      45.5
+    ],
+    "rotation_pivot": [
+      63.5,
+      45.5
+    ],
+    "rotation_degrees_clockwise_y_down": 90,
+    "pixel_transform": "x_prime=109-y; y_prime=x-18",
+    "rotated_grip": [
+      22.5,
+      45.5
+    ],
+    "rotated_secondary_grip": [
+      43.5,
+      45.5
+    ],
+    "pixel_exact_rotation": true,
+    "head_x_symmetry": true
+  },
+  "shared_palette": {
+    "visible_color_count": 22,
+    "limit": 32,
+    "used_hex": [
+      "#151310",
+      "#21432D",
+      "#24150F",
+      "#302A22",
+      "#35251C",
+      "#397044",
+      "#39854B",
+      "#455660",
+      "#4B2C20",
+      "#754631",
+      "#785022",
+      "#795237",
+      "#8C7856",
+      "#9BAEB6",
+      "#A46B45",
+      "#B88930",
+      "#C8392B",
+      "#CDBB91",
+      "#D9E2DF",
+      "#E8BD42",
+      "#E9CD70",
+      "#F0E3BF"
+    ],
+    "proposal": "assets/production_drafts/2026-10-10/native-authoring-kit/PALETTE_PROPOSAL.json",
+    "lock": "pending"
+  },
+  "gate": {
+    "basic_export_checks": "pass",
+    "geometry_assertions": "pass",
+    "ora_recomposition": "pass",
+    "visual_fidelity": "pending_owner_review",
+    "model_lock": "pending",
+    "palette_lock": "pending",
+    "cultural_review": "pending_specific_version",
+    "rights_clearance": "pending",
+    "godot_qa": "not_run",
+    "android_qa": "not_run",
+    "clips": "not_authored",
+    "runtime_promotion": "not_performed"
+  },
+  "art_risks": [
+    "Face/hair volume simplified at 52px; compare with owner-approved v03.",
+    "Hair cluster count is authored structure, not human-confirmed readability.",
+    "Carried axe uses two grips and candidate horizontal pose; no animation/intersection QA.",
+    "No final visual, cultural, palette or licensing acceptance inferred from technical pass."
+  ],
+  "exports": [
+    {
+      "file": "protagonist_neutral_candidate_01.png",
+      "sha256": "73b7bcba638eb926717afcb462a47848c2624016adaa0ee621dd447e29182250",
+      "size": [
+        128,
+        128
+      ],
+      "alpha_bbox": [
+        40,
+        35,
+        106,
+        91
+      ],
+      "visible_colors": 22,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "weapon_double_axe_neutral_candidate_01.png",
+      "sha256": "ce99398cef35c01bae4395a20830266f0051739e3cc71c18ba46935b781225bf",
+      "size": [
+        128,
+        128
+      ],
+      "alpha_bbox": [
+        48,
+        37,
+        80,
+        103
+      ],
+      "visible_colors": 10,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "weapon_double_axe_rotation_90_candidate_01.png",
+      "sha256": "841e3b85a9758776e4f088a7770bc8fa22665d54d67cb70f07aa168a8d661a66",
+      "size": [
+        128,
+        128
+      ],
+      "alpha_bbox": [
+        7,
+        30,
+        73,
+        62
+      ],
+      "visible_colors": 10,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    }
+  ],
+  "files": [
+    {
+      "file": ".gitattributes",
+      "bytes": 106,
+      "sha256": "6dec9ca32d7c088ce4d7b8f46d08e9d5c2058f00f5eadfccbdeee921a1983fe1"
+    },
+    {
+      "file": "author_native.py",
+      "bytes": 22060,
+      "sha256": "405e0ba3c56de2624422dc3db9e660ace75a3eaf4233fee0b4ea7f295cd2cad4"
+    },
+    {
+      "file": "axe_neutral.ora",
+      "bytes": 2815,
+      "sha256": "b31a51a73b452d0af0c16ef1e973adf07b47be95130bb25b46fd0c9edce0f342"
+    },
+    {
+      "file": "axe_rotation_90.ora",
+      "bytes": 2577,
+      "sha256": "c12b2cfd6c234e51c614a9ab9711bb61e68c5ad9f459b67799bc9a996f63eaaf"
+    },
+    {
+      "file": "layers/axe_neutral/handle.png",
+      "bytes": 417,
+      "sha256": "7c57fb4fe589e386bd07eee0b1112e6c8fb34964dba6ce08a57706aac42ece90"
+    },
+    {
+      "file": "layers/axe_neutral/head.png",
+      "bytes": 617,
+      "sha256": "47ee0a1adf33068218af9714a96d1a3d24193c62e47c9bc337376ef7911576fa"
+    },
+    {
+      "file": "layers/axe_rotation_90/handle.png",
+      "bytes": 351,
+      "sha256": "08056491f3d9c4a2c0a1a4e7f2413b13d059506e47f40dd4a634ac651d877efd"
+    },
+    {
+      "file": "layers/axe_rotation_90/head.png",
+      "bytes": 605,
+      "sha256": "1d309670a0396a760bb94147b1b57194b222b31cc3f18cc933ccccdda7a290c9"
+    },
+    {
+      "file": "layers/protagonist/anatomy.png",
+      "bytes": 669,
+      "sha256": "22d5f9b26d1b29921a86e82c8898eb502d10d334f88d4c3c55ce320b2bf7c323"
+    },
+    {
+      "file": "layers/protagonist/belt.png",
+      "bytes": 255,
+      "sha256": "e802c634f3606ff502bfcd264e8f114cd19cf2d612be8f0f0505917d9039e203"
+    },
+    {
+      "file": "layers/protagonist/body_measurement_mask.png",
+      "bytes": 1556,
+      "sha256": "e7f95140f68a43c0ef71e22926be4c2714c8864e9eaca68fa71f7cb914c5ecb6"
+    },
+    {
+      "file": "layers/protagonist/boots.png",
+      "bytes": 397,
+      "sha256": "c876eabb6e96b01fdd3b216f1a52765e54bdb578e3105c9c79b717249588ade8"
+    },
+    {
+      "file": "layers/protagonist/carried_axe.png",
+      "bytes": 697,
+      "sha256": "f9ed443b4b21e4876163da4f08cf6dbe03469ca780de422f569923d647907351"
+    },
+    {
+      "file": "layers/protagonist/cloth_and_strap.png",
+      "bytes": 697,
+      "sha256": "393f5936c5aefb5676d992e53c5fd6178868f12b7795f68929cf4c18f3657030"
+    },
+    {
+      "file": "layers/protagonist/cuffs_and_hands.png",
+      "bytes": 353,
+      "sha256": "4f5421f701bdd8d4a8f9a34a7592a4f3ba03438fbc529078bcc6421be7cfdfd8"
+    },
+    {
+      "file": "layers/protagonist/hair_six_clusters.png",
+      "bytes": 478,
+      "sha256": "fcff70930c456d3835dac477ae2445fd995a52315b0d12770772a32e8ab60026"
+    },
+    {
+      "file": "layers/protagonist/headband.png",
+      "bytes": 255,
+      "sha256": "45c0cfddb3c17e54849cba1345dab36114dafaf9c5f346c6a33b027a7955d89d"
+    },
+    {
+      "file": "layers/protagonist/pants.png",
+      "bytes": 428,
+      "sha256": "1afac18c786a47543267208bf4ff77aa2c9ec145eecf4eedb61666d9600b83d7"
+    },
+    {
+      "file": "previews/axe_90_1x_dark.png",
+      "bytes": 882,
+      "sha256": "61f172f0b17cb06e09ee17c31f21761e1316b59b6941a6595f9a682b22c5b42f"
+    },
+    {
+      "file": "previews/axe_90_1x_light.png",
+      "bytes": 849,
+      "sha256": "26933e9428e3917419a46714dfb8e7db172dce8ace698e72f20dbed07c07a072"
+    },
+    {
+      "file": "previews/axe_vertical_1x_dark.png",
+      "bytes": 978,
+      "sha256": "3943839ce31aebc936fc4f8ab40968907c7588210d2c5af6e7bd91c59660794b"
+    },
+    {
+      "file": "previews/axe_vertical_1x_light.png",
+      "bytes": 978,
+      "sha256": "627894e036b2f8c3d61c74d8df347bf0554629bfd47dbc3887129ce24a99564a"
+    },
+    {
+      "file": "previews/native_review_4x_dark.png",
+      "bytes": 24987,
+      "sha256": "20390a3b0d3cd674740c947597b7a8328789da5d30ae74e118c29aca0cc83a84"
+    },
+    {
+      "file": "previews/native_review_4x_light.png",
+      "bytes": 24885,
+      "sha256": "4fd4275407d550838f9aca2d726ebf44b35b5f0fa794de1de4920f52db40c844"
+    },
+    {
+      "file": "previews/protagonist_1x_dark.png",
+      "bytes": 2303,
+      "sha256": "315493e94c3269e06091d5f4f4e4e153fe17cd1eb022250133150ead960a6792"
+    },
+    {
+      "file": "previews/protagonist_1x_light.png",
+      "bytes": 2263,
+      "sha256": "321d5cc0c28c3f0337ba52f8cb714e4bfe425bac1d594659d7cf84d72604fae8"
+    },
+    {
+      "file": "previews/reference_comparison.png",
+      "bytes": 102414,
+      "sha256": "89814dc25f24cb6a2d64e19e303c8079d837a92e99d8968a18f04cf1467c2c03"
+    },
+    {
+      "file": "previews/scale_board_1280x720.png",
+      "bytes": 31967,
+      "sha256": "969910b4deea39bbade60267b7d657512b9ea9d58336ae79f6575bbf6d10f248"
+    },
+    {
+      "file": "previews/scale_board_640x360.png",
+      "bytes": 13142,
+      "sha256": "41f1090f31681932b15820443906b04c2760cdfa32961bc3c3da450e9024f2a2"
+    },
+    {
+      "file": "protagonist.ora",
+      "bytes": 8965,
+      "sha256": "717bdf8a2d70b8bbfd4571be00e981780a49238d2ad5f8f10fb487e9bcb24d10"
+    },
+    {
+      "file": "protagonist_neutral_candidate_01.png",
+      "bytes": 2188,
+      "sha256": "73b7bcba638eb926717afcb462a47848c2624016adaa0ee621dd447e29182250"
+    },
+    {
+      "file": "README.md",
+      "bytes": 5844,
+      "sha256": "dea4d29ff80e822e364d50d4c747e8c466f0860033dd59e28c522a591ce9831c"
+    },
+    {
+      "file": "TECHNICAL_GATE.json",
+      "bytes": 1301,
+      "sha256": "453d3983c19a3bcd54b431042bd55056170870a21044b666d85a08d5694ca9b5"
+    },
+    {
+      "file": "verify_native.py",
+      "bytes": 4849,
+      "sha256": "e1ec386969d22bc103e270d9990378c7144aef6e21cbf5120692d71f9acbe5bb"
+    },
+    {
+      "file": "weapon_double_axe_neutral_candidate_01.png",
+      "bytes": 871,
+      "sha256": "ce99398cef35c01bae4395a20830266f0051739e3cc71c18ba46935b781225bf"
+    },
+    {
+      "file": "weapon_double_axe_rotation_90_candidate_01.png",
+      "bytes": 707,
+      "sha256": "841e3b85a9758776e4f088a7770bc8fa22665d54d67cb70f07aa168a8d661a66"
+    }
+  ]
+}

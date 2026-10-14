@@ -1,0 +1,62 @@
+[
+  {
+    "file": "protagonist_neutral_candidate_01.png",
+    "sha256": "73b7bcba638eb926717afcb462a47848c2624016adaa0ee621dd447e29182250",
+    "size": [
+      128,
+      128
+    ],
+    "alpha_bbox": [
+      40,
+      35,
+      106,
+      91
+    ],
+    "visible_colors": 22,
+    "partial_alpha": false,
+    "errors": [],
+    "technical_export_pass": true,
+    "human_acceptance": "pending",
+    "rights_clearance": "pending"
+  },
+  {
+    "file": "weapon_double_axe_neutral_candidate_01.png",
+    "sha256": "ce99398cef35c01bae4395a20830266f0051739e3cc71c18ba46935b781225bf",
+    "size": [
+      128,
+      128
+    ],
+    "alpha_bbox": [
+      48,
+      37,
+      80,
+      103
+    ],
+    "visible_colors": 10,
+    "partial_alpha": false,
+    "errors": [],
+    "technical_export_pass": true,
+    "human_acceptance": "pending",
+    "rights_clearance": "pending"
+  },
+  {
+    "file": "weapon_double_axe_rotation_90_candidate_01.png",
+    "sha256": "841e3b85a9758776e4f088a7770bc8fa22665d54d67cb70f07aa168a8d661a66",
+    "size": [
+      128,
+      128
+    ],
+    "alpha_bbox": [
+      7,
+      30,
+      73,
+      62
+    ],
+    "visible_colors": 10,
+    "partial_alpha": false,
+    "errors": [],
+    "technical_export_pass": true,
+    "human_acceptance": "pending",
+    "rights_clearance": "pending"
+  }
+]
