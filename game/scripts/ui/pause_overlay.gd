@@ -24,6 +24,9 @@ func _process(_delta: float) -> void:
 		_set_paused(not get_tree().paused)
 
 func _set_paused(value: bool) -> void:
+	if value:
+		for controls in get_tree().get_nodes_in_group("touch_controls"):
+			controls.release_held_actions()
 	if not value and is_instance_valid(_settings_layer):
 		_settings_layer.queue_free()
 	get_tree().paused = value

@@ -100,6 +100,30 @@ func _run() -> void:
 	if paused or not save.completion_flag(&"tutorial_complete"):
 		_fail("onboarding did not release pause and persist completion")
 		return
+	var controls: CanvasLayer = run_room.get_node("TouchControls")
+	settings.set_value(&"touch_scale", 1.5)
+	await _frames()
+	if not is_equal_approx(controls.jump_button.size.x, 234.0) or controls.left_button.get_global_rect().intersects(controls.right_button.get_global_rect()):
+		_fail("touch scale did not resize/reflow actual controls")
+		return
+	controls.left_button.button_down.emit()
+	if not Input.is_action_pressed("move_left"):
+		_fail("touch hold did not enter InputMap")
+		return
+	controls.pause_button.pressed.emit()
+	await _frames()
+	if not paused:
+		_fail("on-screen pause button did not pause the real run")
+		return
+	if Input.is_action_pressed("move_left"):
+		_fail("pause left a held touch movement active")
+		return
+	run_room.get_node("PauseOverlay")._set_paused(false)
+	controls.attack_button.button_down.emit()
+	controls._notification(NOTIFICATION_APPLICATION_FOCUS_OUT)
+	if Input.is_action_pressed("attack"):
+		_fail("focus loss left a held attack active")
+		return
 	run_room.queue_free()
 	root.get_node("RunManager").end_run()
 	await _frames()
