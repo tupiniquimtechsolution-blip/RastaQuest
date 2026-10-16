@@ -79,6 +79,7 @@ func _validate_fresh_save_to_victory_flag() -> bool:
 		return _fail("campaign completion was not persisted")
 	if manager.meta_shards() != 25:
 		return _fail("victory meta reward failed")
+	manager.free()
 	_cleanup(primary)
 	_cleanup(backup)
 	return true

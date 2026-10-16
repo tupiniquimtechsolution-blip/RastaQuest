@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const HostileAttack = preload("res://scripts/combat/hostile_attack.gd")
+
 signal attack_tell_started(pattern: StringName, duration: float)
 signal boss_defeated
 
@@ -9,8 +11,10 @@ signal boss_defeated
 
 var _target: Node2D
 var _cooldown: float = 0.0
+var _attack: Node2D
 
 func _ready() -> void:
+	add_to_group("hostile_actor")
 	health.died.connect(_on_died)
 	_target = get_node_or_null(target_path) as Node2D
 
@@ -26,13 +30,25 @@ func _physics_process(delta: float) -> void:
 	velocity.x = signf(distance) * speed if absf(distance) > 120.0 else 0.0
 	velocity.y = minf(velocity.y + 1500.0 * delta, 900.0)
 
-	if _cooldown <= 0.0:
-		_cooldown = 1.5 if phase == 1 else 0.9
+	if is_instance_valid(_attack) and not _attack.is_queued_for_deletion():
+		velocity.x = _attack.movement_velocity()
+	elif _cooldown <= 0.0:
 		var pattern: StringName = &"storm_slam" if phase == 1 else &"chain_burst"
-		attack_tell_started.emit(pattern, 0.65 if phase == 1 else 0.4)
+		var duration := 0.65 if phase == 1 else 0.4
+		var attack := HostileAttack.new()
+		add_child(attack)
+		if attack.begin(self, _target, String(pattern), duration):
+			_attack = attack
+			_cooldown = 1.5 if phase == 1 else 0.9
+			velocity.x = 0.0
+			attack_tell_started.emit(pattern, duration)
+		else:
+			attack.queue_free()
 
 	move_and_slide()
 
 func _on_died() -> void:
+	if is_instance_valid(_attack):
+		_attack.cancel()
 	boss_defeated.emit()
 	queue_free()
