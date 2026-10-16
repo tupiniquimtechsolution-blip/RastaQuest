@@ -1,0 +1,74 @@
+msgid ""
+msgstr "Language: en\nContent-Type: text/plain; charset=UTF-8\n"
+
+msgid "hub_title"
+msgstr "Sanctuary"
+
+msgid "start_run"
+msgstr "Start Run"
+
+msgid "settings_title"
+msgstr "Settings / Accessibility"
+
+msgid "screen_shake"
+msgstr "Screen shake"
+
+msgid "reduced_flashes"
+msgstr "Reduce flashes"
+
+msgid "vibration"
+msgstr "Vibration"
+
+msgid "music_volume"
+msgstr "Music volume"
+
+msgid "sfx_volume"
+msgstr "SFX volume"
+
+msgid "touch_scale"
+msgstr "Touch control scale"
+
+msgid "language"
+msgstr "Language"
+
+msgid "hub_game_title"
+msgstr "Rasta Quest — Sanctuary"
+
+msgid "meta_shards"
+msgstr "Meta shards: %d"
+
+msgid "paused"
+msgstr "Paused"
+
+msgid "resume"
+msgstr "Resume"
+
+msgid "close"
+msgstr "Close"
+
+msgid "credits_title"
+msgstr "Credits and licenses"
+
+msgid "continue"
+msgstr "Continue"
+
+msgid "tutorial_move"
+msgstr "Move with the left controls. Jump to cross broken ground."
+
+msgid "tutorial_combat"
+msgstr "Use the axe to defeat enemies. You can also attack while jumping."
+
+msgid "tutorial_run"
+msgstr "Clear encounters, enter portals and choose one of three upgrades."
+
+msgid "touch_left"
+msgstr "LEFT"
+
+msgid "touch_right"
+msgstr "RIGHT"
+
+msgid "touch_jump"
+msgstr "JUMP"
+
+msgid "touch_attack"
+msgstr "ATTACK"

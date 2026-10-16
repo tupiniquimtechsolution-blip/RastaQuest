@@ -53,4 +53,5 @@ interact={
 }
 
 [internationalization]
+locale/translations=PackedStringArray("res://localization/strings.en.po", "res://localization/strings.pt_BR.po")
 locale/fallback="en"

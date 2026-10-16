@@ -11,7 +11,7 @@ offset_top = 590.0
 offset_right = 112.0
 offset_bottom = 690.0
 focus_mode = 0
-text = "LEFT"
+text = "touch_left"
 
 [node name="RightButton" type="Button" parent="."]
 offset_left = 124.0
@@ -19,7 +19,7 @@ offset_top = 590.0
 offset_right = 224.0
 offset_bottom = 690.0
 focus_mode = 0
-text = "RIGHT"
+text = "touch_right"
 
 [node name="JumpButton" type="Button" parent="."]
 offset_left = 1100.0
@@ -27,7 +27,7 @@ offset_top = 570.0
 offset_right = 1256.0
 offset_bottom = 690.0
 focus_mode = 0
-text = "JUMP"
+text = "touch_jump"
 
 [node name="AttackButton" type="Button" parent="."]
 offset_left = 930.0
@@ -35,7 +35,7 @@ offset_top = 590.0
 offset_right = 1086.0
 offset_bottom = 690.0
 focus_mode = 0
-text = "ATTACK"
+text = "touch_attack"
 
 [node name="PauseButton" type="Button" parent="."]
 offset_left = 1180.0

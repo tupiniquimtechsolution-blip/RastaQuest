@@ -1,14 +1,17 @@
 extends Control
 
-@onready var screen_shake: CheckButton = $Panel/VBox/ScreenShake
-@onready var reduced_flashes: CheckButton = $Panel/VBox/ReducedFlashes
-@onready var vibration: CheckButton = $Panel/VBox/Vibration
-@onready var music: HSlider = $Panel/VBox/Music
-@onready var sfx: HSlider = $Panel/VBox/Sfx
-@onready var touch_scale: HSlider = $Panel/VBox/TouchScale
-@onready var locale: OptionButton = $Panel/VBox/Locale
+signal closed
+
+@onready var screen_shake: CheckButton = $Panel/Scroll/VBox/ScreenShake
+@onready var reduced_flashes: CheckButton = $Panel/Scroll/VBox/ReducedFlashes
+@onready var vibration: CheckButton = $Panel/Scroll/VBox/Vibration
+@onready var music: HSlider = $Panel/Scroll/VBox/Music
+@onready var sfx: HSlider = $Panel/Scroll/VBox/Sfx
+@onready var touch_scale: HSlider = $Panel/Scroll/VBox/TouchScale
+@onready var locale: OptionButton = $Panel/Scroll/VBox/Locale
 
 func _ready() -> void:
+	$Panel/Close.pressed.connect(closed.emit)
 	screen_shake.button_pressed = SettingsManager.screen_shake_enabled()
 	reduced_flashes.button_pressed = SettingsManager.reduced_flashes_enabled()
 	vibration.button_pressed = SettingsManager.vibration_enabled()
