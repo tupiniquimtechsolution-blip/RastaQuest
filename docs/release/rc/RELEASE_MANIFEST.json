@@ -7,8 +7,22 @@
   "language": "GDScript",
   "primary_platform": "Android landscape",
   "architectures": [
+    "armeabi-v7a",
     "arm64-v8a"
   ],
+  "min_sdk": 24,
+  "target_sdk": 35,
+  "installation_target": {
+    "device_reported": "Galaxy A13 SM-A1325M/DS",
+    "possible_model": "SM-A135M/DS; not confirmed",
+    "android_version": "14",
+    "android_api": 34,
+    "one_ui": "6.1",
+    "knox_version": "3.10",
+    "knox_api_reported": 37,
+    "device_abis": "not_measured",
+    "physical_installation": "pending_owner_retest"
+  },
   "candidate_status": "technical-preparation-not-release-approved",
   "release_signed": false,
   "distribution_published": false,

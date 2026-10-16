@@ -1,6 +1,6 @@
 # Release de teste: regressão e APK verificável
 
-Data: 2026-10-14. Perfil: Android debug / arm64, Godot 4.5.1, versão 1.0.0-rc.1 e esquema de save 2. A entrega executa a base jogável graybox da main; estudos de arte fora de `game/` não são promovidos. Gold continua NO-GO, conforme os critérios canônicos.
+Data: 2026-10-14; compatibilidade atualizada em 2026-10-16. Perfil: Android debug universal ARMv7 + ARM64, Godot 4.5.1, versão 1.0.0-rc.1 e esquema de save 2. A entrega executa a base jogável graybox da main; estudos de arte fora de `game/` não são promovidos. Gold continua NO-GO, conforme os critérios canônicos.
 
 ## O que precisa ficar verde
 
@@ -13,7 +13,7 @@ Abrir o PR de preparação dispara os workflows existentes; não há criação d
 
 ## Pacote para testar
 
-O artifact `rasta-quest-1.0.0-rc.1-debug` inclui:
+O artifact atual `rasta-quest-1.0.0-rc.1-universal-debug` inclui:
 
 - APK;
 - `SHA256SUMS.txt`, com nome relativo do arquivo;
@@ -21,6 +21,8 @@ O artifact `rasta-quest-1.0.0-rc.1-debug` inclui:
 - saída do apksigner e badging do AAPT2.
 
 A verificação compara pacote/versão/ABI/permissões ao manifesto RC, testa integridade ZIP e confirma que a assinatura usa o certificado debug gerado naquele job. Divergências falham a pipeline; não são aceitas silenciosamente. O APK não é editado após assinatura. Chaves privadas permanecem temporárias no runner e não entram nos artifacts.
+
+A versão universal inclui a biblioteca Godot ARM de 32 bits e a de 64 bits. O verificador lê os headers ELF, exige as duas bibliotecas e confere o intervalo de SDK para Android 14/API 34. Ver GALAXY_A13_TEST.md para o relato original de incompatibilidade e limites da correção. O APK arm64-only anterior não é evidência de instalação aceita nesse dispositivo.
 
 Logs Godot e Gold são artifacts separados, preservados inclusive quando testes falham. A retenção pedida é de 30 dias, sujeita à política do repositório; consultar `expires_at` no artifact real. A referência histórica ao APK de 6 de outubro continua nos manifestos RC/Gold e não descreve o novo pacote. Seu prazo anteriormente informado terminava em 13/10/2026.
 

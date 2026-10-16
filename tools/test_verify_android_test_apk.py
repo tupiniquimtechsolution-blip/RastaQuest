@@ -1,9 +1,13 @@
 """Failure cases for decoded APK metadata; real signing is verified only in CI."""
+import io
 import unittest
-from verify_android_test_apk import parse_badging, validate_metadata, signer_fingerprints
+import zipfile
+from verify_android_test_apk import parse_badging, validate_metadata, signer_fingerprints, validate_engine_libraries
 
 BADGING = """package: name='com.tupiniquimtechsolution.rastaquest' versionCode='1000001' versionName='1.0.0-rc.1' platformBuildVersionName='15'
 application-label:'Rasta Quest'
+minSdkVersion:'24'
+targetSdkVersion:'35'
 native-code: 'arm64-v8a'
 """
 
@@ -57,6 +61,53 @@ class TestApkMetadata(unittest.TestCase):
         for text in ("Verifies\n", "Signer #1 certificate SHA-256 digest: ab12\n"):
             with self.subTest(text=text), self.assertRaises(ValueError):
                 signer_fingerprints(text)
+
+    def test_universal_profile_rejects_previous_arm64_only_build(self):
+        expected = {**self.expected, "architectures": ["armeabi-v7a", "arm64-v8a"]}
+        with self.assertRaises(ValueError):
+            validate_metadata(parse_badging(BADGING), expected, {"arm64-v8a"})
+        validate_metadata(parse_badging(BADGING),expected,{"armeabi-v7a","arm64-v8a"})
+
+    def test_android14_range_rejects_too_new_minimum_or_too_old_maximum(self):
+        expected = {**self.expected,"installation_target":{"android_api":34}}
+        for text in (BADGING.replace("minSdkVersion:'24'","minSdkVersion:'35'"),
+                     BADGING+"maxSdkVersion:'33'\n"):
+            with self.subTest(text=text), self.assertRaises(ValueError):
+                validate_metadata(parse_badging(text),expected,{"arm64-v8a"})
+        validate_metadata(parse_badging(BADGING),expected,{"arm64-v8a"})
+
+    def test_sdk_metadata_must_be_present_and_match_declaration(self):
+        for text in (BADGING.replace("minSdkVersion:'24'\n",""),
+                     BADGING.replace("targetSdkVersion:'35'\n","")):
+            with self.subTest(text=text), self.assertRaises(ValueError):
+                parse_badging(text)
+        for key,value in (("min_sdk",25),("target_sdk",34)):
+            with self.subTest(key=key), self.assertRaises(ValueError):
+                validate_metadata(parse_badging(BADGING),{**self.expected,key:value},{"arm64-v8a"})
+        self.assertEqual(parse_badging(BADGING.replace("minSdkVersion:","sdkVersion:"))["min_sdk"],24)
+
+    def test_universal_engine_libraries_must_have_correct_elf_headers(self):
+        def header(bits,machine):
+            value=bytearray(20)
+            value[:4]=b"\x7fELF"
+            value[4]=bits
+            value[5]=1
+            value[18:20]=machine.to_bytes(2,"little")
+            return value
+        for arm32 in (None,header(2,183),header(1,40)):
+            stream=io.BytesIO()
+            with zipfile.ZipFile(stream,"w") as archive:
+                archive.writestr("lib/arm64-v8a/libgodot_android.so",header(2,183))
+                if arm32 is not None:
+                    archive.writestr("lib/armeabi-v7a/libgodot_android.so",arm32)
+            stream.seek(0)
+            with zipfile.ZipFile(stream) as archive:
+                if arm32==header(1,40):
+                    result=validate_engine_libraries(archive,["armeabi-v7a","arm64-v8a"])
+                    self.assertEqual(result["armeabi-v7a"]["elf_bits"],32)
+                else:
+                    with self.assertRaises(ValueError):
+                        validate_engine_libraries(archive,["armeabi-v7a","arm64-v8a"])
 
 
 if __name__ == "__main__":

@@ -22,8 +22,15 @@ def parse_badging(text):
         raise ValueError("APK versionCode is not an integer")
     permissions = sorted(set(re.findall(
         r"^uses-permission(?:-sdk-\d+)?: name='([^']+)'", text, re.MULTILINE)))
+    minimum = re.search(r"^(?:minSdkVersion|sdkVersion):'(\d+)'", text, re.MULTILINE)
+    target = re.search(r"^targetSdkVersion:'(\d+)'", text, re.MULTILINE)
+    maximum = re.search(r"^maxSdkVersion:'(\d+)'", text, re.MULTILINE)
+    if minimum is None or target is None:
+        raise ValueError("APK minimum/target Android SDK metadata is missing")
     return {"application_id": fields["name"], "version": fields["versionName"],
-            "version_code": int(fields["versionCode"]), "permissions": permissions}
+            "version_code": int(fields["versionCode"]), "permissions": permissions,
+            "min_sdk": int(minimum.group(1)), "target_sdk": int(target.group(1)),
+            "max_sdk": int(maximum.group(1)) if maximum else None}
 
 
 def validate_metadata(observed, expected, native_abis):
@@ -34,8 +41,33 @@ def validate_metadata(observed, expected, native_abis):
         raise ValueError(f"Packaged permissions differ from declaration: {observed['permissions']}")
     if sorted(native_abis) != sorted(expected["architectures"]):
         raise ValueError(f"Packaged native architectures differ from declaration: {sorted(native_abis)}")
+    for key in ("min_sdk", "target_sdk"):
+        if key in expected and observed[key] != expected[key]:
+            raise ValueError(f"Packaged {key} differs from declaration")
+    device_api = expected.get("installation_target", {}).get("android_api")
+    if device_api is not None and (observed["min_sdk"] > device_api or
+            (observed["max_sdk"] is not None and observed["max_sdk"] < device_api)):
+        raise ValueError("Packaged Android SDK range excludes the reported test device")
     if expected["release_signed"] or expected["distribution_published"]:
         raise ValueError("This verifier is restricted to unpublished debug test candidates")
+
+
+def validate_engine_libraries(archive, architectures):
+    expected_elf = {"armeabi-v7a": (1, 40), "arm64-v8a": (2, 183)}
+    evidence = {}
+    for abi in architectures:
+        name = f"lib/{abi}/libgodot_android.so"
+        if name not in archive.namelist():
+            raise ValueError(f"Missing Godot engine library for {abi}")
+        with archive.open(name) as source:
+            header = source.read(20)
+        elf_class, machine = expected_elf[abi]
+        if (len(header) != 20 or header[:4] != b"\x7fELF" or header[4] != elf_class or
+                header[5] != 1 or int.from_bytes(header[18:20], "little") != machine):
+            raise ValueError(f"Godot library ELF architecture does not match {abi}")
+        evidence[abi] = {"file": name, "elf_bits": 32 if elf_class == 1 else 64,
+                         "elf_machine": machine}
+    return evidence
 
 
 def signer_fingerprints(text):
@@ -93,6 +125,7 @@ def verify(apk, manifest_path, output, debug_keystore):
                        if path.startswith("lib/") and path.endswith(".so") and len(path.split("/")) == 3}
         if any("production_drafts" in path for path in archive.namelist()):
             raise ValueError("Production draft path unexpectedly present in APK")
+        engine_libraries = validate_engine_libraries(archive, expected["architectures"])
     validate_metadata(observed, expected, native_abis)
     with apk.open("rb") as source:
         digest = hashlib.file_digest(source, "sha256").hexdigest()
@@ -103,6 +136,8 @@ def verify(apk, manifest_path, output, debug_keystore):
         "workflow_run_attempt": int(os.environ["GITHUB_RUN_ATTEMPT"]),
         "apk": apk.name, "apk_bytes": apk.stat().st_size, "apk_sha256": digest,
         **observed, "architectures": sorted(native_abis), "engine": expected["engine"],
+        "engine_libraries": engine_libraries,
+        "installation_target": expected.get("installation_target"),
         "save_schema": expected["save_schema"], "signature_verified": True,
         "signer_certificate_sha256": certificate_sha256,
         "signing": "this-job-ephemeral-debug-certificate", "sdk_build_tools": sdk.name,
