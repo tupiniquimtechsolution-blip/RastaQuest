@@ -5,6 +5,7 @@ on:
     paths:
       - "game/**"
       - ".github/workflows/godot-ci.yml"
+      - "tools/build_translations.py"
       - ".gitignore"
       - "docs/release/rc/**"
       - "tools/verify_android_test_apk.py"
@@ -14,6 +15,7 @@ on:
     paths:
       - "game/**"
       - ".github/workflows/godot-ci.yml"
+      - "tools/build_translations.py"
       - ".gitignore"
       - "docs/release/rc/**"
       - "tools/verify_android_test_apk.py"
@@ -64,6 +66,14 @@ jobs:
           set -euo pipefail
           "${GODOT_BIN}" --headless --path game -- --smoke-test 2>&1 | tee /tmp/rasta-quest-smoke.log
           grep -q "RASTA_QUEST_BOOT_OK" /tmp/rasta-quest-smoke.log
+      - name: Menu access and localization integration
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -B tools/build_translations.py --check
+          timeout 30s "${GODOT_BIN}" --headless --path game --script res://tests/menu_access_integration.gd 2>&1 | tee /tmp/rq-menu-access.log
+          grep -q 'RQ_MENU_ACCESS_OK' /tmp/rq-menu-access.log
+          if grep -qE 'SCRIPT ERROR:|ERROR:' /tmp/rq-menu-access.log; then exit 1; fi
       - name: Player state transition smoke test
         shell: bash
         run: |

@@ -1,6 +1,6 @@
 key,en,pt_BR
 hub_title,Sanctuary,Refúgio
-start_run,Start Run,Iniciar Run
+start_run,Start Run,Iniciar partida
 settings_title,Settings / Accessibility,Configurações / Acessibilidade
 screen_shake,Screen shake,Tremor de tela
 reduced_flashes,Reduce flashes,Reduzir flashes
@@ -9,3 +9,17 @@ music_volume,Music volume,Volume da música
 sfx_volume,SFX volume,Volume dos efeitos
 touch_scale,Touch control scale,Tamanho dos controles touch
 language,Language,Idioma
+hub_game_title,Rasta Quest — Sanctuary,Rasta Quest — Refúgio
+meta_shards,Meta shards: %d,Fragmentos: %d
+paused,Paused,Pausado
+resume,Resume,Continuar
+close,Close,Fechar
+credits_title,Credits and licenses,Créditos e licenças
+continue,Continue,Continuar
+tutorial_move,Move with the left controls. Jump to cross broken ground.,Use os controles da esquerda para andar. Pule para atravessar as plataformas.
+tutorial_combat,Use the axe to defeat enemies. You can also attack while jumping.,Use o machado para derrotar inimigos. Você também pode atacar durante o salto.
+tutorial_run,"Clear encounters, enter portals and choose one of three upgrades.","Derrote os inimigos, entre nos portais e escolha uma das três melhorias."
+touch_left,LEFT,ESQUERDA
+touch_right,RIGHT,DIREITA
+touch_jump,JUMP,PULAR
+touch_attack,ATTACK,ATACAR

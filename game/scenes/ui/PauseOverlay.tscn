@@ -10,7 +10,7 @@ visible = false
 offset_left = 430.0
 offset_top = 210.0
 offset_right = 850.0
-offset_bottom = 510.0
+offset_bottom = 620.0
 
 [node name="VBox" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -27,10 +27,15 @@ theme_override_constants/separation = 24
 
 [node name="Title" type="Label" parent="Panel/VBox"]
 layout_mode = 2
-text = "Paused"
+text = "paused"
 horizontal_alignment = 1
 
 [node name="Resume" type="Button" parent="Panel/VBox"]
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
-text = "Resume"
+text = "resume"
+
+[node name="Settings" type="Button" parent="Panel/VBox"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+text = "settings_title"

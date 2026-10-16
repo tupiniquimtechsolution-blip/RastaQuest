@@ -1,0 +1,74 @@
+msgid ""
+msgstr "Language: pt_BR\nContent-Type: text/plain; charset=UTF-8\n"
+
+msgid "hub_title"
+msgstr "Refúgio"
+
+msgid "start_run"
+msgstr "Iniciar partida"
+
+msgid "settings_title"
+msgstr "Configurações / Acessibilidade"
+
+msgid "screen_shake"
+msgstr "Tremor de tela"
+
+msgid "reduced_flashes"
+msgstr "Reduzir flashes"
+
+msgid "vibration"
+msgstr "Vibração"
+
+msgid "music_volume"
+msgstr "Volume da música"
+
+msgid "sfx_volume"
+msgstr "Volume dos efeitos"
+
+msgid "touch_scale"
+msgstr "Tamanho dos controles touch"
+
+msgid "language"
+msgstr "Idioma"
+
+msgid "hub_game_title"
+msgstr "Rasta Quest — Refúgio"
+
+msgid "meta_shards"
+msgstr "Fragmentos: %d"
+
+msgid "paused"
+msgstr "Pausado"
+
+msgid "resume"
+msgstr "Continuar"
+
+msgid "close"
+msgstr "Fechar"
+
+msgid "credits_title"
+msgstr "Créditos e licenças"
+
+msgid "continue"
+msgstr "Continuar"
+
+msgid "tutorial_move"
+msgstr "Use os controles da esquerda para andar. Pule para atravessar as plataformas."
+
+msgid "tutorial_combat"
+msgstr "Use o machado para derrotar inimigos. Você também pode atacar durante o salto."
+
+msgid "tutorial_run"
+msgstr "Derrote os inimigos, entre nos portais e escolha uma das três melhorias."
+
+msgid "touch_left"
+msgstr "ESQUERDA"
+
+msgid "touch_right"
+msgstr "DIREITA"
+
+msgid "touch_jump"
+msgstr "PULAR"
+
+msgid "touch_attack"
+msgstr "ATACAR"
