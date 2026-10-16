@@ -109,6 +109,7 @@ jobs:
           run_test player_state_smoke.gd 'RQ002_PLAYER_STATE_OK cycles=100'
           run_test combat_smoke.gd 'RQ003_COMBAT_OK'
           run_test enemy_framework_smoke.gd 'RQ004_ENEMY_FRAMEWORK_OK'
+          run_test hostile_attack_integration.gd 'RQ_HOSTILE_ATTACK_INTEGRATION_OK'
           run_test roguelike_core_smoke.gd 'RQ005_ROGUELIKE_CORE_OK encounters=100 upgrades=12'
           run_test vertical_slice_smoke.gd 'RQ006_VERTICAL_SLICE_TECH_OK rooms=6 save_recovery=pass'
           run_test alpha_campaign_smoke.gd 'RQ007_ALPHA_TECH_OK rooms=18 upgrades=18 biomes=3'

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const EnemyBrain = preload("res://scripts/enemies/enemy_brain.gd")
+const HostileAttack = preload("res://scripts/combat/hostile_attack.gd")
 
 signal attack_tell_started(behavior: String, duration: float)
 signal enemy_defeated(enemy: Node)
@@ -13,8 +14,10 @@ signal enemy_defeated(enemy: Node)
 
 var _target: Node2D
 var _attack_cooldown_remaining: float = 0.0
+var _attack: Node2D
 
 func _ready() -> void:
+	add_to_group("hostile_actor")
 	if data == null:
 		push_error("EnemyBase requires EnemyData")
 		set_physics_process(false)
@@ -35,7 +38,9 @@ func _physics_process(delta: float) -> void:
 	_attack_cooldown_remaining = maxf(_attack_cooldown_remaining - delta, 0.0)
 	velocity.y = minf(velocity.y + 1500.0 * delta, 900.0)
 
-	if is_instance_valid(_target):
+	if is_instance_valid(_attack) and not _attack.is_queued_for_deletion():
+		velocity.x = _attack.movement_velocity()
+	elif is_instance_valid(_target):
 		var intent := EnemyBrain.choose_intent(
 			data.behavior,
 			global_position,
@@ -46,13 +51,23 @@ func _physics_process(delta: float) -> void:
 		velocity.x = float(intent["move_axis"]) * data.move_speed
 
 		if bool(intent["wants_attack"]):
-			_attack_cooldown_remaining = data.attack_cooldown
-			attack_tell_started.emit(data.behavior, data.tell_seconds * float(intent["tell_multiplier"]))
+			var duration := data.tell_seconds * float(intent["tell_multiplier"])
+			var attack := HostileAttack.new()
+			add_child(attack)
+			if attack.begin(self, _target, data.behavior, duration):
+				_attack = attack
+				_attack_cooldown_remaining = data.attack_cooldown
+				velocity.x = 0.0
+				attack_tell_started.emit(data.behavior, duration)
+			else:
+				attack.queue_free()
 	else:
 		velocity.x = move_toward(velocity.x, 0.0, data.move_speed * delta)
 
 	move_and_slide()
 
 func _on_died() -> void:
+	if is_instance_valid(_attack):
+		_attack.cancel()
 	enemy_defeated.emit(self)
 	queue_free()

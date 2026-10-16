@@ -82,6 +82,13 @@ jobs:
           set -euo pipefail
           "${GODOT_BIN}" --headless --path game --script res://tests/enemy_framework_smoke.gd 2>&1 | tee /tmp/rq004-enemies.log
           grep -q "RQ004_ENEMY_FRAMEWORK_OK" /tmp/rq004-enemies.log
+      - name: Hostile attack scene integration
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout 30s "${GODOT_BIN}" --headless --path game --script res://tests/hostile_attack_integration.gd 2>&1 | tee /tmp/rq-hostile-attacks.log
+          grep -q "RQ_HOSTILE_ATTACK_INTEGRATION_OK" /tmp/rq-hostile-attacks.log
+          if grep -qE 'SCRIPT ERROR:|ERROR:' /tmp/rq-hostile-attacks.log; then exit 1; fi
       - name: Roguelike core smoke test
         shell: bash
         run: |

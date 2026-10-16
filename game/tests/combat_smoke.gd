@@ -42,6 +42,7 @@ func _test_health() -> bool:
 		return _fail("death contract failed")
 	if health.take_damage(1, true):
 		return _fail("dead target accepted damage")
+	health.free()
 	return true
 
 func _test_priority() -> bool:

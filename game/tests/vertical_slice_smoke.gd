@@ -60,6 +60,7 @@ func _test_save_roundtrip_and_recovery() -> bool:
 	var recovered := manager.load_save()
 	if int(recovered.get("meta_shards", -1)) != 3:
 		return _fail("corrupted-save recovery did not restore previous-good backup")
+	manager.free()
 
 	_cleanup(primary)
 	_cleanup(backup)
@@ -82,6 +83,7 @@ func _test_audio_buses() -> bool:
 	audio._ready()
 	if AudioServer.get_bus_index(&"Music") < 0 or AudioServer.get_bus_index(&"SFX") < 0:
 		return _fail("Music/SFX audio buses were not created")
+	audio.free()
 	return true
 
 func _cleanup(path: String) -> void:
