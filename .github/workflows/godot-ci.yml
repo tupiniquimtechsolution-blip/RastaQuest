@@ -6,12 +6,18 @@ on:
       - "game/**"
       - ".github/workflows/godot-ci.yml"
       - ".gitignore"
+      - "docs/release/rc/**"
+      - "tools/verify_android_test_apk.py"
+      - "tools/test_verify_android_test_apk.py"
   push:
     branches: [main]
     paths:
       - "game/**"
       - ".github/workflows/godot-ci.yml"
       - ".gitignore"
+      - "docs/release/rc/**"
+      - "tools/verify_android_test_apk.py"
+      - "tools/test_verify_android_test_apk.py"
 
 permissions:
   contents: read
@@ -27,6 +33,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Record tested source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD | tee /tmp/godot-source.txt
+          test "$(git rev-parse HEAD)" = "${GITHUB_SHA}"
       - name: Download official Godot
         shell: bash
         run: |
@@ -135,3 +147,15 @@ jobs:
             echo "Tracked .godot cache detected."
             exit 1
           fi
+      - name: Preserve Godot regression evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rasta-quest-godot-test-evidence
+          path: |
+            /tmp/godot-source.txt
+            /tmp/godot-version.txt
+            /tmp/rasta-quest-smoke.log
+            /tmp/rq*.log
+          if-no-files-found: warn
+          retention-days: 30

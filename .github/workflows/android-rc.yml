@@ -6,12 +6,16 @@ on:
       - "game/**"
       - ".github/workflows/android-rc.yml"
       - "docs/release/rc/**"
+      - "tools/verify_android_test_apk.py"
+      - "tools/test_verify_android_test_apk.py"
   push:
     branches: [main]
     paths:
       - "game/**"
       - ".github/workflows/android-rc.yml"
       - "docs/release/rc/**"
+      - "tools/verify_android_test_apk.py"
+      - "tools/test_verify_android_test_apk.py"
 
 permissions:
   contents: read
@@ -27,6 +31,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Verify source and APK metadata rejection cases
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${GITHUB_SHA}"
+          python3 -B -m unittest discover -s tools -p test_verify_android_test_apk.py -v
 
       - name: Verify Android/JDK runner prerequisites
         shell: bash
@@ -89,16 +100,40 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p /tmp/rq-android
-          "${GODOT_BIN}" --headless --verbose --path game --export-debug "Android Debug" /tmp/rq-android/rasta-quest-1.0.0-rc.1-debug.apk 2>&1 | tee /tmp/rq-android/export.log
-          test -s /tmp/rq-android/rasta-quest-1.0.0-rc.1-debug.apk
-          sha256sum /tmp/rq-android/rasta-quest-1.0.0-rc.1-debug.apk | tee /tmp/rq-android/SHA256SUMS.txt
+          "${GODOT_BIN}" --headless --verbose --path game --export-debug "Android Debug" /tmp/rq-android/rasta-quest-1.0.0-rc.1-universal-debug.apk 2>&1 | tee /tmp/rq-android/export.log
+          test -s /tmp/rq-android/rasta-quest-1.0.0-rc.1-universal-debug.apk
+          sha256sum /tmp/rq-android/rasta-quest-1.0.0-rc.1-universal-debug.apk | tee /tmp/rq-android/SHA256SUMS.txt
+
+      - name: Verify packaged APK and write exact-source evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -B tools/verify_android_test_apk.py \
+            /tmp/rq-android/rasta-quest-1.0.0-rc.1-universal-debug.apk \
+            --output /tmp/rq-android \
+            --debug-keystore /tmp/rastaquest-debug.keystore
 
       - name: Upload debug APK evidence
         uses: actions/upload-artifact@v4
         with:
-          name: rasta-quest-1.0.0-rc.1-debug
+          name: rasta-quest-1.0.0-rc.1-universal-debug
           path: |
-            /tmp/rq-android/rasta-quest-1.0.0-rc.1-debug.apk
+            /tmp/rq-android/rasta-quest-1.0.0-rc.1-universal-debug.apk
             /tmp/rq-android/SHA256SUMS.txt
+            /tmp/rq-android/TEST_RELEASE_MANIFEST.json
+            /tmp/rq-android/signature-verification.txt
+            /tmp/rq-android/apk-badging.txt
           if-no-files-found: error
-          retention-days: 7
+          retention-days: 30
+
+      - name: Preserve failed APK verification diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rasta-quest-android-test-diagnostics
+          path: |
+            /tmp/rq-android/export.log
+            /tmp/rq-android/signature-verification.txt
+            /tmp/rq-android/apk-badging.txt
+          if-no-files-found: warn
+          retention-days: 30
