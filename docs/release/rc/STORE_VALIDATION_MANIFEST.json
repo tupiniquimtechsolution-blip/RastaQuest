@@ -1,0 +1,22 @@
+{
+  "product": "Rasta Quest",
+  "engine": "Godot 4.5.1",
+  "version": "1.0.0-rc.1",
+  "version_code": 1000001,
+  "save_schema": 2,
+  "application_id": "com.tupiniquimtechsolution.rastaquest",
+  "architectures": [
+    "armeabi-v7a",
+    "arm64-v8a"
+  ],
+  "min_sdk": 24,
+  "target_sdk": 36,
+  "declared_permissions": [],
+  "release_signed": false,
+  "distribution_published": false,
+  "installation_target": {
+    "android_api": 34,
+    "physical_installation": "pending_owner_retest"
+  },
+  "classification": "store-format-validation-debug-only"
+}

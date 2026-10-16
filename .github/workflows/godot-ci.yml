@@ -8,8 +8,8 @@ on:
       - "tools/build_translations.py"
       - ".gitignore"
       - "docs/release/rc/**"
-      - "tools/verify_android_test_apk.py"
-      - "tools/test_verify_android_test_apk.py"
+      - "tools/verify_android_*.py"
+      - "tools/test_verify_android_*.py"
   push:
     branches: [main]
     paths:
@@ -18,8 +18,8 @@ on:
       - "tools/build_translations.py"
       - ".gitignore"
       - "docs/release/rc/**"
-      - "tools/verify_android_test_apk.py"
-      - "tools/test_verify_android_test_apk.py"
+      - "tools/verify_android_*.py"
+      - "tools/test_verify_android_*.py"
 
 permissions:
   contents: read

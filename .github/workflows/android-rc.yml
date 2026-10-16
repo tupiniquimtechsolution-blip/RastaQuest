@@ -6,16 +6,16 @@ on:
       - "game/**"
       - ".github/workflows/android-rc.yml"
       - "docs/release/rc/**"
-      - "tools/verify_android_test_apk.py"
-      - "tools/test_verify_android_test_apk.py"
+      - "tools/verify_android_*.py"
+      - "tools/test_verify_android_*.py"
   push:
     branches: [main]
     paths:
       - "game/**"
       - ".github/workflows/android-rc.yml"
       - "docs/release/rc/**"
-      - "tools/verify_android_test_apk.py"
-      - "tools/test_verify_android_test_apk.py"
+      - "tools/verify_android_*.py"
+      - "tools/test_verify_android_*.py"
 
 permissions:
   contents: read
@@ -27,7 +27,7 @@ env:
 jobs:
   debug-apk:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 30
 
     steps:
       - uses: actions/checkout@v4
@@ -37,7 +37,7 @@ jobs:
         run: |
           set -euo pipefail
           test "$(git rev-parse HEAD)" = "${GITHUB_SHA}"
-          python3 -B -m unittest discover -s tools -p test_verify_android_test_apk.py -v
+          python3 -B -m unittest discover -s tools -p 'test_verify_android_*.py' -v
 
       - name: Verify Android/JDK runner prerequisites
         shell: bash
@@ -126,6 +126,87 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
+      - name: Prepare official Gradle template and pinned bundletool
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p game/android/build /tmp/rq-store-apk /tmp/rq-store-bundle /tmp/rq-store-derived
+          python3 -m zipfile -e /tmp/templates/templates/android_source.zip game/android/build
+          printf '4.5.1.stable\n' > game/android/.build_version
+          touch game/android/build/.gdignore
+          chmod +x game/android/build/gradlew
+          curl --fail --location --retry 3 \
+            -o /tmp/bundletool.jar \
+            https://github.com/google/bundletool/releases/download/1.18.2/bundletool-all-1.18.2.jar
+          sha256sum /tmp/bundletool.jar | tee /tmp/rq-store-bundle/bundletool-SHA256.txt
+          java -jar /tmp/bundletool.jar version
+
+      - name: Export and verify target36 Gradle APK and AAB
+        shell: bash
+        env:
+          GODOT_ANDROID_KEYSTORE_DEBUG_PATH: /tmp/rastaquest-debug.keystore
+          GODOT_ANDROID_KEYSTORE_DEBUG_USER: androiddebugkey
+          GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
+        run: |
+          set -euo pipefail
+          "${GODOT_BIN}" --headless --path game --export-debug "Android Store Validation APK" \
+            /tmp/rq-store-apk/rasta-quest-target36-validation-debug.apk 2>&1 | tee /tmp/rq-store-apk/export.log
+          python3 -B tools/verify_android_test_apk.py \
+            /tmp/rq-store-apk/rasta-quest-target36-validation-debug.apk \
+            --manifest docs/release/rc/STORE_VALIDATION_MANIFEST.json \
+            --output /tmp/rq-store-apk --debug-keystore /tmp/rastaquest-debug.keystore
+          python3 -B tools/verify_android_native_pages.py \
+            /tmp/rq-store-apk/rasta-quest-target36-validation-debug.apk \
+            --output /tmp/rq-store-apk/NATIVE_PAGES.json
+          "${GODOT_BIN}" --headless --path game --export-debug "Android Store Validation AAB" \
+            /tmp/rq-store-bundle/rasta-quest-target36-validation-debug.aab 2>&1 | tee /tmp/rq-store-bundle/export.log
+          jarsigner -keystore /tmp/rastaquest-debug.keystore \
+            -storepass android -keypass android -sigalg SHA256withRSA -digestalg SHA-256 \
+            /tmp/rq-store-bundle/rasta-quest-target36-validation-debug.aab androiddebugkey
+          java -jar /tmp/bundletool.jar validate \
+            --bundle=/tmp/rq-store-bundle/rasta-quest-target36-validation-debug.aab
+          python3 -B tools/verify_android_bundle.py \
+            /tmp/rq-store-bundle/rasta-quest-target36-validation-debug.aab \
+            --bundletool /tmp/bundletool.jar --debug-keystore /tmp/rastaquest-debug.keystore \
+            --output /tmp/rq-store-bundle
+          python3 -B tools/verify_android_native_pages.py \
+            /tmp/rq-store-bundle/rasta-quest-target36-validation-debug.aab \
+            --output /tmp/rq-store-bundle/NATIVE_PAGES.json
+
+      - name: Verify universal APK derived from the actual AAB
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -jar /tmp/bundletool.jar build-apks \
+            --bundle=/tmp/rq-store-bundle/rasta-quest-target36-validation-debug.aab \
+            --output=/tmp/store-validation.apks --mode=universal \
+            --ks=/tmp/rastaquest-debug.keystore --ks-key-alias=androiddebugkey \
+            --ks-pass=pass:android --key-pass=pass:android
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile
+          with zipfile.ZipFile("/tmp/store-validation.apks") as z:
+              Path("/tmp/rq-store-derived/rasta-quest-target36-from-bundle-debug.apk").write_bytes(z.read("universal.apk"))
+          PY
+          python3 -B tools/verify_android_test_apk.py \
+            /tmp/rq-store-derived/rasta-quest-target36-from-bundle-debug.apk \
+            --manifest docs/release/rc/STORE_VALIDATION_MANIFEST.json \
+            --output /tmp/rq-store-derived --debug-keystore /tmp/rastaquest-debug.keystore
+          python3 -B tools/verify_android_native_pages.py \
+            /tmp/rq-store-derived/rasta-quest-target36-from-bundle-debug.apk \
+            --output /tmp/rq-store-derived/NATIVE_PAGES.json
+
+      - name: Preserve verified store-format debug artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: rasta-quest-target36-store-format-validation-debug
+          path: |
+            /tmp/rq-store-apk/
+            /tmp/rq-store-bundle/
+            /tmp/rq-store-derived/
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Preserve failed APK verification diagnostics
         if: failure()
         uses: actions/upload-artifact@v4
@@ -135,5 +216,10 @@ jobs:
             /tmp/rq-android/export.log
             /tmp/rq-android/signature-verification.txt
             /tmp/rq-android/apk-badging.txt
+            /tmp/rq-store-*/export.log
+            /tmp/rq-store-*/*MANIFEST.json
+            /tmp/rq-store-*/bundle-signature.txt
+            /tmp/rq-store-*/apk-badging.txt
+            /tmp/rq-store-*/NATIVE_PAGES.json
           if-no-files-found: warn
           retention-days: 30
