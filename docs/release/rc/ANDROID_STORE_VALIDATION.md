@@ -9,7 +9,7 @@ A política Google Play consultada em16/10/2026 exige target36 para novos apps m
 1. Export Gradle do APK de validação com certificado debug efêmero.
 2. Assinatura, certificado, pacote/versão, SDK, permissões, ABIs e hash conferidos no APK.
 3. Inspeção de TODAS as bibliotecas ARM64: ELF LOAD com alinhamento16KB e congruência de offset/endereço; libs sem compressão precisam também de offset ZIP16KB. O critério ELF16KB não é aplicado a ARM32.
-4. Export real do AAB, bundletool1.18.2 validate, assinatura JAR verificada e certificado comparado ao debug do job, manifesto XML extraído e comparado ao contrato.
+4. Export real do AAB, assinatura JAR explícita com o certificado debug efêmero do job (o export debug do Godot entrega bundle sem assinatura), bundletool1.18.2 validate, assinatura verificada e certificado comparado ao debug do job, manifesto XML extraído e comparado ao contrato.
 5. Gerar APK universal a partir desse AAB com bundletool e repetir verificações de assinatura/pacote/SDK/ABI/ELF/ZIP.
 6. Preservar artefatos e manifestos ligados à fonte exata e ao run. O bundletool tem versão fixa e seu hash é registrado.
 

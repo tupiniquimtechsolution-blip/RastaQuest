@@ -160,6 +160,9 @@ jobs:
             --output /tmp/rq-store-apk/NATIVE_PAGES.json
           "${GODOT_BIN}" --headless --path game --export-debug "Android Store Validation AAB" \
             /tmp/rq-store-bundle/rasta-quest-target36-validation-debug.aab 2>&1 | tee /tmp/rq-store-bundle/export.log
+          jarsigner -keystore /tmp/rastaquest-debug.keystore \
+            -storepass android -keypass android -sigalg SHA256withRSA -digestalg SHA-256 \
+            /tmp/rq-store-bundle/rasta-quest-target36-validation-debug.aab androiddebugkey
           java -jar /tmp/bundletool.jar validate \
             --bundle=/tmp/rq-store-bundle/rasta-quest-target36-validation-debug.aab
           python3 -B tools/verify_android_bundle.py \
