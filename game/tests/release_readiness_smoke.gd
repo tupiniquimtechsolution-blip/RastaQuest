@@ -30,6 +30,9 @@ func _init() -> void:
 
 	for index in [1, 2]:
 		var section := "preset.%d.options" % index
+		if presets.get_value(section, "gradle_build/gradle_build_directory", "") != "res://android":
+			_fail("Gradle root must resolve to the installed android/build template")
+			return
 		if presets.get_value(section, "gradle_build/use_gradle_build", false) != true or presets.get_value(section, "gradle_build/target_sdk", "") != "36" or presets.get_value(section, "gradle_build/min_sdk", "") != "24":
 			_fail("store validation must use Gradle, min24 and target36")
 			return

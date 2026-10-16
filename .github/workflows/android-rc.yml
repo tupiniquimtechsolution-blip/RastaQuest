@@ -133,7 +133,7 @@ jobs:
           mkdir -p game/android/build /tmp/rq-store-apk /tmp/rq-store-bundle /tmp/rq-store-derived
           python3 -m zipfile -e /tmp/templates/templates/android_source.zip game/android/build
           printf '4.5.1.stable\n' > game/android/.build_version
-          touch game/android/.gdignore
+          touch game/android/build/.gdignore
           chmod +x game/android/build/gradlew
           curl --fail --location --retry 3 \
             -o /tmp/bundletool.jar \
