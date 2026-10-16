@@ -7,8 +7,8 @@ on:
       - ".github/workflows/godot-ci.yml"
       - ".gitignore"
       - "docs/release/rc/**"
-      - "tools/verify_android_test_apk.py"
-      - "tools/test_verify_android_test_apk.py"
+      - "tools/verify_android_*.py"
+      - "tools/test_verify_android_*.py"
   push:
     branches: [main]
     paths:
@@ -16,8 +16,8 @@ on:
       - ".github/workflows/godot-ci.yml"
       - ".gitignore"
       - "docs/release/rc/**"
-      - "tools/verify_android_test_apk.py"
-      - "tools/test_verify_android_test_apk.py"
+      - "tools/verify_android_*.py"
+      - "tools/test_verify_android_*.py"
 
 permissions:
   contents: read

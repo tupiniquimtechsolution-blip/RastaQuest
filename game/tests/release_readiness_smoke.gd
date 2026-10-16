@@ -28,7 +28,19 @@ func _init() -> void:
 			_fail("Android Debug is missing ABI: %s" % abi)
 			return
 
-	print("RQ010_RC_PREP_OK version=1.0.0-rc.1 arm64=1 armv7=1")
+	for index in [1, 2]:
+		var section := "preset.%d.options" % index
+		if presets.get_value(section, "gradle_build/use_gradle_build", false) != true or presets.get_value(section, "gradle_build/target_sdk", "") != "36" or presets.get_value(section, "gradle_build/min_sdk", "") != "24":
+			_fail("store validation must use Gradle, min24 and target36")
+			return
+		if presets.get_value(section, "gradle_build/export_format", -1) != index - 1:
+			_fail("store validation APK/AAB format mismatch")
+			return
+		for abi in ["armeabi-v7a", "arm64-v8a"]:
+			if presets.get_value(section, "architectures/" + abi, false) != true:
+				_fail("store validation missing ABI: %s" % abi)
+				return
+	print("RQ010_RC_PREP_OK version=1.0.0-rc.1 arm64=1 armv7=1 store_target=36")
 	quit(0)
 
 func _fail(message: String) -> void:

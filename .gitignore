@@ -35,6 +35,9 @@ compile_commands.json
 # Godot
 .godot/
 .import/
+/game/android/build/
+/game/android/.build_version
+/game/android/.gdignore
 export.cfg
 export_presets.cfg
 !game/export_presets.cfg
