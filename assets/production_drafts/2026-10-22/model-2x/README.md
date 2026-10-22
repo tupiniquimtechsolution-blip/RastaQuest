@@ -1,5 +1,7 @@
 # Protagonist2x — density experiment, not final sprites
 
+Update after the initial report: Rodrigo approved this proof's appearance/detail as the animation base on22/10 (“Sim, usar esse visual como base”). The exact scope/hash is in ../axe-idle-2x/OWNER_APPEARANCE_APPROVAL.json. The pending fields below and original technical JSONs predate that answer and remain historical; final geometry, weapon/clips, rights and in-room/device acceptance are still pending.
+
 Rodrigo authorized256×256/body104 source pixels at the same game size on22/10. See docs/production/VISUAL_DENSITY_DECISION_2026-10-22.md. The previous hand-built native-python-v01 stays rejected; this does not reuse its polygons or PNGs.
 
 Built-in ImageGen created a new identity study from the unmodified illustrator return (PR47, protagonist-revised-study.png, SHA2568ae2fad730e42f05458e7c9a5c2b82d60169c594bec05701136433318f5aff41). PROMPT.txt records the request. Although requested as256×256, the actual result is1254×1254,159816 visible RGBA colors and partial alpha. It fails the native export gate. The tool did not deliver a native sprite.
