@@ -1,5 +1,5 @@
 """Saved screenshot integrity, not visual/device acceptance."""
-import hashlib,json
+import hashlib,json,subprocess
 from pathlib import Path
 from PIL import Image
 
@@ -17,7 +17,11 @@ def main():
             if list(Image.open(path).size)!=f['size']:errors.append(f['file']+':size')
         for source,expected in m['source_hashes'].items():
             path=ROOT/'game'/source.removeprefix('res://')
-            actual=hashlib.sha256(path.read_text(encoding='utf-8').encode('utf-8')).hexdigest()
+            # Historical captures stay bound to the sources actually rendered
+            # at PR65, even when a later optional presenter version is authored.
+            relative=path.resolve().relative_to(ROOT.resolve()).as_posix()
+            raw=subprocess.check_output(['git','show','c8791b4abc2b8e7db649956380bae1df8375c0f0:'+relative],cwd=ROOT)
+            actual=hashlib.sha256(raw.decode('utf-8').replace('\r\n','\n').encode('utf-8')).hexdigest()
             if actual!=expected:errors.append(folder+':source:'+source)
         if folder=='forest-room-review':
             by_name={f['file']:f for f in m['captures']}
@@ -26,7 +30,7 @@ def main():
             if by_name['room_portal_mid_1280x720.png']['player_state']!='portal_enter':errors.append('portal_capture_state')
             if by_name['framing_proposal_1280x720.png']['camera_local_y']!=-154.0 or by_name['room_idle_1280x720.png']['camera_local_y']!=-40.0:errors.append('framing_label')
         if m['human_acceptance']!='PENDING' or m['runtime_asset_promotion']:errors.append(folder+':unearned_approval')
-    report={'capture_integrity_pass':not errors,'errors':errors,'captures':counts,'automatic_visual_acceptance':False}
+    report={'capture_integrity_pass':not errors,'errors':errors,'captures':counts,'source_commit':'c8791b4abc2b8e7db649956380bae1df8375c0f0','automatic_visual_acceptance':False}
     print(json.dumps(report,indent=2));raise SystemExit(0 if not errors else 1)
 
 if __name__=='__main__':main()
