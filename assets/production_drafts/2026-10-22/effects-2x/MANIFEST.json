@@ -1,0 +1,222 @@
+{
+  "classification": "INDEPENDENT_EFFECT_AUTHORING_STUDIES_NOT_FINAL",
+  "frame": [
+    256,
+    256
+  ],
+  "render_scale": 0.5,
+  "origin": [
+    128,
+    128
+  ],
+  "palette_hex": [
+    "071f2a",
+    "0d3b52",
+    "12627d",
+    "168db3",
+    "29b8d6",
+    "74dcef",
+    "b9f7fa",
+    "f4ffff"
+  ],
+  "palette_scope": "8colors FX only, separate from32-color body/weapon; scene composite may use up to40 colors. No body palette extension or combined32-color claim.",
+  "method": "Builtin ImageGen high-resolution sheets; one uniform scale per sheet, explicit BOX reduction, eight-color mapping/binary alpha, clear hidden RGB, common center. No per-frame refit, glow shader or native hand cleanup.",
+  "frames": [
+    {
+      "clip": "lightning_proc",
+      "index": 1,
+      "file": "fx_lightning_proc_01.png",
+      "duration_ms": 60,
+      "source_crop": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "source_scale": 0.125,
+      "alpha_bbox": [
+        113,
+        106,
+        154,
+        151
+      ]
+    },
+    {
+      "clip": "lightning_proc",
+      "index": 2,
+      "file": "fx_lightning_proc_02.png",
+      "duration_ms": 60,
+      "source_crop": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "source_scale": 0.125,
+      "alpha_bbox": [
+        103,
+        101,
+        155,
+        154
+      ]
+    },
+    {
+      "clip": "lightning_proc",
+      "index": 3,
+      "file": "fx_lightning_proc_03.png",
+      "duration_ms": 60,
+      "source_crop": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "source_scale": 0.125,
+      "alpha_bbox": [
+        107,
+        110,
+        149,
+        149
+      ]
+    },
+    {
+      "clip": "portal_interaction",
+      "index": 1,
+      "file": "fx_portal_interaction_01.png",
+      "duration_ms": 90,
+      "source_crop": [
+        0,
+        0,
+        768,
+        512
+      ],
+      "source_scale": 0.3333333333333333,
+      "alpha_bbox": [
+        70,
+        46,
+        185,
+        207
+      ]
+    },
+    {
+      "clip": "portal_interaction",
+      "index": 2,
+      "file": "fx_portal_interaction_02.png",
+      "duration_ms": 90,
+      "source_crop": [
+        768,
+        0,
+        1536,
+        512
+      ],
+      "source_scale": 0.3333333333333333,
+      "alpha_bbox": [
+        73,
+        45,
+        184,
+        209
+      ]
+    },
+    {
+      "clip": "portal_interaction",
+      "index": 3,
+      "file": "fx_portal_interaction_03.png",
+      "duration_ms": 90,
+      "source_crop": [
+        0,
+        512,
+        768,
+        1024
+      ],
+      "source_scale": 0.3333333333333333,
+      "alpha_bbox": [
+        64,
+        43,
+        195,
+        210
+      ]
+    },
+    {
+      "clip": "portal_interaction",
+      "index": 4,
+      "file": "fx_portal_interaction_04.png",
+      "duration_ms": 90,
+      "source_crop": [
+        768,
+        512,
+        1536,
+        1024
+      ],
+      "source_scale": 0.3333333333333333,
+      "alpha_bbox": [
+        70,
+        46,
+        186,
+        207
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "file": "lightning-source.png",
+      "sha256": "15da0edae31377b8d61c8fdd844c73359fedc8cddd8a66c655fc7b0531391c7c",
+      "size": [
+        2172,
+        724
+      ],
+      "shared_scale": 0.125
+    },
+    {
+      "file": "portal-source-attempt-01.png",
+      "sha256": "d953529de3318a30c130e1da717e26a7453c645065cdecd6f7f4799b70d73b89",
+      "size": [
+        1536,
+        1024
+      ],
+      "shared_scale": 0.3333333333333333
+    }
+  ],
+  "files": [
+    {
+      "file": "fx_lightning_proc_01.png",
+      "sha256": "18f730fa26dc866ba463c4b0ace9058c89097b5e78d949203ca12533f9f50da9"
+    },
+    {
+      "file": "fx_lightning_proc_02.png",
+      "sha256": "a32f3c09cf1deaedc58069ec380ff7ac311ce824cc497eeed975dc34735181c1"
+    },
+    {
+      "file": "fx_lightning_proc_03.png",
+      "sha256": "f55a3d39f6d6930ba18b719efafc8a387812b02e0519c9a94237dc72986bb076"
+    },
+    {
+      "file": "fx_lightning_proc_atlas.png",
+      "sha256": "7f87d2119cb51a0103c94fee53e14470bcfc296175c48fc4cd614e764277817e"
+    },
+    {
+      "file": "fx_portal_interaction_01.png",
+      "sha256": "4dfee03e2028f1137001efa24fa888a1ef037df714d99dbfd8757a590b76dff3"
+    },
+    {
+      "file": "fx_portal_interaction_02.png",
+      "sha256": "a546ed6a7466d015181d8d9a9b9b66e3abf70adcce641b0f03578df0a2547bab"
+    },
+    {
+      "file": "fx_portal_interaction_03.png",
+      "sha256": "f45450670e90c8e9ac59198c65dc90c3ac2e7d05d77353ea11aeb35486835ab5"
+    },
+    {
+      "file": "fx_portal_interaction_04.png",
+      "sha256": "80d43eda3e4822b61761356c17fa6a40ebf10ad0bca31eb7cab6dad337e282bb"
+    },
+    {
+      "file": "fx_portal_interaction_atlas.png",
+      "sha256": "8b27ca13329cc2374e0dd2d5826e5943b99fdb56f487829416181b133ee4c9df"
+    }
+  ],
+  "runtime_promotion": false,
+  "visual_acceptance": "PENDING",
+  "rights_clearance": "PENDING",
+  "final_cultural_review": "PENDING",
+  "not_delivered": "portal_enter body clip, trigger/lifetime hooks, reduced-flash behavior and in-room/device QA remain pending"
+}

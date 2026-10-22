@@ -1,0 +1,150 @@
+{
+  "prototype_integrity_pass": true,
+  "errors": [],
+  "frames_checked": 7,
+  "shared_fx_colors": 8,
+  "automatic_approval": false,
+  "scope": "Saved hashes,256px/binary alpha/shared8FXcolors,timing,distinct keys,frame bounds and empty central portal opening. Does not prove exact ellipse continuity, reduced-flash safety, gameplay integration, art acceptance or rights.",
+  "export_checks": [
+    {
+      "file": "fx_lightning_proc_01.png",
+      "sha256": "18f730fa26dc866ba463c4b0ace9058c89097b5e78d949203ca12533f9f50da9",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        113,
+        106,
+        154,
+        151
+      ],
+      "visible_colors": 6,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "fx_lightning_proc_02.png",
+      "sha256": "a32f3c09cf1deaedc58069ec380ff7ac311ce824cc497eeed975dc34735181c1",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        103,
+        101,
+        155,
+        154
+      ],
+      "visible_colors": 6,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "fx_lightning_proc_03.png",
+      "sha256": "f55a3d39f6d6930ba18b719efafc8a387812b02e0519c9a94237dc72986bb076",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        107,
+        110,
+        149,
+        149
+      ],
+      "visible_colors": 6,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "fx_portal_interaction_01.png",
+      "sha256": "4dfee03e2028f1137001efa24fa888a1ef037df714d99dbfd8757a590b76dff3",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        70,
+        46,
+        185,
+        207
+      ],
+      "visible_colors": 8,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "fx_portal_interaction_02.png",
+      "sha256": "a546ed6a7466d015181d8d9a9b9b66e3abf70adcce641b0f03578df0a2547bab",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        73,
+        45,
+        184,
+        209
+      ],
+      "visible_colors": 7,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "fx_portal_interaction_03.png",
+      "sha256": "f45450670e90c8e9ac59198c65dc90c3ac2e7d05d77353ea11aeb35486835ab5",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        64,
+        43,
+        195,
+        210
+      ],
+      "visible_colors": 8,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "fx_portal_interaction_04.png",
+      "sha256": "80d43eda3e4822b61761356c17fa6a40ebf10ad0bca31eb7cab6dad337e282bb",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        70,
+        46,
+        186,
+        207
+      ],
+      "visible_colors": 8,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    }
+  ]
+}
