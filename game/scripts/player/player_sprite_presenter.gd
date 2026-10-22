@@ -4,6 +4,7 @@ extends Node2D
 const BODY_CLIPS := [&"idle", &"run", &"jump", &"fall", &"attack_axe", &"attack_axe_air", &"hurt", &"death"]
 const SOURCE_FRAME := Vector2(256, 256)
 const VISUAL_SCALE := Vector2(0.5, 0.5)
+const MAX_DEATH_PRESENTATION_SECONDS := 1.5
 
 @export var sprite_frames: SpriteFrames
 var _sprite: AnimatedSprite2D
@@ -30,6 +31,10 @@ func apply_frames(candidate: SpriteFrames) -> bool:
 	for clip in BODY_CLIPS:
 		if not candidate.has_animation(clip) or candidate.get_frame_count(clip) == 0:
 			return false
+		if candidate.get_animation_speed(clip) <= 0.0:
+			return false
+		if clip not in [&"idle", &"run"] and candidate.get_animation_loop(clip):
+			return false
 		for index in range(candidate.get_frame_count(clip)):
 			var texture := candidate.get_frame_texture(clip, index)
 			if texture == null or texture.get_size() != SOURCE_FRAME:
@@ -41,6 +46,17 @@ func apply_frames(candidate: SpriteFrames) -> bool:
 	$Headband.visible = false
 	_show_state(_player.current_animation_name())
 	return true
+
+func death_presentation_seconds() -> float:
+	# Without assigned complete art, preserve the existing immediate fallback.
+	# Bounded gameplay timer, never an animation_finished lifetime dependency.
+	if sprite_frames == null or not _sprite.visible:
+		return 0.0
+	var seconds := 0.0
+	var speed := sprite_frames.get_animation_speed(&"death")
+	for index in range(sprite_frames.get_frame_count(&"death")):
+		seconds += sprite_frames.get_frame_duration(&"death", index) / speed
+	return clampf(seconds, 0.0, MAX_DEATH_PRESENTATION_SECONDS)
 
 func _show_state(animation_name: StringName) -> void:
 	if _sprite.visible and animation_name in BODY_CLIPS:

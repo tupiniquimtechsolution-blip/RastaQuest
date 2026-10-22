@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 		try_attack()
 
 func try_attack() -> bool:
-	if _cooldown_remaining > 0.0 or _active_animation != &"":
+	if not body.can_attack() or _cooldown_remaining > 0.0 or _active_animation != &"":
 		return false
 	_attack_id += 1
 	_attack_remaining = attack_window
@@ -49,6 +49,15 @@ func try_attack() -> bool:
 
 func current_attack_animation() -> StringName:
 	return _active_animation
+
+func cancel_attack() -> void:
+	_attack_remaining = 0.0
+	if _active_animation != &"":
+		_finish_attack()
+
+func reset_for_respawn() -> void:
+	cancel_attack()
+	_cooldown_remaining = 0.0
 
 func _finish_attack() -> void:
 	hitbox.end_attack()

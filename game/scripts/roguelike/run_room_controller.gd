@@ -27,6 +27,7 @@ const ENEMY_DATA := {
 var _alive_enemies: int = 0
 var _pending_choices: Array = []
 var _boss_active: bool = false
+var _returning_after_death: bool = false
 
 func _ready() -> void:
 	portal.portal_entered.connect(_on_portal_entered)
@@ -91,6 +92,8 @@ func _on_boss_defeated() -> void:
 	status_label.text = "Rift Sovereign defeated • Victory portal open"
 
 func _on_portal_entered() -> void:
+	if _returning_after_death or player.get_node("Health").dead:
+		return
 	portal.set_locked(true)
 	if _boss_active:
 		SaveManager.add_meta_shards(25)
@@ -116,6 +119,8 @@ func _on_portal_entered() -> void:
 			button.visible = false
 
 func _on_upgrade_selected(index: int) -> void:
+	if _returning_after_death:
+		return
 	if index < 0 or index >= _pending_choices.size():
 		return
 	var upgrade: UpgradeData = _pending_choices[index]
@@ -126,8 +131,19 @@ func _on_upgrade_selected(index: int) -> void:
 	_start_encounter()
 
 func _on_player_died() -> void:
+	if _returning_after_death:
+		return
+	_returning_after_death = true
+	portal.set_locked(true)
+	reward_panel.visible = false
+	_pending_choices.clear()
+	var delay: float = player.get_node("Visual").death_presentation_seconds()
 	SaveManager.add_meta_shards(maxi(1, RunManager.state.depth))
 	RunManager.end_run()
+	if delay > 0.0:
+		await get_tree().create_timer(delay, false).timeout
+	if not is_inside_tree():
+		return
 	call_deferred("_return_to_hub")
 
 func _return_to_hub() -> void:
