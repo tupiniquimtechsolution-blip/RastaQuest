@@ -1,0 +1,68 @@
+{
+	"capture_kind": "actual desktop Godot rendering; diagnostic state holds, review-only horizontal camera limits0..1280; not physical/human/final acceptance",
+	"captures": [
+		{
+			"camera_local_y": -40.0,
+			"enemy_clip": "none",
+			"enemy_phase": "none",
+			"file": "room_idle_1280x720.png",
+			"player_state": "idle",
+			"sha256": "43b35c2459d5cd732beba238fb1a3a9c57b85dce35a3f2b80c6317a7e205c34e",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_local_y": -40.0,
+			"enemy_clip": "none",
+			"enemy_phase": "none",
+			"file": "room_idle_640x360.png",
+			"player_state": "idle",
+			"sha256": "8caa6d6a31bfff6e00f1d8f0b64ba561846a44fadba8f26cc9ef77b32f30243d",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_local_y": -40.0,
+			"enemy_clip": "none",
+			"enemy_phase": "none",
+			"file": "room_portal_mid_1280x720.png",
+			"player_state": "portal_enter",
+			"sha256": "dac121f683b351bbcfd4071b7ce9f9aec927252f37ff718de4c4be7033edd293",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_local_y": -40.0,
+			"enemy_clip": "none",
+			"enemy_phase": "none",
+			"file": "room_death_drop_1280x720.png",
+			"player_state": "death",
+			"sha256": "f967b104f7e6283e4cb29561f25a7042a7d4fa89a56ca97f9a61c4982f7dbd37",
+			"size": [
+				1280,
+				720
+			]
+		}
+	],
+	"driver": "Intel(R) UHD Graphics",
+	"engine": "4.5.1-stable (official)",
+	"forest": false,
+	"human_acceptance": "PENDING",
+	"runtime_asset_promotion": false,
+	"source_hash_format": "UTF-8 text normalized to LF for reproducible Windows/Linux comparison",
+	"source_hashes": {
+		"res://../assets/production_drafts/2026-10-22/forest-chaser-proof/MANIFEST.json": "2138f11d6c9aa8389d7bcebf196d32b33d2a8638ac1ce4096db82a9da388d152",
+		"res://../tools/render_art_room_review.gd": "f01637adcad3b67ae5187fe1e32b71840fdc89888ab8cfaf9a4ff83bb02b31a5",
+		"res://scripts/enemies/enemy_sprite_presenter.gd": "32787a00102803feff558e311eeba1c15fb85f1cd98ba49f6aa79132cfb6651c",
+		"res://scripts/player/player_sprite_presenter.gd": "4aa38802ea8a5b6a8b1f38924874b2aaedac4792606ae1484512479214f5a740",
+		"res://scripts/portals/portal.gd": "ee0275183b78c7ca57b0d8354a449b3467bf1396a8dd741db8e47aac57b68b3c",
+		"res://tests/art_review_fixtures.gd": "1cbaa96c3b1f8c7884ab73f97b9e755d59f57900228a7b67184c168cbaee294e",
+		"res://tests/forest_review_fixture.gd": "695367b4bbf747772643b7a7740418a36ec164a8db056f05edb2669e35bb8f51"
+	}
+}

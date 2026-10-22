@@ -90,6 +90,14 @@ jobs:
           grep -q 'RQ_PORTAL_DROP_OK' /tmp/rq-portal-drop.log
           if grep -qE 'SCRIPT ERROR:|ERROR:' /tmp/rq-portal-drop.log; then exit 1; fi
 
+      - name: Forest Chaser proof integration
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout 30s "${GODOT_BIN}" --headless --path game --script res://tests/forest_chaser_integration.gd 2>&1 | tee /tmp/rq-forest-chaser.log
+          grep -q 'RQ_FOREST_CHASER_OK' /tmp/rq-forest-chaser.log
+          if grep -qE 'SCRIPT ERROR:|ERROR:' /tmp/rq-forest-chaser.log; then exit 1; fi
+
       - name: Menu access and localization integration
         shell: bash
         run: |

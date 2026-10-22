@@ -2,12 +2,14 @@ extends CharacterBody2D
 
 const EnemyBrain = preload("res://scripts/enemies/enemy_brain.gd")
 const HostileAttack = preload("res://scripts/combat/hostile_attack.gd")
+const SpritePresenter = preload("res://scripts/enemies/enemy_sprite_presenter.gd")
 
 signal attack_tell_started(behavior: String, duration: float)
 signal enemy_defeated(enemy: Node)
 
 @export var data: EnemyData
 @export var target_path: NodePath
+@export var sprite_frames: SpriteFrames
 
 @onready var health: Node = $Health
 @onready var visual: Polygon2D = $Visual
@@ -15,6 +17,7 @@ signal enemy_defeated(enemy: Node)
 var _target: Node2D
 var _attack_cooldown_remaining: float = 0.0
 var _attack: Node2D
+var _presenter: Node2D
 
 func _ready() -> void:
 	add_to_group("hostile_actor")
@@ -30,6 +33,17 @@ func _ready() -> void:
 
 	if not target_path.is_empty():
 		_target = get_node_or_null(target_path) as Node2D
+	if sprite_frames != null:
+		apply_sprite_frames(sprite_frames)
+
+func apply_sprite_frames(candidate: SpriteFrames) -> bool:
+	if data == null or data.behavior != "chaser":
+		return false
+	if not is_instance_valid(_presenter):
+		_presenter = SpritePresenter.new()
+		_presenter.name = "SpritePresenter"
+		add_child(_presenter)
+	return _presenter.apply_frames(candidate)
 
 func _physics_process(delta: float) -> void:
 	if health.dead:
@@ -69,5 +83,11 @@ func _physics_process(delta: float) -> void:
 func _on_died() -> void:
 	if is_instance_valid(_attack):
 		_attack.cancel()
+	var seconds: float = _presenter.death_presentation_seconds() if is_instance_valid(_presenter) else 0.0
+	$CollisionShape2D.set_deferred("disabled", true)
 	enemy_defeated.emit(self)
+	if seconds > 0.0:
+		await get_tree().create_timer(seconds,false).timeout
+	if not is_inside_tree():
+		return
 	queue_free()
