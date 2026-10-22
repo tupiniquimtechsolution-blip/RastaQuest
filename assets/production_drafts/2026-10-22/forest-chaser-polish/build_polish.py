@@ -106,12 +106,16 @@ def main():
     left=[(0,0),(31,0),(31,31),(7,31),(7,27),(4,25),(5,21),(2,17),(3,12),(0,8)]
     bottom=[(0,0),(31,0),(31,8),(27,8),(25,12),(21,10),(18,15),(15,11),(11,14),(8,10),(4,11),(0,7)]
     tiles['top_left']=masked(tops[0],left);tiles['top_right']=tiles['top_left'].transpose(Image.Transpose.FLIP_LEFT_RIGHT)
-    tiles['side_left']=masked(soils[0],left);tiles['side_right']=tiles['side_left'].transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+    side=[(7,0),(31,0),(31,31),(7,31),(7,27),(4,25),(5,21),(2,17),(3,12),(7,8)]
+    tiles['side_left']=masked(soils[0],side);tiles['side_right']=tiles['side_left'].transpose(Image.Transpose.FLIP_LEFT_RIGHT)
     tiles['bottom']=masked(soils[1],bottom)
     # Bottom corners combine a side profile with the hanging root silhouette.
     from PIL import ImageChops
     for side in ['left','right']:
-        im=tiles['bottom'].copy();im.putalpha(ImageChops.multiply(im.getchannel('A'),tiles['side_'+side].getchannel('A')));tiles['bottom_'+side]=im
+        # A bottom cap starts at the side wall's LOWER edge, not its upper
+        # slope. Reusing the full side mask here made the corners identical.
+        mask=Image.new('L',(32,32));ImageDraw.Draw(mask).rectangle((7,0,31,31) if side=='left' else (0,0,24,31),fill=255)
+        im=tiles['bottom'].copy();im.putalpha(ImageChops.multiply(im.getchannel('A'),mask));tiles['bottom_'+side]=im
     solo=tops[2].copy();solo.putalpha(ImageChops.multiply(tiles['top_left'].getchannel('A'),tiles['top_right'].getchannel('A')));tiles['isolated']=solo
     for side in ['left','right']:
         im=soils[2].copy();a=im.getchannel('A');d=ImageDraw.Draw(a)

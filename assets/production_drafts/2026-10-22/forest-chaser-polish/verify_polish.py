@@ -45,6 +45,12 @@ def main():
         for second in soils:check(all(first.getpixel((x,31))==second.getpixel((x,0)) for x in range(32)),'soil_vertical_join')
     for name in ['top_left','top_right','isolated']:
         im=Image.open(ROOT/f'terrain_{name}.png').convert('RGBA');check(all(im.getpixel((x,0))[3]==255 for x in range(32)),name+':flat_contact')
+    for side in ['left','right']:
+        top=Image.open(ROOT/f'terrain_top_{side}.png').convert('RGBA')
+        wall=Image.open(ROOT/f'terrain_side_{side}.png').convert('RGBA')
+        cap=Image.open(ROOT/f'terrain_bottom_{side}.png').convert('RGBA')
+        check(all(top.getpixel((x,31))[3]==wall.getpixel((x,0))[3]==wall.getpixel((x,31))[3]==cap.getpixel((x,0))[3] for x in range(32)),side+':vertical_edge_join')
+    check(len({(ROOT/f'terrain_bottom{suffix}.png').read_bytes() for suffix in ['', '_left','_right']})==3,'distinct_bottom_corner_art')
     source=ROOT/m['referenced_terrain']['file'];check(hashlib.sha256(source.read_bytes()).hexdigest()==m['referenced_terrain']['sha256'],'terrain_source_hash')
     report_path=ROOT/'room-review/RENDER_REPORT.json'
     captures=0

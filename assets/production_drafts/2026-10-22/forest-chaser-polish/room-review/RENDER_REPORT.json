@@ -26,7 +26,7 @@
 			"pose_inspection": false,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "6019f8a6cef483aad7dc6ae0d94100e8382330f83ecf70a997f64856f784be5b",
+			"sha256": "7a5fccd1c928f0dc6f473cea4b2f395b1dd744506ded7a8a3089f0235f056d65",
 			"size": [
 				1280,
 				720
@@ -56,7 +56,7 @@
 			"pose_inspection": false,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "5b08951b65025d4a7252ab1ebc55dd51141607d6b0ebb9fdff04be60bfd27ac3",
+			"sha256": "10c03f363f31b77ec20b8df8ace698b41911dbea5f44b2421b7a33757552de3e",
 			"size": [
 				640,
 				360
@@ -86,7 +86,7 @@
 			"pose_inspection": false,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "28c581626d96501575c42d10c23badc3316c83056a66cf6de092b64c3ecf6fc4",
+			"sha256": "b92cea8e4bb7b9d0cca7324e48a40fbcb3b573c8d581654f89dc191771765b97",
 			"size": [
 				1280,
 				720
@@ -116,40 +116,10 @@
 			"pose_inspection": false,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "0cc436858fbf5740cc9f0282615bea42448e519d83108080b87c6d6f7355039a",
+			"sha256": "c82cf6d378b3fcb74d45dfc59d398805d4169f18c9a16d30cfa486d5a30da6f1",
 			"size": [
 				640,
 				360
-			]
-		},
-		{
-			"camera_center": [
-				1280.0,
-				460.0
-			],
-			"camera_local_y": -154.0,
-			"enemy_clip": "idle",
-			"enemy_dead": false,
-			"enemy_frame": 0,
-			"enemy_phase": "none",
-			"far_position": [
-				960.0,
-				100.0
-			],
-			"file": "traverse_1280_1280x720.png",
-			"mirrored": false,
-			"player_position": [
-				1280.0,
-				614.0
-			],
-			"player_state": "idle",
-			"pose_inspection": false,
-			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
-			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "617d2b1794e0d0a94abe803c0b61801c04a5c12ee9187f77813b62303723ce0f",
-			"size": [
-				1280,
-				720
 			]
 		},
 		{
@@ -166,6 +136,36 @@
 				960.0,
 				100.0
 			],
+			"file": "traverse_1280_1280x720.png",
+			"mirrored": false,
+			"player_position": [
+				1280.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "843c4934f2073de9f741ee064c814203f21e17532587dbfd9bf77a07410115f2",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				1280.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				960.0,
+				100.0
+			],
 			"file": "traverse_1280_640x360.png",
 			"mirrored": false,
 			"player_position": [
@@ -176,7 +176,7 @@
 			"pose_inspection": false,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "424860616b338d37fbba1f143f45d31382143d21f6cdc804a531813cdbf63b99",
+			"sha256": "15b33a45add663239307d1f3cc93e1ebfd7c36de05ef30b75b23eb07b16ab5cb",
 			"size": [
 				640,
 				360
@@ -206,7 +206,7 @@
 			"pose_inspection": false,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "3785a1dd728e065d9ead75a71682417d715943fb05fcf108574853a008e0c07f",
+			"sha256": "6a0c71f5676683d76a90a5fcd64aca15e1bfd904d1ea53e6f5410ddb39e6b505",
 			"size": [
 				1280,
 				720
@@ -236,40 +236,10 @@
 			"pose_inspection": false,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "93225beffd882d608916d1290d7ecd99fbc76710003a31ecf8653f446f092607",
+			"sha256": "428225ee8843c8adeacfb5ae31db9b78d85fa499cce8afe55acf2f1b461a9a9e",
 			"size": [
 				640,
 				360
-			]
-		},
-		{
-			"camera_center": [
-				1920.0,
-				460.0
-			],
-			"camera_local_y": -154.0,
-			"enemy_clip": "idle",
-			"enemy_dead": false,
-			"enemy_frame": 1,
-			"enemy_phase": "none",
-			"far_position": [
-				1440.0,
-				100.0
-			],
-			"file": "traverse_2380_1280x720.png",
-			"mirrored": false,
-			"player_position": [
-				2380.0,
-				614.0
-			],
-			"player_state": "idle",
-			"pose_inspection": false,
-			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
-			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "17f0ceeaaba9f01fe2eeb2c0acde0057ac57a296765bb2bcdb7174dcdbd6c378",
-			"size": [
-				1280,
-				720
 			]
 		},
 		{
@@ -286,6 +256,36 @@
 				1440.0,
 				100.0
 			],
+			"file": "traverse_2380_1280x720.png",
+			"mirrored": false,
+			"player_position": [
+				2380.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "a79ce19e4d5b985e1fa2752e62e6fe5480849debff95200de6a88d930dfd8d6c",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				1920.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				1440.0,
+				100.0
+			],
 			"file": "traverse_2380_640x360.png",
 			"mirrored": false,
 			"player_position": [
@@ -296,7 +296,7 @@
 			"pose_inspection": false,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "58686d8e54a294109bea0233d1665f6907a33e796d28c88b9ef9b15807c776d5",
+			"sha256": "fa168b6664860cc7628eb2d09b5444fc61b55c3f40ce4e8e3fbe1fc75e68ae0c",
 			"size": [
 				640,
 				360
@@ -326,7 +326,7 @@
 			"pose_inspection": false,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "91882b79edbb54dd24b3900a8077eafacb1208ff69f03b4c836e402aa95a0efd",
+			"sha256": "3f87e99d7c82a2a134132d89984adce5f74f80e7a01f4bfa2582fac53f1b95c1",
 			"size": [
 				1280,
 				720
@@ -356,7 +356,7 @@
 			"pose_inspection": false,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "49475135d4d34d1e5f241bb97811b965a5be1e829a6aecee2245469aa086a639",
+			"sha256": "e7afcb13f61c2b97c8b48e24914bf38978978f0ed47f4b272f9ab3fff71a2592",
 			"size": [
 				1280,
 				720
@@ -386,7 +386,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "7967f1d4ca206cf63250e0c492cec9e98ec794ebc83be9318999a553126fcc8c",
+			"sha256": "989999f12e0c8ed0592321a82d7aab604e6413f2c1e8deb7fac07af51a21a918",
 			"size": [
 				640,
 				360
@@ -416,7 +416,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "beb6e36b85471515d34b6def803b8f451b49fb43b4a5b20e721d81bb5d2ee963",
+			"sha256": "970b8352eb4eb3932739769ce0efbb85d555c68ddd3c8be7f3799393e698c95a",
 			"size": [
 				640,
 				360
@@ -446,7 +446,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "1d1225eb2d2de82528e387b79b576a79bee70cf78e825109f26434949c00e78a",
+			"sha256": "b43c29a755ac8228698c7693c7f79afd4504061f588b4f64129e4444c7d5e028",
 			"size": [
 				640,
 				360
@@ -476,7 +476,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "7d1cb40b99ec24e6ea89bc7f87434ec5fea6ff7b83671eca61bac40c329b5c79",
+			"sha256": "8afcfaa03f6bfbcec3a8ab9c01bb4076267f75b882ed1dc89605920498a092f6",
 			"size": [
 				640,
 				360
@@ -506,7 +506,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "1b0ebdcd950b7d01e00a8a07567c41e749936665e0b21f4f67350e4e7e0af210",
+			"sha256": "c80ca3fe90c40dc70a07208f81c535c8a18761b4825ca10f8d8cf77b20024067",
 			"size": [
 				640,
 				360
@@ -536,7 +536,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "bf95d721bacc820196e9cb726ff1e191e625b71df49f122a89f49a881e9374a2",
+			"sha256": "c6f960d7722ef10bf27d2c4c2e58329bb8f9600893b98b9897eb67103a9d3b1c",
 			"size": [
 				640,
 				360
@@ -566,7 +566,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "0c256694a7e5625361edab4d2f78a3d6c7d9f98c0d18d1dff8a41619c0551fe5",
+			"sha256": "d79d938ec21e0b86680ec600ef7e26990c3ac2ba4d193289f738a4e37f4617ed",
 			"size": [
 				640,
 				360
@@ -596,7 +596,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "2f37700be8ffd9c44038d89b087c5f9fef5dcdf75fe8194e881d72588d242229",
+			"sha256": "65b5e1ecebe5090021b79ff9d0987ad87c38d0c836d48a7c301cf9f1da36eb1d",
 			"size": [
 				640,
 				360
@@ -626,7 +626,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "d05c67dc214ce165e0f2a60d3f5e45d7d9e5c1b7d45d1f5e92f2bc436f76b74a",
+			"sha256": "0db234a848a955cc4f3730fcbeeef37bd3d4e9ac22533e7306fd22e1189d2416",
 			"size": [
 				640,
 				360
@@ -656,7 +656,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "c3d0ce224e5d80d075fd7c2309167d567752dbe1def1efd1ec75dac2685e752e",
+			"sha256": "5e835143e4333f1800ea92cda2aeac6febf7b5ba66ac96d3025c1ac58e6d0aa3",
 			"size": [
 				640,
 				360
@@ -686,7 +686,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "522b5612654b21daea0fb7871f8b73c09ffb74f8a4faa6233ebefcbbb08abd22",
+			"sha256": "7d9efb377d1edea33905d15989d334c0752a953a416d9aceb206604d35ce2633",
 			"size": [
 				640,
 				360
@@ -716,7 +716,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "29bae3452f073189f37ac30bf86ed410bb895cd9970961030a7fda053dba6722",
+			"sha256": "40aeacb1bf653918b3b204797a5d728f450d4a6719af305a101891299124e8ba",
 			"size": [
 				640,
 				360
@@ -746,7 +746,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "d3b4cf8449b746c85d301acf0b9ceaa3c828d93cf61c6e21b3cd4c7978fe0b9a",
+			"sha256": "020cbcb3dfa6fdb64b35ae7bfa06e6cc35b5f2a83d7be9bf8ef3648da13f06d1",
 			"size": [
 				640,
 				360
@@ -776,7 +776,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "288b215baf568219aae75356907e06403e9a144f1e58def5d2316aa6afd12b71",
+			"sha256": "eb7cea4e20e65b30aa6edbb698c099d8833aa2e2ac77249ef644f392269375fc",
 			"size": [
 				640,
 				360
@@ -806,7 +806,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "4b5c5ec266e6516e398d8b5bacd8dd3f06b05684491741687dcbcaa0ec274ce7",
+			"sha256": "6bb5f26e9c9db65673d6156201afefbe29854ab6ea1c9c11d912adbd8458db1e",
 			"size": [
 				640,
 				360
@@ -836,7 +836,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "61513805b21137ef6be0cdb0c46a50b8d31f1a9649ab023da628abb2bdfae163",
+			"sha256": "5b51d1b95df69f85964f5448d820346c5fddc6889f7203ac7cfb14ace00fa44a",
 			"size": [
 				640,
 				360
@@ -866,7 +866,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "056d009010885188b890a2b11bdc71d7660388d5ab2e6f52688898ad98fbab4c",
+			"sha256": "c01e0c72bc337dc517e4c54b9245d44e2b077546daf06c23ee1b5fcca70c09b0",
 			"size": [
 				1280,
 				720
@@ -896,7 +896,7 @@
 			"pose_inspection": true,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "861d7ad7ed5f29fba2434cdd56e27d2022ecf6620d4e276065a7bf215c72f5cc",
+			"sha256": "cdc6c318371754086a3ab32c0939ed21c917993543f49b199e0cd6cecb9b9da8",
 			"size": [
 				1280,
 				720
@@ -926,7 +926,7 @@
 			"pose_inspection": false,
 			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
 			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
-			"sha256": "6a82f952edd86e7286c763e3a72bd87b03cb5a589d3865eff42cc1de1417f2c9",
+			"sha256": "7731f0d75c004fc0134912f263de0f294d34aae83ec2b12195447bb8b7c27340",
 			"size": [
 				1280,
 				720
@@ -940,7 +940,7 @@
 	"runtime_asset_promotion": false,
 	"source_hash_format": "UTF-8 normalized LF",
 	"source_hashes": {
-		"res://../assets/production_drafts/2026-10-22/forest-chaser-polish/MANIFEST.json": "42de755e6f6e6761fe8e93e9299b1d2151ea84be751d846a921fc95ac2a2c29c",
+		"res://../assets/production_drafts/2026-10-22/forest-chaser-polish/MANIFEST.json": "8cfc794dd710a014c60da60f1bd0f9c40759840d7f2ead6ffe99cbb787c9a52c",
 		"res://../tools/render_art_room_review.gd": "f01637adcad3b67ae5187fe1e32b71840fdc89888ab8cfaf9a4ff83bb02b31a5",
 		"res://../tools/render_forest_polish_review.gd": "5432b854a165173ebcb913b7f0bf656eb5ab2b5cbd3a816b1a60ca5e77c1f085",
 		"res://scripts/combat/hostile_attack.gd": "369892b28a96d36abf76c8394c3854f98d4f5692087bf7e58c3761f72e3b8389",

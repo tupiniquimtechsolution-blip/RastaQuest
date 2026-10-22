@@ -287,7 +287,7 @@
     },
     {
       "file": "terrain_side_left.png",
-      "sha256": "3525b5e3ea78e5e466c23735d78b2a4a007830602e074e093174147a98fcf45e",
+      "sha256": "82359d68b9608161a6718568dbe31f246314e38db4be315c8db16a09603c3297",
       "size": [
         32,
         32
@@ -297,7 +297,7 @@
     },
     {
       "file": "terrain_side_right.png",
-      "sha256": "82bc5ae2ed91c0dadb544632ab1d0f112b770dd9d1ad751c35f0ebaa81f6ee77",
+      "sha256": "c53554f985e3e0e5d3555fb199b5787be1ca0b9331315b75c8deb751336ce163",
       "size": [
         32,
         32
@@ -317,7 +317,7 @@
     },
     {
       "file": "terrain_bottom_left.png",
-      "sha256": "93edb1d2f702c29f280e5513a5c85dcb2d4bdb7f58815d0f9835576de885e0a9",
+      "sha256": "20e2e2879effd8c14530a82e0ca2cd889cf2d454d096580764ec717e501492ff",
       "size": [
         32,
         32
@@ -327,7 +327,7 @@
     },
     {
       "file": "terrain_bottom_right.png",
-      "sha256": "93edb1d2f702c29f280e5513a5c85dcb2d4bdb7f58815d0f9835576de885e0a9",
+      "sha256": "eef6989eb9989a5dbb865ac70078ecc1ee59108c2e39dad4e45718f77e49a870",
       "size": [
         32,
         32
@@ -954,7 +954,7 @@
     },
     {
       "file": "TERRAIN_KIT_REVIEW.png",
-      "sha256": "bef9576f46a6944ab439ded84c63ff8ba3944a630dc028994139e8e2c6a922ce",
+      "sha256": "67f72b9482e821d77a03ba689e6ac2245c7fff5ab0d9b559ac194d24b3a24fc3",
       "size": [
         1280,
         640
