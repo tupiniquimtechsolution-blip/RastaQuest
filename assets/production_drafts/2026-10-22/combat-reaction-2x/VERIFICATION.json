@@ -1,0 +1,276 @@
+{
+  "prototype_integrity_pass": true,
+  "errors": [],
+  "frames_checked": 13,
+  "shared_visible_colors": 32,
+  "clip_timing_ms": {
+    "attack_axe": 160,
+    "attack_axe_air": 160,
+    "hurt": 180,
+    "death": 600
+  },
+  "automatic_approval": false,
+  "scope": "Saved hashes, export format, shared palette, timing, rigid composition, grip, blade/body clearance and some active-hitbox overlap. Does not prove full swept coverage, anatomy, manual pixel cleanup, continuous motion, actual game/device quality or licensing.",
+  "export_checks": [
+    {
+      "file": "attack_axe_01_combined.png",
+      "sha256": "170375642423bb5d0e83404f711a8c37617beaee0111837e6a3169a9f2fc1ecd",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        90,
+        34,
+        241,
+        180
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "attack_axe_02_combined.png",
+      "sha256": "c1b743f4dfd245881e559b53e96792a642c967b0e48a9027d6897f37661eeffe",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        87,
+        60,
+        234,
+        180
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "attack_axe_03_combined.png",
+      "sha256": "ff247df89f16606b6a894bfa8ca9053814a6c2b9a71b2c3842fc3ebc87aac44a",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        90,
+        61,
+        244,
+        180
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "attack_axe_04_combined.png",
+      "sha256": "f76d8842a1548af63e9766baebae981187fb78b2eb7e2b12b6de1c6dc04f9853",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        85,
+        68,
+        232,
+        180
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "attack_axe_air_01_combined.png",
+      "sha256": "c897db85880182e53ef706b4fb5aaacf8ea586693c8ef543940c1f7ac3da7601",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        83,
+        38,
+        244,
+        184
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "attack_axe_air_02_combined.png",
+      "sha256": "e4ef24f096573a51d971d26069f22d5e5712f12efe339b73eada46582f82007d",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        73,
+        59,
+        254,
+        175
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "attack_axe_air_03_combined.png",
+      "sha256": "dc58d477a41ddee30289838c341c9842f7bf5b98d6fc0e3005f2d62cb163d5d7",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        74,
+        60,
+        217,
+        171
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "hurt_01_combined.png",
+      "sha256": "ac4bef8c06075ed86af481cdbee509e7f42f134e2d278213f6846daa4b10b2c1",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        65,
+        71,
+        236,
+        180
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "hurt_02_combined.png",
+      "sha256": "5182f9322c8a9b79c2482f4fb6f01749c2d9b4935e6aafc1cd6504e2fd5cc0cf",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        89,
+        77,
+        237,
+        180
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "death_01_combined.png",
+      "sha256": "b7c981c1bce562c0ef3f6138dedb4a7b0bcb152b298b46d9d01983cf150334c3",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        85,
+        57,
+        235,
+        180
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "death_02_combined.png",
+      "sha256": "2e5872d987015220e930ebbe716906091d2047cab27de495776c28fd53ad5dc4",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        89,
+        83,
+        178,
+        180
+      ],
+      "visible_colors": 30,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "death_03_combined.png",
+      "sha256": "3b4069661ba1a7b62afa9f041c4eb0091a4cc44883e38973793bb89ecda56743",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        51,
+        122,
+        207,
+        180
+      ],
+      "visible_colors": 30,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "death_04_combined.png",
+      "sha256": "5adc099ab75b65d86131f85a61b29d95e92af5f62bb928e0518fedd4eceffbae",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        36,
+        138,
+        208,
+        180
+      ],
+      "visible_colors": 30,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    }
+  ]
+}

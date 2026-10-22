@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-22",
+  "reviewer": "Rodrigo",
+  "user_statement": "Aprovado, pode continuar",
+  "context": "Response to the displayed PR57 weapon/idle, PR58 jump/fall and PR59 run prototypes; owner authorizes continuing attacks, hurt and death.",
+  "prototype_visual_approval": true,
+  "scope": "Presented prototype appearance/motion as a basis to continue production; preserves earlier 2x density and appearance-base approvals.",
+  "not_inferred": [
+    "approval of new combat/reaction poses not yet displayed at decision",
+    "production/model/palette lock",
+    "final cultural review or external endorsement",
+    "rights/license clearance",
+    "in-game/device QA",
+    "commercial GO"
+  ],
+  "approved_versions": [
+    {
+      "pr": 57,
+      "head": "d56edbc22d1c47f92adf1dff3600693d203f891a",
+      "directory": "axe-idle-2x",
+      "manifest_sha256": "25158bbe63475a4d9219800d8e01c0747e6a2857a70a42b80c6c4eeef22e29e6"
+    },
+    {
+      "pr": 58,
+      "head": "762a9f7e1a94ee74760ad0df752b789c9684877e",
+      "directory": "airborne-2x",
+      "manifest_sha256": "cfb245fec6443385b31df82665de9b6d858c96b0834cc6107b7047e9d8482260"
+    },
+    {
+      "pr": 59,
+      "head": "a2ff56e80e300fed851e54effab22da50083b1de",
+      "directory": "run-2x",
+      "manifest_sha256": "ca1a98341207d87969258df1b1742f83a1e909d4fa04dc49c3e7f28e0a4392e1"
+    }
+  ],
+  "runtime_promotion": false,
+  "historical_pending_records": "Historical manifests remain snapshots; this later human record supersedes only their reviewed prototype visual-approval status."
+}
