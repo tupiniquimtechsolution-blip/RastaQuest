@@ -70,6 +70,15 @@ def validate_engine_libraries(archive, architectures):
     return evidence
 
 
+def validate_archive_paths(paths, expected):
+    # Segment matching catches APK assets/... and AAB base/assets/... equally.
+    forbidden = {"production_drafts", *expected.get("forbidden_archive_segments", [])}
+    for name in paths:
+        segments = set(name.replace("\\", "/").casefold().split("/"))
+        if segments & {str(value).casefold() for value in forbidden}:
+            raise ValueError(f"Forbidden release payload path: {name}")
+
+
 def signer_fingerprints(text):
     # SDKs can label signers by ordinal or min/max Android version.
     matches = re.findall(r"certificate SHA-256 digest:\s*([0-9a-fA-F: \t]+)\s*$", text, re.MULTILINE)
@@ -123,8 +132,7 @@ def verify(apk, manifest_path, output, debug_keystore):
             raise ValueError("APK ZIP integrity failed")
         native_abis = {path.split("/")[1] for path in archive.namelist()
                        if path.startswith("lib/") and path.endswith(".so") and len(path.split("/")) == 3}
-        if any("production_drafts" in path for path in archive.namelist()):
-            raise ValueError("Production draft path unexpectedly present in APK")
+        validate_archive_paths(archive.namelist(), expected)
         engine_libraries = validate_engine_libraries(archive, expected["architectures"])
     validate_metadata(observed, expected, native_abis)
     with apk.open("rb") as source:

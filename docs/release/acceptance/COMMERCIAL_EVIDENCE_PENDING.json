@@ -1,0 +1,24 @@
+{
+  "record_structure": "incomplete",
+  "pending": [
+    "candidate.source_commit",
+    "candidate.artifact_sha256",
+    "candidate.version",
+    "production_signed",
+    "final_candidate_ci",
+    "physical_devices",
+    "three_external_movement_testers",
+    "twenty_unique_complete_beta_runs",
+    "zero_known_blocker_critical_bugs",
+    "asset_inventory_empty",
+    "review:visual_final",
+    "review:cultural_final",
+    "review:privacy_store",
+    "review:content_rating",
+    "review:commercial_model",
+    "review:support_ready"
+  ],
+  "automatic_gold_go": false,
+  "evidence_truth": "not-independently-verified",
+  "note": "Checks presence/build consistency only; human evidence, rights and store approval still require review."
+}
