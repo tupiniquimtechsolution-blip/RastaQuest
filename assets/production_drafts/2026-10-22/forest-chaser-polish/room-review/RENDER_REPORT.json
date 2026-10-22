@@ -1,0 +1,956 @@
+{
+	"background_wrap": "alternating mirrored panels, exact matching edge texels; periodic reflection is visible by design",
+	"capture_kind": "actual desktop rendering; controlled traversal/pose inspection explicitly marked; actual combat phase captures separately identified",
+	"captures": [
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "traverse_0180_1280x720.png",
+			"mirrored": false,
+			"player_position": [
+				180.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "6019f8a6cef483aad7dc6ae0d94100e8382330f83ecf70a997f64856f784be5b",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "traverse_0180_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				180.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "5b08951b65025d4a7252ab1ebc55dd51141607d6b0ebb9fdff04be60bfd27ac3",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "traverse_0640_1280x720.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "28c581626d96501575c42d10c23badc3316c83056a66cf6de092b64c3ecf6fc4",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "traverse_0640_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "0cc436858fbf5740cc9f0282615bea42448e519d83108080b87c6d6f7355039a",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				1280.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				960.0,
+				100.0
+			],
+			"file": "traverse_1280_1280x720.png",
+			"mirrored": false,
+			"player_position": [
+				1280.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "617d2b1794e0d0a94abe803c0b61801c04a5c12ee9187f77813b62303723ce0f",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				1280.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				960.0,
+				100.0
+			],
+			"file": "traverse_1280_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				1280.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "424860616b338d37fbba1f143f45d31382143d21f6cdc804a531813cdbf63b99",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				1920.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				1440.0,
+				100.0
+			],
+			"file": "traverse_1920_1280x720.png",
+			"mirrored": false,
+			"player_position": [
+				1920.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "3785a1dd728e065d9ead75a71682417d715943fb05fcf108574853a008e0c07f",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				1920.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				1440.0,
+				100.0
+			],
+			"file": "traverse_1920_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				1920.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "93225beffd882d608916d1290d7ecd99fbc76710003a31ecf8653f446f092607",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				1920.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				1440.0,
+				100.0
+			],
+			"file": "traverse_2380_1280x720.png",
+			"mirrored": false,
+			"player_position": [
+				2380.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "17f0ceeaaba9f01fe2eeb2c0acde0057ac57a296765bb2bcdb7174dcdbd6c378",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				1920.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				1440.0,
+				100.0
+			],
+			"file": "traverse_2380_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				2380.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "58686d8e54a294109bea0233d1665f6907a33e796d28c88b9ef9b15807c776d5",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "tell",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "tell",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "actual_tell_1280x720.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "91882b79edbb54dd24b3900a8077eafacb1208ff69f03b4c836e402aa95a0efd",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "attack",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "active",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "actual_active_1280x720.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "hurt",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "49475135d4d34d1e5f241bb97811b965a5be1e829a6aecee2245469aa086a639",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_idle_01_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "7967f1d4ca206cf63250e0c492cec9e98ec794ebc83be9318999a553126fcc8c",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_idle_02_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "beb6e36b85471515d34b6def803b8f451b49fb43b4a5b20e721d81bb5d2ee963",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "move",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_move_01_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "1d1225eb2d2de82528e387b79b576a79bee70cf78e825109f26434949c00e78a",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "move",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_move_02_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "7d1cb40b99ec24e6ea89bc7f87434ec5fea6ff7b83671eca61bac40c329b5c79",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "move",
+			"enemy_dead": false,
+			"enemy_frame": 2,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_move_03_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "1b0ebdcd950b7d01e00a8a07567c41e749936665e0b21f4f67350e4e7e0af210",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "move",
+			"enemy_dead": false,
+			"enemy_frame": 3,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_move_04_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "bf95d721bacc820196e9cb726ff1e191e625b71df49f122a89f49a881e9374a2",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "move",
+			"enemy_dead": false,
+			"enemy_frame": 4,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_move_05_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "0c256694a7e5625361edab4d2f78a3d6c7d9f98c0d18d1dff8a41619c0551fe5",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "move",
+			"enemy_dead": false,
+			"enemy_frame": 5,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_move_06_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "2f37700be8ffd9c44038d89b087c5f9fef5dcdf75fe8194e881d72588d242229",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "tell",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_tell_01_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "d05c67dc214ce165e0f2a60d3f5e45d7d9e5c1b7d45d1f5e92f2bc436f76b74a",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "tell",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_tell_02_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "c3d0ce224e5d80d075fd7c2309167d567752dbe1def1efd1ec75dac2685e752e",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "attack",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_attack_01_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "522b5612654b21daea0fb7871f8b73c09ffb74f8a4faa6233ebefcbbb08abd22",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "attack",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_attack_02_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "29bae3452f073189f37ac30bf86ed410bb895cd9970961030a7fda053dba6722",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "hurt",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_hurt_01_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "d3b4cf8449b746c85d301acf0b9ceaa3c828d93cf61c6e21b3cd4c7978fe0b9a",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "hurt",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_hurt_02_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "288b215baf568219aae75356907e06403e9a144f1e58def5d2316aa6afd12b71",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "death",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_death_01_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "4b5c5ec266e6516e398d8b5bacd8dd3f06b05684491741687dcbcaa0ec274ce7",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "death",
+			"enemy_dead": false,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "pose_death_02_640x360.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "61513805b21137ef6be0cdb0c46a50b8d31f1a9649ab023da628abb2bdfae163",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "attack",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "rig_attack_left.png",
+			"mirrored": false,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "056d009010885188b890a2b11bdc71d7660388d5ab2e6f52688898ad98fbab4c",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "attack",
+			"enemy_dead": false,
+			"enemy_frame": 0,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "rig_attack_right.png",
+			"mirrored": true,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": true,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "861d7ad7ed5f29fba2434cdd56e27d2022ecf6620d4e276065a7bf215c72f5cc",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"enemy_clip": "death",
+			"enemy_dead": true,
+			"enemy_frame": 1,
+			"enemy_phase": "none",
+			"far_position": [
+				480.0,
+				100.0
+			],
+			"file": "actual_death_1280x720.png",
+			"mirrored": true,
+			"player_position": [
+				640.0,
+				614.0
+			],
+			"player_state": "idle",
+			"pose_inspection": false,
+			"rigid_shield_sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+			"rigid_sword_sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+			"sha256": "6a82f952edd86e7286c763e3a72bd87b03cb5a589d3865eff42cc1de1417f2c9",
+			"size": [
+				1280,
+				720
+			]
+		}
+	],
+	"driver": "Intel(R) UHD Graphics",
+	"engine": "4.5.1-stable (official)",
+	"framing": "review-only y-154 and horizontal0..2560; shipping camera unchanged",
+	"human_acceptance": "PENDING",
+	"runtime_asset_promotion": false,
+	"source_hash_format": "UTF-8 normalized LF",
+	"source_hashes": {
+		"res://../assets/production_drafts/2026-10-22/forest-chaser-polish/MANIFEST.json": "42de755e6f6e6761fe8e93e9299b1d2151ea84be751d846a921fc95ac2a2c29c",
+		"res://../tools/render_art_room_review.gd": "f01637adcad3b67ae5187fe1e32b71840fdc89888ab8cfaf9a4ff83bb02b31a5",
+		"res://../tools/render_forest_polish_review.gd": "5432b854a165173ebcb913b7f0bf656eb5ab2b5cbd3a816b1a60ca5e77c1f085",
+		"res://scripts/combat/hostile_attack.gd": "369892b28a96d36abf76c8394c3854f98d4f5692087bf7e58c3761f72e3b8389",
+		"res://scripts/enemies/enemy_base.gd": "583afaef0c3f443461941f6702f365edde67a5a36603c51d18b2371cd255e9b0",
+		"res://scripts/enemies/enemy_sprite_presenter.gd": "2ea034a78123b13453620fea1f7d3e4b33cb17fdd1a5f237da56b952925c38b3",
+		"res://scripts/player/player_controller.gd": "7bab3fb7bc860c601204b01119a26437d193d4e7f1e38875c3ca5fa9bb0ca790",
+		"res://scripts/player/player_sprite_presenter.gd": "4aa38802ea8a5b6a8b1f38924874b2aaedac4792606ae1484512479214f5a740",
+		"res://tests/art_review_fixtures.gd": "1cbaa96c3b1f8c7884ab73f97b9e755d59f57900228a7b67184c168cbaee294e",
+		"res://tests/forest_polish_fixture.gd": "c7f77ea6e8a15b105105732eb6457824bdbba0f36933defb4c57d834508927ed",
+		"res://tests/forest_review_fixture.gd": "695367b4bbf747772643b7a7740418a36ec164a8db056f05edb2669e35bb8f51",
+		"res://tests/forest_review_parallax.gd": "d1ee3d6b1689d6de907dccdcdf5f5a2180e4fcc7c190d44393cec7d4a6dd7cfa"
+	}
+}

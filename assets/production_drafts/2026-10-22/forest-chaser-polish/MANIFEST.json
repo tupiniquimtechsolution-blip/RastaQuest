@@ -1,0 +1,968 @@
+{
+  "classification": "FOREST_CHASER_POLISH_V02_REVIEW",
+  "files": [
+    {
+      "file": "chaser_idle_01.png",
+      "sha256": "d715143f737e649a716364f764323ed279fdb632f5d9953ab287a04926090ab6",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_idle_02.png",
+      "sha256": "7cea33904d78d095aa321006cc58ec4f72d3e20bf7286c3a56be03b21a489d47",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_move_01.png",
+      "sha256": "9c2a627c36f709722271b19ac1c6c912fc33d8b79e21d81f10b9d5e37fd04a2a",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_move_02.png",
+      "sha256": "551278a65eaa257fd615258483a06b513271a484a265f282462ccfb40b6d2db5",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_move_03.png",
+      "sha256": "e98637c41f79ff7d5d4b4eb8381569a972d4a46b3a26e0dc9d2bf65729ea5d30",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_move_04.png",
+      "sha256": "8a57961841f5df9058f961042e4c36f6e6d79adf18a157f0df2a9035a98960de",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_move_05.png",
+      "sha256": "251dde896555f53c6d625552b0711a55d55314a1abf8fa6fa19d66192c166095",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_move_06.png",
+      "sha256": "2acd517def9f639a81965ff5ff3647ac84fb8a0a55f50863e6c6cca95821bbff",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_tell_01.png",
+      "sha256": "87852574f54090d66e5cecd27801c2dd1069cfd5c0a0e72e854904cace56d19f",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_tell_02.png",
+      "sha256": "df89df59ab3fe9b82e6ac051416612f9747ab8d39dcf59c6728fe5b1180c607b",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_attack_01.png",
+      "sha256": "5ce36a341a3d94900c182a9acaaa69208b3813ddd2ebd6562694a1e535cda4de",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_attack_02.png",
+      "sha256": "6f1d1503b6b6a889946c62067d569d343bfe591c249e366fa2b29447341da35e",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_hurt_01.png",
+      "sha256": "7ee984b8a0fa108d15c56a137837da7d8e4daf71a20af05cacdb1a4fb7bb8bf0",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_hurt_02.png",
+      "sha256": "c4fcb09f510789e1b6fb5933ce2bf5096acde954563286300df699ec63ed6111",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_death_01.png",
+      "sha256": "f525cc72a174f7d8620f918163d21a49d65a45ef8dbc112e9af32bb3f844ab56",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_death_02.png",
+      "sha256": "fd3d56918f814805a1f5d1aa1a27c92526dd5c5fc90cb29d57a5f44ab4a08a23",
+      "size": [
+        256,
+        256
+      ],
+      "role": "body",
+      "palette_limit": 24,
+      "removed_fragment_pixels": 0
+    },
+    {
+      "file": "chaser_sword.png",
+      "sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+      "size": [
+        56,
+        16
+      ],
+      "role": "rigid_equipment",
+      "pivot": [
+        46,
+        8
+      ],
+      "palette_limit": 24
+    },
+    {
+      "file": "chaser_shield.png",
+      "sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+      "size": [
+        32,
+        52
+      ],
+      "role": "rigid_equipment",
+      "pivot": [
+        16,
+        26
+      ],
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_top_1.png",
+      "sha256": "d4110eabef5059557e9154696b21a0da7ef0cca540aa75db229688e19f5b505b",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_soil_1.png",
+      "sha256": "d28ebc17da51d8bd212d2882c3aa3047fbc5c9cb80267d116583c630a491309e",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_top_2.png",
+      "sha256": "a3c25ce1359a6169db8ddbee7ef58876282b93b4770ad2d0e39f16a61adf1bc2",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_soil_2.png",
+      "sha256": "dec2a72e832890be887af1e97a78bb802ea91f284c6a7b55abba43670132af0d",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_top_3.png",
+      "sha256": "efeac672731144932d4605b73bbe937c6ff49747ef8ac7c92531cf21935eb8eb",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_soil_3.png",
+      "sha256": "a519309be893a60b1cf73cb393596b3bff15731df133525e64de388d4f0167ae",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_top_left.png",
+      "sha256": "3d3013bf4df020d53f4975da9f1ff66433c5c937f819cd77bcf3c1fd93a9eb2d",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_top_right.png",
+      "sha256": "bb9455012163f14278e7f2bf5dc44a81a34c73772e48f9f67d494bf4097e42fa",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_side_left.png",
+      "sha256": "3525b5e3ea78e5e466c23735d78b2a4a007830602e074e093174147a98fcf45e",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_side_right.png",
+      "sha256": "82bc5ae2ed91c0dadb544632ab1d0f112b770dd9d1ad751c35f0ebaa81f6ee77",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_bottom.png",
+      "sha256": "93edb1d2f702c29f280e5513a5c85dcb2d4bdb7f58815d0f9835576de885e0a9",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_bottom_left.png",
+      "sha256": "93edb1d2f702c29f280e5513a5c85dcb2d4bdb7f58815d0f9835576de885e0a9",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_bottom_right.png",
+      "sha256": "93edb1d2f702c29f280e5513a5c85dcb2d4bdb7f58815d0f9835576de885e0a9",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_isolated.png",
+      "sha256": "878d8ee8749a2ea16841fc641217d3f3dcc589c4332118e4a71bb753d49f950a",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_inner_left.png",
+      "sha256": "0b4ceae5288bdace09dfa06e0865fd3f6d3e2ec745bf4138441f5f19e0ade558",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    },
+    {
+      "file": "terrain_inner_right.png",
+      "sha256": "b7b0edff1bdcfb33c073f5934c5ce674e42009ec0fe712382bf9405a068467e2",
+      "size": [
+        32,
+        32
+      ],
+      "role": "terrain",
+      "palette_limit": 24
+    }
+  ],
+  "chaser": {
+    "frames": [
+      {
+        "clip": "idle",
+        "index": 1,
+        "file": "chaser_idle_01.png",
+        "duration_ms": 240,
+        "source_crop": [
+          0,
+          0,
+          354,
+          291
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          44,
+          62
+        ],
+        "sword_position": [
+          -31,
+          7
+        ],
+        "sword_degrees": -12,
+        "shield_position": [
+          10,
+          7
+        ],
+        "shield_degrees": -8
+      },
+      {
+        "clip": "idle",
+        "index": 2,
+        "file": "chaser_idle_02.png",
+        "duration_ms": 240,
+        "source_crop": [
+          354,
+          0,
+          708,
+          291
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          47,
+          62
+        ],
+        "sword_position": [
+          -25,
+          7
+        ],
+        "sword_degrees": -10,
+        "shield_position": [
+          11,
+          7
+        ],
+        "shield_degrees": -8
+      },
+      {
+        "clip": "move",
+        "index": 1,
+        "file": "chaser_move_01.png",
+        "duration_ms": 80,
+        "source_crop": [
+          708,
+          0,
+          1062,
+          291
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          47,
+          62
+        ],
+        "sword_position": [
+          -39,
+          7
+        ],
+        "sword_degrees": -12,
+        "shield_position": [
+          6,
+          7
+        ],
+        "shield_degrees": -6
+      },
+      {
+        "clip": "move",
+        "index": 2,
+        "file": "chaser_move_02.png",
+        "duration_ms": 80,
+        "source_crop": [
+          1062,
+          0,
+          1416,
+          291
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          42,
+          62
+        ],
+        "sword_position": [
+          -37,
+          18
+        ],
+        "sword_degrees": -8,
+        "shield_position": [
+          15,
+          20
+        ],
+        "shield_degrees": -6
+      },
+      {
+        "clip": "move",
+        "index": 3,
+        "file": "chaser_move_03.png",
+        "duration_ms": 80,
+        "source_crop": [
+          0,
+          291,
+          354,
+          554
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          47,
+          73
+        ],
+        "sword_position": [
+          -32,
+          10
+        ],
+        "sword_degrees": -10,
+        "shield_position": [
+          14,
+          18
+        ],
+        "shield_degrees": -10
+      },
+      {
+        "clip": "move",
+        "index": 4,
+        "file": "chaser_move_04.png",
+        "duration_ms": 80,
+        "source_crop": [
+          354,
+          291,
+          708,
+          554
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          47,
+          73
+        ],
+        "sword_position": [
+          -35,
+          14
+        ],
+        "sword_degrees": -12,
+        "shield_position": [
+          14,
+          13
+        ],
+        "shield_degrees": -8
+      },
+      {
+        "clip": "move",
+        "index": 5,
+        "file": "chaser_move_05.png",
+        "duration_ms": 80,
+        "source_crop": [
+          708,
+          291,
+          1062,
+          554
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          47,
+          74
+        ],
+        "sword_position": [
+          -35,
+          19
+        ],
+        "sword_degrees": -8,
+        "shield_position": [
+          10,
+          20
+        ],
+        "shield_degrees": -6
+      },
+      {
+        "clip": "move",
+        "index": 6,
+        "file": "chaser_move_06.png",
+        "duration_ms": 80,
+        "source_crop": [
+          1062,
+          291,
+          1416,
+          554
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          42,
+          73
+        ],
+        "sword_position": [
+          -40,
+          13
+        ],
+        "sword_degrees": -12,
+        "shield_position": [
+          9,
+          15
+        ],
+        "shield_degrees": -6
+      },
+      {
+        "clip": "tell",
+        "index": 1,
+        "file": "chaser_tell_01.png",
+        "duration_ms": 100,
+        "source_crop": [
+          0,
+          554,
+          354,
+          831
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          44,
+          69
+        ],
+        "sword_position": [
+          -44,
+          -10
+        ],
+        "sword_degrees": -40,
+        "shield_position": [
+          10,
+          5
+        ],
+        "shield_degrees": -15
+      },
+      {
+        "clip": "tell",
+        "index": 2,
+        "file": "chaser_tell_02.png",
+        "duration_ms": 150,
+        "source_crop": [
+          354,
+          554,
+          708,
+          831
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          47,
+          68
+        ],
+        "sword_position": [
+          -10,
+          -51
+        ],
+        "sword_degrees": 65,
+        "shield_position": [
+          -43,
+          2
+        ],
+        "shield_degrees": -22
+      },
+      {
+        "clip": "attack",
+        "index": 1,
+        "file": "chaser_attack_01.png",
+        "duration_ms": 80,
+        "source_crop": [
+          708,
+          554,
+          1062,
+          831
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          40,
+          68
+        ],
+        "sword_position": [
+          -82,
+          -11
+        ],
+        "sword_degrees": 0,
+        "shield_position": [
+          1,
+          23
+        ],
+        "shield_degrees": -12
+      },
+      {
+        "clip": "attack",
+        "index": 2,
+        "file": "chaser_attack_02.png",
+        "duration_ms": 80,
+        "source_crop": [
+          1062,
+          554,
+          1416,
+          831
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          40,
+          68
+        ],
+        "sword_position": [
+          -77,
+          -3
+        ],
+        "sword_degrees": -8,
+        "shield_position": [
+          0,
+          26
+        ],
+        "shield_degrees": -12
+      },
+      {
+        "clip": "hurt",
+        "index": 1,
+        "file": "chaser_hurt_01.png",
+        "duration_ms": 50,
+        "source_crop": [
+          0,
+          831,
+          354,
+          1111
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          44,
+          81
+        ],
+        "sword_position": [
+          -28,
+          -14
+        ],
+        "sword_degrees": -25,
+        "shield_position": [
+          14,
+          16
+        ],
+        "shield_degrees": 10
+      },
+      {
+        "clip": "hurt",
+        "index": 2,
+        "file": "chaser_hurt_02.png",
+        "duration_ms": 50,
+        "source_crop": [
+          354,
+          831,
+          708,
+          1111
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          47,
+          82
+        ],
+        "sword_position": [
+          -33,
+          5
+        ],
+        "sword_degrees": -12,
+        "shield_position": [
+          11,
+          16
+        ],
+        "shield_degrees": 0
+      },
+      {
+        "clip": "death",
+        "index": 1,
+        "file": "chaser_death_01.png",
+        "duration_ms": 120,
+        "source_crop": [
+          708,
+          831,
+          1062,
+          1111
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          47,
+          83
+        ],
+        "sword_position": [
+          -44,
+          52
+        ],
+        "sword_degrees": 15,
+        "shield_position": [
+          -2,
+          41
+        ],
+        "shield_degrees": 20
+      },
+      {
+        "clip": "death",
+        "index": 2,
+        "file": "chaser_death_02.png",
+        "duration_ms": 200,
+        "source_crop": [
+          1062,
+          831,
+          1416,
+          1111
+        ],
+        "source_scale": 0.44,
+        "offset": [
+          47,
+          81
+        ],
+        "sword_position": [
+          -19,
+          52
+        ],
+        "sword_degrees": 0,
+        "shield_position": [
+          18,
+          47
+        ],
+        "shield_degrees": 80
+      }
+    ],
+    "source_scale": 0.44,
+    "scale": 0.5,
+    "origin": [
+      128,
+      128
+    ],
+    "feet_edge_y": 186,
+    "palette_hex": [
+      "111016",
+      "201a22",
+      "30282c",
+      "493a3d",
+      "655255",
+      "827071",
+      "ac9590",
+      "d0b9a4",
+      "272731",
+      "3b3a46",
+      "52515e",
+      "6c6a76",
+      "8a8591",
+      "aaa0a8",
+      "c9c0c7",
+      "eee0d9",
+      "2e1020",
+      "52152a",
+      "7e2037",
+      "aa2947",
+      "d1425a",
+      "f26479",
+      "ff9b9e",
+      "422c28"
+    ],
+    "rigid_equipment": {
+      "sword": {
+        "file": "chaser_sword.png",
+        "pivot": [
+          46,
+          8
+        ]
+      },
+      "shield": {
+        "file": "chaser_shield.png",
+        "pivot": [
+          16,
+          26
+        ]
+      }
+    },
+    "counts": {
+      "idle": 2,
+      "move": 6,
+      "tell": 2,
+      "attack": 2,
+      "hurt": 2,
+      "death": 2
+    }
+  },
+  "environment": {
+    "tile_size": 32,
+    "tiles": [
+      "terrain_top_1.png",
+      "terrain_soil_1.png",
+      "terrain_top_2.png",
+      "terrain_soil_2.png",
+      "terrain_top_3.png",
+      "terrain_soil_3.png",
+      "terrain_top_left.png",
+      "terrain_top_right.png",
+      "terrain_side_left.png",
+      "terrain_side_right.png",
+      "terrain_bottom.png",
+      "terrain_bottom_left.png",
+      "terrain_bottom_right.png",
+      "terrain_isolated.png",
+      "terrain_inner_left.png",
+      "terrain_inner_right.png"
+    ],
+    "palette_hex": [
+      "101b19",
+      "1b2822",
+      "29372b",
+      "3b4932",
+      "52623a",
+      "72854a",
+      "9aa858",
+      "c1c479",
+      "171b1c",
+      "2c3030",
+      "444847",
+      "656a5c",
+      "8b8e74",
+      "bab595",
+      "211c19",
+      "34271f",
+      "513a27",
+      "725139",
+      "96724b",
+      "b99969",
+      "10303a",
+      "1d4a52",
+      "37676a",
+      "679092"
+    ],
+    "background_mirror_period": 2560,
+    "parallax_factors": [
+      0.25,
+      0.65,
+      1.0,
+      1.08
+    ]
+  },
+  "sources": [
+    {
+      "file": "chaser-body-source.png",
+      "sha256": "a579dedfe3a9933f64fb99815149158c7d9594a85289efe681a7a1d3509f2224",
+      "size": [
+        1416,
+        1111
+      ]
+    },
+    {
+      "file": "chaser-equipment-source.png",
+      "sha256": "9b7845b9e6e38ef3ab12d09b05945c913659dd108230bf884948ef5409b471a5",
+      "size": [
+        1774,
+        887
+      ]
+    }
+  ],
+  "referenced_terrain": {
+    "file": "../forest-chaser-proof/forest-terrain-source.png",
+    "sha256": "a366005c46b5c3c5011583e12ad6e0ade7008ed9b8df9106521014b055d51e1c"
+  },
+  "previews": [
+    {
+      "file": "CHASER_RIG_REVIEW.png",
+      "sha256": "75b3457795162e4e0986977a92915538e6a17e8350b73bc6538a576a4b6ed0dc",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "CHASER_SOURCE_MOTION.gif",
+      "sha256": "8ab89d0d6761d0fcfa1899b3761708e25dbebc8d2ef7133edd3322d2a2be04ab",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "file": "TERRAIN_KIT_REVIEW.png",
+      "sha256": "bef9576f46a6944ab439ded84c63ff8ba3944a630dc028994139e8e2c6a922ce",
+      "size": [
+        1280,
+        640
+      ]
+    }
+  ],
+  "visual_acceptance": "PENDING",
+  "rights_clearance": "PENDING",
+  "final_cultural_review": "PENDING",
+  "runtime_promotion": false
+}
