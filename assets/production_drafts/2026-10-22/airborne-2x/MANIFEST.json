@@ -1,0 +1,141 @@
+{
+  "classification": "AIRBORNE_POSE_PROTOTYPES_NOT_FINAL",
+  "frame": [
+    256,
+    256
+  ],
+  "render_scale": 0.5,
+  "appearance_approval": "Base target only; new poses not final accepted",
+  "shared_source_scale": 0.17142857142857143,
+  "method": "New ImageGen poses; one uniform shared BOX reduction; fixed32-color mapping/binary alpha; estimated pelvis anchors; same rigid carried weapon/fist occlusion",
+  "weapon_source": "../axe-idle-2x/weapon_double_axe_carried_01.png",
+  "weapon_sha256": "134f80ea27ddd45f6dda6b28ef51f39733ef0ffe2e603047b85a386a8f0408ab",
+  "frames": [
+    {
+      "clip": "jump",
+      "file": "jump_combined_01.png",
+      "pose_count": 1,
+      "origin": [
+        128,
+        128
+      ],
+      "pelvis_anchor": [
+        130,
+        120
+      ],
+      "source_pelvis_estimated": [
+        640,
+        580
+      ],
+      "source_grip_estimated": [
+        844,
+        550
+      ],
+      "grip": [
+        165,
+        115
+      ],
+      "body_alpha_bbox": [
+        93,
+        70,
+        169,
+        181
+      ],
+      "feet_edge_y": 181,
+      "feet_displacement_from_neutral": 1,
+      "blade_body_overlap": false,
+      "fist_on_opaque_body": true
+    },
+    {
+      "clip": "fall",
+      "file": "fall_combined_01.png",
+      "pose_count": 1,
+      "origin": [
+        128,
+        128
+      ],
+      "pelvis_anchor": [
+        130,
+        120
+      ],
+      "source_pelvis_estimated": [
+        635,
+        620
+      ],
+      "source_grip_estimated": [
+        792,
+        592
+      ],
+      "grip": [
+        157,
+        115
+      ],
+      "body_alpha_bbox": [
+        98,
+        62,
+        162,
+        172
+      ],
+      "feet_edge_y": 172,
+      "feet_displacement_from_neutral": -8,
+      "blade_body_overlap": false,
+      "fist_on_opaque_body": true
+    }
+  ],
+  "files": [
+    {
+      "file": "jump_body_01.png",
+      "sha256": "758eac4163ffc44b3b069c8ca82b6064c61273651276b8ce586e494217b8ca66"
+    },
+    {
+      "file": "jump_weapon_01.png",
+      "sha256": "1227f9add9c12d3b620f353ee4f6496e60418b442dafeb60cd33d80ceb589777"
+    },
+    {
+      "file": "jump_grip_01.png",
+      "sha256": "6b115b6d10972fe04826c83b1a28a8598e36d38ebe32101a994e6a1bfbe3805f"
+    },
+    {
+      "file": "jump_combined_01.png",
+      "sha256": "ecc4c7dea34abcf3e6d2869c2af37102169dccca9c9dd272d42bc2fb38ef4938"
+    },
+    {
+      "file": "fall_body_01.png",
+      "sha256": "e4fa7ba4b003fe117f8720e08cd9cc721473088fc6d46e2e284c03bbf45e1d7e"
+    },
+    {
+      "file": "fall_weapon_01.png",
+      "sha256": "f2bf22adace031a5ab416a109ee595b5af053a7b2adbabcd058dc1c80a0073ec"
+    },
+    {
+      "file": "fall_grip_01.png",
+      "sha256": "78ff67605b70e74e02d560e1a29c573c0cbae09f7076978d86a68639653a49ea"
+    },
+    {
+      "file": "fall_combined_01.png",
+      "sha256": "bb755eaba01ffe6c7d4b3327c416d8d7c4fb4e2a0eec3b6d179209b1b7938317"
+    }
+  ],
+  "model_geometry": "PENDING",
+  "motion_transitions": "PENDING",
+  "rights_clearance": "PENDING",
+  "final_cultural_review": "PENDING",
+  "runtime_promotion": false,
+  "missing_body_clips": [
+    "run",
+    "attack_axe",
+    "attack_axe_air",
+    "hurt",
+    "death"
+  ],
+  "sources": {
+    "jump": {
+      "file": "jump-body-source.png",
+      "sha256": "3256094caec1988d01806d3b19d0ba423812f203c21aa8321839e4b79d350d36"
+    },
+    "fall": {
+      "file": "fall-body-source.png",
+      "sha256": "d8a7990418dca13cd8af4668462cc05bd792772d4408c2a4b94b56d6cd81b835"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "prototype_integrity_pass": true,
+  "errors": [],
+  "shared_visible_colors": 32,
+  "new_drawn_pose_count": 2,
+  "export_checks": [
+    {
+      "file": "C:\\Users\\rodrigo.filho\\.codex\\.chatgpt-projects\\g-p-6ac52de1a6488191a8d7ee5e47fbd5f8\\RastaQuest-ui-commercial-2026-10-16\\assets\\production_drafts\\2026-10-22\\airborne-2x\\jump_combined_01.png",
+      "sha256": "ecc4c7dea34abcf3e6d2869c2af37102169dccca9c9dd272d42bc2fb38ef4938",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        93,
+        70,
+        248,
+        181
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "C:\\Users\\rodrigo.filho\\.codex\\.chatgpt-projects\\g-p-6ac52de1a6488191a8d7ee5e47fbd5f8\\RastaQuest-ui-commercial-2026-10-16\\assets\\production_drafts\\2026-10-22\\airborne-2x\\fall_combined_01.png",
+      "sha256": "bb755eaba01ffe6c7d4b3327c416d8d7c4fb4e2a0eec3b6d179209b1b7938317",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        98,
+        62,
+        240,
+        172
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    }
+  ],
+  "automatic_approval": false,
+  "scope": "source/export/layer integrity only; anatomy, state transitions, final visual/cultural/rights/device review pending"
+}
