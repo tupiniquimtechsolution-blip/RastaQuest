@@ -1,6 +1,6 @@
 # Protagonist production specification — issue #35
 
-Updated: 2026-10-22. Status: Rodrigo approved double source resolution at the same world size and the appearance/detail target of the256px proof as the base for animations. Exact anatomy/markers, palette in room, independent weapon/clip acceptance and visual QA remain pending. See VISUAL_DENSITY_DECISION_2026-10-22.md, OWNER_APPROVAL_RECORD_2026-10-08.md and assets/production_drafts/2026-10-22/axe-idle-2x/OWNER_APPEARANCE_APPROVAL.json. No final sprite is supplied by this document.
+Updated: 2026-10-22. Status: Rodrigo approved double source resolution at the same world size, the appearance/detail target of the256px proof as the base for animations, and subsequently the presented PR57–59 weapon/idle/run/jump/fall prototypes (“Aprovado, pode continuar”). Exact reviewed versions are recorded in assets/production_drafts/2026-10-22/OWNER_PROTOTYPE_APPROVAL_2026-10-22.json. Exact anatomy/markers, palette in room, final production clips and visual QA remain pending. See VISUAL_DENSITY_DECISION_2026-10-22.md, OWNER_APPROVAL_RECORD_2026-10-08.md and assets/production_drafts/2026-10-22/axe-idle-2x/OWNER_APPEARANCE_APPROVAL.json. No final sprite is supplied by this document.
 
 ## Grounded integration contract
 

@@ -1,0 +1,1038 @@
+{
+  "classification": "COMBAT_REACTION_AUTHORING_PROTOTYPES_NOT_FINAL",
+  "frame": [
+    256,
+    256
+  ],
+  "render_scale": 0.5,
+  "palette_hex": [
+    "111014",
+    "211719",
+    "382326",
+    "50302c",
+    "6c4234",
+    "8d543b",
+    "b16c47",
+    "d78c58",
+    "352c2f",
+    "554547",
+    "80614d",
+    "ad8967",
+    "e0cba0",
+    "fff0ca",
+    "631c27",
+    "a82a2b",
+    "df3e2d",
+    "ff6c38",
+    "55351d",
+    "8c531b",
+    "c58a24",
+    "f3bd35",
+    "ffe873",
+    "152e25",
+    "28503a",
+    "447045",
+    "76914d",
+    "30313c",
+    "555865",
+    "83838f",
+    "b8b5bf",
+    "eeecec"
+  ],
+  "method": "New generated body-only sheets; uniform density per sheet, explicit BOX reduction, fixed32-color/binary-alpha mapping; estimated landmarks; floor/pelvis translation; existing rigid weapon rotated with nearest and fist occlusion. Not native hand cleanup.",
+  "sources": [
+    {
+      "file": "ground-compact-source.png",
+      "sha256": "bcb7d9d6fa1bb710ce9803d811c1fcc68881ef2094a7f069f7e819c3068aca23",
+      "size": [
+        1254,
+        1254
+      ],
+      "shared_scale": 0.2311111111111111
+    },
+    {
+      "file": "air-compact-source.png",
+      "sha256": "56396b221c71b3372318aadf6af9ca72b70189ed7895f3068f137b864a0fc7f5",
+      "size": [
+        2172,
+        724
+      ],
+      "shared_scale": 0.19
+    },
+    {
+      "file": "hurt-body-source.png",
+      "sha256": "166cd4a861c57576f2fef21df9c483c0bc453c94ed7c9c9228578220cbb0d0a3",
+      "size": [
+        1774,
+        887
+      ],
+      "shared_scale": 0.16
+    },
+    {
+      "file": "death-body-source.png",
+      "sha256": "426058c7c20fb914c59385529af3694d1003bfa49f28162bbac41dac42bfad67",
+      "size": [
+        1774,
+        887
+      ],
+      "shared_scale": 0.2311111111111111
+    }
+  ],
+  "weapon_source": "../axe-idle-2x/weapon_double_axe_vertical_01.png",
+  "weapon_sha256": "d1aaf8a66666d1de32e457d95c13ffdc51ded53bd89d4a04358455a2db0003b5",
+  "frames": [
+    {
+      "clip": "attack_axe",
+      "index": 1,
+      "files": {
+        "body": "attack_axe_01_body.png",
+        "weapon": "attack_axe_01_weapon.png",
+        "blades": "attack_axe_01_blades.png",
+        "grip": "attack_axe_01_grip.png",
+        "combined": "attack_axe_01_combined.png"
+      },
+      "duration_ms": 40,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "source_hip_estimated": [
+        350,
+        340
+      ],
+      "source_grip_estimated": [
+        494,
+        247
+      ],
+      "source_scale": 0.2311111111111111,
+      "offset": [
+        49,
+        43
+      ],
+      "weapon_grip": [
+        163,
+        100
+      ],
+      "weapon_clockwise_degrees": 55,
+      "body_alpha_bbox": [
+        90,
+        58,
+        170,
+        180
+      ],
+      "ground_contact": true,
+      "ground_edge_y": 180,
+      "body_bottom_y": 180,
+      "foot_displacement_vs_rest": null,
+      "weapon_dropped_world_prop_pending": false
+    },
+    {
+      "clip": "attack_axe",
+      "index": 2,
+      "files": {
+        "body": "attack_axe_02_body.png",
+        "weapon": "attack_axe_02_weapon.png",
+        "blades": "attack_axe_02_blades.png",
+        "grip": "attack_axe_02_grip.png",
+        "combined": "attack_axe_02_combined.png"
+      },
+      "duration_ms": 40,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "source_hip_estimated": [
+        323,
+        350
+      ],
+      "source_grip_estimated": [
+        414,
+        360
+      ],
+      "source_scale": 0.2311111111111111,
+      "offset": [
+        55,
+        43
+      ],
+      "weapon_grip": [
+        151,
+        126
+      ],
+      "weapon_clockwise_degrees": 80,
+      "body_alpha_bbox": [
+        87,
+        60,
+        162,
+        180
+      ],
+      "ground_contact": true,
+      "ground_edge_y": 180,
+      "body_bottom_y": 180,
+      "foot_displacement_vs_rest": null,
+      "weapon_dropped_world_prop_pending": false
+    },
+    {
+      "clip": "attack_axe",
+      "index": 3,
+      "files": {
+        "body": "attack_axe_03_body.png",
+        "weapon": "attack_axe_03_weapon.png",
+        "blades": "attack_axe_03_blades.png",
+        "grip": "attack_axe_03_grip.png",
+        "combined": "attack_axe_03_combined.png"
+      },
+      "duration_ms": 40,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "source_hip_estimated": [
+        355,
+        298
+      ],
+      "source_grip_estimated": [
+        490,
+        333
+      ],
+      "source_scale": 0.2311111111111111,
+      "offset": [
+        48,
+        53
+      ],
+      "weapon_grip": [
+        161,
+        130
+      ],
+      "weapon_clockwise_degrees": 100,
+      "body_alpha_bbox": [
+        90,
+        61,
+        169,
+        180
+      ],
+      "ground_contact": true,
+      "ground_edge_y": 180,
+      "body_bottom_y": 180,
+      "foot_displacement_vs_rest": null,
+      "weapon_dropped_world_prop_pending": false
+    },
+    {
+      "clip": "attack_axe",
+      "index": 4,
+      "files": {
+        "body": "attack_axe_04_body.png",
+        "weapon": "attack_axe_04_weapon.png",
+        "blades": "attack_axe_04_blades.png",
+        "grip": "attack_axe_04_grip.png",
+        "combined": "attack_axe_04_combined.png"
+      },
+      "duration_ms": 40,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "source_hip_estimated": [
+        335,
+        328
+      ],
+      "source_grip_estimated": [
+        421,
+        403
+      ],
+      "source_scale": 0.2311111111111111,
+      "offset": [
+        53,
+        52
+      ],
+      "weapon_grip": [
+        150,
+        145
+      ],
+      "weapon_clockwise_degrees": 90,
+      "body_alpha_bbox": [
+        85,
+        68,
+        162,
+        180
+      ],
+      "ground_contact": true,
+      "ground_edge_y": 180,
+      "body_bottom_y": 180,
+      "foot_displacement_vs_rest": null,
+      "weapon_dropped_world_prop_pending": false
+    },
+    {
+      "clip": "attack_axe_air",
+      "index": 1,
+      "files": {
+        "body": "attack_axe_air_01_body.png",
+        "weapon": "attack_axe_air_01_weapon.png",
+        "blades": "attack_axe_air_01_blades.png",
+        "grip": "attack_axe_air_01_grip.png",
+        "combined": "attack_axe_air_01_combined.png"
+      },
+      "duration_ms": 50,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "source_hip_estimated": [
+        420,
+        330
+      ],
+      "source_grip_estimated": [
+        612,
+        247
+      ],
+      "source_scale": 0.19,
+      "offset": [
+        50,
+        57
+      ],
+      "weapon_grip": [
+        166,
+        104
+      ],
+      "weapon_clockwise_degrees": 55,
+      "body_alpha_bbox": [
+        83,
+        63,
+        173,
+        184
+      ],
+      "ground_contact": false,
+      "ground_edge_y": null,
+      "body_bottom_y": 184,
+      "foot_displacement_vs_rest": 4,
+      "weapon_dropped_world_prop_pending": false
+    },
+    {
+      "clip": "attack_axe_air",
+      "index": 2,
+      "files": {
+        "body": "attack_axe_air_02_body.png",
+        "weapon": "attack_axe_air_02_weapon.png",
+        "blades": "attack_axe_air_02_blades.png",
+        "grip": "attack_axe_air_02_grip.png",
+        "combined": "attack_axe_air_02_combined.png"
+      },
+      "duration_ms": 55,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "source_hip_estimated": [
+        405,
+        380
+      ],
+      "source_grip_estimated": [
+        620,
+        370
+      ],
+      "source_scale": 0.19,
+      "offset": [
+        53,
+        48
+      ],
+      "weapon_grip": [
+        171,
+        118
+      ],
+      "weapon_clockwise_degrees": 85,
+      "body_alpha_bbox": [
+        73,
+        59,
+        176,
+        175
+      ],
+      "ground_contact": false,
+      "ground_edge_y": null,
+      "body_bottom_y": 175,
+      "foot_displacement_vs_rest": -5,
+      "weapon_dropped_world_prop_pending": false
+    },
+    {
+      "clip": "attack_axe_air",
+      "index": 3,
+      "files": {
+        "body": "attack_axe_air_03_body.png",
+        "weapon": "attack_axe_air_03_weapon.png",
+        "blades": "attack_axe_air_03_blades.png",
+        "grip": "attack_axe_air_03_grip.png",
+        "combined": "attack_axe_air_03_combined.png"
+      },
+      "duration_ms": 55,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "source_hip_estimated": [
+        430,
+        400
+      ],
+      "source_grip_estimated": [
+        455,
+        420
+      ],
+      "source_scale": 0.19,
+      "offset": [
+        48,
+        44
+      ],
+      "weapon_grip": [
+        134,
+        124
+      ],
+      "weapon_clockwise_degrees": 100,
+      "body_alpha_bbox": [
+        74,
+        60,
+        151,
+        171
+      ],
+      "ground_contact": false,
+      "ground_edge_y": null,
+      "body_bottom_y": 171,
+      "foot_displacement_vs_rest": -9,
+      "weapon_dropped_world_prop_pending": false
+    },
+    {
+      "clip": "hurt",
+      "index": 1,
+      "files": {
+        "body": "hurt_01_body.png",
+        "weapon": "hurt_01_weapon.png",
+        "blades": "hurt_01_blades.png",
+        "grip": "hurt_01_grip.png",
+        "combined": "hurt_01_combined.png"
+      },
+      "duration_ms": 90,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        0,
+        0,
+        887,
+        887
+      ],
+      "source_hip_estimated": [
+        550,
+        420
+      ],
+      "source_grip_estimated": [
+        698,
+        350
+      ],
+      "source_scale": 0.16,
+      "offset": [
+        42,
+        53
+      ],
+      "weapon_grip": [
+        154,
+        109
+      ],
+      "weapon_clockwise_degrees": 90,
+      "body_alpha_bbox": [
+        65,
+        71,
+        171,
+        180
+      ],
+      "ground_contact": true,
+      "ground_edge_y": 180,
+      "body_bottom_y": 180,
+      "foot_displacement_vs_rest": null,
+      "weapon_dropped_world_prop_pending": false
+    },
+    {
+      "clip": "hurt",
+      "index": 2,
+      "files": {
+        "body": "hurt_02_body.png",
+        "weapon": "hurt_02_weapon.png",
+        "blades": "hurt_02_blades.png",
+        "grip": "hurt_02_grip.png",
+        "combined": "hurt_02_combined.png"
+      },
+      "duration_ms": 90,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        887,
+        0,
+        1774,
+        887
+      ],
+      "source_hip_estimated": [
+        490,
+        480
+      ],
+      "source_grip_estimated": [
+        643,
+        550
+      ],
+      "source_scale": 0.16,
+      "offset": [
+        52,
+        53
+      ],
+      "weapon_grip": [
+        155,
+        141
+      ],
+      "weapon_clockwise_degrees": 90,
+      "body_alpha_bbox": [
+        89,
+        77,
+        161,
+        180
+      ],
+      "ground_contact": true,
+      "ground_edge_y": 180,
+      "body_bottom_y": 180,
+      "foot_displacement_vs_rest": null,
+      "weapon_dropped_world_prop_pending": false
+    },
+    {
+      "clip": "death",
+      "index": 1,
+      "files": {
+        "body": "death_01_body.png",
+        "weapon": "death_01_weapon.png",
+        "blades": "death_01_blades.png",
+        "grip": "death_01_grip.png",
+        "combined": "death_01_combined.png"
+      },
+      "duration_ms": 120,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        0,
+        0,
+        887,
+        580
+      ],
+      "source_hip_estimated": [
+        500,
+        300
+      ],
+      "source_grip_estimated": [
+        600,
+        390
+      ],
+      "source_scale": 0.2311111111111111,
+      "offset": [
+        14,
+        50
+      ],
+      "weapon_grip": [
+        153,
+        140
+      ],
+      "weapon_clockwise_degrees": 90,
+      "body_alpha_bbox": [
+        85,
+        57,
+        162,
+        180
+      ],
+      "ground_contact": true,
+      "ground_edge_y": 180,
+      "body_bottom_y": 180,
+      "foot_displacement_vs_rest": null,
+      "weapon_dropped_world_prop_pending": false
+    },
+    {
+      "clip": "death",
+      "index": 2,
+      "files": {
+        "body": "death_02_body.png",
+        "weapon": "death_02_weapon.png",
+        "blades": "death_02_blades.png",
+        "grip": "death_02_grip.png",
+        "combined": "death_02_combined.png"
+      },
+      "duration_ms": 140,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        887,
+        0,
+        1774,
+        580
+      ],
+      "source_hip_estimated": [
+        340,
+        397
+      ],
+      "source_grip_estimated": null,
+      "source_scale": 0.2311111111111111,
+      "offset": [
+        51,
+        50
+      ],
+      "weapon_grip": null,
+      "weapon_clockwise_degrees": null,
+      "body_alpha_bbox": [
+        89,
+        83,
+        178,
+        180
+      ],
+      "ground_contact": true,
+      "ground_edge_y": 180,
+      "body_bottom_y": 180,
+      "foot_displacement_vs_rest": null,
+      "weapon_dropped_world_prop_pending": true
+    },
+    {
+      "clip": "death",
+      "index": 3,
+      "files": {
+        "body": "death_03_body.png",
+        "weapon": "death_03_weapon.png",
+        "blades": "death_03_blades.png",
+        "grip": "death_03_grip.png",
+        "combined": "death_03_combined.png"
+      },
+      "duration_ms": 160,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        0,
+        580,
+        887,
+        887
+      ],
+      "source_hip_estimated": [
+        440,
+        180
+      ],
+      "source_grip_estimated": null,
+      "source_scale": 0.2311111111111111,
+      "offset": [
+        28,
+        117
+      ],
+      "weapon_grip": null,
+      "weapon_clockwise_degrees": null,
+      "body_alpha_bbox": [
+        51,
+        122,
+        207,
+        180
+      ],
+      "ground_contact": true,
+      "ground_edge_y": 180,
+      "body_bottom_y": 180,
+      "foot_displacement_vs_rest": null,
+      "weapon_dropped_world_prop_pending": true
+    },
+    {
+      "clip": "death",
+      "index": 4,
+      "files": {
+        "body": "death_04_body.png",
+        "weapon": "death_04_weapon.png",
+        "blades": "death_04_blades.png",
+        "grip": "death_04_grip.png",
+        "combined": "death_04_combined.png"
+      },
+      "duration_ms": 180,
+      "origin": [
+        128,
+        128
+      ],
+      "source_crop": [
+        887,
+        580,
+        1774,
+        887
+      ],
+      "source_hip_estimated": [
+        500,
+        200
+      ],
+      "source_grip_estimated": null,
+      "source_scale": 0.2311111111111111,
+      "offset": [
+        14,
+        117
+      ],
+      "weapon_grip": null,
+      "weapon_clockwise_degrees": null,
+      "body_alpha_bbox": [
+        36,
+        138,
+        208,
+        180
+      ],
+      "ground_contact": true,
+      "ground_edge_y": 180,
+      "body_bottom_y": 180,
+      "foot_displacement_vs_rest": null,
+      "weapon_dropped_world_prop_pending": true
+    }
+  ],
+  "files": [
+    {
+      "file": "attack_axe_01_body.png",
+      "sha256": "815721bc29b20135deb0be8c7fe0d38d05469ffc7030735b81cb4e460c56fe34"
+    },
+    {
+      "file": "attack_axe_01_weapon.png",
+      "sha256": "001c11bbba056039d5347631ed23708fcc313930d8399ddc24bbc7de1f554019"
+    },
+    {
+      "file": "attack_axe_01_blades.png",
+      "sha256": "9f576206e1e946da02cd492c1bc4f6baf855df6d113edce2a91e8ff81df716e2"
+    },
+    {
+      "file": "attack_axe_01_grip.png",
+      "sha256": "d954ffccff0fe634ce3e482133ea5f917aa3337321d6e4cf11c90fc17910ed6c"
+    },
+    {
+      "file": "attack_axe_01_combined.png",
+      "sha256": "170375642423bb5d0e83404f711a8c37617beaee0111837e6a3169a9f2fc1ecd"
+    },
+    {
+      "file": "attack_axe_02_body.png",
+      "sha256": "928f501fd06024ec378e90e954577e0ad280206a7917c52b776aa9e78a0398c6"
+    },
+    {
+      "file": "attack_axe_02_weapon.png",
+      "sha256": "37ac9993c8fa50b59c10712feb48f600018912d5c3424e1cc32789714003bc2a"
+    },
+    {
+      "file": "attack_axe_02_blades.png",
+      "sha256": "8e467d3589639b68df1db865b607307a2501a18f1b707a932e2d5d0a71cfdba8"
+    },
+    {
+      "file": "attack_axe_02_grip.png",
+      "sha256": "aac6252cfe643271827c60691509ab74f4ac474255e66f9c1dd1fcfd1ef6b81d"
+    },
+    {
+      "file": "attack_axe_02_combined.png",
+      "sha256": "c1b743f4dfd245881e559b53e96792a642c967b0e48a9027d6897f37661eeffe"
+    },
+    {
+      "file": "attack_axe_03_body.png",
+      "sha256": "c5f4cf9d4d132f9b757eb06b0ce98070f8eaf8a4bcb13c01e104013d1f07a121"
+    },
+    {
+      "file": "attack_axe_03_weapon.png",
+      "sha256": "96146cdbb9fb5eb2b77de3313350b4d29906160d4b8233c140983662a89b5ab9"
+    },
+    {
+      "file": "attack_axe_03_blades.png",
+      "sha256": "5cfe242dd094cf7cb065f19fbf39cab3fd9e0920223a106437d8ed1d13d8e765"
+    },
+    {
+      "file": "attack_axe_03_grip.png",
+      "sha256": "352e2f1368fd083047b29730d0eeccdb4a512904990cbc688919c61d6acdbd14"
+    },
+    {
+      "file": "attack_axe_03_combined.png",
+      "sha256": "ff247df89f16606b6a894bfa8ca9053814a6c2b9a71b2c3842fc3ebc87aac44a"
+    },
+    {
+      "file": "attack_axe_04_body.png",
+      "sha256": "4fff2f634659bf044b52f76a31b535db0ebba3d42377eff0ea15a3d135b8de26"
+    },
+    {
+      "file": "attack_axe_04_weapon.png",
+      "sha256": "ebabc2667c33b9d3aa9846fbad4dd4f65fd1eef6de1ed1df2cf535790a3ab091"
+    },
+    {
+      "file": "attack_axe_04_blades.png",
+      "sha256": "08cdfcd5ca2c4be1789b7089cdfd00d830751dc992fff942653b152ac163dab4"
+    },
+    {
+      "file": "attack_axe_04_grip.png",
+      "sha256": "a774226b49d53bad6456d09e671697888c7fef33bbcf523cca54d1b143c77715"
+    },
+    {
+      "file": "attack_axe_04_combined.png",
+      "sha256": "f76d8842a1548af63e9766baebae981187fb78b2eb7e2b12b6de1c6dc04f9853"
+    },
+    {
+      "file": "attack_axe_atlas.png",
+      "sha256": "f32dcd8019633b90c57b751f805bf529e3f34724cca61a8cb3ee548d0859f4c0"
+    },
+    {
+      "file": "attack_axe_air_01_body.png",
+      "sha256": "facf5624f5ec9798661c24637661cc18c93558932bd2e4aa5e177a7d288a44e4"
+    },
+    {
+      "file": "attack_axe_air_01_weapon.png",
+      "sha256": "2509695147fb05589d2d00515c99e269668a6161a4a671bd3bddcc92f79b14fd"
+    },
+    {
+      "file": "attack_axe_air_01_blades.png",
+      "sha256": "9b0926e789977caaa7826d6ce5ccbcab0da465775f01500cc4ed9fea0729c7f8"
+    },
+    {
+      "file": "attack_axe_air_01_grip.png",
+      "sha256": "4a88382ca84ae669edb9ebc06755c6c86015040a87ea13b9763fc122ff5cb5ec"
+    },
+    {
+      "file": "attack_axe_air_01_combined.png",
+      "sha256": "c897db85880182e53ef706b4fb5aaacf8ea586693c8ef543940c1f7ac3da7601"
+    },
+    {
+      "file": "attack_axe_air_02_body.png",
+      "sha256": "391fae99ba3b97ec1515b617e23e4fb7dc92beef91e0d52f02dfe4db2483771a"
+    },
+    {
+      "file": "attack_axe_air_02_weapon.png",
+      "sha256": "025200013bc586f9a69a6c22d4e20c761a03ca91f53f64ca55d80ea6f8e38be9"
+    },
+    {
+      "file": "attack_axe_air_02_blades.png",
+      "sha256": "6e10ea4567473596c57c9599a53d62ad95e820f0223b987ec69f24fc85ebc84e"
+    },
+    {
+      "file": "attack_axe_air_02_grip.png",
+      "sha256": "0d691b3616acdb3c20d13fb1e058a2fa268c65833cc52ffb291e2c7847358fd1"
+    },
+    {
+      "file": "attack_axe_air_02_combined.png",
+      "sha256": "e4ef24f096573a51d971d26069f22d5e5712f12efe339b73eada46582f82007d"
+    },
+    {
+      "file": "attack_axe_air_03_body.png",
+      "sha256": "b62010853e2762113c121ece0e301a72f47c69a417281814b6394df4687fb9c8"
+    },
+    {
+      "file": "attack_axe_air_03_weapon.png",
+      "sha256": "96ca94010a5af34878f769ee3c34ea876c89bb11edbe82de7c4acaf459cd1359"
+    },
+    {
+      "file": "attack_axe_air_03_blades.png",
+      "sha256": "8aebcfd6f2c1fee8166660d0b4698fb0bdf459f029c40992c0c5342568ab9de9"
+    },
+    {
+      "file": "attack_axe_air_03_grip.png",
+      "sha256": "fb1dc1672646b20262871ff746472dead7e8e2d35264c46a3a0275f9aee0055d"
+    },
+    {
+      "file": "attack_axe_air_03_combined.png",
+      "sha256": "dc58d477a41ddee30289838c341c9842f7bf5b98d6fc0e3005f2d62cb163d5d7"
+    },
+    {
+      "file": "attack_axe_air_atlas.png",
+      "sha256": "dbf8d639644214181f11395fa33dcf79afb3ba55c9a489708ab5abb641f21633"
+    },
+    {
+      "file": "hurt_01_body.png",
+      "sha256": "8d612d4e450ffd5859a6f92df11e45aa307b4046b46c7bd90440f0be686bc81b"
+    },
+    {
+      "file": "hurt_01_weapon.png",
+      "sha256": "f4fd9369a080973e407cbef9df2c51d70db3f8540452113c597a10762fcbd8c5"
+    },
+    {
+      "file": "hurt_01_blades.png",
+      "sha256": "b3b2d8e8696877a6b845c00d1cd9dfca732f91e8bc1991180dfd5178841399ce"
+    },
+    {
+      "file": "hurt_01_grip.png",
+      "sha256": "70d07992a1c33cf1b2ec3f2ae07f89bb8a677b31267ae66e3635c0cc03159fa2"
+    },
+    {
+      "file": "hurt_01_combined.png",
+      "sha256": "ac4bef8c06075ed86af481cdbee509e7f42f134e2d278213f6846daa4b10b2c1"
+    },
+    {
+      "file": "hurt_02_body.png",
+      "sha256": "0aa7cb87a50783ae385a274852e50f6a0792bf4082da4e965d9a79feda949f1d"
+    },
+    {
+      "file": "hurt_02_weapon.png",
+      "sha256": "8e4095c23bbfe34955318578390589a4e7ee2b6f322cdf5f94130162afcb6b87"
+    },
+    {
+      "file": "hurt_02_blades.png",
+      "sha256": "4987febad7dacd862ddec3a361a10433882d974555365f07b37affd2ef91c17c"
+    },
+    {
+      "file": "hurt_02_grip.png",
+      "sha256": "89b65180b37b77eb5f408cdb98dc515d7ed16b9c63bd131fa01b8c8d67473b51"
+    },
+    {
+      "file": "hurt_02_combined.png",
+      "sha256": "5182f9322c8a9b79c2482f4fb6f01749c2d9b4935e6aafc1cd6504e2fd5cc0cf"
+    },
+    {
+      "file": "hurt_atlas.png",
+      "sha256": "6f87743c19c8ae7fc674338f826c4dfbeb6ca6be8f2975dfefba631729176eaa"
+    },
+    {
+      "file": "death_01_body.png",
+      "sha256": "d645d40ec9fda4fe22ad722d667aa11d763ac0c3caba69303c0309f0b803491a"
+    },
+    {
+      "file": "death_01_weapon.png",
+      "sha256": "c69d61410e1ba6ad75472d79af0849f59f9589a95d310e056aa3cc9660aa08d8"
+    },
+    {
+      "file": "death_01_blades.png",
+      "sha256": "da01522b7b0e1ae67d1bf6cd3fff2f2682954e2e470bb97869d217ddfa8543a5"
+    },
+    {
+      "file": "death_01_grip.png",
+      "sha256": "449f2559fdf1bc5cf616c5779eadb23b674334dfd21590a2068fa5881f229087"
+    },
+    {
+      "file": "death_01_combined.png",
+      "sha256": "b7c981c1bce562c0ef3f6138dedb4a7b0bcb152b298b46d9d01983cf150334c3"
+    },
+    {
+      "file": "death_02_body.png",
+      "sha256": "2e5872d987015220e930ebbe716906091d2047cab27de495776c28fd53ad5dc4"
+    },
+    {
+      "file": "death_02_weapon.png",
+      "sha256": "aebc86755d7beb8b01bcd992ab44e1133afcb473511b7832eb82228be275473f"
+    },
+    {
+      "file": "death_02_blades.png",
+      "sha256": "aebc86755d7beb8b01bcd992ab44e1133afcb473511b7832eb82228be275473f"
+    },
+    {
+      "file": "death_02_grip.png",
+      "sha256": "aebc86755d7beb8b01bcd992ab44e1133afcb473511b7832eb82228be275473f"
+    },
+    {
+      "file": "death_02_combined.png",
+      "sha256": "2e5872d987015220e930ebbe716906091d2047cab27de495776c28fd53ad5dc4"
+    },
+    {
+      "file": "death_03_body.png",
+      "sha256": "3b4069661ba1a7b62afa9f041c4eb0091a4cc44883e38973793bb89ecda56743"
+    },
+    {
+      "file": "death_03_weapon.png",
+      "sha256": "aebc86755d7beb8b01bcd992ab44e1133afcb473511b7832eb82228be275473f"
+    },
+    {
+      "file": "death_03_blades.png",
+      "sha256": "aebc86755d7beb8b01bcd992ab44e1133afcb473511b7832eb82228be275473f"
+    },
+    {
+      "file": "death_03_grip.png",
+      "sha256": "aebc86755d7beb8b01bcd992ab44e1133afcb473511b7832eb82228be275473f"
+    },
+    {
+      "file": "death_03_combined.png",
+      "sha256": "3b4069661ba1a7b62afa9f041c4eb0091a4cc44883e38973793bb89ecda56743"
+    },
+    {
+      "file": "death_04_body.png",
+      "sha256": "5adc099ab75b65d86131f85a61b29d95e92af5f62bb928e0518fedd4eceffbae"
+    },
+    {
+      "file": "death_04_weapon.png",
+      "sha256": "aebc86755d7beb8b01bcd992ab44e1133afcb473511b7832eb82228be275473f"
+    },
+    {
+      "file": "death_04_blades.png",
+      "sha256": "aebc86755d7beb8b01bcd992ab44e1133afcb473511b7832eb82228be275473f"
+    },
+    {
+      "file": "death_04_grip.png",
+      "sha256": "aebc86755d7beb8b01bcd992ab44e1133afcb473511b7832eb82228be275473f"
+    },
+    {
+      "file": "death_04_combined.png",
+      "sha256": "5adc099ab75b65d86131f85a61b29d95e92af5f62bb928e0518fedd4eceffbae"
+    },
+    {
+      "file": "death_atlas.png",
+      "sha256": "b8b2224f0e7877c123e3e8483f23a797e2151b7b65941cd03929bf7485c8ccca"
+    }
+  ],
+  "gameplay_contract": {
+    "attack_axe_ms": 160,
+    "attack_axe_air_ms": 160,
+    "hurt_ms": 180,
+    "damage_starts_immediately": true,
+    "animation_controls_damage": false,
+    "death_proposed_ms": 600,
+    "death_scene_transition_lifetime": "PENDING_RUNTIME_CHANGE",
+    "death_dropped_weapon": "separate world prop still pending; no weapon silently shrunk/redrawn in collapse"
+  },
+  "rejected_fit_sources": [
+    "ground-body-source.png",
+    "air-body-source.png"
+  ],
+  "new_pose_visual_acceptance": "PENDING",
+  "model_geometry": "PENDING",
+  "palette_in_room": "PENDING",
+  "rights_clearance": "PENDING",
+  "final_cultural_review": "PENDING",
+  "runtime_promotion": false,
+  "review_gif_extra_hold_ms": 700,
+  "review_extra_hold_is_gameplay_timing": false,
+  "remaining": [
+    "lightning_proc",
+    "portal_enter",
+    "manual pixel/anatomy/motion cleanup",
+    "in-game model/palette QA",
+    "death lifetime/drop hook",
+    "Forest/Chaser and remaining art"
+  ]
+}
