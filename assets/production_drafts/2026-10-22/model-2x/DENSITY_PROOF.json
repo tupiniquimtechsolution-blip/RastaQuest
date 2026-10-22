@@ -1,0 +1,63 @@
+{
+  "classification": "EXPERIMENTAL_DENSITY_PROOF_NOT_FINAL",
+  "source_sha256": "ea6a8415cdd2c5fad711ded0506e6be6850963f0cc129eaa3b7d6c16710112ad",
+  "method": "BOX reduction, manually selected32-color palette mapping, alpha threshold160; no dithering",
+  "source_landmarks_estimated": {
+    "crown_y": 252,
+    "sole_y": 1216,
+    "axis_x": 620
+  },
+  "frame": [
+    256,
+    256
+  ],
+  "origin": [
+    128,
+    128
+  ],
+  "intended_feet_y": 180,
+  "intended_body_height": 104,
+  "constant_visual_scale": 0.5,
+  "palette_hex": [
+    "111014",
+    "211719",
+    "382326",
+    "50302c",
+    "6c4234",
+    "8d543b",
+    "b16c47",
+    "d78c58",
+    "352c2f",
+    "554547",
+    "80614d",
+    "ad8967",
+    "e0cba0",
+    "fff0ca",
+    "631c27",
+    "a82a2b",
+    "df3e2d",
+    "ff6c38",
+    "55351d",
+    "8c531b",
+    "c58a24",
+    "f3bd35",
+    "ffe873",
+    "152e25",
+    "28503a",
+    "447045",
+    "76914d",
+    "30313c",
+    "555865",
+    "83838f",
+    "b8b5bf",
+    "eeecec"
+  ],
+  "model_lock": "PENDING",
+  "palette_lock": "PENDING",
+  "anatomy_grip_rigid_axe": "NOT_VERIFIED",
+  "owner_visual_acceptance": "PENDING",
+  "rights_clearance": "PENDING",
+  "clips": "NOT_AUTHORED",
+  "runtime_promotion": false,
+  "output_sha256": "dd9cfe1bdf99a75a17e0a6e7de0c5322de7a13c70408b43ff872b97bcbe3fa57"
+}
