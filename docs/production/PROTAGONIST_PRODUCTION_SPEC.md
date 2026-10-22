@@ -1,20 +1,20 @@
 # Protagonist production specification — issue #35
 
-Date: 2026-10-08. Status: frame/body metrics approved by Rodrigo; corrected visual model, palette and visual QA pending. Approval evidence: OWNER_APPROVAL_RECORD_2026-10-08.md. No final sprite is supplied by this document.
+Updated: 2026-10-22. Status: Rodrigo approved double source resolution at the same world size. Corrected visual model, palette, clips and visual QA remain pending. See VISUAL_DENSITY_DECISION_2026-10-22.md and OWNER_APPROVAL_RECORD_2026-10-08.md. No final sprite is supplied by this document.
 
 ## Grounded integration contract
 
 Source direction: `assets/concepts/characters/protagonist/rq-protagonist-character-bible-v01.png` and `rq-protagonist-animation-board-v01.png`; see ART_DIRECTION_REVIEW_2026-10-06.md. Miniatures must be rebuilt, never cropped as runtime frames.
 
-`game/scenes/player/Player.tscn` currently has a 28x52 collider, centered on the player origin; feet are local y=26. Visual is Node2D with placeholder polygons. `player_controller.gd` emits movement_state_changed; player_combat.gd emits attack_state_changed and electrical_proc_triggered. There is no final sprite player here. Preserve collider and combat geometry during first art integration.
+`game/scenes/player/Player.tscn` has a28x52 collider, centered on the player origin; feet are local y=26. Visual is Node2D with development polygons and an optional player_sprite_presenter.gd adapter. `player_controller.gd` emits movement_state_changed; player_combat.gd emits attack_state_changed and electrical_proc_triggered. The adapter uses the controller's resolved eight body states and accepts only a complete nonempty256x256 frame set at constant0.5 scale/nearest sampling. No final SpriteFrames resource is assigned: polygons remain visible. Preserve collider and combat geometry during art integration. Electricity/portal presentation and death lifetime are still separate gates.
 
-## Model v0.1 — approved metrics, visual details pending
+## Active 2x source contract — approved metrics, visual details pending
 
-One authored pixel = one world unit at native 1280x720. Transparent 128x128 frame, centered origin (64,64), resting feet y=90; 52px resting body height, <=32px body width excluding hair/axe. No per-frame scaling. Record airborne feet displacement relative to the same origin rather than aligning jumps to a false floor.
+Two authored pixels = one world unit at native 1280x720. Transparent 256x256 frame, source origin (128,128), resting feet y=180;104px resting body height, <=64px body width excluding hair/axe. Render the entire visual consistently at0.5, so body remains52 world units and feet remain local y=26. No per-frame scaling. Record airborne feet displacement relative to the same origin rather than aligning jumps to a false floor. The earlier128x128/52px source contract is historical and superseded only for source density; collider28x52, attack geometry and camera scale are unchanged.
 
-Axe study: 48px handle, symmetric 32x18px blade head, grip marker and head center recorded in source coordinates; head center is a visual balance marker, not a physics mass claim. Keep these rigid dimensions through rotation. Render rotations with cleaned pixel edges. Do not resize the collider or 56x42 attack hitbox at x=38 to fit painted effects.
+Axe source study:96px handle, symmetric64x36px blade head, grip marker and head center recorded in source coordinates; head center is a visual balance marker, not a physics mass claim. These are the original48/32x18 world dimensions at double source density. Keep these rigid dimensions through rotation. Render rotations with cleaned pixel edges. Do not resize the collider or56x42 attack hitbox at x=38 to fit painted effects.
 
-Hair study: six primary readable dreadlock clusters tied behind head, consistent 18x20px resting envelope; count describes sprite clusters, not the person's total locks. Headband stays above eyes with red/yellow/green segments. No beads, jewelry or body markings added until #38 resolves intentional references.
+Hair study: six primary readable dreadlock clusters tied behind head, consistent36x40px source resting envelope (18x20 world units); count describes sprite clusters, not the person's total locks. Headband stays above eyes with red/yellow/green segments. No beads, jewelry or body markings added until #38 resolves intentional references.
 
 Candidate palette, authored proposal rather than colors sampled from the sheet: skin #24150F/#4B2C20/#754631; hair #151310/#302A22; band #C8392B/#E8BD42/#39854B; pants #21432D/#397044; boots/handle #35251C/#795237; blade #455660/#9BAEB6; electricity #298FCE/#74DCEF. Transparent alpha=0; visible pixels alpha=255. No blur or automatic palette extraction. Palette lock requires actual in-room comparison.
 

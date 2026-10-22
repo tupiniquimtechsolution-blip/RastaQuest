@@ -1,0 +1,46 @@
+[
+  {
+    "file": "assets\\production_drafts\\2026-10-22\\model-2x\\protagonist-generated-study.png",
+    "sha256": "ea6a8415cdd2c5fad711ded0506e6be6850963f0cc129eaa3b7d6c16710112ad",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_bbox": [
+      0,
+      41,
+      1204,
+      1254
+    ],
+    "visible_colors": 159816,
+    "partial_alpha": true,
+    "errors": [
+      "frame_size_mismatch",
+      "palette_exceeds_limit",
+      "partial_alpha_requires_cleanup"
+    ],
+    "technical_export_pass": false,
+    "human_acceptance": "pending",
+    "rights_clearance": "pending"
+  },
+  {
+    "file": "assets\\production_drafts\\2026-10-22\\model-2x\\protagonist-density-proof-256.png",
+    "sha256": "dd9cfe1bdf99a75a17e0a6e7de0c5322de7a13c70408b43ff872b97bcbe3fa57",
+    "size": [
+      256,
+      256
+    ],
+    "alpha_bbox": [
+      82,
+      58,
+      189,
+      180
+    ],
+    "visible_colors": 32,
+    "partial_alpha": false,
+    "errors": [],
+    "technical_export_pass": true,
+    "human_acceptance": "pending",
+    "rights_clearance": "pending"
+  }
+]

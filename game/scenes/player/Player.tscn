@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="1_player"]
 [ext_resource type="Script" path="res://scripts/combat/health_component.gd" id="2_health"]
 [ext_resource type="Script" path="res://scripts/combat/hurtbox.gd" id="3_hurtbox"]
 [ext_resource type="Script" path="res://scripts/combat/hitbox.gd" id="4_hitbox"]
 [ext_resource type="Script" path="res://scripts/player/player_combat.gd" id="5_combat"]
+[ext_resource type="Script" path="res://scripts/player/player_sprite_presenter.gd" id="6_sprite"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
 size = Vector2(28, 52)
@@ -19,6 +20,7 @@ script = ExtResource("1_player")
 shape = SubResource("RectangleShape2D_player")
 
 [node name="Visual" type="Node2D" parent="."]
+script = ExtResource("6_sprite")
 
 [node name="Body" type="Polygon2D" parent="Visual"]
 polygon = PackedVector2Array(-14, -26, 14, -26, 14, 26, -14, 26)
