@@ -1,0 +1,259 @@
+{
+  "classification": "LAYERED_AUTHORING_PROTOTYPE_NOT_FINAL",
+  "sources": {
+    "axe-generated-source.png": {
+      "sha256": "cf72ab5e9ce5c03b4e274e6daf23548da9645aded38b54a9b37bdc373408dd09",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "idle-generated-attempt-01.png": {
+      "sha256": "d996bccade1fb568f64452031ea4b81ffd4376073017a246f51ed903f3e84269",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "idle-body-correction-source.png": {
+      "sha256": "77d212a06db0a6165708a50dd81069d556c652b8ee8e80a58cec7cee68949903",
+      "size": [
+        1254,
+        1254
+      ]
+    }
+  },
+  "appearance_target": {
+    "sha256": "dd9cfe1bdf99a75a17e0a6e7de0c5322de7a13c70408b43ff872b97bcbe3fa57",
+    "owner_decision": "Use this visual as base; not weapon/clip/final acceptance"
+  },
+  "method": "ImageGen sources; explicit head/shaft reconstruction with independent resize factors, mirror symmetry and two native blade-edge columns; fixed palette/binary alpha; exact quarter-turn; three-pose upper-body translation rig",
+  "palette_hex": [
+    "111014",
+    "211719",
+    "382326",
+    "50302c",
+    "6c4234",
+    "8d543b",
+    "b16c47",
+    "d78c58",
+    "352c2f",
+    "554547",
+    "80614d",
+    "ad8967",
+    "e0cba0",
+    "fff0ca",
+    "631c27",
+    "a82a2b",
+    "df3e2d",
+    "ff6c38",
+    "55351d",
+    "8c531b",
+    "c58a24",
+    "f3bd35",
+    "ffe873",
+    "152e25",
+    "28503a",
+    "447045",
+    "76914d",
+    "30313c",
+    "555865",
+    "83838f",
+    "b8b5bf",
+    "eeecec"
+  ],
+  "frame": [
+    256,
+    256
+  ],
+  "scale": 0.5,
+  "weapon": {
+    "head_authoring_rect": [
+      96,
+      46,
+      160,
+      82
+    ],
+    "shaft_authoring_rect": [
+      121,
+      64,
+      135,
+      160
+    ],
+    "head_center": [
+      128,
+      64
+    ],
+    "grip": [
+      128,
+      128
+    ],
+    "markers": "edge coordinates; pixel-index rotation is255-y,x",
+    "quarter_turn": "clockwise90; exact transpose of vertical PNG",
+    "carried": "102degrees clockwise total; nearest sampling"
+  },
+  "idle": {
+    "timeline_keys": 4,
+    "unique_rig_poses": 3,
+    "authored_drawn_pose_count": 1,
+    "duration_ms": 800,
+    "frames": [
+      {
+        "file": "player_idle_01.png",
+        "duration_ms": 200,
+        "upper_lift": 0,
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180,
+        "weapon_grip": [
+          111,
+          132
+        ]
+      },
+      {
+        "file": "player_idle_02.png",
+        "duration_ms": 200,
+        "upper_lift": 1,
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180,
+        "weapon_grip": [
+          111,
+          132
+        ]
+      },
+      {
+        "file": "player_idle_03.png",
+        "duration_ms": 200,
+        "upper_lift": 2,
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180,
+        "weapon_grip": [
+          111,
+          132
+        ]
+      },
+      {
+        "file": "player_idle_04.png",
+        "duration_ms": 200,
+        "upper_lift": 1,
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180,
+        "weapon_grip": [
+          111,
+          132
+        ]
+      }
+    ],
+    "lower_body_and_grip": "fixed",
+    "source_sheet_other_cells": "rejected for geometry/stance drift",
+    "not_hand_drawn_four_pose_animation": true
+  },
+  "model_geometry": "PENDING",
+  "palette_lock": "PENDING_IN_ROOM",
+  "animation_acceptance": "PENDING",
+  "weapon_visual_acceptance": "PENDING",
+  "rights_clearance": "PENDING",
+  "runtime_promotion": false,
+  "remaining_body_clips": [
+    "run",
+    "jump",
+    "fall",
+    "attack_axe",
+    "attack_axe_air",
+    "hurt",
+    "death"
+  ],
+  "files": [
+    {
+      "file": "layers/axe_head.png",
+      "sha256": "acbb120246fdbf2d8d68d3fa7253e2706f5499a49c063970516da2562cb6ef4c"
+    },
+    {
+      "file": "layers/axe_shaft.png",
+      "sha256": "b003289388f3284f90742a09cd71168a55793e198b831f9311ee348e5d9ad679"
+    },
+    {
+      "file": "weapon_double_axe_vertical_01.png",
+      "sha256": "d1aaf8a66666d1de32e457d95c13ffdc51ded53bd89d4a04358455a2db0003b5"
+    },
+    {
+      "file": "weapon_double_axe_rotation_90_01.png",
+      "sha256": "0a3afc7b6a6f1e7de1697036efb501704fe598bcf813b58b39c5540a40780a15"
+    },
+    {
+      "file": "weapon_double_axe_carried_01.png",
+      "sha256": "134f80ea27ddd45f6dda6b28ef51f39733ef0ffe2e603047b85a386a8f0408ab"
+    },
+    {
+      "file": "layers/body_neutral.png",
+      "sha256": "3b620586a9e67fbeb302d87ed93ac74c7136c8b15c4592318cc8a789ceb136ee"
+    },
+    {
+      "file": "layers/body_upper.png",
+      "sha256": "c3f673248fb50f7c8d5137a55b59ef8c32dd8b0073efe86f9b773e51ebfc116e"
+    },
+    {
+      "file": "layers/body_lower.png",
+      "sha256": "4f0e6fd09c506aed246b1dffeeaaf8e49aedc766d40e1009e09c74eef4cbf4d6"
+    },
+    {
+      "file": "layers/weapon_in_hand.png",
+      "sha256": "b22f1d9441bd53b0f43b7c4e8b0804b780b8b8eceabd48d3d613fae777102ef0"
+    },
+    {
+      "file": "layers/blades_in_hand.png",
+      "sha256": "693de02fc0cb4bdba423cb51393b4739bd28a470d03cf9d89fb005a15ea97046"
+    },
+    {
+      "file": "layers/grip_occlusion.png",
+      "sha256": "b2508c1e83c96284d241c83ca93c38071122a11d09d6e8bed139ea7d0e3aef17"
+    },
+    {
+      "file": "body_idle_01.png",
+      "sha256": "3b620586a9e67fbeb302d87ed93ac74c7136c8b15c4592318cc8a789ceb136ee"
+    },
+    {
+      "file": "player_idle_01.png",
+      "sha256": "0fd06fa6dbdbbbe3fcb8e36143b5b8bf53224817036837041c078e1558b1962e"
+    },
+    {
+      "file": "body_idle_02.png",
+      "sha256": "d754bdb27f3b453d7e77ac8aecf8f88525f5adaf74e5abb362da786028d01bc1"
+    },
+    {
+      "file": "player_idle_02.png",
+      "sha256": "db83e99da18c6578fabfe1cbba6c3fa724947b0a0d786e6054a6402ad968ef1d"
+    },
+    {
+      "file": "body_idle_03.png",
+      "sha256": "ec450d6c78748ebd0f23c33ce861c90835f4eee1df713d57ac73f8141e3d215f"
+    },
+    {
+      "file": "player_idle_03.png",
+      "sha256": "59313632fea1cb45dbc28273c2eb137dc9409d25af9e51f9a2bdaac36818cb40"
+    },
+    {
+      "file": "body_idle_04.png",
+      "sha256": "d754bdb27f3b453d7e77ac8aecf8f88525f5adaf74e5abb362da786028d01bc1"
+    },
+    {
+      "file": "player_idle_04.png",
+      "sha256": "db83e99da18c6578fabfe1cbba6c3fa724947b0a0d786e6054a6402ad968ef1d"
+    },
+    {
+      "file": "player_idle_atlas.png",
+      "sha256": "18bf242e1666023ef9fb2324be33f6c49ef2a14d830070835394b721e063cfd9"
+    }
+  ]
+}

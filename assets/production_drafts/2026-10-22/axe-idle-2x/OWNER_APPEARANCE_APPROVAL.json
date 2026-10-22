@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-22",
+  "reviewer": "Rodrigo",
+  "question": "A prova 2× exibida nos fundos claro e escuro preserva o estilo e o nível de detalhe que você quer para as animações? A resposta aprova apenas o alvo visual; arma independente, clips e revisão no jogo continuam pendentes.",
+  "answer": "Sim, usar esse visual como base",
+  "appearance_target_file": "../model-2x/protagonist-density-proof-256.png",
+  "appearance_target_sha256": "dd9cfe1bdf99a75a17e0a6e7de0c5322de7a13c70408b43ff872b97bcbe3fa57",
+  "reference_commit": "b016a56831282ad6d0830e19446c1f9c4bdc9b31",
+  "appearance_direction": "APPROVED_AS_BASE",
+  "scope": "style and detail target for subsequent animation authoring only",
+  "does_not_approve": ["independent weapon", "clips", "exact anatomy and markers", "palette in room", "rights", "final cultural review", "Godot gameplay QA", "Android QA", "commercial release"],
+  "evidence": "Direct human reply to the appearance-review question in this conversation",
+  "earlier_pending_records": "The previous model-2x reports predate this answer and are retained as historical measurements."
+}
