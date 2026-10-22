@@ -104,8 +104,10 @@ func _on_frame_changed() -> void:
 	_dropped.texture = dropped_weapon_texture
 	_dropped.scale = VISUAL_SCALE
 	_dropped.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	_dropped.z_index = -1
 	add_child(_dropped)
+	# Sibling order keeps it behind the body without putting it behind the
+	# room's backdrop/ground (a negative global z would hide the whole prop).
+	move_child(_dropped, 0)
 	# Keep the same frame origin/facing. Raycast the visible bottom against level
 	# geometry; the fallen prop has no hitbox or collision and may sit behind body.
 	var bottom := _dropped.global_transform * Vector2(0.0, used.end.y - 128.0)

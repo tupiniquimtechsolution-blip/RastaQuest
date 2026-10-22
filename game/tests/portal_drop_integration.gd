@@ -86,6 +86,9 @@ func _run() -> void:
 	if dropped.get_child_count() != 0:
 		_fail("decorative fallen axe must not carry damage or collision")
 		return
+	if dropped.z_index < 0 or dropped.get_index() > visual.get_node("ProductionSprite").get_index():
+		_fail("fallen weapon must draw above backdrop and behind the body")
+		return
 	await create_timer(0.4).timeout
 	if current_scene.scene_file_path != "res://scenes/hub/Hub.tscn":
 		_fail("death lost its bounded return after interrupting portal entry")
