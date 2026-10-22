@@ -64,6 +64,7 @@ func respawn() -> void:
 	_hurt_remaining = 0.0
 	_dead = false
 	_attack_animation = &""
+	combat.reset_for_respawn()
 	health.restore_full()
 	visible = true
 	_update_state()
@@ -73,6 +74,9 @@ func current_animation_name() -> StringName:
 
 func facing_sign() -> float:
 	return _facing
+
+func can_attack() -> bool:
+	return not _dead and not health.dead and _hurt_remaining <= 0.0
 
 func _update_jump_windows(delta: float) -> void:
 	if is_on_floor():
@@ -126,11 +130,13 @@ func _update_state() -> void:
 
 func _on_damaged(_amount: int, _remaining_health: int) -> void:
 	_hurt_remaining = hurt_lock_seconds
+	combat.cancel_attack()
 	_update_state()
 
 func _on_died() -> void:
 	_dead = true
 	_attack_animation = &""
+	combat.cancel_attack()
 	_update_state()
 
 func _on_attack_state_changed(active: bool, animation_name: StringName) -> void:

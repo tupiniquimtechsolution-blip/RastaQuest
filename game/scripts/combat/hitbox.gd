@@ -21,11 +21,13 @@ func begin_attack(attack_id: int, amount: int, damage_type: StringName) -> void:
 		"source": get_parent().get_instance_id(),
 	}
 	_active = true
-	monitoring = true
+	set_deferred("monitoring", true)
 
 func end_attack() -> void:
 	_active = false
-	monitoring = false
+	# Damage/kill signals may run inside an Area2D query flush. The logical
+	# gate closes immediately; change physics monitoring safely afterwards.
+	set_deferred("monitoring", false)
 
 func _on_area_entered(area: Area2D) -> void:
 	if not _active or not area.has_method("receive_hit"):

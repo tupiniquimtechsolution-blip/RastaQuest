@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func set_locked(value: bool) -> void:
 	locked = value
-	monitoring = not locked
+	set_deferred("monitoring", not locked)
 	visual.modulate = Color(0.45, 0.45, 0.45, 1.0) if locked else Color(1.0, 1.0, 1.0, 1.0)
 
 func _on_body_entered(body: Node2D) -> void:

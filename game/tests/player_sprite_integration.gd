@@ -18,6 +18,7 @@ func _run() -> void:
 	var texture := ImageTexture.create_from_image(Image.create(256, 256, false, Image.FORMAT_RGBA8))
 	for clip in visual.BODY_CLIPS:
 		frames.add_animation(clip)
+		frames.set_animation_loop(clip, clip in [&"idle", &"run"])
 		frames.add_frame(clip, texture)
 	if not visual.apply_frames(frames):
 		_fail("valid complete frame contract was rejected")
