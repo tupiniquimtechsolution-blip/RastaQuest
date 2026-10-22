@@ -1,0 +1,264 @@
+{
+  "classification": "RUN_LAYER_PROTOTYPE_NOT_FINAL",
+  "source": {
+    "file": "run-lower-source.png",
+    "sha256": "0c99609295ecd532baa7e10716c5f883e0fc7cb5c28bd8ca8bba2f8929a6fa0e",
+    "size": [
+      1536,
+      1024
+    ]
+  },
+  "source_density_scale": 0.20761245674740483,
+  "frame": [
+    256,
+    256
+  ],
+  "render_scale": 0.5,
+  "method": "New ImageGen running-leg poses; single BOX scale; fixed32-color/binary alpha; estimated hip translations and declared contact corrections; shared torso/arm rig and identical weapon/fist",
+  "leg_pose_count": 6,
+  "duration_ms": 360,
+  "frames": [
+    {
+      "file": "player_run_01.png",
+      "body_file": "body_run_01.png",
+      "leg_file": "layers/legs_01.png",
+      "duration_ms": 60,
+      "source_hip_estimated": [
+        275,
+        177
+      ],
+      "origin": [
+        128,
+        128
+      ],
+      "torso_lift": 0,
+      "contact_correction_source_pixels": 1,
+      "feet_edge_y": 180,
+      "ground_contact": true,
+      "rigid_grip": [
+        111,
+        132
+      ],
+      "blade_body_overlap": false
+    },
+    {
+      "file": "player_run_02.png",
+      "body_file": "body_run_02.png",
+      "leg_file": "layers/legs_02.png",
+      "duration_ms": 60,
+      "source_hip_estimated": [
+        278,
+        177
+      ],
+      "origin": [
+        128,
+        128
+      ],
+      "torso_lift": 1,
+      "contact_correction_source_pixels": 1,
+      "feet_edge_y": 180,
+      "ground_contact": true,
+      "rigid_grip": [
+        111,
+        132
+      ],
+      "blade_body_overlap": false
+    },
+    {
+      "file": "player_run_03.png",
+      "body_file": "body_run_03.png",
+      "leg_file": "layers/legs_03.png",
+      "duration_ms": 60,
+      "source_hip_estimated": [
+        294,
+        177
+      ],
+      "origin": [
+        128,
+        128
+      ],
+      "torso_lift": 2,
+      "contact_correction_source_pixels": 0,
+      "feet_edge_y": 175,
+      "ground_contact": false,
+      "rigid_grip": [
+        111,
+        132
+      ],
+      "blade_body_overlap": false
+    },
+    {
+      "file": "player_run_04.png",
+      "body_file": "body_run_04.png",
+      "leg_file": "layers/legs_04.png",
+      "duration_ms": 60,
+      "source_hip_estimated": [
+        277,
+        148
+      ],
+      "origin": [
+        128,
+        128
+      ],
+      "torso_lift": 0,
+      "contact_correction_source_pixels": 2,
+      "feet_edge_y": 180,
+      "ground_contact": true,
+      "rigid_grip": [
+        111,
+        132
+      ],
+      "blade_body_overlap": false
+    },
+    {
+      "file": "player_run_05.png",
+      "body_file": "body_run_05.png",
+      "leg_file": "layers/legs_05.png",
+      "duration_ms": 60,
+      "source_hip_estimated": [
+        273,
+        148
+      ],
+      "origin": [
+        128,
+        128
+      ],
+      "torso_lift": 1,
+      "contact_correction_source_pixels": 2,
+      "feet_edge_y": 180,
+      "ground_contact": true,
+      "rigid_grip": [
+        111,
+        132
+      ],
+      "blade_body_overlap": false
+    },
+    {
+      "file": "player_run_06.png",
+      "body_file": "body_run_06.png",
+      "leg_file": "layers/legs_06.png",
+      "duration_ms": 60,
+      "source_hip_estimated": [
+        293,
+        148
+      ],
+      "origin": [
+        128,
+        128
+      ],
+      "torso_lift": 2,
+      "contact_correction_source_pixels": 0,
+      "feet_edge_y": 175,
+      "ground_contact": false,
+      "rigid_grip": [
+        111,
+        132
+      ],
+      "blade_body_overlap": false
+    }
+  ],
+  "files": [
+    {
+      "file": "layers/torso.png",
+      "sha256": "c3f673248fb50f7c8d5137a55b59ef8c32dd8b0073efe86f9b773e51ebfc116e"
+    },
+    {
+      "file": "layers/arms.png",
+      "sha256": "9dd9bc78fcfeb7c0a4c1edeb60ca1cb10eba16e93c51ce2ead74c2e021f388d1"
+    },
+    {
+      "file": "layers/weapon_in_hand.png",
+      "sha256": "aede250b93e2a243b49d679ea9f3afcb703f742d828394c88ce0df0a6a4c0f6c"
+    },
+    {
+      "file": "layers/blades_in_hand.png",
+      "sha256": "076065b48dcfd1feb5f9cb125e0eab5b61a17c998e06906e6bae5cbc8fd0dd77"
+    },
+    {
+      "file": "layers/legs_01.png",
+      "sha256": "9dadab9f422b9be78c74dfed5dcac2d911635efe768bbed4f8ec37c98b19c9e3"
+    },
+    {
+      "file": "body_run_01.png",
+      "sha256": "440225c08a6c7b2a535d2cb064685d9b3a904b8d55624f288f9d73fa0e3f7de1"
+    },
+    {
+      "file": "player_run_01.png",
+      "sha256": "ee2349b88f72f4a45b90fdec27c28c5d27a21b79c73c0b91f07902445af6c13b"
+    },
+    {
+      "file": "layers/legs_02.png",
+      "sha256": "006d3c8a1655113301ad9b252c44549957fb0146bbb67291b10531ef102404f4"
+    },
+    {
+      "file": "body_run_02.png",
+      "sha256": "a5630c692cf25cdb28438701f7e2b8852d58b6c9a9d79d18fe42e393aec6fd06"
+    },
+    {
+      "file": "player_run_02.png",
+      "sha256": "6111fbe6b72c0cfde282130d22325840143d3096658c736d9ccbd78fb7f0f85a"
+    },
+    {
+      "file": "layers/legs_03.png",
+      "sha256": "91a203213296852509418e47c069ae925b18726fb2f88d4a9fed65bb0c7ab345"
+    },
+    {
+      "file": "body_run_03.png",
+      "sha256": "5c14a4069ce2e537c9aabec1f83011deed053e87bc37b80626062d63fd90715c"
+    },
+    {
+      "file": "player_run_03.png",
+      "sha256": "8ffcd67aa6a877a4736cfb0b594cceb1586af0a1d617c20ca3669ffbaf9a8529"
+    },
+    {
+      "file": "layers/legs_04.png",
+      "sha256": "cfce5c75bc47392c086ac52812a38dc2400556e9fb85886e0d50d210024af120"
+    },
+    {
+      "file": "body_run_04.png",
+      "sha256": "614fd613365e7e30a236a5814bccf11f3eb019bbed3c279a91fe6fefe8818255"
+    },
+    {
+      "file": "player_run_04.png",
+      "sha256": "3d61361654c6173db941cc8e477e11a91caf34a24ab58c4e15c45331c4624813"
+    },
+    {
+      "file": "layers/legs_05.png",
+      "sha256": "6ae07ea81977a1a8078f760728dfc3bc8b636797fb55a29ebe37acb524260523"
+    },
+    {
+      "file": "body_run_05.png",
+      "sha256": "41f921f4490f094560270c798b20dc635e7e592022f6944e2ad4269c81708d4d"
+    },
+    {
+      "file": "player_run_05.png",
+      "sha256": "924828caf29af654dab311b6f4899019d84abb5796adff72ba09a2716d6b9092"
+    },
+    {
+      "file": "layers/legs_06.png",
+      "sha256": "97585d3c3aee5165195351a07cdcc911986252308c35c2d9353b0a444d2b5cc6"
+    },
+    {
+      "file": "body_run_06.png",
+      "sha256": "11e0a10bc60c4352add49f40a037f55e2f86dd14288d1188baa160550b5fe876"
+    },
+    {
+      "file": "player_run_06.png",
+      "sha256": "9442b3c3abc6a02ed56cc176603e21181adc7e26b7e2361a44ef72b6dfa4de25"
+    },
+    {
+      "file": "player_run_atlas.png",
+      "sha256": "3bf83dfb806d4323aaa28dbaa7387903832d4d80bc12c3d48e0af4999de6210a"
+    }
+  ],
+  "reference_run_speed_world_units": 260,
+  "timing_note": "Estimated contact stride46 world units per180ms; actual foot-slip and speed adaptation pending",
+  "weapon_source": "../axe-idle-2x/weapon_double_axe_rotation_90_01.png",
+  "weapon_angle_clockwise": 90,
+  "weapon_sha256": "0a3afc7b6a6f1e7de1697036efb501704fe598bcf813b58b39c5540a40780a15",
+  "appearance_target": "Owner-approved base only; no final run/anatomy acceptance",
+  "animation_quality": "PENDING",
+  "native_cleanup": "PENDING",
+  "rights_clearance": "PENDING",
+  "runtime_promotion": false
+}
