@@ -28,6 +28,7 @@ var _last_animation: StringName = &"idle"
 var _hurt_remaining: float = 0.0
 var _dead: bool = false
 var _attack_animation: StringName = &""
+var _portal_entering: bool = false
 
 func _ready() -> void:
 	_spawn_position = global_position
@@ -40,6 +41,10 @@ func _physics_process(delta: float) -> void:
 	_hurt_remaining = maxf(_hurt_remaining - delta, 0.0)
 
 	if _dead:
+		velocity = Vector2.ZERO
+		_update_state()
+		return
+	if _portal_entering:
 		velocity = Vector2.ZERO
 		_update_state()
 		return
@@ -63,6 +68,7 @@ func respawn() -> void:
 	_jump_buffer_remaining = 0.0
 	_hurt_remaining = 0.0
 	_dead = false
+	_portal_entering = false
 	_attack_animation = &""
 	combat.reset_for_respawn()
 	health.restore_full()
@@ -76,7 +82,20 @@ func facing_sign() -> float:
 	return _facing
 
 func can_attack() -> bool:
-	return not _dead and not health.dead and _hurt_remaining <= 0.0
+	return not _dead and not health.dead and not _portal_entering and _hurt_remaining <= 0.0
+
+func begin_portal_entry(seconds: float) -> bool:
+	if not can_attack():
+		return false
+	_portal_entering = true
+	velocity = Vector2.ZERO
+	combat.cancel_attack()
+	_update_state()
+	visual.begin_portal_presentation(seconds)
+	return true
+
+func is_entering_portal() -> bool:
+	return _portal_entering and not _dead and not health.dead
 
 func _update_jump_windows(delta: float) -> void:
 	if is_on_floor():
@@ -121,6 +140,8 @@ func _update_state() -> void:
 		is_on_floor(),
 		velocity
 	)
+	if _portal_entering and not _dead and _hurt_remaining <= 0.0:
+		animation = &"portal_enter"
 
 	if animation == _last_animation:
 		return
@@ -129,6 +150,7 @@ func _update_state() -> void:
 	movement_state_changed.emit(animation)
 
 func _on_damaged(_amount: int, _remaining_health: int) -> void:
+	_portal_entering = false
 	_hurt_remaining = hurt_lock_seconds
 	combat.cancel_attack()
 	_update_state()

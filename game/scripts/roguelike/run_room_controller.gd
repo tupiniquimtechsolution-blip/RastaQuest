@@ -28,10 +28,14 @@ var _alive_enemies: int = 0
 var _pending_choices: Array = []
 var _boss_active: bool = false
 var _returning_after_death: bool = false
+var _portal_transitioning: bool = false
+var _portal_entry_resolved: bool = false
+var _portal_entry_id: int = 0
 
 func _ready() -> void:
 	portal.portal_entered.connect(_on_portal_entered)
 	player.get_node("Health").died.connect(_on_player_died)
+	player.get_node("Health").damaged.connect(_on_player_entry_interrupted)
 	for index in range(reward_buttons.size()):
 		reward_buttons[index].pressed.connect(_on_upgrade_selected.bind(index))
 	if not RunManager.state.run_active:
@@ -40,6 +44,9 @@ func _ready() -> void:
 	_start_encounter()
 
 func _start_encounter() -> void:
+	_portal_entry_id += 1
+	_portal_transitioning = false
+	_portal_entry_resolved = false
 	reward_panel.visible = false
 	portal.set_locked(true)
 	_clear_enemies()
@@ -82,19 +89,44 @@ func _clear_enemies() -> void:
 
 func _on_enemy_defeated(_enemy: Node) -> void:
 	_alive_enemies = maxi(_alive_enemies - 1, 0)
-	if _alive_enemies == 0:
+	if _alive_enemies == 0 and not _returning_after_death and not _portal_transitioning:
 		portal.set_locked(false)
 		status_label.text = "Encounter clear • Enter the portal"
 
 func _on_boss_defeated() -> void:
 	_alive_enemies = 0
+	if _returning_after_death or _portal_transitioning:
+		return
 	portal.set_locked(false)
 	status_label.text = "Rift Sovereign defeated • Victory portal open"
 
 func _on_portal_entered() -> void:
-	if _returning_after_death or player.get_node("Health").dead:
+	if _returning_after_death or _portal_transitioning or portal.locked or player.get_node("Health").dead:
 		return
+	if not player.can_attack():
+		return
+	_portal_transitioning = true
+	_portal_entry_id += 1
+	var entry_id := _portal_entry_id
 	portal.set_locked(true)
+	var seconds: float = portal.start_entry_presentation()
+	player.begin_portal_entry(seconds)
+	if seconds > 0.0:
+		await get_tree().create_timer(seconds, false).timeout
+	if not is_inside_tree() or _returning_after_death or entry_id != _portal_entry_id:
+		return
+	if not player.is_entering_portal():
+		_cancel_portal_entry()
+		return
+	call_deferred("_complete_portal_entry", entry_id)
+
+func _complete_portal_entry(entry_id: int) -> void:
+	if _returning_after_death or not _portal_transitioning or _portal_entry_resolved or entry_id != _portal_entry_id:
+		return
+	if not player.is_entering_portal():
+		_cancel_portal_entry()
+		return
+	_portal_entry_resolved = true
 	if _boss_active:
 		SaveManager.add_meta_shards(25)
 		SaveManager.set_completion_flag(&"campaign_complete", true)
@@ -118,12 +150,23 @@ func _on_portal_entered() -> void:
 		else:
 			button.visible = false
 
+func _on_player_entry_interrupted(_amount: int, _remaining: int) -> void:
+	if _portal_transitioning and not _portal_entry_resolved:
+		_cancel_portal_entry()
+
+func _cancel_portal_entry() -> void:
+	_portal_entry_id += 1
+	_portal_transitioning = false
+	portal.cancel_entry_presentation()
+	portal.set_locked(_alive_enemies > 0 or _returning_after_death)
+
 func _on_upgrade_selected(index: int) -> void:
 	if _returning_after_death:
 		return
 	if index < 0 or index >= _pending_choices.size():
 		return
 	var upgrade: UpgradeData = _pending_choices[index]
+	_pending_choices.clear()
 	RunManager.apply_upgrade(upgrade)
 	RunManager.advance_encounter()
 	_apply_run_modifiers()
@@ -134,6 +177,8 @@ func _on_player_died() -> void:
 	if _returning_after_death:
 		return
 	_returning_after_death = true
+	_portal_entry_id += 1
+	portal.cancel_entry_presentation()
 	portal.set_locked(true)
 	reward_panel.visible = false
 	_pending_choices.clear()

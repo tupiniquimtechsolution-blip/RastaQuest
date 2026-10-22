@@ -82,6 +82,14 @@ jobs:
           grep -q 'RQ_PLAYER_DEATH_PRESENTATION_OK' /tmp/rq-player-death.log
           if grep -qE 'SCRIPT ERROR:|ERROR:' /tmp/rq-player-death.log; then exit 1; fi
 
+      - name: Portal entry and rigid weapon drop integration
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout 30s "${GODOT_BIN}" --headless --path game --script res://tests/portal_drop_integration.gd 2>&1 | tee /tmp/rq-portal-drop.log
+          grep -q 'RQ_PORTAL_DROP_OK' /tmp/rq-portal-drop.log
+          if grep -qE 'SCRIPT ERROR:|ERROR:' /tmp/rq-portal-drop.log; then exit 1; fi
+
       - name: Menu access and localization integration
         shell: bash
         run: |
