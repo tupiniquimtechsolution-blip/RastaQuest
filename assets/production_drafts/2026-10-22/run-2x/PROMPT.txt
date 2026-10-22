@@ -1,0 +1,13 @@
+Use case: identity-preserve / precise-object-edit.
+Asset: Rasta Quest RUN LOWER-BODY six-pose authoring sheet. Use the reference ONLY for exact costume, leg anatomy, palette and pixel finish: green loose trousers, red/gold sash tails, sturdy brown buckled boots. We are replacing only the running leg layers; head/torso/arms/axe are separately locked.
+Show WAIST DOWN ONLY: belt/crotch/hips, trousers, sash tails, both complete legs and boots. NO upper torso, chest, arms, hands, head, hair or weapon. Six distinct lower-body poses of the SAME right-facing warrior in an exact3columns x2rows grid of equal square cells. Transparent background and ample padding, no overlaps. Overall requested native canvas768x512, cells256x256.
+All six have pelvis center at cell-local128,120 and identical hip width/leg lengths/boot proportions. Rest waist-to-ground source length62px (source-density2x). Never scale to fit individual poses. Ground reference for contact poses is y180; don't draw a line. Clear near/far legs; far leg slightly darker consistently. Preserve warm material shading and crisp polished pixel clusters, not geometric stick legs.
+The six poses form one seamless rightward RUN stride, order left-right/top-bottom:
+1 near leg stretched FORWARD heel contacts ground y180, far leg extended backward toes near ground;
+2 body weight passes over near planted foot, far knee moves forward bent, slightly flexed near knee;
+3 airborne flight: near leg pushes back, far leg knee high forward, BOTH soles off ground;
+4 opposite contact: far leg stretched forward heel at y180, near leg extended backward toes near ground;
+5 opposite passing/support phase, near knee comes forward, far leg planted flexed;
+6 opposite airborne flight: far leg pushes back, near knee high forward; loops smoothly to1.
+The hips stay same horizontal/vertical local anchor in every cell; stride motion is in articulated legs, not a different-sized character or rotated camera. Keep both boot designs identical across poses; no limb swapping, extra legs, toes, changes of pants or belt. Red sash tail small secondary motion only.
+Native professional pixel-art authoring, max32 shared opaque colors with binary alpha0/255, no antialias/blur/noise. No text, pose numbers, grid, floor, cast shadow, effects or concept presentation. One complete waist-down unit per cell. Draw genuinely different running leg poses, not6copies of a standing unit.

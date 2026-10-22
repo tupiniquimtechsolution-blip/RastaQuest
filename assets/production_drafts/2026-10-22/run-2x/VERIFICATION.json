@@ -1,0 +1,131 @@
+{
+  "prototype_integrity_pass": true,
+  "errors": [],
+  "shared_visible_colors": 32,
+  "distinct_leg_exports": 6,
+  "duration_ms": 360,
+  "automatic_approval": false,
+  "scope": "layer/hash/palette/contact integrity; anatomy, gait, near/far continuity, foot slip, engine/device/final review pending",
+  "export_checks": [
+    {
+      "file": "C:\\Users\\rodrigo.filho\\.codex\\.chatgpt-projects\\g-p-6ac52de1a6488191a8d7ee5e47fbd5f8\\RastaQuest-ui-commercial-2026-10-16\\assets\\production_drafts\\2026-10-22\\run-2x\\player_run_01.png",
+      "sha256": "ee2349b88f72f4a45b90fdec27c28c5d27a21b79c73c0b91f07902445af6c13b",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        79,
+        59,
+        193,
+        180
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "C:\\Users\\rodrigo.filho\\.codex\\.chatgpt-projects\\g-p-6ac52de1a6488191a8d7ee5e47fbd5f8\\RastaQuest-ui-commercial-2026-10-16\\assets\\production_drafts\\2026-10-22\\run-2x\\player_run_02.png",
+      "sha256": "6111fbe6b72c0cfde282130d22325840143d3096658c736d9ccbd78fb7f0f85a",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        79,
+        58,
+        193,
+        180
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "C:\\Users\\rodrigo.filho\\.codex\\.chatgpt-projects\\g-p-6ac52de1a6488191a8d7ee5e47fbd5f8\\RastaQuest-ui-commercial-2026-10-16\\assets\\production_drafts\\2026-10-22\\run-2x\\player_run_03.png",
+      "sha256": "8ffcd67aa6a877a4736cfb0b594cceb1586af0a1d617c20ca3669ffbaf9a8529",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        79,
+        57,
+        193,
+        175
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "C:\\Users\\rodrigo.filho\\.codex\\.chatgpt-projects\\g-p-6ac52de1a6488191a8d7ee5e47fbd5f8\\RastaQuest-ui-commercial-2026-10-16\\assets\\production_drafts\\2026-10-22\\run-2x\\player_run_04.png",
+      "sha256": "3d61361654c6173db941cc8e477e11a91caf34a24ab58c4e15c45331c4624813",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        79,
+        59,
+        193,
+        180
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "C:\\Users\\rodrigo.filho\\.codex\\.chatgpt-projects\\g-p-6ac52de1a6488191a8d7ee5e47fbd5f8\\RastaQuest-ui-commercial-2026-10-16\\assets\\production_drafts\\2026-10-22\\run-2x\\player_run_05.png",
+      "sha256": "924828caf29af654dab311b6f4899019d84abb5796adff72ba09a2716d6b9092",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        79,
+        58,
+        193,
+        180
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "C:\\Users\\rodrigo.filho\\.codex\\.chatgpt-projects\\g-p-6ac52de1a6488191a8d7ee5e47fbd5f8\\RastaQuest-ui-commercial-2026-10-16\\assets\\production_drafts\\2026-10-22\\run-2x\\player_run_06.png",
+      "sha256": "9442b3c3abc6a02ed56cc176603e21181adc7e26b7e2361a44ef72b6dfa4de25",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        79,
+        57,
+        193,
+        175
+      ],
+      "visible_colors": 32,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    }
+  ]
+}
