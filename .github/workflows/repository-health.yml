@@ -14,7 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify canonical documents
+      - name: Verify commercial evidence guard fixtures
+        # Unit fixtures are synthetic and must never be presented as release evidence.
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -B -m unittest discover -s tools -p test_validate_commercial_evidence.py -v
+
+      - name: Verify canonical documents and planning sources
         shell: bash
         run: |
           set -euo pipefail

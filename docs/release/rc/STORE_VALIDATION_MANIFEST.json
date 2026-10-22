@@ -18,5 +18,6 @@
     "android_api": 34,
     "physical_installation": "pending_owner_retest"
   },
-  "classification": "store-format-validation-debug-only"
+  "classification": "store-format-validation-debug-only",
+  "forbidden_archive_segments": ["tests", "concepts", "legacy"]
 }

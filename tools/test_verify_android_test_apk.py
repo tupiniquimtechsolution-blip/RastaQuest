@@ -2,7 +2,7 @@
 import io
 import unittest
 import zipfile
-from verify_android_test_apk import parse_badging, validate_metadata, signer_fingerprints, validate_engine_libraries
+from verify_android_test_apk import parse_badging, validate_metadata, signer_fingerprints, validate_engine_libraries, validate_archive_paths
 
 BADGING = """package: name='com.tupiniquimtechsolution.rastaquest' versionCode='1000001' versionName='1.0.0-rc.1' platformBuildVersionName='15'
 application-label:'Rasta Quest'
@@ -13,6 +13,25 @@ native-code: 'arm64-v8a'
 
 
 class TestApkMetadata(unittest.TestCase):
+    def test_reference_studies_are_rejected_in_all_packages(self):
+        for path in ("assets/production_drafts/study.png", "base/assets/production_drafts/study.png",
+                     "base\\assets\\PRODUCTION_DRAFTS\\study.png"):
+            with self.subTest(path=path), self.assertRaises(ValueError):
+                validate_archive_paths([path], {})
+
+    def test_store_payload_rejects_qa_and_reference_folders(self):
+        expected = {"forbidden_archive_segments": ["tests", "concepts", "legacy"]}
+        for prefix in ("assets/", "base/assets/"):
+            for folder in expected["forbidden_archive_segments"]:
+                with self.subTest(prefix=prefix, folder=folder), self.assertRaises(ValueError):
+                    validate_archive_paths([prefix + folder + "/example.gdc"], expected)
+
+    def test_payload_guard_allows_runtime_and_non_segment_substrings(self):
+        validate_archive_paths(["assets/scenes/world/RunPrototypeRoom.scn",
+                                "base/assets/assets/player/idle.png",
+                                "assets/scripts/latest_results.gdc"],
+                               {"forbidden_archive_segments": ["tests", "concepts", "legacy"]})
+
     def setUp(self):
         self.expected = {"application_id": "com.tupiniquimtechsolution.rastaquest",
             "version_code": 1000001, "version": "1.0.0-rc.1", "declared_permissions": [],

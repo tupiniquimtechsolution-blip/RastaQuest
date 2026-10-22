@@ -8,7 +8,7 @@ import subprocess
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from verify_android_test_apk import validate_metadata
+from verify_android_test_apk import validate_metadata, validate_archive_paths
 
 ANDROID = "{http://schemas.android.com/apk/res/android}"
 
@@ -57,6 +57,7 @@ def verify(bundle, bundletool, keystore, expected_path, output):
     with zipfile.ZipFile(bundle) as archive:
         if archive.testzip() is not None:
             raise ValueError("AAB ZIP integrity failed")
+        validate_archive_paths(archive.namelist(), expected)
         abis = {n.split("/")[2] for n in archive.namelist()
                 if n.startswith("base/lib/") and n.endswith(".so") and len(n.split("/")) == 4}
     validate_metadata(observed, expected, abis)

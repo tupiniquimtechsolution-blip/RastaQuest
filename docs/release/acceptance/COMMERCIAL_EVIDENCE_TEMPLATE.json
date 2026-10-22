@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "status": "NOT_RUN_TEMPLATE",
+  "candidate": {
+    "source_commit": "",
+    "artifact_sha256": "",
+    "version": "",
+    "production_signed": false,
+    "ci_green": false
+  },
+  "devices": [],
+  "movement_testers": [],
+  "beta_runs": [],
+  "known_blockers": null,
+  "known_criticals": null,
+  "reviews": {
+    "visual_final": {
+      "decision": "PENDING",
+      "reviewer": "",
+      "date": "",
+      "source_commit": "",
+      "artifact_sha256": "",
+      "evidence_refs": []
+    },
+    "cultural_final": {
+      "decision": "PENDING",
+      "reviewer": "",
+      "date": "",
+      "source_commit": "",
+      "artifact_sha256": "",
+      "evidence_refs": []
+    },
+    "privacy_store": {
+      "decision": "PENDING",
+      "reviewer": "",
+      "date": "",
+      "source_commit": "",
+      "artifact_sha256": "",
+      "evidence_refs": []
+    },
+    "content_rating": {
+      "decision": "PENDING",
+      "reviewer": "",
+      "date": "",
+      "source_commit": "",
+      "artifact_sha256": "",
+      "evidence_refs": []
+    },
+    "commercial_model": {
+      "decision": "PENDING",
+      "reviewer": "",
+      "date": "",
+      "source_commit": "",
+      "artifact_sha256": "",
+      "evidence_refs": []
+    },
+    "support_ready": {
+      "decision": "PENDING",
+      "reviewer": "",
+      "date": "",
+      "source_commit": "",
+      "artifact_sha256": "",
+      "evidence_refs": []
+    }
+  }
+}
