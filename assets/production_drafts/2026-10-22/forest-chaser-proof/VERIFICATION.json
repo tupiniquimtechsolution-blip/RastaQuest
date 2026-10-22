@@ -1,0 +1,151 @@
+{
+  "prototype_integrity_pass": true,
+  "errors": [],
+  "chaser_keys": 7,
+  "chaser_states": 6,
+  "tile_boundary_pixels_equal": true,
+  "automatic_approval": false,
+  "scope": "Hashes, sizes,palette/alpha,native tile boundary equality and Chaser floor186. Not natural repeat quality, full environment kit, anatomy/rigid enemy weapons, motion/hitbox coverage, visual/mobile/culture/rights acceptance.",
+  "chaser_export_checks": [
+    {
+      "file": "chaser_idle_01.png",
+      "sha256": "4da89c757300f5f6c53274b373cfa2624caf1296fe0258f73fb4a6d37cd0ca25",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        55,
+        69,
+        177,
+        186
+      ],
+      "visible_colors": 23,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "chaser_move_01.png",
+      "sha256": "d8fc8b1e48fcca7b6186cdb30f56031b40e8214f20fec7ce5a607db6b81960da",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        57,
+        73,
+        167,
+        186
+      ],
+      "visible_colors": 24,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "chaser_move_02.png",
+      "sha256": "12507c2a6631337d84572f97a2f78acab66c2254cc0500ba4647c2e94d254f82",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        54,
+        77,
+        170,
+        186
+      ],
+      "visible_colors": 23,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "chaser_tell_01.png",
+      "sha256": "9ecb4dce77440aa01f5a9f2bd7cbebf96430972c87ddef235729395accb31181",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        81,
+        62,
+        170,
+        186
+      ],
+      "visible_colors": 22,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "chaser_attack_01.png",
+      "sha256": "4464c741d015fe903f75ebd1d8432a1c02996f8b172d54f2f02f62e6fd10503c",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        31,
+        93,
+        188,
+        186
+      ],
+      "visible_colors": 22,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "chaser_hurt_01.png",
+      "sha256": "cbae5408129ba35c00252e3e5c85b32af366589a55b035921cf7cdbdc6f4083a",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        57,
+        100,
+        164,
+        186
+      ],
+      "visible_colors": 23,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    },
+    {
+      "file": "chaser_death_01.png",
+      "sha256": "1338569e492e9264fe97eae0efc10033e0052866eac58f0987433f273e2f96d7",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        43,
+        145,
+        178,
+        186
+      ],
+      "visible_colors": 23,
+      "partial_alpha": false,
+      "errors": [],
+      "technical_export_pass": true,
+      "human_acceptance": "pending",
+      "rights_clearance": "pending"
+    }
+  ]
+}

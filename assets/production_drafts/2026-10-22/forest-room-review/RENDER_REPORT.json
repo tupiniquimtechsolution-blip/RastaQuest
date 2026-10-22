@@ -1,0 +1,116 @@
+{
+	"capture_kind": "actual desktop Godot rendering; diagnostic state holds, review-only horizontal camera limits0..1280; not physical/human/final acceptance",
+	"captures": [
+		{
+			"camera_local_y": -40.0,
+			"enemy_clip": "idle",
+			"enemy_phase": "none",
+			"file": "room_idle_1280x720.png",
+			"player_state": "idle",
+			"sha256": "7519c83ff86965777fbdb38725b3decceb071d467a4adaa1a217a4d4b7c1dcd6",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_local_y": -40.0,
+			"enemy_clip": "idle",
+			"enemy_phase": "none",
+			"file": "room_idle_640x360.png",
+			"player_state": "idle",
+			"sha256": "c4c458306ca1e1c55624255fb89850100bc5f170c09abb41518670a324abc50b",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_phase": "none",
+			"file": "framing_proposal_1280x720.png",
+			"player_state": "idle",
+			"sha256": "72b1d97f2fd000b6c82b7507f5fadc1bd2be3f294e3ddc55ef2dc5860d931c57",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_phase": "none",
+			"file": "framing_proposal_640x360.png",
+			"player_state": "idle",
+			"sha256": "ced962ec267f4b0454dc8ed10ac59cbacdce2af067e550ca4d8fd8293c096ad9",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_local_y": -154.0,
+			"enemy_clip": "tell",
+			"enemy_phase": "tell",
+			"file": "chaser_tell_1280x720.png",
+			"player_state": "idle",
+			"sha256": "1a637f3424d708d2457582c8bab819dee2d5581218e094d76bbb0563d26508ff",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_local_y": -154.0,
+			"enemy_clip": "attack",
+			"enemy_phase": "active",
+			"file": "chaser_active_1280x720.png",
+			"player_state": "hurt",
+			"sha256": "0e51b352cb41254c83a4d28c85b994a01ba43a2d21fff6b2ae3415b65b2181fa",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_phase": "none",
+			"file": "room_portal_mid_1280x720.png",
+			"player_state": "portal_enter",
+			"sha256": "0a6e4434afa3928f74a7bc3577641e0910789b57a375d10b02bc41062c3264a4",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_local_y": -154.0,
+			"enemy_clip": "idle",
+			"enemy_phase": "none",
+			"file": "room_death_drop_1280x720.png",
+			"player_state": "death",
+			"sha256": "f488b2cff9061210f7b719dea3600ff87cc316c036c2f51dee7b4531d4239e95",
+			"size": [
+				1280,
+				720
+			]
+		}
+	],
+	"driver": "Intel(R) UHD Graphics",
+	"engine": "4.5.1-stable (official)",
+	"forest": true,
+	"human_acceptance": "PENDING",
+	"runtime_asset_promotion": false,
+	"source_hash_format": "UTF-8 text normalized to LF for reproducible Windows/Linux comparison",
+	"source_hashes": {
+		"res://../assets/production_drafts/2026-10-22/forest-chaser-proof/MANIFEST.json": "2138f11d6c9aa8389d7bcebf196d32b33d2a8638ac1ce4096db82a9da388d152",
+		"res://../tools/render_art_room_review.gd": "f01637adcad3b67ae5187fe1e32b71840fdc89888ab8cfaf9a4ff83bb02b31a5",
+		"res://scripts/enemies/enemy_sprite_presenter.gd": "32787a00102803feff558e311eeba1c15fb85f1cd98ba49f6aa79132cfb6651c",
+		"res://scripts/player/player_sprite_presenter.gd": "4aa38802ea8a5b6a8b1f38924874b2aaedac4792606ae1484512479214f5a740",
+		"res://scripts/portals/portal.gd": "ee0275183b78c7ca57b0d8354a449b3467bf1396a8dd741db8e47aac57b68b3c",
+		"res://tests/art_review_fixtures.gd": "1cbaa96c3b1f8c7884ab73f97b9e755d59f57900228a7b67184c168cbaee294e",
+		"res://tests/forest_review_fixture.gd": "695367b4bbf747772643b7a7740418a36ec164a8db056f05edb2669e35bb8f51"
+	}
+}

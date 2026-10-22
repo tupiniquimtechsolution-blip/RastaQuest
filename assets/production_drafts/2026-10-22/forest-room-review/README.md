@@ -1,0 +1,9 @@
+# Forest/Chaser rendered room proof
+
+Actual Godot4.5.1/OpenGL3.3 desktop captures, not mockup compositions. Uses the actual Player/EnemyBase/Portal/controller/HUD and draft textures via excluded test fixtures. Baseline captures preserve the camera's local y-40. framing_proposal captures use y-154 to show more forest/less underground and keep feet above touch controls; that proposal is not applied to the shipping camera. Source density/world scale and physics shapes stay constant. The review-only horizontal limits0..1280 and added platform/decoration fixture are identified in the report.
+
+Tell and active captures hold real HostileAttack phases diagnostically; the report records tell/tell and active/attack rather than inferring phase from appearance. Existing amber/red rectangular hazard geometry is provisional. Portal and death/drop captures use controlled actor positions for inspection. Capture hashes, dimensions, normalized-LF source hashes, engine/GPU and actual states are in RENDER_REPORT.json. These images do not constitute full gameplay, Android, human, cultural or rights acceptance.
+
+Agent review: protagonist and Chaser can be compared at the approved size, with walkable contact surfaces distinct from the fog. Chaser armor remains dark at reduced size; more motion/equipment cleanup and physical contrast review are required. Natural terrain repetition/edge silhouettes remain rough despite exact shared tile-edge pixels. Environmental layers are separate and static; parallax/wrap/foreground overlap over the full camera path and touch positions are not accepted. The two platforms are landing/visual fixtures, not an approved traversable level layout.
+
+Use these materials for the next model/palette/framing and pixel/motion decisions, then promote only reviewed native assets with provenance evidence. Default commercial scenes still have unassigned art resources; this proof does not change that release gate.
