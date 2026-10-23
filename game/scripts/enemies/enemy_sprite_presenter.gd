@@ -19,7 +19,7 @@ func _ready() -> void:
 	_sprite.visible = false
 	add_child(_sprite)
 	_sprite.frame_changed.connect(_sync_equipment)
-	_actor.get_node("Health").damaged.connect(func(_n: int, _h: int): _hurt_remaining = 0.10)
+	_actor.get_node("Health").damaged.connect(func(_n: float, _h: float): _hurt_remaining = 0.10)
 	_actor.attack_tell_started.connect(func(_kind: String, seconds: float): _tell_seconds = seconds)
 
 func apply_frames(candidate: SpriteFrames) -> bool:

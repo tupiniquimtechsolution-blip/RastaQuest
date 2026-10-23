@@ -28,6 +28,8 @@ func start(seed_override: int = 1) -> void:
 	_tags.clear()
 	debug_log.clear()
 	modifiers = {
+		&"parry_window": 0.0,
+		&"parry_push": 0.0,
 		&"damage": 0.0,
 		&"air_damage": 0.0,
 		&"move_speed": 0.0,
@@ -92,11 +94,8 @@ func advance_encounter() -> int:
 	return depth
 
 static func biome_for_depth(encounter_depth: int) -> StringName:
-	if encounter_depth >= 12:
-		return &"caves"
-	if encounter_depth >= 6:
-		return &"castle"
-	return &"forest"
+	var sequence: Array[StringName] = [&"forest",&"castle",&"caves"]
+	return sequence[posmod(encounter_depth,sequence.size())]
 
 func reset_after_death() -> void:
 	debug_log.append("run_end depth=%d" % depth)

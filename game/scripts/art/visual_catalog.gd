@@ -51,6 +51,7 @@ func _install(node: Node) -> void:
 		var visual := node.get_node("Visual")
 		visual.dropped_weapon_texture = texture(catalog.player.dropped_weapon)
 		if visual.apply_frames(frames("player",catalog.player)):
+			visual.set_visual_size(1.15)
 			installed += 1
 	elif path.ends_with("/portal.gd"):
 		if node.apply_frames(frames("portal",catalog.portal)):
@@ -64,7 +65,7 @@ func _install(node: Node) -> void:
 		apply_environment(node,String(RunManager.state.biome))
 		var label := Label.new()
 		label.name = "VisualReviewLabel"
-		label.text = "REVISÃO VISUAL • versão candidata"
+		label.text = "review_version"
 		label.position = Vector2(24,74)
 		node.get_node("Hud").add_child(label)
 	elif path.ends_with("/hub_controller.gd"):
@@ -77,7 +78,7 @@ func _install(node: Node) -> void:
 		node.add_child(bg)
 		node.get_node("Backdrop").hide()
 		var label := Label.new()
-		label.text = "REVISÃO VISUAL • arte candidata"
+		label.text = "review_art"
 		label.position = Vector2(40,100)
 		node.add_child(label)
 
@@ -106,6 +107,12 @@ func apply_hostile(actor: Node, role: String) -> bool:
 		actor._presenter = presenter
 		if spec.has("equipment") and not presenter.apply_equipment(texture(spec.equipment.file),spec.equipment.grip,spec.equipment.keys):
 			push_error("Rejected rigid equipment: "+role)
+	if presenter == null:
+		presenter = actor._art_presenter
+	if is_instance_valid(presenter):
+		var sprite: AnimatedSprite2D = presenter._sprite
+		sprite.scale = Vector2.ONE*0.575
+		sprite.position.y = -8.4 if role in ["storm_warden","rift_sovereign"] else -4.35
 	var room := actor.get_parent().get_parent()
 	if room.has_node("Ground/GroundVisual"):
 		apply_environment(room,String(RunManager.state.biome))
@@ -113,25 +120,34 @@ func apply_hostile(actor: Node, role: String) -> bool:
 	return true
 
 func apply_environment(room: Node, biome: String) -> void:
-	if not catalog.environments.has(biome):
+	if catalog.is_empty() or not catalog.environments.has(biome):
 		return
 	var old := room.get_node_or_null("PlayableArtLayers")
 	if old!=null:
-		if old.biome==biome:
+		if old.biome==biome and old.world_width==room.world_width:
+			_hide_environment_placeholders(room)
 			return
 		old.free()
 	var layers := preload("res://scripts/art/playable_art_layers.gd").new()
 	layers.name = "PlayableArtLayers"
 	layers.biome = biome
+	layers.world_width = room.world_width
+	layers.platform_rects = room.platform_rects
 	layers.camera = room.player.get_node("Camera2D")
 	# Framing proposal enabled only in the review flavor.
 	layers.camera.position.y = -154
-	layers.camera.limit_left = -60
-	layers.camera.limit_right = 1340
+	layers.camera.limit_left = 0
+	layers.camera.limit_right = room.world_width
 	room.add_child(layers)
 	if layers.build(catalog.environments[biome]):
-		room.get_node("Backdrop").hide()
-		room.get_node("Ground/GroundVisual").hide()
+		_hide_environment_placeholders(room)
+
+func _hide_environment_placeholders(room: Node) -> void:
+	room.get_node("Backdrop").hide()
+	room.get_node("Ground/GroundVisual").hide()
+	for platform in room.get_node("RoutePlatforms").get_children():
+		if platform.has_node("PlatformVisual"):
+			platform.get_node("PlatformVisual").hide()
 
 func effect_frame(kind: String, elapsed: float, lifetime: float = .24) -> Texture2D:
 	if catalog.is_empty() or not catalog.effects.has(kind):

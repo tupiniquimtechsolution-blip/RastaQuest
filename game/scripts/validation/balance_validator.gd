@@ -11,8 +11,8 @@ static func validate_content() -> Array[String]:
 
 	if rooms.size() != 18:
 		errors.append("expected 18 rooms")
-	if upgrades.size() != 18:
-		errors.append("expected 18 upgrades")
+	if upgrades.size() != 20:
+		errors.append("expected 20 upgrades")
 
 	for room in rooms:
 		if room == null:

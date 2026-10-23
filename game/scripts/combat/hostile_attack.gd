@@ -103,6 +103,8 @@ func _physics_process(delta: float) -> void:
 					continue
 				_centers[index] = next
 			_apply_hits(_centers[index])
+			if not _leased:
+				return
 		if _remaining <= 0.0:
 			phase = &"recovery"
 			_remaining = _recovery_seconds
@@ -134,6 +136,8 @@ func _apply_hits(center: Vector2) -> void:
 	query.collide_with_areas = true
 	query.collide_with_bodies = false
 	for contact in get_world_2d().direct_space_state.intersect_shape(query, 8):
+		if not _leased:
+			return
 		var hurtbox: Area2D = contact["collider"] as Area2D
 		if hurtbox == null or not hurtbox.has_method("receive_hit") or _hit_targets.has(hurtbox.get_instance_id()):
 			continue
@@ -159,10 +163,17 @@ func _exit_tree() -> void:
 func _draw() -> void:
 	if not _leased or phase == &"recovery":
 		return
-	# Debug geometry communicates real attack timing; it is not final production art.
+	# Compact timing cue, separate from the actual ground/projectile danger footprint.
 	var color := Color(1.0, 0.55, 0.15, 0.75) if phase == &"tell" else Color(0.95, 0.15, 0.15, 0.85)
+	var cue := to_local(_actor.global_position)+Vector2(0,-74)
+	draw_circle(cue,20.4,Color(color,.12))
+	draw_arc(cue,20.4,0,TAU,40,color,2.5,true)
+	draw_line(cue+Vector2(0,-7),cue+Vector2(0,3),color,3,true)
+	draw_circle(cue+Vector2(0,9),1.6,color)
 	for index in range(_centers.size()):
 		if kind in SHOTS and phase == &"active" and _velocities[index].is_zero_approx():
+			continue
+		if _shape is RectangleShape2D:
 			continue
 		var point := to_local(_centers[index])
 		var key := "hostile_projectile" if kind in SHOTS else "hostile_area"
@@ -175,5 +186,3 @@ func _draw() -> void:
 			draw_texture_rect(tex,Rect2(point-size*.5,size),false,Color(1,1,1,.5 if phase==&"tell" else .8))
 		if _shape is CircleShape2D:
 			draw_circle(point, _shape.radius, color, false, 3.0)
-		elif _shape is RectangleShape2D:
-			draw_rect(Rect2(point - _shape.size * 0.5, _shape.size), color, false, 3.0)

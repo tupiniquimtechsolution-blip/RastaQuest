@@ -7,7 +7,7 @@ func _ready() -> void:
 	health.damaged.connect(_on_damaged)
 	health.died.connect(_on_died)
 
-func _on_damaged(_amount: int, remaining_health: int) -> void:
+func _on_damaged(_amount: float, remaining_health: float) -> void:
 	var ratio := float(remaining_health) / float(health.max_health)
 	body_visual.modulate = Color(1.0, maxf(ratio, 0.35), maxf(ratio, 0.35), 1.0)
 

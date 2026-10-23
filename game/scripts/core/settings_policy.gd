@@ -7,7 +7,7 @@ const DEFAULTS := {
 	"music_volume": 1.0,
 	"sfx_volume": 1.0,
 	"touch_scale": 1.0,
-	"locale": "en",
+	"locale": "pt_BR",
 }
 
 static func normalize(source: Dictionary) -> Dictionary:
@@ -18,6 +18,6 @@ static func normalize(source: Dictionary) -> Dictionary:
 	result["music_volume"] = clampf(float(result["music_volume"]), 0.0, 1.0)
 	result["sfx_volume"] = clampf(float(result["sfx_volume"]), 0.0, 1.0)
 	result["touch_scale"] = clampf(float(result["touch_scale"]), 0.75, 1.5)
-	if String(result["locale"]) not in ["en", "pt_BR"]:
-		result["locale"] = "en"
+	if String(result["locale"]) not in ["en", "pt_BR", "es"]:
+		result["locale"] = "pt_BR"
 	return result

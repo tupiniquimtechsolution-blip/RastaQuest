@@ -72,3 +72,219 @@ msgstr "JUMP"
 
 msgid "touch_attack"
 msgstr "ATTACK"
+
+msgid "touch_guard"
+msgstr "DEFEND"
+
+msgid "choose_upgrade"
+msgstr "Choose one upgrade"
+
+msgid "biome_forest"
+msgstr "Forest"
+
+msgid "biome_castle"
+msgstr "Castle"
+
+msgid "biome_caves"
+msgstr "Caves"
+
+msgid "encounter_status"
+msgstr "%s • %s • Encounter %d"
+
+msgid "clear_status"
+msgstr "Encounter clear • Enter the portal"
+
+msgid "final_status"
+msgstr "Rift Sovereign • Final fracture"
+
+msgid "victory_status"
+msgstr "Victory • Enter the portal"
+
+msgid "invalid_room"
+msgstr "Invalid room template"
+
+msgid "portal_destination"
+msgstr "Next: %s"
+
+msgid "attack_hint"
+msgstr "Yellow circle: prepare • Red: danger • Shield: perfect defense"
+
+msgid "upgrade_raw_power_title"
+msgstr "Raw Power"
+
+msgid "upgrade_raw_power_description"
+msgstr "+1 axe damage"
+
+msgid "upgrade_aerial_edge_title"
+msgstr "Aerial Edge"
+
+msgid "upgrade_aerial_edge_description"
+msgstr "+1 aerial axe damage"
+
+msgid "upgrade_fleet_step_title"
+msgstr "Fleet Step"
+
+msgid "upgrade_fleet_step_description"
+msgstr "+20 movement speed"
+
+msgid "upgrade_sky_blessing_title"
+msgstr "Sky Blessing"
+
+msgid "upgrade_sky_blessing_description"
+msgstr "+40 jump power"
+
+msgid "upgrade_hard_skin_title"
+msgstr "Hard Skin"
+
+msgid "upgrade_hard_skin_description"
+msgstr "+1 maximum health"
+
+msgid "upgrade_long_grace_title"
+msgstr "Long Grace"
+
+msgid "upgrade_long_grace_description"
+msgstr "+0.10s damage invulnerability"
+
+msgid "upgrade_storm_spark_title"
+msgstr "Storm Spark"
+
+msgid "upgrade_storm_spark_description"
+msgstr "+10% electrical proc chance"
+
+msgid "upgrade_chain_storm_title"
+msgstr "Chain Storm"
+
+msgid "upgrade_chain_storm_description"
+msgstr "Electrical procs chain to nearby enemies"
+
+msgid "upgrade_thunder_fall_title"
+msgstr "Thunder Fall"
+
+msgid "upgrade_thunder_fall_description"
+msgstr "Kills release an electrical burst"
+
+msgid "upgrade_quick_hands_title"
+msgstr "Quick Hands"
+
+msgid "upgrade_quick_hands_description"
+msgstr "Shorter axe attack cooldown"
+
+msgid "upgrade_heavy_axe_title"
+msgstr "Heavy Axe"
+
+msgid "upgrade_heavy_axe_description"
+msgstr "+1 axe damage"
+
+msgid "upgrade_wind_dance_title"
+msgstr "Wind Dance"
+
+msgid "upgrade_wind_dance_description"
+msgstr "+25 movement speed"
+
+msgid "upgrade_iron_roots_title"
+msgstr "Iron Roots"
+
+msgid "upgrade_iron_roots_description"
+msgstr "+1 max health"
+
+msgid "upgrade_portal_stride_title"
+msgstr "Portal Stride"
+
+msgid "upgrade_portal_stride_description"
+msgstr "+18 movement speed"
+
+msgid "upgrade_storm_crown_title"
+msgstr "Storm Crown"
+
+msgid "upgrade_storm_crown_description"
+msgstr "+20% electrical proc"
+
+msgid "upgrade_echo_axe_title"
+msgstr "Echo Axe"
+
+msgid "upgrade_echo_axe_description"
+msgstr "+1 axe damage"
+
+msgid "upgrade_last_light_title"
+msgstr "Last Light"
+
+msgid "upgrade_last_light_description"
+msgstr "+0.12s invulnerability"
+
+msgid "upgrade_war_drum_title"
+msgstr "War Drum"
+
+msgid "upgrade_war_drum_description"
+msgstr "-0.05s attack cooldown"
+
+msgid "upgrade_guardian_reflex_title"
+msgstr "Guardian Reflex"
+
+msgid "upgrade_guardian_reflex_description"
+msgstr "+35 ms perfect defense window"
+
+msgid "upgrade_counterweight_title"
+msgstr "Counterweight"
+
+msgid "upgrade_counterweight_description"
+msgstr "+80 parry push speed"
+
+msgid "room_forest_gate"
+msgstr "Forest Gate"
+
+msgid "room_forest_bridge"
+msgstr "Broken Bridge"
+
+msgid "room_forest_roots"
+msgstr "Root Labyrinth"
+
+msgid "room_forest_ruin"
+msgstr "Moss Ruin"
+
+msgid "room_forest_shrine"
+msgstr "Fractured Shrine"
+
+msgid "room_forest_storm"
+msgstr "Storm Clearing"
+
+msgid "room_castle_armory"
+msgstr "Warped Armory"
+
+msgid "room_castle_chapel"
+msgstr "Silent Chapel"
+
+msgid "room_castle_gate"
+msgstr "Fractured Gate"
+
+msgid "room_castle_hall"
+msgstr "Broken Great Hall"
+
+msgid "room_castle_throne"
+msgstr "Empty Throne"
+
+msgid "room_castle_tower"
+msgstr "Shattered Tower"
+
+msgid "room_cave_abyss"
+msgstr "Abyss Threshold"
+
+msgid "room_cave_chasm"
+msgstr "Black Chasm"
+
+msgid "room_cave_crystal"
+msgstr "Fractured Crystals"
+
+msgid "room_cave_echo"
+msgstr "Hall of Echoes"
+
+msgid "room_cave_mouth"
+msgstr "Echoing Mouth"
+
+msgid "room_cave_shrine"
+msgstr "Buried Shrine"
+
+msgid "review_version"
+msgstr "VISUAL REVIEW • candidate version"
+
+msgid "review_art"
+msgstr "VISUAL REVIEW • candidate art"

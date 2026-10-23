@@ -28,6 +28,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if health.dead or not is_instance_valid(_target):
 		return
+	if absf(_target.global_position.x-global_position.x)>800.0:
+		velocity = Vector2(0,minf(velocity.y+1500*delta,900))
+		move_and_slide()
+		return
 	_cooldown = maxf(_cooldown - delta, 0.0)
 	var ratio := float(health.health) / float(health.max_health)
 	var phase := 1 if ratio > 0.66 else (2 if ratio > 0.33 else 3)

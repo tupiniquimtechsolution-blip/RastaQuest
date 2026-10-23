@@ -8,7 +8,11 @@ signal electrical_proc_triggered(position: Vector2)
 @export var ground_damage: int = 1
 @export var air_damage: int = 1
 @export var attack_window: float = 0.16
-@export var attack_cooldown: float = 0.30
+@export var attack_cooldown: float = 0.34
+@export var windup_seconds := 0.05
+@export var recovery_seconds := 0.09
+var phase: StringName = &"idle"
+var _pending_damage := 1
 @export_range(0.0, 1.0, 0.01) var electrical_proc_chance: float = 0.25
 @export var chain_lightning_enabled: bool = false
 @export var on_kill_aoe_enabled: bool = false
@@ -26,10 +30,19 @@ func _ready() -> void:
 	hitbox.landed_hit.connect(_on_landed_hit)
 
 func _process(delta: float) -> void:
-	_attack_remaining = maxf(_attack_remaining - delta, 0.0)
+	_attack_remaining -= delta
 	_cooldown_remaining = maxf(_cooldown_remaining - delta, 0.0)
-	if _active_animation != &"" and _attack_remaining <= 0.0:
-		_finish_attack()
+	while _active_animation != &"" and _attack_remaining <= 0.0:
+		if phase == &"windup":
+			phase = &"active"
+			_attack_remaining += attack_window
+			hitbox.begin_attack(_attack_id,_pending_damage,&"axe")
+		elif phase == &"active":
+			hitbox.end_attack()
+			phase = &"recovery"
+			_attack_remaining += recovery_seconds
+		else:
+			_finish_attack()
 	if Input.is_action_just_pressed("attack"):
 		try_attack()
 
@@ -37,13 +50,14 @@ func try_attack() -> bool:
 	if not body.can_attack() or _cooldown_remaining > 0.0 or _active_animation != &"":
 		return false
 	_attack_id += 1
-	_attack_remaining = attack_window
+	phase = &"windup"
+	_attack_remaining = windup_seconds
 	_cooldown_remaining = attack_cooldown
 	var grounded := body.is_on_floor()
 	_active_animation = &"attack_axe" if grounded else &"attack_axe_air"
-	var damage := ground_damage if grounded else air_damage
+	_pending_damage = ground_damage if grounded else air_damage
 	hitbox.position.x = 38.0 * body.facing_sign()
-	hitbox.begin_attack(_attack_id, damage, &"axe")
+
 	attack_state_changed.emit(true, _active_animation)
 	return true
 
@@ -61,6 +75,7 @@ func reset_for_respawn() -> void:
 
 func _finish_attack() -> void:
 	hitbox.end_attack()
+	phase = &"idle"
 	_active_animation = &""
 	attack_state_changed.emit(false, &"")
 

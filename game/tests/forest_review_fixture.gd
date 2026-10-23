@@ -27,6 +27,9 @@ static func chaser_frames() -> SpriteFrames:
 	return frames
 
 static func build(room: Node) -> Node:
+	# Historical fixture supplies its own collision layout; current route has separate tests.
+	if room.has_node("RoutePlatforms"):
+		room.get_node("RoutePlatforms").free()
 	room.get_node("Backdrop").visible = false
 	room.get_node("Ground/GroundVisual").visible = false
 	var environment := Node2D.new()

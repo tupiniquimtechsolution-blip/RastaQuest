@@ -52,6 +52,22 @@ def validate_metadata(observed, expected, native_abis):
         raise ValueError("This verifier is restricted to unpublished debug test candidates")
 
 
+def validate_orientation(xml, expected):
+    # aapt2 prints integer values as decimal; older SDK variants include a
+    # typed hexadecimal prefix. Both represent the actual compiled attribute.
+    declarations = re.findall(r"android:screenOrientation[^\n]*", xml)
+    values = []
+    for declaration in declarations:
+        raw = declaration.rsplit("=", 1)[-1].strip()
+        raw = re.sub(r"^\(type [^)]+\)", "", raw).strip()
+        match = re.match(r"^(0x[0-9a-fA-F]+|[0-9]+)\b", raw)
+        if match:
+            value = match.group(1)
+            values.append(int(value, 16 if value.startswith("0x") else 10))
+    if not declarations or len(values) != len(declarations) or set(values) != {expected}:
+        raise ValueError(f"Actual APK activity orientation mismatch: {declarations!r}")
+
+
 def validate_engine_libraries(archive, architectures):
     expected_elf = {"armeabi-v7a": (1, 40), "arm64-v8a": (2, 183)}
     evidence = {}
@@ -127,6 +143,11 @@ def verify(apk, manifest_path, output, debug_keystore):
     (output / "apk-badging.txt").write_text(badging, encoding="utf-8")
     print(badging)
     observed = parse_badging(badging)
+    if "screen_orientation_android" in expected:
+        xml = run_text([str(sdk / "aapt2"), "dump", "xmltree", str(apk), "--file", "AndroidManifest.xml"])
+        (output / "android-manifest-tree.txt").write_text(xml, encoding="utf-8")
+        validate_orientation(xml, expected["screen_orientation_android"])
+        observed["screen_orientation_android"] = expected["screen_orientation_android"]
     with zipfile.ZipFile(apk) as archive:
         if archive.testzip() is not None:
             raise ValueError("APK ZIP integrity failed")

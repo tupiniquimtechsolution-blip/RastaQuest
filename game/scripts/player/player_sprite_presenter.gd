@@ -14,6 +14,12 @@ var _player: Node
 var _dropped: Sprite2D
 var _drop_tween: Tween
 var _portal_tween: Tween
+var _rest_position := Vector2.ZERO
+
+func set_visual_size(multiplier: float) -> void:
+	_sprite.scale = VISUAL_SCALE*multiplier
+	_rest_position = Vector2(0,26.0*(1.0-multiplier))
+	_sprite.position = _rest_position
 
 func _ready() -> void:
 	_player = get_parent()
@@ -76,7 +82,7 @@ func _show_state(animation_name: StringName) -> void:
 		if _portal_tween != null:
 			_portal_tween.kill()
 		_sprite.modulate.a = 1.0
-		_sprite.position = Vector2.ZERO
+		_sprite.position = _rest_position
 	if animation_name != &"death":
 		_clear_dropped_weapon()
 	if _sprite.visible and animation_name in BODY_CLIPS:
@@ -121,7 +127,8 @@ func _on_frame_changed() -> void:
 	_dropped = Sprite2D.new()
 	_dropped.name = "DroppedWeapon"
 	_dropped.texture = dropped_weapon_texture
-	_dropped.scale = VISUAL_SCALE
+	_dropped.scale = _sprite.scale
+	_dropped.position = _rest_position
 	_dropped.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	add_child(_dropped)
 	# Sibling order keeps it behind the body without putting it behind the

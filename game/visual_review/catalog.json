@@ -70,19 +70,19 @@
       "attack_axe": [
         {
           "file": "player/attack_axe_01.png",
-          "duration_ms": 40
+          "duration_ms": 50
         },
         {
           "file": "player/attack_axe_02.png",
-          "duration_ms": 40
+          "duration_ms": 70
         },
         {
           "file": "player/attack_axe_03.png",
-          "duration_ms": 40
+          "duration_ms": 90
         },
         {
           "file": "player/attack_axe_04.png",
-          "duration_ms": 40
+          "duration_ms": 90
         }
       ],
       "attack_axe_air": [
@@ -92,11 +92,11 @@
         },
         {
           "file": "player/attack_axe_air_02.png",
-          "duration_ms": 55
+          "duration_ms": 140
         },
         {
           "file": "player/attack_axe_air_03.png",
-          "duration_ms": 55
+          "duration_ms": 110
         }
       ],
       "hurt": [

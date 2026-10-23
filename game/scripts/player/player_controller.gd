@@ -62,6 +62,7 @@ func _physics_process(delta: float) -> void:
 	_update_state()
 
 func respawn() -> void:
+	$PlayerGuard.reset()
 	global_position = _spawn_position
 	velocity = Vector2.ZERO
 	_coyote_remaining = 0.0
@@ -82,11 +83,12 @@ func facing_sign() -> float:
 	return _facing
 
 func can_attack() -> bool:
-	return not _dead and not health.dead and not _portal_entering and _hurt_remaining <= 0.0
+	return not _dead and not health.dead and not _portal_entering and _hurt_remaining <= 0.0 and not $PlayerGuard.guarding
 
 func begin_portal_entry(seconds: float) -> bool:
 	if not can_attack():
 		return false
+	$PlayerGuard.reset()
 	_portal_entering = true
 	velocity = Vector2.ZERO
 	combat.cancel_attack()
@@ -149,13 +151,15 @@ func _update_state() -> void:
 	_last_animation = animation
 	movement_state_changed.emit(animation)
 
-func _on_damaged(_amount: int, _remaining_health: int) -> void:
+func _on_damaged(_amount: float, _remaining_health: float) -> void:
 	_portal_entering = false
+	$PlayerGuard.reset()
 	_hurt_remaining = hurt_lock_seconds
 	combat.cancel_attack()
 	_update_state()
 
 func _on_died() -> void:
+	$PlayerGuard.reset()
 	_dead = true
 	_attack_animation = &""
 	combat.cancel_attack()

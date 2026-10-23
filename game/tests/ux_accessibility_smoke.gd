@@ -19,7 +19,7 @@ func _init() -> void:
 	if not FileAccess.file_exists("res://data/narrative/lore.json"):
 		_fail("narrative contract missing")
 		return
-	print("RQ008_UX_ACCESSIBILITY_TECH_OK locales=2 settings=7")
+	print("RQ008_UX_ACCESSIBILITY_TECH_OK locales=3 settings=7")
 	quit(0)
 
 func _test_normalization() -> bool:
@@ -36,8 +36,8 @@ func _test_normalization() -> bool:
 		return _fail("sfx volume was not clamped")
 	if float(normalized["touch_scale"]) != 1.5:
 		return _fail("touch scale was not clamped")
-	if String(normalized["locale"]) != "en":
-		return _fail("invalid locale did not fall back to English")
+	if String(normalized["locale"]) != "pt_BR":
+		return _fail("invalid locale did not fall back to Portuguese")
 	if not bool(normalized["reduced_flashes"]):
 		return _fail("accessibility boolean was not preserved")
 	return true

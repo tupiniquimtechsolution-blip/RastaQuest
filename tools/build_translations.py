@@ -26,7 +26,7 @@ if __name__ == "__main__":
     directory = Path("game/localization")
     with (directory / "strings.csv").open(encoding="utf-8", newline="") as f:
         rows = list(csv.DictReader(f))
-    for locale in ("en", "pt_BR"):
+    for locale in ("en", "pt_BR", "es"):
         path = directory / f"strings.{locale}.po"
         text = render(rows, locale)
         if a.check:
@@ -34,4 +34,4 @@ if __name__ == "__main__":
                 raise SystemExit(f"Translation resource differs from CSV: {path}")
         else:
             path.write_text(text, encoding="utf-8")
-    print(f"RQ_TRANSLATION_CATALOG_OK locales=2 keys={len(rows)}")
+    print(f"RQ_TRANSLATION_CATALOG_OK locales=3 keys={len(rows)}")

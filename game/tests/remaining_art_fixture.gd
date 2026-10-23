@@ -22,6 +22,8 @@ static func frames(role: String) -> SpriteFrames:
 	return result
 
 static func environment(room: Node, biome: String) -> Node2D:
+	if room.has_node("RoutePlatforms"):
+		room.get_node("RoutePlatforms").free()
 	room.get_node("Backdrop").visible = false
 	room.get_node("Ground/GroundVisual").visible = false
 	var layers := Layers.new()

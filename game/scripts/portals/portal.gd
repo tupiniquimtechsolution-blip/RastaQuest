@@ -63,6 +63,12 @@ func set_locked(value: bool) -> void:
 	if is_instance_valid(_sprite):
 		_sprite.modulate = visual.modulate
 
+func _physics_process(_delta: float) -> void:
+	if not locked and monitoring:
+		for body in get_overlapping_bodies():
+			if body.name == "Player" and body.can_attack():
+				portal_entered.emit()
+
 func _on_body_entered(body: Node2D) -> void:
 	if locked:
 		return
