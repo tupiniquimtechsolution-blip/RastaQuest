@@ -96,6 +96,11 @@ func facing_sign() -> float:
 func can_attack() -> bool:
 	return not _dead and not health.dead and not _portal_entering and _hurt_remaining <= 0.0 and not $PlayerGuard.guarding
 
+func cancel_action_inputs() -> void:
+	_jump_buffer_remaining = 0.0
+	combat.cancel_attack()
+	$PlayerGuard.reset()
+
 func begin_portal_entry(seconds: float) -> bool:
 	if not can_attack():
 		return false

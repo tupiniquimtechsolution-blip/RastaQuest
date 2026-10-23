@@ -1,0 +1,151 @@
+{
+	"captures": [
+		{
+			"file": "normal_attack_1280x720.png",
+			"sha256": "f1eb6052f1bc05c145e613bb8471595c41e8c635bd01c265adb2b8e82bcb1896",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "normal_attack_640x360.png",
+			"sha256": "49932ad56bc5788becbd35537d58ecc632cd35cf9262971a62858d9e1a933e6c",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "fast_attack_1280x720.png",
+			"sha256": "f1eb6052f1bc05c145e613bb8471595c41e8c635bd01c265adb2b8e82bcb1896",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "fast_attack_640x360.png",
+			"sha256": "49932ad56bc5788becbd35537d58ecc632cd35cf9262971a62858d9e1a933e6c",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "pause_clean_inputs_1280x720.png",
+			"sha256": "8f2c0af5c31533a2f4494944b015e4972444dfb824c73f1ff666a1a84df9131b",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "pause_clean_inputs_640x360.png",
+			"sha256": "0b54629ac082aced9dac893304ab72e09ec5df5d036692fe5cc86b984b4b7e52",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "stride_continuity_1280x720.png",
+			"sha256": "373fc44fe43a9db7edf99c4fd79ef29baa6bc4c07fb11e8ba91c1a634c928bec",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "stride_continuity_640x360.png",
+			"sha256": "039fc370b356b019b1c6647a219bc006c96595cc3c21597b8c06b074513cb87c",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "fractional_health_1280x720.png",
+			"sha256": "a1cb8bb4dcb727025dac4cb0cd6ce6bb08e0d31ceb4ff21374a4dde8ba7bc676",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "fractional_health_640x360.png",
+			"sha256": "29f01a99ac352c91e8327e986798add1b9aa3825af1cf9d34fcc281f106ddeeb",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "restoration_feedback_1280x720.png",
+			"sha256": "6c2f0999492d9e549e2049ac5bff13579d98e3815a1c87c3a9e4b45b28a04da8",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "restoration_feedback_640x360.png",
+			"sha256": "c1f0c3d4f9cc0bd44e46c1e52886b9dba312b897666757c5c809596c41666ae5",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "returned_native_art_1280x720.png",
+			"sha256": "024ba80a1fc946464806b3751bc8361c332b85b12dea9ada8d9668c9c6c6a328",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "returned_native_art_640x360.png",
+			"sha256": "ba195126e6faa42ac6d5a3ff476ed0d28717c9e5888403a4e9450044d6980125",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "reduced_effects_1280x720.png",
+			"sha256": "ab15f095faaf3a74c8f728e3cbbd22311223ce921b07da2e5566f0574a0aecdf",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "reduced_effects_640x360.png",
+			"sha256": "a5a66b3edcdd30503bf068b1e50340147bad76ead57fb6c43632cdfdf4ef9369",
+			"size": [
+				640,
+				360
+			]
+		}
+	],
+	"commercial_approved": false,
+	"engine": "4.5.1-stable (official)",
+	"failures": [],
+	"physical_acceptance": "PENDING",
+	"renderer": "Intel(R) UHD Graphics",
+	"source_hashes": {
+		"res://localization/strings.csv": "d5acdf97520fa8b511c7e1db76556c90b39d0fc234e2a03dc29370c881340cb7",
+		"res://project.godot": "4e903a138969a53f85a0d1dc72c8200fab087a5816e1234bbf90c2a5a1a3863f",
+		"res://scripts/art/polish_probe.gd": "82e7e70b465d4c051e8f37e63dc65c7239dc0dc8238a98d4bf21d3a1f827be80",
+		"res://scripts/art/visual_catalog.gd": "dffd9cda172ddfa81e6cc9428b6fbb2d18702484c43feae9a27e4f5a6cf64f64",
+		"res://scripts/combat/reflected_projectile.gd": "a37fb6e1402bbb1e2fb3a07c488dc9f8c405bdeacbcc083139c45a1656ae6f79",
+		"res://scripts/player/player_combat.gd": "f472f941ea9f17cd3ad9a339fc95896d9ec3007e35fba27a15c8a905a2e6e506",
+		"res://scripts/player/player_controller.gd": "a5b9d318ed87e56826047af56cb7574695352972481de9c1f5857f0d5d781da4",
+		"res://scripts/player/player_sprite_presenter.gd": "603424e9c433b7883e6b152413b5651de14fe32bfaebcc67252addf2c34c54f9",
+		"res://scripts/roguelike/run_room_controller.gd": "41b8675f1efb5b4c63a624f449b478a0837c5557498402f7ddf0c84988869d69",
+		"res://scripts/ui/player_vitals.gd": "da14f16a854159da73cb8a895621eadcdb22b11b86ec261c170b3d19d17673cc",
+		"res://scripts/ui/touch_controls.gd": "c26bd5492a9b602b954f1adec747466f7f9cb162bf38b4f187b6bb8755630dc0",
+		"res://visual_review/catalog.json": "57a7fdaa18c5282e9c7fa3d96d8776178b3fbdbad480dcf6c57cdfff6e74e9bd"
+	}
+}

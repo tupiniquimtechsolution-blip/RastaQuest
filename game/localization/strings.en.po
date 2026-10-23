@@ -167,7 +167,7 @@ msgid "upgrade_quick_hands_title"
 msgstr "Quick Hands"
 
 msgid "upgrade_quick_hands_description"
-msgstr "Shorter axe attack cooldown"
+msgstr "Faster axe attacks"
 
 msgid "upgrade_heavy_axe_title"
 msgstr "Heavy Axe"
@@ -284,7 +284,7 @@ msgid "room_cave_shrine"
 msgstr "Buried Shrine"
 
 msgid "review_version"
-msgstr "Visual review a13.2 — commercial approval pending"
+msgstr "Visual review a13.3 — commercial approval pending"
 
 msgid "review_art"
 msgstr "VISUAL REVIEW • candidate art"
@@ -297,3 +297,6 @@ msgstr "Restore all health. Does not increase maximum health."
 
 msgid "health_status"
 msgstr "Health: %.1f / %d"
+
+msgid "health_restored"
+msgstr "Health restored"
