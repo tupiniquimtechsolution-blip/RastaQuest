@@ -1,0 +1,2847 @@
+{
+  "schema": 1,
+  "commercial_approved": false,
+  "classification": "visual-review-only",
+  "pending_gates": [
+    "exact-version visual review",
+    "rights/terms evidence",
+    "cultural review",
+    "physical GalaxyA13 QA"
+  ],
+  "source_base": "e83da3c58445acf1e847b7e75457400051b26058",
+  "player": {
+    "clips": {
+      "idle": [
+        {
+          "file": "player/idle_01.png",
+          "duration_ms": 200
+        },
+        {
+          "file": "player/idle_02.png",
+          "duration_ms": 200
+        },
+        {
+          "file": "player/idle_03.png",
+          "duration_ms": 200
+        },
+        {
+          "file": "player/idle_04.png",
+          "duration_ms": 200
+        }
+      ],
+      "run": [
+        {
+          "file": "player/run_01.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "player/run_02.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "player/run_03.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "player/run_04.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "player/run_05.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "player/run_06.png",
+          "duration_ms": 60
+        }
+      ],
+      "jump": [
+        {
+          "file": "player/jump_01.png",
+          "duration_ms": 100
+        }
+      ],
+      "fall": [
+        {
+          "file": "player/fall_01.png",
+          "duration_ms": 100
+        }
+      ],
+      "attack_axe": [
+        {
+          "file": "player/attack_axe_01.png",
+          "duration_ms": 40
+        },
+        {
+          "file": "player/attack_axe_02.png",
+          "duration_ms": 40
+        },
+        {
+          "file": "player/attack_axe_03.png",
+          "duration_ms": 40
+        },
+        {
+          "file": "player/attack_axe_04.png",
+          "duration_ms": 40
+        }
+      ],
+      "attack_axe_air": [
+        {
+          "file": "player/attack_axe_air_01.png",
+          "duration_ms": 50
+        },
+        {
+          "file": "player/attack_axe_air_02.png",
+          "duration_ms": 55
+        },
+        {
+          "file": "player/attack_axe_air_03.png",
+          "duration_ms": 55
+        }
+      ],
+      "hurt": [
+        {
+          "file": "player/hurt_01.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "player/hurt_02.png",
+          "duration_ms": 90
+        }
+      ],
+      "death": [
+        {
+          "file": "player/death_01.png",
+          "duration_ms": 120
+        },
+        {
+          "file": "player/death_02.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "player/death_03.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "player/death_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "portal_enter": [
+        {
+          "file": "player/portal_enter_01.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "player/portal_enter_02.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "player/portal_enter_03.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "player/portal_enter_04.png",
+          "duration_ms": 90
+        }
+      ]
+    },
+    "dropped_weapon": "player/dropped_weapon.png"
+  },
+  "portal": {
+    "clips": {
+      "idle": [
+        {
+          "file": "portal/idle.png",
+          "duration_ms": 200
+        }
+      ],
+      "enter": [
+        {
+          "file": "portal/enter_01.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "portal/enter_02.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "portal/enter_03.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "portal/enter_04.png",
+          "duration_ms": 90
+        }
+      ]
+    }
+  },
+  "actors": {
+    "chaser": {
+      "canvas": 256,
+      "clips": {
+        "idle": [
+          {
+            "file": "chaser/chaser_idle_01.png",
+            "duration_ms": 240
+          },
+          {
+            "file": "chaser/chaser_idle_02.png",
+            "duration_ms": 240
+          }
+        ],
+        "move": [
+          {
+            "file": "chaser/chaser_move_01.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "chaser/chaser_move_02.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "chaser/chaser_move_03.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "chaser/chaser_move_04.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "chaser/chaser_move_05.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "chaser/chaser_move_06.png",
+            "duration_ms": 80
+          }
+        ],
+        "tell": [
+          {
+            "file": "chaser/chaser_tell_01.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "chaser/chaser_tell_02.png",
+            "duration_ms": 150
+          }
+        ],
+        "attack": [
+          {
+            "file": "chaser/chaser_attack_01.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "chaser/chaser_attack_02.png",
+            "duration_ms": 80
+          }
+        ],
+        "hurt": [
+          {
+            "file": "chaser/chaser_hurt_01.png",
+            "duration_ms": 50
+          },
+          {
+            "file": "chaser/chaser_hurt_02.png",
+            "duration_ms": 50
+          }
+        ],
+        "death": [
+          {
+            "file": "chaser/chaser_death_01.png",
+            "duration_ms": 120
+          },
+          {
+            "file": "chaser/chaser_death_02.png",
+            "duration_ms": 200
+          }
+        ]
+      },
+      "equipment": {
+        "sword": "chaser/sword.png",
+        "shield": "chaser/shield.png",
+        "keys": {
+          "idle": [
+            {
+              "clip": "idle",
+              "index": 1,
+              "file": "chaser_idle_01.png",
+              "duration_ms": 240,
+              "source_crop": [
+                0,
+                0,
+                354,
+                291
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                44,
+                62
+              ],
+              "sword_position": [
+                -31,
+                7
+              ],
+              "sword_degrees": -12,
+              "shield_position": [
+                10,
+                7
+              ],
+              "shield_degrees": -8
+            },
+            {
+              "clip": "idle",
+              "index": 2,
+              "file": "chaser_idle_02.png",
+              "duration_ms": 240,
+              "source_crop": [
+                354,
+                0,
+                708,
+                291
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                47,
+                62
+              ],
+              "sword_position": [
+                -25,
+                7
+              ],
+              "sword_degrees": -10,
+              "shield_position": [
+                11,
+                7
+              ],
+              "shield_degrees": -8
+            }
+          ],
+          "move": [
+            {
+              "clip": "move",
+              "index": 1,
+              "file": "chaser_move_01.png",
+              "duration_ms": 80,
+              "source_crop": [
+                708,
+                0,
+                1062,
+                291
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                47,
+                62
+              ],
+              "sword_position": [
+                -39,
+                7
+              ],
+              "sword_degrees": -12,
+              "shield_position": [
+                6,
+                7
+              ],
+              "shield_degrees": -6
+            },
+            {
+              "clip": "move",
+              "index": 2,
+              "file": "chaser_move_02.png",
+              "duration_ms": 80,
+              "source_crop": [
+                1062,
+                0,
+                1416,
+                291
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                42,
+                62
+              ],
+              "sword_position": [
+                -37,
+                18
+              ],
+              "sword_degrees": -8,
+              "shield_position": [
+                15,
+                20
+              ],
+              "shield_degrees": -6
+            },
+            {
+              "clip": "move",
+              "index": 3,
+              "file": "chaser_move_03.png",
+              "duration_ms": 80,
+              "source_crop": [
+                0,
+                291,
+                354,
+                554
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                47,
+                73
+              ],
+              "sword_position": [
+                -32,
+                10
+              ],
+              "sword_degrees": -10,
+              "shield_position": [
+                14,
+                18
+              ],
+              "shield_degrees": -10
+            },
+            {
+              "clip": "move",
+              "index": 4,
+              "file": "chaser_move_04.png",
+              "duration_ms": 80,
+              "source_crop": [
+                354,
+                291,
+                708,
+                554
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                47,
+                73
+              ],
+              "sword_position": [
+                -35,
+                14
+              ],
+              "sword_degrees": -12,
+              "shield_position": [
+                14,
+                13
+              ],
+              "shield_degrees": -8
+            },
+            {
+              "clip": "move",
+              "index": 5,
+              "file": "chaser_move_05.png",
+              "duration_ms": 80,
+              "source_crop": [
+                708,
+                291,
+                1062,
+                554
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                47,
+                74
+              ],
+              "sword_position": [
+                -35,
+                19
+              ],
+              "sword_degrees": -8,
+              "shield_position": [
+                10,
+                20
+              ],
+              "shield_degrees": -6
+            },
+            {
+              "clip": "move",
+              "index": 6,
+              "file": "chaser_move_06.png",
+              "duration_ms": 80,
+              "source_crop": [
+                1062,
+                291,
+                1416,
+                554
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                42,
+                73
+              ],
+              "sword_position": [
+                -40,
+                13
+              ],
+              "sword_degrees": -12,
+              "shield_position": [
+                9,
+                15
+              ],
+              "shield_degrees": -6
+            }
+          ],
+          "tell": [
+            {
+              "clip": "tell",
+              "index": 1,
+              "file": "chaser_tell_01.png",
+              "duration_ms": 100,
+              "source_crop": [
+                0,
+                554,
+                354,
+                831
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                44,
+                69
+              ],
+              "sword_position": [
+                -44,
+                -10
+              ],
+              "sword_degrees": -40,
+              "shield_position": [
+                10,
+                5
+              ],
+              "shield_degrees": -15
+            },
+            {
+              "clip": "tell",
+              "index": 2,
+              "file": "chaser_tell_02.png",
+              "duration_ms": 150,
+              "source_crop": [
+                354,
+                554,
+                708,
+                831
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                47,
+                68
+              ],
+              "sword_position": [
+                -10,
+                -51
+              ],
+              "sword_degrees": 65,
+              "shield_position": [
+                -43,
+                2
+              ],
+              "shield_degrees": -22
+            }
+          ],
+          "attack": [
+            {
+              "clip": "attack",
+              "index": 1,
+              "file": "chaser_attack_01.png",
+              "duration_ms": 80,
+              "source_crop": [
+                708,
+                554,
+                1062,
+                831
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                40,
+                68
+              ],
+              "sword_position": [
+                -82,
+                -11
+              ],
+              "sword_degrees": 0,
+              "shield_position": [
+                1,
+                23
+              ],
+              "shield_degrees": -12
+            },
+            {
+              "clip": "attack",
+              "index": 2,
+              "file": "chaser_attack_02.png",
+              "duration_ms": 80,
+              "source_crop": [
+                1062,
+                554,
+                1416,
+                831
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                40,
+                68
+              ],
+              "sword_position": [
+                -77,
+                -3
+              ],
+              "sword_degrees": -8,
+              "shield_position": [
+                0,
+                26
+              ],
+              "shield_degrees": -12
+            }
+          ],
+          "hurt": [
+            {
+              "clip": "hurt",
+              "index": 1,
+              "file": "chaser_hurt_01.png",
+              "duration_ms": 50,
+              "source_crop": [
+                0,
+                831,
+                354,
+                1111
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                44,
+                81
+              ],
+              "sword_position": [
+                -28,
+                -14
+              ],
+              "sword_degrees": -25,
+              "shield_position": [
+                14,
+                16
+              ],
+              "shield_degrees": 10
+            },
+            {
+              "clip": "hurt",
+              "index": 2,
+              "file": "chaser_hurt_02.png",
+              "duration_ms": 50,
+              "source_crop": [
+                354,
+                831,
+                708,
+                1111
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                47,
+                82
+              ],
+              "sword_position": [
+                -33,
+                5
+              ],
+              "sword_degrees": -12,
+              "shield_position": [
+                11,
+                16
+              ],
+              "shield_degrees": 0
+            }
+          ],
+          "death": [
+            {
+              "clip": "death",
+              "index": 1,
+              "file": "chaser_death_01.png",
+              "duration_ms": 120,
+              "source_crop": [
+                708,
+                831,
+                1062,
+                1111
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                47,
+                83
+              ],
+              "sword_position": [
+                -44,
+                52
+              ],
+              "sword_degrees": 15,
+              "shield_position": [
+                -2,
+                41
+              ],
+              "shield_degrees": 20
+            },
+            {
+              "clip": "death",
+              "index": 2,
+              "file": "chaser_death_02.png",
+              "duration_ms": 200,
+              "source_crop": [
+                1062,
+                831,
+                1416,
+                1111
+              ],
+              "source_scale": 0.44,
+              "offset": [
+                47,
+                81
+              ],
+              "sword_position": [
+                -19,
+                52
+              ],
+              "sword_degrees": 0,
+              "shield_position": [
+                18,
+                47
+              ],
+              "shield_degrees": 80
+            }
+          ]
+        }
+      }
+    },
+    "ranged": {
+      "canvas": 256,
+      "patterns": {
+        "ranged": [
+          "tell",
+          "attack"
+        ]
+      },
+      "clips": {
+        "idle": [
+          {
+            "file": "polished/actors/ranged/idle_01.png",
+            "duration_ms": 200
+          },
+          {
+            "file": "polished/actors/ranged/idle_02.png",
+            "duration_ms": 200
+          }
+        ],
+        "move": [
+          {
+            "file": "polished/actors/ranged/move_01.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/ranged/move_02.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/ranged/move_03.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/ranged/move_04.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/ranged/move_05.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/ranged/move_06.png",
+            "duration_ms": 80
+          }
+        ],
+        "tell": [
+          {
+            "file": "polished/actors/ranged/tell_01.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "polished/actors/ranged/tell_02.png",
+            "duration_ms": 100
+          }
+        ],
+        "attack": [
+          {
+            "file": "polished/actors/ranged/attack_01.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/ranged/attack_02.png",
+            "duration_ms": 80
+          }
+        ],
+        "hurt": [
+          {
+            "file": "polished/actors/ranged/hurt_01.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "polished/actors/ranged/hurt_02.png",
+            "duration_ms": 70
+          }
+        ],
+        "death": [
+          {
+            "file": "polished/actors/ranged/death_01.png",
+            "duration_ms": 160
+          },
+          {
+            "file": "polished/actors/ranged/death_02.png",
+            "duration_ms": 160
+          }
+        ]
+      },
+      "equipment": {
+        "file": "polished/equipment/crossbow.png",
+        "grip": [
+          51,
+          22
+        ],
+        "keys": {
+          "idle": [
+            {
+              "position": [
+                -52,
+                -20
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -69,
+                -18
+              ],
+              "degrees": 0
+            }
+          ],
+          "move": [
+            {
+              "position": [
+                -83,
+                -19
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -100,
+                -18
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -62,
+                -28
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -70,
+                -24
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -77,
+                -23
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -93,
+                -21
+              ],
+              "degrees": 0
+            }
+          ],
+          "tell": [
+            {
+              "position": [
+                -58,
+                -13
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -64,
+                -13
+              ],
+              "degrees": 0
+            }
+          ],
+          "attack": [
+            {
+              "position": [
+                -101,
+                -37
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -102,
+                -37
+              ],
+              "degrees": 0
+            }
+          ],
+          "hurt": [
+            {
+              "position": [
+                -57,
+                -17
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -70,
+                -17
+              ],
+              "degrees": 0
+            }
+          ],
+          "death": [
+            {
+              "position": [
+                -63,
+                50
+              ],
+              "degrees": 15
+            },
+            {
+              "position": [
+                -89,
+                50
+              ],
+              "degrees": 82
+            }
+          ]
+        },
+        "source_file": "sources/crossbow.png"
+      }
+    },
+    "controller": {
+      "canvas": 256,
+      "patterns": {
+        "controller": [
+          "tell",
+          "attack"
+        ]
+      },
+      "clips": {
+        "idle": [
+          {
+            "file": "polished/actors/controller/idle_01.png",
+            "duration_ms": 200
+          },
+          {
+            "file": "polished/actors/controller/idle_02.png",
+            "duration_ms": 200
+          }
+        ],
+        "move": [
+          {
+            "file": "polished/actors/controller/move_01.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/controller/move_02.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/controller/move_03.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/controller/move_04.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/controller/move_05.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/controller/move_06.png",
+            "duration_ms": 80
+          }
+        ],
+        "tell": [
+          {
+            "file": "polished/actors/controller/tell_01.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "polished/actors/controller/tell_02.png",
+            "duration_ms": 100
+          }
+        ],
+        "attack": [
+          {
+            "file": "polished/actors/controller/attack_01.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/controller/attack_02.png",
+            "duration_ms": 80
+          }
+        ],
+        "hurt": [
+          {
+            "file": "polished/actors/controller/hurt_01.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "polished/actors/controller/hurt_02.png",
+            "duration_ms": 70
+          }
+        ],
+        "death": [
+          {
+            "file": "polished/actors/controller/death_01.png",
+            "duration_ms": 160
+          },
+          {
+            "file": "polished/actors/controller/death_02.png",
+            "duration_ms": 160
+          }
+        ]
+      },
+      "equipment": {
+        "file": "polished/equipment/staff.png",
+        "grip": [
+          12,
+          70
+        ],
+        "keys": {
+          "idle": [
+            {
+              "position": [
+                -30,
+                -36
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -60,
+                -35
+              ],
+              "degrees": 0
+            }
+          ],
+          "move": [
+            {
+              "position": [
+                -71,
+                -35
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -86,
+                -37
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -50,
+                -37
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -46,
+                -39
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -70,
+                -37
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -78,
+                -33
+              ],
+              "degrees": 0
+            }
+          ],
+          "tell": [
+            {
+              "position": [
+                -49,
+                -32
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -50,
+                -11
+              ],
+              "degrees": 0
+            }
+          ],
+          "attack": [
+            {
+              "position": [
+                -91,
+                -38
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -118,
+                -39
+              ],
+              "degrees": 0
+            }
+          ],
+          "hurt": [
+            {
+              "position": [
+                -43,
+                -25
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -51,
+                -30
+              ],
+              "degrees": 0
+            }
+          ],
+          "death": [
+            {
+              "position": [
+                -58,
+                50
+              ],
+              "degrees": 15
+            },
+            {
+              "position": [
+                -87,
+                50
+              ],
+              "degrees": 82
+            }
+          ]
+        },
+        "source_file": "sources/staff.png"
+      }
+    },
+    "charger": {
+      "canvas": 256,
+      "patterns": {
+        "charger": [
+          "tell",
+          "attack"
+        ]
+      },
+      "clips": {
+        "idle": [
+          {
+            "file": "polished/actors/charger/idle_01.png",
+            "duration_ms": 200
+          },
+          {
+            "file": "polished/actors/charger/idle_02.png",
+            "duration_ms": 200
+          }
+        ],
+        "move": [
+          {
+            "file": "polished/actors/charger/move_01.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/charger/move_02.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/charger/move_03.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/charger/move_04.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/charger/move_05.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/charger/move_06.png",
+            "duration_ms": 80
+          }
+        ],
+        "tell": [
+          {
+            "file": "polished/actors/charger/tell_01.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "polished/actors/charger/tell_02.png",
+            "duration_ms": 100
+          }
+        ],
+        "attack": [
+          {
+            "file": "polished/actors/charger/attack_01.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/charger/attack_02.png",
+            "duration_ms": 80
+          }
+        ],
+        "hurt": [
+          {
+            "file": "polished/actors/charger/hurt_01.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "polished/actors/charger/hurt_02.png",
+            "duration_ms": 70
+          }
+        ],
+        "death": [
+          {
+            "file": "polished/actors/charger/death_01.png",
+            "duration_ms": 160
+          },
+          {
+            "file": "polished/actors/charger/death_02.png",
+            "duration_ms": 160
+          }
+        ]
+      }
+    },
+    "exploder": {
+      "canvas": 256,
+      "patterns": {
+        "exploder": [
+          "tell",
+          "attack"
+        ]
+      },
+      "clips": {
+        "idle": [
+          {
+            "file": "polished/actors/exploder/idle_01.png",
+            "duration_ms": 200
+          },
+          {
+            "file": "polished/actors/exploder/idle_02.png",
+            "duration_ms": 200
+          }
+        ],
+        "move": [
+          {
+            "file": "polished/actors/exploder/move_01.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/exploder/move_02.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/exploder/move_03.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/exploder/move_04.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/exploder/move_05.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/exploder/move_06.png",
+            "duration_ms": 80
+          }
+        ],
+        "tell": [
+          {
+            "file": "polished/actors/exploder/tell_01.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "polished/actors/exploder/tell_02.png",
+            "duration_ms": 100
+          }
+        ],
+        "attack": [
+          {
+            "file": "polished/actors/exploder/attack_01.png",
+            "duration_ms": 80
+          },
+          {
+            "file": "polished/actors/exploder/attack_02.png",
+            "duration_ms": 80
+          }
+        ],
+        "hurt": [
+          {
+            "file": "polished/actors/exploder/hurt_01.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "polished/actors/exploder/hurt_02.png",
+            "duration_ms": 70
+          }
+        ],
+        "death": [
+          {
+            "file": "polished/actors/exploder/death_01.png",
+            "duration_ms": 160
+          },
+          {
+            "file": "polished/actors/exploder/death_02.png",
+            "duration_ms": 160
+          }
+        ]
+      }
+    },
+    "storm_warden": {
+      "canvas": 512,
+      "patterns": {
+        "storm_slam": [
+          "tell_storm_slam",
+          "attack_storm_slam"
+        ],
+        "chain_burst": [
+          "tell_chain_burst",
+          "attack_chain_burst"
+        ]
+      },
+      "clips": {
+        "idle": [
+          {
+            "file": "remaining/actors/storm_warden/idle_01.png",
+            "duration_ms": 240
+          },
+          {
+            "file": "remaining/actors/storm_warden/idle_02.png",
+            "duration_ms": 240
+          }
+        ],
+        "move": [
+          {
+            "file": "remaining/actors/storm_warden/move_01.png",
+            "duration_ms": 120
+          },
+          {
+            "file": "remaining/actors/storm_warden/move_02.png",
+            "duration_ms": 120
+          }
+        ],
+        "tell_storm_slam": [
+          {
+            "file": "remaining/actors/storm_warden/tell_storm_slam_01.png",
+            "duration_ms": 160
+          }
+        ],
+        "attack_storm_slam": [
+          {
+            "file": "remaining/actors/storm_warden/attack_storm_slam_01.png",
+            "duration_ms": 160
+          }
+        ],
+        "tell_chain_burst": [
+          {
+            "file": "remaining/actors/storm_warden/tell_chain_burst_01.png",
+            "duration_ms": 160
+          }
+        ],
+        "attack_chain_burst": [
+          {
+            "file": "remaining/actors/storm_warden/attack_chain_burst_01.png",
+            "duration_ms": 160
+          }
+        ],
+        "hurt": [
+          {
+            "file": "remaining/actors/storm_warden/hurt_01.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "remaining/actors/storm_warden/hurt_02.png",
+            "duration_ms": 100
+          }
+        ],
+        "death": [
+          {
+            "file": "remaining/actors/storm_warden/death_01.png",
+            "duration_ms": 120
+          },
+          {
+            "file": "remaining/actors/storm_warden/death_02.png",
+            "duration_ms": 200
+          }
+        ]
+      }
+    },
+    "rift_sovereign": {
+      "canvas": 512,
+      "patterns": {
+        "rift_slam": [
+          "tell_rift_slam",
+          "attack_rift_slam"
+        ],
+        "portal_burst": [
+          "tell_portal_burst",
+          "attack_portal_burst"
+        ],
+        "fracture_storm": [
+          "tell_fracture_storm",
+          "attack_fracture_storm"
+        ]
+      },
+      "clips": {
+        "idle": [
+          {
+            "file": "remaining/actors/rift_sovereign/idle_01.png",
+            "duration_ms": 240
+          }
+        ],
+        "move": [
+          {
+            "file": "remaining/actors/rift_sovereign/move_01.png",
+            "duration_ms": 120
+          }
+        ],
+        "tell_rift_slam": [
+          {
+            "file": "remaining/actors/rift_sovereign/tell_rift_slam_01.png",
+            "duration_ms": 160
+          }
+        ],
+        "attack_rift_slam": [
+          {
+            "file": "remaining/actors/rift_sovereign/attack_rift_slam_01.png",
+            "duration_ms": 160
+          }
+        ],
+        "tell_portal_burst": [
+          {
+            "file": "remaining/actors/rift_sovereign/tell_portal_burst_01.png",
+            "duration_ms": 160
+          }
+        ],
+        "attack_portal_burst": [
+          {
+            "file": "remaining/actors/rift_sovereign/attack_portal_burst_01.png",
+            "duration_ms": 160
+          }
+        ],
+        "tell_fracture_storm": [
+          {
+            "file": "remaining/actors/rift_sovereign/tell_fracture_storm_01.png",
+            "duration_ms": 160
+          }
+        ],
+        "attack_fracture_storm": [
+          {
+            "file": "remaining/actors/rift_sovereign/attack_fracture_storm_01.png",
+            "duration_ms": 160
+          }
+        ],
+        "hurt": [
+          {
+            "file": "remaining/actors/rift_sovereign/hurt_01.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "remaining/actors/rift_sovereign/hurt_02.png",
+            "duration_ms": 100
+          }
+        ],
+        "death": [
+          {
+            "file": "remaining/actors/rift_sovereign/death_01.png",
+            "duration_ms": 120
+          },
+          {
+            "file": "remaining/actors/rift_sovereign/death_02.png",
+            "duration_ms": 200
+          }
+        ]
+      }
+    }
+  },
+  "environments": {
+    "forest": {
+      "background": "environments/forest/background.png",
+      "tiles": {
+        "bottom": "environments/forest/terrain_bottom.png",
+        "bottom_left": "environments/forest/terrain_bottom_left.png",
+        "bottom_right": "environments/forest/terrain_bottom_right.png",
+        "inner_left": "environments/forest/terrain_inner_left.png",
+        "inner_right": "environments/forest/terrain_inner_right.png",
+        "isolated": "environments/forest/terrain_isolated.png",
+        "side_left": "environments/forest/terrain_side_left.png",
+        "side_right": "environments/forest/terrain_side_right.png",
+        "soil_1": "environments/forest/terrain_soil_1.png",
+        "soil_2": "environments/forest/terrain_soil_2.png",
+        "soil_3": "environments/forest/terrain_soil_3.png",
+        "top_1": "environments/forest/terrain_top_1.png",
+        "top_2": "environments/forest/terrain_top_2.png",
+        "top_3": "environments/forest/terrain_top_3.png",
+        "top_left": "environments/forest/terrain_top_left.png",
+        "top_right": "environments/forest/terrain_top_right.png"
+      },
+      "props": [
+        "environments/forest/forest_rubble.png"
+      ]
+    },
+    "castle": {
+      "background": "environments/castle/background.png",
+      "tiles": {
+        "bottom": "environments/castle/terrain_bottom.png",
+        "bottom_left": "environments/castle/terrain_bottom_left.png",
+        "bottom_right": "environments/castle/terrain_bottom_right.png",
+        "inner_left": "environments/castle/terrain_inner_left.png",
+        "inner_right": "environments/castle/terrain_inner_right.png",
+        "isolated": "environments/castle/terrain_isolated.png",
+        "side_left": "environments/castle/terrain_side_left.png",
+        "side_right": "environments/castle/terrain_side_right.png",
+        "soil_1": "environments/castle/terrain_soil_1.png",
+        "soil_2": "environments/castle/terrain_soil_2.png",
+        "soil_3": "environments/castle/terrain_soil_3.png",
+        "top_1": "environments/castle/terrain_top_1.png",
+        "top_2": "environments/castle/terrain_top_2.png",
+        "top_3": "environments/castle/terrain_top_3.png",
+        "top_left": "environments/castle/terrain_top_left.png",
+        "top_right": "environments/castle/terrain_top_right.png"
+      },
+      "props": [
+        "environments/castle/prop_03.png",
+        "environments/castle/prop_04.png",
+        "environments/castle/prop_05.png"
+      ]
+    },
+    "caves": {
+      "background": "environments/caves/background.png",
+      "tiles": {
+        "bottom": "environments/caves/terrain_bottom.png",
+        "bottom_left": "environments/caves/terrain_bottom_left.png",
+        "bottom_right": "environments/caves/terrain_bottom_right.png",
+        "inner_left": "environments/caves/terrain_inner_left.png",
+        "inner_right": "environments/caves/terrain_inner_right.png",
+        "isolated": "environments/caves/terrain_isolated.png",
+        "side_left": "environments/caves/terrain_side_left.png",
+        "side_right": "environments/caves/terrain_side_right.png",
+        "soil_1": "environments/caves/terrain_soil_1.png",
+        "soil_2": "environments/caves/terrain_soil_2.png",
+        "soil_3": "environments/caves/terrain_soil_3.png",
+        "top_1": "environments/caves/terrain_top_1.png",
+        "top_2": "environments/caves/terrain_top_2.png",
+        "top_3": "environments/caves/terrain_top_3.png",
+        "top_left": "environments/caves/terrain_top_left.png",
+        "top_right": "environments/caves/terrain_top_right.png"
+      },
+      "props": [
+        "environments/caves/prop_03.png",
+        "environments/caves/prop_04.png",
+        "environments/caves/prop_05.png"
+      ]
+    },
+    "hub": {
+      "background": "environments/hub/background.png",
+      "tiles": {
+        "bottom": "environments/hub/terrain_bottom.png",
+        "bottom_left": "environments/hub/terrain_bottom_left.png",
+        "bottom_right": "environments/hub/terrain_bottom_right.png",
+        "inner_left": "environments/hub/terrain_inner_left.png",
+        "inner_right": "environments/hub/terrain_inner_right.png",
+        "isolated": "environments/hub/terrain_isolated.png",
+        "side_left": "environments/hub/terrain_side_left.png",
+        "side_right": "environments/hub/terrain_side_right.png",
+        "soil_1": "environments/hub/terrain_soil_1.png",
+        "soil_2": "environments/hub/terrain_soil_2.png",
+        "soil_3": "environments/hub/terrain_soil_3.png",
+        "top_1": "environments/hub/terrain_top_1.png",
+        "top_2": "environments/hub/terrain_top_2.png",
+        "top_3": "environments/hub/terrain_top_3.png",
+        "top_left": "environments/hub/terrain_top_left.png",
+        "top_right": "environments/hub/terrain_top_right.png"
+      },
+      "props": [
+        "environments/hub/prop_03.png",
+        "environments/hub/prop_04.png",
+        "environments/hub/prop_05.png"
+      ]
+    }
+  },
+  "effects": {
+    "hit": [
+      "effects/hit_01.png",
+      "effects/hit_02.png",
+      "effects/hit_03.png"
+    ],
+    "hostile_projectile": [
+      "effects/hostile_projectile_01.png",
+      "effects/hostile_projectile_02.png",
+      "effects/hostile_projectile_03.png"
+    ],
+    "hostile_area": [
+      "effects/hostile_area_01.png",
+      "effects/hostile_area_02.png",
+      "effects/hostile_area_03.png"
+    ],
+    "reward": [
+      "effects/reward_01.png",
+      "effects/reward_02.png",
+      "effects/reward_03.png"
+    ],
+    "electric_chain": [
+      "effects/electric_chain_01.png",
+      "effects/electric_chain_02.png",
+      "effects/electric_chain_03.png"
+    ],
+    "electric_area": [
+      "effects/electric_area_01.png",
+      "effects/electric_area_02.png",
+      "effects/electric_area_03.png"
+    ],
+    "electric_onkill": [
+      "effects/electric_onkill_01.png",
+      "effects/electric_onkill_02.png",
+      "effects/electric_onkill_03.png"
+    ]
+  },
+  "files": [
+    {
+      "file": "player/idle_01.png",
+      "sha256": "0fd06fa6dbdbbbe3fcb8e36143b5b8bf53224817036837041c078e1558b1962e",
+      "source": "assets/production_drafts/2026-10-22/axe-idle-2x/player_idle_01.png"
+    },
+    {
+      "file": "player/idle_02.png",
+      "sha256": "db83e99da18c6578fabfe1cbba6c3fa724947b0a0d786e6054a6402ad968ef1d",
+      "source": "assets/production_drafts/2026-10-22/axe-idle-2x/player_idle_02.png"
+    },
+    {
+      "file": "player/idle_03.png",
+      "sha256": "59313632fea1cb45dbc28273c2eb137dc9409d25af9e51f9a2bdaac36818cb40",
+      "source": "assets/production_drafts/2026-10-22/axe-idle-2x/player_idle_03.png"
+    },
+    {
+      "file": "player/idle_04.png",
+      "sha256": "db83e99da18c6578fabfe1cbba6c3fa724947b0a0d786e6054a6402ad968ef1d",
+      "source": "assets/production_drafts/2026-10-22/axe-idle-2x/player_idle_04.png"
+    },
+    {
+      "file": "player/run_01.png",
+      "sha256": "ee2349b88f72f4a45b90fdec27c28c5d27a21b79c73c0b91f07902445af6c13b",
+      "source": "assets/production_drafts/2026-10-22/run-2x/player_run_01.png"
+    },
+    {
+      "file": "player/run_02.png",
+      "sha256": "6111fbe6b72c0cfde282130d22325840143d3096658c736d9ccbd78fb7f0f85a",
+      "source": "assets/production_drafts/2026-10-22/run-2x/player_run_02.png"
+    },
+    {
+      "file": "player/run_03.png",
+      "sha256": "8ffcd67aa6a877a4736cfb0b594cceb1586af0a1d617c20ca3669ffbaf9a8529",
+      "source": "assets/production_drafts/2026-10-22/run-2x/player_run_03.png"
+    },
+    {
+      "file": "player/run_04.png",
+      "sha256": "3d61361654c6173db941cc8e477e11a91caf34a24ab58c4e15c45331c4624813",
+      "source": "assets/production_drafts/2026-10-22/run-2x/player_run_04.png"
+    },
+    {
+      "file": "player/run_05.png",
+      "sha256": "924828caf29af654dab311b6f4899019d84abb5796adff72ba09a2716d6b9092",
+      "source": "assets/production_drafts/2026-10-22/run-2x/player_run_05.png"
+    },
+    {
+      "file": "player/run_06.png",
+      "sha256": "9442b3c3abc6a02ed56cc176603e21181adc7e26b7e2361a44ef72b6dfa4de25",
+      "source": "assets/production_drafts/2026-10-22/run-2x/player_run_06.png"
+    },
+    {
+      "file": "player/jump_01.png",
+      "sha256": "ecc4c7dea34abcf3e6d2869c2af37102169dccca9c9dd272d42bc2fb38ef4938",
+      "source": "assets/production_drafts/2026-10-22/airborne-2x/jump_combined_01.png"
+    },
+    {
+      "file": "player/fall_01.png",
+      "sha256": "bb755eaba01ffe6c7d4b3327c416d8d7c4fb4e2a0eec3b6d179209b1b7938317",
+      "source": "assets/production_drafts/2026-10-22/airborne-2x/fall_combined_01.png"
+    },
+    {
+      "file": "player/attack_axe_01.png",
+      "sha256": "170375642423bb5d0e83404f711a8c37617beaee0111837e6a3169a9f2fc1ecd",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/attack_axe_01_combined.png"
+    },
+    {
+      "file": "player/attack_axe_02.png",
+      "sha256": "c1b743f4dfd245881e559b53e96792a642c967b0e48a9027d6897f37661eeffe",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/attack_axe_02_combined.png"
+    },
+    {
+      "file": "player/attack_axe_03.png",
+      "sha256": "ff247df89f16606b6a894bfa8ca9053814a6c2b9a71b2c3842fc3ebc87aac44a",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/attack_axe_03_combined.png"
+    },
+    {
+      "file": "player/attack_axe_04.png",
+      "sha256": "f76d8842a1548af63e9766baebae981187fb78b2eb7e2b12b6de1c6dc04f9853",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/attack_axe_04_combined.png"
+    },
+    {
+      "file": "player/attack_axe_air_01.png",
+      "sha256": "c897db85880182e53ef706b4fb5aaacf8ea586693c8ef543940c1f7ac3da7601",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/attack_axe_air_01_combined.png"
+    },
+    {
+      "file": "player/attack_axe_air_02.png",
+      "sha256": "e4ef24f096573a51d971d26069f22d5e5712f12efe339b73eada46582f82007d",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/attack_axe_air_02_combined.png"
+    },
+    {
+      "file": "player/attack_axe_air_03.png",
+      "sha256": "dc58d477a41ddee30289838c341c9842f7bf5b98d6fc0e3005f2d62cb163d5d7",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/attack_axe_air_03_combined.png"
+    },
+    {
+      "file": "player/hurt_01.png",
+      "sha256": "ac4bef8c06075ed86af481cdbee509e7f42f134e2d278213f6846daa4b10b2c1",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/hurt_01_combined.png"
+    },
+    {
+      "file": "player/hurt_02.png",
+      "sha256": "5182f9322c8a9b79c2482f4fb6f01749c2d9b4935e6aafc1cd6504e2fd5cc0cf",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/hurt_02_combined.png"
+    },
+    {
+      "file": "player/death_01.png",
+      "sha256": "b7c981c1bce562c0ef3f6138dedb4a7b0bcb152b298b46d9d01983cf150334c3",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/death_01_combined.png"
+    },
+    {
+      "file": "player/death_02.png",
+      "sha256": "2e5872d987015220e930ebbe716906091d2047cab27de495776c28fd53ad5dc4",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/death_02_combined.png"
+    },
+    {
+      "file": "player/death_03.png",
+      "sha256": "3b4069661ba1a7b62afa9f041c4eb0091a4cc44883e38973793bb89ecda56743",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/death_03_combined.png"
+    },
+    {
+      "file": "player/death_04.png",
+      "sha256": "5adc099ab75b65d86131f85a61b29d95e92af5f62bb928e0518fedd4eceffbae",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/death_04_combined.png"
+    },
+    {
+      "file": "player/portal_enter_01.png",
+      "sha256": "6392810e25741f59e5ba97022a1f7c1cf87169d63e2e640e5ddf091398ff2819",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/portal/portal_enter_01_combined.png"
+    },
+    {
+      "file": "player/portal_enter_02.png",
+      "sha256": "30958511ed18b9775a27d632c347ff84a5b6784da6de63d27e2bd1dc54fa462e",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/portal/portal_enter_02_combined.png"
+    },
+    {
+      "file": "player/portal_enter_03.png",
+      "sha256": "5865db45245fade6dd3fb73d1d53e34cf3d6a87aea9e47e4598ec55002fac29f",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/portal/portal_enter_03_combined.png"
+    },
+    {
+      "file": "player/portal_enter_04.png",
+      "sha256": "82f3a01d4d5a425a963d1220bc37c57a268c46b715ddb26657fbd84dcaaec185",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/portal/portal_enter_04_combined.png"
+    },
+    {
+      "file": "player/dropped_weapon.png",
+      "sha256": "c69d61410e1ba6ad75472d79af0849f59f9589a95d310e056aa3cc9660aa08d8",
+      "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/death_01_weapon.png"
+    },
+    {
+      "file": "portal/idle.png",
+      "sha256": "a546ed6a7466d015181d8d9a9b9b66e3abf70adcce641b0f03578df0a2547bab",
+      "source": "assets/production_drafts/2026-10-22/effects-2x/fx_portal_interaction_02.png"
+    },
+    {
+      "file": "portal/enter_01.png",
+      "sha256": "4dfee03e2028f1137001efa24fa888a1ef037df714d99dbfd8757a590b76dff3",
+      "source": "assets/production_drafts/2026-10-22/effects-2x/fx_portal_interaction_01.png"
+    },
+    {
+      "file": "portal/enter_02.png",
+      "sha256": "a546ed6a7466d015181d8d9a9b9b66e3abf70adcce641b0f03578df0a2547bab",
+      "source": "assets/production_drafts/2026-10-22/effects-2x/fx_portal_interaction_02.png"
+    },
+    {
+      "file": "portal/enter_03.png",
+      "sha256": "f45450670e90c8e9ac59198c65dc90c3ac2e7d05d77353ea11aeb35486835ab5",
+      "source": "assets/production_drafts/2026-10-22/effects-2x/fx_portal_interaction_03.png"
+    },
+    {
+      "file": "portal/enter_04.png",
+      "sha256": "80d43eda3e4822b61761356c17fa6a40ebf10ad0bca31eb7cab6dad337e282bb",
+      "source": "assets/production_drafts/2026-10-22/effects-2x/fx_portal_interaction_04.png"
+    },
+    {
+      "file": "chaser/chaser_idle_01.png",
+      "sha256": "d715143f737e649a716364f764323ed279fdb632f5d9953ab287a04926090ab6",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_idle_01.png"
+    },
+    {
+      "file": "chaser/chaser_idle_02.png",
+      "sha256": "7cea33904d78d095aa321006cc58ec4f72d3e20bf7286c3a56be03b21a489d47",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_idle_02.png"
+    },
+    {
+      "file": "chaser/chaser_move_01.png",
+      "sha256": "9c2a627c36f709722271b19ac1c6c912fc33d8b79e21d81f10b9d5e37fd04a2a",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_move_01.png"
+    },
+    {
+      "file": "chaser/chaser_move_02.png",
+      "sha256": "551278a65eaa257fd615258483a06b513271a484a265f282462ccfb40b6d2db5",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_move_02.png"
+    },
+    {
+      "file": "chaser/chaser_move_03.png",
+      "sha256": "e98637c41f79ff7d5d4b4eb8381569a972d4a46b3a26e0dc9d2bf65729ea5d30",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_move_03.png"
+    },
+    {
+      "file": "chaser/chaser_move_04.png",
+      "sha256": "8a57961841f5df9058f961042e4c36f6e6d79adf18a157f0df2a9035a98960de",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_move_04.png"
+    },
+    {
+      "file": "chaser/chaser_move_05.png",
+      "sha256": "251dde896555f53c6d625552b0711a55d55314a1abf8fa6fa19d66192c166095",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_move_05.png"
+    },
+    {
+      "file": "chaser/chaser_move_06.png",
+      "sha256": "2acd517def9f639a81965ff5ff3647ac84fb8a0a55f50863e6c6cca95821bbff",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_move_06.png"
+    },
+    {
+      "file": "chaser/chaser_tell_01.png",
+      "sha256": "87852574f54090d66e5cecd27801c2dd1069cfd5c0a0e72e854904cace56d19f",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_tell_01.png"
+    },
+    {
+      "file": "chaser/chaser_tell_02.png",
+      "sha256": "df89df59ab3fe9b82e6ac051416612f9747ab8d39dcf59c6728fe5b1180c607b",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_tell_02.png"
+    },
+    {
+      "file": "chaser/chaser_attack_01.png",
+      "sha256": "5ce36a341a3d94900c182a9acaaa69208b3813ddd2ebd6562694a1e535cda4de",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_attack_01.png"
+    },
+    {
+      "file": "chaser/chaser_attack_02.png",
+      "sha256": "6f1d1503b6b6a889946c62067d569d343bfe591c249e366fa2b29447341da35e",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_attack_02.png"
+    },
+    {
+      "file": "chaser/chaser_hurt_01.png",
+      "sha256": "7ee984b8a0fa108d15c56a137837da7d8e4daf71a20af05cacdb1a4fb7bb8bf0",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_hurt_01.png"
+    },
+    {
+      "file": "chaser/chaser_hurt_02.png",
+      "sha256": "c4fcb09f510789e1b6fb5933ce2bf5096acde954563286300df699ec63ed6111",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_hurt_02.png"
+    },
+    {
+      "file": "chaser/chaser_death_01.png",
+      "sha256": "f525cc72a174f7d8620f918163d21a49d65a45ef8dbc112e9af32bb3f844ab56",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_death_01.png"
+    },
+    {
+      "file": "chaser/chaser_death_02.png",
+      "sha256": "fd3d56918f814805a1f5d1aa1a27c92526dd5c5fc90cb29d57a5f44ab4a08a23",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_death_02.png"
+    },
+    {
+      "file": "chaser/sword.png",
+      "sha256": "fff7c65d10b6be71072aca27cb804143e94d4108cd7f10d127af6299bf600854",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_sword.png"
+    },
+    {
+      "file": "chaser/shield.png",
+      "sha256": "09bd12d33a3fb32b270db0e8ba623bdee874ebad66bb22fbd3a382b8b38157da",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/chaser_shield.png"
+    },
+    {
+      "file": "polished/actors/ranged/idle_01.png",
+      "sha256": "73bb721a7092a926a02eb0ca4b0a3a8b450f871597c6695f45bf9b373f80a1ad",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/idle_01.png"
+    },
+    {
+      "file": "polished/actors/ranged/idle_02.png",
+      "sha256": "5ca98baf910c70690077374923c61075a15a1095a1630cf48dad36a9935102e2",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/idle_02.png"
+    },
+    {
+      "file": "polished/actors/ranged/move_01.png",
+      "sha256": "972f5fb58f6e78d0d9f3751a86668b73b87be6a3fa9ca23c20bd0430b512fbc2",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/move_01.png"
+    },
+    {
+      "file": "polished/actors/ranged/move_02.png",
+      "sha256": "388980225d0d29ea511ce9b75e053688ef627cd03e67e04237f80c2eef90f714",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/move_02.png"
+    },
+    {
+      "file": "polished/actors/ranged/move_03.png",
+      "sha256": "3d4a5f7d516f9744f7da1d8b61394509ef7481aa656530f2581e61dca1bfe87b",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/move_03.png"
+    },
+    {
+      "file": "polished/actors/ranged/move_04.png",
+      "sha256": "b2dbe8265e254c8f07976492f7ac204274dd01f9b4d81591cd1bfc4850542f89",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/move_04.png"
+    },
+    {
+      "file": "polished/actors/ranged/move_05.png",
+      "sha256": "0d7b6338dab43a425b7d5713cfe70a41b12303c722c001151b4b871eed8536b9",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/move_05.png"
+    },
+    {
+      "file": "polished/actors/ranged/move_06.png",
+      "sha256": "05413fa833584886e77e401488cab9897b1a0eb88cb17757bfa1a5a8f68d0ee3",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/move_06.png"
+    },
+    {
+      "file": "polished/actors/ranged/tell_01.png",
+      "sha256": "a4021b9b3778192e7b9e3c0ed2c9116a4a4154d578a50a8afcdebfbc566e41e6",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/tell_01.png"
+    },
+    {
+      "file": "polished/actors/ranged/tell_02.png",
+      "sha256": "4fbf6fcb40f3aacc8f84b8003f8f7af5f7379b9d9195d92d28c49e50df40a0ee",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/tell_02.png"
+    },
+    {
+      "file": "polished/actors/ranged/attack_01.png",
+      "sha256": "5d15410d3350acc73492b4d70cbbbdf6cb604e059bca366128a48dbde8149f2c",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/attack_01.png"
+    },
+    {
+      "file": "polished/actors/ranged/attack_02.png",
+      "sha256": "5e35b1e170229668af5f0666e1298e0af17f644da6374bd36fea8034ab9f7900",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/attack_02.png"
+    },
+    {
+      "file": "polished/actors/ranged/hurt_01.png",
+      "sha256": "fd9e6ea41333905eb458f2580b7d7e160e4090a21ae0a3619cbf45bd4d649a48",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/hurt_01.png"
+    },
+    {
+      "file": "polished/actors/ranged/hurt_02.png",
+      "sha256": "c8a7897df76869d184c7b8249126cdf91cacaf9dc88e43f65249a3428786be65",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/hurt_02.png"
+    },
+    {
+      "file": "polished/actors/ranged/death_01.png",
+      "sha256": "28b65b37c99746b5e2616ced4a16e7cccdc211a8380b1485953ee6927b02a6f3",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/death_01.png"
+    },
+    {
+      "file": "polished/actors/ranged/death_02.png",
+      "sha256": "b544ea7648e10d8d4dd24a35277d5ef2e9de4980c4463a857d45e2041725e684",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/ranged/death_02.png"
+    },
+    {
+      "file": "polished/equipment/crossbow.png",
+      "sha256": "57c88176c0f9f002c5ed2d44f323aeba1252dd620c70eebbe5bb7aa9235a4af9",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/equipment/crossbow.png"
+    },
+    {
+      "file": "polished/actors/controller/idle_01.png",
+      "sha256": "3fa3a3153a47f17cd0bce02c1f387f740a99cb2d1f73a5c2f47a54e6b3b0c925",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/idle_01.png"
+    },
+    {
+      "file": "polished/actors/controller/idle_02.png",
+      "sha256": "d36af9ba7f7ac4c9a8338f53ac40f3ccc8145a914bf93ab6b1d1948b5db23337",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/idle_02.png"
+    },
+    {
+      "file": "polished/actors/controller/move_01.png",
+      "sha256": "bc4de226c6d3abcd027c0eb4a861ac0094b7f12a8e0e7e64334f6800b489d03a",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/move_01.png"
+    },
+    {
+      "file": "polished/actors/controller/move_02.png",
+      "sha256": "97968dbd32fb6a87a7304d4dbf4d0d0a58a28538a3324ea1fc05625f07f2221c",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/move_02.png"
+    },
+    {
+      "file": "polished/actors/controller/move_03.png",
+      "sha256": "66920f0fd889231be34e47940fee86e9713d412120d7dc792d9afe8759d94ddc",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/move_03.png"
+    },
+    {
+      "file": "polished/actors/controller/move_04.png",
+      "sha256": "21ee7c1d0aa22552f61a6697a5fe6b0d1cd5af5e4f4334554142a85147ede75f",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/move_04.png"
+    },
+    {
+      "file": "polished/actors/controller/move_05.png",
+      "sha256": "78466c7cde28bc52aa40c31e6e227c880dea8d3009610594c238e7856b3d92bf",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/move_05.png"
+    },
+    {
+      "file": "polished/actors/controller/move_06.png",
+      "sha256": "1486b085b64258bbd008e2dbbecc284c621773109a5695e8aa93f8c6d2357a05",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/move_06.png"
+    },
+    {
+      "file": "polished/actors/controller/tell_01.png",
+      "sha256": "463d099d62ff389f518ff0713b8b2a602bd81708abe96099a9764733b281c4a1",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/tell_01.png"
+    },
+    {
+      "file": "polished/actors/controller/tell_02.png",
+      "sha256": "a44543fcdbabb6f6c46353175fe773ac0ebe4679ebf81eaa4927808f42b45c54",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/tell_02.png"
+    },
+    {
+      "file": "polished/actors/controller/attack_01.png",
+      "sha256": "76cbf3dda9c9442d4cae5df463571ab178825f9c50d98fdf6c11e943cb963779",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/attack_01.png"
+    },
+    {
+      "file": "polished/actors/controller/attack_02.png",
+      "sha256": "1abdeb1dbf18e1455084e039e5b5fb772cef2fd93378cd82e66cdd8b3ae0448a",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/attack_02.png"
+    },
+    {
+      "file": "polished/actors/controller/hurt_01.png",
+      "sha256": "8335d5f66b25d5b2816bf6f4a6ebd009035457d9a45ecfa13a961f554989259c",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/hurt_01.png"
+    },
+    {
+      "file": "polished/actors/controller/hurt_02.png",
+      "sha256": "c3f46dd7634053131e644e16b3aea6e38878b2929f3646b6845d2fd291d70f0c",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/hurt_02.png"
+    },
+    {
+      "file": "polished/actors/controller/death_01.png",
+      "sha256": "03effeef3d50a108af014344edaa9e8fa6827a00ce04db5742e165d79a05cecf",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/death_01.png"
+    },
+    {
+      "file": "polished/actors/controller/death_02.png",
+      "sha256": "68ae0000f43579529babdd49ef2c21e59cda3478a97c4c3a4468fda04b000cd5",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/controller/death_02.png"
+    },
+    {
+      "file": "polished/equipment/staff.png",
+      "sha256": "8cee0e6793b736b4d671c2df30f2ea6e29282cede07327fd81013f334eb72026",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/equipment/staff.png"
+    },
+    {
+      "file": "polished/actors/charger/idle_01.png",
+      "sha256": "df922d8a9d7b3dbd64e02db2022b9dd2ceac59349d8bfc06c0f5fd44888dadb7",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/idle_01.png"
+    },
+    {
+      "file": "polished/actors/charger/idle_02.png",
+      "sha256": "e33f0aa90dc9307947e82418799a3f4745e3113e51da63555289ce1715f7e188",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/idle_02.png"
+    },
+    {
+      "file": "polished/actors/charger/move_01.png",
+      "sha256": "8f0b80c65c53890217d7a65f22e7309604cc8ba6818aa9eef58e77af44e640e9",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/move_01.png"
+    },
+    {
+      "file": "polished/actors/charger/move_02.png",
+      "sha256": "8605dc495b37a0db680c607638d1ffdc1f57f40fbfdbe51ad75e1b98c77c31e6",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/move_02.png"
+    },
+    {
+      "file": "polished/actors/charger/move_03.png",
+      "sha256": "2480d2ea10cbe99d5e8cc25b06c878425c70b27cc8a951fe0bd4e84b7bbadb82",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/move_03.png"
+    },
+    {
+      "file": "polished/actors/charger/move_04.png",
+      "sha256": "9b551d5e1664c20fc03f7783287d4106f5b3ef0f08b94c4070b9ed0b69a2db64",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/move_04.png"
+    },
+    {
+      "file": "polished/actors/charger/move_05.png",
+      "sha256": "71e01d79301d05993691fd6319fb2d21c6502d24a3fc1a4109312fdb9c789388",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/move_05.png"
+    },
+    {
+      "file": "polished/actors/charger/move_06.png",
+      "sha256": "674eac475ba5674e75567b2925a0db2b8c0357f6687a1ea356546099954afbe5",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/move_06.png"
+    },
+    {
+      "file": "polished/actors/charger/tell_01.png",
+      "sha256": "f9ba8a8f73679ef48f13307aaa2f13a8b323bae01270c9b957dcde3a0b0e6ef1",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/tell_01.png"
+    },
+    {
+      "file": "polished/actors/charger/tell_02.png",
+      "sha256": "b21d0ebef4ec2fd34857e45305a7b4c215bcd32dbf43b7ca2f7d7909ead33561",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/tell_02.png"
+    },
+    {
+      "file": "polished/actors/charger/attack_01.png",
+      "sha256": "594c92b4ee15e61256975ed10848134ae7cfaecb6dad9efb033e0febc6b8d686",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/attack_01.png"
+    },
+    {
+      "file": "polished/actors/charger/attack_02.png",
+      "sha256": "a2ecc68f8fc89fa93c79a49bae2a9ae6705398dd66f3d8477a04f7a989d8cf4f",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/attack_02.png"
+    },
+    {
+      "file": "polished/actors/charger/hurt_01.png",
+      "sha256": "b8819be50dae03213a975134e13ef197f4081078d6ca0557170aa821b8a5cb76",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/hurt_01.png"
+    },
+    {
+      "file": "polished/actors/charger/hurt_02.png",
+      "sha256": "6718b963d1e083cb2121f9072b4332a2dfb3d138f473c23c2776735ca6d76ee3",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/hurt_02.png"
+    },
+    {
+      "file": "polished/actors/charger/death_01.png",
+      "sha256": "5a56e553a00e2413955c350f009764a91d7c46015b28a7396477a3af0a3b0e14",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/death_01.png"
+    },
+    {
+      "file": "polished/actors/charger/death_02.png",
+      "sha256": "ff0ebf4b3aa64c02e5184884957c9ffc454f321c9b19126d07c849d6fce5b997",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/charger/death_02.png"
+    },
+    {
+      "file": "polished/actors/exploder/idle_01.png",
+      "sha256": "7ef08eae4f06ba350dad9d2c855b1ff4f6495f8c4cc11b6b75036febd71e5166",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/idle_01.png"
+    },
+    {
+      "file": "polished/actors/exploder/idle_02.png",
+      "sha256": "ff6668d7be45fdafb7b4d114c3c2cae678a6f5a75f3400da50c5c7a0afd960a7",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/idle_02.png"
+    },
+    {
+      "file": "polished/actors/exploder/move_01.png",
+      "sha256": "1d2d794090092851623bb361abfed6b58a3e09e91d433adb18b91d338a05ff8b",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/move_01.png"
+    },
+    {
+      "file": "polished/actors/exploder/move_02.png",
+      "sha256": "0e61c5efe43a2d858bb4007e1d09c513fbbee6a5afb52afefc93e742e6301b14",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/move_02.png"
+    },
+    {
+      "file": "polished/actors/exploder/move_03.png",
+      "sha256": "c00c7b3c4e1338a85b299d96f77a85fa115e51423e3c96709501daad4697bba6",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/move_03.png"
+    },
+    {
+      "file": "polished/actors/exploder/move_04.png",
+      "sha256": "3f38a1dc4b58368c1404f34fb6a420c02339db6a49b76272e3164a112a2af470",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/move_04.png"
+    },
+    {
+      "file": "polished/actors/exploder/move_05.png",
+      "sha256": "913d73e0f43b0ce527da414b8b36e1328894b22ff6b6e520b1460920dab33074",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/move_05.png"
+    },
+    {
+      "file": "polished/actors/exploder/move_06.png",
+      "sha256": "81429b50903ae9023c53d78078d340783570820ef67c4a4ecf22ea86406a7bf3",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/move_06.png"
+    },
+    {
+      "file": "polished/actors/exploder/tell_01.png",
+      "sha256": "77a12196a30b9aeb08ee4c4553fa491dc30719b20e40e3f323be71e25de2389a",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/tell_01.png"
+    },
+    {
+      "file": "polished/actors/exploder/tell_02.png",
+      "sha256": "d5386ef2e36540aab180e579bb2894c9c520406a2ea26b1b5da07e92b00e9d42",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/tell_02.png"
+    },
+    {
+      "file": "polished/actors/exploder/attack_01.png",
+      "sha256": "455f1af89d605b299c78dc3d02407b464592e27403b003169cdbdfa09928e581",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/attack_01.png"
+    },
+    {
+      "file": "polished/actors/exploder/attack_02.png",
+      "sha256": "9a7b651b85bf38465e979a4672d147d721869289f7ab70a20afc655144064f5d",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/attack_02.png"
+    },
+    {
+      "file": "polished/actors/exploder/hurt_01.png",
+      "sha256": "8026153e118ed0ead7564356a380b59baca266a77b1c3649c121d16f641ba082",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/hurt_01.png"
+    },
+    {
+      "file": "polished/actors/exploder/hurt_02.png",
+      "sha256": "2e2931bad770e4e58bf6f08baf17eee55143037b0f68a42f66dc0973ea95f930",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/hurt_02.png"
+    },
+    {
+      "file": "polished/actors/exploder/death_01.png",
+      "sha256": "a62f7e6aee3e548b497322af0ac3b574b44ba14ea6bfa9f7512cd95bf79cf926",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/death_01.png"
+    },
+    {
+      "file": "polished/actors/exploder/death_02.png",
+      "sha256": "ce8fad263a6c7e16c9c46db45265f45b6ffd727070c137204b7d6ff25b6dff5b",
+      "source": "assets/production_drafts/2026-10-23/playable-visual-v01/actors/exploder/death_02.png"
+    },
+    {
+      "file": "remaining/actors/storm_warden/idle_01.png",
+      "sha256": "430bce6cc97aeadb295e25cf2e7ab821d2fb89f912fa48ed253b406bd66d13ce",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/storm_warden/idle_01.png"
+    },
+    {
+      "file": "remaining/actors/storm_warden/idle_02.png",
+      "sha256": "576fbbf8a8a27b899cd96bb3fec2990feb712b97386acda60faa60ce4c1192a5",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/storm_warden/idle_02.png"
+    },
+    {
+      "file": "remaining/actors/storm_warden/move_01.png",
+      "sha256": "4046e1a13861605c404358ffe1bde52250ab1498831f8b9e8ad861c37fb4eaf4",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/storm_warden/move_01.png"
+    },
+    {
+      "file": "remaining/actors/storm_warden/move_02.png",
+      "sha256": "9984a165ae095c37bb9fe0c8366edda45128fb7a3939f6637ee9007e8d0f7e78",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/storm_warden/move_02.png"
+    },
+    {
+      "file": "remaining/actors/storm_warden/tell_storm_slam_01.png",
+      "sha256": "e7f209543ec1e00f87db970be5f2e4b0faa1d610dc7a9d318e60b28f4b637270",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/storm_warden/tell_storm_slam_01.png"
+    },
+    {
+      "file": "remaining/actors/storm_warden/attack_storm_slam_01.png",
+      "sha256": "46e35e3d01ba3aa33fc5707479a67907e148e50557da6b0119099ac34e7ba968",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/storm_warden/attack_storm_slam_01.png"
+    },
+    {
+      "file": "remaining/actors/storm_warden/tell_chain_burst_01.png",
+      "sha256": "370995917829183ca52276cb13fed7d3d34c7c2f8f5691deb9c3bdc37890a35d",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/storm_warden/tell_chain_burst_01.png"
+    },
+    {
+      "file": "remaining/actors/storm_warden/attack_chain_burst_01.png",
+      "sha256": "06c026aae90318abf5a7b55794da742d6b481ec5284c6f499943670946361c0e",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/storm_warden/attack_chain_burst_01.png"
+    },
+    {
+      "file": "remaining/actors/storm_warden/hurt_01.png",
+      "sha256": "4c616a1024e7823ee9b98633d9265bbfdc00db1c6dbd27a7c70773e7b952b027",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/storm_warden/hurt_01.png"
+    },
+    {
+      "file": "remaining/actors/storm_warden/hurt_02.png",
+      "sha256": "eeb25d53a96f255f4a289995aeef7076c906bf2bbefb2c10dbbac6052b5e5d42",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/storm_warden/hurt_02.png"
+    },
+    {
+      "file": "remaining/actors/storm_warden/death_01.png",
+      "sha256": "6e87c34933f751ade1ec0dd29e16666d047e70df173c685c37db25d0aaad89cc",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/storm_warden/death_01.png"
+    },
+    {
+      "file": "remaining/actors/storm_warden/death_02.png",
+      "sha256": "475471538252184752c65c11fc681c98b84abe36667c34f66537903ffa20039e",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/storm_warden/death_02.png"
+    },
+    {
+      "file": "remaining/actors/rift_sovereign/idle_01.png",
+      "sha256": "0fe44f48bcccf47cbcb21f765655332e9acd8a56c90d854d15909396898f7f7e",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/rift_sovereign/idle_01.png"
+    },
+    {
+      "file": "remaining/actors/rift_sovereign/move_01.png",
+      "sha256": "bbb3f907cd976d4b9d391a84fce66f5fee0cee317f02847eb27777cce5e3d940",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/rift_sovereign/move_01.png"
+    },
+    {
+      "file": "remaining/actors/rift_sovereign/tell_rift_slam_01.png",
+      "sha256": "68d7cc99b9e0f724288241b9b6645de90b0cd97fdc0b12ecc71409076fd4fa56",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/rift_sovereign/tell_rift_slam_01.png"
+    },
+    {
+      "file": "remaining/actors/rift_sovereign/attack_rift_slam_01.png",
+      "sha256": "16ef37d082f3b740dc7911758f058f0a2615f2d6de8d6734ea0e4c8f9dcd1e7b",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/rift_sovereign/attack_rift_slam_01.png"
+    },
+    {
+      "file": "remaining/actors/rift_sovereign/tell_portal_burst_01.png",
+      "sha256": "0b927f30e68fee9ca5b0ff199e04d3d0e4336ae1e918273413a028f345afc9cf",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/rift_sovereign/tell_portal_burst_01.png"
+    },
+    {
+      "file": "remaining/actors/rift_sovereign/attack_portal_burst_01.png",
+      "sha256": "9f17c1804421a80ec6c1983d963b7a0e62239899376d88d613473c31e674a7bc",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/rift_sovereign/attack_portal_burst_01.png"
+    },
+    {
+      "file": "remaining/actors/rift_sovereign/tell_fracture_storm_01.png",
+      "sha256": "79ba224badba09c4722aa56836b963d362c21fbefe3623e406347b96eada83ec",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/rift_sovereign/tell_fracture_storm_01.png"
+    },
+    {
+      "file": "remaining/actors/rift_sovereign/attack_fracture_storm_01.png",
+      "sha256": "98468a17d19373e8bc1457f6b2c63e29ba3fef359391e91f8df7aabecafaa079",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/rift_sovereign/attack_fracture_storm_01.png"
+    },
+    {
+      "file": "remaining/actors/rift_sovereign/hurt_01.png",
+      "sha256": "696a804596f2f1fe2b84aa20ad36087c968b791d828c2c95320c6309a5d4e5d5",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/rift_sovereign/hurt_01.png"
+    },
+    {
+      "file": "remaining/actors/rift_sovereign/hurt_02.png",
+      "sha256": "fac2b41904c321f5e9b6a2f6cad084c2eb5aadf906c538531117f938bb79cd41",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/rift_sovereign/hurt_02.png"
+    },
+    {
+      "file": "remaining/actors/rift_sovereign/death_01.png",
+      "sha256": "dd017f011385ca878208b5e8dfe0af8087de2c24b426f3376fca63f1e5633a61",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/rift_sovereign/death_01.png"
+    },
+    {
+      "file": "remaining/actors/rift_sovereign/death_02.png",
+      "sha256": "c7dcccac52729f26b2081edda45a23bcbb5796670ae89eb7066935b4065d1993",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/actors/rift_sovereign/death_02.png"
+    },
+    {
+      "file": "environments/forest/terrain_bottom.png",
+      "sha256": "93edb1d2f702c29f280e5513a5c85dcb2d4bdb7f58815d0f9835576de885e0a9",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_bottom.png"
+    },
+    {
+      "file": "environments/forest/terrain_bottom_left.png",
+      "sha256": "20e2e2879effd8c14530a82e0ca2cd889cf2d454d096580764ec717e501492ff",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_bottom_left.png"
+    },
+    {
+      "file": "environments/forest/terrain_bottom_right.png",
+      "sha256": "eef6989eb9989a5dbb865ac70078ecc1ee59108c2e39dad4e45718f77e49a870",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_bottom_right.png"
+    },
+    {
+      "file": "environments/forest/terrain_inner_left.png",
+      "sha256": "0b4ceae5288bdace09dfa06e0865fd3f6d3e2ec745bf4138441f5f19e0ade558",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_inner_left.png"
+    },
+    {
+      "file": "environments/forest/terrain_inner_right.png",
+      "sha256": "b7b0edff1bdcfb33c073f5934c5ce674e42009ec0fe712382bf9405a068467e2",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_inner_right.png"
+    },
+    {
+      "file": "environments/forest/terrain_isolated.png",
+      "sha256": "878d8ee8749a2ea16841fc641217d3f3dcc589c4332118e4a71bb753d49f950a",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_isolated.png"
+    },
+    {
+      "file": "environments/forest/terrain_side_left.png",
+      "sha256": "82359d68b9608161a6718568dbe31f246314e38db4be315c8db16a09603c3297",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_side_left.png"
+    },
+    {
+      "file": "environments/forest/terrain_side_right.png",
+      "sha256": "c53554f985e3e0e5d3555fb199b5787be1ca0b9331315b75c8deb751336ce163",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_side_right.png"
+    },
+    {
+      "file": "environments/forest/terrain_soil_1.png",
+      "sha256": "d28ebc17da51d8bd212d2882c3aa3047fbc5c9cb80267d116583c630a491309e",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_soil_1.png"
+    },
+    {
+      "file": "environments/forest/terrain_soil_2.png",
+      "sha256": "dec2a72e832890be887af1e97a78bb802ea91f284c6a7b55abba43670132af0d",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_soil_2.png"
+    },
+    {
+      "file": "environments/forest/terrain_soil_3.png",
+      "sha256": "a519309be893a60b1cf73cb393596b3bff15731df133525e64de388d4f0167ae",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_soil_3.png"
+    },
+    {
+      "file": "environments/forest/terrain_top_1.png",
+      "sha256": "d4110eabef5059557e9154696b21a0da7ef0cca540aa75db229688e19f5b505b",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_top_1.png"
+    },
+    {
+      "file": "environments/forest/terrain_top_2.png",
+      "sha256": "a3c25ce1359a6169db8ddbee7ef58876282b93b4770ad2d0e39f16a61adf1bc2",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_top_2.png"
+    },
+    {
+      "file": "environments/forest/terrain_top_3.png",
+      "sha256": "efeac672731144932d4605b73bbe937c6ff49747ef8ac7c92531cf21935eb8eb",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_top_3.png"
+    },
+    {
+      "file": "environments/forest/terrain_top_left.png",
+      "sha256": "3d3013bf4df020d53f4975da9f1ff66433c5c937f819cd77bcf3c1fd93a9eb2d",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_top_left.png"
+    },
+    {
+      "file": "environments/forest/terrain_top_right.png",
+      "sha256": "bb9455012163f14278e7f2bf5dc44a81a34c73772e48f9f67d494bf4097e42fa",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-polish/terrain_top_right.png"
+    },
+    {
+      "file": "environments/forest/background.png",
+      "sha256": "af211cef8d59723031f50b1ded4ba3f48cea3205822e3484d640519ed43599b4",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-proof/forest_background.png"
+    },
+    {
+      "file": "environments/forest/forest_rubble.png",
+      "sha256": "979798addb241f0f2a5a4ad93e882917f769a30ba2adb5379a600e3af5521047",
+      "source": "assets/production_drafts/2026-10-22/forest-chaser-proof/forest_rubble.png"
+    },
+    {
+      "file": "environments/castle/terrain_bottom.png",
+      "sha256": "8e95b09b03227628f08eb1123868877fbba4d313f9ab57a73f335f49cd277f7b",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_bottom.png"
+    },
+    {
+      "file": "environments/castle/terrain_bottom_left.png",
+      "sha256": "da0e4af919b467d4fd012d2984426fb070249d6773dcd2c333dac37035add00f",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_bottom_left.png"
+    },
+    {
+      "file": "environments/castle/terrain_bottom_right.png",
+      "sha256": "da0a05327444a991892b1a094f07c9f1b59816eb73fd661bd4f679210800ca33",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_bottom_right.png"
+    },
+    {
+      "file": "environments/castle/terrain_inner_left.png",
+      "sha256": "5c23014ef87a0625d0c48ceea93c698e2705a37fedf8c7a2aba24b6c80b515d2",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_inner_left.png"
+    },
+    {
+      "file": "environments/castle/terrain_inner_right.png",
+      "sha256": "72c1a2191562bc02d5af1c3bed9045f6c79256d7390ed5597b34c0747833b061",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_inner_right.png"
+    },
+    {
+      "file": "environments/castle/terrain_isolated.png",
+      "sha256": "ce949f89aa869b4938420b158abee0200e8df1e8a24f7add2566edbb5f92354e",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_isolated.png"
+    },
+    {
+      "file": "environments/castle/terrain_side_left.png",
+      "sha256": "116106a422d7427484eb902557d7bf31fda85b4c9ca9870f5f4f5c3d464dbae0",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_side_left.png"
+    },
+    {
+      "file": "environments/castle/terrain_side_right.png",
+      "sha256": "703659bd723feb519fbdbab09ba8b50044da6010253a367d2125e27f98b73430",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_side_right.png"
+    },
+    {
+      "file": "environments/castle/terrain_soil_1.png",
+      "sha256": "e9745c36b5263323057c286339d5cc0ef233b607b5d3356595dc610f8bc8b086",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_soil_1.png"
+    },
+    {
+      "file": "environments/castle/terrain_soil_2.png",
+      "sha256": "11e8ef42f33a6a4add690ce2710f507dd984e6f8193cae0c9c8125e037a7a5b3",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_soil_2.png"
+    },
+    {
+      "file": "environments/castle/terrain_soil_3.png",
+      "sha256": "3c98e3441554d7fefd808cf9939c0c4eef9799549786ab1b143aba142c9c4a6e",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_soil_3.png"
+    },
+    {
+      "file": "environments/castle/terrain_top_1.png",
+      "sha256": "eee436755b5a48464fdfb55cc5800d52ed27857b5e71b133a72b1d18d22db184",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_top_1.png"
+    },
+    {
+      "file": "environments/castle/terrain_top_2.png",
+      "sha256": "0e2d38aa18e7a3a707bcacec29422c4800f23ee274d6d739556c32795c1e0c8b",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_top_2.png"
+    },
+    {
+      "file": "environments/castle/terrain_top_3.png",
+      "sha256": "1f8037babe7d875a257a6e686b9ebe4cfbe408120c69a625ac451c98af479efb",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_top_3.png"
+    },
+    {
+      "file": "environments/castle/terrain_top_left.png",
+      "sha256": "240db41217bce23e69b6542d70dc69f3bfee6e513b0e9d0e4a00cc353184243e",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_top_left.png"
+    },
+    {
+      "file": "environments/castle/terrain_top_right.png",
+      "sha256": "f74dc5b88111b69f8a13ddbccb7ff04b7d50579dbb25abf5feade142d256e358",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/terrain_top_right.png"
+    },
+    {
+      "file": "environments/castle/background.png",
+      "sha256": "ff547b9e9b9f7aaac1942e9162901e525a83e2b39d0dfd8d0a8ded9f26a43838",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/background.png"
+    },
+    {
+      "file": "environments/castle/prop_03.png",
+      "sha256": "9590f79ffa09ed11a9fecf496bd5be47f9c05fc9fb600f56a7c1fcea425064f1",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/prop_03.png"
+    },
+    {
+      "file": "environments/castle/prop_04.png",
+      "sha256": "325f0364b637fc640783f4fdcaf934ffb514aa562d82078a646388cfe8a5a933",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/prop_04.png"
+    },
+    {
+      "file": "environments/castle/prop_05.png",
+      "sha256": "ad89aa570eb8ab90a84f0849bfdf1a0aa13888bb14868c5910a0cf4c3402ad51",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/castle/prop_05.png"
+    },
+    {
+      "file": "environments/caves/terrain_bottom.png",
+      "sha256": "02d03ddd062c632dcfe6f484e2040359565c146cd23cc11dd787ea57945f9c70",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_bottom.png"
+    },
+    {
+      "file": "environments/caves/terrain_bottom_left.png",
+      "sha256": "d39da144b11b154c65ef9cc3e785dd414deb0c7c7ce9891f13e7a993f5aab544",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_bottom_left.png"
+    },
+    {
+      "file": "environments/caves/terrain_bottom_right.png",
+      "sha256": "590f74f3162108275186a4e366a43fd0a476ac01823227ffccfbce16e9ac6409",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_bottom_right.png"
+    },
+    {
+      "file": "environments/caves/terrain_inner_left.png",
+      "sha256": "55490883a7992a218bf2734ac1e7383d4924ceedb76f62005e9b9f234c01464e",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_inner_left.png"
+    },
+    {
+      "file": "environments/caves/terrain_inner_right.png",
+      "sha256": "0788f7f826df5fa98ab75d8f83aa83f7cf7bc5d87ecd8ae01d7c7fbf147cdc3d",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_inner_right.png"
+    },
+    {
+      "file": "environments/caves/terrain_isolated.png",
+      "sha256": "1f9e5004407b30a07de10024e60c08ee338e5f4086bbd1a326a0ffb37b27822c",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_isolated.png"
+    },
+    {
+      "file": "environments/caves/terrain_side_left.png",
+      "sha256": "18eef7261ed4831b0d1625f78741ecadccf486a37cb53cbdcc6c66059eac5b8e",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_side_left.png"
+    },
+    {
+      "file": "environments/caves/terrain_side_right.png",
+      "sha256": "846f2c998ec4afa02e64e99b6c298d8a16e3adc2865aba93fbf1485425a038eb",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_side_right.png"
+    },
+    {
+      "file": "environments/caves/terrain_soil_1.png",
+      "sha256": "a5aadbe5c5e5786d78e326abde21fff1f53aaacab9465534c100365e4cc4c31c",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_soil_1.png"
+    },
+    {
+      "file": "environments/caves/terrain_soil_2.png",
+      "sha256": "d03785b2d6975cddb05377775a1b1c5ca5fb5b8d53bcbbea00b752194a1c0660",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_soil_2.png"
+    },
+    {
+      "file": "environments/caves/terrain_soil_3.png",
+      "sha256": "6afa7ce28c3e9fe37c81d746b4b5f9a7d75213a95c53ec05049a671d9f9986d8",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_soil_3.png"
+    },
+    {
+      "file": "environments/caves/terrain_top_1.png",
+      "sha256": "c3a7f80b33e14058d19a93d39392e1ed5d90b7f690b8f4cc77357fcea6841b5d",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_top_1.png"
+    },
+    {
+      "file": "environments/caves/terrain_top_2.png",
+      "sha256": "4c9e2abbcc0d475bfe7cacf506fb5b8d674f493e93ff3dca13d0a0f74b852fe1",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_top_2.png"
+    },
+    {
+      "file": "environments/caves/terrain_top_3.png",
+      "sha256": "a779f7fa44737c5964426f35acce953a9b0105bf5fac05e4d79375f337bcb556",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_top_3.png"
+    },
+    {
+      "file": "environments/caves/terrain_top_left.png",
+      "sha256": "9ec5a8b711e74d8fce16239e0e6d653184c7f2338bbde028ead15a6f7b4724bb",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_top_left.png"
+    },
+    {
+      "file": "environments/caves/terrain_top_right.png",
+      "sha256": "0a24e38e066c0b47ca06fef285a655786caf6dc7d4856eae5774ac311d46f686",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/terrain_top_right.png"
+    },
+    {
+      "file": "environments/caves/background.png",
+      "sha256": "ea40fd1062a06ce90a3c9ab95e24ddc41d8e431c56d1070e1c2c1d443b15d3a9",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/background.png"
+    },
+    {
+      "file": "environments/caves/prop_03.png",
+      "sha256": "3d02ec0fd064ecb471461e9372543b3bc0d5b464f269202fa149b4c4aa6690ad",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/prop_03.png"
+    },
+    {
+      "file": "environments/caves/prop_04.png",
+      "sha256": "2a831cf470828aa7f8fd5c5db8ca511f7fa3ea23bbc44032355b2345ff3ad129",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/prop_04.png"
+    },
+    {
+      "file": "environments/caves/prop_05.png",
+      "sha256": "e82aa2389c19aec340aabbe96aa59100618ce2f2ec4b3ff086dc1bcecca2254d",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/caves/prop_05.png"
+    },
+    {
+      "file": "environments/hub/terrain_bottom.png",
+      "sha256": "3d7ae0678866e5b9c04df1d9c3504db8034be56e10541c5cf38a51c3ae3a2301",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_bottom.png"
+    },
+    {
+      "file": "environments/hub/terrain_bottom_left.png",
+      "sha256": "8ffb1e381b95de735dddfe6741af5e220c7c132f2b97733a94d09bfce10d514b",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_bottom_left.png"
+    },
+    {
+      "file": "environments/hub/terrain_bottom_right.png",
+      "sha256": "75ac8c183b8e771d55416090dbfb6e45dc4d03a1922f18d00b65f30d9361a1d1",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_bottom_right.png"
+    },
+    {
+      "file": "environments/hub/terrain_inner_left.png",
+      "sha256": "be2fc43e37b48e5550b5b7c23cc230bb22ff9967b0940b8baab353e44238cc9c",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_inner_left.png"
+    },
+    {
+      "file": "environments/hub/terrain_inner_right.png",
+      "sha256": "5bdf0604351480a94dbfbb331ddf9a5f96001ac3fbe5d05b90a80f3639fe0128",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_inner_right.png"
+    },
+    {
+      "file": "environments/hub/terrain_isolated.png",
+      "sha256": "221119969ada38c37ec705a6181b79c846638f8f913ef1cc7886ea44691f5554",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_isolated.png"
+    },
+    {
+      "file": "environments/hub/terrain_side_left.png",
+      "sha256": "55bd821e9d5bc2816b914fac4f571c63ed30ed186cb0f224c8cddc1d5bf76491",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_side_left.png"
+    },
+    {
+      "file": "environments/hub/terrain_side_right.png",
+      "sha256": "56a019279c7c46e1c5afa8b2245b5da8e00f4d8a1870ae2589991021f1574750",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_side_right.png"
+    },
+    {
+      "file": "environments/hub/terrain_soil_1.png",
+      "sha256": "b5072ffbfb4572849f9f8f3a4e20f4464087666aa440b478cfe5ded17771152d",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_soil_1.png"
+    },
+    {
+      "file": "environments/hub/terrain_soil_2.png",
+      "sha256": "ebd5e71b386ad99a5506c656176a4158555c1ac902b7b319ef7e544347bbe9f2",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_soil_2.png"
+    },
+    {
+      "file": "environments/hub/terrain_soil_3.png",
+      "sha256": "9a5e3f1b192acf4cbce5c60716070b8efa57a56ec8798cd9519eb0b7d56a24a2",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_soil_3.png"
+    },
+    {
+      "file": "environments/hub/terrain_top_1.png",
+      "sha256": "b1b23884c95e0c46617e5f195411a58d5ea2c7a3936d7a616e7dbc5551c97363",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_top_1.png"
+    },
+    {
+      "file": "environments/hub/terrain_top_2.png",
+      "sha256": "be9f7b8c05a8aa2986f4fb450600a468a36e6952b5f9d86c98f03a9e474081ee",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_top_2.png"
+    },
+    {
+      "file": "environments/hub/terrain_top_3.png",
+      "sha256": "fb0eec57ed8d9412741774caf337d5bbdf71a0c7a3565c3b8fa49e55d6319649",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_top_3.png"
+    },
+    {
+      "file": "environments/hub/terrain_top_left.png",
+      "sha256": "f2360476776d4bb38821068e375fb937c8ad5cd308e21f911ac1c902ebb238de",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_top_left.png"
+    },
+    {
+      "file": "environments/hub/terrain_top_right.png",
+      "sha256": "e9125853449114532fb1adca4db820b9495a98e4f09ca2bacea127983850bd87",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/terrain_top_right.png"
+    },
+    {
+      "file": "environments/hub/background.png",
+      "sha256": "2b0f761bb3b542f40f7a71c3981f49a8fab0ace6a836494cf8840852615aee05",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/background.png"
+    },
+    {
+      "file": "environments/hub/prop_03.png",
+      "sha256": "819b7f317ba8cc1204061bad755574294d423544e6039b7222564f62dcc3b1ff",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/prop_03.png"
+    },
+    {
+      "file": "environments/hub/prop_04.png",
+      "sha256": "5f9f66c04969b508252a8ade952a604b5aba956134a92988fb34932c742ae0de",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/prop_04.png"
+    },
+    {
+      "file": "environments/hub/prop_05.png",
+      "sha256": "bb1edf6bd6160005f32e17ef5ca0d4791e215b39fbc084a5b52dd3572d66fe75",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/environments/hub/prop_05.png"
+    },
+    {
+      "file": "effects/hit_01.png",
+      "sha256": "02de7855981bc0e9928ff2a8e14fbb7446f2d7d13fed4690f9c715ac8f9a276a",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/hit_01.png"
+    },
+    {
+      "file": "effects/hit_02.png",
+      "sha256": "d2caa62daf0d56d484de4e76ba0cbf01f189a0bb93d90b0b9da40c9bf0bdb811",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/hit_02.png"
+    },
+    {
+      "file": "effects/hit_03.png",
+      "sha256": "526c33382a413b0dd7bfab1043295935e827e069001871f458b05dcd2c6f6170",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/hit_03.png"
+    },
+    {
+      "file": "effects/hostile_projectile_01.png",
+      "sha256": "648b766502773bfc7231ba467f7f1fa5e69aa59c5d530b27deb525d363ad82c2",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/hostile_projectile_01.png"
+    },
+    {
+      "file": "effects/hostile_projectile_02.png",
+      "sha256": "ec5cc94d0fc282f98bfbfcdadcaa5b389921e4bb15cca5c1ff41f151430076b8",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/hostile_projectile_02.png"
+    },
+    {
+      "file": "effects/hostile_projectile_03.png",
+      "sha256": "941274070e416d78f2edcd39d303583a321e4a6cd41fc29956f14efa67a70471",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/hostile_projectile_03.png"
+    },
+    {
+      "file": "effects/hostile_area_01.png",
+      "sha256": "852bd2145bbcbc4422975ac00e3b92d193c538980985f7fc0a1210c42252e368",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/hostile_area_01.png"
+    },
+    {
+      "file": "effects/hostile_area_02.png",
+      "sha256": "6003642a27bdf474e06122aa0124a43696e71072d51d4a2ff9de9e266ea8ab8a",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/hostile_area_02.png"
+    },
+    {
+      "file": "effects/hostile_area_03.png",
+      "sha256": "e0cd1465623ddfcabdfee52fe8f8e65b8a9bbbb7f9f96a08c856eeb818397acb",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/hostile_area_03.png"
+    },
+    {
+      "file": "effects/reward_01.png",
+      "sha256": "e331f27b05b67c1fc2169c25c7cefa3dc6b7ac1915c0d5bb52024dfea1014259",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/reward_01.png"
+    },
+    {
+      "file": "effects/reward_02.png",
+      "sha256": "38edd765d693208fe062e33a11c0b5e6c212c729e1d3ac8ea50584faa1938191",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/reward_02.png"
+    },
+    {
+      "file": "effects/reward_03.png",
+      "sha256": "35322a56735710746e2f686057784b2259729b47a24d3b71329fb10772709726",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/reward_03.png"
+    },
+    {
+      "file": "effects/electric_chain_01.png",
+      "sha256": "e2b667e8ff72fe2950187717ac49921e3c75e1760a0d8cface7b65bf958897b2",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/electric_chain_01.png"
+    },
+    {
+      "file": "effects/electric_chain_02.png",
+      "sha256": "0fc415f8652b49fe1358343ee7faece8172f9c4bfd6a1ba18329cda0824b8da3",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/electric_chain_02.png"
+    },
+    {
+      "file": "effects/electric_chain_03.png",
+      "sha256": "1a36c7516059b52d9a126d5fe2e1065e229db269e834614ef9c319eb3cc8e94a",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/electric_chain_03.png"
+    },
+    {
+      "file": "effects/electric_area_01.png",
+      "sha256": "a7363ea858430b43be6aab0a78b14b373629d2d083df39d8aa38943f2461a21e",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/electric_area_01.png"
+    },
+    {
+      "file": "effects/electric_area_02.png",
+      "sha256": "19b786fb010159fa1d850f403b52f33fb917a2f9ae9c4bd02ec92b2bb1337736",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/electric_area_02.png"
+    },
+    {
+      "file": "effects/electric_area_03.png",
+      "sha256": "5968dcac6eb561d833422444366767fe50833551fe0de6da01a6ca3b8a58b145",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/electric_area_03.png"
+    },
+    {
+      "file": "effects/electric_onkill_01.png",
+      "sha256": "55e610799b94db1c24717d4c36d23a7ede4d41e669ed45f6aba2e5b2b197072e",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/electric_onkill_01.png"
+    },
+    {
+      "file": "effects/electric_onkill_02.png",
+      "sha256": "0b15550545654e20b19c69a8c9eacdeba60e48a0039efe126706e0d230d23c80",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/electric_onkill_02.png"
+    },
+    {
+      "file": "effects/electric_onkill_03.png",
+      "sha256": "0980ab8f08f88a5da93c0a5a2feb81128cb58d87c092495b4863f31f974645b6",
+      "source": "assets/production_drafts/2026-10-22/remaining-art-v01/effects/electric_onkill_03.png"
+    }
+  ]
+}

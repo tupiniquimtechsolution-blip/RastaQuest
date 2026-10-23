@@ -45,6 +45,13 @@ func apply_frames(candidate: SpriteFrames) -> bool:
 			var texture := candidate.get_frame_texture(clip, index)
 			if texture == null or texture.get_size() != SOURCE_FRAME:
 				return false
+	if candidate.has_animation(&"portal_enter"):
+		if candidate.get_animation_loop(&"portal_enter") or candidate.get_frame_count(&"portal_enter")<1 or candidate.get_animation_speed(&"portal_enter")<=0:
+			return false
+		for index in range(candidate.get_frame_count(&"portal_enter")):
+			var tex := candidate.get_frame_texture(&"portal_enter",index)
+			if tex==null or tex.get_size()!=SOURCE_FRAME:
+				return false
 	sprite_frames = candidate
 	_sprite.sprite_frames = candidate
 	_sprite.visible = true
@@ -82,12 +89,24 @@ func begin_portal_presentation(seconds: float) -> void:
 		return
 	if _portal_tween != null:
 		_portal_tween.kill()
-	_sprite.play(&"idle")
+	var clip: StringName = &"portal_enter" if sprite_frames.has_animation(&"portal_enter") else &"idle"
+	_sprite.play(clip)
+	if clip==&"portal_enter":
+		var duration := 0.0
+		for index in range(sprite_frames.get_frame_count(clip)):
+			duration += sprite_frames.get_frame_duration(clip,index)/sprite_frames.get_animation_speed(clip)
+		_sprite.speed_scale = duration/maxf(.05,minf(seconds,.8))
 	_portal_tween = create_tween().set_parallel(true)
 	_portal_tween.tween_property(_sprite, "modulate:a", 0.0, minf(seconds, 0.8))
 	_portal_tween.tween_property(_sprite, "position:x", 6.0, minf(seconds, 0.8))
-	# A quiet presentation rig using the approved body, not four new drawn poses.
+	# Optional dedicated poses share the gameplay entry window. Fade/slide remains
+	# available for a complete older body packet without the new portal clip.
 	# Completion never advances rooms or grants rewards.
+
+func _process(_delta: float) -> void:
+	if not _sprite.visible or _sprite.animation==&"portal_enter":
+		return
+	_sprite.speed_scale = clampf(absf(_player.velocity.x)/260.0,.25,2.0) if _sprite.animation==&"run" else 1.0
 
 func _on_frame_changed() -> void:
 	if not _sprite.visible or _sprite.animation != &"death" or _sprite.frame < 1:

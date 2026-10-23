@@ -1,5 +1,5 @@
 """Artifact integrity and rig/terrain boundaries, not human/device acceptance."""
-import hashlib,json,math
+import hashlib,json,math,subprocess
 from pathlib import Path
 from PIL import Image
 
@@ -59,7 +59,9 @@ def main():
         for f in r['captures']:
             p=ROOT/'room-review'/f['file'];check(hashlib.sha256(p.read_bytes()).hexdigest()==f['sha256'],f['file']+':capture_hash');check(list(Image.open(p).size)==f['size'],f['file']+':capture_size')
         for path,expected in r['source_hashes'].items():
-            text=(REPO/'game'/path.removeprefix('res://')).read_text(encoding='utf-8')
+            relative=(REPO/'game'/path.removeprefix('res://')).resolve().relative_to(REPO.resolve()).as_posix()
+            # Historical PR66 captures stay bound to the exact rendered version.
+            text=subprocess.check_output(['git','show','105a9ad843e61b980861721d58d18a38a914ac70:'+relative],cwd=REPO).decode('utf-8').replace('\r\n','\n')
             check(hashlib.sha256(text.encode()).hexdigest()==expected,'capture_source:'+path)
         for name,phase,clip in [('actual_tell_1280x720.png','tell','tell'),('actual_active_1280x720.png','active','attack')]:
             f=by_name[name];check(f['enemy_phase']==phase and f['enemy_clip']==clip and not f['pose_inspection'],name+':phase')

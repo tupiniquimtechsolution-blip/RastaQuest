@@ -19,6 +19,7 @@ var _hit_targets: Dictionary = {}
 var _shape: Shape2D
 var _damage := 1
 var _leased := false
+var _art_elapsed := 0.0
 
 func begin(actor: CharacterBody2D, target: Node2D, attack_kind: String, tell_seconds: float) -> bool:
 	_actor = actor
@@ -85,6 +86,7 @@ func _physics_process(delta: float) -> void:
 		cancel()
 		return
 	_remaining -= delta
+	_art_elapsed += delta
 	if phase == &"tell" and _remaining <= 0.0:
 		phase = &"active"
 		_remaining = _active_seconds
@@ -163,6 +165,14 @@ func _draw() -> void:
 		if kind in SHOTS and phase == &"active" and _velocities[index].is_zero_approx():
 			continue
 		var point := to_local(_centers[index])
+		var key := "hostile_projectile" if kind in SHOTS else "hostile_area"
+		var catalog := get_node_or_null("/root/ArtCatalog")
+		var tex: Texture2D = catalog.effect_frame(key,_art_elapsed,.24) if catalog!=null else null
+		if tex!=null:
+			var size: Vector2 = Vector2.ONE*_shape.radius*2 if _shape is CircleShape2D else _shape.size
+			# Match the actual danger footprint; thin precise outlines below remain
+			# authoritative for radius/extent, even with reduced/static effects.
+			draw_texture_rect(tex,Rect2(point-size*.5,size),false,Color(1,1,1,.5 if phase==&"tell" else .8))
 		if _shape is CircleShape2D:
 			draw_circle(point, _shape.radius, color, false, 3.0)
 		elif _shape is RectangleShape2D:

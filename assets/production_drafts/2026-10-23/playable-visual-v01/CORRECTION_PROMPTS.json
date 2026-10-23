@@ -1,0 +1,22 @@
+{
+  "ranged": {
+    "prompt": "Use case: background-extraction. EDIT THIS EXACT 16-pose animation sheet. Keep all sixteen exact actor poses, positions, framing, palette and design. Remove the ENTIRE colored gradient/background and any floor/shadow/glow so that every pixel outside each actor is true alpha0. This is a clean sprite extraction, no new pose and no redrawing the actor. No opaque colored or checkerboard backdrop. Preserve dark outlines at the edge. Also remove EVERY crossbow/bow/equipment object from ALL sixteen cells, keeping hands/fingers in their existing grip poses so one independent crossbow sprite can be attached later. Do not leave detached strings, arms of crossbow or stock fragments. Output same sheet layout and canvas, fully isolated actor pixels only on TRANSPARENT background.",
+    "tool": "built-in ImageGen",
+    "reference": "sources/ranged.png"
+  },
+  "controller": {
+    "prompt": "Use case: background-extraction. EDIT THIS EXACT 16-pose animation sheet. Keep all sixteen exact actor poses, positions, framing, palette and design. Remove the ENTIRE colored gradient/background and any floor/shadow/glow so that every pixel outside each actor is true alpha0. This is a clean sprite extraction, no new pose and no redrawing the actor. No opaque colored or checkerboard backdrop. Preserve dark outlines at the edge.  Output same sheet layout and canvas, fully isolated actor pixels only on TRANSPARENT background.",
+    "tool": "built-in ImageGen",
+    "reference": "sources/controller.png"
+  },
+  "charger": {
+    "prompt": "Use case: background-extraction. EDIT THIS EXACT 16-pose animation sheet. Keep all sixteen exact actor poses, positions, framing, palette and design. Remove the ENTIRE colored gradient/background and any floor/shadow/glow so that every pixel outside each actor is true alpha0. This is a clean sprite extraction, no new pose and no redrawing the actor. No opaque colored or checkerboard backdrop. Preserve dark outlines at the edge.  Output same sheet layout and canvas, fully isolated actor pixels only on TRANSPARENT background.",
+    "tool": "built-in ImageGen",
+    "reference": "sources/charger.png"
+  },
+  "exploder": {
+    "prompt": "Use case: background-extraction. EDIT THIS EXACT 16-pose animation sheet. Keep all sixteen exact actor poses, positions, framing, palette and design. Remove the ENTIRE colored gradient/background and any floor/shadow/glow so that every pixel outside each actor is true alpha0. This is a clean sprite extraction, no new pose and no redrawing the actor. No opaque colored or checkerboard backdrop. Preserve dark outlines at the edge.  Output same sheet layout and canvas, fully isolated actor pixels only on TRANSPARENT background.",
+    "tool": "built-in ImageGen",
+    "reference": "sources/exploder.png"
+  }
+}

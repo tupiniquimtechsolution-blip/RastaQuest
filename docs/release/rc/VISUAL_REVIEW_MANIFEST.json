@@ -1,0 +1,17 @@
+{
+  "product": "Rasta Quest Visual Review",
+  "engine": "Godot 4.5.1",
+  "version": "1.0.0-visual.1",
+  "version_code": 1000002,
+  "application_id": "com.tupiniquimtechsolution.rastaquest.visualreview",
+  "architectures": ["armeabi-v7a", "arm64-v8a"],
+  "min_sdk": 24,
+  "target_sdk": 35,
+  "declared_permissions": [],
+  "release_signed": false,
+  "distribution_published": false,
+  "commercial_approved": false,
+  "classification": "visual-review-debug-only",
+  "installation_target": {"android_api": 34, "physical_installation": "pending_owner_retest"},
+  "forbidden_archive_segments": ["tests", "concepts", "legacy"]
+}

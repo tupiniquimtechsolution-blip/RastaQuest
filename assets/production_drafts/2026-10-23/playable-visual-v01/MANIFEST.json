@@ -1,0 +1,2638 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "file": "sources/charger.png",
+      "sha256": "9bc04a73b5d38469337f9802e41d83afa6eca7ed1e63b1af5003338c9dd0dfc4",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/charger_alpha.png",
+      "sha256": "03b581d678150f7cc7065c6df616a1a48fc8a4941f42ecdc39cfa6a6affa5efc",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/controller.png",
+      "sha256": "7e17d80f4e7c3585b74f8bee3eaad6f58018253ccff62601570c314dc60bab8c",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/controller_alpha.png",
+      "sha256": "c955b136c887f9b9adb06410a8111d2b77b661866980858464ec9841bf0e28e7",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/crossbow.png",
+      "sha256": "ce41d9c5fa2f782e91ad952d31b6b297a2ac3d1d5f168dae8c2c54ef4f96fe48",
+      "size": [
+        1881,
+        836
+      ]
+    },
+    {
+      "file": "sources/exploder.png",
+      "sha256": "608cad70f3990a3df43e7c02d87edbee2436e787b883a8dfcb99d1ef9361b2e2",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/exploder_alpha.png",
+      "sha256": "48ff74ede2abf61fd2527bf902fd5e11b96069a68aaf709364ea3cae94ed3162",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/ranged.png",
+      "sha256": "01a560310be772e5cd20d067b108ac127a244588ec65e5b19f57d06326e77a31",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/ranged_alpha.png",
+      "sha256": "49a0c698b9283962e57ebdc97a039ba6d75517dddbfadde9b79e046302185a08",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/staff.png",
+      "sha256": "8cdc4870aae36439bf5442ecb6fe335e096339559c6203972b3e3f85090d9d01",
+      "size": [
+        1199,
+        1312
+      ]
+    }
+  ],
+  "files": [
+    {
+      "file": "equipment/crossbow.png",
+      "sha256": "57c88176c0f9f002c5ed2d44f323aeba1252dd620c70eebbe5bb7aa9235a4af9",
+      "size": [
+        72,
+        32
+      ],
+      "kind": "rigid_equipment",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/idle_01.png",
+      "sha256": "73bb721a7092a926a02eb0ca4b0a3a8b450f871597c6695f45bf9b373f80a1ad",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/idle_02.png",
+      "sha256": "5ca98baf910c70690077374923c61075a15a1095a1630cf48dad36a9935102e2",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/move_01.png",
+      "sha256": "972f5fb58f6e78d0d9f3751a86668b73b87be6a3fa9ca23c20bd0430b512fbc2",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/move_02.png",
+      "sha256": "388980225d0d29ea511ce9b75e053688ef627cd03e67e04237f80c2eef90f714",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/move_03.png",
+      "sha256": "3d4a5f7d516f9744f7da1d8b61394509ef7481aa656530f2581e61dca1bfe87b",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/move_04.png",
+      "sha256": "b2dbe8265e254c8f07976492f7ac204274dd01f9b4d81591cd1bfc4850542f89",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/move_05.png",
+      "sha256": "0d7b6338dab43a425b7d5713cfe70a41b12303c722c001151b4b871eed8536b9",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/move_06.png",
+      "sha256": "05413fa833584886e77e401488cab9897b1a0eb88cb17757bfa1a5a8f68d0ee3",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/tell_01.png",
+      "sha256": "a4021b9b3778192e7b9e3c0ed2c9116a4a4154d578a50a8afcdebfbc566e41e6",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/tell_02.png",
+      "sha256": "4fbf6fcb40f3aacc8f84b8003f8f7af5f7379b9d9195d92d28c49e50df40a0ee",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/attack_01.png",
+      "sha256": "5d15410d3350acc73492b4d70cbbbdf6cb604e059bca366128a48dbde8149f2c",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/attack_02.png",
+      "sha256": "5e35b1e170229668af5f0666e1298e0af17f644da6374bd36fea8034ab9f7900",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/hurt_01.png",
+      "sha256": "fd9e6ea41333905eb458f2580b7d7e160e4090a21ae0a3619cbf45bd4d649a48",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/hurt_02.png",
+      "sha256": "c8a7897df76869d184c7b8249126cdf91cacaf9dc88e43f65249a3428786be65",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/death_01.png",
+      "sha256": "28b65b37c99746b5e2616ced4a16e7cccdc211a8380b1485953ee6927b02a6f3",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/ranged/death_02.png",
+      "sha256": "b544ea7648e10d8d4dd24a35277d5ef2e9de4980c4463a857d45e2041725e684",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "reviews/ranged_keys.png",
+      "sha256": "b39af2ef27c9040dec2bafd14bbf3927a561317f7894fe6a202d063b441ce4be",
+      "size": [
+        1024,
+        1024
+      ],
+      "kind": "source_preview"
+    },
+    {
+      "file": "equipment/staff.png",
+      "sha256": "8cee0e6793b736b4d671c2df30f2ea6e29282cede07327fd81013f334eb72026",
+      "size": [
+        24,
+        112
+      ],
+      "kind": "rigid_equipment",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/idle_01.png",
+      "sha256": "3fa3a3153a47f17cd0bce02c1f387f740a99cb2d1f73a5c2f47a54e6b3b0c925",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/idle_02.png",
+      "sha256": "d36af9ba7f7ac4c9a8338f53ac40f3ccc8145a914bf93ab6b1d1948b5db23337",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/move_01.png",
+      "sha256": "bc4de226c6d3abcd027c0eb4a861ac0094b7f12a8e0e7e64334f6800b489d03a",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/move_02.png",
+      "sha256": "97968dbd32fb6a87a7304d4dbf4d0d0a58a28538a3324ea1fc05625f07f2221c",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/move_03.png",
+      "sha256": "66920f0fd889231be34e47940fee86e9713d412120d7dc792d9afe8759d94ddc",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/move_04.png",
+      "sha256": "21ee7c1d0aa22552f61a6697a5fe6b0d1cd5af5e4f4334554142a85147ede75f",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/move_05.png",
+      "sha256": "78466c7cde28bc52aa40c31e6e227c880dea8d3009610594c238e7856b3d92bf",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/move_06.png",
+      "sha256": "1486b085b64258bbd008e2dbbecc284c621773109a5695e8aa93f8c6d2357a05",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/tell_01.png",
+      "sha256": "463d099d62ff389f518ff0713b8b2a602bd81708abe96099a9764733b281c4a1",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/tell_02.png",
+      "sha256": "a44543fcdbabb6f6c46353175fe773ac0ebe4679ebf81eaa4927808f42b45c54",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/attack_01.png",
+      "sha256": "76cbf3dda9c9442d4cae5df463571ab178825f9c50d98fdf6c11e943cb963779",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/attack_02.png",
+      "sha256": "1abdeb1dbf18e1455084e039e5b5fb772cef2fd93378cd82e66cdd8b3ae0448a",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/hurt_01.png",
+      "sha256": "8335d5f66b25d5b2816bf6f4a6ebd009035457d9a45ecfa13a961f554989259c",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/hurt_02.png",
+      "sha256": "c3f46dd7634053131e644e16b3aea6e38878b2929f3646b6845d2fd291d70f0c",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/death_01.png",
+      "sha256": "03effeef3d50a108af014344edaa9e8fa6827a00ce04db5742e165d79a05cecf",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/controller/death_02.png",
+      "sha256": "68ae0000f43579529babdd49ef2c21e59cda3478a97c4c3a4468fda04b000cd5",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "reviews/controller_keys.png",
+      "sha256": "7eec0a248d65c74acd107381cd0c461ec603b5172963edbe08191a7fd0528fd4",
+      "size": [
+        1024,
+        1024
+      ],
+      "kind": "source_preview"
+    },
+    {
+      "file": "actors/charger/idle_01.png",
+      "sha256": "df922d8a9d7b3dbd64e02db2022b9dd2ceac59349d8bfc06c0f5fd44888dadb7",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/idle_02.png",
+      "sha256": "e33f0aa90dc9307947e82418799a3f4745e3113e51da63555289ce1715f7e188",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/move_01.png",
+      "sha256": "8f0b80c65c53890217d7a65f22e7309604cc8ba6818aa9eef58e77af44e640e9",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/move_02.png",
+      "sha256": "8605dc495b37a0db680c607638d1ffdc1f57f40fbfdbe51ad75e1b98c77c31e6",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/move_03.png",
+      "sha256": "2480d2ea10cbe99d5e8cc25b06c878425c70b27cc8a951fe0bd4e84b7bbadb82",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/move_04.png",
+      "sha256": "9b551d5e1664c20fc03f7783287d4106f5b3ef0f08b94c4070b9ed0b69a2db64",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/move_05.png",
+      "sha256": "71e01d79301d05993691fd6319fb2d21c6502d24a3fc1a4109312fdb9c789388",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/move_06.png",
+      "sha256": "674eac475ba5674e75567b2925a0db2b8c0357f6687a1ea356546099954afbe5",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/tell_01.png",
+      "sha256": "f9ba8a8f73679ef48f13307aaa2f13a8b323bae01270c9b957dcde3a0b0e6ef1",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/tell_02.png",
+      "sha256": "b21d0ebef4ec2fd34857e45305a7b4c215bcd32dbf43b7ca2f7d7909ead33561",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/attack_01.png",
+      "sha256": "594c92b4ee15e61256975ed10848134ae7cfaecb6dad9efb033e0febc6b8d686",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/attack_02.png",
+      "sha256": "a2ecc68f8fc89fa93c79a49bae2a9ae6705398dd66f3d8477a04f7a989d8cf4f",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/hurt_01.png",
+      "sha256": "b8819be50dae03213a975134e13ef197f4081078d6ca0557170aa821b8a5cb76",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/hurt_02.png",
+      "sha256": "6718b963d1e083cb2121f9072b4332a2dfb3d138f473c23c2776735ca6d76ee3",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/death_01.png",
+      "sha256": "5a56e553a00e2413955c350f009764a91d7c46015b28a7396477a3af0a3b0e14",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/charger/death_02.png",
+      "sha256": "ff0ebf4b3aa64c02e5184884957c9ffc454f321c9b19126d07c849d6fce5b997",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "reviews/charger_keys.png",
+      "sha256": "90d23c5fa8522c38b39fbedd26271ce865834e3c99a31288752789cf7304360c",
+      "size": [
+        1024,
+        1024
+      ],
+      "kind": "source_preview"
+    },
+    {
+      "file": "actors/exploder/idle_01.png",
+      "sha256": "7ef08eae4f06ba350dad9d2c855b1ff4f6495f8c4cc11b6b75036febd71e5166",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/idle_02.png",
+      "sha256": "ff6668d7be45fdafb7b4d114c3c2cae678a6f5a75f3400da50c5c7a0afd960a7",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/move_01.png",
+      "sha256": "1d2d794090092851623bb361abfed6b58a3e09e91d433adb18b91d338a05ff8b",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/move_02.png",
+      "sha256": "0e61c5efe43a2d858bb4007e1d09c513fbbee6a5afb52afefc93e742e6301b14",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/move_03.png",
+      "sha256": "c00c7b3c4e1338a85b299d96f77a85fa115e51423e3c96709501daad4697bba6",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/move_04.png",
+      "sha256": "3f38a1dc4b58368c1404f34fb6a420c02339db6a49b76272e3164a112a2af470",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/move_05.png",
+      "sha256": "913d73e0f43b0ce527da414b8b36e1328894b22ff6b6e520b1460920dab33074",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/move_06.png",
+      "sha256": "81429b50903ae9023c53d78078d340783570820ef67c4a4ecf22ea86406a7bf3",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/tell_01.png",
+      "sha256": "77a12196a30b9aeb08ee4c4553fa491dc30719b20e40e3f323be71e25de2389a",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/tell_02.png",
+      "sha256": "d5386ef2e36540aab180e579bb2894c9c520406a2ea26b1b5da07e92b00e9d42",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/attack_01.png",
+      "sha256": "455f1af89d605b299c78dc3d02407b464592e27403b003169cdbdfa09928e581",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/attack_02.png",
+      "sha256": "9a7b651b85bf38465e979a4672d147d721869289f7ab70a20afc655144064f5d",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/hurt_01.png",
+      "sha256": "8026153e118ed0ead7564356a380b59baca266a77b1c3649c121d16f641ba082",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/hurt_02.png",
+      "sha256": "2e2931bad770e4e58bf6f08baf17eee55143037b0f68a42f66dc0973ea95f930",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/death_01.png",
+      "sha256": "a62f7e6aee3e548b497322af0ac3b574b44ba14ea6bfa9f7512cd95bf79cf926",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "actors/exploder/death_02.png",
+      "sha256": "ce8fad263a6c7e16c9c46db45265f45b6ffd727070c137204b7d6ff25b6dff5b",
+      "size": [
+        256,
+        256
+      ],
+      "kind": "body",
+      "palette_limit": 32
+    },
+    {
+      "file": "reviews/exploder_keys.png",
+      "sha256": "d9222252ab27165881060a4cd84f7a0a6ffd978d675535505e12f5d98dd52820",
+      "size": [
+        1024,
+        1024
+      ],
+      "kind": "source_preview"
+    }
+  ],
+  "actors": {
+    "ranged": {
+      "canvas": 256,
+      "origin": [
+        128,
+        128
+      ],
+      "feet_edge_y": 186,
+      "palette_hex": [
+        "e7bf6b",
+        "bc8a52",
+        "a36f4a",
+        "8b634b",
+        "835342",
+        "724d44",
+        "674846",
+        "604042",
+        "6b333a",
+        "55353d",
+        "4d343d",
+        "4a2a37",
+        "402b35",
+        "3d2634",
+        "3a2332",
+        "391f32",
+        "2f1e29",
+        "ae0749",
+        "96053f",
+        "7c0736",
+        "7b0133",
+        "5d082a",
+        "5d0128",
+        "37172a",
+        "3d061e",
+        "291725",
+        "260f1c",
+        "1a0e16",
+        "13070e",
+        "19030d",
+        "0a0308",
+        "030103"
+      ],
+      "clips": {
+        "idle": 2,
+        "move": 6,
+        "tell": 2,
+        "attack": 2,
+        "hurt": 2,
+        "death": 2
+      },
+      "frames": [
+        {
+          "clip": "idle",
+          "index": 1,
+          "file": "actors/ranged/idle_01.png",
+          "duration_ms": 200,
+          "source_cell": [
+            0,
+            0
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            37
+          ],
+          "alpha_bbox": [
+            72,
+            59,
+            213,
+            186
+          ]
+        },
+        {
+          "clip": "idle",
+          "index": 2,
+          "file": "actors/ranged/idle_02.png",
+          "duration_ms": 200,
+          "source_cell": [
+            1,
+            0
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            37
+          ],
+          "alpha_bbox": [
+            55,
+            59,
+            196,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 1,
+          "file": "actors/ranged/move_01.png",
+          "duration_ms": 80,
+          "source_cell": [
+            2,
+            0
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            37
+          ],
+          "alpha_bbox": [
+            41,
+            59,
+            194,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 2,
+          "file": "actors/ranged/move_02.png",
+          "duration_ms": 80,
+          "source_cell": [
+            3,
+            0
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            37
+          ],
+          "alpha_bbox": [
+            24,
+            60,
+            188,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 3,
+          "file": "actors/ranged/move_03.png",
+          "duration_ms": 80,
+          "source_cell": [
+            0,
+            1
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            39
+          ],
+          "alpha_bbox": [
+            62,
+            54,
+            216,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 4,
+          "file": "actors/ranged/move_04.png",
+          "duration_ms": 80,
+          "source_cell": [
+            1,
+            1
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            38
+          ],
+          "alpha_bbox": [
+            52,
+            53,
+            208,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 5,
+          "file": "actors/ranged/move_05.png",
+          "duration_ms": 80,
+          "source_cell": [
+            2,
+            1
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            39
+          ],
+          "alpha_bbox": [
+            47,
+            54,
+            212,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 6,
+          "file": "actors/ranged/move_06.png",
+          "duration_ms": 80,
+          "source_cell": [
+            3,
+            1
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            38
+          ],
+          "alpha_bbox": [
+            31,
+            53,
+            187,
+            186
+          ]
+        },
+        {
+          "clip": "tell",
+          "index": 1,
+          "file": "actors/ranged/tell_01.png",
+          "duration_ms": 100,
+          "source_cell": [
+            0,
+            2
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            43
+          ],
+          "alpha_bbox": [
+            66,
+            67,
+            236,
+            186
+          ]
+        },
+        {
+          "clip": "tell",
+          "index": 2,
+          "file": "actors/ranged/tell_02.png",
+          "duration_ms": 100,
+          "source_cell": [
+            1,
+            2
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            44
+          ],
+          "alpha_bbox": [
+            60,
+            72,
+            220,
+            186
+          ]
+        },
+        {
+          "clip": "attack",
+          "index": 1,
+          "file": "actors/ranged/attack_01.png",
+          "duration_ms": 80,
+          "source_cell": [
+            2,
+            2
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            43
+          ],
+          "alpha_bbox": [
+            23,
+            65,
+            201,
+            186
+          ]
+        },
+        {
+          "clip": "attack",
+          "index": 2,
+          "file": "actors/ranged/attack_02.png",
+          "duration_ms": 80,
+          "source_cell": [
+            3,
+            2
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            42
+          ],
+          "alpha_bbox": [
+            22,
+            59,
+            186,
+            186
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 1,
+          "file": "actors/ranged/hurt_01.png",
+          "duration_ms": 70,
+          "source_cell": [
+            0,
+            3
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            57
+          ],
+          "alpha_bbox": [
+            67,
+            62,
+            226,
+            186
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 2,
+          "file": "actors/ranged/hurt_02.png",
+          "duration_ms": 70,
+          "source_cell": [
+            1,
+            3
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            -4,
+            57
+          ],
+          "alpha_bbox": [
+            54,
+            62,
+            188,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 1,
+          "file": "actors/ranged/death_01.png",
+          "duration_ms": 160,
+          "source_cell": [
+            2,
+            3
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            14,
+            57
+          ],
+          "alpha_bbox": [
+            53,
+            93,
+            204,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 2,
+          "file": "actors/ranged/death_02.png",
+          "duration_ms": 160,
+          "source_cell": [
+            3,
+            3
+          ],
+          "source_scale": 0.6305418719211823,
+          "offset": [
+            23,
+            59
+          ],
+          "alpha_bbox": [
+            27,
+            135,
+            229,
+            186
+          ]
+        }
+      ],
+      "patterns": {
+        "ranged": [
+          "tell",
+          "attack"
+        ]
+      },
+      "visual_acceptance": "PENDING",
+      "equipment": {
+        "file": "equipment/crossbow.png",
+        "grip": [
+          51,
+          22
+        ],
+        "keys": {
+          "idle": [
+            {
+              "position": [
+                -52,
+                -20
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -69,
+                -18
+              ],
+              "degrees": 0
+            }
+          ],
+          "move": [
+            {
+              "position": [
+                -83,
+                -19
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -100,
+                -18
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -62,
+                -28
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -70,
+                -24
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -77,
+                -23
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -93,
+                -21
+              ],
+              "degrees": 0
+            }
+          ],
+          "tell": [
+            {
+              "position": [
+                -58,
+                -13
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -64,
+                -13
+              ],
+              "degrees": 0
+            }
+          ],
+          "attack": [
+            {
+              "position": [
+                -101,
+                -37
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -102,
+                -37
+              ],
+              "degrees": 0
+            }
+          ],
+          "hurt": [
+            {
+              "position": [
+                -57,
+                -17
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -70,
+                -17
+              ],
+              "degrees": 0
+            }
+          ],
+          "death": [
+            {
+              "position": [
+                -63,
+                50
+              ],
+              "degrees": 15
+            },
+            {
+              "position": [
+                -89,
+                50
+              ],
+              "degrees": 82
+            }
+          ]
+        },
+        "source_file": "sources/crossbow.png"
+      }
+    },
+    "controller": {
+      "canvas": 256,
+      "origin": [
+        128,
+        128
+      ],
+      "feet_edge_y": 186,
+      "palette_hex": [
+        "e6b36b",
+        "c08645",
+        "af7439",
+        "8a713e",
+        "9f6430",
+        "8d5e2f",
+        "7a6136",
+        "655e37",
+        "8b4c22",
+        "724823",
+        "624726",
+        "5d371a",
+        "49462b",
+        "453721",
+        "4a2f18",
+        "352e1d",
+        "990b06",
+        "49170b",
+        "352415",
+        "341309",
+        "262218",
+        "241a11",
+        "22140a",
+        "230703",
+        "161510",
+        "130d09",
+        "120904",
+        "0a0805",
+        "100301",
+        "070302",
+        "040302",
+        "010000"
+      ],
+      "clips": {
+        "idle": 2,
+        "move": 6,
+        "tell": 2,
+        "attack": 2,
+        "hurt": 2,
+        "death": 2
+      },
+      "frames": [
+        {
+          "clip": "idle",
+          "index": 1,
+          "file": "actors/controller/idle_01.png",
+          "duration_ms": 200,
+          "source_cell": [
+            0,
+            0
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            32
+          ],
+          "alpha_bbox": [
+            94,
+            59,
+            182,
+            186
+          ]
+        },
+        {
+          "clip": "idle",
+          "index": 2,
+          "file": "actors/controller/idle_02.png",
+          "duration_ms": 200,
+          "source_cell": [
+            1,
+            0
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            32
+          ],
+          "alpha_bbox": [
+            64,
+            58,
+            161,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 1,
+          "file": "actors/controller/move_01.png",
+          "duration_ms": 80,
+          "source_cell": [
+            2,
+            0
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            32
+          ],
+          "alpha_bbox": [
+            53,
+            58,
+            167,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 2,
+          "file": "actors/controller/move_02.png",
+          "duration_ms": 80,
+          "source_cell": [
+            3,
+            0
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            31
+          ],
+          "alpha_bbox": [
+            37,
+            57,
+            154,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 3,
+          "file": "actors/controller/move_03.png",
+          "duration_ms": 80,
+          "source_cell": [
+            0,
+            1
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            37
+          ],
+          "alpha_bbox": [
+            74,
+            57,
+            196,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 4,
+          "file": "actors/controller/move_04.png",
+          "duration_ms": 80,
+          "source_cell": [
+            1,
+            1
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            36
+          ],
+          "alpha_bbox": [
+            74,
+            58,
+            206,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 5,
+          "file": "actors/controller/move_05.png",
+          "duration_ms": 80,
+          "source_cell": [
+            2,
+            1
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            37
+          ],
+          "alpha_bbox": [
+            54,
+            59,
+            182,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 6,
+          "file": "actors/controller/move_06.png",
+          "duration_ms": 80,
+          "source_cell": [
+            3,
+            1
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            37
+          ],
+          "alpha_bbox": [
+            44,
+            60,
+            158,
+            186
+          ]
+        },
+        {
+          "clip": "tell",
+          "index": 1,
+          "file": "actors/controller/tell_01.png",
+          "duration_ms": 100,
+          "source_cell": [
+            0,
+            2
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            43
+          ],
+          "alpha_bbox": [
+            75,
+            62,
+            198,
+            186
+          ]
+        },
+        {
+          "clip": "tell",
+          "index": 2,
+          "file": "actors/controller/tell_02.png",
+          "duration_ms": 100,
+          "source_cell": [
+            1,
+            2
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            45
+          ],
+          "alpha_bbox": [
+            74,
+            76,
+            217,
+            186
+          ]
+        },
+        {
+          "clip": "attack",
+          "index": 1,
+          "file": "actors/controller/attack_01.png",
+          "duration_ms": 80,
+          "source_cell": [
+            2,
+            2
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            45
+          ],
+          "alpha_bbox": [
+            33,
+            62,
+            207,
+            186
+          ]
+        },
+        {
+          "clip": "attack",
+          "index": 2,
+          "file": "actors/controller/attack_02.png",
+          "duration_ms": 80,
+          "source_cell": [
+            3,
+            2
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            43
+          ],
+          "alpha_bbox": [
+            6,
+            59,
+            178,
+            186
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 1,
+          "file": "actors/controller/hurt_01.png",
+          "duration_ms": 70,
+          "source_cell": [
+            0,
+            3
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            55
+          ],
+          "alpha_bbox": [
+            81,
+            69,
+            198,
+            186
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 2,
+          "file": "actors/controller/hurt_02.png",
+          "duration_ms": 70,
+          "source_cell": [
+            1,
+            3
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -1,
+            55
+          ],
+          "alpha_bbox": [
+            73,
+            63,
+            191,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 1,
+          "file": "actors/controller/death_01.png",
+          "duration_ms": 160,
+          "source_cell": [
+            2,
+            3
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            -11,
+            56
+          ],
+          "alpha_bbox": [
+            58,
+            92,
+            199,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 2,
+          "file": "actors/controller/death_02.png",
+          "duration_ms": 160,
+          "source_cell": [
+            3,
+            3
+          ],
+          "source_scale": 0.6124401913875598,
+          "offset": [
+            9,
+            56
+          ],
+          "alpha_bbox": [
+            29,
+            124,
+            228,
+            186
+          ]
+        }
+      ],
+      "patterns": {
+        "controller": [
+          "tell",
+          "attack"
+        ]
+      },
+      "visual_acceptance": "PENDING",
+      "equipment": {
+        "file": "equipment/staff.png",
+        "grip": [
+          12,
+          70
+        ],
+        "keys": {
+          "idle": [
+            {
+              "position": [
+                -30,
+                -36
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -60,
+                -35
+              ],
+              "degrees": 0
+            }
+          ],
+          "move": [
+            {
+              "position": [
+                -71,
+                -35
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -86,
+                -37
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -50,
+                -37
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -46,
+                -39
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -70,
+                -37
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -78,
+                -33
+              ],
+              "degrees": 0
+            }
+          ],
+          "tell": [
+            {
+              "position": [
+                -49,
+                -32
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -50,
+                -11
+              ],
+              "degrees": 0
+            }
+          ],
+          "attack": [
+            {
+              "position": [
+                -91,
+                -38
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -118,
+                -39
+              ],
+              "degrees": 0
+            }
+          ],
+          "hurt": [
+            {
+              "position": [
+                -43,
+                -25
+              ],
+              "degrees": 0
+            },
+            {
+              "position": [
+                -51,
+                -30
+              ],
+              "degrees": 0
+            }
+          ],
+          "death": [
+            {
+              "position": [
+                -58,
+                50
+              ],
+              "degrees": 15
+            },
+            {
+              "position": [
+                -87,
+                50
+              ],
+              "degrees": 82
+            }
+          ]
+        },
+        "source_file": "sources/staff.png"
+      }
+    },
+    "charger": {
+      "canvas": 256,
+      "origin": [
+        128,
+        128
+      ],
+      "feet_edge_y": 186,
+      "palette_hex": [
+        "e09772",
+        "be6b54",
+        "b85845",
+        "91534a",
+        "c03e30",
+        "8e4138",
+        "763e3a",
+        "5c393c",
+        "c5241e",
+        "992320",
+        "6c2b29",
+        "6f1d1c",
+        "4b2a2e",
+        "481d1f",
+        "341f24",
+        "2d171c",
+        "c1090e",
+        "810a0e",
+        "590e12",
+        "590309",
+        "3b0f13",
+        "2c1014",
+        "3d040a",
+        "2d0509",
+        "211015",
+        "20080c",
+        "150b10",
+        "11060a",
+        "0f0408",
+        "1a0104",
+        "0b0204",
+        "030102"
+      ],
+      "clips": {
+        "idle": 2,
+        "move": 6,
+        "tell": 2,
+        "attack": 2,
+        "hurt": 2,
+        "death": 2
+      },
+      "frames": [
+        {
+          "clip": "idle",
+          "index": 1,
+          "file": "actors/charger/idle_01.png",
+          "duration_ms": 200,
+          "source_cell": [
+            0,
+            0
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            44
+          ],
+          "alpha_bbox": [
+            29,
+            75,
+            202,
+            186
+          ]
+        },
+        {
+          "clip": "idle",
+          "index": 2,
+          "file": "actors/charger/idle_02.png",
+          "duration_ms": 200,
+          "source_cell": [
+            1,
+            0
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            44
+          ],
+          "alpha_bbox": [
+            30,
+            81,
+            202,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 1,
+          "file": "actors/charger/move_01.png",
+          "duration_ms": 80,
+          "source_cell": [
+            2,
+            0
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            44
+          ],
+          "alpha_bbox": [
+            26,
+            83,
+            224,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 2,
+          "file": "actors/charger/move_02.png",
+          "duration_ms": 80,
+          "source_cell": [
+            3,
+            0
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            45
+          ],
+          "alpha_bbox": [
+            26,
+            86,
+            223,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 3,
+          "file": "actors/charger/move_03.png",
+          "duration_ms": 80,
+          "source_cell": [
+            0,
+            1
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            49
+          ],
+          "alpha_bbox": [
+            24,
+            83,
+            229,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 4,
+          "file": "actors/charger/move_04.png",
+          "duration_ms": 80,
+          "source_cell": [
+            1,
+            1
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            49
+          ],
+          "alpha_bbox": [
+            30,
+            83,
+            228,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 5,
+          "file": "actors/charger/move_05.png",
+          "duration_ms": 80,
+          "source_cell": [
+            2,
+            1
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            48
+          ],
+          "alpha_bbox": [
+            22,
+            81,
+            224,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 6,
+          "file": "actors/charger/move_06.png",
+          "duration_ms": 80,
+          "source_cell": [
+            3,
+            1
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            49
+          ],
+          "alpha_bbox": [
+            29,
+            74,
+            212,
+            186
+          ]
+        },
+        {
+          "clip": "tell",
+          "index": 1,
+          "file": "actors/charger/tell_01.png",
+          "duration_ms": 100,
+          "source_cell": [
+            0,
+            2
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            62
+          ],
+          "alpha_bbox": [
+            32,
+            83,
+            224,
+            186
+          ]
+        },
+        {
+          "clip": "tell",
+          "index": 2,
+          "file": "actors/charger/tell_02.png",
+          "duration_ms": 100,
+          "source_cell": [
+            1,
+            2
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            62
+          ],
+          "alpha_bbox": [
+            30,
+            95,
+            207,
+            186
+          ]
+        },
+        {
+          "clip": "attack",
+          "index": 1,
+          "file": "actors/charger/attack_01.png",
+          "duration_ms": 80,
+          "source_cell": [
+            2,
+            2
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            62
+          ],
+          "alpha_bbox": [
+            5,
+            74,
+            234,
+            186
+          ]
+        },
+        {
+          "clip": "attack",
+          "index": 2,
+          "file": "actors/charger/attack_02.png",
+          "duration_ms": 80,
+          "source_cell": [
+            3,
+            2
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            62
+          ],
+          "alpha_bbox": [
+            10,
+            93,
+            230,
+            186
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 1,
+          "file": "actors/charger/hurt_01.png",
+          "duration_ms": 70,
+          "source_cell": [
+            0,
+            3
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            65
+          ],
+          "alpha_bbox": [
+            29,
+            66,
+            224,
+            186
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 2,
+          "file": "actors/charger/hurt_02.png",
+          "duration_ms": 70,
+          "source_cell": [
+            1,
+            3
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            65
+          ],
+          "alpha_bbox": [
+            27,
+            73,
+            205,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 1,
+          "file": "actors/charger/death_01.png",
+          "duration_ms": 160,
+          "source_cell": [
+            2,
+            3
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            5,
+            65
+          ],
+          "alpha_bbox": [
+            30,
+            89,
+            226,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 2,
+          "file": "actors/charger/death_02.png",
+          "duration_ms": 160,
+          "source_cell": [
+            3,
+            3
+          ],
+          "source_scale": 0.632768361581921,
+          "offset": [
+            8,
+            65
+          ],
+          "alpha_bbox": [
+            27,
+            123,
+            230,
+            186
+          ]
+        }
+      ],
+      "patterns": {
+        "charger": [
+          "tell",
+          "attack"
+        ]
+      },
+      "visual_acceptance": "PENDING"
+    },
+    "exploder": {
+      "canvas": 256,
+      "origin": [
+        128,
+        128
+      ],
+      "feet_edge_y": 186,
+      "palette_hex": [
+        "cc9d89",
+        "b67f70",
+        "b86e61",
+        "90695d",
+        "af514a",
+        "7f514a",
+        "6e4b46",
+        "663f3c",
+        "ab2b2e",
+        "5e3131",
+        "513131",
+        "4e2527",
+        "412828",
+        "3c2123",
+        "381d1f",
+        "32191c",
+        "f8071e",
+        "da031d",
+        "b3031c",
+        "8c0418",
+        "5b0814",
+        "331014",
+        "261316",
+        "240a0e",
+        "1c0d10",
+        "130a0d",
+        "120608",
+        "090506",
+        "0d0204",
+        "050103",
+        "020105",
+        "010001"
+      ],
+      "clips": {
+        "idle": 2,
+        "move": 6,
+        "tell": 2,
+        "attack": 2,
+        "hurt": 2,
+        "death": 2
+      },
+      "frames": [
+        {
+          "clip": "idle",
+          "index": 1,
+          "file": "actors/exploder/idle_01.png",
+          "duration_ms": 200,
+          "source_cell": [
+            0,
+            0
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            33
+          ],
+          "alpha_bbox": [
+            60,
+            58,
+            198,
+            186
+          ]
+        },
+        {
+          "clip": "idle",
+          "index": 2,
+          "file": "actors/exploder/idle_02.png",
+          "duration_ms": 200,
+          "source_cell": [
+            1,
+            0
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            34
+          ],
+          "alpha_bbox": [
+            56,
+            59,
+            194,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 1,
+          "file": "actors/exploder/move_01.png",
+          "duration_ms": 80,
+          "source_cell": [
+            2,
+            0
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            30
+          ],
+          "alpha_bbox": [
+            47,
+            55,
+            196,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 2,
+          "file": "actors/exploder/move_02.png",
+          "duration_ms": 80,
+          "source_cell": [
+            3,
+            0
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            30
+          ],
+          "alpha_bbox": [
+            51,
+            61,
+            197,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 3,
+          "file": "actors/exploder/move_03.png",
+          "duration_ms": 80,
+          "source_cell": [
+            0,
+            1
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            39
+          ],
+          "alpha_bbox": [
+            61,
+            58,
+            201,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 4,
+          "file": "actors/exploder/move_04.png",
+          "duration_ms": 80,
+          "source_cell": [
+            1,
+            1
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            36
+          ],
+          "alpha_bbox": [
+            54,
+            55,
+            207,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 5,
+          "file": "actors/exploder/move_05.png",
+          "duration_ms": 80,
+          "source_cell": [
+            2,
+            1
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            36
+          ],
+          "alpha_bbox": [
+            47,
+            55,
+            194,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 6,
+          "file": "actors/exploder/move_06.png",
+          "duration_ms": 80,
+          "source_cell": [
+            3,
+            1
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            36
+          ],
+          "alpha_bbox": [
+            51,
+            57,
+            190,
+            186
+          ]
+        },
+        {
+          "clip": "tell",
+          "index": 1,
+          "file": "actors/exploder/tell_01.png",
+          "duration_ms": 100,
+          "source_cell": [
+            0,
+            2
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            44
+          ],
+          "alpha_bbox": [
+            49,
+            63,
+            206,
+            186
+          ]
+        },
+        {
+          "clip": "tell",
+          "index": 2,
+          "file": "actors/exploder/tell_02.png",
+          "duration_ms": 100,
+          "source_cell": [
+            1,
+            2
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            22
+          ],
+          "alpha_bbox": [
+            51,
+            41,
+            205,
+            186
+          ]
+        },
+        {
+          "clip": "attack",
+          "index": 1,
+          "file": "actors/exploder/attack_01.png",
+          "duration_ms": 80,
+          "source_cell": [
+            2,
+            2
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            43
+          ],
+          "alpha_bbox": [
+            10,
+            53,
+            203,
+            186
+          ]
+        },
+        {
+          "clip": "attack",
+          "index": 2,
+          "file": "actors/exploder/attack_02.png",
+          "duration_ms": 80,
+          "source_cell": [
+            3,
+            2
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            42
+          ],
+          "alpha_bbox": [
+            21,
+            61,
+            210,
+            186
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 1,
+          "file": "actors/exploder/hurt_01.png",
+          "duration_ms": 70,
+          "source_cell": [
+            0,
+            3
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            57
+          ],
+          "alpha_bbox": [
+            51,
+            62,
+            201,
+            186
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 2,
+          "file": "actors/exploder/hurt_02.png",
+          "duration_ms": 70,
+          "source_cell": [
+            1,
+            3
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            3,
+            57
+          ],
+          "alpha_bbox": [
+            49,
+            57,
+            203,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 1,
+          "file": "actors/exploder/death_01.png",
+          "duration_ms": 160,
+          "source_cell": [
+            2,
+            3
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            10,
+            55
+          ],
+          "alpha_bbox": [
+            35,
+            80,
+            221,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 2,
+          "file": "actors/exploder/death_02.png",
+          "duration_ms": 160,
+          "source_cell": [
+            3,
+            3
+          ],
+          "source_scale": 0.64,
+          "offset": [
+            10,
+            56
+          ],
+          "alpha_bbox": [
+            31,
+            111,
+            226,
+            186
+          ]
+        }
+      ],
+      "patterns": {
+        "exploder": [
+          "tell",
+          "attack"
+        ]
+      },
+      "visual_acceptance": "PENDING"
+    }
+  },
+  "commercial_approved": false,
+  "rights_status": "PENDING",
+  "cultural_review": "PENDING",
+  "visual_acceptance": "PENDING",
+  "method": "Built-in ImageGen poses; measured uniform BOX reduction/32color common palette/alpha>=200/native registration; no final animation approval"
+}
