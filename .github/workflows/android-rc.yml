@@ -254,5 +254,7 @@ jobs:
             /tmp/rq-store-*/bundle-signature.txt
             /tmp/rq-store-*/apk-badging.txt
             /tmp/rq-store-*/NATIVE_PAGES.json
+            /tmp/rq-visual-review/*.log
+            /tmp/rq-visual-review/*.json
           if-no-files-found: warn
           retention-days: 30
