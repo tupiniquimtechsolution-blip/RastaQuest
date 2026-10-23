@@ -65,13 +65,16 @@ func _finish_attack() -> void:
 	attack_state_changed.emit(false, &"")
 
 func _on_landed_hit(target: Area2D, _payload: Dictionary) -> void:
+	get_node("/root/ArtCatalog").burst("hit",target.global_position,body,48,.18)
 	var proc := _effects.roll_electrical_proc(electrical_proc_chance)
 	if proc:
 		electrical_proc_triggered.emit(target.global_position)
+		get_node("/root/ArtCatalog").burst("electric_chain",body.global_position,body,64,.18,target.global_position)
 		if chain_lightning_enabled:
 			_apply_secondary_damage(target, target.global_position, 180.0, 2, 1, &"lightning")
 
 	if on_kill_aoe_enabled and target.health.dead:
+		get_node("/root/ArtCatalog").burst("electric_onkill",target.global_position,body,280,.24)
 		_apply_secondary_damage(target, target.global_position, 140.0, 4, 1, &"on_kill_aoe")
 
 func _apply_secondary_damage(origin_target: Area2D, origin: Vector2, radius: float, max_targets: int, amount: int, damage_type: StringName) -> void:
@@ -86,4 +89,6 @@ func _apply_secondary_damage(origin_target: Area2D, origin: Vector2, radius: flo
 	for entry in selected:
 		var node: Area2D = entry.get("node") as Area2D
 		if is_instance_valid(node):
-			node.receive_hit({"attack_id": _attack_id, "amount": amount, "damage_type": damage_type, "source": body.get_instance_id()})
+			var accepted: bool = node.receive_hit({"attack_id": _attack_id, "amount": amount, "damage_type": damage_type, "source": body.get_instance_id()})
+			if accepted:
+				get_node("/root/ArtCatalog").burst("electric_chain" if damage_type==&"lightning" else "electric_area",origin,body,64 if damage_type==&"lightning" else radius*2,.20,node.global_position if damage_type==&"lightning" else Vector2.INF)

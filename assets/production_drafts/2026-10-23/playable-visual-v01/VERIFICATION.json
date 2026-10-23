@@ -1,0 +1,10 @@
+{
+  "native_integrity_pass": true,
+  "errors": [],
+  "body_keys": 64,
+  "rigid_masters": 2,
+  "walk_keys_per_role": 6,
+  "actual_desktop_captures": 52,
+  "human_visual_acceptance": "PENDING",
+  "commercial_approved": false
+}

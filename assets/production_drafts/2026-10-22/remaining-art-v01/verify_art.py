@@ -1,5 +1,5 @@
 """Reopen saved artifacts, validate native contracts and actual capture states."""
-import csv,hashlib,json
+import csv,hashlib,json,subprocess
 from pathlib import Path
 from PIL import Image
 
@@ -55,7 +55,9 @@ def main():
     for f in captures:
         p=ROOT/'room-review'/f['file'];check(sha(p)==f['sha256'] and list(Image.open(p).size)==f['size'],f['file']+':capture_integrity')
     for p,expected in report['source_hashes'].items():
-        text=(REPO/'game'/p.removeprefix('res://')).read_text(encoding='utf-8');check(hashlib.sha256(text.encode()).hexdigest()==expected,'capture_source:'+p)
+        relative=(REPO/'game'/p.removeprefix('res://')).resolve().relative_to(REPO.resolve()).as_posix()
+        # PR67 captures describe that historical candidate, not later runtime edits.
+        text=subprocess.check_output(['git','show','b35b5108c479f10ea0f42b92508f1e531a2fcd5f:'+relative],cwd=REPO).decode('utf-8').replace('\r\n','\n');check(hashlib.sha256(text.encode()).hexdigest()==expected,'capture_source:'+p)
     for role,actor in m['actors'].items():
         for pattern,pair in actor['patterns'].items():
             for phase,clip in [('tell',pair[0]),('active',pair[1])]:

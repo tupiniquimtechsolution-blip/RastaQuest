@@ -24,6 +24,7 @@
     "physical_installation": "pending_owner_retest"
   },
   "candidate_status": "technical-preparation-not-release-approved",
+  "forbidden_archive_segments": ["visual_review"],
   "release_signed": false,
   "distribution_published": false,
   "core_offline_gameplay": true,

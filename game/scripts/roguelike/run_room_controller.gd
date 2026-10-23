@@ -90,6 +90,7 @@ func _clear_enemies() -> void:
 func _on_enemy_defeated(_enemy: Node) -> void:
 	_alive_enemies = maxi(_alive_enemies - 1, 0)
 	if _alive_enemies == 0 and not _returning_after_death and not _portal_transitioning:
+		get_node("/root/ArtCatalog").burst("reward",portal.global_position,self,64,.45)
 		portal.set_locked(false)
 		status_label.text = "Encounter clear • Enter the portal"
 

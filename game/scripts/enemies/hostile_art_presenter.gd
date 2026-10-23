@@ -9,6 +9,8 @@ var _hurt := 0.0
 var _tell := .25
 var _active_elapsed := 0.0
 var _last_attack_id := 0
+var _equipment: Node2D
+var _equipment_keys: Dictionary = {}
 var _release_kinds := ["ranged","controller","chain_burst","portal_burst","fracture_storm"]
 
 func _ready() -> void:
@@ -19,6 +21,7 @@ func _ready() -> void:
 	_sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	_sprite.visible = false
 	add_child(_sprite)
+	_sprite.frame_changed.connect(_sync_equipment)
 	_actor.get_node("Health").damaged.connect(func(_n, _h): _hurt = .10)
 	_actor.attack_tell_started.connect(func(_kind, seconds): _tell = seconds)
 
@@ -43,12 +46,58 @@ func apply_frames(candidate: SpriteFrames, patterns: Dictionary, source_size: in
 			if texture == null or texture.get_size()!=Vector2(source_size,source_size):
 				return false
 	_frames = candidate
+	if is_instance_valid(_equipment):
+		_equipment.free()
+	_equipment_keys = {}
 	_patterns = patterns.duplicate(true)
 	_sprite.sprite_frames = candidate
 	_sprite.visible = true
 	_actor.get_node("Visual").visible = false
 	_sprite.play(&"idle")
 	return true
+
+func apply_equipment(item: Texture2D, grip: Array, keys: Dictionary) -> bool:
+	if _frames==null or item==null or grip.size()!=2 or item.get_width()>128 or item.get_height()>128:
+		return false
+	for number in grip:
+		if not (number is float or number is int) or not is_finite(float(number)):
+			return false
+	for clip in _frames.get_animation_names():
+		if clip=="default":
+			continue
+		if not keys.has(clip) or not keys[clip] is Array or keys[clip].size()!=_frames.get_frame_count(clip):
+			return false
+		for key in keys[clip]:
+			if not key is Dictionary or not key.get("position") is Array or key.position.size()!=2:
+				return false
+			for value in key.position+[key.get("degrees")]:
+				if not (value is int or value is float) or not is_finite(float(value)) or absf(float(value))>360:
+					return false
+	if is_instance_valid(_equipment):
+		_equipment.free()
+	_equipment_keys = keys.duplicate(true)
+	_equipment = Node2D.new()
+	_equipment.name = "RigidEquipment"
+	_equipment.show_behind_parent = true
+	_sprite.add_child(_equipment)
+	var part := Sprite2D.new()
+	part.name = "Item"
+	part.texture = item
+	part.centered = false
+	part.offset = -Vector2(grip[0],grip[1])
+	part.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	_equipment.add_child(part)
+	_sync_equipment()
+	return true
+
+func _sync_equipment() -> void:
+	if not is_instance_valid(_equipment) or not _equipment_keys.has(String(_sprite.animation)):
+		return
+	var key: Dictionary = _equipment_keys[String(_sprite.animation)][_sprite.frame]
+	_equipment.scale.x = -1 if _sprite.flip_h else 1
+	var part: Sprite2D = _equipment.get_node("Item")
+	part.position = Vector2(key.position[0],key.position[1])
+	part.rotation_degrees = key.degrees
 
 func _duration(clip: StringName) -> float:
 	if _frames==null:
@@ -95,3 +144,6 @@ func _process(delta: float) -> void:
 	if _sprite.animation!=clip:
 		_sprite.play(clip)
 	_sprite.speed_scale = _duration(clip)/maxf(.05,_tell) if active and attack.phase==&"tell" else 1.0
+	if clip==&"move" and _actor.get("data")!=null:
+		_sprite.speed_scale = clampf(absf(_actor.velocity.x)/maxf(1,_actor.data.move_speed),.25,2)
+	_sync_equipment()
