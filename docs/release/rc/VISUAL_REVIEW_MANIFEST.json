@@ -3,6 +3,7 @@
   "engine": "Godot 4.5.1",
   "version": "1.0.0-visual.1",
   "version_code": 1000002,
+  "save_schema": 2,
   "application_id": "com.tupiniquimtechsolution.rastaquest.visualreview",
   "architectures": ["armeabi-v7a", "arm64-v8a"],
   "min_sdk": 24,
