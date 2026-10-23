@@ -2,7 +2,7 @@
 	"captures": [
 		{
 			"file": "perfect_guard_ready_1280x720.png",
-			"sha256": "72e61e43f45becd151e4cbd623bd2f0c907379d0828b3e931197c6df6a8c2faf",
+			"sha256": "3cdd1e907fb478d9e28a07a09bbeedce15dd975038dd4363f4093fc2e9f98301",
 			"size": [
 				1280,
 				720
@@ -10,7 +10,7 @@
 		},
 		{
 			"file": "perfect_guard_ready_640x360.png",
-			"sha256": "aa2a194cd900a79354b60eaa9a879a435f2db14329b28c0ab5ef8e8cd4ded774",
+			"sha256": "4199c75172f542f1f26feeae723975c48d695d41b7ce1a1f59f2d0e6773524d4",
 			"size": [
 				640,
 				360
@@ -18,7 +18,7 @@
 		},
 		{
 			"file": "perfect_counter_1280x720.png",
-			"sha256": "89d769cad33940fd8eee6b64eb2bd86c0a65b6b5fcab11b56de3a1e35d7db0fb",
+			"sha256": "9f9951f578779705610830ae6c0fb6339ba31ef2d188fb2fad9b9f8fb1554c13",
 			"size": [
 				1280,
 				720
@@ -26,7 +26,7 @@
 		},
 		{
 			"file": "perfect_counter_640x360.png",
-			"sha256": "89e112a069603a2bbef956d3ad7efc35f2f11e0813fe11253a0ece60b0c20f3d",
+			"sha256": "d1ba0d5ead3c547646291d552e8e5098183ff54cd0a082f23b3d4ca36bf3e7a1",
 			"size": [
 				640,
 				360
@@ -34,7 +34,7 @@
 		},
 		{
 			"file": "forest_route_end_1280x720.png",
-			"sha256": "d358e1f9e7bf74830117c032582f2840240aca38cca3f039545f939fa6711823",
+			"sha256": "d451bef25e035cc70cd42c64583bff6d5efb5800e571d9a6bf1d79116ed96d28",
 			"size": [
 				1280,
 				720
@@ -42,7 +42,7 @@
 		},
 		{
 			"file": "forest_route_end_640x360.png",
-			"sha256": "bffd3c5efcf123860d674384c6838154d2a27248ee946e4a42d1775cd71c9907",
+			"sha256": "38398ae8d212fefdd8143f1fd7dd500b8f9be54aa285a52f8cef7a953894049f",
 			"size": [
 				640,
 				360
@@ -50,7 +50,7 @@
 		},
 		{
 			"file": "castle_route_end_1280x720.png",
-			"sha256": "3ed9f8c2223f756b04595ad4cd9db3de5e3d11c4fccc9401e1e4616948f220e9",
+			"sha256": "7c4cfab79c185fabbfc8367794ae353816589489cf10fafff2caea6d5379d8c2",
 			"size": [
 				1280,
 				720
@@ -58,7 +58,7 @@
 		},
 		{
 			"file": "castle_route_end_640x360.png",
-			"sha256": "0b68af294126fa56008572b0d7540c864a6505fa61359c779fae6041b2a10e1f",
+			"sha256": "411e2e4ca3155b3bb6567de0fca921c534fd07bc91a76ca00482f52e66a07d60",
 			"size": [
 				640,
 				360
@@ -66,7 +66,7 @@
 		},
 		{
 			"file": "caves_route_end_1280x720.png",
-			"sha256": "4eb6c51f257ab8f67e3117d5fbdc6388a5e050688c892f4dd1a8d4526b6115f8",
+			"sha256": "2e01c2cb20551dbfe3b7b391c279a32d71f70b95a5a4af08b770f872d758ec13",
 			"size": [
 				1280,
 				720
@@ -74,7 +74,7 @@
 		},
 		{
 			"file": "caves_route_end_640x360.png",
-			"sha256": "70491bbf6315a800bfab3524ec1900e7a59c574d871915ff1d853078a8afe83d",
+			"sha256": "85260be0262c34cc2322e73ec8c2cff2ca06ea33dbddf19dbda2c973dd7d964d",
 			"size": [
 				640,
 				360
@@ -82,7 +82,7 @@
 		},
 		{
 			"file": "spanish_rewards_1280x720.png",
-			"sha256": "7a0eb5670132b82eb7efb854c679d1c3390dd5481971f9decb3bae496c380209",
+			"sha256": "9a83e9edaa3b1627309a8db117582996ce14e7f67c10a4d2c6a9f846840fed06",
 			"size": [
 				1280,
 				720
@@ -90,7 +90,7 @@
 		},
 		{
 			"file": "spanish_rewards_640x360.png",
-			"sha256": "68f4b524cf79b382e06e6d6fa0bca03b7a5d92d54d42a97ccd0c63fb6f3fb316",
+			"sha256": "350dbc60e3b81ccdab487373bcf0aefee8e99ffc96c81c0e99591bb28192496f",
 			"size": [
 				640,
 				360
@@ -98,7 +98,7 @@
 		},
 		{
 			"file": "castle_destination_1280x720.png",
-			"sha256": "7dfc695a7714a0c32a1d3e8b5d0672b4a00610e2ea82d039dd09dfee33331b77",
+			"sha256": "40cea9076641a2681c13cf78239ed0812eca6dbfabb98d01b7b22c698504cec3",
 			"size": [
 				1280,
 				720
@@ -106,7 +106,7 @@
 		},
 		{
 			"file": "castle_destination_640x360.png",
-			"sha256": "baa5140152fa312b52b88ea64e5b4f3a3555a346fbd7877dc4808cf03549e683",
+			"sha256": "cf86167c7d2a9856549e0a66c8b6f316f324b0e0ca361688eefcc37e135d2dbc",
 			"size": [
 				640,
 				360
@@ -119,13 +119,13 @@
 	"routes": [
 		{
 			"biome": "forest",
-			"camera_delta": 2560.0,
+			"camera_delta": 2559.99975585938,
 			"enemy_roles": [
 				"exploder",
 				"charger",
 				"ranged"
 			],
-			"traversed_x": 3560.583984375,
+			"traversed_x": 3564.91723632813,
 			"width": 3840
 		},
 		{
@@ -136,7 +136,7 @@
 				"chaser",
 				"exploder"
 			],
-			"traversed_x": 4200.9091796875,
+			"traversed_x": 4200.90966796875,
 			"width": 4480
 		},
 		{
@@ -147,7 +147,7 @@
 				"chaser",
 				"controller"
 			],
-			"traversed_x": 3822.5771484375,
+			"traversed_x": 3818.24389648438,
 			"width": 4096
 		}
 	],
@@ -169,7 +169,7 @@
 		"res://scripts/player/player_combat.gd": "140e25141ec17b5a0c8b91a4776780e6287995ed8f9a135542734420c9926910",
 		"res://scripts/player/player_guard.gd": "01a38bf312886ac9cbf7dfaabfbb455d4369a105c5b50950e4adc9997f30b478",
 		"res://scripts/player/player_sprite_presenter.gd": "039b415578c31d23955d912406b1ca8a768fb21c2b3b6722b89dde209ce56056",
-		"res://scripts/roguelike/run_room_controller.gd": "0e8a014e30dc466da505ba49a2a37ada41191b33a91e8984fbc0bcb98b825354",
+		"res://scripts/roguelike/run_room_controller.gd": "f16807e128e865c5262d1362d1c37e5fa5d994598e616aaae988a8a9efdb9ce3",
 		"res://scripts/roguelike/world_layout.gd": "c5f323e37fa82953943cbd80e892f6cb1f5897d6bfb83f42cd3f3bf4bd343163",
 		"res://scripts/save/save_manager.gd": "0b8f3dcf84c6c32d4fea6440f33e6935ff1d36ceeee2b311ffa0b0f2c4155207",
 		"res://scripts/ui/touch_controls.gd": "93e4ca9585e89872cdc96ac00c7f2c8fe3e8e3e0b9d7d65228211dd93035b339",

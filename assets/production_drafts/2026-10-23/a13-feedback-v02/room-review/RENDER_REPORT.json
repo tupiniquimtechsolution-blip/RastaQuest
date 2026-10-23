@@ -27,7 +27,7 @@
 		},
 		{
 			"file": "forest_playable_1280x720.png",
-			"sha256": "3e07981ffbf3192be0d6d8408d1776a321e762650c1de472e929e6ac9c08a98a",
+			"sha256": "0abb8958dcfece12d1da8468e498df59f0a19e58128333ce7b8f66ae9ee6a586",
 			"size": [
 				1280,
 				720
@@ -39,7 +39,7 @@
 		},
 		{
 			"file": "forest_playable_640x360.png",
-			"sha256": "723d870a1fa85f35a750b2bbac9d37aacffe98addd0f36a5083b96487c45f339",
+			"sha256": "274a0c92ebaf884d589d23ccda3554e97c1101a19e1981caaefbca5c63cf2b72",
 			"size": [
 				640,
 				360
@@ -51,7 +51,7 @@
 		},
 		{
 			"file": "forest_portal_1280x720.png",
-			"sha256": "9d7a75584062b11947d38f4a19666887c49b9e7b3ad60fc778dacf98382daca7",
+			"sha256": "07349bebdc411b0c29054bffa7740989f6c8b217d6c0303ad34745a7ec1c2fe4",
 			"size": [
 				1280,
 				720
@@ -63,7 +63,7 @@
 		},
 		{
 			"file": "forest_portal_640x360.png",
-			"sha256": "a9e9daa6880c94038eeabe0c3f1f313ba607559277a2e1bea36f63c035070e3e",
+			"sha256": "cc20f5e60891b4738a93681201519be8ce58670b6b43aaf58aeb3f7f6ab43346",
 			"size": [
 				640,
 				360
@@ -75,7 +75,7 @@
 		},
 		{
 			"file": "castle_playable_1280x720.png",
-			"sha256": "a1f8e83e728d57d016258a6c316a54eecdf693b6b88dcf95e625d408635b1467",
+			"sha256": "4697f423989d2f4a0b39319274c1a4e2ff35bf64885e9ea7d965846efb194ba4",
 			"size": [
 				1280,
 				720
@@ -87,7 +87,7 @@
 		},
 		{
 			"file": "castle_playable_640x360.png",
-			"sha256": "b38bc42d11fd78b2dcb700ff597913001d56891b72ccc2704c592f44ee3737c0",
+			"sha256": "7f6d54898331fef624efd5ecae6c71bfbb7f9e054d80dedde5b3201a793a86e0",
 			"size": [
 				640,
 				360
@@ -99,7 +99,7 @@
 		},
 		{
 			"file": "castle_portal_1280x720.png",
-			"sha256": "92a98b24234db0620914f15dd1f075038b502e690f5290a8a9fff1393916218d",
+			"sha256": "9e3c5a883e8baec7afb3a210a9e7d2aa0af535720ce6dbf54f38f9b0e7e769e3",
 			"size": [
 				1280,
 				720
@@ -111,7 +111,7 @@
 		},
 		{
 			"file": "castle_portal_640x360.png",
-			"sha256": "6655c82110b6a3807abd3a024d6f01ab8419bd38dfe6e0602541b109b292a4bb",
+			"sha256": "e39ec370ed2812ff62be388a87c1e0133cd961dc4203e6577fb93fdd62444661",
 			"size": [
 				640,
 				360
@@ -123,7 +123,7 @@
 		},
 		{
 			"file": "caves_playable_1280x720.png",
-			"sha256": "f88c9252bc419809e51d8deb7a48e78c406b4930a5515aac6effaf967d958312",
+			"sha256": "8fe453c7f8a38ff3b92421fd8335c21a45d9c063dabd87afceb7ac09553f4885",
 			"size": [
 				1280,
 				720
@@ -135,7 +135,7 @@
 		},
 		{
 			"file": "caves_playable_640x360.png",
-			"sha256": "9c2fd8081395c223a594b936508199f5682f042c17c96ce792f3bc07ace6828c",
+			"sha256": "8e8208f77939d35134ee96f45a1b419354c5f948b60cec9f9fa8e7467242da2d",
 			"size": [
 				640,
 				360
@@ -147,31 +147,31 @@
 		},
 		{
 			"file": "caves_portal_1280x720.png",
-			"sha256": "e55e1dcee8123033d1d2b4b1c3bfd1e1916d1a2aab474add28beda4b63fcbca8",
+			"sha256": "b313ad6d3aebde049930137c7e5ee3fbc8a44238e45558f74e1f5982c5eb1854",
 			"size": [
 				1280,
 				720
 			],
 			"state": {
 				"clip": "portal_enter",
-				"frame": 2
+				"frame": 1
 			}
 		},
 		{
 			"file": "caves_portal_640x360.png",
-			"sha256": "9936e9680bd5c1ebd01ab29e22f17427256e05105814d00e34dd004b1c992c5d",
+			"sha256": "71fef7f196d380a3017705b86ffc465ac0cdc60a097da1e52942c88f401fbb65",
 			"size": [
 				640,
 				360
 			],
 			"state": {
 				"clip": "portal_enter",
-				"frame": 2
+				"frame": 1
 			}
 		},
 		{
 			"file": "actual_hit_chain_onkill_1280x720.png",
-			"sha256": "be58110cb47648ab02f5ebbd8afffcec2805e1311e7046db6c26c1cac7282d55",
+			"sha256": "d3ac6df5495e9c6dd52570bd05b1a087f29ed757b3c7fccd34a20fb4bf4c155b",
 			"size": [
 				1280,
 				720
@@ -188,7 +188,7 @@
 		},
 		{
 			"file": "actual_hit_chain_onkill_640x360.png",
-			"sha256": "a9296282149a31813d3782d40ffaca6bfc7a08f79fa10ad227ccbc0833483c66",
+			"sha256": "15531af509e016299110e6973cc875dc9a5ba05b8d6fadf077477520a6429e64",
 			"size": [
 				640,
 				360
@@ -205,7 +205,7 @@
 		},
 		{
 			"file": "ranged_ranged_tell_1280x720.png",
-			"sha256": "787652c0cc4fd6c91b9bf0703cd64615e747e59addaa9054a042f0db6c7f55b9",
+			"sha256": "ea493397207a7937e3747f4224086076bfd84b497f3c3b2c69a5e894bd10d061",
 			"size": [
 				1280,
 				720
@@ -218,7 +218,7 @@
 		},
 		{
 			"file": "ranged_ranged_tell_640x360.png",
-			"sha256": "4567f01fd6aadd7c3d47414e62e59dff4eb9f9d7650dd93bfd7922953ff84b72",
+			"sha256": "32344a11ba076bf94b78014c977d7cfeec0ec2c91158af2d4804ed13fbc6f28d",
 			"size": [
 				640,
 				360
@@ -231,7 +231,7 @@
 		},
 		{
 			"file": "ranged_ranged_active_1280x720.png",
-			"sha256": "7f64fb72a5e6270e309f80bf92a9b57069cb6bd56b790f7f7a164fc0459f89c7",
+			"sha256": "ff0eacbd702b4a1cd3b78b1e5ea31519374929fd826234a491d4740b04a326fa",
 			"size": [
 				1280,
 				720
@@ -244,7 +244,7 @@
 		},
 		{
 			"file": "ranged_ranged_active_640x360.png",
-			"sha256": "d84222b74cee81e792b1009588c187644579562c7984089dd31202b33cdbaf3a",
+			"sha256": "645dc5a67bee20455dc9820190dc4a65fa68ed78614b82f64b4c81e5dd34486b",
 			"size": [
 				640,
 				360
@@ -257,7 +257,7 @@
 		},
 		{
 			"file": "charger_charger_tell_1280x720.png",
-			"sha256": "2b781a66b1e64f91fb90c93d3f0230593d882dddc4a04f9bfef4f0350bf50434",
+			"sha256": "a15b579a66ac3144c843cb990a39b9e60b48a759875d18b0db6bf1dcb42e6368",
 			"size": [
 				1280,
 				720
@@ -270,7 +270,7 @@
 		},
 		{
 			"file": "charger_charger_tell_640x360.png",
-			"sha256": "85777077e6af1f5f6dc85ec6bf03d7e0d249bd9d9ae4f999fdc2ae05a98cfd84",
+			"sha256": "b1e7b25d2c10adc97b8c800bab9368f6a1bb4b09ddb2bde8c0d0d9da15592c31",
 			"size": [
 				640,
 				360
@@ -283,7 +283,7 @@
 		},
 		{
 			"file": "charger_charger_active_1280x720.png",
-			"sha256": "105c5f5f4e55c7d59e90372825ac70d38cda7186548f401d814079b0f097a1bd",
+			"sha256": "fd0c547b1c22a3222088c7cadb7af32d99b906453eb68f6b21c452f81a6ee5ee",
 			"size": [
 				1280,
 				720
@@ -296,7 +296,7 @@
 		},
 		{
 			"file": "charger_charger_active_640x360.png",
-			"sha256": "5e2560142a980621c912badb390f6bd3b9dfb1211960801fd2bab4b659e06658",
+			"sha256": "94422e57cbf70a1c3f461c8c5eb43962fd7e7ed724491e8976ee5ac46b8b42c1",
 			"size": [
 				640,
 				360
@@ -309,7 +309,7 @@
 		},
 		{
 			"file": "controller_controller_tell_1280x720.png",
-			"sha256": "ab470fa86c94865c92e8dc1cf8e53f8401c7e880315c873fb5467136cf956310",
+			"sha256": "0bc1a1bd0c1186532562f73a8bcaced2324416504a68eb5c0e767291c8f93f71",
 			"size": [
 				1280,
 				720
@@ -322,7 +322,7 @@
 		},
 		{
 			"file": "controller_controller_tell_640x360.png",
-			"sha256": "526bc6f236280c9382c11e39a159cd246de5ee5295aa430f7e1b9f3010b8ae15",
+			"sha256": "28e1a5b7d33e753449a03d8f538048d8acfbfeccb0720a9be6ccac05a2e23dd9",
 			"size": [
 				640,
 				360
@@ -335,7 +335,7 @@
 		},
 		{
 			"file": "controller_controller_active_1280x720.png",
-			"sha256": "eaabfb64d3aa78b321d66b49edf8c3a94005d48e751d2af2584bf2026d08d511",
+			"sha256": "0aec24f8c9f21c9d0b369e7e30ac2b5f307b30785a289e14bac0fcab7776468c",
 			"size": [
 				1280,
 				720
@@ -348,7 +348,7 @@
 		},
 		{
 			"file": "controller_controller_active_640x360.png",
-			"sha256": "dfe8f82e7b339fe7ac3952aa40ea831abc03aa766ce4eeb7671ac42967bff70f",
+			"sha256": "4158170a1210f7ceec4fc40332bcf1815a81e7c9f8141b40cf17506cf62f1ba3",
 			"size": [
 				640,
 				360
@@ -361,7 +361,7 @@
 		},
 		{
 			"file": "exploder_exploder_tell_1280x720.png",
-			"sha256": "1e22737e86d8d540d2fa12b549cf2a0860f04d42d56efe25c82f23e255e644cd",
+			"sha256": "583ed042a3366fb1550401efa3f804070551470ad5743f75f3f3767e2c7d7b41",
 			"size": [
 				1280,
 				720
@@ -374,7 +374,7 @@
 		},
 		{
 			"file": "exploder_exploder_tell_640x360.png",
-			"sha256": "34a28396d73bb003d8725466be32f1d508ed11a1330522215faae720c39aaec9",
+			"sha256": "d1c79b3c5ea33de484c86bd3297d5a9b918dc32b671dbb7b137bff5898f06444",
 			"size": [
 				640,
 				360
@@ -387,7 +387,7 @@
 		},
 		{
 			"file": "exploder_exploder_active_1280x720.png",
-			"sha256": "750e0047a8dbd4ef77754cb24abb2c9e23f51cb9b0a9a4602ec5f9cacaf1175f",
+			"sha256": "750e8c2d7862bc24f0000c3b00a1c3a51d9899e82a69f9241637e1fc02afc300",
 			"size": [
 				1280,
 				720
@@ -400,7 +400,7 @@
 		},
 		{
 			"file": "exploder_exploder_active_640x360.png",
-			"sha256": "2e2980f7a04157d7dae2e941fff580253b9179a8eeb0875a2918888e94620828",
+			"sha256": "b054779c1718e7b9cacfaf68dd9c68df5c2ddf2be3cab0e2466f7664e338c558",
 			"size": [
 				640,
 				360
@@ -413,7 +413,7 @@
 		},
 		{
 			"file": "storm_warden_storm_slam_tell_1280x720.png",
-			"sha256": "a0a37937a78e95f8755ad6a5241346bacea37862cfb84fde31eb1d50bcad6525",
+			"sha256": "018afe0f287025eef8203b444f0eee90883b1df67f69ca9bddb137cd8bfa8d37",
 			"size": [
 				1280,
 				720
@@ -426,7 +426,7 @@
 		},
 		{
 			"file": "storm_warden_storm_slam_tell_640x360.png",
-			"sha256": "95f5afa44ad4d2d5af0051d711cbbc011e0d75cba5a4580530cb96af681191bf",
+			"sha256": "d1513743cc8a7cdf44ed79ef2955194e9f3aede3e4fe8f0722564da01ff60583",
 			"size": [
 				640,
 				360
@@ -439,7 +439,7 @@
 		},
 		{
 			"file": "storm_warden_storm_slam_active_1280x720.png",
-			"sha256": "1ff759f653fb60e984349c46c7f4ed87460f8329c479778519e10c17c6a99f13",
+			"sha256": "181654b662682ce3070427700031c4e901530d884ec5f5c895e9f65c27388165",
 			"size": [
 				1280,
 				720
@@ -452,7 +452,7 @@
 		},
 		{
 			"file": "storm_warden_storm_slam_active_640x360.png",
-			"sha256": "3bd0aa38db12667e709219dc245a6cabb15cc15e6f09489948523393a7d732e1",
+			"sha256": "990c109dfa05e92cf2cec9f6f93baa248ad74fbdb61b7fb1253e672c04e7269f",
 			"size": [
 				640,
 				360
@@ -465,7 +465,7 @@
 		},
 		{
 			"file": "storm_warden_chain_burst_tell_1280x720.png",
-			"sha256": "c01ab962d9e076c8c4f6dca0623f4855899eeeb9384281bf971fe95207073909",
+			"sha256": "059647353f8f03f6bd1c6844d1c052d897cee50dd0c2a80ef2c465acca61a754",
 			"size": [
 				1280,
 				720
@@ -478,7 +478,7 @@
 		},
 		{
 			"file": "storm_warden_chain_burst_tell_640x360.png",
-			"sha256": "873b9cdbc176af94a2f9e5153557aa0d2bd7808925b2b269098988dbca22e05b",
+			"sha256": "b67a076deb870c7d74d37e2f3aba6bd96d0d03562b0af1501c51b8219c38161f",
 			"size": [
 				640,
 				360
@@ -491,7 +491,7 @@
 		},
 		{
 			"file": "storm_warden_chain_burst_active_1280x720.png",
-			"sha256": "19ae730d8b7324fb1bebfc56e97e5de4fc05dd6b9f3d9ccd9e9406942679fec9",
+			"sha256": "fc30ac5a02bb49d3ef5c94b71b3f31150a5b7c3d3f458c38ef23461ef1224ebf",
 			"size": [
 				1280,
 				720
@@ -504,7 +504,7 @@
 		},
 		{
 			"file": "storm_warden_chain_burst_active_640x360.png",
-			"sha256": "8ccd511daefae82c390c447349d3cf83aefa9c6f65d91ba3fbe9cd7c4b7bdb08",
+			"sha256": "5041f68cc2edf29e62f33a6f8886c07c2804c31cfb7bc3022ba101d0d69193a8",
 			"size": [
 				640,
 				360
@@ -517,7 +517,7 @@
 		},
 		{
 			"file": "rift_sovereign_rift_slam_tell_1280x720.png",
-			"sha256": "96c1637773312a02d2dcea3354546335a7ee1e33523119d1fab74c8263971aa6",
+			"sha256": "1fc49a3193506b16a3a7ac43a329759583df6df7b8f101066c1ff47525fe10ab",
 			"size": [
 				1280,
 				720
@@ -530,7 +530,7 @@
 		},
 		{
 			"file": "rift_sovereign_rift_slam_tell_640x360.png",
-			"sha256": "a36227235a524a6326f09b6188e76eddddb18db91893698c3e881c1ab2d90d0f",
+			"sha256": "e32e1fb43bf704e54a5c245a8e4b6b75c1e3c8c03c5db2272231932d2bc822a0",
 			"size": [
 				640,
 				360
@@ -543,7 +543,7 @@
 		},
 		{
 			"file": "rift_sovereign_rift_slam_active_1280x720.png",
-			"sha256": "516b86744be74af85dcfc8061242b2be4f0040f91fe32279651f970abbd7f4b0",
+			"sha256": "61ce62a1b30e76fd104912b980a731595da10dd6f0c08f72b7918c2f2123cfc8",
 			"size": [
 				1280,
 				720
@@ -556,7 +556,7 @@
 		},
 		{
 			"file": "rift_sovereign_rift_slam_active_640x360.png",
-			"sha256": "4873066da22a0cbf6be1e8d50bf71ac2d71f18da7c69ba2f70a54b5046dec9b8",
+			"sha256": "815378bc00faf28b70bc65fdffb5ec12665f1d754a97f767166ec0244dc15adc",
 			"size": [
 				640,
 				360
@@ -569,7 +569,7 @@
 		},
 		{
 			"file": "rift_sovereign_portal_burst_tell_1280x720.png",
-			"sha256": "9df0a5598dc7349743b0d0cdf664a2c384f0a1546e3f1e8a124ff2a185c47229",
+			"sha256": "8bd7885434c81e09e6a4b265648e0e878581e3e4dd00a12b9b6e3ca37f4a55d0",
 			"size": [
 				1280,
 				720
@@ -582,7 +582,7 @@
 		},
 		{
 			"file": "rift_sovereign_portal_burst_tell_640x360.png",
-			"sha256": "57908c3575b6e1863a4cb212b451a56cc19d15db26d00c7ca3d5ab93f4260a8d",
+			"sha256": "cc2b1d2e08a9ba7dee807b7f00bc615e853d67773118b49d6ec9da06a2aa3820",
 			"size": [
 				640,
 				360
@@ -595,7 +595,7 @@
 		},
 		{
 			"file": "rift_sovereign_portal_burst_active_1280x720.png",
-			"sha256": "d48d829212300a92a8d9dcb858b089948a0cccb96bf5ecfa61afd28ae5b55d08",
+			"sha256": "3c156799d1e1f880dc85d329a32eb77fb0c73589e0b33332aabaefbfb9313404",
 			"size": [
 				1280,
 				720
@@ -608,7 +608,7 @@
 		},
 		{
 			"file": "rift_sovereign_portal_burst_active_640x360.png",
-			"sha256": "dc2565d8d9bfc73bacdceadd58d6b2b556268451a08dd6be09e1980d1f86b1f1",
+			"sha256": "c64a9d0c8da2566c3cc6ba1157ec8adddbc5f1e7fa7e1c53caf14da34c23f4c0",
 			"size": [
 				640,
 				360
@@ -621,7 +621,7 @@
 		},
 		{
 			"file": "rift_sovereign_fracture_storm_tell_1280x720.png",
-			"sha256": "a589aecea142a820b2ed9398405cb714a0aa59539a17fae5fcdce76f1badeb9a",
+			"sha256": "00d87f639e2bc2e74bf964c515fd39a160ef93d8aa1112620d7a96cf1bb48b64",
 			"size": [
 				1280,
 				720
@@ -634,7 +634,7 @@
 		},
 		{
 			"file": "rift_sovereign_fracture_storm_tell_640x360.png",
-			"sha256": "9e6e631781a4bb89f2787d7db276e27d535e599a4337ebc06c7c5388f43c3e89",
+			"sha256": "60520a3274d9beb5d0c5f622b063513f45797698cf4d623e47fdbc255657568e",
 			"size": [
 				640,
 				360
@@ -647,7 +647,7 @@
 		},
 		{
 			"file": "rift_sovereign_fracture_storm_active_1280x720.png",
-			"sha256": "ace5b33c26cc866d559e1c314bcadf2ca9c001fa28903e1274045de80ba55850",
+			"sha256": "c2b8569cbf11579cc886a08b824af4205262e515ace7b411b7b0d744023d7ff2",
 			"size": [
 				1280,
 				720
@@ -660,7 +660,7 @@
 		},
 		{
 			"file": "rift_sovereign_fracture_storm_active_640x360.png",
-			"sha256": "68257f9102a17dfa5a918ae1081552894b8ed97e218668ee4ec8253bac6e4370",
+			"sha256": "66a3ec938827cc5c1a8589d685fcd3332ea1a266b574fd106167cf62ca980c1b",
 			"size": [
 				640,
 				360
@@ -681,12 +681,12 @@
 		"res://scripts/art/playable_art_layers.gd": "493d36d5005807d8c3684b8fbc260db9cc7fa0288e084d49afa5ecbe62076f06",
 		"res://scripts/art/sprite_burst.gd": "f8080e0efaad8150ceee0d56d27d0bc825ae15d1d01f93de1847045e267fd5d4",
 		"res://scripts/art/visual_catalog.gd": "1012e9d49fd97148cd5c6b6365c9afea7ddb0f2af3c1a8cd0e57ae8af0cacab6",
-		"res://scripts/art/visual_review_probe.gd": "1b0dc81c030a1e8ece51796e3e2e8d41d5d1edd1384ca35399d9319ea4288a8b",
+		"res://scripts/art/visual_review_probe.gd": "61eea5bace111b5e058f7f6157be5a70b7aa03424ffc6d4fb0a33c97cfa4871a",
 		"res://scripts/combat/hostile_attack.gd": "005d2a080a4b7becc84afa8a7568987ad945b2fa6291788a31e5dff1d73340f9",
 		"res://scripts/enemies/hostile_art_presenter.gd": "fd0fdf3bd0c65814345d7256135b7db6434617b1bfd53ed871310c03c50bc864",
 		"res://scripts/player/player_combat.gd": "140e25141ec17b5a0c8b91a4776780e6287995ed8f9a135542734420c9926910",
 		"res://scripts/player/player_sprite_presenter.gd": "039b415578c31d23955d912406b1ca8a768fb21c2b3b6722b89dde209ce56056",
-		"res://scripts/roguelike/run_room_controller.gd": "0e8a014e30dc466da505ba49a2a37ada41191b33a91e8984fbc0bcb98b825354",
+		"res://scripts/roguelike/run_room_controller.gd": "f16807e128e865c5262d1362d1c37e5fa5d994598e616aaae988a8a9efdb9ce3",
 		"res://visual_review/catalog.json": "698a0f65dd9affc63d10f6450b24f3d0f5179580b3238fb1d69cc316a71939d8"
 	}
 }

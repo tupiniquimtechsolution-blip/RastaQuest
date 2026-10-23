@@ -41,7 +41,7 @@ var _portal_entry_id: int = 0
 
 func _ready() -> void:
 	_destination = Label.new()
-	_destination.position = Vector2(-110,-112)
+	_destination.position = Vector2(-110,-210)
 	portal.add_child(_destination)
 	portal.portal_entered.connect(_on_portal_entered)
 	player.get_node("Health").died.connect(_on_player_died)

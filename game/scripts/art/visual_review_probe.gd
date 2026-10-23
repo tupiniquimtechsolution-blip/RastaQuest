@@ -103,8 +103,7 @@ func exercise(role: String,ratio: float) -> bool:
 	if not require(tell_seen and active_seen and room.player.get_node("Health").health<100,role+" actual phase/damage missing"):
 		return false
 	actor.get_node("Health").take_damage(1000,true)
-	# New 50ms anticipation plus two physics frames before the hit/FX assertion.
-	await create_timer(.14).timeout
+	await create_timer(.08).timeout
 	if not require(is_instance_valid(actor) and sprite.animation==&"death",role+" bounded death absent"):
 		return false
 	await create_timer(.36).timeout
@@ -183,14 +182,30 @@ func _run() -> void:
 	combat.electrical_proc_chance=1
 	combat.chain_lightning_enabled=true
 	combat.on_kill_aoe_enabled=true
+	var observation := {"primary_dead":false,"secondary_health":10.0,"kinds":[]}
+	# Observe the accepted hit after PlayerCombat applies damage and effects.
+	# Sampling a fixed wall-clock instant can miss short effects on CI.
+	combat.hitbox.landed_hit.connect(func(target, _payload):
+		if target != victims[0].get_node("Hurtbox"):
+			return
+		var observed_kinds: Array = []
+		for effect in get_nodes_in_group("review_effect"):
+			observed_kinds.append(effect.kind)
+		observation.primary_dead = victims[0].get_node("Health").dead
+		observation.secondary_health = victims[1].get_node("Health").health
+		observation.kinds = observed_kinds
+	)
 	if not require(combat.try_attack(),"actual primary attack rejected"):
 		return
-	await create_timer(.08).timeout
-	var kinds: Array = []
-	for fx in get_nodes_in_group("review_effect"):kinds.append(fx.kind)
-	if not require(victims[0].get_node("Health").dead and victims[1].get_node("Health").health<10 and "hit" in kinds and "electric_chain" in kinds and "electric_onkill" in kinds,"accepted primary/secondary hit FX binding missing"):
+	for _i in range(30):
+		await physics_frame
+		await process_frame
+		if observation.primary_dead:
+			break
+	var kinds: Array = observation.kinds
+	if not require(observation.primary_dead and observation.secondary_health<10 and "hit" in kinds and "electric_chain" in kinds and "electric_onkill" in kinds,"accepted primary/secondary hit FX binding missing: "+str(observation)):
 		return
-	await snapshot("actual_hit_chain_onkill",{"effect_kinds":kinds,"secondary_health":victims[1].get_node("Health").health})
+	await snapshot("actual_hit_chain_onkill",{"effect_kinds":kinds,"secondary_health":observation.secondary_health})
 	await create_timer(.35).timeout
 	if not require(get_nodes_in_group("review_effect").is_empty(),"one-shot impact effects survived lifetime"):
 		return
