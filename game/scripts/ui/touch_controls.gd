@@ -51,8 +51,8 @@ func release_held_actions() -> void:
 	var scene := get_tree().current_scene
 	if scene != null:
 		var player := scene.get_node_or_null("Player")
-		if player != null and player.has_node("PlayerGuard"):
-			player.get_node("PlayerGuard").reset()
+		if player != null and not player.is_queued_for_deletion() and player.has_method("cancel_action_inputs"):
+			player.cancel_action_inputs()
 
 func _on_resize() -> void:
 	release_held_actions()

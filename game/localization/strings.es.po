@@ -167,7 +167,7 @@ msgid "upgrade_quick_hands_title"
 msgstr "Manos rápidas"
 
 msgid "upgrade_quick_hands_description"
-msgstr "Menor intervalo entre ataques"
+msgstr "Golpes de hacha más rápidos"
 
 msgid "upgrade_heavy_axe_title"
 msgstr "Hacha pesada"
@@ -284,7 +284,7 @@ msgid "room_cave_shrine"
 msgstr "Santuario sepultado"
 
 msgid "review_version"
-msgstr "Revisión visual a13.2 — aprobación comercial pendiente"
+msgstr "Revisión visual a13.3 — aprobación comercial pendiente"
 
 msgid "review_art"
 msgstr "REVISIÓN VISUAL • arte candidata"
@@ -297,3 +297,6 @@ msgstr "Restaura toda la vida. No aumenta la vida máxima."
 
 msgid "health_status"
 msgstr "Vida: %.1f / %d"
+
+msgid "health_restored"
+msgstr "Vida restaurada"

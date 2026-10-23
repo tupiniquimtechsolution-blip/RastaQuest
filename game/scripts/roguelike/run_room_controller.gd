@@ -9,7 +9,7 @@ var world_width := 3840
 var platform_rects: Array[Rect2] = []
 var _room_id := ""
 var _status_key := "encounter_status"
-var _life: Label
+var _life: Control
 var _destination: Label
 
 const FINAL_BOSS_DEPTH: int = 18
@@ -41,10 +41,10 @@ var _portal_entry_resolved: bool = false
 var _portal_entry_id: int = 0
 
 func _ready() -> void:
-	_life = Label.new()
+	_life = preload("res://scripts/ui/player_vitals.gd").new()
 	_life.position = Vector2(24,48)
 	$Hud.add_child(_life)
-	player.get_node("Health").health_changed.connect(_refresh_life)
+	_life.bind_health(player.get_node("Health"))
 	_destination = Label.new()
 	_destination.position = Vector2(-110,-210)
 	portal.add_child(_destination)
@@ -190,10 +190,13 @@ func _on_upgrade_selected(index: int) -> void:
 		return
 	RunManager.advance_encounter()
 	_apply_run_modifiers()
+	var healed := false
 	if upgrade.effect_key==&"heal":
-		player.health.heal_full()
+		healed = player.health.heal_full()
 	player.respawn(false)
 	_start_encounter()
+	if healed:
+		get_node("/root/ArtCatalog").burst("reward",player.global_position,self,56,.4)
 
 func _on_player_died() -> void:
 	if _returning_after_death:
@@ -258,4 +261,4 @@ func _refresh_language() -> void:
 
 func _refresh_life() -> void:
 	if is_instance_valid(_life):
-		_life.text = tr("health_status") % [player.health.health,player.health.max_health]
+		_life.refresh()

@@ -5,6 +5,7 @@ const PATH := "res://visual_review/catalog.json"
 var catalog: Dictionary = {}
 var _textures: Dictionary = {}
 var _frames: Dictionary = {}
+var _effect_bounds: Dictionary = {}
 var installed := 0
 
 func enabled() -> bool:
@@ -18,7 +19,7 @@ func _ready() -> void:
 		push_error("Invalid visual-review catalog")
 		return
 	catalog = parsed
-	get_tree().node_added.connect(func(node): _install.call_deferred(node))
+	get_tree().node_added.connect(func(node): _install_id.call_deferred(node.get_instance_id()))
 
 func texture(file: String) -> Texture2D:
 	if catalog.is_empty() or file.contains("..") or file.begins_with("/"):
@@ -43,8 +44,13 @@ func frames(key: String, spec: Dictionary) -> SpriteFrames:
 	_frames[key] = result
 	return result
 
+func _install_id(instance_id: int) -> void:
+	var node := instance_from_id(instance_id) as Node
+	if is_instance_valid(node) and not node.is_queued_for_deletion():
+		_install(node)
+
 func _install(node: Node) -> void:
-	if not is_instance_valid(node) or not node.is_inside_tree() or catalog.is_empty() or node.get_script()==null:
+	if not is_instance_valid(node) or node.is_queued_for_deletion() or not node.is_inside_tree() or catalog.is_empty() or node.get_script()==null:
 		return
 	var path: String = node.get_script().resource_path
 	if path.ends_with("/player_controller.gd"):
@@ -145,7 +151,10 @@ func apply_environment(room: Node, biome: String) -> void:
 func _hide_environment_placeholders(room: Node) -> void:
 	room.get_node("Backdrop").hide()
 	room.get_node("Ground/GroundVisual").hide()
-	for platform in room.get_node("RoutePlatforms").get_children():
+	var platforms := room.get_node_or_null("RoutePlatforms")
+	if platforms==null:
+		return
+	for platform in platforms.get_children():
 		if platform.has_node("PlatformVisual"):
 			platform.get_node("PlatformVisual").hide()
 
@@ -155,6 +164,16 @@ func effect_frame(kind: String, elapsed: float, lifetime: float = .24) -> Textur
 	var keys: Array = catalog.effects[kind]
 	var index := 1 if SettingsManager.reduced_flashes_enabled() and keys.size()>1 else clampi(int(elapsed/maxf(.01,lifetime)*keys.size()),0,keys.size()-1)
 	return texture(keys[index])
+
+func effect_region(texture_value: Texture2D) -> Rect2:
+	# Cache one CPU alpha-bounds query per native frame, not once per draw.
+	if texture_value==null:
+		return Rect2()
+	var id := texture_value.get_instance_id()
+	if not _effect_bounds.has(id):
+		var source := texture_value.get_image()
+		_effect_bounds[id] = Rect2(source.get_used_rect()) if source!=null else Rect2(Vector2.ZERO,texture_value.get_size())
+	return _effect_bounds[id]
 
 func burst(kind: String, at: Vector2, context: Node, diameter := 64.0, lifetime := .24, end := Vector2.INF) -> Node:
 	if catalog.is_empty() or not catalog.effects.has(kind) or not is_instance_valid(context):

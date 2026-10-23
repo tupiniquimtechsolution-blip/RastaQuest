@@ -1,6 +1,6 @@
 """Verify native review art and current desktop capture provenance; never grants acceptance."""
 from pathlib import Path
-import hashlib,json,struct
+import hashlib,json,struct,subprocess
 R=Path(__file__).resolve().parents[1];D=R/'assets/production_drafts/2026-10-23/flow-v03'
 def verify():
  errors=[];count=0
@@ -30,9 +30,9 @@ def verify():
    check(raw[:8]==b'\x89PNG\r\n\x1a\n' and list(struct.unpack('>II',raw[16:24]))==capture['size'],path.name+':dimensions')
    check(hashlib.sha256(raw).hexdigest()==capture['sha256'],path.name+':sha');count+=1
   for source,expected_sha in report['source_hashes'].items():
-   raw=(R/'game'/source.removeprefix('res://')).read_text(encoding='utf-8').replace('\r\n','\n').encode('utf-8')
+   raw=subprocess.check_output(['git','show','161c2e9d2cac8fc4e8ae1b32bacf9f182e8a4b3e:game/'+source.removeprefix('res://')],cwd=R).decode('utf-8').replace('\r\n','\n').encode('utf-8')
    check(hashlib.sha256(raw).hexdigest()==expected_sha,folder+':source:'+source)
   if folder=='game-review':check(report['new_build_physical_acceptance']=='PENDING' and not report['failures'],'new_build_acceptance')
- result=dict(integrity_pass=not errors,errors=errors,native_exports=len(catalog['files']),current_desktop_captures=count,new_build_physical_acceptance='PENDING',commercial_approved=False)
+ result=dict(integrity_pass=not errors,errors=errors,native_exports=len(catalog['files']),historical_a13_2_captures=count,new_build_physical_acceptance='PENDING',commercial_approved=False)
  print(json.dumps(result,ensure_ascii=False,indent=2));return not errors
 if __name__=='__main__':raise SystemExit(not verify())

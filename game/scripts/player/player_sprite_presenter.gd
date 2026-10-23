@@ -10,6 +10,10 @@ const MAX_DEATH_PRESENTATION_SECONDS := 1.5
 ## Frame-aligned independent layer, not a concept sheet or a gameplay collider.
 @export var dropped_weapon_texture: Texture2D
 var _sprite: AnimatedSprite2D
+var _combat: Node
+var _run_resume_remaining := 0.0
+var _run_frame := 0
+var _run_progress := 0.0
 var _player: Node
 var _dropped: Sprite2D
 var _drop_tween: Tween
@@ -23,6 +27,8 @@ func set_visual_size(multiplier: float) -> void:
 
 func _ready() -> void:
 	_player = get_parent()
+	_combat = _player.get_node("PlayerCombat")
+	_combat.presentation_advanced.connect(_sync_attack_pose)
 	_sprite = AnimatedSprite2D.new()
 	_sprite.name = "ProductionSprite"
 	_sprite.centered = true
@@ -98,7 +104,14 @@ func _show_state(animation_name: StringName) -> void:
 		if clip in [&"attack_axe_2",&"attack_axe_3"] and not sprite_frames.has_animation(clip):
 			clip = &"attack_axe"
 		if sprite_frames.has_animation(clip):
+			if _sprite.animation==&"run" and clip!=&"run":
+				_run_frame = _sprite.frame
+				_run_progress = _sprite.frame_progress
+				_run_resume_remaining = .12
 			_sprite.play(clip)
+			if clip==&"run" and _run_resume_remaining>0.0:
+				_sprite.set_frame_and_progress(mini(_run_frame,sprite_frames.get_frame_count(clip)-1),_run_progress)
+			_sync_attack_pose()
 	# Animation completion deliberately never changes hitboxes, damage, state,
 	# portal transitions or actor lifetime; gameplay remains authoritative.
 
@@ -121,10 +134,33 @@ func begin_portal_presentation(seconds: float) -> void:
 	# available for a complete older body packet without the new portal clip.
 	# Completion never advances rooms or grants rewards.
 
-func _process(_delta: float) -> void:
+func _sync_attack_pose() -> void:
+	if not _sprite.visible or _combat.current_attack_animation()==&"":
+		return
+	var clip := _sprite.animation
+	if clip not in [&"attack_axe",&"attack_axe_2",&"attack_axe_3",&"attack_axe_air"]:
+		return
+	_sprite.pause()
+	var total := 0.0
+	for i in range(sprite_frames.get_frame_count(clip)):
+		total += sprite_frames.get_frame_duration(clip,i)
+	var time: float = _combat.presentation_fraction()*total
+	for i in range(sprite_frames.get_frame_count(clip)):
+		var duration := sprite_frames.get_frame_duration(clip,i)
+		if time<duration or i==sprite_frames.get_frame_count(clip)-1:
+			_sprite.set_frame_and_progress(i,clampf(time/duration,0.0,1.0))
+			return
+		time -= duration
+
+func _process(delta: float) -> void:
+	_run_resume_remaining = maxf(0.0,_run_resume_remaining-delta)
 	if not _sprite.visible or _sprite.animation==&"portal_enter":
 		return
-	_sprite.speed_scale = clampf(absf(_player.velocity.x)/260.0,.25,2.0) if _sprite.animation==&"run" else 1.0
+	if _sprite.animation==&"run":
+		var cadence := clampf(absf(_player.velocity.x)/260.0,.25,2.0)
+		_sprite.speed_scale = move_toward(_sprite.speed_scale,cadence,8.0*delta)
+	elif _combat.current_attack_animation()==&"":
+		_sprite.speed_scale = 1.0
 
 func _on_frame_changed() -> void:
 	if not _sprite.visible or _sprite.animation != &"death" or _sprite.frame < 1:

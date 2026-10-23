@@ -54,7 +54,7 @@ upgrade_chain_storm_description,Electrical procs chain to nearby enemies,Descarg
 upgrade_thunder_fall_title,Thunder Fall,Queda do trovão,Caída del trueno
 upgrade_thunder_fall_description,Kills release an electrical burst,Derrotar um inimigo libera uma descarga,Derrotar a un enemigo libera una descarga
 upgrade_quick_hands_title,Quick Hands,Mãos rápidas,Manos rápidas
-upgrade_quick_hands_description,Shorter axe attack cooldown,Menor intervalo entre ataques,Menor intervalo entre ataques
+upgrade_quick_hands_description,Faster axe attacks,Golpes de machado mais rápidos,Golpes de hacha más rápidos
 upgrade_heavy_axe_title,Heavy Axe,Machado pesado,Hacha pesada
 upgrade_heavy_axe_description,+1 axe damage,+1 de dano do machado,+1 de daño del hacha
 upgrade_wind_dance_title,Wind Dance,Dança do vento,Danza del viento
@@ -93,8 +93,9 @@ room_cave_crystal,Fractured Crystals,Cristais fraturados,Cristales fracturados
 room_cave_echo,Hall of Echoes,Salão dos ecos,Salón de ecos
 room_cave_mouth,Echoing Mouth,Entrada dos ecos,Entrada de ecos
 room_cave_shrine,Buried Shrine,Santuário soterrado,Santuario sepultado
-review_version,Visual review a13.2 — commercial approval pending,Revisão visual a13.2 — aprovação comercial pendente,Revisión visual a13.2 — aprobación comercial pendiente
+review_version,Visual review a13.3 — commercial approval pending,Revisão visual a13.3 — aprovação comercial pendente,Revisión visual a13.3 — aprobación comercial pendiente
 review_art,VISUAL REVIEW • candidate art,REVISÃO VISUAL • arte candidata,REVISIÓN VISUAL • arte candidata
 upgrade_restoration_title,Restoration,Restauração,Restauración
 upgrade_restoration_description,Restore all health. Does not increase maximum health.,Restaura toda a vida. Não aumenta a vida máxima.,Restaura toda la vida. No aumenta la vida máxima.
 health_status,Health: %.1f / %d,Vida: %.1f / %d,Vida: %.1f / %d
+health_restored,Health restored,Vida restaurada,Vida restaurada
