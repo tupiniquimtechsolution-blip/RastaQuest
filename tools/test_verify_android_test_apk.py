@@ -15,14 +15,14 @@ native-code: 'arm64-v8a'
 
 class TestApkMetadata(unittest.TestCase):
     def test_landscape_sensor_sdk_output_formats(self):
-        for value in ("6", "0x6", "(type 0x10)0x6"):
+        for value in ("11", "0xb", "(type 0x10)0xb"):
             with self.subTest(value=value):
-                validate_orientation("A: android:screenOrientation(0x0101001e)=" + value, 6)
+                validate_orientation("A: android:screenOrientation(0x0101001e)=" + value, 11)
 
     def test_fixed_missing_or_mixed_orientation_rejected(self):
-        for xml in ("", "A: android:screenOrientation(0x0101001e)=0", "A: android:screenOrientation=6\nA: android:screenOrientation=1", "A: android:screenOrientation=unknown"):
+        for xml in ("", "A: android:screenOrientation(0x0101001e)=0", "A: android:screenOrientation=11\nA: android:screenOrientation=1", "A: android:screenOrientation=unknown"):
             with self.subTest(xml=xml), self.assertRaises(ValueError):
-                validate_orientation(xml, 6)
+                validate_orientation(xml, 11)
 
     def test_reference_studies_are_rejected_in_all_packages(self):
         for path in ("assets/production_drafts/study.png", "base/assets/production_drafts/study.png",

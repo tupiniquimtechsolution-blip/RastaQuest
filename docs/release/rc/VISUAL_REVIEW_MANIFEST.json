@@ -4,7 +4,7 @@
   "version": "1.0.0-a13.1",
   "version_code": 1000003,
   "save_schema": 2,
-  "screen_orientation_android": 6,
+  "screen_orientation_android": 11,
   "application_id": "com.tupiniquimtechsolution.rastaquest.a13review",
   "architectures": ["armeabi-v7a", "arm64-v8a"],
   "min_sdk": 24,
