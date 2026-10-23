@@ -1,0 +1,26 @@
+[
+  {
+    "file": "assets\\production_drafts\\2026-10-08\\model-v02\\protagonist-lateral-study-v02.png",
+    "sha256": "2cbf685f21f6efb8044501dad5ee464ecd0ce48214ce8b9cd8ee4fdffcd291b8",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_bbox": [
+      0,
+      40,
+      1220,
+      1254
+    ],
+    "visible_colors": 96101,
+    "partial_alpha": true,
+    "errors": [
+      "frame_size_mismatch",
+      "palette_exceeds_limit",
+      "partial_alpha_requires_cleanup"
+    ],
+    "technical_export_pass": false,
+    "human_acceptance": "pending",
+    "rights_clearance": "pending"
+  }
+]
