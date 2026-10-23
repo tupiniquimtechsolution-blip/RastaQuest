@@ -1,0 +1,4414 @@
+{
+  "classification": "REMAINING_ART_V01_AUTHORING_REVIEW_NOT_FINAL",
+  "sources": [
+    {
+      "file": "sources/castle_background.png",
+      "sha256": "8c527162a720ac5ac8f2e2fbe07624e3218d21d1a9326065a747689aa1b8bd82",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "sources/castle_modules.png",
+      "sha256": "4fc75de8f5f1e00338bf2179fd547fc4283ca2213018e0d0601ea6474e9579d9",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/castle_terrain.png",
+      "sha256": "ddd6a4dede7e92ca8f9935069ee057a3f19fd9e9e8517bc4ed61cd2778b3698d",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "sources/caves_background.png",
+      "sha256": "9e8a62b906ec525fe03f614f45bfdf898d468181e82f497e8b97578fc8b563a0",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "sources/caves_modules.png",
+      "sha256": "31054947b4d0392f9cdfc79679152143c80140803b0e2b96794500db1ab3ee96",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/caves_terrain.png",
+      "sha256": "247e2d6ce1b82cff6f2f8f63a99e7b383609a370576a0b77650f30024ccc99e7",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "sources/charger_body.png",
+      "sha256": "e52b3ec32d2491b3e2fdf28c1aa639aa87cd09998759017ae6c1987d614f9105",
+      "size": [
+        1774,
+        887
+      ]
+    },
+    {
+      "file": "sources/controller_body.png",
+      "sha256": "f3dcdf9441f09da5ef88b5191872ba1f1c7f588e99915291cb1bbc0055a12901",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/electric_shared.png",
+      "sha256": "80474f3e7a55c5f6fa45a0ff610615278d6f269d2c2edcd0535f9fa0d810094e",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/exploder_body.png",
+      "sha256": "23bae89fb98a59f775b05353f9a6843f52fc0a688acde296eb80ce6293b85342",
+      "size": [
+        1774,
+        887
+      ]
+    },
+    {
+      "file": "sources/hub_background.png",
+      "sha256": "7694c51af640b1e144604a8bedfd5967f34382ea6ee868624d8a98a66cd01bdf",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "sources/hub_background_corrected.png",
+      "sha256": "dc6f05b7cea2e91d24a78a1c9ad1130d7368a3d60ca2a1ef49450149a6cf230a",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "sources/hub_modules.png",
+      "sha256": "90443d9db84dc004ec043af29766017b096880d96356f0bb1e456af20d75b57a",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/hub_terrain.png",
+      "sha256": "e9008c5ba28dd7b6e76c3cd5b8077fa13c5ad32e4a4edc50e0401d228f98c7de",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "sources/portal_body.png",
+      "sha256": "304e30406a0f5fd3eddf1c9bbaabca8c03d2e30fd9aaea78168b5938ddcf0d41",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "sources/ranged_body.png",
+      "sha256": "f45a603f9e637292603841ef8c9e841d4b052d29b1aabd7d758c4fe56e8c9a5e",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/rift_sovereign_body.png",
+      "sha256": "4215a965ebc539179808803a23be79dbf592ed562a25aab3c43899fd6b3fa70b",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/shared_fx.png",
+      "sha256": "78edcf2cc0ef3cd2b3bf35fc90e0824c7b815621beee925eaeaf431983eb905b",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "sources/storm_warden_body.png",
+      "sha256": "28858b95c5aa36533518820956d9dde4ea84cb313383e3bacc84c056b37869d5",
+      "size": [
+        1536,
+        1024
+      ]
+    }
+  ],
+  "files": [
+    {
+      "file": "actors/ranged/idle_01.png",
+      "sha256": "5936fa0680988ee93e27a857019ceace48584be4222e5841f504abe105e8cfd7",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/ranged/move_01.png",
+      "sha256": "9214f52f3d1d555fb8099d90cd80e753e1d7764826ea602f80a7165e94207e4b",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/ranged/move_02.png",
+      "sha256": "bcabb4eaa8adab80f9e00fe9255f7219b92c5bc9d0e9eaa62e9c01300196d438",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/ranged/tell_01.png",
+      "sha256": "8be232a8715b0c0407de66a9911a5b330aaf3f116108b0673856ac4e7e113fce",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/ranged/attack_01.png",
+      "sha256": "26aa53f56e77e4ee162ee5c55f6fa2f09b4c90f485e3cb6742bbfad71d8e7550",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/ranged/hurt_01.png",
+      "sha256": "3d665945bda563f9ed05bced3c0156c6b08ec963cbdb476b89c4c19811e4b66f",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/ranged/death_01.png",
+      "sha256": "9d1c915aec7c5630d975bdc678c266f160d6b9350e73fcf6dcda2e8aa4aad21b",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/ranged/death_02.png",
+      "sha256": "4ce14902f87437cbc4c0a25061da209f7c24067ee084032e971927be2f2e269c",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "reviews/ranged_keys.png",
+      "sha256": "c3a2b46bfd4485e2495c4f7135d7378d352acff7227c8a8877b9d93e71ad1442",
+      "size": [
+        1024,
+        512
+      ],
+      "kind": "source_preview"
+    },
+    {
+      "file": "actors/charger/idle_01.png",
+      "sha256": "a240bf6e6b7050ace36557e04f28b86a791de493fd59b75770f6bd88f74dc522",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/charger/move_01.png",
+      "sha256": "800b65d2b4a6088faec455afb009e03918d7ea4e2de8585e0ca95dfc5a7e44a6",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/charger/move_02.png",
+      "sha256": "5b77b325b41335fd522c85e4985c56e69cf2e4d6203cdfb079bffab9586d8ce2",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/charger/tell_01.png",
+      "sha256": "6d6fe32fe920621ccb276256b228c374b40825533dfe221ce62f3e12a9e10aab",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/charger/attack_01.png",
+      "sha256": "8019034d512221fe7df829ab593db245e6a5a73d54704316c038120c7847a7c9",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/charger/hurt_01.png",
+      "sha256": "9b7524d1f43aa332bf2ccf53b54fe14779ee97d0d641fa6117e34e59e4efc1cf",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/charger/death_01.png",
+      "sha256": "af4bd62f330be98864da43a14baed933b6992b72807a57c48fee6ab36a97e381",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/charger/death_02.png",
+      "sha256": "1d746cd178938531b589ee19a47ec85e18cd4bc9855beecb88e58058904f81c8",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "reviews/charger_keys.png",
+      "sha256": "e51e03d4b7f03e8b0867b67d5c7cc9400d267fe7fdaf125b824ae8bd3ca94b82",
+      "size": [
+        1024,
+        512
+      ],
+      "kind": "source_preview"
+    },
+    {
+      "file": "actors/controller/idle_01.png",
+      "sha256": "a7b75071e4e7956de345a0f08246f177ba351c2590ca6e49e025b09a1da5d649",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/controller/move_01.png",
+      "sha256": "cf593cf9eac57b170d628fb2b90ded38fbc2fbda7972325d458ec3f5a7d93cc3",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/controller/move_02.png",
+      "sha256": "65529f521412b5231d7a08288dfa0c4487848b021d28da0044c9a91b01cab3b2",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/controller/tell_01.png",
+      "sha256": "64208aee878797ea74991ef79e4d4065bd36af427dae0aeaff8af7840d591cae",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/controller/attack_01.png",
+      "sha256": "8c553d8e5a37afefaa90d8a9144fb5659659ac300cbb444e37eabf4e412af4e5",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/controller/hurt_01.png",
+      "sha256": "f71badcd1cfa34f9ec0d73dbda12c27b00aecd58ccfdc84d436d95e5ca2a395b",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/controller/death_01.png",
+      "sha256": "b590f071926d8b5758cd01a0d11087cd8744a388811cfc5f9326c37531ea6f6f",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/controller/death_02.png",
+      "sha256": "365d0185515a92785ad0abcf1e2087bee60242b1e74ec2e7398e88e545db6d05",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "reviews/controller_keys.png",
+      "sha256": "0ab9d692cadb573bc44a8bd158a609aa9e1facbef596017a11251826c95e3d6a",
+      "size": [
+        1024,
+        512
+      ],
+      "kind": "source_preview"
+    },
+    {
+      "file": "actors/exploder/idle_01.png",
+      "sha256": "f965c88ef8807cf3955ed9466ad6aa28983113e4bef75dd02fdee81566da7a80",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/exploder/move_01.png",
+      "sha256": "9db7fc725d8568101ee18fbe2304650dcfb9470b85756cb1e0de0d93c45f8b76",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/exploder/move_02.png",
+      "sha256": "23ca97bc08aa9dfe836b4e4bf35b5ccd243350aa38a62b8f4d91b88341d0a758",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/exploder/tell_01.png",
+      "sha256": "fe99456a842abbac8bb745f36dc931242251a91a7c87e80f15cb35965f96ac83",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/exploder/attack_01.png",
+      "sha256": "08110d9af2ceda624910918472e8a91caff49bfc42bc9a91dec01ba21bdf826a",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/exploder/hurt_01.png",
+      "sha256": "0b9bb1341aee6b09acfdd9e68df9bc48e0780e89be6167505a4b43a0b25df9c7",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/exploder/death_01.png",
+      "sha256": "85e90eb38b302bef62dd2ca1fbac962802aa239158e23b16ecd375f8873793e4",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/exploder/death_02.png",
+      "sha256": "6151880ca037d30a2a8b9972069663bf140ae4a4b36f9894c5d2861eef0850be",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "reviews/exploder_keys.png",
+      "sha256": "9371ddb73d392052ffa4b94bc509b6a13dc51315acf90d732c3a41f4bf0236c5",
+      "size": [
+        1024,
+        512
+      ],
+      "kind": "source_preview"
+    },
+    {
+      "file": "actors/storm_warden/idle_01.png",
+      "sha256": "430bce6cc97aeadb295e25cf2e7ab821d2fb89f912fa48ed253b406bd66d13ce",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/storm_warden/idle_02.png",
+      "sha256": "576fbbf8a8a27b899cd96bb3fec2990feb712b97386acda60faa60ce4c1192a5",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/storm_warden/move_01.png",
+      "sha256": "4046e1a13861605c404358ffe1bde52250ab1498831f8b9e8ad861c37fb4eaf4",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/storm_warden/move_02.png",
+      "sha256": "9984a165ae095c37bb9fe0c8366edda45128fb7a3939f6637ee9007e8d0f7e78",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/storm_warden/tell_storm_slam_01.png",
+      "sha256": "e7f209543ec1e00f87db970be5f2e4b0faa1d610dc7a9d318e60b28f4b637270",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/storm_warden/attack_storm_slam_01.png",
+      "sha256": "46e35e3d01ba3aa33fc5707479a67907e148e50557da6b0119099ac34e7ba968",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/storm_warden/tell_chain_burst_01.png",
+      "sha256": "370995917829183ca52276cb13fed7d3d34c7c2f8f5691deb9c3bdc37890a35d",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/storm_warden/attack_chain_burst_01.png",
+      "sha256": "06c026aae90318abf5a7b55794da742d6b481ec5284c6f499943670946361c0e",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/storm_warden/hurt_01.png",
+      "sha256": "4c616a1024e7823ee9b98633d9265bbfdc00db1c6dbd27a7c70773e7b952b027",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/storm_warden/hurt_02.png",
+      "sha256": "eeb25d53a96f255f4a289995aeef7076c906bf2bbefb2c10dbbac6052b5e5d42",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/storm_warden/death_01.png",
+      "sha256": "6e87c34933f751ade1ec0dd29e16666d047e70df173c685c37db25d0aaad89cc",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/storm_warden/death_02.png",
+      "sha256": "475471538252184752c65c11fc681c98b84abe36667c34f66537903ffa20039e",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "reviews/storm_warden_keys.png",
+      "sha256": "2e67309f2b27c01a8d1a0b74b02dd1f0691e74d2930d0ed147bdb6a5c9d5d22b",
+      "size": [
+        1024,
+        768
+      ],
+      "kind": "source_preview"
+    },
+    {
+      "file": "actors/rift_sovereign/idle_01.png",
+      "sha256": "0fe44f48bcccf47cbcb21f765655332e9acd8a56c90d854d15909396898f7f7e",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/rift_sovereign/move_01.png",
+      "sha256": "bbb3f907cd976d4b9d391a84fce66f5fee0cee317f02847eb27777cce5e3d940",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/rift_sovereign/tell_rift_slam_01.png",
+      "sha256": "68d7cc99b9e0f724288241b9b6645de90b0cd97fdc0b12ecc71409076fd4fa56",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/rift_sovereign/attack_rift_slam_01.png",
+      "sha256": "16ef37d082f3b740dc7911758f058f0a2615f2d6de8d6734ea0e4c8f9dcd1e7b",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/rift_sovereign/tell_portal_burst_01.png",
+      "sha256": "0b927f30e68fee9ca5b0ff199e04d3d0e4336ae1e918273413a028f345afc9cf",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/rift_sovereign/attack_portal_burst_01.png",
+      "sha256": "9f17c1804421a80ec6c1983d963b7a0e62239899376d88d613473c31e674a7bc",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/rift_sovereign/tell_fracture_storm_01.png",
+      "sha256": "79ba224badba09c4722aa56836b963d362c21fbefe3623e406347b96eada83ec",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/rift_sovereign/attack_fracture_storm_01.png",
+      "sha256": "98468a17d19373e8bc1457f6b2c63e29ba3fef359391e91f8df7aabecafaa079",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/rift_sovereign/hurt_01.png",
+      "sha256": "696a804596f2f1fe2b84aa20ad36087c968b791d828c2c95320c6309a5d4e5d5",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/rift_sovereign/hurt_02.png",
+      "sha256": "fac2b41904c321f5e9b6a2f6cad084c2eb5aadf906c538531117f938bb79cd41",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/rift_sovereign/death_01.png",
+      "sha256": "dd017f011385ca878208b5e8dfe0af8087de2c24b426f3376fca63f1e5633a61",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "actors/rift_sovereign/death_02.png",
+      "sha256": "c7dcccac52729f26b2081edda45a23bcbb5796670ae89eb7066935b4065d1993",
+      "size": [
+        512,
+        512
+      ],
+      "palette_limit": 32,
+      "kind": "body"
+    },
+    {
+      "file": "reviews/rift_sovereign_keys.png",
+      "sha256": "55cbaae22cc9c79dcd620fba1e26cebb5b3bdc2f9b77524f0d2ed0bbb16d1d72",
+      "size": [
+        1024,
+        768
+      ],
+      "kind": "source_preview"
+    },
+    {
+      "file": "environments/castle/background.png",
+      "sha256": "ff547b9e9b9f7aaac1942e9162901e525a83e2b39d0dfd8d0a8ded9f26a43838",
+      "size": [
+        1280,
+        720
+      ],
+      "kind": "background",
+      "palette_limit": 64
+    },
+    {
+      "file": "environments/castle/prop_01.png",
+      "sha256": "e56f51cd45151817104a207e6d73d85f02dc07c1aa41005e3d5566da560d5034",
+      "size": [
+        64,
+        128
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/castle/prop_02.png",
+      "sha256": "e34780f824faf8b5d1c88e104cd3645a0ea96d931d9224815e371a8747574058",
+      "size": [
+        64,
+        64
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/castle/prop_03.png",
+      "sha256": "9590f79ffa09ed11a9fecf496bd5be47f9c05fc9fb600f56a7c1fcea425064f1",
+      "size": [
+        64,
+        48
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/castle/prop_04.png",
+      "sha256": "325f0364b637fc640783f4fdcaf934ffb514aa562d82078a646388cfe8a5a933",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/castle/prop_05.png",
+      "sha256": "ad89aa570eb8ab90a84f0849bfdf1a0aa13888bb14868c5910a0cf4c3402ad51",
+      "size": [
+        96,
+        64
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/castle/terrain_top_1.png",
+      "sha256": "eee436755b5a48464fdfb55cc5800d52ed27857b5e71b133a72b1d18d22db184",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_top_2.png",
+      "sha256": "0e2d38aa18e7a3a707bcacec29422c4800f23ee274d6d739556c32795c1e0c8b",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_top_3.png",
+      "sha256": "1f8037babe7d875a257a6e686b9ebe4cfbe408120c69a625ac451c98af479efb",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_soil_1.png",
+      "sha256": "e9745c36b5263323057c286339d5cc0ef233b607b5d3356595dc610f8bc8b086",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_soil_2.png",
+      "sha256": "11e8ef42f33a6a4add690ce2710f507dd984e6f8193cae0c9c8125e037a7a5b3",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_soil_3.png",
+      "sha256": "3c98e3441554d7fefd808cf9939c0c4eef9799549786ab1b143aba142c9c4a6e",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_top_left.png",
+      "sha256": "240db41217bce23e69b6542d70dc69f3bfee6e513b0e9d0e4a00cc353184243e",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_top_right.png",
+      "sha256": "f74dc5b88111b69f8a13ddbccb7ff04b7d50579dbb25abf5feade142d256e358",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_side_left.png",
+      "sha256": "116106a422d7427484eb902557d7bf31fda85b4c9ca9870f5f4f5c3d464dbae0",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_side_right.png",
+      "sha256": "703659bd723feb519fbdbab09ba8b50044da6010253a367d2125e27f98b73430",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_bottom.png",
+      "sha256": "8e95b09b03227628f08eb1123868877fbba4d313f9ab57a73f335f49cd277f7b",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_bottom_left.png",
+      "sha256": "da0e4af919b467d4fd012d2984426fb070249d6773dcd2c333dac37035add00f",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_bottom_right.png",
+      "sha256": "da0a05327444a991892b1a094f07c9f1b59816eb73fd661bd4f679210800ca33",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_isolated.png",
+      "sha256": "ce949f89aa869b4938420b158abee0200e8df1e8a24f7add2566edbb5f92354e",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_inner_left.png",
+      "sha256": "5c23014ef87a0625d0c48ceea93c698e2705a37fedf8c7a2aba24b6c80b515d2",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/castle/terrain_inner_right.png",
+      "sha256": "72c1a2191562bc02d5af1c3bed9045f6c79256d7390ed5597b34c0747833b061",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/background.png",
+      "sha256": "ea40fd1062a06ce90a3c9ab95e24ddc41d8e431c56d1070e1c2c1d443b15d3a9",
+      "size": [
+        1280,
+        720
+      ],
+      "kind": "background",
+      "palette_limit": 64
+    },
+    {
+      "file": "environments/caves/prop_01.png",
+      "sha256": "b60d5d65383d1327dee6c5de8356624ae8998d0ed23e7220c9940d31619eafa6",
+      "size": [
+        64,
+        128
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/caves/prop_02.png",
+      "sha256": "01d9c5dc72016919ddb8087910e5ce3ef10ca721d3853d2ae6a1484db5bbdfc3",
+      "size": [
+        64,
+        64
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/caves/prop_03.png",
+      "sha256": "3d02ec0fd064ecb471461e9372543b3bc0d5b464f269202fa149b4c4aa6690ad",
+      "size": [
+        64,
+        48
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/caves/prop_04.png",
+      "sha256": "2a831cf470828aa7f8fd5c5db8ca511f7fa3ea23bbc44032355b2345ff3ad129",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/caves/prop_05.png",
+      "sha256": "e82aa2389c19aec340aabbe96aa59100618ce2f2ec4b3ff086dc1bcecca2254d",
+      "size": [
+        96,
+        64
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/caves/terrain_top_1.png",
+      "sha256": "c3a7f80b33e14058d19a93d39392e1ed5d90b7f690b8f4cc77357fcea6841b5d",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_top_2.png",
+      "sha256": "4c9e2abbcc0d475bfe7cacf506fb5b8d674f493e93ff3dca13d0a0f74b852fe1",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_top_3.png",
+      "sha256": "a779f7fa44737c5964426f35acce953a9b0105bf5fac05e4d79375f337bcb556",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_soil_1.png",
+      "sha256": "a5aadbe5c5e5786d78e326abde21fff1f53aaacab9465534c100365e4cc4c31c",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_soil_2.png",
+      "sha256": "d03785b2d6975cddb05377775a1b1c5ca5fb5b8d53bcbbea00b752194a1c0660",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_soil_3.png",
+      "sha256": "6afa7ce28c3e9fe37c81d746b4b5f9a7d75213a95c53ec05049a671d9f9986d8",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_top_left.png",
+      "sha256": "9ec5a8b711e74d8fce16239e0e6d653184c7f2338bbde028ead15a6f7b4724bb",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_top_right.png",
+      "sha256": "0a24e38e066c0b47ca06fef285a655786caf6dc7d4856eae5774ac311d46f686",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_side_left.png",
+      "sha256": "18eef7261ed4831b0d1625f78741ecadccf486a37cb53cbdcc6c66059eac5b8e",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_side_right.png",
+      "sha256": "846f2c998ec4afa02e64e99b6c298d8a16e3adc2865aba93fbf1485425a038eb",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_bottom.png",
+      "sha256": "02d03ddd062c632dcfe6f484e2040359565c146cd23cc11dd787ea57945f9c70",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_bottom_left.png",
+      "sha256": "d39da144b11b154c65ef9cc3e785dd414deb0c7c7ce9891f13e7a993f5aab544",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_bottom_right.png",
+      "sha256": "590f74f3162108275186a4e366a43fd0a476ac01823227ffccfbce16e9ac6409",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_isolated.png",
+      "sha256": "1f9e5004407b30a07de10024e60c08ee338e5f4086bbd1a326a0ffb37b27822c",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_inner_left.png",
+      "sha256": "55490883a7992a218bf2734ac1e7383d4924ceedb76f62005e9b9f234c01464e",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/caves/terrain_inner_right.png",
+      "sha256": "0788f7f826df5fa98ab75d8f83aa83f7cf7bc5d87ecd8ae01d7c7fbf147cdc3d",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/background.png",
+      "sha256": "2b0f761bb3b542f40f7a71c3981f49a8fab0ace6a836494cf8840852615aee05",
+      "size": [
+        1280,
+        720
+      ],
+      "kind": "background",
+      "palette_limit": 64
+    },
+    {
+      "file": "environments/hub/prop_01.png",
+      "sha256": "11e6515110b2d550856e7dd07f78fd66bed0b3c1f3083204e3422f2885519794",
+      "size": [
+        64,
+        128
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/hub/prop_02.png",
+      "sha256": "f59f8cd37b553a8ea5ae94897a2d91e94baf63b99e6c261d0ebc7e8ef5687413",
+      "size": [
+        64,
+        64
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/hub/prop_03.png",
+      "sha256": "819b7f317ba8cc1204061bad755574294d423544e6039b7222564f62dcc3b1ff",
+      "size": [
+        64,
+        48
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/hub/prop_04.png",
+      "sha256": "5f9f66c04969b508252a8ade952a604b5aba956134a92988fb34932c742ae0de",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/hub/prop_05.png",
+      "sha256": "bb1edf6bd6160005f32e17ef5ca0d4791e215b39fbc084a5b52dd3572d66fe75",
+      "size": [
+        96,
+        64
+      ],
+      "palette_limit": 24,
+      "kind": "prop"
+    },
+    {
+      "file": "environments/hub/terrain_top_1.png",
+      "sha256": "b1b23884c95e0c46617e5f195411a58d5ea2c7a3936d7a616e7dbc5551c97363",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_top_2.png",
+      "sha256": "be9f7b8c05a8aa2986f4fb450600a468a36e6952b5f9d86c98f03a9e474081ee",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_top_3.png",
+      "sha256": "fb0eec57ed8d9412741774caf337d5bbdf71a0c7a3565c3b8fa49e55d6319649",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_soil_1.png",
+      "sha256": "b5072ffbfb4572849f9f8f3a4e20f4464087666aa440b478cfe5ded17771152d",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_soil_2.png",
+      "sha256": "ebd5e71b386ad99a5506c656176a4158555c1ac902b7b319ef7e544347bbe9f2",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_soil_3.png",
+      "sha256": "9a5e3f1b192acf4cbce5c60716070b8efa57a56ec8798cd9519eb0b7d56a24a2",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_top_left.png",
+      "sha256": "f2360476776d4bb38821068e375fb937c8ad5cd308e21f911ac1c902ebb238de",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_top_right.png",
+      "sha256": "e9125853449114532fb1adca4db820b9495a98e4f09ca2bacea127983850bd87",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_side_left.png",
+      "sha256": "55bd821e9d5bc2816b914fac4f571c63ed30ed186cb0f224c8cddc1d5bf76491",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_side_right.png",
+      "sha256": "56a019279c7c46e1c5afa8b2245b5da8e00f4d8a1870ae2589991021f1574750",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_bottom.png",
+      "sha256": "3d7ae0678866e5b9c04df1d9c3504db8034be56e10541c5cf38a51c3ae3a2301",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_bottom_left.png",
+      "sha256": "8ffb1e381b95de735dddfe6741af5e220c7c132f2b97733a94d09bfce10d514b",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_bottom_right.png",
+      "sha256": "75ac8c183b8e771d55416090dbfb6e45dc4d03a1922f18d00b65f30d9361a1d1",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_isolated.png",
+      "sha256": "221119969ada38c37ec705a6181b79c846638f8f913ef1cc7886ea44691f5554",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_inner_left.png",
+      "sha256": "be2fc43e37b48e5550b5b7c23cc230bb22ff9967b0940b8baab353e44238cc9c",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "environments/hub/terrain_inner_right.png",
+      "sha256": "5bdf0604351480a94dbfbb331ddf9a5f96001ac3fbe5d05b90a80f3639fe0128",
+      "size": [
+        32,
+        32
+      ],
+      "palette_limit": 24,
+      "kind": "terrain"
+    },
+    {
+      "file": "effects/hit_01.png",
+      "sha256": "02de7855981bc0e9928ff2a8e14fbb7446f2d7d13fed4690f9c715ac8f9a276a",
+      "size": [
+        128,
+        128
+      ],
+      "palette_limit": 12,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/hit_02.png",
+      "sha256": "d2caa62daf0d56d484de4e76ba0cbf01f189a0bb93d90b0b9da40c9bf0bdb811",
+      "size": [
+        128,
+        128
+      ],
+      "palette_limit": 12,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/hit_03.png",
+      "sha256": "526c33382a413b0dd7bfab1043295935e827e069001871f458b05dcd2c6f6170",
+      "size": [
+        128,
+        128
+      ],
+      "palette_limit": 12,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/hostile_projectile_01.png",
+      "sha256": "648b766502773bfc7231ba467f7f1fa5e69aa59c5d530b27deb525d363ad82c2",
+      "size": [
+        128,
+        128
+      ],
+      "palette_limit": 12,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/hostile_projectile_02.png",
+      "sha256": "ec5cc94d0fc282f98bfbfcdadcaa5b389921e4bb15cca5c1ff41f151430076b8",
+      "size": [
+        128,
+        128
+      ],
+      "palette_limit": 12,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/hostile_projectile_03.png",
+      "sha256": "941274070e416d78f2edcd39d303583a321e4a6cd41fc29956f14efa67a70471",
+      "size": [
+        128,
+        128
+      ],
+      "palette_limit": 12,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/hostile_area_01.png",
+      "sha256": "852bd2145bbcbc4422975ac00e3b92d193c538980985f7fc0a1210c42252e368",
+      "size": [
+        128,
+        128
+      ],
+      "palette_limit": 12,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/hostile_area_02.png",
+      "sha256": "6003642a27bdf474e06122aa0124a43696e71072d51d4a2ff9de9e266ea8ab8a",
+      "size": [
+        128,
+        128
+      ],
+      "palette_limit": 12,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/hostile_area_03.png",
+      "sha256": "e0cd1465623ddfcabdfee52fe8f8e65b8a9bbbb7f9f96a08c856eeb818397acb",
+      "size": [
+        128,
+        128
+      ],
+      "palette_limit": 12,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/reward_01.png",
+      "sha256": "e331f27b05b67c1fc2169c25c7cefa3dc6b7ac1915c0d5bb52024dfea1014259",
+      "size": [
+        128,
+        128
+      ],
+      "palette_limit": 12,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/reward_02.png",
+      "sha256": "38edd765d693208fe062e33a11c0b5e6c212c729e1d3ac8ea50584faa1938191",
+      "size": [
+        128,
+        128
+      ],
+      "palette_limit": 12,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/reward_03.png",
+      "sha256": "35322a56735710746e2f686057784b2259729b47a24d3b71329fb10772709726",
+      "size": [
+        128,
+        128
+      ],
+      "palette_limit": 12,
+      "kind": "fx"
+    },
+    {
+      "file": "reviews/SHARED_FX_REVIEW.png",
+      "sha256": "86deacca198157d3b279292b56771d9c0a042b87f953e2eee50b84497d3bc938",
+      "size": [
+        768,
+        1024
+      ],
+      "kind": "source_preview"
+    },
+    {
+      "file": "effects/electric_chain_01.png",
+      "sha256": "e2b667e8ff72fe2950187717ac49921e3c75e1760a0d8cface7b65bf958897b2",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 8,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/electric_chain_02.png",
+      "sha256": "0fc415f8652b49fe1358343ee7faece8172f9c4bfd6a1ba18329cda0824b8da3",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 8,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/electric_chain_03.png",
+      "sha256": "1a36c7516059b52d9a126d5fe2e1065e229db269e834614ef9c319eb3cc8e94a",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 8,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/electric_area_01.png",
+      "sha256": "a7363ea858430b43be6aab0a78b14b373629d2d083df39d8aa38943f2461a21e",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 8,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/electric_area_02.png",
+      "sha256": "19b786fb010159fa1d850f403b52f33fb917a2f9ae9c4bd02ec92b2bb1337736",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 8,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/electric_area_03.png",
+      "sha256": "5968dcac6eb561d833422444366767fe50833551fe0de6da01a6ca3b8a58b145",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 8,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/electric_onkill_01.png",
+      "sha256": "55e610799b94db1c24717d4c36d23a7ede4d41e669ed45f6aba2e5b2b197072e",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 8,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/electric_onkill_02.png",
+      "sha256": "0b15550545654e20b19c69a8c9eacdeba60e48a0039efe126706e0d230d23c80",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 8,
+      "kind": "fx"
+    },
+    {
+      "file": "effects/electric_onkill_03.png",
+      "sha256": "0980ab8f08f88a5da93c0a5a2feb81128cb58d87c092495b4863f31f974645b6",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 8,
+      "kind": "fx"
+    },
+    {
+      "file": "reviews/ELECTRIC_FX_REVIEW.png",
+      "sha256": "76aec2c27153221474777f4266c61c4030d288fef060458816d886808e404b70",
+      "size": [
+        768,
+        768
+      ],
+      "kind": "source_preview"
+    },
+    {
+      "file": "portal/portal_enter_01_body.png",
+      "sha256": "820d0c02c7d9226acb48caa3f663045fda45dfdc44c6012864bc93c433232f04",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "portal_body"
+    },
+    {
+      "file": "portal/portal_enter_01_weapon.png",
+      "sha256": "22ac18e55b535b981f9740a32e7c3058672ab036901023645c5ec4f272b4dd8c",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "portal_weapon"
+    },
+    {
+      "file": "portal/portal_enter_01_combined.png",
+      "sha256": "6392810e25741f59e5ba97022a1f7c1cf87169d63e2e640e5ddf091398ff2819",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "portal_combined"
+    },
+    {
+      "file": "portal/portal_enter_02_body.png",
+      "sha256": "736647448cbd3c2532b4ec88a354f150acb79e64571a4b66f17a813f453b290f",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "portal_body"
+    },
+    {
+      "file": "portal/portal_enter_02_weapon.png",
+      "sha256": "5c0877c6b442b2922132c7c48993c3d9bc7712d688a4fa7acf1b2c47be0a8f7c",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "portal_weapon"
+    },
+    {
+      "file": "portal/portal_enter_02_combined.png",
+      "sha256": "30958511ed18b9775a27d632c347ff84a5b6784da6de63d27e2bd1dc54fa462e",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "portal_combined"
+    },
+    {
+      "file": "portal/portal_enter_03_body.png",
+      "sha256": "699d57467d0bbd2378a57247fecc68c2878d83482ca61bb8f93a50da25eed896",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "portal_body"
+    },
+    {
+      "file": "portal/portal_enter_03_weapon.png",
+      "sha256": "c17beb1f7572f6c838b296b6db30244ba538279b6f19824c6edf5d6a4269f341",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "portal_weapon"
+    },
+    {
+      "file": "portal/portal_enter_03_combined.png",
+      "sha256": "5865db45245fade6dd3fb73d1d53e34cf3d6a87aea9e47e4598ec55002fac29f",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "portal_combined"
+    },
+    {
+      "file": "portal/portal_enter_04_body.png",
+      "sha256": "0e18d56a559c82e5a4efed202f1f6ef05f2d2c39e7f5188e6920b3c4975d6ee8",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "portal_body"
+    },
+    {
+      "file": "portal/portal_enter_04_weapon.png",
+      "sha256": "678356a2b51d5c3a94cbd6b81722daf673efee92ea5c3b29c70ab95bb4d97c19",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "portal_weapon"
+    },
+    {
+      "file": "portal/portal_enter_04_combined.png",
+      "sha256": "82f3a01d4d5a425a963d1220bc37c57a268c46b715ddb26657fbd84dcaaec185",
+      "size": [
+        256,
+        256
+      ],
+      "palette_limit": 32,
+      "kind": "portal_combined"
+    },
+    {
+      "file": "reviews/PORTAL_BODY_REVIEW.png",
+      "sha256": "460688451f1d537703898934b74b64ce8ce7b764c81c09053e778559d6e36738",
+      "size": [
+        1024,
+        256
+      ],
+      "kind": "source_preview"
+    },
+    {
+      "file": "reviews/UNLABELED_SILHOUETTES.png",
+      "sha256": "f9c3a22c8ed1191d8635a9e5903bd8ec230c50b59bf1a63791eb315d99ea34f2",
+      "size": [
+        1280,
+        360
+      ],
+      "kind": "unlabeled_source_comparison"
+    }
+  ],
+  "actors": {
+    "ranged": {
+      "canvas": 256,
+      "origin": [
+        128,
+        128
+      ],
+      "feet_edge_y": 186,
+      "render_scale": 0.5,
+      "palette_hex": [
+        "d8ab6a",
+        "ab7a50",
+        "98613f",
+        "75594a",
+        "7a4535",
+        "5f4243",
+        "4d424a",
+        "483844",
+        "6b2a38",
+        "462c3f",
+        "3d2c3d",
+        "3c213f",
+        "312a30",
+        "2e202f",
+        "2d1a38",
+        "261a1c",
+        "9a0c4a",
+        "73073c",
+        "5d073a",
+        "4e0724",
+        "25142e",
+        "210e28",
+        "221416",
+        "230913",
+        "170e17",
+        "110c11",
+        "110810",
+        "0f060d",
+        "070507",
+        "0a0208",
+        "040204",
+        "010001"
+      ],
+      "source_scale": 0.3950617283950617,
+      "frames": [
+        {
+          "clip": "idle",
+          "index": 1,
+          "file": "actors/ranged/idle_01.png",
+          "duration_ms": 240,
+          "source_crop": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "source_scale": 0.3950617283950617,
+          "offset": [
+            44,
+            3
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            60,
+            58,
+            196,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 1,
+          "file": "actors/ranged/move_01.png",
+          "duration_ms": 120,
+          "source_crop": [
+            384,
+            0,
+            768,
+            512
+          ],
+          "source_scale": 0.3950617283950617,
+          "offset": [
+            48,
+            3
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            57,
+            62,
+            199,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 2,
+          "file": "actors/ranged/move_02.png",
+          "duration_ms": 120,
+          "source_crop": [
+            768,
+            0,
+            1130,
+            512
+          ],
+          "source_scale": 0.3950617283950617,
+          "offset": [
+            53,
+            3
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            61,
+            64,
+            196,
+            186
+          ]
+        },
+        {
+          "clip": "tell",
+          "index": 1,
+          "file": "actors/ranged/tell_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            1152,
+            0,
+            1536,
+            512
+          ],
+          "source_scale": 0.3950617283950617,
+          "offset": [
+            57,
+            3
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            57,
+            71,
+            199,
+            186
+          ]
+        },
+        {
+          "clip": "attack",
+          "index": 1,
+          "file": "actors/ranged/attack_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            0,
+            512,
+            384,
+            1024
+          ],
+          "source_scale": 0.3950617283950617,
+          "offset": [
+            40,
+            35
+          ],
+          "removed_fragment_pixels": 1,
+          "alpha_bbox": [
+            54,
+            75,
+            192,
+            186
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 1,
+          "file": "actors/ranged/hurt_01.png",
+          "duration_ms": 100,
+          "source_crop": [
+            440,
+            512,
+            768,
+            1024
+          ],
+          "source_scale": 0.3950617283950617,
+          "offset": [
+            64,
+            35
+          ],
+          "removed_fragment_pixels": 4,
+          "alpha_bbox": [
+            64,
+            71,
+            193,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 1,
+          "file": "actors/ranged/death_01.png",
+          "duration_ms": 120,
+          "source_crop": [
+            768,
+            512,
+            1130,
+            1024
+          ],
+          "source_scale": 0.3950617283950617,
+          "offset": [
+            50,
+            35
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            63,
+            89,
+            193,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 2,
+          "file": "actors/ranged/death_02.png",
+          "duration_ms": 200,
+          "source_crop": [
+            1152,
+            512,
+            1536,
+            1024
+          ],
+          "source_scale": 0.3950617283950617,
+          "offset": [
+            55,
+            35
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            55,
+            143,
+            201,
+            186
+          ]
+        }
+      ],
+      "clips": {
+        "idle": 1,
+        "move": 2,
+        "tell": 1,
+        "attack": 1,
+        "hurt": 1,
+        "death": 2
+      },
+      "patterns": {
+        "ranged": [
+          "tell",
+          "attack"
+        ]
+      },
+      "final_motion_acceptance": "PENDING"
+    },
+    "charger": {
+      "canvas": 256,
+      "origin": [
+        128,
+        128
+      ],
+      "feet_edge_y": 186,
+      "render_scale": 0.5,
+      "palette_hex": [
+        "d6a079",
+        "b2765c",
+        "b56049",
+        "7d5e55",
+        "b34539",
+        "85433a",
+        "6a423e",
+        "4d3f45",
+        "ae2429",
+        "742628",
+        "592b2d",
+        "571c22",
+        "42252b",
+        "40181f",
+        "2e1f28",
+        "2b151d",
+        "ad071a",
+        "610811",
+        "371018",
+        "39050c",
+        "250f19",
+        "1c0e17",
+        "200b0f",
+        "1f0409",
+        "140a10",
+        "13050b",
+        "0c0509",
+        "100206",
+        "090105",
+        "050103",
+        "020105",
+        "010001"
+      ],
+      "source_scale": 0.3187250996015936,
+      "frames": [
+        {
+          "clip": "idle",
+          "index": 1,
+          "file": "actors/charger/idle_01.png",
+          "duration_ms": 240,
+          "source_crop": [
+            0,
+            0,
+            444,
+            446
+          ],
+          "source_scale": 0.3187250996015936,
+          "offset": [
+            56,
+            51
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            66,
+            106,
+            191,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 1,
+          "file": "actors/charger/move_01.png",
+          "duration_ms": 120,
+          "source_crop": [
+            444,
+            0,
+            887,
+            446
+          ],
+          "source_scale": 0.3187250996015936,
+          "offset": [
+            56,
+            51
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            69,
+            104,
+            188,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 2,
+          "file": "actors/charger/move_02.png",
+          "duration_ms": 120,
+          "source_crop": [
+            887,
+            0,
+            1330,
+            446
+          ],
+          "source_scale": 0.3187250996015936,
+          "offset": [
+            58,
+            51
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            66,
+            104,
+            191,
+            186
+          ]
+        },
+        {
+          "clip": "tell",
+          "index": 1,
+          "file": "actors/charger/tell_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            1330,
+            0,
+            1774,
+            446
+          ],
+          "source_scale": 0.3187250996015936,
+          "offset": [
+            59,
+            51
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            67,
+            111,
+            190,
+            186
+          ]
+        },
+        {
+          "clip": "attack",
+          "index": 1,
+          "file": "actors/charger/attack_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            0,
+            446,
+            530,
+            887
+          ],
+          "source_scale": 0.3187250996015936,
+          "offset": [
+            32,
+            72
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            42,
+            110,
+            198,
+            186
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 1,
+          "file": "actors/charger/hurt_01.png",
+          "duration_ms": 100,
+          "source_crop": [
+            530,
+            446,
+            920,
+            887
+          ],
+          "source_scale": 0.3187250996015936,
+          "offset": [
+            67,
+            72
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            71,
+            110,
+            186,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 1,
+          "file": "actors/charger/death_01.png",
+          "duration_ms": 120,
+          "source_crop": [
+            920,
+            446,
+            1330,
+            887
+          ],
+          "source_scale": 0.3187250996015936,
+          "offset": [
+            63,
+            71
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            70,
+            116,
+            186,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 2,
+          "file": "actors/charger/death_02.png",
+          "duration_ms": 200,
+          "source_crop": [
+            1330,
+            446,
+            1774,
+            887
+          ],
+          "source_scale": 0.3187250996015936,
+          "offset": [
+            59,
+            71
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            61,
+            141,
+            196,
+            186
+          ]
+        }
+      ],
+      "clips": {
+        "idle": 1,
+        "move": 2,
+        "tell": 1,
+        "attack": 1,
+        "hurt": 1,
+        "death": 2
+      },
+      "patterns": {
+        "charger": [
+          "tell",
+          "attack"
+        ]
+      },
+      "final_motion_acceptance": "PENDING"
+    },
+    "controller": {
+      "canvas": 256,
+      "origin": [
+        128,
+        128
+      ],
+      "feet_edge_y": 186,
+      "render_scale": 0.5,
+      "palette_hex": [
+        "d6aa70",
+        "a87645",
+        "985f36",
+        "6c5a33",
+        "864c2b",
+        "684828",
+        "544c2d",
+        "48452b",
+        "7f3324",
+        "583421",
+        "493624",
+        "482a1c",
+        "3a3624",
+        "362c20",
+        "39261c",
+        "2b251c",
+        "9b0d17",
+        "541314",
+        "341e17",
+        "35100f",
+        "241d18",
+        "221814",
+        "21130f",
+        "220a0a",
+        "191513",
+        "160f0d",
+        "140b09",
+        "0d0a08",
+        "110505",
+        "090404",
+        "050303",
+        "020001"
+      ],
+      "source_scale": 0.3140877598152425,
+      "frames": [
+        {
+          "clip": "idle",
+          "index": 1,
+          "file": "actors/controller/idle_01.png",
+          "duration_ms": 240,
+          "source_crop": [
+            0,
+            0,
+            384,
+            515
+          ],
+          "source_scale": 0.3140877598152425,
+          "offset": [
+            69,
+            31
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            85,
+            50,
+            171,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 1,
+          "file": "actors/controller/move_01.png",
+          "duration_ms": 120,
+          "source_crop": [
+            384,
+            0,
+            768,
+            515
+          ],
+          "source_scale": 0.3140877598152425,
+          "offset": [
+            66,
+            31
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            80,
+            56,
+            176,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 2,
+          "file": "actors/controller/move_02.png",
+          "duration_ms": 120,
+          "source_crop": [
+            768,
+            0,
+            1152,
+            515
+          ],
+          "source_scale": 0.3140877598152425,
+          "offset": [
+            68,
+            31
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            77,
+            55,
+            179,
+            186
+          ]
+        },
+        {
+          "clip": "tell",
+          "index": 1,
+          "file": "actors/controller/tell_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            1152,
+            0,
+            1536,
+            515
+          ],
+          "source_scale": 0.3140877598152425,
+          "offset": [
+            76,
+            31
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            80,
+            60,
+            177,
+            186
+          ]
+        },
+        {
+          "clip": "attack",
+          "index": 1,
+          "file": "actors/controller/attack_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            0,
+            515,
+            430,
+            1024
+          ],
+          "source_scale": 0.3140877598152425,
+          "offset": [
+            50,
+            53
+          ],
+          "removed_fragment_pixels": 7,
+          "alpha_bbox": [
+            55,
+            93,
+            185,
+            186
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 1,
+          "file": "actors/controller/hurt_01.png",
+          "duration_ms": 100,
+          "source_crop": [
+            442,
+            515,
+            730,
+            1024
+          ],
+          "source_scale": 0.3140877598152425,
+          "offset": [
+            83,
+            53
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            83,
+            62,
+            173,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 1,
+          "file": "actors/controller/death_01.png",
+          "duration_ms": 120,
+          "source_crop": [
+            768,
+            515,
+            1100,
+            1024
+          ],
+          "source_scale": 0.3140877598152425,
+          "offset": [
+            76,
+            51
+          ],
+          "removed_fragment_pixels": 3,
+          "alpha_bbox": [
+            76,
+            72,
+            180,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 2,
+          "file": "actors/controller/death_02.png",
+          "duration_ms": 200,
+          "source_crop": [
+            1152,
+            515,
+            1536,
+            1024
+          ],
+          "source_scale": 0.3140877598152425,
+          "offset": [
+            69,
+            50
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            69,
+            152,
+            188,
+            186
+          ]
+        }
+      ],
+      "clips": {
+        "idle": 1,
+        "move": 2,
+        "tell": 1,
+        "attack": 1,
+        "hurt": 1,
+        "death": 2
+      },
+      "patterns": {
+        "controller": [
+          "tell",
+          "attack"
+        ]
+      },
+      "final_motion_acceptance": "PENDING"
+    },
+    "exploder": {
+      "canvas": 256,
+      "origin": [
+        128,
+        128
+      ],
+      "feet_edge_y": 186,
+      "render_scale": 0.5,
+      "palette_hex": [
+        "cda795",
+        "a77d6e",
+        "a7675c",
+        "79625c",
+        "a74849",
+        "6d4841",
+        "584444",
+        "503737",
+        "9f2534",
+        "50292a",
+        "3f2a2d",
+        "3e1f22",
+        "34262a",
+        "2b2329",
+        "2b1d21",
+        "26191d",
+        "e1082b",
+        "ae0523",
+        "8b0620",
+        "6f061d",
+        "570719",
+        "410915",
+        "281418",
+        "2b070f",
+        "1a1315",
+        "180c0f",
+        "100e0f",
+        "0d090b",
+        "120408",
+        "090406",
+        "060304",
+        "010101"
+      ],
+      "source_scale": 0.4025157232704403,
+      "frames": [
+        {
+          "clip": "idle",
+          "index": 1,
+          "file": "actors/exploder/idle_01.png",
+          "duration_ms": 240,
+          "source_crop": [
+            0,
+            0,
+            444,
+            448
+          ],
+          "source_scale": 0.4025157232704403,
+          "offset": [
+            38,
+            14
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            55,
+            58,
+            201,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 1,
+          "file": "actors/exploder/move_01.png",
+          "duration_ms": 120,
+          "source_crop": [
+            444,
+            0,
+            887,
+            448
+          ],
+          "source_scale": 0.4025157232704403,
+          "offset": [
+            46,
+            14
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            56,
+            55,
+            201,
+            186
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 2,
+          "file": "actors/exploder/move_02.png",
+          "duration_ms": 120,
+          "source_crop": [
+            887,
+            0,
+            1330,
+            448
+          ],
+          "source_scale": 0.4025157232704403,
+          "offset": [
+            38,
+            14
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            54,
+            58,
+            202,
+            186
+          ]
+        },
+        {
+          "clip": "tell",
+          "index": 1,
+          "file": "actors/exploder/tell_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            1330,
+            0,
+            1774,
+            448
+          ],
+          "source_scale": 0.4025157232704403,
+          "offset": [
+            36,
+            14
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            60,
+            66,
+            196,
+            186
+          ]
+        },
+        {
+          "clip": "attack",
+          "index": 1,
+          "file": "actors/exploder/attack_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            0,
+            448,
+            444,
+            887
+          ],
+          "source_scale": 0.4025157232704403,
+          "offset": [
+            34,
+            33
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            43,
+            61,
+            213,
+            186
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 1,
+          "file": "actors/exploder/hurt_01.png",
+          "duration_ms": 100,
+          "source_crop": [
+            444,
+            448,
+            887,
+            887
+          ],
+          "source_scale": 0.4025157232704403,
+          "offset": [
+            32,
+            33
+          ],
+          "removed_fragment_pixels": 13,
+          "alpha_bbox": [
+            47,
+            61,
+            210,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 1,
+          "file": "actors/exploder/death_01.png",
+          "duration_ms": 120,
+          "source_crop": [
+            887,
+            448,
+            1330,
+            887
+          ],
+          "source_scale": 0.4025157232704403,
+          "offset": [
+            44,
+            33
+          ],
+          "removed_fragment_pixels": 19,
+          "alpha_bbox": [
+            44,
+            85,
+            212,
+            186
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 2,
+          "file": "actors/exploder/death_02.png",
+          "duration_ms": 200,
+          "source_crop": [
+            1330,
+            448,
+            1774,
+            887
+          ],
+          "source_scale": 0.4025157232704403,
+          "offset": [
+            41,
+            34
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            41,
+            113,
+            215,
+            186
+          ]
+        }
+      ],
+      "clips": {
+        "idle": 1,
+        "move": 2,
+        "tell": 1,
+        "attack": 1,
+        "hurt": 1,
+        "death": 2
+      },
+      "patterns": {
+        "exploder": [
+          "tell",
+          "attack"
+        ]
+      },
+      "final_motion_acceptance": "PENDING"
+    },
+    "storm_warden": {
+      "canvas": 512,
+      "origin": [
+        256,
+        256
+      ],
+      "feet_edge_y": 368,
+      "render_scale": 0.5,
+      "palette_hex": [
+        "edbe4e",
+        "c07d38",
+        "a76028",
+        "725a4d",
+        "8f471b",
+        "694733",
+        "58453d",
+        "4a4140",
+        "7c3415",
+        "5d321f",
+        "493730",
+        "492d21",
+        "3d3433",
+        "353133",
+        "382b28",
+        "2e2a2d",
+        "55200f",
+        "3d1e14",
+        "312422",
+        "311811",
+        "272325",
+        "241e1e",
+        "231917",
+        "23100b",
+        "191416",
+        "140d0d",
+        "130907",
+        "0b0808",
+        "0a0303",
+        "040202",
+        "030202",
+        "010000"
+      ],
+      "source_scale": 0.9491525423728814,
+      "frames": [
+        {
+          "clip": "idle",
+          "index": 1,
+          "file": "actors/storm_warden/idle_01.png",
+          "duration_ms": 240,
+          "source_crop": [
+            0,
+            0,
+            512,
+            265
+          ],
+          "source_scale": 0.9491525423728814,
+          "offset": [
+            5,
+            123
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            129,
+            143,
+            384,
+            368
+          ]
+        },
+        {
+          "clip": "idle",
+          "index": 2,
+          "file": "actors/storm_warden/idle_02.png",
+          "duration_ms": 240,
+          "source_crop": [
+            512,
+            0,
+            1024,
+            265
+          ],
+          "source_scale": 0.9491525423728814,
+          "offset": [
+            20,
+            123
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            124,
+            144,
+            389,
+            368
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 1,
+          "file": "actors/storm_warden/move_01.png",
+          "duration_ms": 120,
+          "source_crop": [
+            1024,
+            0,
+            1536,
+            265
+          ],
+          "source_scale": 0.9491525423728814,
+          "offset": [
+            41,
+            123
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            122,
+            143,
+            390,
+            368
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 2,
+          "file": "actors/storm_warden/move_02.png",
+          "duration_ms": 120,
+          "source_crop": [
+            0,
+            265,
+            512,
+            525
+          ],
+          "source_scale": 0.9491525423728814,
+          "offset": [
+            7,
+            129
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            116,
+            142,
+            397,
+            368
+          ]
+        },
+        {
+          "clip": "tell_storm_slam",
+          "index": 1,
+          "file": "actors/storm_warden/tell_storm_slam_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            512,
+            265,
+            1024,
+            525
+          ],
+          "source_scale": 0.9491525423728814,
+          "offset": [
+            27,
+            129
+          ],
+          "removed_fragment_pixels": 22,
+          "alpha_bbox": [
+            115,
+            136,
+            397,
+            368
+          ]
+        },
+        {
+          "clip": "attack_storm_slam",
+          "index": 1,
+          "file": "actors/storm_warden/attack_storm_slam_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            1024,
+            265,
+            1536,
+            525
+          ],
+          "source_scale": 0.9491525423728814,
+          "offset": [
+            27,
+            129
+          ],
+          "removed_fragment_pixels": 5,
+          "alpha_bbox": [
+            77,
+            176,
+            436,
+            368
+          ]
+        },
+        {
+          "clip": "tell_chain_burst",
+          "index": 1,
+          "file": "actors/storm_warden/tell_chain_burst_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            0,
+            525,
+            512,
+            768
+          ],
+          "source_scale": 0.9491525423728814,
+          "offset": [
+            -5,
+            147
+          ],
+          "removed_fragment_pixels": 17,
+          "alpha_bbox": [
+            78,
+            157,
+            434,
+            368
+          ]
+        },
+        {
+          "clip": "attack_chain_burst",
+          "index": 1,
+          "file": "actors/storm_warden/attack_chain_burst_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            512,
+            525,
+            1024,
+            768
+          ],
+          "source_scale": 0.9491525423728814,
+          "offset": [
+            3,
+            146
+          ],
+          "removed_fragment_pixels": 23,
+          "alpha_bbox": [
+            108,
+            156,
+            404,
+            368
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 1,
+          "file": "actors/storm_warden/hurt_01.png",
+          "duration_ms": 100,
+          "source_crop": [
+            1024,
+            525,
+            1536,
+            768
+          ],
+          "source_scale": 0.9491525423728814,
+          "offset": [
+            18,
+            147
+          ],
+          "removed_fragment_pixels": 11,
+          "alpha_bbox": [
+            107,
+            155,
+            406,
+            368
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 2,
+          "file": "actors/storm_warden/hurt_02.png",
+          "duration_ms": 100,
+          "source_crop": [
+            0,
+            768,
+            512,
+            1024
+          ],
+          "source_scale": 0.9491525423728814,
+          "offset": [
+            18,
+            163
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            117,
+            173,
+            395,
+            368
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 1,
+          "file": "actors/storm_warden/death_01.png",
+          "duration_ms": 120,
+          "source_crop": [
+            512,
+            768,
+            1024,
+            1024
+          ],
+          "source_scale": 0.9491525423728814,
+          "offset": [
+            3,
+            162
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            100,
+            179,
+            413,
+            368
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 2,
+          "file": "actors/storm_warden/death_02.png",
+          "duration_ms": 200,
+          "source_crop": [
+            1024,
+            768,
+            1536,
+            1024
+          ],
+          "source_scale": 0.9491525423728814,
+          "offset": [
+            24,
+            162
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            35,
+            262,
+            478,
+            368
+          ]
+        }
+      ],
+      "clips": {
+        "idle": 2,
+        "move": 2,
+        "tell_storm_slam": 1,
+        "attack_storm_slam": 1,
+        "tell_chain_burst": 1,
+        "attack_chain_burst": 1,
+        "hurt": 2,
+        "death": 2
+      },
+      "patterns": {
+        "storm_slam": [
+          "tell_storm_slam",
+          "attack_storm_slam"
+        ],
+        "chain_burst": [
+          "tell_chain_burst",
+          "attack_chain_burst"
+        ]
+      },
+      "final_motion_acceptance": "PENDING"
+    },
+    "rift_sovereign": {
+      "canvas": 512,
+      "origin": [
+        256,
+        256
+      ],
+      "feet_edge_y": 368,
+      "render_scale": 0.5,
+      "palette_hex": [
+        "e6d1ba",
+        "af8e82",
+        "865f65",
+        "614d53",
+        "673954",
+        "4f3847",
+        "453443",
+        "38313f",
+        "332938",
+        "701b3d",
+        "3f1f38",
+        "302031",
+        "282032",
+        "271b24",
+        "211e2a",
+        "1e1925",
+        "1b1520",
+        "6e0e2d",
+        "510d26",
+        "390e28",
+        "360917",
+        "1f0d2a",
+        "1d101d",
+        "1b0f1a",
+        "1b0b12",
+        "110e16",
+        "0f0a14",
+        "0d090d",
+        "0b060d",
+        "080506",
+        "070209",
+        "020101"
+      ],
+      "source_scale": 0.8818897637795275,
+      "frames": [
+        {
+          "clip": "idle",
+          "index": 1,
+          "file": "actors/rift_sovereign/idle_01.png",
+          "duration_ms": 240,
+          "source_crop": [
+            0,
+            0,
+            512,
+            274
+          ],
+          "source_scale": 0.8818897637795275,
+          "offset": [
+            8,
+            132
+          ],
+          "removed_fragment_pixels": 2,
+          "alpha_bbox": [
+            148,
+            143,
+            365,
+            368
+          ]
+        },
+        {
+          "clip": "move",
+          "index": 1,
+          "file": "actors/rift_sovereign/move_01.png",
+          "duration_ms": 120,
+          "source_crop": [
+            512,
+            0,
+            1024,
+            274
+          ],
+          "source_scale": 0.8818897637795275,
+          "offset": [
+            50,
+            132
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            133,
+            141,
+            380,
+            368
+          ]
+        },
+        {
+          "clip": "tell_rift_slam",
+          "index": 1,
+          "file": "actors/rift_sovereign/tell_rift_slam_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            1024,
+            0,
+            1536,
+            274
+          ],
+          "source_scale": 0.8818897637795275,
+          "offset": [
+            21,
+            132
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            114,
+            135,
+            398,
+            368
+          ]
+        },
+        {
+          "clip": "attack_rift_slam",
+          "index": 1,
+          "file": "actors/rift_sovereign/attack_rift_slam_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            0,
+            274,
+            512,
+            528
+          ],
+          "source_scale": 0.8818897637795275,
+          "offset": [
+            40,
+            148
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            94,
+            164,
+            419,
+            368
+          ]
+        },
+        {
+          "clip": "tell_portal_burst",
+          "index": 1,
+          "file": "actors/rift_sovereign/tell_portal_burst_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            512,
+            274,
+            1024,
+            528
+          ],
+          "source_scale": 0.8818897637795275,
+          "offset": [
+            35,
+            148
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            111,
+            155,
+            401,
+            368
+          ]
+        },
+        {
+          "clip": "attack_portal_burst",
+          "index": 1,
+          "file": "actors/rift_sovereign/attack_portal_burst_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            1024,
+            274,
+            1536,
+            528
+          ],
+          "source_scale": 0.8818897637795275,
+          "offset": [
+            9,
+            149
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            91,
+            163,
+            422,
+            368
+          ]
+        },
+        {
+          "clip": "tell_fracture_storm",
+          "index": 1,
+          "file": "actors/rift_sovereign/tell_fracture_storm_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            0,
+            528,
+            512,
+            774
+          ],
+          "source_scale": 0.8818897637795275,
+          "offset": [
+            4,
+            155
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            125,
+            159,
+            387,
+            368
+          ]
+        },
+        {
+          "clip": "attack_fracture_storm",
+          "index": 1,
+          "file": "actors/rift_sovereign/attack_fracture_storm_01.png",
+          "duration_ms": 160,
+          "source_crop": [
+            512,
+            528,
+            1024,
+            774
+          ],
+          "source_scale": 0.8818897637795275,
+          "offset": [
+            36,
+            155
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            97,
+            169,
+            416,
+            368
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 1,
+          "file": "actors/rift_sovereign/hurt_01.png",
+          "duration_ms": 100,
+          "source_crop": [
+            1024,
+            528,
+            1536,
+            774
+          ],
+          "source_scale": 0.8818897637795275,
+          "offset": [
+            19,
+            155
+          ],
+          "removed_fragment_pixels": 1,
+          "alpha_bbox": [
+            106,
+            162,
+            407,
+            368
+          ]
+        },
+        {
+          "clip": "hurt",
+          "index": 2,
+          "file": "actors/rift_sovereign/hurt_02.png",
+          "duration_ms": 100,
+          "source_crop": [
+            0,
+            774,
+            512,
+            1024
+          ],
+          "source_scale": 0.8818897637795275,
+          "offset": [
+            21,
+            162
+          ],
+          "removed_fragment_pixels": 1,
+          "alpha_bbox": [
+            112,
+            166,
+            401,
+            368
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 1,
+          "file": "actors/rift_sovereign/death_01.png",
+          "duration_ms": 120,
+          "source_crop": [
+            512,
+            774,
+            1024,
+            1024
+          ],
+          "source_scale": 0.8818897637795275,
+          "offset": [
+            42,
+            162
+          ],
+          "removed_fragment_pixels": 0,
+          "alpha_bbox": [
+            87,
+            177,
+            425,
+            368
+          ]
+        },
+        {
+          "clip": "death",
+          "index": 2,
+          "file": "actors/rift_sovereign/death_02.png",
+          "duration_ms": 200,
+          "source_crop": [
+            1024,
+            774,
+            1536,
+            1024
+          ],
+          "source_scale": 0.8818897637795275,
+          "offset": [
+            41,
+            162
+          ],
+          "removed_fragment_pixels": 2,
+          "alpha_bbox": [
+            42,
+            267,
+            471,
+            368
+          ]
+        }
+      ],
+      "clips": {
+        "idle": 1,
+        "move": 1,
+        "tell_rift_slam": 1,
+        "attack_rift_slam": 1,
+        "tell_portal_burst": 1,
+        "attack_portal_burst": 1,
+        "tell_fracture_storm": 1,
+        "attack_fracture_storm": 1,
+        "hurt": 2,
+        "death": 2
+      },
+      "patterns": {
+        "rift_slam": [
+          "tell_rift_slam",
+          "attack_rift_slam"
+        ],
+        "portal_burst": [
+          "tell_portal_burst",
+          "attack_portal_burst"
+        ],
+        "fracture_storm": [
+          "tell_fracture_storm",
+          "attack_fracture_storm"
+        ]
+      },
+      "final_motion_acceptance": "PENDING"
+    }
+  },
+  "environments": {
+    "castle": {
+      "tile_size": 32,
+      "terrain": [
+        "top_1",
+        "top_2",
+        "top_3",
+        "soil_1",
+        "soil_2",
+        "soil_3",
+        "top_left",
+        "top_right",
+        "side_left",
+        "side_right",
+        "bottom",
+        "bottom_left",
+        "bottom_right",
+        "isolated",
+        "inner_left",
+        "inner_right"
+      ],
+      "props": [
+        {
+          "file": "environments/castle/prop_01.png",
+          "canvas": [
+            64,
+            128
+          ],
+          "source_crop": [
+            570,
+            0,
+            1100,
+            645
+          ],
+          "collision": false
+        },
+        {
+          "file": "environments/castle/prop_02.png",
+          "canvas": [
+            64,
+            64
+          ],
+          "source_crop": [
+            1120,
+            60,
+            1536,
+            645
+          ],
+          "collision": false
+        },
+        {
+          "file": "environments/castle/prop_03.png",
+          "canvas": [
+            64,
+            48
+          ],
+          "source_crop": [
+            0,
+            650,
+            560,
+            1024
+          ],
+          "collision": false
+        },
+        {
+          "file": "environments/castle/prop_04.png",
+          "canvas": [
+            32,
+            32
+          ],
+          "source_crop": [
+            565,
+            650,
+            1100,
+            1024
+          ],
+          "collision": false
+        },
+        {
+          "file": "environments/castle/prop_05.png",
+          "canvas": [
+            96,
+            64
+          ],
+          "source_crop": [
+            1100,
+            650,
+            1536,
+            1024
+          ],
+          "collision": false
+        }
+      ],
+      "palette_hex": [
+        "aba174",
+        "848166",
+        "766d59",
+        "5a6461",
+        "5c544d",
+        "49535f",
+        "454f5b",
+        "404a5c",
+        "3b4e19",
+        "50423b",
+        "3d4656",
+        "3a4355",
+        "39414d",
+        "363f51",
+        "333d48",
+        "413031",
+        "313747",
+        "2e3341",
+        "28303d",
+        "24242f",
+        "1a222a",
+        "12161e",
+        "0a0a10",
+        "020202"
+      ],
+      "material_source": "sources/castle_terrain.png",
+      "material_source_crop": [
+        50,
+        113,
+        1204,
+        1191
+      ],
+      "edge_method": "shared averaged edge with3px quantized feather; no dark source-border columns",
+      "background_colors": 64,
+      "parallax": [
+        0.25,
+        0.65,
+        1,
+        1.08
+      ],
+      "wrap": "alternating mirrored panels, not authored seamless",
+      "promotion": false
+    },
+    "caves": {
+      "tile_size": 32,
+      "terrain": [
+        "top_1",
+        "top_2",
+        "top_3",
+        "soil_1",
+        "soil_2",
+        "soil_3",
+        "top_left",
+        "top_right",
+        "side_left",
+        "side_right",
+        "bottom",
+        "bottom_left",
+        "bottom_right",
+        "isolated",
+        "inner_left",
+        "inner_right"
+      ],
+      "props": [
+        {
+          "file": "environments/caves/prop_01.png",
+          "canvas": [
+            64,
+            128
+          ],
+          "source_crop": [
+            640,
+            0,
+            1100,
+            650
+          ],
+          "collision": false
+        },
+        {
+          "file": "environments/caves/prop_02.png",
+          "canvas": [
+            64,
+            64
+          ],
+          "source_crop": [
+            1110,
+            80,
+            1536,
+            650
+          ],
+          "collision": false
+        },
+        {
+          "file": "environments/caves/prop_03.png",
+          "canvas": [
+            64,
+            48
+          ],
+          "source_crop": [
+            0,
+            650,
+            530,
+            1024
+          ],
+          "collision": false
+        },
+        {
+          "file": "environments/caves/prop_04.png",
+          "canvas": [
+            32,
+            32
+          ],
+          "source_crop": [
+            535,
+            650,
+            1060,
+            1024
+          ],
+          "collision": false
+        },
+        {
+          "file": "environments/caves/prop_05.png",
+          "canvas": [
+            96,
+            64
+          ],
+          "source_crop": [
+            1060,
+            650,
+            1536,
+            1024
+          ],
+          "collision": false
+        }
+      ],
+      "palette_hex": [
+        "7c8f6b",
+        "626a5a",
+        "5d5c59",
+        "465852",
+        "4f4f53",
+        "454b53",
+        "374849",
+        "434043",
+        "393e49",
+        "353b45",
+        "313741",
+        "2d343d",
+        "223538",
+        "2c2e35",
+        "262b36",
+        "252931",
+        "222932",
+        "22262e",
+        "202026",
+        "152529",
+        "181d25",
+        "141a21",
+        "0f141a",
+        "050608"
+      ],
+      "material_source": "sources/caves_terrain.png",
+      "material_source_crop": [
+        50,
+        113,
+        1204,
+        1191
+      ],
+      "edge_method": "shared averaged edge with3px quantized feather; no dark source-border columns",
+      "background_colors": 64,
+      "parallax": [
+        0.25,
+        0.65,
+        1,
+        1.08
+      ],
+      "wrap": "alternating mirrored panels, not authored seamless",
+      "promotion": false
+    },
+    "hub": {
+      "tile_size": 32,
+      "terrain": [
+        "top_1",
+        "top_2",
+        "top_3",
+        "soil_1",
+        "soil_2",
+        "soil_3",
+        "top_left",
+        "top_right",
+        "side_left",
+        "side_right",
+        "bottom",
+        "bottom_left",
+        "bottom_right",
+        "isolated",
+        "inner_left",
+        "inner_right"
+      ],
+      "props": [
+        {
+          "file": "environments/hub/prop_01.png",
+          "canvas": [
+            64,
+            128
+          ],
+          "source_crop": [
+            590,
+            0,
+            1000,
+            670
+          ],
+          "collision": false
+        },
+        {
+          "file": "environments/hub/prop_02.png",
+          "canvas": [
+            64,
+            64
+          ],
+          "source_crop": [
+            1000,
+            70,
+            1536,
+            670
+          ],
+          "collision": false
+        },
+        {
+          "file": "environments/hub/prop_03.png",
+          "canvas": [
+            64,
+            48
+          ],
+          "source_crop": [
+            0,
+            700,
+            540,
+            1024
+          ],
+          "collision": false
+        },
+        {
+          "file": "environments/hub/prop_04.png",
+          "canvas": [
+            32,
+            32
+          ],
+          "source_crop": [
+            540,
+            700,
+            1000,
+            1024
+          ],
+          "collision": false
+        },
+        {
+          "file": "environments/hub/prop_05.png",
+          "canvas": [
+            96,
+            64
+          ],
+          "source_crop": [
+            1000,
+            700,
+            1536,
+            1024
+          ],
+          "collision": false
+        }
+      ],
+      "palette_hex": [
+        "e8c07b",
+        "dfb069",
+        "d7a55e",
+        "bfa743",
+        "ca934e",
+        "b97c3d",
+        "807429",
+        "955b30",
+        "875631",
+        "7f512f",
+        "764a2b",
+        "504f25",
+        "7b3d1c",
+        "6d4126",
+        "683f25",
+        "67351b",
+        "5f3a25",
+        "5e3922",
+        "5b3520",
+        "523524",
+        "4b2a1a",
+        "282d17",
+        "24150f",
+        "060904"
+      ],
+      "material_source": "sources/hub_terrain.png",
+      "material_source_crop": [
+        50,
+        113,
+        1204,
+        1191
+      ],
+      "edge_method": "shared averaged edge with3px quantized feather; no dark source-border columns",
+      "background_colors": 64,
+      "parallax": [
+        0.25,
+        0.65,
+        1,
+        1.08
+      ],
+      "wrap": "alternating mirrored panels, not authored seamless",
+      "promotion": false
+    }
+  },
+  "effects": {
+    "hit": {
+      "frames": [
+        {
+          "file": "effects/hit_01.png",
+          "duration_ms": 60,
+          "origin": [
+            64,
+            64
+          ]
+        },
+        {
+          "file": "effects/hit_02.png",
+          "duration_ms": 60,
+          "origin": [
+            64,
+            64
+          ]
+        },
+        {
+          "file": "effects/hit_03.png",
+          "duration_ms": 60,
+          "origin": [
+            64,
+            64
+          ]
+        }
+      ],
+      "source_scale": 0.25,
+      "canvas": 128,
+      "scale": 0.5,
+      "palette_hex": [
+        "4a1713",
+        "762015",
+        "a52f13",
+        "d64c15",
+        "f7811f",
+        "ffb832",
+        "ffe269",
+        "fff4c2",
+        "8f4b1d",
+        "b66a24",
+        "d89932",
+        "eed66b"
+      ],
+      "gameplay_authority": false,
+      "reduced_flashes": "staticfirst or hidden; never modifies damage"
+    },
+    "hostile_projectile": {
+      "frames": [
+        {
+          "file": "effects/hostile_projectile_01.png",
+          "duration_ms": 60,
+          "origin": [
+            64,
+            64
+          ]
+        },
+        {
+          "file": "effects/hostile_projectile_02.png",
+          "duration_ms": 60,
+          "origin": [
+            64,
+            64
+          ]
+        },
+        {
+          "file": "effects/hostile_projectile_03.png",
+          "duration_ms": 60,
+          "origin": [
+            64,
+            64
+          ]
+        }
+      ],
+      "source_scale": 0.25,
+      "canvas": 128,
+      "scale": 0.5,
+      "palette_hex": [
+        "4a1713",
+        "762015",
+        "a52f13",
+        "d64c15",
+        "f7811f",
+        "ffb832",
+        "ffe269",
+        "fff4c2",
+        "8f4b1d",
+        "b66a24",
+        "d89932",
+        "eed66b"
+      ],
+      "gameplay_authority": false,
+      "reduced_flashes": "staticfirst or hidden; never modifies damage"
+    },
+    "hostile_area": {
+      "frames": [
+        {
+          "file": "effects/hostile_area_01.png",
+          "duration_ms": 60,
+          "origin": [
+            64,
+            64
+          ]
+        },
+        {
+          "file": "effects/hostile_area_02.png",
+          "duration_ms": 60,
+          "origin": [
+            64,
+            64
+          ]
+        },
+        {
+          "file": "effects/hostile_area_03.png",
+          "duration_ms": 60,
+          "origin": [
+            64,
+            64
+          ]
+        }
+      ],
+      "source_scale": 0.25,
+      "canvas": 128,
+      "scale": 0.5,
+      "palette_hex": [
+        "4a1713",
+        "762015",
+        "a52f13",
+        "d64c15",
+        "f7811f",
+        "ffb832",
+        "ffe269",
+        "fff4c2",
+        "8f4b1d",
+        "b66a24",
+        "d89932",
+        "eed66b"
+      ],
+      "gameplay_authority": false,
+      "reduced_flashes": "staticfirst or hidden; never modifies damage"
+    },
+    "reward": {
+      "frames": [
+        {
+          "file": "effects/reward_01.png",
+          "duration_ms": 60,
+          "origin": [
+            64,
+            64
+          ]
+        },
+        {
+          "file": "effects/reward_02.png",
+          "duration_ms": 60,
+          "origin": [
+            64,
+            64
+          ]
+        },
+        {
+          "file": "effects/reward_03.png",
+          "duration_ms": 60,
+          "origin": [
+            64,
+            64
+          ]
+        }
+      ],
+      "source_scale": 0.25,
+      "canvas": 128,
+      "scale": 0.5,
+      "palette_hex": [
+        "4a1713",
+        "762015",
+        "a52f13",
+        "d64c15",
+        "f7811f",
+        "ffb832",
+        "ffe269",
+        "fff4c2",
+        "8f4b1d",
+        "b66a24",
+        "d89932",
+        "eed66b"
+      ],
+      "gameplay_authority": false,
+      "reduced_flashes": "staticfirst or hidden; never modifies damage"
+    },
+    "electric_chain": {
+      "frames": [
+        {
+          "file": "effects/electric_chain_01.png",
+          "duration_ms": 60,
+          "origin": [
+            128,
+            128
+          ]
+        },
+        {
+          "file": "effects/electric_chain_02.png",
+          "duration_ms": 60,
+          "origin": [
+            128,
+            128
+          ]
+        },
+        {
+          "file": "effects/electric_chain_03.png",
+          "duration_ms": 60,
+          "origin": [
+            128,
+            128
+          ]
+        }
+      ],
+      "source_scale": 0.25,
+      "canvas": 256,
+      "scale": 0.5,
+      "palette_hex": [
+        "071f2a",
+        "0d3b52",
+        "12627d",
+        "168db3",
+        "29b8d6",
+        "74dcef",
+        "b9f7fa",
+        "f4ffff"
+      ],
+      "gameplay_authority": false,
+      "anchor_status": "centered candidate; chain endpoints/full hazard radius still need live binding review",
+      "reduced_flashes": "static first or hidden; no damage change"
+    },
+    "electric_area": {
+      "frames": [
+        {
+          "file": "effects/electric_area_01.png",
+          "duration_ms": 60,
+          "origin": [
+            128,
+            128
+          ]
+        },
+        {
+          "file": "effects/electric_area_02.png",
+          "duration_ms": 60,
+          "origin": [
+            128,
+            128
+          ]
+        },
+        {
+          "file": "effects/electric_area_03.png",
+          "duration_ms": 60,
+          "origin": [
+            128,
+            128
+          ]
+        }
+      ],
+      "source_scale": 0.25,
+      "canvas": 256,
+      "scale": 0.5,
+      "palette_hex": [
+        "071f2a",
+        "0d3b52",
+        "12627d",
+        "168db3",
+        "29b8d6",
+        "74dcef",
+        "b9f7fa",
+        "f4ffff"
+      ],
+      "gameplay_authority": false,
+      "anchor_status": "centered candidate; chain endpoints/full hazard radius still need live binding review",
+      "reduced_flashes": "static first or hidden; no damage change"
+    },
+    "electric_onkill": {
+      "frames": [
+        {
+          "file": "effects/electric_onkill_01.png",
+          "duration_ms": 60,
+          "origin": [
+            128,
+            128
+          ]
+        },
+        {
+          "file": "effects/electric_onkill_02.png",
+          "duration_ms": 60,
+          "origin": [
+            128,
+            128
+          ]
+        },
+        {
+          "file": "effects/electric_onkill_03.png",
+          "duration_ms": 60,
+          "origin": [
+            128,
+            128
+          ]
+        }
+      ],
+      "source_scale": 0.25,
+      "canvas": 256,
+      "scale": 0.5,
+      "palette_hex": [
+        "071f2a",
+        "0d3b52",
+        "12627d",
+        "168db3",
+        "29b8d6",
+        "74dcef",
+        "b9f7fa",
+        "f4ffff"
+      ],
+      "gameplay_authority": false,
+      "anchor_status": "centered candidate; chain endpoints/full hazard radius still need live binding review",
+      "reduced_flashes": "static first or hidden; no damage change"
+    }
+  },
+  "portal_body": {
+    "frames": [
+      {
+        "index": 1,
+        "body_file": "portal/portal_enter_01_body.png",
+        "combined_file": "portal/portal_enter_01_combined.png",
+        "weapon_file": "portal/portal_enter_01_weapon.png",
+        "duration_ms": 90,
+        "source_crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "source_scale": 0.22127659574468084,
+        "offset": [
+          49,
+          45
+        ],
+        "grip": [
+          108,
+          130
+        ],
+        "weapon_degrees_from_horizontal": 8,
+        "weapon_behind_body": false
+      },
+      {
+        "index": 2,
+        "body_file": "portal/portal_enter_02_body.png",
+        "combined_file": "portal/portal_enter_02_combined.png",
+        "weapon_file": "portal/portal_enter_02_weapon.png",
+        "duration_ms": 90,
+        "source_crop": [
+          627,
+          0,
+          1254,
+          627
+        ],
+        "source_scale": 0.22127659574468084,
+        "offset": [
+          52,
+          45
+        ],
+        "grip": [
+          103,
+          132
+        ],
+        "weapon_degrees_from_horizontal": 8,
+        "weapon_behind_body": false
+      },
+      {
+        "index": 3,
+        "body_file": "portal/portal_enter_03_body.png",
+        "combined_file": "portal/portal_enter_03_combined.png",
+        "weapon_file": "portal/portal_enter_03_weapon.png",
+        "duration_ms": 90,
+        "source_crop": [
+          0,
+          627,
+          627,
+          1254
+        ],
+        "source_scale": 0.22127659574468084,
+        "offset": [
+          42,
+          52
+        ],
+        "grip": [
+          102,
+          129
+        ],
+        "weapon_degrees_from_horizontal": 8,
+        "weapon_behind_body": true
+      },
+      {
+        "index": 4,
+        "body_file": "portal/portal_enter_04_body.png",
+        "combined_file": "portal/portal_enter_04_combined.png",
+        "weapon_file": "portal/portal_enter_04_weapon.png",
+        "duration_ms": 90,
+        "source_crop": [
+          627,
+          627,
+          1254,
+          1254
+        ],
+        "source_scale": 0.22127659574468084,
+        "offset": [
+          40,
+          52
+        ],
+        "grip": [
+          97,
+          129
+        ],
+        "weapon_degrees_from_horizontal": 8,
+        "weapon_behind_body": true
+      }
+    ],
+    "canvas": 256,
+    "origin": [
+      128,
+      128
+    ],
+    "feet_edge_y": 180,
+    "palette_hex": [
+      "111014",
+      "211719",
+      "382326",
+      "50302c",
+      "6c4234",
+      "8d543b",
+      "b16c47",
+      "d78c58",
+      "352c2f",
+      "554547",
+      "80614d",
+      "ad8967",
+      "e0cba0",
+      "fff0ca",
+      "631c27",
+      "a82a2b",
+      "df3e2d",
+      "ff6c38",
+      "55351d",
+      "8c531b",
+      "c58a24",
+      "f3bd35",
+      "ffe873",
+      "152e25",
+      "28503a",
+      "447045",
+      "76914d",
+      "30313c",
+      "555865",
+      "83838f",
+      "b8b5bf",
+      "eeecec"
+    ],
+    "body_metric_reference": "source135..605 approximately104px; hair above headband separately retained",
+    "axe_master": {
+      "file": "../axe-idle-2x/weapon_double_axe_rotation_90_01.png",
+      "sha256": "0a3afc7b6a6f1e7de1697036efb501704fe598bcf813b58b39c5540a40780a15"
+    },
+    "runtime_binding": false,
+    "visual_acceptance": "PENDING"
+  },
+  "estimated_all_export_rgba_bytes": 51372032,
+  "memory_scope": "sum of unique authoring exports at4bytes/texel, not GPU/peak/device measurement",
+  "runtime_promotion": false,
+  "visual_acceptance": "PENDING",
+  "rights_clearance": "PENDING",
+  "final_cultural_review": "PENDING"
+}

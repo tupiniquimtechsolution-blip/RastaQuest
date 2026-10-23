@@ -6,7 +6,7 @@ Reference: assets/concepts/enemies/rq-enemy-roster-v01.png. First end-to-end arc
 
 ## Actual runtime contract
 
-EnemyBase.tscn has one34x58 collider/hurtbox and placeholder Polygon2D for every archetype. Feet are local y=29. enemy_base.gd emits attack_tell_started(behavior,duration); duration is tell_seconds multiplied by enemy_brain.gd tell_multiplier. HostileAttack now executes/cancels actual attacks (PR52). Enemy deletion is still immediate on death; final SpriteFrames playback/lifetime is absent. Authoring art alone does not integrate enemy death clips.
+EnemyBase.tscn has one34x58 collider/hurtbox and placeholder Polygon2D for every archetype. Feet are local y=29. enemy_base.gd emits attack_tell_started(behavior,duration); duration is tell_seconds multiplied by enemy_brain.gd tell_multiplier. HostileAttack executes/cancels actual attacks (PR52). Optional assigned art can now retain a bounded decorative death pose after damage cancellation and one-time defeat progression; unassigned art still uses immediate deletion. Shipping SpriteFrames remain unassigned. Authoring art alone does not integrate enemy death clips.
 
 | Resource behavior | Source tell seconds | Multiplier | Emitted seconds | Candidate silhouette |
 |---|---:|---:|---:|---|
@@ -22,7 +22,13 @@ Numbers come from game/data/enemies/*.tres and scripts, except silhouette envelo
 
 For Chaser first: idle 4 poses, move 6, anticipation 2, attack 3, hurt 2, death 4 (initial budgets). Keep rigid body/weapon proportions, baseline, facing and palette manifest. Each role gets only clips its actual gameplay needs. Distinct shapes must read without labels; remove armor/crystal micro-detail at reduced size. Red/magenta hostile accents vs blue player electricity need grayscale/shape tests. Existing ranged blue and controller green placeholder colors are not a final palette approval.
 
-Telegraph VFX are separate exports with explicit anchors, onset, duration and end/cancel behavior. Use emitted duration rather than fixed animation FPS. Gameplay damage scheduling now exists in HostileAttack and stays authoritative; presentation must follow it. Death animation needs a presentation lifetime decision because current queue_free is immediate. Document these integration prerequisites; do not change gameplay authority in this documentation PR.
+Telegraph VFX are separate exports with explicit anchors, onset, duration and end/cancel behavior. Use emitted duration rather than fixed animation FPS. Gameplay damage scheduling exists in HostileAttack and stays authoritative; presentation follows it. The optional bounded death adapter does not postpone rewards or own damage. Unassigned art retains immediate cleanup.
+
+## Execution update — 2026-10-23
+
+The Forest/Chaser v02 packet supplies 16 body keys and rigid sword/shield review. `remaining-art-v01` supplies eight initial keys per remaining role plus twelve per boss (56 hostile keys total); these are smaller source-study budgets than the target polish inventory. A generic optional presenter follows actual emitted tells, pattern-specific attacks and bounded decorative death. Nine actual combat patterns are exercised, including Exploder self-destruction and all five boss phase patterns. No scene assigns the candidate resources by default.
+
+See [remaining-art progress](REMAINING_ART_PROGRESS_2026-10-23.md) for exact files, 47 desktop captures, source integrity, collider overlays and unresolved gates. Ranged/controller embedded equipment, Charger collider fit, anatomy/root registration, motion polish, unlabeled recognition responses, Android readability and exact-version cultural/rights review remain pending. Initial source studies are not final production animation acceptance.
 
 ## Verification before variants
 

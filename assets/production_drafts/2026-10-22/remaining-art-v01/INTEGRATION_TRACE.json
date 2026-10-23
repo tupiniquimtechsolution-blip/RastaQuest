@@ -1,0 +1,86 @@
+{
+	"cases": [
+		{
+			"damage_observed": 1,
+			"defeats": 1,
+			"elapsed_ms": 1291,
+			"emitted_tell_seconds": 0.45,
+			"pattern": "ranged",
+			"ratio": 1.0,
+			"role": "ranged"
+		},
+		{
+			"damage_observed": 1,
+			"defeats": 1,
+			"elapsed_ms": 1065,
+			"emitted_tell_seconds": 0.7425,
+			"pattern": "charger",
+			"ratio": 1.0,
+			"role": "charger"
+		},
+		{
+			"damage_observed": 1,
+			"defeats": 1,
+			"elapsed_ms": 1603,
+			"emitted_tell_seconds": 1.05,
+			"pattern": "controller",
+			"ratio": 1.0,
+			"role": "controller"
+		},
+		{
+			"damage_observed": 2,
+			"defeats": 1,
+			"elapsed_ms": 1982,
+			"emitted_tell_seconds": 1.4,
+			"pattern": "exploder",
+			"ratio": 1.0,
+			"role": "exploder"
+		},
+		{
+			"damage_observed": 2,
+			"defeats": 1,
+			"elapsed_ms": 949,
+			"emitted_tell_seconds": 0.65,
+			"pattern": "storm_slam",
+			"ratio": 1.0,
+			"role": "storm_warden"
+		},
+		{
+			"damage_observed": 1,
+			"defeats": 1,
+			"elapsed_ms": 766,
+			"emitted_tell_seconds": 0.4,
+			"pattern": "chain_burst",
+			"ratio": 0.4,
+			"role": "storm_warden"
+		},
+		{
+			"damage_observed": 2,
+			"defeats": 1,
+			"elapsed_ms": 901,
+			"emitted_tell_seconds": 0.6,
+			"pattern": "rift_slam",
+			"ratio": 1.0,
+			"role": "rift_sovereign"
+		},
+		{
+			"damage_observed": 1,
+			"defeats": 1,
+			"elapsed_ms": 830,
+			"emitted_tell_seconds": 0.48,
+			"pattern": "portal_burst",
+			"ratio": 0.5,
+			"role": "rift_sovereign"
+		},
+		{
+			"damage_observed": 2,
+			"defeats": 1,
+			"elapsed_ms": 680,
+			"emitted_tell_seconds": 0.36,
+			"pattern": "fracture_storm",
+			"ratio": 0.2,
+			"role": "rift_sovereign"
+		}
+	],
+	"physical_device_acceptance": false
+}
