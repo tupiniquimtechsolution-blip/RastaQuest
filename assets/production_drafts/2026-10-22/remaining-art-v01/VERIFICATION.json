@@ -1,0 +1,14 @@
+{
+  "artifact_integrity_pass": true,
+  "errors": [],
+  "new_hostile_body_keys": 56,
+  "new_portal_body_keys": 4,
+  "biomes": 3,
+  "terrain_tiles": 48,
+  "props": 15,
+  "effect_keys": 21,
+  "actual_pattern_tests": 9,
+  "desktop_captures": 47,
+  "rgba_export_bytes_estimate": 51372032,
+  "automatic_visual_or_device_acceptance": false
+}

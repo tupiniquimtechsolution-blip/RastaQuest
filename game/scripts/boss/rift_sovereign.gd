@@ -11,6 +11,14 @@ signal boss_defeated
 var _target: Node2D
 var _cooldown: float = 0.0
 var _attack: Node2D
+var _art_presenter: Node2D
+
+func apply_art_frames(frames: SpriteFrames, patterns: Dictionary) -> bool:
+	if not is_instance_valid(_art_presenter):
+		_art_presenter = preload("res://scripts/enemies/hostile_art_presenter.gd").new()
+		_art_presenter.name = "ArtPresenter"
+		add_child(_art_presenter)
+	return _art_presenter.apply_frames(frames,patterns,512)
 
 func _ready() -> void:
 	add_to_group("hostile_actor")
@@ -47,5 +55,11 @@ func _physics_process(delta: float) -> void:
 func _on_died() -> void:
 	if is_instance_valid(_attack):
 		_attack.cancel()
+	var seconds: float = _art_presenter.death_presentation_seconds() if is_instance_valid(_art_presenter) else 0.0
+	$CollisionShape2D.set_deferred("disabled",true)
 	boss_defeated.emit()
+	if seconds>0:
+		await get_tree().create_timer(seconds,false).timeout
+	if not is_inside_tree():
+		return
 	queue_free()

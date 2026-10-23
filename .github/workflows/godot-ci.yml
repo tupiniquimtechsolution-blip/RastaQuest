@@ -106,6 +106,14 @@ jobs:
           grep -q 'RQ_FOREST_POLISH_OK' /tmp/rq-forest-polish.log
           if grep -qE 'SCRIPT ERROR:|ERROR:' /tmp/rq-forest-polish.log; then exit 1; fi
 
+      - name: Remaining art roles and boss-pattern integration
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout 90s "${GODOT_BIN}" --headless --path game --script res://tests/remaining_art_integration.gd 2>&1 | tee /tmp/rq-remaining-art.log
+          grep -q 'RQ_REMAINING_ART_OK' /tmp/rq-remaining-art.log
+          if grep -qE 'SCRIPT ERROR:|ERROR:' /tmp/rq-remaining-art.log; then exit 1; fi
+
       - name: Menu access and localization integration
         shell: bash
         run: |

@@ -1,0 +1,892 @@
+{
+	"captures": [
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "castle_room_1280x720.png",
+			"kind": "none",
+			"mode": "material proof in RunPrototypeRoom fixture; not shipping Hub integration",
+			"phase": "none",
+			"sha256": "3da9d263883a23bc4a243dce78113d10d7383d45a97466244d3a16d6c83b992a",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "castle_room_640x360.png",
+			"kind": "none",
+			"mode": "material proof in RunPrototypeRoom fixture; not shipping Hub integration",
+			"phase": "none",
+			"sha256": "6e95235b992d170f141839b5f878422a20b34cb7cb697b044dafee703c1e3d11",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				100.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "castle_wrap_100.png",
+			"kind": "none",
+			"mode": "material proof in RunPrototypeRoom fixture; not shipping Hub integration",
+			"phase": "none",
+			"sha256": "51980128b9b153e107bf0b996ad96b29b94a1f186ef8a8086243f679541a75f3",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				1180.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "castle_wrap_1180.png",
+			"kind": "none",
+			"mode": "material proof in RunPrototypeRoom fixture; not shipping Hub integration",
+			"phase": "none",
+			"sha256": "2c29b96380340d7bb62029642ff025b9aeb46d62e439e055f6568f2fb3aaa0a9",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "caves_room_1280x720.png",
+			"kind": "none",
+			"mode": "material proof in RunPrototypeRoom fixture; not shipping Hub integration",
+			"phase": "none",
+			"sha256": "f3f5e4782ebfba13d5cc4b32877a1357f44b86699e29e5e706340ca44fc8bc3d",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "caves_room_640x360.png",
+			"kind": "none",
+			"mode": "material proof in RunPrototypeRoom fixture; not shipping Hub integration",
+			"phase": "none",
+			"sha256": "07587c0657e645bd8a1dfb38241a347e908ebfe7596e32ac815935d34aa6a920",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				100.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "caves_wrap_100.png",
+			"kind": "none",
+			"mode": "material proof in RunPrototypeRoom fixture; not shipping Hub integration",
+			"phase": "none",
+			"sha256": "c1e28ea9541126e24e4e1d55b8230c54e8011276132b71835b2fc3e0dc42478f",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				1180.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "caves_wrap_1180.png",
+			"kind": "none",
+			"mode": "material proof in RunPrototypeRoom fixture; not shipping Hub integration",
+			"phase": "none",
+			"sha256": "dbdfd920a9f2518d80ed7b157b9522c1ff77288d547d1ef3d636e6646d8d34f0",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "hub_room_1280x720.png",
+			"kind": "none",
+			"mode": "material proof in RunPrototypeRoom fixture; not shipping Hub integration",
+			"phase": "none",
+			"sha256": "5fc7b67868991d6303eaa6669d2873727cdb1634bd3fbcf896d09d2443439a93",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "hub_room_640x360.png",
+			"kind": "none",
+			"mode": "material proof in RunPrototypeRoom fixture; not shipping Hub integration",
+			"phase": "none",
+			"sha256": "8c887f019a4857d42ec066b82998b35e99ebd88b78ec5288a2b6f4e9a184ae07",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				100.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "hub_wrap_100.png",
+			"kind": "none",
+			"mode": "material proof in RunPrototypeRoom fixture; not shipping Hub integration",
+			"phase": "none",
+			"sha256": "6be32c8c225ccf91ef1e1eab6493d7bb56f1f1e6cf69a557298399509e67c9d3",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				1180.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "hub_wrap_1180.png",
+			"kind": "none",
+			"mode": "material proof in RunPrototypeRoom fixture; not shipping Hub integration",
+			"phase": "none",
+			"sha256": "005f1fb66ad348714a18fd8a1762d584455fefeaf81555c406ec1cf7bbda6333",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "roster_lineup_1280x720.png",
+			"kind": "none",
+			"mode": "unlabeled static lineup of five enemies; no recognition responses inferred",
+			"phase": "none",
+			"sha256": "848ddd7f7f5de3520cd9dfe9cdbc14f2eced2e8ecc4fc04a31f862302c26e6b2",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "roster_lineup_640x360.png",
+			"kind": "none",
+			"mode": "unlabeled static lineup of five enemies; no recognition responses inferred",
+			"phase": "none",
+			"sha256": "0e1d8ec759f69e71c355e08a963dca26b3cb108619d82750abb1583e8203135d",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "roster_collision_overlay.png",
+			"kind": "none",
+			"mode": "actual collider overlay, geometry unchanged; low Charger silhouette mismatch deliberately visible",
+			"phase": "none",
+			"sha256": "9d224e4fa48c685f5d0614b032b7a6cbdf878582e09600567a3076e0ca6119b4",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "boss_lineup_1280x720.png",
+			"kind": "none",
+			"mode": "static scale comparison of both boss candidates; art accepted status pending",
+			"phase": "none",
+			"sha256": "94113671e47cd4ac2714aeec66ba8e650c4ab1f0c33eeb1df6f2904d7d0f855d",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "boss_lineup_640x360.png",
+			"kind": "none",
+			"mode": "static scale comparison of both boss candidates; art accepted status pending",
+			"phase": "none",
+			"sha256": "c622de3ef52b960289002024ee5a3be1179cc6e52fa451317013cc0a1dddf803",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "tell",
+			"dead": false,
+			"file": "ranged_ranged_tell.png",
+			"frame": 0,
+			"kind": "ranged",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "tell",
+			"sha256": "658849862a460c1d685d6108a43d1f09eeee5713cb93d18aa290bbc4af052002",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.45
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "attack",
+			"dead": false,
+			"file": "ranged_ranged_active.png",
+			"frame": 0,
+			"kind": "ranged",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "active",
+			"sha256": "029aebf8e83214557da83f5d7bf8d980d9a6a3f9e0e878b9cb2b55095dc64ce0",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.45
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "death",
+			"dead": true,
+			"file": "ranged_death.png",
+			"frame": 1,
+			"kind": "none",
+			"mode": "actual fatal damage/cancellation and fallen key; paused before bounded removal",
+			"phase": "none",
+			"sha256": "1040b998bf2db1552fca861c41c7b07324ba9bdbab7f4c1a7ced267f3791b297",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.45
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "tell",
+			"dead": false,
+			"file": "charger_charger_tell.png",
+			"frame": 0,
+			"kind": "charger",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "tell",
+			"sha256": "0ab2e2723b9e834b5c1340834d2488ab17b8c42c32c60c0df01736398a8406b9",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.7425
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "attack",
+			"dead": false,
+			"file": "charger_charger_active.png",
+			"frame": 0,
+			"kind": "charger",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "active",
+			"sha256": "8ef7e0bf9960ec53bfd134c59d8d6ecac83c2555f5d52e68b8190b929829be62",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.7425
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "death",
+			"dead": true,
+			"file": "charger_death.png",
+			"frame": 1,
+			"kind": "none",
+			"mode": "actual fatal damage/cancellation and fallen key; paused before bounded removal",
+			"phase": "none",
+			"sha256": "eea0ded7bd60c9949cde6ded67b58ee3bab8439fc11f60c7240b99f2a74004d6",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.7425
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "tell",
+			"dead": false,
+			"file": "controller_controller_tell.png",
+			"frame": 0,
+			"kind": "controller",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "tell",
+			"sha256": "aab3c3d23527d7d9603225b41c3d75202cb99281687ff031481141b3e84459d2",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 1.05
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "attack",
+			"dead": false,
+			"file": "controller_controller_active.png",
+			"frame": 0,
+			"kind": "controller",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "active",
+			"sha256": "e2cdabfc68d9d38634611880cc6ba4d99e3190f04dedc66b94d8b2f8bee7db9c",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 1.05
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "death",
+			"dead": true,
+			"file": "controller_death.png",
+			"frame": 1,
+			"kind": "none",
+			"mode": "actual fatal damage/cancellation and fallen key; paused before bounded removal",
+			"phase": "none",
+			"sha256": "d41c38a40653ecb315fdd20602d69773e79ddbb77b718e6a82182bc7c3d10576",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 1.05
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "tell",
+			"dead": false,
+			"file": "exploder_exploder_tell.png",
+			"frame": 0,
+			"kind": "exploder",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "tell",
+			"sha256": "5addf6f7fc3d663a1b6550fa1a305492ca90a015ea2b9268f53d65f785a204da",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 1.4
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "attack",
+			"dead": false,
+			"file": "exploder_exploder_active.png",
+			"frame": 0,
+			"kind": "exploder",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "active",
+			"sha256": "596c47b7f83bf2bbd5fdea37270952b2efb0ea8c8a0421fddef35c7cf503c5a7",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 1.4
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "death",
+			"dead": true,
+			"file": "exploder_death.png",
+			"frame": 1,
+			"kind": "none",
+			"mode": "actual fatal damage/cancellation and fallen key; paused before bounded removal",
+			"phase": "none",
+			"sha256": "37f4feab594bb42374427ce244b71ea5aee24eaa3fe4418d96d598863b5ef17b",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 1.4
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "tell_storm_slam",
+			"dead": false,
+			"file": "storm_warden_storm_slam_tell.png",
+			"frame": 0,
+			"kind": "storm_slam",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "tell",
+			"sha256": "8f7fadcc4cb6fbaa7b086190dc3e2de3965b5d31239d550c0b12011ae521adb5",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.65
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "attack_storm_slam",
+			"dead": false,
+			"file": "storm_warden_storm_slam_active.png",
+			"frame": 0,
+			"kind": "storm_slam",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "active",
+			"sha256": "7912a47a90744dff0b3754308eb7d2bbf1c47d7abe98237c09bb87737947c2e8",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.65
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "death",
+			"dead": true,
+			"file": "storm_warden_death.png",
+			"frame": 1,
+			"kind": "none",
+			"mode": "actual fatal damage/cancellation and fallen key; paused before bounded removal",
+			"phase": "none",
+			"sha256": "7a3781cecf18cacc6411fe815f8fe9739d87900735c26531325a67cf11d1353e",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.65
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "tell_chain_burst",
+			"dead": false,
+			"file": "storm_warden_chain_burst_tell.png",
+			"frame": 0,
+			"kind": "chain_burst",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "tell",
+			"sha256": "cebabc15cb595d7d5685d55c4038a01ad232e2352a393fa744f7e94945edd573",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.4
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "attack_chain_burst",
+			"dead": false,
+			"file": "storm_warden_chain_burst_active.png",
+			"frame": 0,
+			"kind": "chain_burst",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "active",
+			"sha256": "0917f3e0800cde88469ba4cc99f47e834c905b98e09698b2b63e59864691e5ba",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.4
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "tell_rift_slam",
+			"dead": false,
+			"file": "rift_sovereign_rift_slam_tell.png",
+			"frame": 0,
+			"kind": "rift_slam",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "tell",
+			"sha256": "52c725fdec9a787cdf99f4f6590e4075aa42b54f8f051dc6d1ac355efaea16f0",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.6
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "attack_rift_slam",
+			"dead": false,
+			"file": "rift_sovereign_rift_slam_active.png",
+			"frame": 0,
+			"kind": "rift_slam",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "active",
+			"sha256": "f4d2ee9778e855d43d6ac53996515aabfd768eb56d4f7e4a984e9bb2ef140067",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.6
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "death",
+			"dead": true,
+			"file": "rift_sovereign_death.png",
+			"frame": 1,
+			"kind": "none",
+			"mode": "actual fatal damage/cancellation and fallen key; paused before bounded removal",
+			"phase": "none",
+			"sha256": "e68d99ac68f631226b44943c8ff2ac13f17aeb5097fca0c5b025406ad627fe72",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.6
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "tell_portal_burst",
+			"dead": false,
+			"file": "rift_sovereign_portal_burst_tell.png",
+			"frame": 0,
+			"kind": "portal_burst",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "tell",
+			"sha256": "1f10c87a2662fa280be60cca42a46f56491c18690cc98190d187de0f12172a80",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.48
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "attack_portal_burst",
+			"dead": false,
+			"file": "rift_sovereign_portal_burst_active.png",
+			"frame": 0,
+			"kind": "portal_burst",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "active",
+			"sha256": "16b6efbb0a5661499c6786a22cb23944711b11f540757441894182bde148b987",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.48
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "tell_fracture_storm",
+			"dead": false,
+			"file": "rift_sovereign_fracture_storm_tell.png",
+			"frame": 0,
+			"kind": "fracture_storm",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "tell",
+			"sha256": "ae092f441b76dc1141b8ca9639af2653b35310dd68008fbd59905c885140482b",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.36
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "attack_fracture_storm",
+			"dead": false,
+			"file": "rift_sovereign_fracture_storm_active.png",
+			"frame": 0,
+			"kind": "fracture_storm",
+			"mode": "actual tell/active phase; actor motion held; scene paused for inspection",
+			"phase": "active",
+			"sha256": "6671c066d52b1424668542570d9d4c8674384869f083fc7d613f813a7f440f62",
+			"size": [
+				1280,
+				720
+			],
+			"tell_seconds": 0.36
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "shared_fx_gallery_1280x720.png",
+			"kind": "none",
+			"mode": "shared FX source gallery, independently staged; not gameplay hazard authority",
+			"phase": "none",
+			"sha256": "a67e5cadaac021505f3efdf33af9383786cbbb5835266f225e8b87c0bae67aa4",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "shared_fx_gallery_640x360.png",
+			"kind": "none",
+			"mode": "shared FX source gallery, independently staged; not gameplay hazard authority",
+			"phase": "none",
+			"sha256": "b946165e3fa02090c1e9653b040db404cb6eaaae5db03e2154ae9cc0966a91a7",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "electric_fx_gallery_1280x720.png",
+			"kind": "none",
+			"mode": "player electric source gallery; anchors and gameplay binding pending",
+			"phase": "none",
+			"sha256": "ccf5a17772231062cd3e7103b754d8741948cbaeb6da23d3fd68cca285caf519",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "electric_fx_gallery_640x360.png",
+			"kind": "none",
+			"mode": "player electric source gallery; anchors and gameplay binding pending",
+			"phase": "none",
+			"sha256": "9734ebc4e7df423e5cac55f6ad914553f2b0b8eb61fc431e274e46c33eebe3f5",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "portal_body_gallery_1280x720.png",
+			"kind": "none",
+			"mode": "four new portal BODY candidates with rigid axe; independent keys, current quiet portal runtime unchanged",
+			"phase": "none",
+			"sha256": "2c02e068b0a3c117f337fa9d8783498362add285e8a030a9a72b90062046b5d5",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"camera_center": [
+				640.0,
+				460.0
+			],
+			"camera_local_y": -154.0,
+			"clip": "none",
+			"file": "portal_body_gallery_640x360.png",
+			"kind": "none",
+			"mode": "four new portal BODY candidates with rigid axe; independent keys, current quiet portal runtime unchanged",
+			"phase": "none",
+			"sha256": "96b22d29bc5edf9eee90838a15ed9acfa2a226c053a6b021caa152ceb2a84f09",
+			"size": [
+				640,
+				360
+			]
+		}
+	],
+	"driver": "Intel(R) UHD Graphics",
+	"engine": "4.5.1-stable (official)",
+	"framing": "review-only y-154; original production camera unchanged",
+	"hash_text_format": "UTF-8 normalized LF",
+	"human_acceptance": "PENDING",
+	"runtime_asset_promotion": false,
+	"source_hashes": {
+		"res://../assets/production_drafts/2026-10-22/remaining-art-v01/MANIFEST.json": "09fba15b27a08f1f0f24a7b6a747e755dba2b5315428d4aab0bea46f1698a7da",
+		"res://../tools/render_remaining_art_review.gd": "a8952917cb7d7f8acfa7d16da4b3ed53a4505ccf55fc2d7309a4f5e436e7bf14",
+		"res://scripts/boss/rift_sovereign.gd": "3cb7c02f7f25dcb67ad1ca5a03be90b2f942cefa57734509bd324672d5a0bd1a",
+		"res://scripts/boss/storm_warden.gd": "8c24803f60123424ddbb7bf1f1a383e80d3f65027fc20f3e1b4f5ad77f5a9c34",
+		"res://scripts/combat/hostile_attack.gd": "369892b28a96d36abf76c8394c3854f98d4f5692087bf7e58c3761f72e3b8389",
+		"res://scripts/enemies/hostile_art_presenter.gd": "be8f7b9b3be305fa8e3831ae34a94f89e43315c26d6d99fa2d512bb86c05fbb0",
+		"res://tests/art_review_fixtures.gd": "1cbaa96c3b1f8c7884ab73f97b9e755d59f57900228a7b67184c168cbaee294e",
+		"res://tests/remaining_art_fixture.gd": "48c5cadc5dfe398b2943f9002add5d1f11c956a7322059a35809ff2074c438af",
+		"res://tests/remaining_art_layers.gd": "593dacef8165671465f914fdd8f22ab04a28aa2abe09e51a5ab6d506ab2de9de"
+	}
+}
