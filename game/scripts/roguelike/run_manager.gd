@@ -18,8 +18,20 @@ func start_run(seed_override: int = 424242) -> void:
 	state.start(seed_override)
 	run_started.emit(state.seed_value)
 
-func sample_upgrade_choices(count: int = 3) -> Array:
-	return state.sample_upgrades(catalog, count)
+func sample_upgrade_choices(count: int = 3, needs_healing: bool = false) -> Array:
+	var pool: Array = []
+	var restoration: UpgradeData
+	for upgrade in catalog:
+		if upgrade.effect_key==&"heal":
+			restoration = upgrade
+		else:
+			pool.append(upgrade)
+	var result := state.sample_upgrades(pool,count)
+	if needs_healing and count>0 and restoration!=null:
+		if result.size()>=count:
+			result.pop_back()
+		result.append(restoration)
+	return result
 
 func apply_upgrade(upgrade: UpgradeData) -> bool:
 	var applied := state.apply_upgrade(upgrade)

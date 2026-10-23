@@ -2,7 +2,7 @@ extends SceneTree
 
 var _captures: Array = []
 var _capture := false
-var _output := "res://../assets/production_drafts/2026-10-23/a13-feedback-v02/room-review/"
+var _output := "res://../assets/production_drafts/2026-10-23/flow-v03/room-review/"
 
 func _init() -> void:
 	call_deferred("_run")

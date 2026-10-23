@@ -7,3 +7,5 @@ class_name UpgradeData
 @export var effect_key: StringName
 @export var effect_value: float = 0.0
 @export var tags: Array[StringName] = []
+
+@export var repeatable: bool = false

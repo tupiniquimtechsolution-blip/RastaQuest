@@ -56,7 +56,7 @@ func sample_upgrades(catalog: Array, count: int = 3) -> Array:
 		return []
 	var available: Array = []
 	for upgrade in catalog:
-		if upgrade != null and not applied_upgrade_ids.has(upgrade.id):
+		if upgrade != null and (upgrade.repeatable or not applied_upgrade_ids.has(upgrade.id)):
 			available.append(upgrade)
 	var result: Array = []
 	while not available.is_empty() and result.size() < count:
@@ -65,8 +65,11 @@ func sample_upgrades(catalog: Array, count: int = 3) -> Array:
 	return result
 
 func apply_upgrade(upgrade: UpgradeData) -> bool:
-	if upgrade == null or applied_upgrade_ids.has(upgrade.id):
+	if upgrade == null or (not upgrade.repeatable and applied_upgrade_ids.has(upgrade.id)):
 		return false
+	if upgrade.effect_key==&"heal":
+		debug_log.append("restoration depth=%d" % depth)
+		return true
 	applied_upgrade_ids.append(upgrade.id)
 	modifiers[upgrade.effect_key] = float(modifiers.get(upgrade.effect_key, 0.0)) + upgrade.effect_value
 	for tag in upgrade.tags:

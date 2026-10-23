@@ -1,0 +1,692 @@
+{
+	"adapter": "Intel(R) UHD Graphics",
+	"captures": [
+		{
+			"file": "hub_playable_1280x720.png",
+			"sha256": "64877eb1367191d6c9dcff279dcabb6ae96080153931886f6ed0d9426cc75481",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"automatic_assignment": true,
+				"menu": "actual_hub"
+			}
+		},
+		{
+			"file": "hub_playable_640x360.png",
+			"sha256": "0866659b786550dc0938865e7bc02bbc6699512ca5095f406cfe8ff66c68e691",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"automatic_assignment": true,
+				"menu": "actual_hub"
+			}
+		},
+		{
+			"file": "forest_playable_1280x720.png",
+			"sha256": "b99265717835894807bcf9be370c1795d32e0858e828d3074ffbd9107ec30449",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"automatic_assignment": true,
+				"biome": "forest"
+			}
+		},
+		{
+			"file": "forest_playable_640x360.png",
+			"sha256": "de1f6a049f4af41d3ed9a9e96d199e1419d9f6abd54b089dde3df04f2d18b496",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"automatic_assignment": true,
+				"biome": "forest"
+			}
+		},
+		{
+			"file": "forest_portal_1280x720.png",
+			"sha256": "a7af6f9576389f88db32caa3c5eaf2bfa803bc2dadde994cda09ecd0972567c2",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "portal_enter",
+				"frame": 2
+			}
+		},
+		{
+			"file": "forest_portal_640x360.png",
+			"sha256": "1a0c1a8910a46ce35fca3cc675d58ef15446ca54d227f6d08bf695828cf6d391",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "portal_enter",
+				"frame": 2
+			}
+		},
+		{
+			"file": "castle_playable_1280x720.png",
+			"sha256": "8ae335e6a5694a56859db18e653657e291ab847abb35075a5b12ef51102825f7",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"automatic_assignment": true,
+				"biome": "castle"
+			}
+		},
+		{
+			"file": "castle_playable_640x360.png",
+			"sha256": "c8666b22e5afc683d8f7abd28189a0d95dab7582d4d5010d808be7d07504847d",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"automatic_assignment": true,
+				"biome": "castle"
+			}
+		},
+		{
+			"file": "castle_portal_1280x720.png",
+			"sha256": "786cd48c354b047e5424d247638bfe3613e2a25e577163e350e7760c9f47b96b",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "portal_enter",
+				"frame": 2
+			}
+		},
+		{
+			"file": "castle_portal_640x360.png",
+			"sha256": "03b676661c633c53c1ac67ea2671f3006369b5689f36268fdd7960efad74bb15",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "portal_enter",
+				"frame": 2
+			}
+		},
+		{
+			"file": "caves_playable_1280x720.png",
+			"sha256": "2cc47fbed93cbe0be7200cc16710ddba50868443eb45536c0a3378e59d8d45c8",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"automatic_assignment": true,
+				"biome": "caves"
+			}
+		},
+		{
+			"file": "caves_playable_640x360.png",
+			"sha256": "157e7e6617f2e5787828968a6d1000a5930a0f79e2ed59d90f090cf9de2c6407",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"automatic_assignment": true,
+				"biome": "caves"
+			}
+		},
+		{
+			"file": "caves_portal_1280x720.png",
+			"sha256": "3a9ca0f58e2c4ba99e60ef0060ffc5663fd6ac3a2298c1877681d394e55ef809",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "portal_enter",
+				"frame": 2
+			}
+		},
+		{
+			"file": "caves_portal_640x360.png",
+			"sha256": "798e717ae2ae3f48480ccd43c16e38c1512c946050e177f77a0e1e9b34a72c46",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "portal_enter",
+				"frame": 2
+			}
+		},
+		{
+			"file": "actual_hit_chain_onkill_1280x720.png",
+			"sha256": "9eb16a56e1390c725cffee6db268d3a7136595250a4e04b9f4ecf8c7faa9bacb",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"effect_kinds": [
+					"hit",
+					"electric_chain",
+					"electric_chain",
+					"electric_onkill"
+				],
+				"secondary_health": 9.0
+			}
+		},
+		{
+			"file": "actual_hit_chain_onkill_640x360.png",
+			"sha256": "957d32344eb09549b8b8365dfc5bdbefb3371f2272c71a0b22c11d1b3003eb3c",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"effect_kinds": [
+					"hit",
+					"electric_chain",
+					"electric_chain",
+					"electric_onkill"
+				],
+				"secondary_health": 9.0
+			}
+		},
+		{
+			"file": "ranged_ranged_tell_1280x720.png",
+			"sha256": "239c4cda2c9fcc0fe60a07abf8bdbc373b47f0034f9285bdf3ddf0c24bf999d8",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "tell",
+				"pattern": "ranged",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "ranged_ranged_tell_640x360.png",
+			"sha256": "b37088e5dae30eb6c9577e65422cbeb41ccb3451426a6c46be54c14c23c88737",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "tell",
+				"pattern": "ranged",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "ranged_ranged_active_1280x720.png",
+			"sha256": "74b8635e84f42f4a6521722afb1c55ede54d1d055c5d051fa43b077c98f20f6c",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "attack",
+				"pattern": "ranged",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "ranged_ranged_active_640x360.png",
+			"sha256": "83e48cc75d275ae713fc93761ec890b5c8c656df01b8dd66f55d3df5f6ea90d6",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "attack",
+				"pattern": "ranged",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "charger_charger_tell_1280x720.png",
+			"sha256": "6bce3595d50f53b68532caa878c3a4459980de7441c35285e43fa27f0db81917",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "tell",
+				"pattern": "charger",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "charger_charger_tell_640x360.png",
+			"sha256": "d7a5acb1088229dcca500151e15909fa74ed31aed29232779dbd1f47130198c7",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "tell",
+				"pattern": "charger",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "charger_charger_active_1280x720.png",
+			"sha256": "7eae7bbebdb18349ba75df4937a274ca8af173417cd9268ff90161ad847aeb3f",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "attack",
+				"pattern": "charger",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "charger_charger_active_640x360.png",
+			"sha256": "e7707cd4b6554528c2a0d763a06fba073b75060c6bebde3e338c4d1be5d2e9e8",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "attack",
+				"pattern": "charger",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "controller_controller_tell_1280x720.png",
+			"sha256": "5b1cd7aca89c65e3756f1888b7ace21d41d78c28e9c179e002131bee05a4b7fd",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "tell",
+				"pattern": "controller",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "controller_controller_tell_640x360.png",
+			"sha256": "b334a5d836f437f3fbf93b1e6985e061980d41a256f7443028e2efad76caf9b2",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "tell",
+				"pattern": "controller",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "controller_controller_active_1280x720.png",
+			"sha256": "04036152d4caf1a97bc361947b147bd9da5f6c7ea1f431077abc0d1462737b37",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "attack",
+				"pattern": "controller",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "controller_controller_active_640x360.png",
+			"sha256": "e7d10f106e6e1dcb977e2c19ae609f045142195e355623bad7dae30bb65d598b",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "attack",
+				"pattern": "controller",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "exploder_exploder_tell_1280x720.png",
+			"sha256": "88fd39bc3b172a8b02cd9b4ba6b3d599d824cbaa3f6fa404ebfdeec436884e90",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "tell",
+				"pattern": "exploder",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "exploder_exploder_tell_640x360.png",
+			"sha256": "0eed4ee12a9fb2a74a4236e03779c5b376ca8604d500ad963fd4d98d41956137",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "tell",
+				"pattern": "exploder",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "exploder_exploder_active_1280x720.png",
+			"sha256": "59c8879eaccf7ad48226962fa9eeb0228e91d45fe63e292c6f95ac01876a4669",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "attack",
+				"pattern": "exploder",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "exploder_exploder_active_640x360.png",
+			"sha256": "b43c2f16afcc86e9e03c556f3d40c2d8e4def912026910c77915cef51e5f18fe",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "attack",
+				"pattern": "exploder",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "storm_warden_storm_slam_tell_1280x720.png",
+			"sha256": "a735fa928ae74481e2a7d4a0cc82112c8a33867d1f3964ccbacf89485903f5d0",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "tell_storm_slam",
+				"pattern": "storm_slam",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "storm_warden_storm_slam_tell_640x360.png",
+			"sha256": "277e04f33b9c1c250f702d1ac7295587ff52e939e97a9d4c664a7df098b93c13",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "tell_storm_slam",
+				"pattern": "storm_slam",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "storm_warden_storm_slam_active_1280x720.png",
+			"sha256": "3fe7317bbe80938f0b9763d9ea452ec2da7c88cddfb5fc408736a0aaaa28d5db",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "attack_storm_slam",
+				"pattern": "storm_slam",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "storm_warden_storm_slam_active_640x360.png",
+			"sha256": "f77751bab082c650d34999e0f71d49d4586875b13a9f9c294fd00e9d39a211b1",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "attack_storm_slam",
+				"pattern": "storm_slam",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "storm_warden_chain_burst_tell_1280x720.png",
+			"sha256": "da61a06732d8d31f1b78371158e55fa8a4fa77a1ce41707ac0a0bf0e67476089",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "tell_chain_burst",
+				"pattern": "chain_burst",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "storm_warden_chain_burst_tell_640x360.png",
+			"sha256": "97ac75684e8c587704eb168dda6e776d89702e797d4c3a7572a1764f04f15f89",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "tell_chain_burst",
+				"pattern": "chain_burst",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "storm_warden_chain_burst_active_1280x720.png",
+			"sha256": "186c31f8af31a71a1a798b22b8b387c484abea6026426867d52bfbedc8150900",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "attack_chain_burst",
+				"pattern": "chain_burst",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "storm_warden_chain_burst_active_640x360.png",
+			"sha256": "a893d3aa275e69e73f7a518d1692ea90a2c8b811f6acc5fa413fa8f0cb834908",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "attack_chain_burst",
+				"pattern": "chain_burst",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "rift_sovereign_rift_slam_tell_1280x720.png",
+			"sha256": "ca52a7c4b8c46eea96d664e64e995087c874a3d8d344db9d9384ef277e00d35f",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "tell_rift_slam",
+				"pattern": "rift_slam",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "rift_sovereign_rift_slam_tell_640x360.png",
+			"sha256": "1f5e42e1d137c5862f9fc8aac36ff1b4c36145e70e8f4426913f4a5b27f44837",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "tell_rift_slam",
+				"pattern": "rift_slam",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "rift_sovereign_rift_slam_active_1280x720.png",
+			"sha256": "3e161a1559f1f280fa54b66ef8944e8dc7ca12635eb57cf59b41a39f894b1395",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "attack_rift_slam",
+				"pattern": "rift_slam",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "rift_sovereign_rift_slam_active_640x360.png",
+			"sha256": "c453e6293fd93f908acf1bebbe45349f341a0aeef3118a837e12b825435ae8e5",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "attack_rift_slam",
+				"pattern": "rift_slam",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "rift_sovereign_portal_burst_tell_1280x720.png",
+			"sha256": "b18007a21b5964251e7f21d53c998be510e2d2dba83457c29b7cf3bc20c0193e",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "tell_portal_burst",
+				"pattern": "portal_burst",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "rift_sovereign_portal_burst_tell_640x360.png",
+			"sha256": "f3217df89b4608381b92b2748812ca1c87ce24d5c1388772a4529a36449efc04",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "tell_portal_burst",
+				"pattern": "portal_burst",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "rift_sovereign_portal_burst_active_1280x720.png",
+			"sha256": "746b1f1583782a4590226ff5f779b6056e00ff3e41bf7bc85ce674b1fe3162e9",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "attack_portal_burst",
+				"pattern": "portal_burst",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "rift_sovereign_portal_burst_active_640x360.png",
+			"sha256": "19c3b12d8f5d5bd94303592f1be12f1da95a11a72f5705c71e01a1d9f8812271",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "attack_portal_burst",
+				"pattern": "portal_burst",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "rift_sovereign_fracture_storm_tell_1280x720.png",
+			"sha256": "379c6ebe4b33aa9e3c0a7eee75cf7c5a14dd03283b9a55656f1fa9b305bf4f01",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "tell_fracture_storm",
+				"pattern": "fracture_storm",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "rift_sovereign_fracture_storm_tell_640x360.png",
+			"sha256": "2e9ea19500181d780bc06d14d73d949faba6b8edda5dba91552ea2f6c7087f03",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "tell_fracture_storm",
+				"pattern": "fracture_storm",
+				"phase": "tell"
+			}
+		},
+		{
+			"file": "rift_sovereign_fracture_storm_active_1280x720.png",
+			"sha256": "b308150645512ed288fb46ac537b7483227752c26efbf6e6412c4d4c71b8f23f",
+			"size": [
+				1280,
+				720
+			],
+			"state": {
+				"clip": "attack_fracture_storm",
+				"pattern": "fracture_storm",
+				"phase": "active"
+			}
+		},
+		{
+			"file": "rift_sovereign_fracture_storm_active_640x360.png",
+			"sha256": "b26626e8106300349e81638325122a1c0ec2057a4c2481b6aba39b690ff7fb9a",
+			"size": [
+				640,
+				360
+			],
+			"state": {
+				"clip": "attack_fracture_storm",
+				"pattern": "fracture_storm",
+				"phase": "active"
+			}
+		}
+	],
+	"commercial_approved": false,
+	"engine": "4.5.1-stable (official)",
+	"hash_format": "UTF8 normalized LF",
+	"human_acceptance": "PENDING",
+	"source_hashes": {
+		"res://project.godot": "4e903a138969a53f85a0d1dc72c8200fab087a5816e1234bbf90c2a5a1a3863f",
+		"res://scripts/art/playable_art_layers.gd": "493d36d5005807d8c3684b8fbc260db9cc7fa0288e084d49afa5ecbe62076f06",
+		"res://scripts/art/sprite_burst.gd": "f8080e0efaad8150ceee0d56d27d0bc825ae15d1d01f93de1847045e267fd5d4",
+		"res://scripts/art/visual_catalog.gd": "1012e9d49fd97148cd5c6b6365c9afea7ddb0f2af3c1a8cd0e57ae8af0cacab6",
+		"res://scripts/art/visual_review_probe.gd": "7df142f886e9220598bdadcd5759326a8cc1c813f1fcd2e21391a11ec337e2df",
+		"res://scripts/combat/hostile_attack.gd": "fc69f76724ea9dca9ad13d93e933d5318008cc92b389dd286f2d8e090c650b6c",
+		"res://scripts/enemies/hostile_art_presenter.gd": "fd0fdf3bd0c65814345d7256135b7db6434617b1bfd53ed871310c03c50bc864",
+		"res://scripts/player/player_combat.gd": "4f769400b9ef3b640aa2b02978256d6b9cb78691850cbf53263c61daae011970",
+		"res://scripts/player/player_sprite_presenter.gd": "c45146843c6248a19ef4cf09007dcb8fad3deae7c4c553406337a7113c82affa",
+		"res://scripts/roguelike/run_room_controller.gd": "7b3b8cdd5063607362c02f65b56fc286f40c87cf7ea1cf23a3b7b792addc43a4",
+		"res://visual_review/catalog.json": "57a7fdaa18c5282e9c7fa3d96d8776178b3fbdbad480dcf6c57cdfff6e74e9bd"
+	}
+}

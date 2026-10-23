@@ -1,0 +1,776 @@
+{
+  "classification": "VISUAL_REVIEW_ONLY",
+  "commercial_approved": false,
+  "source_hashes": {
+    "run-source.png": "7f7bf85477caf4b4689e956bb45c63517976ee84e7b60ea0373a469e1aa1803b",
+    "combat-source.png": "0f00350da81271434e7c98f20dd53274fd5af2eb370fdf78c88892918fca3bb3",
+    "weapon_double_axe_vertical_01.png": "d1aaf8a66666d1de32e457d95c13ffdc51ded53bd89d4a04358455a2db0003b5"
+  },
+  "native_body_keys": 16,
+  "run_lower_poses": 8,
+  "combat_body_poses": 8,
+  "combat_rig_keys": 24,
+  "method": "ImageGen source studies; single density scales, estimated hips/grips, BOX palette32 binary alpha, declared contact translations; 8 new lower poses share upper rig; 8 combat body poses with rigid master; third rising combo reverses the four overhead bodies with a rising arc. Interpolated weapon-only keys do not claim additional authored body poses.",
+  "clips": {
+    "run": [
+      {
+        "file": "run_01.png",
+        "duration_ms": 60,
+        "body_key": 1,
+        "ground_contact": true,
+        "feet_edge_y": 180,
+        "contact_translation": 0,
+        "hip_estimated": [
+          280,
+          107
+        ]
+      },
+      {
+        "file": "run_02.png",
+        "duration_ms": 60,
+        "body_key": 2,
+        "ground_contact": true,
+        "feet_edge_y": 180,
+        "contact_translation": 0,
+        "hip_estimated": [
+          198,
+          107
+        ]
+      },
+      {
+        "file": "run_03.png",
+        "duration_ms": 60,
+        "body_key": 3,
+        "ground_contact": true,
+        "feet_edge_y": 180,
+        "contact_translation": 0,
+        "hip_estimated": [
+          244,
+          107
+        ]
+      },
+      {
+        "file": "run_04.png",
+        "duration_ms": 60,
+        "body_key": 4,
+        "ground_contact": false,
+        "feet_edge_y": 173,
+        "contact_translation": 0,
+        "hip_estimated": [
+          264,
+          107
+        ]
+      },
+      {
+        "file": "run_05.png",
+        "duration_ms": 60,
+        "body_key": 5,
+        "ground_contact": true,
+        "feet_edge_y": 180,
+        "contact_translation": 1,
+        "hip_estimated": [
+          293,
+          71
+        ]
+      },
+      {
+        "file": "run_06.png",
+        "duration_ms": 60,
+        "body_key": 6,
+        "ground_contact": true,
+        "feet_edge_y": 180,
+        "contact_translation": 1,
+        "hip_estimated": [
+          207,
+          71
+        ]
+      },
+      {
+        "file": "run_07.png",
+        "duration_ms": 60,
+        "body_key": 7,
+        "ground_contact": true,
+        "feet_edge_y": 180,
+        "contact_translation": 1,
+        "hip_estimated": [
+          245,
+          71
+        ]
+      },
+      {
+        "file": "run_08.png",
+        "duration_ms": 60,
+        "body_key": 8,
+        "ground_contact": false,
+        "feet_edge_y": 178,
+        "contact_translation": 0,
+        "hip_estimated": [
+          260,
+          71
+        ]
+      }
+    ],
+    "attack_axe": [
+      {
+        "file": "attack_axe_01.png",
+        "duration_ms": 25,
+        "body_key": 1,
+        "grip": [
+          99,
+          97
+        ],
+        "angle_clockwise": -70,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_02.png",
+        "duration_ms": 25,
+        "body_key": 1,
+        "grip": [
+          99,
+          97
+        ],
+        "angle_clockwise": -5.0,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_03.png",
+        "duration_ms": 35,
+        "body_key": 2,
+        "grip": [
+          170,
+          121
+        ],
+        "angle_clockwise": 60,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_04.png",
+        "duration_ms": 35,
+        "body_key": 2,
+        "grip": [
+          170,
+          121
+        ],
+        "angle_clockwise": 85.0,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_05.png",
+        "duration_ms": 45,
+        "body_key": 3,
+        "grip": [
+          167,
+          121
+        ],
+        "angle_clockwise": 110,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_06.png",
+        "duration_ms": 45,
+        "body_key": 3,
+        "grip": [
+          167,
+          121
+        ],
+        "angle_clockwise": 132.5,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_07.png",
+        "duration_ms": 45,
+        "body_key": 4,
+        "grip": [
+          153,
+          131
+        ],
+        "angle_clockwise": 155,
+        "weapon_grip": [
+          128,
+          145
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_08.png",
+        "duration_ms": 45,
+        "body_key": 4,
+        "grip": [
+          153,
+          131
+        ],
+        "angle_clockwise": 155,
+        "weapon_grip": [
+          128,
+          145
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      }
+    ],
+    "attack_axe_2": [
+      {
+        "file": "attack_axe_2_01.png",
+        "duration_ms": 25,
+        "body_key": 5,
+        "grip": [
+          120,
+          69
+        ],
+        "angle_clockwise": -15,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_2_02.png",
+        "duration_ms": 25,
+        "body_key": 5,
+        "grip": [
+          120,
+          69
+        ],
+        "angle_clockwise": 22.5,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_2_03.png",
+        "duration_ms": 35,
+        "body_key": 6,
+        "grip": [
+          169,
+          129
+        ],
+        "angle_clockwise": 60,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_2_04.png",
+        "duration_ms": 35,
+        "body_key": 6,
+        "grip": [
+          169,
+          129
+        ],
+        "angle_clockwise": 102.5,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_2_05.png",
+        "duration_ms": 45,
+        "body_key": 7,
+        "grip": [
+          168,
+          145
+        ],
+        "angle_clockwise": 145,
+        "weapon_grip": [
+          128,
+          145
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_2_06.png",
+        "duration_ms": 45,
+        "body_key": 7,
+        "grip": [
+          168,
+          145
+        ],
+        "angle_clockwise": 157.5,
+        "weapon_grip": [
+          128,
+          145
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_2_07.png",
+        "duration_ms": 45,
+        "body_key": 8,
+        "grip": [
+          155,
+          143
+        ],
+        "angle_clockwise": 170,
+        "weapon_grip": [
+          128,
+          145
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_2_08.png",
+        "duration_ms": 45,
+        "body_key": 8,
+        "grip": [
+          155,
+          143
+        ],
+        "angle_clockwise": 170,
+        "weapon_grip": [
+          128,
+          145
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      }
+    ],
+    "attack_axe_3": [
+      {
+        "file": "attack_axe_3_01.png",
+        "duration_ms": 25,
+        "body_key": 8,
+        "grip": [
+          155,
+          143
+        ],
+        "angle_clockwise": 125,
+        "weapon_grip": [
+          128,
+          128
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_3_02.png",
+        "duration_ms": 25,
+        "body_key": 8,
+        "grip": [
+          155,
+          143
+        ],
+        "angle_clockwise": 105.0,
+        "weapon_grip": [
+          128,
+          128
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_3_03.png",
+        "duration_ms": 35,
+        "body_key": 7,
+        "grip": [
+          168,
+          145
+        ],
+        "angle_clockwise": 85,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_3_04.png",
+        "duration_ms": 35,
+        "body_key": 7,
+        "grip": [
+          168,
+          145
+        ],
+        "angle_clockwise": 62.5,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_3_05.png",
+        "duration_ms": 45,
+        "body_key": 6,
+        "grip": [
+          169,
+          129
+        ],
+        "angle_clockwise": 40,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_3_06.png",
+        "duration_ms": 45,
+        "body_key": 6,
+        "grip": [
+          169,
+          129
+        ],
+        "angle_clockwise": 12.5,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_3_07.png",
+        "duration_ms": 45,
+        "body_key": 5,
+        "grip": [
+          120,
+          69
+        ],
+        "angle_clockwise": -15,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      },
+      {
+        "file": "attack_axe_3_08.png",
+        "duration_ms": 45,
+        "body_key": 5,
+        "grip": [
+          120,
+          69
+        ],
+        "angle_clockwise": -15,
+        "weapon_grip": [
+          128,
+          110
+        ],
+        "origin": [
+          128,
+          128
+        ],
+        "feet_edge_y": 180
+      }
+    ]
+  },
+  "files": [
+    {
+      "file": "run_01.png",
+      "sha256": "06f2482977b19a7e0d187fa2450ea3a4f35e56d06df534da99ec2e27ac38693c"
+    },
+    {
+      "file": "layers/run_body_01.png",
+      "sha256": "3f9340c1aa73b3350c4693ba0c84538becde0f66dfceb61d32516d3ad5a67a5a"
+    },
+    {
+      "file": "run_02.png",
+      "sha256": "3943943f833e28c2f79b6d2eda3ae61528e4c4d844367702dd8bee312d329e06"
+    },
+    {
+      "file": "layers/run_body_02.png",
+      "sha256": "7413172d5416fc7ccc3210ce662596670aa71878337f7719d46008713fe6113e"
+    },
+    {
+      "file": "run_03.png",
+      "sha256": "b94ca084b93573f5601ce466bd0e2ede69f9cd594a51b2dc2cfdeacca83f0463"
+    },
+    {
+      "file": "layers/run_body_03.png",
+      "sha256": "5d172f18d94d19c846eeed722c99deca2321d3dd7bb5621df53d50f92d24d609"
+    },
+    {
+      "file": "run_04.png",
+      "sha256": "fba1d26c999ab2a57eab15d517598cd8c426f61e652bad812027de20b8b4087f"
+    },
+    {
+      "file": "layers/run_body_04.png",
+      "sha256": "41a6bc4c1715dbe433a0eea1e8d90dfcae2356a84465eeb00e6e117e02e31311"
+    },
+    {
+      "file": "run_05.png",
+      "sha256": "752d8d6cc879cbd49a6a904d6afbd27175516bcdb5fb257bf73059c9b25edb7d"
+    },
+    {
+      "file": "layers/run_body_05.png",
+      "sha256": "48a6987bfcfcbccd13bc7b99f993b3c38f585267dfaa8ed9268086239e31ee42"
+    },
+    {
+      "file": "run_06.png",
+      "sha256": "1ad1f4bac4f35ecd555b16c998f03866031950383acc3d0eda3ff82d7f65fbc9"
+    },
+    {
+      "file": "layers/run_body_06.png",
+      "sha256": "a7e858552eaf3ed03100d5ca0b232e555b7908b68fb0f0be9594f4883dc6aea5"
+    },
+    {
+      "file": "run_07.png",
+      "sha256": "a6bc3089ccae22dd8cabaf1168a49c276c851631b547b03a010a46ddfccc6e46"
+    },
+    {
+      "file": "layers/run_body_07.png",
+      "sha256": "f4e2f1a9a615a7a5c2bb5f03532c3bc17441ea564e7258a124f1414d70c55a85"
+    },
+    {
+      "file": "run_08.png",
+      "sha256": "93b923153053526597edf6d560fa78d9f5b8b1ecac27bb006ac33f1fcbbc5bac"
+    },
+    {
+      "file": "layers/run_body_08.png",
+      "sha256": "48a42eac7615efcd94dff0597b4ac838ac3724a67ecff0c573f1f41317dfc782"
+    },
+    {
+      "file": "layers/combat_body_01.png",
+      "sha256": "f68ce3ae5d50ced9b58bc60494d774b854365fde5d3b944b3b2f0f6e5446920f"
+    },
+    {
+      "file": "layers/combat_body_02.png",
+      "sha256": "6ffeaed8cff5e5075c88b95462858ff3d70ea3a6ad1dfb45e46aadc5bddd1b8c"
+    },
+    {
+      "file": "layers/combat_body_03.png",
+      "sha256": "474c70698644f483a562b017c73dcdf1f668f80311fe273175bb15ef6700e566"
+    },
+    {
+      "file": "layers/combat_body_04.png",
+      "sha256": "9d9f6e00cd981e73d56dcdd91f73250bcad3e80a737c73eb7105e20c44a756bf"
+    },
+    {
+      "file": "layers/combat_body_05.png",
+      "sha256": "f1b234dc53e37b8bc3667a128550c337b0eaecf7ac2b663a49f04a82f41ffa45"
+    },
+    {
+      "file": "layers/combat_body_06.png",
+      "sha256": "126365e2d8df20e8a30d4762f63099c89b80d6cba31a893a61d7fbd97f3dd12e"
+    },
+    {
+      "file": "layers/combat_body_07.png",
+      "sha256": "d5cc05726c6ff0c50198aabafac94216870582a282ed50f611b43e83a629350d"
+    },
+    {
+      "file": "layers/combat_body_08.png",
+      "sha256": "5432e733ce3582b15bfe63a6bb66a1a1c15176bab8fe043f656b86deee8dfd04"
+    },
+    {
+      "file": "attack_axe_01.png",
+      "sha256": "d1ac981cced97439af0da9c51205891989d69ef6f1f6aaa7ac615c9f02374c0c"
+    },
+    {
+      "file": "attack_axe_02.png",
+      "sha256": "9f5096d13ed8cf916e51e398972d991ebc84bb8c874304dcb968958ae30b2e9e"
+    },
+    {
+      "file": "attack_axe_03.png",
+      "sha256": "2242543c6d05814509e848e97c42d6ed9029af530456252d07f6981c8676a9df"
+    },
+    {
+      "file": "attack_axe_04.png",
+      "sha256": "c0bf4b407bc4f3ed31f34820e304326d095d2f0b1784109986f0625e3f33a000"
+    },
+    {
+      "file": "attack_axe_05.png",
+      "sha256": "19ea1d29b58ab7abbd57d7bd2c8440a68bb7ce85fa0567c62dbf8c7b42653f9c"
+    },
+    {
+      "file": "attack_axe_06.png",
+      "sha256": "c0035f8c75a857d2e46c07ceca6227956ed2203cc121ddf27bf6194c29905706"
+    },
+    {
+      "file": "attack_axe_07.png",
+      "sha256": "d2d5b6d0bbcc8a171a1997a4f4f3a12d093f105c7ce3fa0a3aabda5e3760269f"
+    },
+    {
+      "file": "attack_axe_08.png",
+      "sha256": "d2d5b6d0bbcc8a171a1997a4f4f3a12d093f105c7ce3fa0a3aabda5e3760269f"
+    },
+    {
+      "file": "attack_axe_2_01.png",
+      "sha256": "ad4721967c55ae3bcdb3c702f2e027db87378151cd333ae4371bdcf7d1b9f443"
+    },
+    {
+      "file": "attack_axe_2_02.png",
+      "sha256": "e02505beb5bf75f39ed703d173cceed4cdc95ff1aad68d3306330eae246dc388"
+    },
+    {
+      "file": "attack_axe_2_03.png",
+      "sha256": "3d23d67048016ab501d7ebe86824086f2c7457dd292d47454ff029fed15cc7a7"
+    },
+    {
+      "file": "attack_axe_2_04.png",
+      "sha256": "17923397d57e43305d9859c181cf2a650bd5a567116fb170470b83cdf769ded3"
+    },
+    {
+      "file": "attack_axe_2_05.png",
+      "sha256": "f18a81d293c4c1ab7fe0cd815d8b7a5e9aba5c2198bdda1023232241a009c81c"
+    },
+    {
+      "file": "attack_axe_2_06.png",
+      "sha256": "647a7c4d84a3ca8e463c53d9e13c0f5f92c24fbefc0c10f5b8aa8750862e7c7d"
+    },
+    {
+      "file": "attack_axe_2_07.png",
+      "sha256": "b62a13f0a3c61b23f04a24e0d32e8ced59feed9a2b86332af4c4468455f6104a"
+    },
+    {
+      "file": "attack_axe_2_08.png",
+      "sha256": "b62a13f0a3c61b23f04a24e0d32e8ced59feed9a2b86332af4c4468455f6104a"
+    },
+    {
+      "file": "attack_axe_3_01.png",
+      "sha256": "1d0e42dfd43966b98ed343f10d1fc12920ec1bede888873a2b0cc41d9a7c13d3"
+    },
+    {
+      "file": "attack_axe_3_02.png",
+      "sha256": "39c2cb592ddf98ae11e8e000175862d682a45dbb386de4868128644a14260546"
+    },
+    {
+      "file": "attack_axe_3_03.png",
+      "sha256": "6b59b51eb29290794b3dc66dc70d2b274147a1143b278543288e2f3833891a5a"
+    },
+    {
+      "file": "attack_axe_3_04.png",
+      "sha256": "27b94766354159f8ac89bf328b29e24a3a570c2b826d575cf516a4e60abec5bb"
+    },
+    {
+      "file": "attack_axe_3_05.png",
+      "sha256": "ea16a42bdb9c9321d319eff742b78f4d9a7d48a6cf7b85568b9bceb60b31e462"
+    },
+    {
+      "file": "attack_axe_3_06.png",
+      "sha256": "e41a014c3c5c451cfe1d1913b348712c3f0f924760034be7e664a52c8c0e2d84"
+    },
+    {
+      "file": "attack_axe_3_07.png",
+      "sha256": "ad4721967c55ae3bcdb3c702f2e027db87378151cd333ae4371bdcf7d1b9f443"
+    },
+    {
+      "file": "attack_axe_3_08.png",
+      "sha256": "ad4721967c55ae3bcdb3c702f2e027db87378151cd333ae4371bdcf7d1b9f443"
+    }
+  ],
+  "remaining_gates": [
+    "exact-version native visual approval",
+    "physical Galaxy A13 movement/attack/defense review",
+    "rights and cultural evidence"
+  ],
+  "automatic_visual_acceptance": false
+}

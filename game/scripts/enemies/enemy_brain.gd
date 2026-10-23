@@ -22,7 +22,7 @@ static func choose_intent(behavior: String, self_position: Vector2, target_posit
 				intent["move_axis"] = toward
 			intent["wants_attack"] = cooldown_ready and distance >= attack_range * 0.75 and distance <= attack_range * 1.6
 		"charger":
-			intent["move_axis"] = toward
+			intent["move_axis"] = toward if distance>maxf(42.0,attack_range*0.85) else 0.0
 			intent["wants_attack"] = cooldown_ready and distance <= attack_range
 			intent["high_threat"] = bool(intent["wants_attack"])
 			intent["tell_multiplier"] = 1.35
@@ -32,7 +32,7 @@ static func choose_intent(behavior: String, self_position: Vector2, target_posit
 			intent["high_threat"] = bool(intent["wants_attack"])
 			intent["tell_multiplier"] = 1.5
 		"exploder":
-			intent["move_axis"] = toward
+			intent["move_axis"] = toward if distance>maxf(42.0,attack_range*0.85) else 0.0
 			intent["wants_attack"] = cooldown_ready and distance <= attack_range
 			intent["high_threat"] = bool(intent["wants_attack"])
 			intent["tell_multiplier"] = 1.75

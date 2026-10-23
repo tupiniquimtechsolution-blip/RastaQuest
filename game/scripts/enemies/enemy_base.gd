@@ -20,6 +20,7 @@ var _attack: Node2D
 var _presenter: Node2D
 var _parry_stun := 0.0
 var _parry_push := 0.0
+var _engaged := false
 
 func _ready() -> void:
 	add_to_group("hostile_actor")
@@ -51,6 +52,8 @@ func _physics_process(delta: float) -> void:
 	if health.dead:
 		return
 
+	if is_instance_valid(_target) and absf(_target.global_position.x-global_position.x)<760.0:
+		_engaged = true
 	_attack_cooldown_remaining = maxf(_attack_cooldown_remaining - delta, 0.0)
 	velocity.y = minf(velocity.y + 1500.0 * delta, 900.0)
 
@@ -58,7 +61,7 @@ func _physics_process(delta: float) -> void:
 		_parry_stun = maxf(0.0,_parry_stun-delta)
 		velocity.x = _parry_push
 		_parry_push = move_toward(_parry_push,0.0,1200.0*delta)
-	elif is_instance_valid(_target) and absf(_target.global_position.x-global_position.x)>800.0:
+	elif not _engaged:
 		velocity.x = 0.0
 	elif is_instance_valid(_attack) and not _attack.is_queued_for_deletion():
 		velocity.x = _attack.movement_velocity()
@@ -72,7 +75,7 @@ func _physics_process(delta: float) -> void:
 		)
 		velocity.x = float(intent["move_axis"]) * data.move_speed
 
-		if bool(intent["wants_attack"]):
+		if bool(intent["wants_attack"]) and absf(_target.global_position.y-global_position.y)<70.0:
 			var duration := data.tell_seconds * float(intent["tell_multiplier"])
 			var attack := HostileAttack.new()
 			add_child(attack)

@@ -117,9 +117,9 @@ jobs:
           python3 -B tools/build_translations.py --check
           run_test roguelike_core_smoke.gd 'RQ005_ROGUELIKE_CORE_OK encounters=100 upgrades=12'
           run_test vertical_slice_smoke.gd 'RQ006_VERTICAL_SLICE_TECH_OK rooms=6 save_recovery=pass'
-          run_test alpha_campaign_smoke.gd 'RQ007_ALPHA_TECH_OK rooms=18 upgrades=20 biomes=3'
+          run_test alpha_campaign_smoke.gd 'RQ007_ALPHA_TECH_OK rooms=18 upgrades=21 biomes=3'
           run_test ux_accessibility_smoke.gd 'RQ008_UX_ACCESSIBILITY_TECH_OK locales=3 settings=7'
-          run_test beta_hardening_smoke.gd 'RQ009_BETA_TECH_OK schema=2 rooms=18 upgrades=20'
+          run_test beta_hardening_smoke.gd 'RQ009_BETA_TECH_OK schema=2 rooms=18 upgrades=21'
           run_test save_validation_smoke.gd 'RQ_SAVE_VALIDATION_OK'
           run_test save_atomic_smoke.gd 'RQ_SAVE_ATOMIC_OK'
           run_test release_readiness_smoke.gd 'RQ010_RC_PREP_OK version=1.0.0-rc.1 arm64=1'

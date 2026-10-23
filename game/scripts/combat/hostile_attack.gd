@@ -20,6 +20,7 @@ var _shape: Shape2D
 var _damage := 1
 var _leased := false
 var _art_elapsed := 0.0
+var _reflected: Dictionary = {}
 
 func begin(actor: CharacterBody2D, target: Node2D, attack_kind: String, tell_seconds: float) -> bool:
 	_actor = actor
@@ -102,7 +103,7 @@ func _physics_process(delta: float) -> void:
 				if _velocities[index].is_zero_approx():
 					continue
 				_centers[index] = next
-			_apply_hits(_centers[index])
+			_apply_hits(_centers[index],index)
 			if not _leased:
 				return
 		if _remaining <= 0.0:
@@ -128,7 +129,7 @@ func _blocked(from: Vector2, to: Vector2) -> bool:
 	var query := PhysicsRayQueryParameters2D.create(from, to, 1, _body_exclusions())
 	return not get_world_2d().direct_space_state.intersect_ray(query).is_empty()
 
-func _apply_hits(center: Vector2) -> void:
+func _apply_hits(center: Vector2, projectile_index: int = -1) -> void:
 	var query := PhysicsShapeQueryParameters2D.new()
 	query.shape = _shape
 	query.transform = Transform2D(0.0, center)
@@ -139,12 +140,28 @@ func _apply_hits(center: Vector2) -> void:
 		if not _leased:
 			return
 		var hurtbox: Area2D = contact["collider"] as Area2D
-		if hurtbox == null or not hurtbox.has_method("receive_hit") or _hit_targets.has(hurtbox.get_instance_id()):
+		if hurtbox == null or not hurtbox.has_method("receive_hit"):
+			continue
+		var hit_key := "%d:%d" % [projectile_index if kind in SHOTS else -1,hurtbox.get_instance_id()]
+		if _hit_targets.has(hit_key):
 			continue
 		if _blocked(center, hurtbox.global_position):
 			continue
-		_hit_targets[hurtbox.get_instance_id()] = true
-		hurtbox.receive_hit({"attack_id": get_instance_id(), "amount": _damage, "damage_type": StringName(kind), "source": _actor.get_instance_id()})
+		_hit_targets[hit_key] = true
+		hurtbox.receive_hit({"attack_id": get_instance_id(), "amount": _damage, "damage_type": StringName(kind), "source": _actor.get_instance_id(), "hostile_attack":get_instance_id(), "projectile_index":projectile_index})
+
+func reflect_projectile(index: int, defender: Node2D) -> bool:
+	if not _leased or phase!=&"active" or kind not in SHOTS or index<0 or index>=_centers.size() or _reflected.has(index) or _velocities[index].is_zero_approx():
+		return false
+	_reflected[index] = true
+	_velocities[index] = Vector2.ZERO
+	var bolt := preload("res://scripts/combat/reflected_projectile.gd").new()
+	bolt.target = _actor
+	bolt.defender = defender
+	bolt.amount = float(_damage)
+	get_parent().get_parent().add_child(bolt)
+	bolt.global_position = _centers[index]
+	return true
 
 func cancel() -> void:
 	phase = &"cancelled"

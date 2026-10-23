@@ -51,6 +51,14 @@ func apply_frames(candidate: SpriteFrames) -> bool:
 			var texture := candidate.get_frame_texture(clip, index)
 			if texture == null or texture.get_size() != SOURCE_FRAME:
 				return false
+	for optional in [&"attack_axe_2",&"attack_axe_3"]:
+		if candidate.has_animation(optional):
+			if candidate.get_frame_count(optional)<1 or candidate.get_animation_loop(optional) or candidate.get_animation_speed(optional)<=0:
+				return false
+			for i in range(candidate.get_frame_count(optional)):
+				var t := candidate.get_frame_texture(optional,i)
+				if t==null or t.get_size()!=SOURCE_FRAME:
+					return false
 	if candidate.has_animation(&"portal_enter"):
 		if candidate.get_animation_loop(&"portal_enter") or candidate.get_frame_count(&"portal_enter")<1 or candidate.get_animation_speed(&"portal_enter")<=0:
 			return false
@@ -85,8 +93,12 @@ func _show_state(animation_name: StringName) -> void:
 		_sprite.position = _rest_position
 	if animation_name != &"death":
 		_clear_dropped_weapon()
-	if _sprite.visible and animation_name in BODY_CLIPS:
-		_sprite.play(animation_name)
+	if _sprite.visible and animation_name!=&"portal_enter":
+		var clip := animation_name
+		if clip in [&"attack_axe_2",&"attack_axe_3"] and not sprite_frames.has_animation(clip):
+			clip = &"attack_axe"
+		if sprite_frames.has_animation(clip):
+			_sprite.play(clip)
 	# Animation completion deliberately never changes hitboxes, damage, state,
 	# portal transitions or actor lifetime; gameplay remains authoritative.
 

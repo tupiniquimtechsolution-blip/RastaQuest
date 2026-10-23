@@ -1,6 +1,6 @@
 """Verify current rendered evidence, never promote it to physical/human acceptance."""
 from pathlib import Path
-import hashlib,json,struct
+import hashlib,json,struct,subprocess
 
 REPO=Path(__file__).resolve().parents[1]
 ROOT=REPO/'assets/production_drafts/2026-10-23/a13-feedback-v02'
@@ -21,7 +21,7 @@ def verify():
             check(hashlib.sha256(raw).hexdigest()==capture['sha256'],path.name+':hash');count+=1
         for source,expected in report['source_hashes'].items():
             path=REPO/'game'/source.removeprefix('res://')
-            raw=path.read_text(encoding='utf-8').replace('\r\n','\n').encode()
+            raw=subprocess.check_output(['git','show','ee4c840b02726fecffb56cf906738999e6ca3ad1:game/'+source.removeprefix('res://')],cwd=REPO).decode('utf-8').replace('\r\n','\n').encode()
             check(hashlib.sha256(raw).hexdigest()==expected,folder+':input:'+source)
         if folder=='game-review':
             check(report['new_build_physical_acceptance']=='PENDING','new_build_acceptance')

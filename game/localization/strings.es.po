@@ -53,13 +53,13 @@ msgid "continue"
 msgstr "Continuar"
 
 msgid "tutorial_move"
-msgstr "Usa el joystick izquierdo para moverte. Salta para cruzar plataformas."
+msgstr "Muévete con el stick izquierdo. Llévalo hacia arriba o pulsa saltar; suelta y repite en el aire para el doble salto."
 
 msgid "tutorial_combat"
-msgstr "Ataca con el hacha. Defiende justo antes del golpe frontal para contraatacar."
+msgstr "Encadena golpes de hacha. Mantén defensa para proteger todos los lados y devolver proyectiles; actívala cerca del impacto cuerpo a cuerpo para contraatacar."
 
 msgid "tutorial_run"
-msgstr "Derrota enemigos, entra en portales y elige una de tres mejoras."
+msgstr "Derrota enemigos y entra en portales. Elige una mejora; Restauración aparece siempre que falte vida."
 
 msgid "touch_left"
 msgstr "IZQUIERDA"
@@ -284,7 +284,16 @@ msgid "room_cave_shrine"
 msgstr "Santuario sepultado"
 
 msgid "review_version"
-msgstr "REVISIÓN VISUAL • versión candidata"
+msgstr "Revisión visual a13.2 — aprobación comercial pendiente"
 
 msgid "review_art"
 msgstr "REVISIÓN VISUAL • arte candidata"
+
+msgid "upgrade_restoration_title"
+msgstr "Restauración"
+
+msgid "upgrade_restoration_description"
+msgstr "Restaura toda la vida. No aumenta la vida máxima."
+
+msgid "health_status"
+msgstr "Vida: %.1f / %d"

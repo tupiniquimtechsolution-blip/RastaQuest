@@ -7,6 +7,8 @@ var finger := -1
 var displacement := Vector2.ZERO
 var icon: Texture2D
 var deadzone := 0.18
+var _up_armed := true
+var _jump_pulse_frames := 0
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -35,6 +37,12 @@ func _input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion and finger == -2 and analog:
 		_move(event.position)
 
+func _physics_process(_delta: float) -> void:
+	if _jump_pulse_frames>0:
+		_jump_pulse_frames -= 1
+		if _jump_pulse_frames==0:
+			Input.action_release("jump_stick")
+
 func _contains(point: Vector2) -> bool:
 	return (point-(global_position+size*0.5)).length() <= size.x*0.5
 
@@ -50,6 +58,12 @@ func _press(point: Vector2) -> void:
 
 func _move(point: Vector2) -> void:
 	displacement = ((point-global_position-size*0.5)/(size.x*0.34)).limit_length(1.0)
+	if displacement.y>-0.25:
+		_up_armed = true
+	elif displacement.y<=-0.58 and _up_armed:
+		_up_armed = false
+		_jump_pulse_frames = 2
+		Input.action_press("jump_stick")
 	var axis := displacement.x
 	var strength := clampf((absf(axis)-deadzone)/(1.0-deadzone),0,1)
 	Input.action_release("move_left")
@@ -63,7 +77,10 @@ func release() -> void:
 		return
 	finger = -1
 	displacement = Vector2.ZERO
+	_up_armed = true
+	_jump_pulse_frames = 0
 	if analog:
+		Input.action_release("jump_stick")
 		Input.action_release("move_left")
 		Input.action_release("move_right")
 	elif action != &"pause":
