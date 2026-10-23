@@ -5,6 +5,7 @@ const REQUIRED_ACTIONS: Array[StringName] = [
 	&"move_right",
 	&"jump",
 	&"attack",
+	&"guard",
 	&"pause",
 	&"interact",
 ]
@@ -20,6 +21,7 @@ static func ensure_defaults() -> void:
 	_add_key(&"move_right", KEY_RIGHT)
 	_add_key(&"jump", KEY_SPACE)
 	_add_key(&"attack", KEY_J)
+	_add_key(&"guard", KEY_F)
 	_add_key(&"pause", KEY_ESCAPE)
 	_add_key(&"interact", KEY_E)
 
@@ -27,6 +29,7 @@ static func ensure_defaults() -> void:
 	_add_joy_axis(&"move_right", JOY_AXIS_LEFT_X, 1.0)
 	_add_joy_button(&"jump", JOY_BUTTON_A)
 	_add_joy_button(&"attack", JOY_BUTTON_X)
+	_add_joy_button(&"guard", JOY_BUTTON_LEFT_SHOULDER)
 	_add_joy_button(&"pause", JOY_BUTTON_START)
 	_add_joy_button(&"interact", JOY_BUTTON_Y)
 

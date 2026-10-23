@@ -22,7 +22,11 @@ func _ready() -> void:
 	locale.set_item_metadata(0, "en")
 	locale.add_item("Português (Brasil)")
 	locale.set_item_metadata(1, "pt_BR")
-	locale.select(1 if String(SettingsManager.get_value(&"locale", "en")) == "pt_BR" else 0)
+	locale.add_item("Español")
+	locale.set_item_metadata(2,"es")
+	for index in range(locale.item_count):
+		if locale.get_item_metadata(index) == SettingsManager.get_value(&"locale","pt_BR"):
+			locale.select(index)
 
 	screen_shake.toggled.connect(func(v): SettingsManager.set_value(&"screen_shake", v))
 	reduced_flashes.toggled.connect(func(v): SettingsManager.set_value(&"reduced_flashes", v))

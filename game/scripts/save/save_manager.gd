@@ -10,7 +10,7 @@ const DEFAULT_SETTINGS := {
 	"music_volume": 1.0,
 	"sfx_volume": 1.0,
 	"touch_scale": 1.0,
-	"locale": "en",
+	"locale": "pt_BR",
 }
 
 var save_path: String = "user://rasta_quest_save.json"

@@ -127,6 +127,13 @@ def verify(apk, manifest_path, output, debug_keystore):
     (output / "apk-badging.txt").write_text(badging, encoding="utf-8")
     print(badging)
     observed = parse_badging(badging)
+    if "screen_orientation_android" in expected:
+        xml = run_text([str(sdk / "aapt2"), "dump", "xmltree", str(apk), "--file", "AndroidManifest.xml"])
+        (output / "android-manifest-tree.txt").write_text(xml, encoding="utf-8")
+        orientations = re.findall(r"android:screenOrientation[^\n]*=\(type 0x10\)0x([0-9a-fA-F]+)", xml)
+        if not orientations or {int(value, 16) for value in orientations} != {expected["screen_orientation_android"]}:
+            raise ValueError("Actual APK activity does not allow both landscape orientations")
+        observed["screen_orientation_android"] = expected["screen_orientation_android"]
     with zipfile.ZipFile(apk) as archive:
         if archive.testzip() is not None:
             raise ValueError("APK ZIP integrity failed")

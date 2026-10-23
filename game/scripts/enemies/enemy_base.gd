@@ -18,6 +18,8 @@ var _target: Node2D
 var _attack_cooldown_remaining: float = 0.0
 var _attack: Node2D
 var _presenter: Node2D
+var _parry_stun := 0.0
+var _parry_push := 0.0
 
 func _ready() -> void:
 	add_to_group("hostile_actor")
@@ -52,7 +54,13 @@ func _physics_process(delta: float) -> void:
 	_attack_cooldown_remaining = maxf(_attack_cooldown_remaining - delta, 0.0)
 	velocity.y = minf(velocity.y + 1500.0 * delta, 900.0)
 
-	if is_instance_valid(_attack) and not _attack.is_queued_for_deletion():
+	if _parry_stun > 0.0:
+		_parry_stun = maxf(0.0,_parry_stun-delta)
+		velocity.x = _parry_push
+		_parry_push = move_toward(_parry_push,0.0,1200.0*delta)
+	elif is_instance_valid(_target) and absf(_target.global_position.x-global_position.x)>800.0:
+		velocity.x = 0.0
+	elif is_instance_valid(_attack) and not _attack.is_queued_for_deletion():
 		velocity.x = _attack.movement_velocity()
 	elif is_instance_valid(_target):
 		var intent := EnemyBrain.choose_intent(
@@ -79,6 +87,17 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0.0, data.move_speed * delta)
 
 	move_and_slide()
+
+func apply_parry_response(amount: float, facing: float, speed: float) -> void:
+	if health.dead:
+		return
+	if is_instance_valid(_attack):
+		_attack.cancel()
+	_attack = null
+	_parry_stun = 0.24
+	_parry_push = facing*speed
+	_attack_cooldown_remaining = maxf(_attack_cooldown_remaining,0.65)
+	health.take_damage(amount,true)
 
 func _on_died() -> void:
 	if is_instance_valid(_attack):

@@ -1,47 +1,62 @@
 extends CanvasLayer
 
-@onready var left_button: Button = $LeftButton
-@onready var right_button: Button = $RightButton
-@onready var jump_button: Button = $JumpButton
-@onready var attack_button: Button = $AttackButton
-@onready var pause_button: Button = $PauseButton
+const Pad = preload("res://scripts/ui/touch_pad.gd")
+var joystick: Control
+var jump_button: Control
+var attack_button: Control
+var guard_button: Control
+var pause_button: Control
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	add_to_group("touch_controls")
-	_bind_hold(left_button, &"move_left")
-	_bind_hold(right_button, &"move_right")
-	_bind_hold(jump_button, &"jump")
-	_bind_hold(attack_button, &"attack")
-	pause_button.pressed.connect(_pulse_action.bind(&"pause"))
+	joystick = _pad("Joystick",&"",null,true)
+	jump_button = _pad("JumpButton",&"jump",preload("res://assets/ui/jump.svg"))
+	attack_button = _pad("AttackButton",&"attack",preload("res://assets/ui/axe.svg"))
+	guard_button = _pad("GuardButton",&"guard",preload("res://assets/ui/shield.svg"))
+	pause_button = _pad("PauseButton",&"pause")
 	SettingsManager.settings_changed.connect(_apply_scale)
+	get_viewport().size_changed.connect(_on_resize)
 	_apply_scale()
 
+func _pad(label: String, action: StringName, texture: Texture2D = null, analog := false) -> Control:
+	var pad := Pad.new()
+	pad.name = label
+	pad.action = action
+	pad.analog = analog
+	pad.icon = texture
+	add_child(pad)
+	return pad
+
 func _apply_scale() -> void:
-	var factor := float(SettingsManager.get_value(&"touch_scale", 1.0))
-	var widths := [88.0, 100.0, 156.0, 156.0, 76.0]
-	var heights := [100.0, 100.0, 120.0, 100.0, 52.0]
-	var buttons := [left_button, right_button, jump_button, attack_button, pause_button]
-	for i in range(buttons.size()):
-		var button: Button = buttons[i]
-		button.add_theme_font_size_override("font_size", maxi(12, int(16.0 * factor)))
-		button.anchor_left = 0.0 if i < 2 else 1.0
-		button.anchor_right = button.anchor_left
-		button.anchor_top = 0.0 if i == 4 else 1.0
-		button.anchor_bottom = button.anchor_top
-		var width: float = widths[i] * factor
-		var height: float = heights[i] * factor
-		if i < 2:
-			button.offset_left = 24.0 if i == 0 else 36.0 + widths[0] * factor
-			button.offset_right = button.offset_left + width
-		else:
-			button.offset_right = -24.0 if i != 3 else -38.0 - widths[2] * factor
-			button.offset_left = button.offset_right - width
-		button.offset_top = 20.0 if i == 4 else -30.0 - height
-		button.offset_bottom = button.offset_top + height
+	var factor := float(SettingsManager.get_value(&"touch_scale",1.0))
+	var extent := get_viewport().get_visible_rect().size
+	_place(joystick,Vector2(32,extent.y-32-180*factor),180*factor)
+	_place(jump_button,Vector2(extent.x-28-128*factor,extent.y-28-128*factor),128*factor)
+	_place(attack_button,Vector2(extent.x-44-256*factor,extent.y-28-128*factor),128*factor)
+	_place(guard_button,Vector2(extent.x-36-192*factor,extent.y-44-256*factor),108*factor)
+	_place(pause_button,Vector2(extent.x-76,20),52)
+
+func _place(pad: Control, at: Vector2, diameter: float) -> void:
+	pad.position = at
+	pad.size = Vector2.ONE*diameter
+	pad.queue_redraw()
 
 func release_held_actions() -> void:
-	for action in ["move_left", "move_right", "jump", "attack"]:
+	for pad in [joystick,jump_button,attack_button,guard_button,pause_button]:
+		if is_instance_valid(pad):
+			pad.release()
+	for action in ["move_left","move_right","jump","attack","guard"]:
 		Input.action_release(action)
+	var scene := get_tree().current_scene
+	if scene != null:
+		var player := scene.get_node_or_null("Player")
+		if player != null and player.has_node("PlayerGuard"):
+			player.get_node("PlayerGuard").reset()
+
+func _on_resize() -> void:
+	release_held_actions()
+	_apply_scale()
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT or what == NOTIFICATION_APPLICATION_PAUSED:
@@ -50,17 +65,3 @@ func _notification(what: int) -> void:
 func _exit_tree() -> void:
 	release_held_actions()
 	Input.action_release("pause")
-
-func _bind_hold(button: BaseButton, action: StringName) -> void:
-	button.button_down.connect(_press_action.bind(action))
-	button.button_up.connect(_release_action.bind(action))
-
-func _press_action(action: StringName) -> void:
-	Input.action_press(action)
-
-func _release_action(action: StringName) -> void:
-	Input.action_release(action)
-
-func _pulse_action(action: StringName) -> void:
-	Input.action_press(action)
-	Input.action_release(action)

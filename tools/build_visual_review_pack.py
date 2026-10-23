@@ -24,8 +24,8 @@ def main():
       'run':('run-2x/player_run_%02d.png',[60]*6),
       'jump':('airborne-2x/jump_combined_%02d.png',[100]),
       'fall':('airborne-2x/fall_combined_%02d.png',[100]),
-      'attack_axe':('combat-reaction-2x/attack_axe_%02d_combined.png',[40]*4),
-      'attack_axe_air':('combat-reaction-2x/attack_axe_air_%02d_combined.png',[50,55,55]),
+      'attack_axe':('combat-reaction-2x/attack_axe_%02d_combined.png',[50,70,90,90]),
+      'attack_axe_air':('combat-reaction-2x/attack_axe_air_%02d_combined.png',[50,140,110]),
       'hurt':('combat-reaction-2x/hurt_%02d_combined.png',[90,90]),
       'death':('combat-reaction-2x/death_%02d_combined.png',[120,140,160,180])}
     for clip,(pattern,durations) in body.items():

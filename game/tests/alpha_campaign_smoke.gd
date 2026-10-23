@@ -15,7 +15,7 @@ func _init() -> void:
 	if load("res://scenes/boss/RiftSovereign.tscn") == null:
 		_fail("final boss scene failed to load")
 		return
-	print("RQ007_ALPHA_TECH_OK rooms=18 upgrades=18 biomes=3")
+	print("RQ007_ALPHA_TECH_OK rooms=18 upgrades=20 biomes=3")
 	quit(0)
 
 func _validate_content() -> bool:
@@ -30,8 +30,8 @@ func _validate_content() -> bool:
 			return _fail("duplicate room id")
 		ids[room.id] = true
 	var upgrades := UpgradeCatalog.load_all()
-	if upgrades.size() != 18:
-		return _fail("expected 18 upgrades")
+	if upgrades.size() != 20:
+		return _fail("expected 20 upgrades")
 	var upgrade_ids: Dictionary = {}
 	for upgrade in upgrades:
 		if upgrade == null or upgrade.id == &"":
@@ -48,18 +48,11 @@ func _validate_campaign_progression() -> bool:
 	state.start(20261006)
 	if state.biome != &"forest":
 		return _fail("fresh run must start in forest")
-	for _i in range(6):
+	for depth in range(1,19):
 		state.advance_encounter()
-	if state.biome != &"castle" or state.depth != 6:
-		return _fail("depth 6 must enter castle")
-	for _i in range(6):
-		state.advance_encounter()
-	if state.biome != &"caves" or state.depth != 12:
-		return _fail("depth 12 must enter caves")
-	for _i in range(6):
-		state.advance_encounter()
-	if state.depth != 18:
-		return _fail("campaign should reach final boss at depth 18")
+		var expected: Array[StringName] = [&"forest",&"castle",&"caves"]
+		if state.biome != expected[depth%3] or state.depth != depth:
+			return _fail("each portal must change biome; final boss at depth 18")
 	return true
 
 func _validate_fresh_save_to_victory_flag() -> bool:

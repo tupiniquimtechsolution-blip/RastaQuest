@@ -31,6 +31,15 @@ func _run() -> void:
 	if tr("start_run") != "Iniciar partida" or not hub.shards_label.text.begins_with("Fragmentos:"):
 		_fail("PT-BR catalog or live hub translation did not load")
 		return
+	panel.locale.select(2)
+	panel.locale.item_selected.emit(2)
+	await _frames()
+	if tr("start_run") != "Iniciar partida" or tr("settings_title") != "Configuración / Accesibilidad":
+		_fail("Spanish catalog did not update live: %s / %s / %s" % [TranslationServer.get_locale(),tr("start_run"),tr("settings_title")])
+		return
+	panel.locale.select(1)
+	panel.locale.item_selected.emit(1)
+	await _frames()
 	var stored: Dictionary = save.load_save()
 	if stored["settings"]["locale"] != "pt_BR" or not is_equal_approx(float(stored["settings"]["music_volume"]), 0.35):
 		_fail("settings menu did not persist language/volume")
@@ -103,14 +112,15 @@ func _run() -> void:
 	var controls: CanvasLayer = run_room.get_node("TouchControls")
 	settings.set_value(&"touch_scale", 1.5)
 	await _frames()
-	if not is_equal_approx(controls.jump_button.size.x, 234.0) or controls.left_button.get_global_rect().intersects(controls.right_button.get_global_rect()):
+	if not is_equal_approx(controls.jump_button.size.x, 192.0) or controls.joystick.get_global_rect().intersects(controls.attack_button.get_global_rect()):
 		_fail("touch scale did not resize/reflow actual controls")
 		return
-	controls.left_button.button_down.emit()
+	controls.joystick.finger = 0
+	controls.joystick._move(controls.joystick.global_position+Vector2(0,controls.joystick.size.y*.5))
 	if not Input.is_action_pressed("move_left"):
 		_fail("touch hold did not enter InputMap")
 		return
-	controls.pause_button.pressed.emit()
+	controls.pause_button._press(controls.pause_button.global_position+controls.pause_button.size*.5)
 	await _frames()
 	if not paused:
 		_fail("on-screen pause button did not pause the real run")
@@ -119,7 +129,8 @@ func _run() -> void:
 		_fail("pause left a held touch movement active")
 		return
 	run_room.get_node("PauseOverlay")._set_paused(false)
-	controls.attack_button.button_down.emit()
+	controls.attack_button.finger = 1
+	controls.attack_button._press(controls.attack_button.global_position+controls.attack_button.size*.5)
 	controls._notification(NOTIFICATION_APPLICATION_FOCUS_OUT)
 	if Input.is_action_pressed("attack"):
 		_fail("focus loss left a held attack active")
@@ -127,7 +138,7 @@ func _run() -> void:
 	run_room.queue_free()
 	root.get_node("RunManager").end_run()
 	await _frames()
-	print("RQ_MENU_ACCESS_OK settings=reachable locales=2 pause=pass onboarding=pass notices=present")
+	print("RQ_MENU_ACCESS_OK settings=reachable locales=3 pause=pass onboarding=pass notices=present")
 	quit(0)
 
 func _fail(message: String) -> void:

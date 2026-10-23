@@ -12,7 +12,7 @@ func _init() -> void:
 	if not errors.is_empty():
 		_fail("balance/content validation failed: %s" % errors)
 		return
-	print("RQ009_BETA_TECH_OK schema=2 rooms=18 upgrades=18")
+	print("RQ009_BETA_TECH_OK schema=2 rooms=18 upgrades=20")
 	quit(0)
 
 func _test_v1_to_v2_migration() -> bool:

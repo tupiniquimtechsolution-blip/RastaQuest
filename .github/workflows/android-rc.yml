@@ -140,21 +140,25 @@ jobs:
           timeout 90s "${GODOT_BIN}" --headless --main-pack /tmp/rq-visual-review/visual-review.pck \
             --script res://scripts/art/visual_review_probe.gd 2>&1 | tee /tmp/rq-visual-review/packaged-runtime.log
           grep -q 'RQ_VISUAL_REVIEW_OK' /tmp/rq-visual-review/packaged-runtime.log
+          timeout 150s "${GODOT_BIN}" --headless --main-pack /tmp/rq-visual-review/visual-review.pck \
+            --script res://scripts/art/a13_feedback_probe.gd 2>&1 | tee /tmp/rq-visual-review/a13-packaged-runtime.log
+          grep -q 'RQ_A13_FEEDBACK_OK' /tmp/rq-visual-review/a13-packaged-runtime.log
+          if grep -qE 'SCRIPT ERROR:|ERROR:' /tmp/rq-visual-review/a13-packaged-runtime.log; then exit 1; fi
           if grep -qE 'SCRIPT ERROR:|ERROR:' /tmp/rq-visual-review/packaged-runtime.log; then exit 1; fi
           "${GODOT_BIN}" --headless --path game --export-debug "Android Visual Review" \
-            /tmp/rq-visual-review/rasta-quest-1.0.0-visual.1-universal-debug.apk 2>&1 | tee /tmp/rq-visual-review/export.log
+            /tmp/rq-visual-review/rasta-quest-1.0.0-a13.1-universal-debug.apk 2>&1 | tee /tmp/rq-visual-review/export.log
           python3 -B tools/verify_android_test_apk.py \
-            /tmp/rq-visual-review/rasta-quest-1.0.0-visual.1-universal-debug.apk \
+            /tmp/rq-visual-review/rasta-quest-1.0.0-a13.1-universal-debug.apk \
             --manifest docs/release/rc/VISUAL_REVIEW_MANIFEST.json \
             --output /tmp/rq-visual-review --debug-keystore /tmp/rastaquest-debug.keystore
           python3 -B tools/verify_android_visual_review.py \
-            /tmp/rq-visual-review/rasta-quest-1.0.0-visual.1-universal-debug.apk \
+            /tmp/rq-visual-review/rasta-quest-1.0.0-a13.1-universal-debug.apk \
             --output /tmp/rq-visual-review/VISUAL_PAYLOAD.json
 
       - name: Preserve playable visual review APK
         uses: actions/upload-artifact@v4
         with:
-          name: rasta-quest-1.0.0-visual.1-universal-debug
+          name: rasta-quest-1.0.0-a13.1-universal-debug
           path: /tmp/rq-visual-review/
           if-no-files-found: error
           retention-days: 30

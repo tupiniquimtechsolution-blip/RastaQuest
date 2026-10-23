@@ -1,7 +1,7 @@
 """Native art and actual capture integrity, never final human approval."""
 from pathlib import Path
 from PIL import Image
-import csv,hashlib,json
+import csv,hashlib,json,subprocess
 
 ROOT=Path(__file__).resolve().parent
 REPO=ROOT.parents[3]
@@ -25,7 +25,7 @@ def main():
     for capture in report['captures']:
         p=ROOT/'room-review'/capture['file'];check(sha(p)==capture['sha256'],capture['file']+':hash');check(list(Image.open(p).size)==capture['size'],capture['file']+':size')
     for source,expected in report['source_hashes'].items():
-        text=(REPO/'game'/source.removeprefix('res://')).read_text(encoding='utf-8');check(hashlib.sha256(text.encode()).hexdigest()==expected,'capture_source:'+source)
+        text=subprocess.check_output(['git','show','d897e67d77295e5335b4b2f8a9b5e7563bcdd787:game/'+source.removeprefix('res://')],cwd=REPO).decode('utf-8');check(hashlib.sha256(text.encode()).hexdigest()==expected,'capture_source:'+source)
     check(report['human_acceptance']=='PENDING' and not report['commercial_approved'],'unearned_capture_approval')
     with (ROOT/'AUTHORING_PROVENANCE.csv').open('w',encoding='utf-8',newline='') as stream:
         writer=csv.writer(stream);writer.writerow(['file','sha256','method','rights_status','cultural_review','commercial_approved'])

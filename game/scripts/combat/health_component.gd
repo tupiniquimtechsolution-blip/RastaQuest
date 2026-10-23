@@ -1,12 +1,12 @@
 extends Node
 
-signal damaged(amount: int, remaining_health: int)
+signal damaged(amount: float, remaining_health: float)
 signal died
 
 @export var max_health: int = 5
 @export var invulnerability_seconds: float = 0.35
 
-var health: int
+var health: float
 var _invulnerability_remaining: float = 0.0
 var dead: bool = false
 
@@ -24,13 +24,13 @@ func reset_health() -> void:
 func restore_full() -> void:
 	reset_health()
 
-func take_damage(amount: int, ignore_invulnerability: bool = false) -> bool:
+func take_damage(amount: float, ignore_invulnerability: bool = false) -> bool:
 	if dead or amount <= 0:
 		return false
 	if not ignore_invulnerability and _invulnerability_remaining > 0.0:
 		return false
 
-	health = maxi(health - amount, 0)
+	health = maxf(health - amount, 0.0)
 	_invulnerability_remaining = invulnerability_seconds
 	damaged.emit(amount, health)
 

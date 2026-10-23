@@ -50,6 +50,15 @@ offset_right = 900.0
 offset_bottom = 70.0
 text = "Corrupted Forest"
 
+[node name="AttackHint" type="Label" parent="Hud"]
+offset_left = 24.0
+offset_top = 101.0
+offset_right = 1100.0
+offset_bottom = 126.0
+theme_override_colors/font_color = Color(0.83, 0.87, 0.85, 0.8)
+theme_override_font_sizes/font_size = 15
+text = "attack_hint"
+
 [node name="RewardPanel" type="Panel" parent="Hud"]
 visible = false
 offset_left = 350.0
@@ -72,7 +81,7 @@ theme_override_constants/separation = 16
 
 [node name="Title" type="Label" parent="Hud/RewardPanel/VBox"]
 layout_mode = 2
-text = "Choose one upgrade"
+text = "choose_upgrade"
 horizontal_alignment = 1
 
 [node name="Choice1" type="Button" parent="Hud/RewardPanel/VBox"]

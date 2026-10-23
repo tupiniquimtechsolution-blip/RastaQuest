@@ -1,25 +1,97 @@
-key,en,pt_BR
-hub_title,Sanctuary,Refúgio
-start_run,Start Run,Iniciar partida
-settings_title,Settings / Accessibility,Configurações / Acessibilidade
-screen_shake,Screen shake,Tremor de tela
-reduced_flashes,Reduce flashes,Reduzir flashes
-vibration,Vibration,Vibração
-music_volume,Music volume,Volume da música
-sfx_volume,SFX volume,Volume dos efeitos
-touch_scale,Touch control scale,Tamanho dos controles touch
-language,Language,Idioma
-hub_game_title,Rasta Quest — Sanctuary,Rasta Quest — Refúgio
-meta_shards,Meta shards: %d,Fragmentos: %d
-paused,Paused,Pausado
-resume,Resume,Continuar
-close,Close,Fechar
-credits_title,Credits and licenses,Créditos e licenças
-continue,Continue,Continuar
-tutorial_move,Move with the left controls. Jump to cross broken ground.,Use os controles da esquerda para andar. Pule para atravessar as plataformas.
-tutorial_combat,Use the axe to defeat enemies. You can also attack while jumping.,Use o machado para derrotar inimigos. Você também pode atacar durante o salto.
-tutorial_run,"Clear encounters, enter portals and choose one of three upgrades.","Derrote os inimigos, entre nos portais e escolha uma das três melhorias."
-touch_left,LEFT,ESQUERDA
-touch_right,RIGHT,DIREITA
-touch_jump,JUMP,PULAR
-touch_attack,ATTACK,ATACAR
+key,en,pt_BR,es
+hub_title,Sanctuary,Refúgio,Refugio
+start_run,Start Run,Iniciar partida,Iniciar partida
+settings_title,Settings / Accessibility,Configurações / Acessibilidade,Configuración / Accesibilidad
+screen_shake,Screen shake,Tremor de tela,Vibración de pantalla
+reduced_flashes,Reduce flashes,Reduzir flashes,Reducir destellos
+vibration,Vibration,Vibração,Vibración
+music_volume,Music volume,Volume da música,Volumen de música
+sfx_volume,SFX volume,Volume dos efeitos,Volumen de efectos
+touch_scale,Touch control scale,Tamanho dos controles touch,Tamaño de controles táctiles
+language,Language,Idioma,Idioma
+hub_game_title,Rasta Quest — Sanctuary,Rasta Quest — Refúgio,Rasta Quest — Refugio
+meta_shards,Meta shards: %d,Fragmentos: %d,Fragmentos: %d
+paused,Paused,Pausado,En pausa
+resume,Resume,Continuar,Continuar
+close,Close,Fechar,Cerrar
+credits_title,Credits and licenses,Créditos e licenças,Créditos y licencias
+continue,Continue,Continuar,Continuar
+tutorial_move,Move with the left controls. Jump to cross broken ground.,Use o analógico esquerdo para andar. Pule para atravessar as plataformas.,Usa el joystick izquierdo para moverte. Salta para cruzar plataformas.
+tutorial_combat,Use the axe to defeat enemies. You can also attack while jumping.,Ataque com o machado. Defenda no instante do golpe frontal para contra-atacar.,Ataca con el hacha. Defiende justo antes del golpe frontal para contraatacar.
+tutorial_run,"Clear encounters, enter portals and choose one of three upgrades.","Derrote os inimigos, entre nos portais e escolha uma das três melhorias.","Derrota enemigos, entra en portales y elige una de tres mejoras."
+touch_left,LEFT,ESQUERDA,IZQUIERDA
+touch_right,RIGHT,DIREITA,DERECHA
+touch_jump,JUMP,PULAR,SALTAR
+touch_attack,ATTACK,ATACAR,ATACAR
+touch_guard,DEFEND,DEFENDER,DEFENDER
+choose_upgrade,Choose one upgrade,Escolha uma melhoria,Elige una mejora
+biome_forest,Forest,Floresta,Bosque
+biome_castle,Castle,Castelo,Castillo
+biome_caves,Caves,Cavernas,Cuevas
+encounter_status,%s • %s • Encounter %d,%s • %s • Encontro %d,%s • %s • Encuentro %d
+clear_status,Encounter clear • Enter the portal,Área livre • Entre no portal,Zona despejada • Entra en el portal
+final_status,Rift Sovereign • Final fracture,Soberano da Fenda • Fratura final,Soberano de la Grieta • Fractura final
+victory_status,Victory • Enter the portal,Vitória • Entre no portal,Victoria • Entra en el portal
+invalid_room,Invalid room template,Modelo de sala inválido,Plantilla de sala no válida
+portal_destination,Next: %s,Destino: %s,Destino: %s
+attack_hint,Yellow circle: prepare • Red: danger • Shield: perfect defense,Círculo amarelo: prepare-se • Vermelho: perigo • Escudo: defesa perfeita,Círculo amarillo: prepárate • Rojo: peligro • Escudo: defensa perfecta
+upgrade_raw_power_title,Raw Power,Força bruta,Fuerza bruta
+upgrade_raw_power_description,+1 axe damage,+1 de dano do machado,+1 de daño del hacha
+upgrade_aerial_edge_title,Aerial Edge,Corte aéreo,Filo aéreo
+upgrade_aerial_edge_description,+1 aerial axe damage,+1 de dano aéreo do machado,+1 de daño aéreo del hacha
+upgrade_fleet_step_title,Fleet Step,Passo ligeiro,Paso veloz
+upgrade_fleet_step_description,+20 movement speed,+20 de velocidade,+20 de velocidad
+upgrade_sky_blessing_title,Sky Blessing,Bênção dos céus,Bendición del cielo
+upgrade_sky_blessing_description,+40 jump power,+40 de força de pulo,+40 de fuerza de salto
+upgrade_hard_skin_title,Hard Skin,Pele resistente,Piel resistente
+upgrade_hard_skin_description,+1 maximum health,+1 de vida máxima,+1 de vida máxima
+upgrade_long_grace_title,Long Grace,Fôlego protetor,Aliento protector
+upgrade_long_grace_description,+0.10s damage invulnerability,"+0,10 s de invulnerabilidade após dano","+0,10 s de invulnerabilidad tras daño"
+upgrade_storm_spark_title,Storm Spark,Faísca da tempestade,Chispa de tormenta
+upgrade_storm_spark_description,+10% electrical proc chance,+10% de chance de descarga elétrica,+10% de probabilidad de descarga
+upgrade_chain_storm_title,Chain Storm,Tempestade em cadeia,Tormenta en cadena
+upgrade_chain_storm_description,Electrical procs chain to nearby enemies,Descargas saltam para inimigos próximos,Las descargas saltan a enemigos cercanos
+upgrade_thunder_fall_title,Thunder Fall,Queda do trovão,Caída del trueno
+upgrade_thunder_fall_description,Kills release an electrical burst,Derrotar um inimigo libera uma descarga,Derrotar a un enemigo libera una descarga
+upgrade_quick_hands_title,Quick Hands,Mãos rápidas,Manos rápidas
+upgrade_quick_hands_description,Shorter axe attack cooldown,Menor intervalo entre ataques,Menor intervalo entre ataques
+upgrade_heavy_axe_title,Heavy Axe,Machado pesado,Hacha pesada
+upgrade_heavy_axe_description,+1 axe damage,+1 de dano do machado,+1 de daño del hacha
+upgrade_wind_dance_title,Wind Dance,Dança do vento,Danza del viento
+upgrade_wind_dance_description,+25 movement speed,+25 de velocidade,+25 de velocidad
+upgrade_iron_roots_title,Iron Roots,Raízes de ferro,Raíces de hierro
+upgrade_iron_roots_description,+1 max health,+1 de vida máxima,+1 de vida máxima
+upgrade_portal_stride_title,Portal Stride,Passo dimensional,Paso dimensional
+upgrade_portal_stride_description,+18 movement speed,+18 de velocidade,+18 de velocidad
+upgrade_storm_crown_title,Storm Crown,Coroa da tempestade,Corona de tormenta
+upgrade_storm_crown_description,+20% electrical proc,+20% de chance de descarga elétrica,+20% de probabilidad de descarga
+upgrade_echo_axe_title,Echo Axe,Eco do machado,Eco del hacha
+upgrade_echo_axe_description,+1 axe damage,+1 de dano do machado,+1 de daño del hacha
+upgrade_last_light_title,Last Light,Última luz,Última luz
+upgrade_last_light_description,+0.12s invulnerability,"+0,12 s de invulnerabilidade após dano","+0,12 s de invulnerabilidad tras daño"
+upgrade_war_drum_title,War Drum,Tambor de guerra,Tambor de guerra
+upgrade_war_drum_description,-0.05s attack cooldown,"−0,05 s no intervalo entre ataques","−0,05 s entre ataques"
+upgrade_guardian_reflex_title,Guardian Reflex,Reflexo guardião,Reflejo guardián
+upgrade_guardian_reflex_description,+35 ms perfect defense window,+35 ms na janela de defesa perfeita,+35 ms para la defensa perfecta
+upgrade_counterweight_title,Counterweight,Contrapeso,Contrapeso
+upgrade_counterweight_description,+80 parry push speed,+80 de força de empurrão no parry,+80 de fuerza de empuje al desviar
+room_forest_gate,Forest Gate,Portal da Floresta,Portal del Bosque
+room_forest_bridge,Broken Bridge,Ponte partida,Puente roto
+room_forest_roots,Root Labyrinth,Labirinto de raízes,Laberinto de raíces
+room_forest_ruin,Moss Ruin,Ruína coberta de musgo,Ruina de musgo
+room_forest_shrine,Fractured Shrine,Santuário fraturado,Santuario fracturado
+room_forest_storm,Storm Clearing,Clareira da tempestade,Claro de tormenta
+room_castle_armory,Warped Armory,Arsenal distorcido,Armería distorsionada
+room_castle_chapel,Silent Chapel,Capela silenciosa,Capilla silenciosa
+room_castle_gate,Fractured Gate,Portão fraturado,Puerta fracturada
+room_castle_hall,Broken Great Hall,Salão em ruínas,Gran salón en ruinas
+room_castle_throne,Empty Throne,Trono vazio,Trono vacío
+room_castle_tower,Shattered Tower,Torre partida,Torre quebrada
+room_cave_abyss,Abyss Threshold,Limiar do abismo,Umbral del abismo
+room_cave_chasm,Black Chasm,Desfiladeiro sombrio,Sima oscura
+room_cave_crystal,Fractured Crystals,Cristais fraturados,Cristales fracturados
+room_cave_echo,Hall of Echoes,Salão dos ecos,Salón de ecos
+room_cave_mouth,Echoing Mouth,Entrada dos ecos,Entrada de ecos
+room_cave_shrine,Buried Shrine,Santuário soterrado,Santuario sepultado
+review_version,VISUAL REVIEW • candidate version,REVISÃO VISUAL • versão candidata,REVISIÓN VISUAL • versión candidata
+review_art,VISUAL REVIEW • candidate art,REVISÃO VISUAL • arte candidata,REVISIÓN VISUAL • arte candidata

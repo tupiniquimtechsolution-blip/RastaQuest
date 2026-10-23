@@ -4,6 +4,13 @@ const EnemyScene = preload("res://scenes/enemies/EnemyBase.tscn")
 const FinalBossScene = preload("res://scenes/boss/RiftSovereign.tscn")
 const RoomCatalog = preload("res://scripts/roguelike/room_catalog.gd")
 
+const Layout = preload("res://scripts/roguelike/world_layout.gd")
+var world_width := 3840
+var platform_rects: Array[Rect2] = []
+var _room_id := ""
+var _status_key := "encounter_status"
+var _destination: Label
+
 const FINAL_BOSS_DEPTH: int = 18
 const ENEMY_DATA := {
 	"chaser": preload("res://data/enemies/chaser.tres"),
@@ -33,6 +40,9 @@ var _portal_entry_resolved: bool = false
 var _portal_entry_id: int = 0
 
 func _ready() -> void:
+	_destination = Label.new()
+	_destination.position = Vector2(-110,-112)
+	portal.add_child(_destination)
 	portal.portal_entered.connect(_on_portal_entered)
 	player.get_node("Health").died.connect(_on_player_died)
 	player.get_node("Health").damaged.connect(_on_player_entry_interrupted)
@@ -50,6 +60,8 @@ func _start_encounter() -> void:
 	reward_panel.visible = false
 	portal.set_locked(true)
 	_clear_enemies()
+	Layout.configure(self,RunManager.state.biome)
+	get_node("/root/ArtCatalog").apply_environment(self,String(RunManager.state.biome))
 	if RunManager.state.depth >= FINAL_BOSS_DEPTH:
 		_start_final_boss()
 		return
@@ -58,8 +70,9 @@ func _start_encounter() -> void:
 	var room_id := RunManager.state.choose_room(RoomCatalog.ids(rooms))
 	var room: RoomTemplateData = RoomCatalog.by_id(rooms, room_id)
 	if room == null:
-		status_label.text = "Invalid room template"
+		_set_status("invalid_room")
 		return
+	_room_id = String(room.id)
 	backdrop.color = room.background_color
 	_alive_enemies = room.enemy_archetypes.size()
 	for index in range(room.enemy_archetypes.size()):
@@ -67,10 +80,10 @@ func _start_encounter() -> void:
 		var behavior := room.enemy_archetypes[index]
 		enemy.data = ENEMY_DATA.get(behavior, ENEMY_DATA["chaser"])
 		enemy.target_path = NodePath("../../Player")
-		enemy.position = room.spawn_positions[index] if index < room.spawn_positions.size() else Vector2(600 + index * 140, 610)
+		enemy.position = Vector2(600+(world_width-1250)*float(index+1)/float(room.enemy_archetypes.size()+1),610)
 		enemy.enemy_defeated.connect(_on_enemy_defeated)
 		$Enemies.add_child(enemy)
-	status_label.text = "%s • %s • Encounter %d" % [room.title, String(RunManager.state.biome).capitalize(), RunManager.state.depth + 1]
+	_set_status("encounter_status")
 
 func _start_final_boss() -> void:
 	_boss_active = true
@@ -78,10 +91,10 @@ func _start_final_boss() -> void:
 	backdrop.color = Color(0.06, 0.02, 0.09, 1.0)
 	var boss := FinalBossScene.instantiate()
 	boss.target_path = NodePath("../../Player")
-	boss.position = Vector2(850, 585)
+	boss.position = Vector2(world_width-650,585)
 	boss.boss_defeated.connect(_on_boss_defeated)
 	$Enemies.add_child(boss)
-	status_label.text = "Rift Sovereign • Final fracture"
+	_set_status("final_status")
 
 func _clear_enemies() -> void:
 	for child in $Enemies.get_children():
@@ -92,14 +105,14 @@ func _on_enemy_defeated(_enemy: Node) -> void:
 	if _alive_enemies == 0 and not _returning_after_death and not _portal_transitioning:
 		get_node("/root/ArtCatalog").burst("reward",portal.global_position,self,64,.45)
 		portal.set_locked(false)
-		status_label.text = "Encounter clear • Enter the portal"
+		_set_status("clear_status")
 
 func _on_boss_defeated() -> void:
 	_alive_enemies = 0
 	if _returning_after_death or _portal_transitioning:
 		return
 	portal.set_locked(false)
-	status_label.text = "Rift Sovereign defeated • Victory portal open"
+	_set_status("victory_status")
 
 func _on_portal_entered() -> void:
 	if _returning_after_death or _portal_transitioning or portal.locked or player.get_node("Health").dead:
@@ -147,11 +160,11 @@ func _complete_portal_entry(entry_id: int) -> void:
 		if index < _pending_choices.size():
 			var upgrade: UpgradeData = _pending_choices[index]
 			button.visible = true
-			button.text = "%s\n%s" % [upgrade.title, upgrade.description]
+			button.text = "%s\n%s" % [tr("upgrade_"+String(upgrade.id)+"_title"),tr("upgrade_"+String(upgrade.id)+"_description")]
 		else:
 			button.visible = false
 
-func _on_player_entry_interrupted(_amount: int, _remaining: int) -> void:
+func _on_player_entry_interrupted(_amount: float, _remaining: float) -> void:
 	if _portal_transitioning and not _portal_entry_resolved:
 		_cancel_portal_entry()
 
@@ -207,6 +220,24 @@ func _apply_run_modifiers() -> void:
 	combat.ground_damage = 1 + int(mods[&"damage"])
 	combat.air_damage = 1 + int(mods[&"damage"]) + int(mods[&"air_damage"])
 	combat.electrical_proc_chance = clampf(0.25 + float(mods[&"proc_chance"]), 0.0, 1.0)
-	combat.attack_cooldown = maxf(0.12, 0.30 - float(mods[&"cooldown_reduction"]))
+	combat.attack_cooldown = maxf(0.12, 0.34 - float(mods[&"cooldown_reduction"]))
+	player.get_node("PlayerGuard").perfect_window = clampf(0.14+float(mods.get(&"parry_window",0.0)),0.14,0.24)
+	player.get_node("PlayerGuard").push_speed = 360.0+float(mods.get(&"parry_push",0.0))
 	combat.chain_lightning_enabled = float(mods[&"chain_lightning"]) > 0.0
 	combat.on_kill_aoe_enabled = float(mods[&"on_kill_aoe"]) > 0.0
+
+func _set_status(key: String) -> void:
+	_status_key = key
+	_refresh_language()
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_TRANSLATION_CHANGED and is_node_ready():
+		_refresh_language()
+
+func _refresh_language() -> void:
+	status_label.text = tr(_status_key) % [tr("room_"+_room_id),tr("biome_"+String(RunManager.state.biome)),RunManager.state.depth+1] if _status_key == "encounter_status" else tr(_status_key)
+	if is_instance_valid(_destination):
+		_destination.text = tr("portal_destination") % tr("biome_"+String(RunManager.state.biome_for_depth(RunManager.state.depth+1)))
+	for i in range(mini(_pending_choices.size(),reward_buttons.size())):
+		var upgrade: UpgradeData = _pending_choices[i]
+		reward_buttons[i].text = "%s\n%s" % [tr("upgrade_"+String(upgrade.id)+"_title"),tr("upgrade_"+String(upgrade.id)+"_description")]

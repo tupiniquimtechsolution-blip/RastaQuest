@@ -2,7 +2,7 @@ extends SceneTree
 
 var _captures: Array = []
 var _capture := false
-var _output := "res://../assets/production_drafts/2026-10-23/playable-visual-v01/room-review/"
+var _output := "res://../assets/production_drafts/2026-10-23/a13-feedback-v02/room-review/"
 
 func _init() -> void:
 	call_deferred("_run")
@@ -103,7 +103,8 @@ func exercise(role: String,ratio: float) -> bool:
 	if not require(tell_seen and active_seen and room.player.get_node("Health").health<100,role+" actual phase/damage missing"):
 		return false
 	actor.get_node("Health").take_damage(1000,true)
-	await create_timer(.08).timeout
+	# New 50ms anticipation plus two physics frames before the hit/FX assertion.
+	await create_timer(.14).timeout
 	if not require(is_instance_valid(actor) and sprite.animation==&"death",role+" bounded death absent"):
 		return false
 	await create_timer(.36).timeout

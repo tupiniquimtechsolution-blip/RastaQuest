@@ -1,0 +1,290 @@
+msgid ""
+msgstr "Language: es\nContent-Type: text/plain; charset=UTF-8\n"
+
+msgid "hub_title"
+msgstr "Refugio"
+
+msgid "start_run"
+msgstr "Iniciar partida"
+
+msgid "settings_title"
+msgstr "Configuración / Accesibilidad"
+
+msgid "screen_shake"
+msgstr "Vibración de pantalla"
+
+msgid "reduced_flashes"
+msgstr "Reducir destellos"
+
+msgid "vibration"
+msgstr "Vibración"
+
+msgid "music_volume"
+msgstr "Volumen de música"
+
+msgid "sfx_volume"
+msgstr "Volumen de efectos"
+
+msgid "touch_scale"
+msgstr "Tamaño de controles táctiles"
+
+msgid "language"
+msgstr "Idioma"
+
+msgid "hub_game_title"
+msgstr "Rasta Quest — Refugio"
+
+msgid "meta_shards"
+msgstr "Fragmentos: %d"
+
+msgid "paused"
+msgstr "En pausa"
+
+msgid "resume"
+msgstr "Continuar"
+
+msgid "close"
+msgstr "Cerrar"
+
+msgid "credits_title"
+msgstr "Créditos y licencias"
+
+msgid "continue"
+msgstr "Continuar"
+
+msgid "tutorial_move"
+msgstr "Usa el joystick izquierdo para moverte. Salta para cruzar plataformas."
+
+msgid "tutorial_combat"
+msgstr "Ataca con el hacha. Defiende justo antes del golpe frontal para contraatacar."
+
+msgid "tutorial_run"
+msgstr "Derrota enemigos, entra en portales y elige una de tres mejoras."
+
+msgid "touch_left"
+msgstr "IZQUIERDA"
+
+msgid "touch_right"
+msgstr "DERECHA"
+
+msgid "touch_jump"
+msgstr "SALTAR"
+
+msgid "touch_attack"
+msgstr "ATACAR"
+
+msgid "touch_guard"
+msgstr "DEFENDER"
+
+msgid "choose_upgrade"
+msgstr "Elige una mejora"
+
+msgid "biome_forest"
+msgstr "Bosque"
+
+msgid "biome_castle"
+msgstr "Castillo"
+
+msgid "biome_caves"
+msgstr "Cuevas"
+
+msgid "encounter_status"
+msgstr "%s • %s • Encuentro %d"
+
+msgid "clear_status"
+msgstr "Zona despejada • Entra en el portal"
+
+msgid "final_status"
+msgstr "Soberano de la Grieta • Fractura final"
+
+msgid "victory_status"
+msgstr "Victoria • Entra en el portal"
+
+msgid "invalid_room"
+msgstr "Plantilla de sala no válida"
+
+msgid "portal_destination"
+msgstr "Destino: %s"
+
+msgid "attack_hint"
+msgstr "Círculo amarillo: prepárate • Rojo: peligro • Escudo: defensa perfecta"
+
+msgid "upgrade_raw_power_title"
+msgstr "Fuerza bruta"
+
+msgid "upgrade_raw_power_description"
+msgstr "+1 de daño del hacha"
+
+msgid "upgrade_aerial_edge_title"
+msgstr "Filo aéreo"
+
+msgid "upgrade_aerial_edge_description"
+msgstr "+1 de daño aéreo del hacha"
+
+msgid "upgrade_fleet_step_title"
+msgstr "Paso veloz"
+
+msgid "upgrade_fleet_step_description"
+msgstr "+20 de velocidad"
+
+msgid "upgrade_sky_blessing_title"
+msgstr "Bendición del cielo"
+
+msgid "upgrade_sky_blessing_description"
+msgstr "+40 de fuerza de salto"
+
+msgid "upgrade_hard_skin_title"
+msgstr "Piel resistente"
+
+msgid "upgrade_hard_skin_description"
+msgstr "+1 de vida máxima"
+
+msgid "upgrade_long_grace_title"
+msgstr "Aliento protector"
+
+msgid "upgrade_long_grace_description"
+msgstr "+0,10 s de invulnerabilidad tras daño"
+
+msgid "upgrade_storm_spark_title"
+msgstr "Chispa de tormenta"
+
+msgid "upgrade_storm_spark_description"
+msgstr "+10% de probabilidad de descarga"
+
+msgid "upgrade_chain_storm_title"
+msgstr "Tormenta en cadena"
+
+msgid "upgrade_chain_storm_description"
+msgstr "Las descargas saltan a enemigos cercanos"
+
+msgid "upgrade_thunder_fall_title"
+msgstr "Caída del trueno"
+
+msgid "upgrade_thunder_fall_description"
+msgstr "Derrotar a un enemigo libera una descarga"
+
+msgid "upgrade_quick_hands_title"
+msgstr "Manos rápidas"
+
+msgid "upgrade_quick_hands_description"
+msgstr "Menor intervalo entre ataques"
+
+msgid "upgrade_heavy_axe_title"
+msgstr "Hacha pesada"
+
+msgid "upgrade_heavy_axe_description"
+msgstr "+1 de daño del hacha"
+
+msgid "upgrade_wind_dance_title"
+msgstr "Danza del viento"
+
+msgid "upgrade_wind_dance_description"
+msgstr "+25 de velocidad"
+
+msgid "upgrade_iron_roots_title"
+msgstr "Raíces de hierro"
+
+msgid "upgrade_iron_roots_description"
+msgstr "+1 de vida máxima"
+
+msgid "upgrade_portal_stride_title"
+msgstr "Paso dimensional"
+
+msgid "upgrade_portal_stride_description"
+msgstr "+18 de velocidad"
+
+msgid "upgrade_storm_crown_title"
+msgstr "Corona de tormenta"
+
+msgid "upgrade_storm_crown_description"
+msgstr "+20% de probabilidad de descarga"
+
+msgid "upgrade_echo_axe_title"
+msgstr "Eco del hacha"
+
+msgid "upgrade_echo_axe_description"
+msgstr "+1 de daño del hacha"
+
+msgid "upgrade_last_light_title"
+msgstr "Última luz"
+
+msgid "upgrade_last_light_description"
+msgstr "+0,12 s de invulnerabilidad tras daño"
+
+msgid "upgrade_war_drum_title"
+msgstr "Tambor de guerra"
+
+msgid "upgrade_war_drum_description"
+msgstr "−0,05 s entre ataques"
+
+msgid "upgrade_guardian_reflex_title"
+msgstr "Reflejo guardián"
+
+msgid "upgrade_guardian_reflex_description"
+msgstr "+35 ms para la defensa perfecta"
+
+msgid "upgrade_counterweight_title"
+msgstr "Contrapeso"
+
+msgid "upgrade_counterweight_description"
+msgstr "+80 de fuerza de empuje al desviar"
+
+msgid "room_forest_gate"
+msgstr "Portal del Bosque"
+
+msgid "room_forest_bridge"
+msgstr "Puente roto"
+
+msgid "room_forest_roots"
+msgstr "Laberinto de raíces"
+
+msgid "room_forest_ruin"
+msgstr "Ruina de musgo"
+
+msgid "room_forest_shrine"
+msgstr "Santuario fracturado"
+
+msgid "room_forest_storm"
+msgstr "Claro de tormenta"
+
+msgid "room_castle_armory"
+msgstr "Armería distorsionada"
+
+msgid "room_castle_chapel"
+msgstr "Capilla silenciosa"
+
+msgid "room_castle_gate"
+msgstr "Puerta fracturada"
+
+msgid "room_castle_hall"
+msgstr "Gran salón en ruinas"
+
+msgid "room_castle_throne"
+msgstr "Trono vacío"
+
+msgid "room_castle_tower"
+msgstr "Torre quebrada"
+
+msgid "room_cave_abyss"
+msgstr "Umbral del abismo"
+
+msgid "room_cave_chasm"
+msgstr "Sima oscura"
+
+msgid "room_cave_crystal"
+msgstr "Cristales fracturados"
+
+msgid "room_cave_echo"
+msgstr "Salón de ecos"
+
+msgid "room_cave_mouth"
+msgstr "Entrada de ecos"
+
+msgid "room_cave_shrine"
+msgstr "Santuario sepultado"
+
+msgid "review_version"
+msgstr "REVISIÓN VISUAL • versión candidata"
+
+msgid "review_art"
+msgstr "REVISIÓN VISUAL • arte candidata"

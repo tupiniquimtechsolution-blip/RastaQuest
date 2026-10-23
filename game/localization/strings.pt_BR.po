@@ -53,10 +53,10 @@ msgid "continue"
 msgstr "Continuar"
 
 msgid "tutorial_move"
-msgstr "Use os controles da esquerda para andar. Pule para atravessar as plataformas."
+msgstr "Use o analógico esquerdo para andar. Pule para atravessar as plataformas."
 
 msgid "tutorial_combat"
-msgstr "Use o machado para derrotar inimigos. Você também pode atacar durante o salto."
+msgstr "Ataque com o machado. Defenda no instante do golpe frontal para contra-atacar."
 
 msgid "tutorial_run"
 msgstr "Derrote os inimigos, entre nos portais e escolha uma das três melhorias."
@@ -72,3 +72,219 @@ msgstr "PULAR"
 
 msgid "touch_attack"
 msgstr "ATACAR"
+
+msgid "touch_guard"
+msgstr "DEFENDER"
+
+msgid "choose_upgrade"
+msgstr "Escolha uma melhoria"
+
+msgid "biome_forest"
+msgstr "Floresta"
+
+msgid "biome_castle"
+msgstr "Castelo"
+
+msgid "biome_caves"
+msgstr "Cavernas"
+
+msgid "encounter_status"
+msgstr "%s • %s • Encontro %d"
+
+msgid "clear_status"
+msgstr "Área livre • Entre no portal"
+
+msgid "final_status"
+msgstr "Soberano da Fenda • Fratura final"
+
+msgid "victory_status"
+msgstr "Vitória • Entre no portal"
+
+msgid "invalid_room"
+msgstr "Modelo de sala inválido"
+
+msgid "portal_destination"
+msgstr "Destino: %s"
+
+msgid "attack_hint"
+msgstr "Círculo amarelo: prepare-se • Vermelho: perigo • Escudo: defesa perfeita"
+
+msgid "upgrade_raw_power_title"
+msgstr "Força bruta"
+
+msgid "upgrade_raw_power_description"
+msgstr "+1 de dano do machado"
+
+msgid "upgrade_aerial_edge_title"
+msgstr "Corte aéreo"
+
+msgid "upgrade_aerial_edge_description"
+msgstr "+1 de dano aéreo do machado"
+
+msgid "upgrade_fleet_step_title"
+msgstr "Passo ligeiro"
+
+msgid "upgrade_fleet_step_description"
+msgstr "+20 de velocidade"
+
+msgid "upgrade_sky_blessing_title"
+msgstr "Bênção dos céus"
+
+msgid "upgrade_sky_blessing_description"
+msgstr "+40 de força de pulo"
+
+msgid "upgrade_hard_skin_title"
+msgstr "Pele resistente"
+
+msgid "upgrade_hard_skin_description"
+msgstr "+1 de vida máxima"
+
+msgid "upgrade_long_grace_title"
+msgstr "Fôlego protetor"
+
+msgid "upgrade_long_grace_description"
+msgstr "+0,10 s de invulnerabilidade após dano"
+
+msgid "upgrade_storm_spark_title"
+msgstr "Faísca da tempestade"
+
+msgid "upgrade_storm_spark_description"
+msgstr "+10% de chance de descarga elétrica"
+
+msgid "upgrade_chain_storm_title"
+msgstr "Tempestade em cadeia"
+
+msgid "upgrade_chain_storm_description"
+msgstr "Descargas saltam para inimigos próximos"
+
+msgid "upgrade_thunder_fall_title"
+msgstr "Queda do trovão"
+
+msgid "upgrade_thunder_fall_description"
+msgstr "Derrotar um inimigo libera uma descarga"
+
+msgid "upgrade_quick_hands_title"
+msgstr "Mãos rápidas"
+
+msgid "upgrade_quick_hands_description"
+msgstr "Menor intervalo entre ataques"
+
+msgid "upgrade_heavy_axe_title"
+msgstr "Machado pesado"
+
+msgid "upgrade_heavy_axe_description"
+msgstr "+1 de dano do machado"
+
+msgid "upgrade_wind_dance_title"
+msgstr "Dança do vento"
+
+msgid "upgrade_wind_dance_description"
+msgstr "+25 de velocidade"
+
+msgid "upgrade_iron_roots_title"
+msgstr "Raízes de ferro"
+
+msgid "upgrade_iron_roots_description"
+msgstr "+1 de vida máxima"
+
+msgid "upgrade_portal_stride_title"
+msgstr "Passo dimensional"
+
+msgid "upgrade_portal_stride_description"
+msgstr "+18 de velocidade"
+
+msgid "upgrade_storm_crown_title"
+msgstr "Coroa da tempestade"
+
+msgid "upgrade_storm_crown_description"
+msgstr "+20% de chance de descarga elétrica"
+
+msgid "upgrade_echo_axe_title"
+msgstr "Eco do machado"
+
+msgid "upgrade_echo_axe_description"
+msgstr "+1 de dano do machado"
+
+msgid "upgrade_last_light_title"
+msgstr "Última luz"
+
+msgid "upgrade_last_light_description"
+msgstr "+0,12 s de invulnerabilidade após dano"
+
+msgid "upgrade_war_drum_title"
+msgstr "Tambor de guerra"
+
+msgid "upgrade_war_drum_description"
+msgstr "−0,05 s no intervalo entre ataques"
+
+msgid "upgrade_guardian_reflex_title"
+msgstr "Reflexo guardião"
+
+msgid "upgrade_guardian_reflex_description"
+msgstr "+35 ms na janela de defesa perfeita"
+
+msgid "upgrade_counterweight_title"
+msgstr "Contrapeso"
+
+msgid "upgrade_counterweight_description"
+msgstr "+80 de força de empurrão no parry"
+
+msgid "room_forest_gate"
+msgstr "Portal da Floresta"
+
+msgid "room_forest_bridge"
+msgstr "Ponte partida"
+
+msgid "room_forest_roots"
+msgstr "Labirinto de raízes"
+
+msgid "room_forest_ruin"
+msgstr "Ruína coberta de musgo"
+
+msgid "room_forest_shrine"
+msgstr "Santuário fraturado"
+
+msgid "room_forest_storm"
+msgstr "Clareira da tempestade"
+
+msgid "room_castle_armory"
+msgstr "Arsenal distorcido"
+
+msgid "room_castle_chapel"
+msgstr "Capela silenciosa"
+
+msgid "room_castle_gate"
+msgstr "Portão fraturado"
+
+msgid "room_castle_hall"
+msgstr "Salão em ruínas"
+
+msgid "room_castle_throne"
+msgstr "Trono vazio"
+
+msgid "room_castle_tower"
+msgstr "Torre partida"
+
+msgid "room_cave_abyss"
+msgstr "Limiar do abismo"
+
+msgid "room_cave_chasm"
+msgstr "Desfiladeiro sombrio"
+
+msgid "room_cave_crystal"
+msgstr "Cristais fraturados"
+
+msgid "room_cave_echo"
+msgstr "Salão dos ecos"
+
+msgid "room_cave_mouth"
+msgstr "Entrada dos ecos"
+
+msgid "room_cave_shrine"
+msgstr "Santuário soterrado"
+
+msgid "review_version"
+msgstr "REVISÃO VISUAL • versão candidata"
+
+msgid "review_art"
+msgstr "REVISÃO VISUAL • arte candidata"

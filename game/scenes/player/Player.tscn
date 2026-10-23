@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="1_player"]
 [ext_resource type="Script" path="res://scripts/combat/health_component.gd" id="2_health"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://scripts/combat/hitbox.gd" id="4_hitbox"]
 [ext_resource type="Script" path="res://scripts/player/player_combat.gd" id="5_combat"]
 [ext_resource type="Script" path="res://scripts/player/player_sprite_presenter.gd" id="6_sprite"]
+
+[ext_resource type="Script" path="res://scripts/player/player_guard.gd" id="7_guard"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
 size = Vector2(28, 52)
@@ -54,6 +56,9 @@ shape = SubResource("RectangleShape2D_attack")
 
 [node name="PlayerCombat" type="Node" parent="."]
 script = ExtResource("5_combat")
+
+[node name="PlayerGuard" type="Node2D" parent="."]
+script = ExtResource("7_guard")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -40)
