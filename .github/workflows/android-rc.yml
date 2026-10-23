@@ -260,5 +260,6 @@ jobs:
             /tmp/rq-store-*/NATIVE_PAGES.json
             /tmp/rq-visual-review/*.log
             /tmp/rq-visual-review/*.json
+            /tmp/rq-visual-review/android-manifest-tree.txt
           if-no-files-found: warn
           retention-days: 30
