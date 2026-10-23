@@ -32,6 +32,14 @@ func end_attack() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if not _active or not area.has_method("receive_hit"):
 		return
+	var origin: Vector2 = get_parent().global_position if get_parent() is CollisionObject2D else global_position
+	var ray := PhysicsRayQueryParameters2D.create(origin,area.global_position,1)
+	var excluded: Array[RID] = []
+	if get_parent() is CollisionObject2D:
+		excluded.append(get_parent().get_rid())
+	ray.exclude = excluded
+	if not get_world_2d().direct_space_state.intersect_ray(ray).is_empty():
+		return
 	var target_id := area.get_instance_id()
 	if not _registry.can_hit(target_id):
 		return

@@ -16,9 +16,9 @@ resume,Resume,Continuar,Continuar
 close,Close,Fechar,Cerrar
 credits_title,Credits and licenses,Créditos e licenças,Créditos y licencias
 continue,Continue,Continuar,Continuar
-tutorial_move,Move with the left controls. Jump to cross broken ground.,Use o analógico esquerdo para andar. Pule para atravessar as plataformas.,Usa el joystick izquierdo para moverte. Salta para cruzar plataformas.
-tutorial_combat,Use the axe to defeat enemies. You can also attack while jumping.,Ataque com o machado. Defenda no instante do golpe frontal para contra-atacar.,Ataca con el hacha. Defiende justo antes del golpe frontal para contraatacar.
-tutorial_run,"Clear encounters, enter portals and choose one of three upgrades.","Derrote os inimigos, entre nos portais e escolha uma das três melhorias.","Derrota enemigos, entra en portales y elige una de tres mejoras."
+tutorial_move,Move with the left stick. Push up or press jump; release and repeat in the air for a double jump.,Ande pelo analógico esquerdo. Puxe para cima ou aperte pular; solte e repita no ar para o pulo duplo.,Muévete con el stick izquierdo. Llévalo hacia arriba o pulsa saltar; suelta y repite en el aire para el doble salto.
+tutorial_combat,Chain axe attacks. Hold defense to protect every side and return shots; raise near melee impact for a perfect counter.,Encadeie golpes de machado. Segure defesa para proteger todos os lados e devolver projéteis; ative perto do impacto corpo a corpo para contra-atacar.,Encadena golpes de hacha. Mantén defensa para proteger todos los lados y devolver proyectiles; actívala cerca del impacto cuerpo a cuerpo para contraatacar.
+tutorial_run,"Clear encounters, enter portals and choose an upgrade. Restoration is offered whenever health is missing.",Derrote os inimigos e entre nos portais. Escolha uma melhoria; Restauração aparece sempre que faltar vida.,Derrota enemigos y entra en portales. Elige una mejora; Restauración aparece siempre que falte vida.
 touch_left,LEFT,ESQUERDA,IZQUIERDA
 touch_right,RIGHT,DIREITA,DERECHA
 touch_jump,JUMP,PULAR,SALTAR
@@ -93,5 +93,8 @@ room_cave_crystal,Fractured Crystals,Cristais fraturados,Cristales fracturados
 room_cave_echo,Hall of Echoes,Salão dos ecos,Salón de ecos
 room_cave_mouth,Echoing Mouth,Entrada dos ecos,Entrada de ecos
 room_cave_shrine,Buried Shrine,Santuário soterrado,Santuario sepultado
-review_version,VISUAL REVIEW • candidate version,REVISÃO VISUAL • versão candidata,REVISIÓN VISUAL • versión candidata
+review_version,Visual review a13.2 — commercial approval pending,Revisão visual a13.2 — aprovação comercial pendente,Revisión visual a13.2 — aprobación comercial pendiente
 review_art,VISUAL REVIEW • candidate art,REVISÃO VISUAL • arte candidata,REVISIÓN VISUAL • arte candidata
+upgrade_restoration_title,Restoration,Restauração,Restauración
+upgrade_restoration_description,Restore all health. Does not increase maximum health.,Restaura toda a vida. Não aumenta a vida máxima.,Restaura toda la vida. No aumenta la vida máxima.
+health_status,Health: %.1f / %d,Vida: %.1f / %d,Vida: %.1f / %d

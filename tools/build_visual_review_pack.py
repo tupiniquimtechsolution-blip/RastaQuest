@@ -30,6 +30,10 @@ def main():
       'death':('combat-reaction-2x/death_%02d_combined.png',[120,140,160,180])}
     for clip,(pattern,durations) in body.items():
         player[clip]=[dict(file=copy(DRAFT/(pattern%(i+1)),f'player/{clip}_{i+1:02}.png'),duration_ms=ms) for i,ms in enumerate(durations)]
+    flow=REPO/'assets/production_drafts/2026-10-23/flow-v03'
+    motion=json.loads((flow/'MANIFEST.json').read_text(encoding='utf-8'))
+    for clip,keys in motion['clips'].items():
+        player[clip]=[dict(file=copy(flow/key['file'],'player/flow_'+key['file']),duration_ms=key['duration_ms']) for key in keys]
     remaining=json.loads((DRAFT/'remaining-art-v01/MANIFEST.json').read_text())
     player['portal_enter']=[dict(file=copy(DRAFT/'remaining-art-v01'/key['combined_file'],f'player/portal_enter_{i+1:02}.png'),duration_ms=90) for i,key in enumerate(remaining['portal_body']['frames'])]
     hero=dict(clips=player,dropped_weapon=copy(DRAFT/'combat-reaction-2x/death_01_weapon.png','player/dropped_weapon.png'))

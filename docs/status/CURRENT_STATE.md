@@ -5,6 +5,8 @@
 
 ## Latest A13 feedback — 2026-10-23
 
+Second physical feedback round: a13.2 adds circular held defense, 280 ms perfect window, returned ranged shots, upward-stick jump/double jump, raised one-way platforms, hostile contact separation, eight-pose run, three broad axe combo clips and explicit repeatable portal restoration. See [second-round implementation and gates](../production/A13_FLOW_2026-10-23.md). The previous a13.1 feedback is partial; exact a13.2 physical/visual acceptance remains pending and commercial GOLD remains NO-GO.
+
 Rodrigo tested visual.1 on the physical Galaxy A13 and reported good basic movement with concrete visual/control/combat/world corrections. This is partial feedback, not final acceptance. The a13.1 candidate implements analog multitouch controls, PT-BR default + Spanish, both landscape orientations, +15% candidate character art, explicit attack phases, circular warnings, fractional half-damage perfect defense and upgrades, and multi-screen portal-linked biomes. See `docs/production/A13_FEEDBACK_2026-10-23.md` for files, checks, scope and remaining gates. Commercial promotion and GOLD remain **NO-GO** pending exact-version physical review, final visual acceptance, rights/culture and remaining release criteria.
 
 ## Executive status

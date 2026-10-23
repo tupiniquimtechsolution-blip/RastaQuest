@@ -53,13 +53,13 @@ msgid "continue"
 msgstr "Continue"
 
 msgid "tutorial_move"
-msgstr "Move with the left controls. Jump to cross broken ground."
+msgstr "Move with the left stick. Push up or press jump; release and repeat in the air for a double jump."
 
 msgid "tutorial_combat"
-msgstr "Use the axe to defeat enemies. You can also attack while jumping."
+msgstr "Chain axe attacks. Hold defense to protect every side and return shots; raise near melee impact for a perfect counter."
 
 msgid "tutorial_run"
-msgstr "Clear encounters, enter portals and choose one of three upgrades."
+msgstr "Clear encounters, enter portals and choose an upgrade. Restoration is offered whenever health is missing."
 
 msgid "touch_left"
 msgstr "LEFT"
@@ -284,7 +284,16 @@ msgid "room_cave_shrine"
 msgstr "Buried Shrine"
 
 msgid "review_version"
-msgstr "VISUAL REVIEW • candidate version"
+msgstr "Visual review a13.2 — commercial approval pending"
 
 msgid "review_art"
 msgstr "VISUAL REVIEW • candidate art"
+
+msgid "upgrade_restoration_title"
+msgstr "Restoration"
+
+msgid "upgrade_restoration_description"
+msgstr "Restore all health. Does not increase maximum health."
+
+msgid "health_status"
+msgstr "Health: %.1f / %d"

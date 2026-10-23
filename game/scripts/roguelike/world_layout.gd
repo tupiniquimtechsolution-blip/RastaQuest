@@ -7,9 +7,9 @@ static func platforms_for(biome: StringName) -> Array[Rect2]:
 	var result: Array[Rect2] = []
 	var base := 640 if biome == &"forest" else (960 if biome == &"castle" else 704)
 	for i in range(3):
-		result.append(Rect2(base+i*192,576-i*64,160 if biome != &"castle" else 192,32))
-	result.append(Rect2(width_for(biome)-1248,544,256,32))
-	result.append(Rect2(width_for(biome)-864,480,192,32))
+		result.append(Rect2(base+i*192,512-i*64,160 if biome != &"castle" else 192,32))
+	result.append(Rect2(width_for(biome)-1248,512,256,32))
+	result.append(Rect2(width_for(biome)-864,448,192,32))
 	return result
 
 static func configure(room: Node2D, biome: StringName) -> void:
@@ -35,6 +35,8 @@ static func configure(room: Node2D, biome: StringName) -> void:
 		var box := RectangleShape2D.new()
 		box.size = rect.size
 		collider.shape = box
+		collider.one_way_collision = true
+		collider.one_way_collision_margin = 6.0
 		platform.add_child(collider)
 		var visual := Polygon2D.new()
 		visual.name = "PlatformVisual"

@@ -4,7 +4,7 @@ const Hostile = preload("res://scripts/combat/hostile_attack.gd")
 const Layout = preload("res://scripts/roguelike/world_layout.gd")
 var _captures: Array = []
 var _capture := false
-var _output := "res://../assets/production_drafts/2026-10-23/a13-feedback-v02/game-review/"
+var _output := "res://../assets/production_drafts/2026-10-23/flow-v03/legacy-route-review/"
 
 func _init() -> void:
 	call_deferred("_run")
@@ -148,11 +148,12 @@ func _run() -> void:
 	guard._age = 0.0
 	for kind in [&"ranged",&"controller"]:
 		payload.damage_type = kind
-		if not check(guard.resolve_hit(payload).amount == 1.0,"ranged/area incorrectly parried"):
+		if not check(guard.resolve_hit(payload).amount == .5,"ranged/area incorrectly parried"):
 			return
 	payload.damage_type = &"chaser"
 	enemy.position.x = 180
-	if not check(guard.resolve_hit(payload).amount==1.0,"rear hit incorrectly blocked"):
+	guard._spent = true
+	if not check(guard.resolve_hit(payload).amount==.5,"rear hit incorrectly blocked"):
 		return
 	enemy.queue_free()
 	controls.release_held_actions()
@@ -163,7 +164,7 @@ func _run() -> void:
 		if upgrade.id in [&"guardian_reflex",&"counterweight"]:
 			run.apply_upgrade(upgrade)
 	room._apply_run_modifiers()
-	if not check(is_equal_approx(guard.perfect_window,.175) and guard.push_speed==440.0,"parry upgrades did not affect runtime"):
+	if not check(is_equal_approx(guard.perfect_window,.315) and guard.push_speed==440.0,"parry upgrades did not affect runtime"):
 		return
 	# Every real platform shares render bounds with its actual collider.
 	var route_results: Array = []

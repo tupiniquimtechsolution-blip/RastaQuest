@@ -46,7 +46,7 @@ func release_held_actions() -> void:
 	for pad in [joystick,jump_button,attack_button,guard_button,pause_button]:
 		if is_instance_valid(pad):
 			pad.release()
-	for action in ["move_left","move_right","jump","attack","guard"]:
+	for action in ["move_left","move_right","jump","jump_stick","attack","guard"]:
 		Input.action_release(action)
 	var scene := get_tree().current_scene
 	if scene != null:

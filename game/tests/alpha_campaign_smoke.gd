@@ -15,7 +15,7 @@ func _init() -> void:
 	if load("res://scenes/boss/RiftSovereign.tscn") == null:
 		_fail("final boss scene failed to load")
 		return
-	print("RQ007_ALPHA_TECH_OK rooms=18 upgrades=20 biomes=3")
+	print("RQ007_ALPHA_TECH_OK rooms=18 upgrades=21 biomes=3")
 	quit(0)
 
 func _validate_content() -> bool:
@@ -30,8 +30,8 @@ func _validate_content() -> bool:
 			return _fail("duplicate room id")
 		ids[room.id] = true
 	var upgrades := UpgradeCatalog.load_all()
-	if upgrades.size() != 20:
-		return _fail("expected 20 upgrades")
+	if upgrades.size() != 21:
+		return _fail("expected 21 upgrades")
 	var upgrade_ids: Dictionary = {}
 	for upgrade in upgrades:
 		if upgrade == null or upgrade.id == &"":

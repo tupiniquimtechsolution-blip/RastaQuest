@@ -56,7 +56,7 @@ func _test_upgrades_and_synergies(catalog: Array) -> bool:
 		if upgrade == null or not state.apply_upgrade(upgrade):
 			return _fail("invalid/null/duplicate upgrade application")
 
-	if state.applied_upgrade_ids.size() != catalog.size():
+	if state.applied_upgrade_ids.size() != catalog.filter(func(u): return not u.repeatable).size():
 		return _fail("not all catalog upgrades applied")
 	if state.active_synergies().size() < 3:
 		return _fail("expected at least three observable synergies")

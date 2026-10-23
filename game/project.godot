@@ -29,6 +29,12 @@ textures/vram_compression/import_etc2_astc=true
 
 [input]
 
+jump_stick={
+"deadzone": 0.2,
+"events": []
+}
+
+
 guard={
 "deadzone": 0.2,
 "events": []

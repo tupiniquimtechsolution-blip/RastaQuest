@@ -31,27 +31,35 @@
       ],
       "run": [
         {
-          "file": "player/run_01.png",
+          "file": "player/flow_run_01.png",
           "duration_ms": 60
         },
         {
-          "file": "player/run_02.png",
+          "file": "player/flow_run_02.png",
           "duration_ms": 60
         },
         {
-          "file": "player/run_03.png",
+          "file": "player/flow_run_03.png",
           "duration_ms": 60
         },
         {
-          "file": "player/run_04.png",
+          "file": "player/flow_run_04.png",
           "duration_ms": 60
         },
         {
-          "file": "player/run_05.png",
+          "file": "player/flow_run_05.png",
           "duration_ms": 60
         },
         {
-          "file": "player/run_06.png",
+          "file": "player/flow_run_06.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "player/flow_run_07.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "player/flow_run_08.png",
           "duration_ms": 60
         }
       ],
@@ -69,20 +77,36 @@
       ],
       "attack_axe": [
         {
-          "file": "player/attack_axe_01.png",
-          "duration_ms": 50
+          "file": "player/flow_attack_axe_01.png",
+          "duration_ms": 25
         },
         {
-          "file": "player/attack_axe_02.png",
-          "duration_ms": 70
+          "file": "player/flow_attack_axe_02.png",
+          "duration_ms": 25
         },
         {
-          "file": "player/attack_axe_03.png",
-          "duration_ms": 90
+          "file": "player/flow_attack_axe_03.png",
+          "duration_ms": 35
         },
         {
-          "file": "player/attack_axe_04.png",
-          "duration_ms": 90
+          "file": "player/flow_attack_axe_04.png",
+          "duration_ms": 35
+        },
+        {
+          "file": "player/flow_attack_axe_05.png",
+          "duration_ms": 45
+        },
+        {
+          "file": "player/flow_attack_axe_06.png",
+          "duration_ms": 45
+        },
+        {
+          "file": "player/flow_attack_axe_07.png",
+          "duration_ms": 45
+        },
+        {
+          "file": "player/flow_attack_axe_08.png",
+          "duration_ms": 45
         }
       ],
       "attack_axe_air": [
@@ -125,6 +149,74 @@
         {
           "file": "player/death_04.png",
           "duration_ms": 180
+        }
+      ],
+      "attack_axe_2": [
+        {
+          "file": "player/flow_attack_axe_2_01.png",
+          "duration_ms": 25
+        },
+        {
+          "file": "player/flow_attack_axe_2_02.png",
+          "duration_ms": 25
+        },
+        {
+          "file": "player/flow_attack_axe_2_03.png",
+          "duration_ms": 35
+        },
+        {
+          "file": "player/flow_attack_axe_2_04.png",
+          "duration_ms": 35
+        },
+        {
+          "file": "player/flow_attack_axe_2_05.png",
+          "duration_ms": 45
+        },
+        {
+          "file": "player/flow_attack_axe_2_06.png",
+          "duration_ms": 45
+        },
+        {
+          "file": "player/flow_attack_axe_2_07.png",
+          "duration_ms": 45
+        },
+        {
+          "file": "player/flow_attack_axe_2_08.png",
+          "duration_ms": 45
+        }
+      ],
+      "attack_axe_3": [
+        {
+          "file": "player/flow_attack_axe_3_01.png",
+          "duration_ms": 25
+        },
+        {
+          "file": "player/flow_attack_axe_3_02.png",
+          "duration_ms": 25
+        },
+        {
+          "file": "player/flow_attack_axe_3_03.png",
+          "duration_ms": 35
+        },
+        {
+          "file": "player/flow_attack_axe_3_04.png",
+          "duration_ms": 35
+        },
+        {
+          "file": "player/flow_attack_axe_3_05.png",
+          "duration_ms": 45
+        },
+        {
+          "file": "player/flow_attack_axe_3_06.png",
+          "duration_ms": 45
+        },
+        {
+          "file": "player/flow_attack_axe_3_07.png",
+          "duration_ms": 45
+        },
+        {
+          "file": "player/flow_attack_axe_3_08.png",
+          "duration_ms": 45
         }
       ],
       "portal_enter": [
@@ -1757,6 +1849,166 @@
       "file": "player/death_04.png",
       "sha256": "5adc099ab75b65d86131f85a61b29d95e92af5f62bb928e0518fedd4eceffbae",
       "source": "assets/production_drafts/2026-10-22/combat-reaction-2x/death_04_combined.png"
+    },
+    {
+      "file": "player/flow_run_01.png",
+      "sha256": "06f2482977b19a7e0d187fa2450ea3a4f35e56d06df534da99ec2e27ac38693c",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/run_01.png"
+    },
+    {
+      "file": "player/flow_run_02.png",
+      "sha256": "3943943f833e28c2f79b6d2eda3ae61528e4c4d844367702dd8bee312d329e06",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/run_02.png"
+    },
+    {
+      "file": "player/flow_run_03.png",
+      "sha256": "b94ca084b93573f5601ce466bd0e2ede69f9cd594a51b2dc2cfdeacca83f0463",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/run_03.png"
+    },
+    {
+      "file": "player/flow_run_04.png",
+      "sha256": "fba1d26c999ab2a57eab15d517598cd8c426f61e652bad812027de20b8b4087f",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/run_04.png"
+    },
+    {
+      "file": "player/flow_run_05.png",
+      "sha256": "752d8d6cc879cbd49a6a904d6afbd27175516bcdb5fb257bf73059c9b25edb7d",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/run_05.png"
+    },
+    {
+      "file": "player/flow_run_06.png",
+      "sha256": "1ad1f4bac4f35ecd555b16c998f03866031950383acc3d0eda3ff82d7f65fbc9",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/run_06.png"
+    },
+    {
+      "file": "player/flow_run_07.png",
+      "sha256": "a6bc3089ccae22dd8cabaf1168a49c276c851631b547b03a010a46ddfccc6e46",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/run_07.png"
+    },
+    {
+      "file": "player/flow_run_08.png",
+      "sha256": "93b923153053526597edf6d560fa78d9f5b8b1ecac27bb006ac33f1fcbbc5bac",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/run_08.png"
+    },
+    {
+      "file": "player/flow_attack_axe_01.png",
+      "sha256": "d1ac981cced97439af0da9c51205891989d69ef6f1f6aaa7ac615c9f02374c0c",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_01.png"
+    },
+    {
+      "file": "player/flow_attack_axe_02.png",
+      "sha256": "9f5096d13ed8cf916e51e398972d991ebc84bb8c874304dcb968958ae30b2e9e",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_02.png"
+    },
+    {
+      "file": "player/flow_attack_axe_03.png",
+      "sha256": "2242543c6d05814509e848e97c42d6ed9029af530456252d07f6981c8676a9df",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_03.png"
+    },
+    {
+      "file": "player/flow_attack_axe_04.png",
+      "sha256": "c0bf4b407bc4f3ed31f34820e304326d095d2f0b1784109986f0625e3f33a000",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_04.png"
+    },
+    {
+      "file": "player/flow_attack_axe_05.png",
+      "sha256": "19ea1d29b58ab7abbd57d7bd2c8440a68bb7ce85fa0567c62dbf8c7b42653f9c",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_05.png"
+    },
+    {
+      "file": "player/flow_attack_axe_06.png",
+      "sha256": "c0035f8c75a857d2e46c07ceca6227956ed2203cc121ddf27bf6194c29905706",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_06.png"
+    },
+    {
+      "file": "player/flow_attack_axe_07.png",
+      "sha256": "d2d5b6d0bbcc8a171a1997a4f4f3a12d093f105c7ce3fa0a3aabda5e3760269f",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_07.png"
+    },
+    {
+      "file": "player/flow_attack_axe_08.png",
+      "sha256": "d2d5b6d0bbcc8a171a1997a4f4f3a12d093f105c7ce3fa0a3aabda5e3760269f",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_08.png"
+    },
+    {
+      "file": "player/flow_attack_axe_2_01.png",
+      "sha256": "ad4721967c55ae3bcdb3c702f2e027db87378151cd333ae4371bdcf7d1b9f443",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_2_01.png"
+    },
+    {
+      "file": "player/flow_attack_axe_2_02.png",
+      "sha256": "e02505beb5bf75f39ed703d173cceed4cdc95ff1aad68d3306330eae246dc388",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_2_02.png"
+    },
+    {
+      "file": "player/flow_attack_axe_2_03.png",
+      "sha256": "3d23d67048016ab501d7ebe86824086f2c7457dd292d47454ff029fed15cc7a7",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_2_03.png"
+    },
+    {
+      "file": "player/flow_attack_axe_2_04.png",
+      "sha256": "17923397d57e43305d9859c181cf2a650bd5a567116fb170470b83cdf769ded3",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_2_04.png"
+    },
+    {
+      "file": "player/flow_attack_axe_2_05.png",
+      "sha256": "f18a81d293c4c1ab7fe0cd815d8b7a5e9aba5c2198bdda1023232241a009c81c",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_2_05.png"
+    },
+    {
+      "file": "player/flow_attack_axe_2_06.png",
+      "sha256": "647a7c4d84a3ca8e463c53d9e13c0f5f92c24fbefc0c10f5b8aa8750862e7c7d",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_2_06.png"
+    },
+    {
+      "file": "player/flow_attack_axe_2_07.png",
+      "sha256": "b62a13f0a3c61b23f04a24e0d32e8ced59feed9a2b86332af4c4468455f6104a",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_2_07.png"
+    },
+    {
+      "file": "player/flow_attack_axe_2_08.png",
+      "sha256": "b62a13f0a3c61b23f04a24e0d32e8ced59feed9a2b86332af4c4468455f6104a",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_2_08.png"
+    },
+    {
+      "file": "player/flow_attack_axe_3_01.png",
+      "sha256": "1d0e42dfd43966b98ed343f10d1fc12920ec1bede888873a2b0cc41d9a7c13d3",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_3_01.png"
+    },
+    {
+      "file": "player/flow_attack_axe_3_02.png",
+      "sha256": "39c2cb592ddf98ae11e8e000175862d682a45dbb386de4868128644a14260546",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_3_02.png"
+    },
+    {
+      "file": "player/flow_attack_axe_3_03.png",
+      "sha256": "6b59b51eb29290794b3dc66dc70d2b274147a1143b278543288e2f3833891a5a",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_3_03.png"
+    },
+    {
+      "file": "player/flow_attack_axe_3_04.png",
+      "sha256": "27b94766354159f8ac89bf328b29e24a3a570c2b826d575cf516a4e60abec5bb",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_3_04.png"
+    },
+    {
+      "file": "player/flow_attack_axe_3_05.png",
+      "sha256": "ea16a42bdb9c9321d319eff742b78f4d9a7d48a6cf7b85568b9bceb60b31e462",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_3_05.png"
+    },
+    {
+      "file": "player/flow_attack_axe_3_06.png",
+      "sha256": "e41a014c3c5c451cfe1d1913b348712c3f0f924760034be7e664a52c8c0e2d84",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_3_06.png"
+    },
+    {
+      "file": "player/flow_attack_axe_3_07.png",
+      "sha256": "ad4721967c55ae3bcdb3c702f2e027db87378151cd333ae4371bdcf7d1b9f443",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_3_07.png"
+    },
+    {
+      "file": "player/flow_attack_axe_3_08.png",
+      "sha256": "ad4721967c55ae3bcdb3c702f2e027db87378151cd333ae4371bdcf7d1b9f443",
+      "source": "assets/production_drafts/2026-10-23/flow-v03/attack_axe_3_08.png"
     },
     {
       "file": "player/portal_enter_01.png",

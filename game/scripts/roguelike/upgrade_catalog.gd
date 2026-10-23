@@ -1,6 +1,7 @@
 extends RefCounted
 
 const UPGRADE_PATHS: Array[String] = [
+	"res://data/upgrades/restoration.tres",
 	"res://data/upgrades/guardian_reflex.tres",
 	"res://data/upgrades/counterweight.tres",
 	"res://data/upgrades/raw_power.tres",

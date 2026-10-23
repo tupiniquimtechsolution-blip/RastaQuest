@@ -1,6 +1,7 @@
 extends Node
 
 signal damaged(amount: float, remaining_health: float)
+signal health_changed
 signal died
 
 @export var max_health: int = 5
@@ -20,6 +21,7 @@ func reset_health() -> void:
 	health = maxi(max_health, 1)
 	_invulnerability_remaining = 0.0
 	dead = false
+	health_changed.emit()
 
 func restore_full() -> void:
 	reset_health()
@@ -33,6 +35,7 @@ func take_damage(amount: float, ignore_invulnerability: bool = false) -> bool:
 	health = maxf(health - amount, 0.0)
 	_invulnerability_remaining = invulnerability_seconds
 	damaged.emit(amount, health)
+	health_changed.emit()
 
 	if health == 0:
 		dead = true
@@ -42,3 +45,10 @@ func take_damage(amount: float, ignore_invulnerability: bool = false) -> bool:
 
 func is_invulnerable() -> bool:
 	return _invulnerability_remaining > 0.0
+
+func heal_full() -> bool:
+	if dead or health>=max_health:
+		return false
+	health = float(max_health)
+	health_changed.emit()
+	return true

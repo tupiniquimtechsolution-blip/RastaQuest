@@ -29,6 +29,9 @@ var _hurt_remaining: float = 0.0
 var _dead: bool = false
 var _attack_animation: StringName = &""
 var _portal_entering: bool = false
+var _jumps_used := 0
+var _contact_push := 0.0
+var _contact_remaining := 0.0
 
 func _ready() -> void:
 	_spawn_position = global_position
@@ -57,11 +60,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0.0, deceleration * delta)
 
 	_apply_gravity(delta)
+	if _contact_remaining>0.0:
+		_contact_remaining = maxf(0.0,_contact_remaining-delta)
+		velocity.x = _contact_push
 	move_and_slide()
+	_resolve_hostile_contact()
 	_update_facing()
 	_update_state()
 
-func respawn() -> void:
+func respawn(restore_health: bool = true) -> void:
 	$PlayerGuard.reset()
 	global_position = _spawn_position
 	velocity = Vector2.ZERO
@@ -72,7 +79,11 @@ func respawn() -> void:
 	_portal_entering = false
 	_attack_animation = &""
 	combat.reset_for_respawn()
-	health.restore_full()
+	_jumps_used = 0
+	_contact_push = 0.0
+	_contact_remaining = 0.0
+	if restore_health:
+		health.restore_full()
 	visible = true
 	_update_state()
 
@@ -102,10 +113,11 @@ func is_entering_portal() -> bool:
 func _update_jump_windows(delta: float) -> void:
 	if is_on_floor():
 		_coyote_remaining = coyote_time
+		_jumps_used = 0
 	else:
 		_coyote_remaining = maxf(_coyote_remaining - delta, 0.0)
 
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("jump_stick"):
 		_jump_buffer_remaining = jump_buffer_time
 	else:
 		_jump_buffer_remaining = maxf(_jump_buffer_remaining - delta, 0.0)
@@ -121,17 +133,42 @@ func _apply_gravity(delta: float) -> void:
 		velocity.y = minf(velocity.y + gravity_acceleration * delta, max_fall_speed)
 
 func _try_jump() -> void:
-	if _jump_buffer_remaining > 0.0 and _coyote_remaining > 0.0:
-		velocity.y = jump_velocity
+	if _jump_buffer_remaining<=0.0:
+		return
+	if _coyote_remaining>0.0 or _jumps_used<2:
+		if _coyote_remaining<=0.0 and _jumps_used==0:
+			_jumps_used = 1 # Walking off a ledge leaves one aerial jump.
+		velocity.y = jump_velocity if _jumps_used==0 else jump_velocity*0.94
+		_jumps_used += 1
 		_jump_buffer_remaining = 0.0
 		_coyote_remaining = 0.0
 
 func _update_facing() -> void:
+	if combat.current_attack_animation()!=&"":
+		_facing = combat.attack_facing
+		visual.scale.x = absf(visual.scale.x)*_facing
+		return
 	if velocity.x > 1.0:
 		_facing = 1.0
 	elif velocity.x < -1.0:
 		_facing = -1.0
 	visual.scale.x = absf(visual.scale.x) * _facing
+
+func _resolve_hostile_contact() -> void:
+	if health.dead or _portal_entering:
+		return
+	for actor in get_tree().get_nodes_in_group("hostile_actor"):
+		if not is_instance_valid(actor) or actor.is_queued_for_deletion() or actor.get_node("Health").dead:
+			continue
+		var shape: Shape2D = actor.get_node("CollisionShape2D").shape
+		var half: Vector2 = shape.size*.5 if shape is RectangleShape2D else Vector2(17,29)
+		var offset: Vector2 = global_position-actor.global_position
+		if absf(offset.x)<half.x+12 and absf(offset.y)<half.y+22:
+			if not health.is_invulnerable():
+				$Hurtbox.receive_hit({"amount":1.0,"damage_type":&"contact","source":actor.get_instance_id()})
+			_contact_push = (signf(offset.x) if not is_zero_approx(offset.x) else -_facing)*210.0
+			_contact_remaining = 0.10
+			break
 
 func _update_state() -> void:
 	_state_machine.resolve(is_on_floor(), velocity)
@@ -153,7 +190,6 @@ func _update_state() -> void:
 
 func _on_damaged(_amount: float, _remaining_health: float) -> void:
 	_portal_entering = false
-	$PlayerGuard.reset()
 	_hurt_remaining = hurt_lock_seconds
 	combat.cancel_attack()
 	_update_state()

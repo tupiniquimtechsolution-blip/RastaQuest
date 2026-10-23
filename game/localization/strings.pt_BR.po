@@ -53,13 +53,13 @@ msgid "continue"
 msgstr "Continuar"
 
 msgid "tutorial_move"
-msgstr "Use o analógico esquerdo para andar. Pule para atravessar as plataformas."
+msgstr "Ande pelo analógico esquerdo. Puxe para cima ou aperte pular; solte e repita no ar para o pulo duplo."
 
 msgid "tutorial_combat"
-msgstr "Ataque com o machado. Defenda no instante do golpe frontal para contra-atacar."
+msgstr "Encadeie golpes de machado. Segure defesa para proteger todos os lados e devolver projéteis; ative perto do impacto corpo a corpo para contra-atacar."
 
 msgid "tutorial_run"
-msgstr "Derrote os inimigos, entre nos portais e escolha uma das três melhorias."
+msgstr "Derrote os inimigos e entre nos portais. Escolha uma melhoria; Restauração aparece sempre que faltar vida."
 
 msgid "touch_left"
 msgstr "ESQUERDA"
@@ -284,7 +284,16 @@ msgid "room_cave_shrine"
 msgstr "Santuário soterrado"
 
 msgid "review_version"
-msgstr "REVISÃO VISUAL • versão candidata"
+msgstr "Revisão visual a13.2 — aprovação comercial pendente"
 
 msgid "review_art"
 msgstr "REVISÃO VISUAL • arte candidata"
+
+msgid "upgrade_restoration_title"
+msgstr "Restauração"
+
+msgid "upgrade_restoration_description"
+msgstr "Restaura toda a vida. Não aumenta a vida máxima."
+
+msgid "health_status"
+msgstr "Vida: %.1f / %d"

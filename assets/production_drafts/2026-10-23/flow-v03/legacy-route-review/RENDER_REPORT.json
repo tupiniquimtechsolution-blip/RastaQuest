@@ -1,0 +1,179 @@
+{
+	"captures": [
+		{
+			"file": "perfect_guard_ready_1280x720.png",
+			"sha256": "023d567e978d90923ef97645f1f1b289ba7542122944a7e339691bcb80126b61",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "perfect_guard_ready_640x360.png",
+			"sha256": "7a3d65ae035b671ba5ca75efcde896cd64b1dc76e74500325e72b5bd8873e8bd",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "perfect_counter_1280x720.png",
+			"sha256": "cc9585776e1daba65697acf434a6bae3082467cba50ccd484950fc0711ef3610",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "perfect_counter_640x360.png",
+			"sha256": "9ab6955665af17e0f58d564f1522df883aa0bb9187c5214e1e1d90a6c4f9910b",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "forest_route_end_1280x720.png",
+			"sha256": "34db9bf350662667e7214659ae83144c2ba56fcccdfc4f6cbcc208e66ab81a52",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "forest_route_end_640x360.png",
+			"sha256": "6c915979daf5892f19baf16f1cfa246de97163f0e612b4c7a89e80fb225b6bce",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "castle_route_end_1280x720.png",
+			"sha256": "2e6080e7dc70f38406891b89be7723af89743f23d96d53fb0eeaf295208e3fc2",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "castle_route_end_640x360.png",
+			"sha256": "3e5df182b7b8d93fb9d17ae06a1d150c3b36c962105c3409e24414c36149728c",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "caves_route_end_1280x720.png",
+			"sha256": "1c94f50b025f527a95a3cdf6a98dec9a15a9255aa7a36b7b6aae76f6c36112cb",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "caves_route_end_640x360.png",
+			"sha256": "4329bececccd5c68b6600b3c5b02e9354bba7d05aba1d5bceee34926f256c3a0",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "spanish_rewards_1280x720.png",
+			"sha256": "05d90640e01d595a716256986337098dc1c83b7ebb7169f5e29868049bdfb2cf",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "spanish_rewards_640x360.png",
+			"sha256": "99fb09d4f2dc365a9aa36a5482f481daa00ca30a20aebab6cd27fa3eeb18d575",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "castle_destination_1280x720.png",
+			"sha256": "ba803d5971e151f5ce8dd1b4331b053124faecfbb3baf1c1e291e8cd08ce4089",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "castle_destination_640x360.png",
+			"sha256": "25d23a76b5f04dc90c19b00c382a5c50814bf6eee4a5af2e66745bf9de855d97",
+			"size": [
+				640,
+				360
+			]
+		}
+	],
+	"commercial_approved": false,
+	"hash_format": "UTF8 normalized LF",
+	"new_build_physical_acceptance": "PENDING",
+	"routes": [
+		{
+			"biome": "forest",
+			"camera_delta": 2560.0,
+			"enemy_roles": [
+				"exploder",
+				"charger",
+				"ranged"
+			],
+			"traversed_x": 3564.99243164063,
+			"width": 3840
+		},
+		{
+			"biome": "castle",
+			"camera_delta": 3200.0,
+			"enemy_roles": [
+				"charger",
+				"chaser",
+				"exploder"
+			],
+			"traversed_x": 4201.98828125,
+			"width": 4480
+		},
+		{
+			"biome": "caves",
+			"camera_delta": 2816.00024414063,
+			"enemy_roles": [
+				"exploder",
+				"chaser",
+				"controller"
+			],
+			"traversed_x": 3820.65478515625,
+			"width": 4096
+		}
+	],
+	"source_hashes": {
+		"res://assets/ui/axe.svg": "b8b92b03f5e22825af6338fdf270d95f7ed553d3f66bd0ce4151f82b3f880ef3",
+		"res://assets/ui/jump.svg": "9e7befd768d2d977eabf680b9c6c3cc7520c3f341d7e0ba9cee3894adfc2cc02",
+		"res://assets/ui/shield.svg": "71755c46a07442039c4b08c6b4e1dc45e5334ec0cc86ecb778d87c89d07ad77f",
+		"res://localization/strings.csv": "6572a6e5a34790bb95048899f90ea04053700da039cce811097308478e0dbf77",
+		"res://project.godot": "4e903a138969a53f85a0d1dc72c8200fab087a5816e1234bbf90c2a5a1a3863f",
+		"res://scenes/world/RunPrototypeRoom.tscn": "4c51fb76650045b5f38db882d98b5273144c1dedc1ae8bb45115192a550b8344",
+		"res://scripts/art/a13_feedback_probe.gd": "8557af950df8abb0ca9dd6a839946472960de3420e3af5e82f1f7a958d1e30d6",
+		"res://scripts/art/playable_art_layers.gd": "493d36d5005807d8c3684b8fbc260db9cc7fa0288e084d49afa5ecbe62076f06",
+		"res://scripts/art/visual_catalog.gd": "1012e9d49fd97148cd5c6b6365c9afea7ddb0f2af3c1a8cd0e57ae8af0cacab6",
+		"res://scripts/combat/health_component.gd": "b156550ec53e464405db4e9ca884d23577cfe6cebc7e7030d49b34bd7c5845d5",
+		"res://scripts/combat/hostile_attack.gd": "fc69f76724ea9dca9ad13d93e933d5318008cc92b389dd286f2d8e090c650b6c",
+		"res://scripts/combat/hurtbox.gd": "1a5da60df7571a3e0e3b5a591af46c67787bde616f92088aadceae0d050942d3",
+		"res://scripts/core/settings_policy.gd": "b4fe12e5fda905a374dd1ac510a7d99d253db5a761b1a14d3b943df1b4102325",
+		"res://scripts/enemies/enemy_base.gd": "8aaa9d15208172591bccc209085f686c4a3b450f00ec2a19bc23acab06d97c8d",
+		"res://scripts/player/player_combat.gd": "4f769400b9ef3b640aa2b02978256d6b9cb78691850cbf53263c61daae011970",
+		"res://scripts/player/player_guard.gd": "7be0ec3eb9ea0a29931610fcb06c9530304665e708dd5c7fcc5e3e60b95601bf",
+		"res://scripts/player/player_sprite_presenter.gd": "c45146843c6248a19ef4cf09007dcb8fad3deae7c4c553406337a7113c82affa",
+		"res://scripts/roguelike/run_room_controller.gd": "7b3b8cdd5063607362c02f65b56fc286f40c87cf7ea1cf23a3b7b792addc43a4",
+		"res://scripts/roguelike/world_layout.gd": "d60cb137fcb0b958f88d185eeab70d48a1b744a8801b5f78b063c4c8105d79ec",
+		"res://scripts/save/save_manager.gd": "0b8f3dcf84c6c32d4fea6440f33e6935ff1d36ceeee2b311ffa0b0f2c4155207",
+		"res://scripts/ui/touch_controls.gd": "e2ce85750b657bdc4b6635b7d91404664da61ad7b80373e5fa2004e0c43c0c03",
+		"res://scripts/ui/touch_pad.gd": "d5b2552fa50dea47d607a1c34252f41ad3d1b22f6bcf52ca8be6bce0159929da",
+		"res://visual_review/catalog.json": "57a7fdaa18c5282e9c7fa3d96d8776178b3fbdbad480dcf6c57cdfff6e74e9bd"
+	}
+}

@@ -8,6 +8,8 @@
 size = Vector2(78, 112)
 
 [node name="StormWarden" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 1
 script = ExtResource("1_boss")
 target_path = NodePath("../Player")
 

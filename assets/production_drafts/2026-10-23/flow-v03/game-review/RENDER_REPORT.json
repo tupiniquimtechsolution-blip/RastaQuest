@@ -1,0 +1,155 @@
+{
+	"captures": [
+		{
+			"file": "double_jump_1280x720.png",
+			"sha256": "cd2bf2cb6f8b166400cb7cae81a0f5166ef15291b4d5c5a4452a6a23685fe723",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "double_jump_640x360.png",
+			"sha256": "8db1bf21bc8556d443acb0ba2998febcd3d807fccf3dcd9c342ede5a2ea2cea7",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "circular_defense_1280x720.png",
+			"sha256": "22a26f6090a2e2df4fde99f9ffc7116189c1876cee7cae48408349fa9c051e5e",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "circular_defense_640x360.png",
+			"sha256": "12f2b999f4a926427f398fe77efce73065bd4da45106dce892780265f158a13d",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "returned_projectile_1280x720.png",
+			"sha256": "1eb0b91876cdd264853ef01d17170f19b1ae83a7635a29de298d05a529a40d71",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "returned_projectile_640x360.png",
+			"sha256": "a62bfdd95a9559edd6b4a4acccbe8fd68d41c8f725e5c5e27b4eaa5681e82f70",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "raised_platforms_contact_1280x720.png",
+			"sha256": "efbab0d0bbc0830233254532c099cb890ce79bb48f83e9174a21b4c48fe90e04",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "raised_platforms_contact_640x360.png",
+			"sha256": "cb9dd84beceba72b44e9c5f9bd72eaf60a0588f697c495c29e7d113c2b6eac6f",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "combo_1_1280x720.png",
+			"sha256": "97b90e71518c71635232402ba4639c93ee1326ca079acabb39d47efab4ffb5be",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "combo_1_640x360.png",
+			"sha256": "9eb01dd953790b780d9899db95a01d34d38dc31d3a457ceb635771304d6c09f9",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "combo_2_1280x720.png",
+			"sha256": "29fa8cbb877d773b76cd02ddab80d6a556a87d5c24921147c82b9db9684ac202",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "combo_2_640x360.png",
+			"sha256": "9f2000e6b55247bd6ade033dd3151455586cf3ebe49a95756f8f328841d89831",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "combo_3_1280x720.png",
+			"sha256": "2c7b40270b53824546895cb18e9f88e6e0270526cb8f31c419d5bc59e3c595d0",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "combo_3_640x360.png",
+			"sha256": "9f9337e5e66dd87a721d83dc0a4ebae013ab9396b9c13d5bf13c053829ec54a3",
+			"size": [
+				640,
+				360
+			]
+		},
+		{
+			"file": "restoration_health_hud_1280x720.png",
+			"sha256": "541e7ef5321b7507e39ed3564b09d4b4dc8849a7854f606b7c0782b13b944d15",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"file": "restoration_health_hud_640x360.png",
+			"sha256": "1f0182d5d2cf954e22325d500562bda5b24433b99c3b206b75d343f1912f8c50",
+			"size": [
+				640,
+				360
+			]
+		}
+	],
+	"commercial_approved": false,
+	"engine": "4.5.1-stable (official)",
+	"failures": [],
+	"hash_format": "UTF8 normalized LF",
+	"new_build_physical_acceptance": "PENDING",
+	"renderer": "Intel(R) UHD Graphics",
+	"source_hashes": {
+		"res://project.godot": "4e903a138969a53f85a0d1dc72c8200fab087a5816e1234bbf90c2a5a1a3863f",
+		"res://scripts/art/flow_feedback_probe.gd": "c8902e43d616240f39ce04e6b483bb69ac6d71dbe74bbb07fb387e50db1ef01d",
+		"res://scripts/combat/health_component.gd": "b156550ec53e464405db4e9ca884d23577cfe6cebc7e7030d49b34bd7c5845d5",
+		"res://scripts/combat/hostile_attack.gd": "fc69f76724ea9dca9ad13d93e933d5318008cc92b389dd286f2d8e090c650b6c",
+		"res://scripts/combat/reflected_projectile.gd": "9e52e09b7b3eaec0e60d5613150e485c685c8333d00546d46b2b05057ef3fc7d",
+		"res://scripts/enemies/enemy_base.gd": "8aaa9d15208172591bccc209085f686c4a3b450f00ec2a19bc23acab06d97c8d",
+		"res://scripts/enemies/enemy_brain.gd": "9da7b738ea6ce61ce624be246db2feb68c796dea81aa75b4a55a905b23c133ea",
+		"res://scripts/player/player_combat.gd": "4f769400b9ef3b640aa2b02978256d6b9cb78691850cbf53263c61daae011970",
+		"res://scripts/player/player_controller.gd": "5fdab2366f044c3b11778033142cabb0a899686d1550148c4ac2810b79af0a0b",
+		"res://scripts/player/player_guard.gd": "7be0ec3eb9ea0a29931610fcb06c9530304665e708dd5c7fcc5e3e60b95601bf",
+		"res://scripts/player/player_sprite_presenter.gd": "c45146843c6248a19ef4cf09007dcb8fad3deae7c4c553406337a7113c82affa",
+		"res://scripts/roguelike/run_room_controller.gd": "7b3b8cdd5063607362c02f65b56fc286f40c87cf7ea1cf23a3b7b792addc43a4",
+		"res://scripts/roguelike/world_layout.gd": "d60cb137fcb0b958f88d185eeab70d48a1b744a8801b5f78b063c4c8105d79ec",
+		"res://scripts/ui/touch_pad.gd": "d5b2552fa50dea47d607a1c34252f41ad3d1b22f6bcf52ca8be6bce0159929da",
+		"res://visual_review/catalog.json": "57a7fdaa18c5282e9c7fa3d96d8776178b3fbdbad480dcf6c57cdfff6e74e9bd"
+	}
+}

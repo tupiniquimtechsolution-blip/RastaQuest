@@ -119,6 +119,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 -B tools/verify_visual_review_pack.py
+          git fetch --depth=1 origin ee4c840b02726fecffb56cf906738999e6ca3ad1
           python3 -B tools/verify_a13_review_captures.py
           timeout 90s "${GODOT_BIN}" --headless --path game --script res://scripts/art/visual_review_probe.gd -- --visual-review 2>&1 | tee /tmp/rq-visual-review.log
           grep -q 'RQ_VISUAL_REVIEW_OK' /tmp/rq-visual-review.log
@@ -139,6 +140,15 @@ jobs:
           timeout 150s "${GODOT_BIN}" --headless --path game --script res://tests/a13_feedback_integration.gd -- --visual-review 2>&1 | tee /tmp/rq-a13-feedback.log
           grep -q 'RQ_A13_FEEDBACK_OK' /tmp/rq-a13-feedback.log
           if grep -qE 'SCRIPT ERROR:|ERROR:' /tmp/rq-a13-feedback.log; then exit 1; fi
+
+      - name: Circular defense, returned shots, double jump and healing
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout 150s "$GODOT_BIN" --headless --path game --script res://tests/flow_feedback_integration.gd -- --visual-review 2>&1 | tee /tmp/rq-flow-feedback.log
+          grep -q 'RQ_FLOW_FEEDBACK_OK' /tmp/rq-flow-feedback.log
+          if grep -qE 'SCRIPT ERROR:|ERROR:' /tmp/rq-flow-feedback.log; then exit 1; fi
+          python3 -B tools/verify_flow_review.py
 
       - name: Player state transition smoke test
         shell: bash
@@ -182,7 +192,7 @@ jobs:
         run: |
           set -euo pipefail
           "${GODOT_BIN}" --headless --path game --script res://tests/alpha_campaign_smoke.gd 2>&1 | tee /tmp/rq007-alpha.log
-          grep -q "RQ007_ALPHA_TECH_OK rooms=18 upgrades=20 biomes=3" /tmp/rq007-alpha.log
+          grep -q "RQ007_ALPHA_TECH_OK rooms=18 upgrades=21 biomes=3" /tmp/rq007-alpha.log
       - name: UX and accessibility technical smoke test
         shell: bash
         run: |
@@ -194,7 +204,7 @@ jobs:
         run: |
           set -euo pipefail
           timeout 30s "${GODOT_BIN}" --headless --path game --script res://tests/beta_hardening_smoke.gd 2>&1 | tee /tmp/rq009-beta.log
-          grep -q "RQ009_BETA_TECH_OK schema=2 rooms=18 upgrades=20" /tmp/rq009-beta.log
+          grep -q "RQ009_BETA_TECH_OK schema=2 rooms=18 upgrades=21" /tmp/rq009-beta.log
       - name: Malformed save validation and backup recovery
         shell: bash
         run: |

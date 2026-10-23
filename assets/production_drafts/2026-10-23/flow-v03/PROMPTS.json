@@ -1,0 +1,29 @@
+{
+  "tool": "image_gen.imagegen",
+  "sources": [
+    [
+      "run",
+      {
+        "prompt": "Use case: identity-preserve. Asset: Rasta Quest RUN lower-body animation authoring sheet. Reference image1 is costume and pixel shading reference, NOT a motion template; image2 is the locked hero identity. Deliver ONE transparent-background image, 4 columns x 2 rows, eight equally spaced cells, ideally2048x1024. Each cell shows ONLY waist/belt/red-yellow cloth tabs/green trousers/two brown leather boots of the same male hero, facing RIGHT. No torso/head/arms/weapon. Exactly8 distinct consecutive poses for one believable ATHLETIC RUN cycle: right-foot contact long opposing stride, weight-down/compression, passing knee-forward, airborne extension; then LEFT-foot contact long opposing stride, weight-down/compression, passing knee-forward, airborne extension. Broad strides with clear thigh/knee/ankle articulation, heel-to-toe contact, rear heel lifting, loose cloth lagging. He is a human adult warrior, never tiny scrambling insect feet; no marching in place, no miniature shuffling. Lower-body anatomy waist-to-boot height and costume proportions identical in every cell, wide stride span about1.5x waist-to-ground height. Same waistband position in each cell: horizontally centered, at35% cell height; common ground at90% cell height on contact frames. Feet remain above ground on flight frames. Left/right legs alternate shading (far leg darker). Polished crisp pixel clusters, match supplied green pants/red-yellow sash/brown gold-buckled boots. Functional adult anatomy, balanced powerful runner; no cartoons/chibi, no speed streaks, no ghost limbs, no text, no labels, no grid lines, no shadow plane, no props, no background at all. Keep full margins between figures, no overlaps across cells. This is an authoring source for later native reconstruction, not a claim of engine-ready export.",
+        "referenced_image_paths": [
+          "C:/Users/rodrigo.filho/.codex/.chatgpt-projects/g-p-6ac52de1a6488191a8d7ee5e47fbd5f8/RastaQuest-ui-commercial-2026-10-16/assets/production_drafts/2026-10-22/run-2x/run-lower-source.png",
+          "C:/Users/rodrigo.filho/.codex/.chatgpt-projects/g-p-6ac52de1a6488191a8d7ee5e47fbd5f8/RastaQuest-ui-commercial-2026-10-16/assets/production_drafts/2026-10-22/axe-idle-2x/layers/body_neutral.png"
+        ],
+        "transparent_background": true
+      }
+    ],
+    [
+      "combat",
+      {
+        "prompt": "Use case: identity-preserve. Asset: Rasta Quest TWO new sweeping axe combo body animations, UNARMED authoring source. Reference1 locks hero identity and costume. Reference2 shows current old short chop that must become much broader, reference3 locks the actual axe shape for gesture understanding but do NOT paint any weapon in this new sheet. Deliver one transparent image, FOUR columns x TWO rows, eight fully separate equal cells, ideally2048x1024. Full-body same RIGHT-facing dark-skinned Rastafari-inspired adult medieval warrior, thick tied-back dreadlocks, red-yellow-green headband, cream sleeveless tunic with diagonal brown strap, green trousers, red-yellow waist tabs, brown gold-buckled boots. Preserve identity, proportions, costume, face and colors exactly. NO weapon, NO staff, NO axe, NO projectile, NO text, NO numbers, NO ground or shadow; only the body with empty hands curled into firm grips as if swinging one long two-handed axe. Row1 four consecutive poses: broad CROSS-BODY HORIZONTAL CLEAVE: full shoulder/hip twist winding hands behind left shoulder, forceful hands/body sweep out forward, full follow-through past forward shoulder, balanced recovery. Row2 four consecutive poses: LARGE OVERHEAD ARC: both empty grip hands raised high over/behind head, committed whole-body downward-forward stroke with strong torso rotation, low wide follow-through to front, balanced recovery. These MUST be distinct whole-body poses, no wrist-only hoe motions, no garden hoe posture, no repeated neutral arm. One consistent hand-spacing/grip shaft imaginary axis, naturally articulated shoulders/elbows/knees, stable same feet floor height90% cell and head top around15%. He stays predominantly right-facing even during torso turns. Wide readable silhouettes, athletic planted/stepping stance, subtle hair and cloth follow-through. Polished crisp hand-authored pixel-art-like clusters matching references; not chibi or cartoon. Exactly8 full bodies, generous gutters/margins and complete uncropped anatomy; no weapons painted so a single identical rigid weapon can be composed later. This is a source for native pixel animation reconstruction, not final engine-ready exports.",
+        "referenced_image_paths": [
+          "C:/Users/rodrigo.filho/.codex/.chatgpt-projects/g-p-6ac52de1a6488191a8d7ee5e47fbd5f8/RastaQuest-ui-commercial-2026-10-16/assets/production_drafts/2026-10-22/axe-idle-2x/layers/body_neutral.png",
+          "C:/Users/rodrigo.filho/.codex/.chatgpt-projects/g-p-6ac52de1a6488191a8d7ee5e47fbd5f8/RastaQuest-ui-commercial-2026-10-16/game/visual_review/player/attack_axe_03.png",
+          "C:/Users/rodrigo.filho/.codex/.chatgpt-projects/g-p-6ac52de1a6488191a8d7ee5e47fbd5f8/RastaQuest-ui-commercial-2026-10-16/assets/production_drafts/2026-10-22/axe-idle-2x/weapon_double_axe_vertical_01.png"
+        ],
+        "transparent_background": true
+      }
+    ]
+  ],
+  "approval": "PENDING new motion physical/visual acceptance; rights/cultural evidence unchanged"
+}

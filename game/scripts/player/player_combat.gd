@@ -8,7 +8,7 @@ signal electrical_proc_triggered(position: Vector2)
 @export var ground_damage: int = 1
 @export var air_damage: int = 1
 @export var attack_window: float = 0.16
-@export var attack_cooldown: float = 0.34
+@export var attack_cooldown: float = 0.30
 @export var windup_seconds := 0.05
 @export var recovery_seconds := 0.09
 var phase: StringName = &"idle"
@@ -29,55 +29,82 @@ var _effects := CombatEffects.new(1337)
 func _ready() -> void:
 	hitbox.landed_hit.connect(_on_landed_hit)
 
+var attack_facing := 1.0
+var combo_index := 0
+var _combo_grace := 0.0
+var _input_buffer := 0.0
+
 func _process(delta: float) -> void:
+	_input_buffer = maxf(0.0,_input_buffer-delta)
+	_combo_grace = maxf(0.0,_combo_grace-delta)
 	_attack_remaining -= delta
-	_cooldown_remaining = maxf(_cooldown_remaining - delta, 0.0)
-	while _active_animation != &"" and _attack_remaining <= 0.0:
-		if phase == &"windup":
+	_cooldown_remaining = maxf(_cooldown_remaining-delta,0.0)
+	while _active_animation!=&"" and _attack_remaining<=0.0:
+		if phase==&"windup":
 			phase = &"active"
 			_attack_remaining += attack_window
 			hitbox.begin_attack(_attack_id,_pending_damage,&"axe")
-		elif phase == &"active":
+		elif phase==&"active":
 			hitbox.end_attack()
 			phase = &"recovery"
 			_attack_remaining += recovery_seconds
 		else:
 			_finish_attack()
+	if phase==&"active":
+		var progress := clampf(1.0-_attack_remaining/attack_window,0.0,1.0)
+		# A broad forward sweep; one hit per target remains authoritative.
+		var vertical := lerpf(10.0,-24.0,progress) if combo_index==2 else lerpf(-24.0,10.0,progress)
+		hitbox.position = Vector2((34.0+sin(progress*PI)*12.0)*attack_facing,vertical)
 	if Input.is_action_just_pressed("attack"):
-		try_attack()
+		request_attack()
+	if _input_buffer>0.0 and _active_animation==&"" and _cooldown_remaining<=0.0:
+		if try_attack():
+			_input_buffer = 0.0
+
+func request_attack() -> void:
+	if try_attack():
+		return
+	if body.can_attack() and phase in [&"active",&"recovery"]:
+		_input_buffer = 0.18
 
 func try_attack() -> bool:
-	if not body.can_attack() or _cooldown_remaining > 0.0 or _active_animation != &"":
+	if not body.can_attack() or _cooldown_remaining>0.0 or _active_animation!=&"":
 		return false
+	combo_index = (combo_index+1)%3 if _combo_grace>0.0 else 0
 	_attack_id += 1
 	phase = &"windup"
 	_attack_remaining = windup_seconds
 	_cooldown_remaining = attack_cooldown
+	attack_facing = body.facing_sign()
 	var grounded := body.is_on_floor()
-	_active_animation = &"attack_axe" if grounded else &"attack_axe_air"
+	_active_animation = [&"attack_axe",&"attack_axe_2",&"attack_axe_3"][combo_index] if grounded else &"attack_axe_air"
 	_pending_damage = ground_damage if grounded else air_damage
-	hitbox.position.x = 38.0 * body.facing_sign()
-
-	attack_state_changed.emit(true, _active_animation)
+	hitbox.position = Vector2(34.0*attack_facing,-24)
+	attack_state_changed.emit(true,_active_animation)
 	return true
 
 func current_attack_animation() -> StringName:
 	return _active_animation
 
 func cancel_attack() -> void:
+	_input_buffer = 0.0
+	_combo_grace = 0.0
 	_attack_remaining = 0.0
-	if _active_animation != &"":
+	if _active_animation!=&"":
 		_finish_attack()
+	_combo_grace = 0.0
 
 func reset_for_respawn() -> void:
 	cancel_attack()
 	_cooldown_remaining = 0.0
+	combo_index = 0
 
 func _finish_attack() -> void:
 	hitbox.end_attack()
 	phase = &"idle"
 	_active_animation = &""
-	attack_state_changed.emit(false, &"")
+	_combo_grace = 0.65
+	attack_state_changed.emit(false,&"")
 
 func _on_landed_hit(target: Area2D, _payload: Dictionary) -> void:
 	get_node("/root/ArtCatalog").burst("hit",target.global_position,body,48,.18)

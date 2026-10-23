@@ -9,6 +9,7 @@ var world_width := 3840
 var platform_rects: Array[Rect2] = []
 var _room_id := ""
 var _status_key := "encounter_status"
+var _life: Label
 var _destination: Label
 
 const FINAL_BOSS_DEPTH: int = 18
@@ -40,6 +41,10 @@ var _portal_entry_resolved: bool = false
 var _portal_entry_id: int = 0
 
 func _ready() -> void:
+	_life = Label.new()
+	_life.position = Vector2(24,48)
+	$Hud.add_child(_life)
+	player.get_node("Health").health_changed.connect(_refresh_life)
 	_destination = Label.new()
 	_destination.position = Vector2(-110,-210)
 	portal.add_child(_destination)
@@ -50,7 +55,7 @@ func _ready() -> void:
 		reward_buttons[index].pressed.connect(_on_upgrade_selected.bind(index))
 	if not RunManager.state.run_active:
 		RunManager.start_run(424242)
-	_apply_run_modifiers()
+	_apply_run_modifiers(true)
 	_start_encounter()
 
 func _start_encounter() -> void:
@@ -148,10 +153,10 @@ func _complete_portal_entry(entry_id: int) -> void:
 		RunManager.end_run()
 		get_tree().change_scene_to_file("res://scenes/hub/Hub.tscn")
 		return
-	_pending_choices = RunManager.sample_upgrade_choices(3)
+	_pending_choices = RunManager.sample_upgrade_choices(3,player.health.health<player.health.max_health)
 	if _pending_choices.is_empty():
 		RunManager.advance_encounter()
-		player.respawn()
+		player.respawn(false)
 		_start_encounter()
 		return
 	reward_panel.visible = true
@@ -181,10 +186,13 @@ func _on_upgrade_selected(index: int) -> void:
 		return
 	var upgrade: UpgradeData = _pending_choices[index]
 	_pending_choices.clear()
-	RunManager.apply_upgrade(upgrade)
+	if not RunManager.apply_upgrade(upgrade):
+		return
 	RunManager.advance_encounter()
 	_apply_run_modifiers()
-	player.respawn()
+	if upgrade.effect_key==&"heal":
+		player.health.heal_full()
+	player.respawn(false)
 	_start_encounter()
 
 func _on_player_died() -> void:
@@ -208,20 +216,25 @@ func _on_player_died() -> void:
 func _return_to_hub() -> void:
 	get_tree().change_scene_to_file("res://scenes/hub/Hub.tscn")
 
-func _apply_run_modifiers() -> void:
+func _apply_run_modifiers(refill: bool = false) -> void:
 	var mods: Dictionary = RunManager.state.modifiers
 	var combat: Node = player.get_node("PlayerCombat")
 	var health: Node = player.get_node("Health")
 	player.move_speed = 260.0 + float(mods[&"move_speed"])
 	player.jump_velocity = -(560.0 + float(mods[&"jump_power"]))
+	var previous_max: int = health.max_health
 	health.max_health = 5 + int(mods[&"max_health"])
 	health.invulnerability_seconds = 0.35 + float(mods[&"invulnerability"])
-	health.restore_full()
+	if refill:
+		health.restore_full()
+	else:
+		health.health = minf(health.max_health,health.health+maxi(0,health.max_health-previous_max))
+		health.health_changed.emit()
 	combat.ground_damage = 1 + int(mods[&"damage"])
 	combat.air_damage = 1 + int(mods[&"damage"]) + int(mods[&"air_damage"])
 	combat.electrical_proc_chance = clampf(0.25 + float(mods[&"proc_chance"]), 0.0, 1.0)
-	combat.attack_cooldown = maxf(0.12, 0.34 - float(mods[&"cooldown_reduction"]))
-	player.get_node("PlayerGuard").perfect_window = clampf(0.14+float(mods.get(&"parry_window",0.0)),0.14,0.24)
+	combat.attack_cooldown = maxf(0.12, 0.30 - float(mods[&"cooldown_reduction"]))
+	player.get_node("PlayerGuard").perfect_window = clampf(0.28+float(mods.get(&"parry_window",0.0)),0.28,0.40)
 	player.get_node("PlayerGuard").push_speed = 360.0+float(mods.get(&"parry_push",0.0))
 	combat.chain_lightning_enabled = float(mods[&"chain_lightning"]) > 0.0
 	combat.on_kill_aoe_enabled = float(mods[&"on_kill_aoe"]) > 0.0
@@ -235,9 +248,14 @@ func _notification(what: int) -> void:
 		_refresh_language()
 
 func _refresh_language() -> void:
+	_refresh_life()
 	status_label.text = tr(_status_key) % [tr("room_"+_room_id),tr("biome_"+String(RunManager.state.biome)),RunManager.state.depth+1] if _status_key == "encounter_status" else tr(_status_key)
 	if is_instance_valid(_destination):
 		_destination.text = tr("portal_destination") % tr("biome_"+String(RunManager.state.biome_for_depth(RunManager.state.depth+1)))
 	for i in range(mini(_pending_choices.size(),reward_buttons.size())):
 		var upgrade: UpgradeData = _pending_choices[i]
 		reward_buttons[i].text = "%s\n%s" % [tr("upgrade_"+String(upgrade.id)+"_title"),tr("upgrade_"+String(upgrade.id)+"_description")]
+
+func _refresh_life() -> void:
+	if is_instance_valid(_life):
+		_life.text = tr("health_status") % [player.health.health,player.health.max_health]
