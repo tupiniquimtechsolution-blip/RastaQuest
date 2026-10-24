@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-24",
+  "generation_tool": "image_gen.imagegen",
+  "status": "visual_studies_not_runtime",
+  "references": [
+    {
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/characters/akane-xango-animation-sheet.png",
+      "sha256": "32df32a76fde22df9326d02dda78318df3001be991bef5307a9152c372176a84"
+    }
+  ],
+  "files": [
+    {
+      "file": "poses-attacks.png",
+      "repository_path": "assets/production_drafts/2026-10-24/combat-motion-v01/poses-attacks.png",
+      "bytes": 1813379,
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "751a2fb765735955fc3dfcc09b277d6f6f23c2ab3193145bfae25144f1adef85",
+      "git_blob_sha": "7cf5816f483c44bd06c5b8c9e07d3a966329bbb5"
+    },
+    {
+      "file": "poses-defenses.png",
+      "repository_path": "assets/production_drafts/2026-10-24/combat-motion-v01/poses-defenses.png",
+      "bytes": 2194274,
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "860af8aff1544fb6a8ae8dded532c563f7e866c4de97f3f234d3a8f9abec0787",
+      "git_blob_sha": "8b31609980a410366ba080dc7b0c8840d7caf869"
+    },
+    {
+      "file": "poses-mobility.png",
+      "repository_path": "assets/production_drafts/2026-10-24/combat-motion-v01/poses-mobility.png",
+      "bytes": 2087880,
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "3e03f1f7b319deb783ac66220b7ba7841395d586530568d997fce62992228605",
+      "git_blob_sha": "14d1410970443edff3c2ca688a0d97038d9f3363"
+    },
+    {
+      "file": "poses-storm.png",
+      "repository_path": "assets/production_drafts/2026-10-24/combat-motion-v01/poses-storm.png",
+      "bytes": 1921303,
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "fb491a074232d139f942f53e23d0bd1ab8457e54fb5d7c5c4f25f58de5e2fe68",
+      "git_blob_sha": "45d6980f7f880e4c61a12c267356f280ff65e8c3"
+    }
+  ],
+  "checks": [
+    "PNG integrity and dimensions",
+    "25 unique skill IDs and dependencies",
+    "12 motion IDs and 60 key-pose entries",
+    "skill-to-motion references",
+    "42 planned cue IDs and motion-to-cue references"
+  ],
+  "assistant_visual_review": "Revised technique branch and 3x5 pose grids inspected; stages and enemy-response labels reviewed. Fine grip, axe alignment and timing still need deterministic animation production.",
+  "human_acceptance": "pending",
+  "cultural_and_rights_review": "pending",
+  "audio_generated": false,
+  "unity_build": "not_executed",
+  "merge": "not_performed",
+  "release": "not_claimed"
+}

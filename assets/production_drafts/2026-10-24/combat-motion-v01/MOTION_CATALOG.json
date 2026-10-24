@@ -1,0 +1,406 @@
+{
+  "version": 1,
+  "character": "Akane Xangô",
+  "dimension": "2D",
+  "boards": 4,
+  "studies": 12,
+  "illustrated_key_poses": 60,
+  "image_status": "illustrated_key_pose_boards_not_exportable_atlases",
+  "baseline": "preserve existing movement/combat, including existing jump rules; studies do not remove abilities",
+  "equipment": "same approved double-headed axe across poses; equipment variations belong to equipment menu",
+  "animation_authority": "Core gameplay timing remains authoritative. Animation/VFX/SFX markers cannot introduce extra hits or override hit-target deduplication.",
+  "clips": [
+    {
+      "id": "combat_ascending_cut",
+      "name": "Corte Ascendente",
+      "board": "poses-attacks.png",
+      "row": 1,
+      "context": "alvo alto / inimigo em recuperação",
+      "status": "key_pose_study_not_runtime_clip",
+      "poses": [
+        "K1_preparacao",
+        "K2_impulso",
+        "K3_contato_ou_acao",
+        "K4_continuidade",
+        "K5_recuperacao"
+      ],
+      "animation_events_visual_only": [
+        "vfx_windup",
+        "sfx_swing_or_guard",
+        "vfx_contact",
+        "sfx_contact",
+        "vfx_end"
+      ],
+      "timing": "pending_animatic_and_gameplay_review",
+      "fps": null,
+      "damage": null,
+      "cooldown": null,
+      "invulnerability": null,
+      "sound_cues_planned": [
+        "axe_swing_up",
+        "hit_armor"
+      ]
+    },
+    {
+      "id": "combat_low_sweep",
+      "name": "Varredura Baixa",
+      "board": "poses-attacks.png",
+      "row": 2,
+      "context": "inimigo baixo / aproximação frontal",
+      "status": "key_pose_study_not_runtime_clip",
+      "poses": [
+        "K1_preparacao",
+        "K2_impulso",
+        "K3_contato_ou_acao",
+        "K4_continuidade",
+        "K5_recuperacao"
+      ],
+      "animation_events_visual_only": [
+        "vfx_windup",
+        "sfx_swing_or_guard",
+        "vfx_contact",
+        "sfx_contact",
+        "vfx_end"
+      ],
+      "timing": "pending_animatic_and_gameplay_review",
+      "fps": null,
+      "damage": null,
+      "cooldown": null,
+      "invulnerability": null,
+      "sound_cues_planned": [
+        "axe_sweep_low",
+        "hit_flesh"
+      ]
+    },
+    {
+      "id": "combat_guard_break",
+      "name": "Quebra de Guarda",
+      "board": "poses-attacks.png",
+      "row": 3,
+      "context": "cavaleiro com guarda; apenas se regra futura permitir",
+      "status": "key_pose_study_not_runtime_clip",
+      "poses": [
+        "K1_preparacao",
+        "K2_impulso",
+        "K3_contato_ou_acao",
+        "K4_continuidade",
+        "K5_recuperacao"
+      ],
+      "animation_events_visual_only": [
+        "vfx_windup",
+        "sfx_swing_or_guard",
+        "vfx_contact",
+        "sfx_contact",
+        "vfx_end"
+      ],
+      "timing": "pending_animatic_and_gameplay_review",
+      "fps": null,
+      "damage": null,
+      "cooldown": null,
+      "invulnerability": null,
+      "sound_cues_planned": [
+        "axe_swing_heavy",
+        "guard_impact",
+        "guard_break"
+      ]
+    },
+    {
+      "id": "defense_perfect_parry",
+      "name": "Defesa Precisa",
+      "board": "poses-defenses.png",
+      "row": 1,
+      "context": "golpe corpo a corpo de cavaleiro",
+      "status": "key_pose_study_not_runtime_clip",
+      "poses": [
+        "K1_preparacao",
+        "K2_impulso",
+        "K3_contato_ou_acao",
+        "K4_continuidade",
+        "K5_recuperacao"
+      ],
+      "animation_events_visual_only": [
+        "vfx_windup",
+        "sfx_swing_or_guard",
+        "vfx_contact",
+        "sfx_contact",
+        "vfx_end"
+      ],
+      "timing": "pending_animatic_and_gameplay_review",
+      "fps": null,
+      "damage": null,
+      "cooldown": null,
+      "invulnerability": null,
+      "sound_cues_planned": [
+        "guard_impact",
+        "parry_perfect"
+      ]
+    },
+    {
+      "id": "defense_projectile_rebate",
+      "name": "Rebatida Precisa",
+      "board": "poses-defenses.png",
+      "row": 2,
+      "context": "projétil refletível do arcanista",
+      "status": "key_pose_study_not_runtime_clip",
+      "poses": [
+        "K1_preparacao",
+        "K2_impulso",
+        "K3_contato_ou_acao",
+        "K4_continuidade",
+        "K5_recuperacao"
+      ],
+      "animation_events_visual_only": [
+        "vfx_windup",
+        "sfx_swing_or_guard",
+        "vfx_contact",
+        "sfx_contact",
+        "vfx_end"
+      ],
+      "timing": "pending_animatic_and_gameplay_review",
+      "fps": null,
+      "damage": null,
+      "cooldown": null,
+      "invulnerability": null,
+      "sound_cues_planned": [
+        "projectile_rebate"
+      ]
+    },
+    {
+      "id": "defense_front_shield",
+      "name": "Escudo do Trovão",
+      "board": "poses-defenses.png",
+      "row": 3,
+      "context": "ataque frontal bloqueável; não dano de área",
+      "status": "key_pose_study_not_runtime_clip",
+      "poses": [
+        "K1_preparacao",
+        "K2_impulso",
+        "K3_contato_ou_acao",
+        "K4_continuidade",
+        "K5_recuperacao"
+      ],
+      "animation_events_visual_only": [
+        "vfx_windup",
+        "sfx_swing_or_guard",
+        "vfx_contact",
+        "sfx_contact",
+        "vfx_end"
+      ],
+      "timing": "pending_animatic_and_gameplay_review",
+      "fps": null,
+      "damage": null,
+      "cooldown": null,
+      "invulnerability": null,
+      "sound_cues_planned": [
+        "shield_raise",
+        "shield_hit",
+        "shield_end"
+      ]
+    },
+    {
+      "id": "move_dash",
+      "name": "Avanço Ágil",
+      "board": "poses-mobility.png",
+      "row": 1,
+      "context": "reposicionamento horizontal",
+      "status": "key_pose_study_not_runtime_clip",
+      "poses": [
+        "K1_preparacao",
+        "K2_impulso",
+        "K3_contato_ou_acao",
+        "K4_continuidade",
+        "K5_recuperacao"
+      ],
+      "animation_events_visual_only": [
+        "vfx_windup",
+        "sfx_swing_or_guard",
+        "vfx_contact",
+        "sfx_contact",
+        "vfx_end"
+      ],
+      "timing": "pending_animatic_and_gameplay_review",
+      "fps": null,
+      "damage": null,
+      "cooldown": null,
+      "invulnerability": null,
+      "sound_cues_planned": [
+        "dash"
+      ]
+    },
+    {
+      "id": "move_precision_jump",
+      "name": "Salto Preciso",
+      "board": "poses-mobility.png",
+      "row": 2,
+      "context": "travessia e aterrissagem",
+      "status": "key_pose_study_not_runtime_clip",
+      "poses": [
+        "K1_preparacao",
+        "K2_impulso",
+        "K3_contato_ou_acao",
+        "K4_continuidade",
+        "K5_recuperacao"
+      ],
+      "animation_events_visual_only": [
+        "vfx_windup",
+        "sfx_swing_or_guard",
+        "vfx_contact",
+        "sfx_contact",
+        "vfx_end"
+      ],
+      "timing": "pending_animatic_and_gameplay_review",
+      "fps": null,
+      "damage": null,
+      "cooldown": null,
+      "invulnerability": null,
+      "sound_cues_planned": [
+        "jump_takeoff",
+        "land_soft"
+      ]
+    },
+    {
+      "id": "move_charge_evade",
+      "name": "Esquiva de Investida",
+      "board": "poses-mobility.png",
+      "row": 3,
+      "context": "afastar-se da pista de um investidor",
+      "status": "key_pose_study_not_runtime_clip",
+      "poses": [
+        "K1_preparacao",
+        "K2_impulso",
+        "K3_contato_ou_acao",
+        "K4_continuidade",
+        "K5_recuperacao"
+      ],
+      "animation_events_visual_only": [
+        "vfx_windup",
+        "sfx_swing_or_guard",
+        "vfx_contact",
+        "sfx_contact",
+        "vfx_end"
+      ],
+      "timing": "pending_animatic_and_gameplay_review",
+      "fps": null,
+      "damage": null,
+      "cooldown": null,
+      "invulnerability": null,
+      "sound_cues_planned": [
+        "charger_tell",
+        "dash"
+      ]
+    },
+    {
+      "id": "storm_wave",
+      "name": "Onda do Trovão",
+      "board": "poses-storm.png",
+      "row": 1,
+      "context": "linha frontal sinalizada",
+      "status": "key_pose_study_not_runtime_clip",
+      "poses": [
+        "K1_preparacao",
+        "K2_impulso",
+        "K3_contato_ou_acao",
+        "K4_continuidade",
+        "K5_recuperacao"
+      ],
+      "animation_events_visual_only": [
+        "vfx_windup",
+        "sfx_swing_or_guard",
+        "vfx_contact",
+        "sfx_contact",
+        "vfx_end"
+      ],
+      "timing": "pending_animatic_and_gameplay_review",
+      "fps": null,
+      "damage": null,
+      "cooldown": null,
+      "invulnerability": null,
+      "sound_cues_planned": [
+        "thunder_charge",
+        "thunder_wave"
+      ]
+    },
+    {
+      "id": "storm_fury",
+      "name": "Fúria da Tempestade",
+      "board": "poses-storm.png",
+      "row": 2,
+      "context": "ação elétrica local com recuperação",
+      "status": "key_pose_study_not_runtime_clip",
+      "poses": [
+        "K1_preparacao",
+        "K2_impulso",
+        "K3_contato_ou_acao",
+        "K4_continuidade",
+        "K5_recuperacao"
+      ],
+      "animation_events_visual_only": [
+        "vfx_windup",
+        "sfx_swing_or_guard",
+        "vfx_contact",
+        "sfx_contact",
+        "vfx_end"
+      ],
+      "timing": "pending_animatic_and_gameplay_review",
+      "fps": null,
+      "damage": null,
+      "cooldown": null,
+      "invulnerability": null,
+      "sound_cues_planned": [
+        "thunder_charge",
+        "storm_burst"
+      ]
+    },
+    {
+      "id": "combat_ancestral_chain",
+      "name": "Sequência Ancestral",
+      "board": "poses-storm.png",
+      "row": 3,
+      "context": "encadeamento de golpes e finalização",
+      "status": "key_pose_study_not_runtime_clip",
+      "poses": [
+        "K1_preparacao",
+        "K2_impulso",
+        "K3_contato_ou_acao",
+        "K4_continuidade",
+        "K5_recuperacao"
+      ],
+      "animation_events_visual_only": [
+        "vfx_windup",
+        "sfx_swing_or_guard",
+        "vfx_contact",
+        "sfx_contact",
+        "vfx_end"
+      ],
+      "timing": "pending_animatic_and_gameplay_review",
+      "fps": null,
+      "damage": null,
+      "cooldown": null,
+      "invulnerability": null,
+      "sound_cues_planned": [
+        "axe_swing_light",
+        "axe_sweep_low",
+        "axe_swing_up",
+        "storm_burst"
+      ]
+    }
+  ],
+  "export_gate": [
+    "approve model/silhouette/grip",
+    "build deterministic rig or hand-drawn inbetweens",
+    "separate body/axe/cloth/hair/VFX",
+    "fix ground/pivot/hand sockets",
+    "export clean frames or rig",
+    "review mirroring and foot sliding",
+    "test cancel/interrupt/landing/death transitions",
+    "only then integrate and validate Unity"
+  ],
+  "combat_limits": [
+    "No automatic boss guard break",
+    "No area-hazard parry",
+    "No universal projectile reflection",
+    "No invulnerability inferred from dash glow",
+    "No new double-jump invented or existing jump behavior removed",
+    "Charge evade uses 2D spacing, not a 3D sidestep"
+  ]
+}

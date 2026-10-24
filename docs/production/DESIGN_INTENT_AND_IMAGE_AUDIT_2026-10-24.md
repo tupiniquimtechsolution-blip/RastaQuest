@@ -6,6 +6,8 @@ Em 24/10/2026 o usuário reapresentou a mensagem anterior à interrupção e ped
 
 ## Direção preservada
 
+**Revisão de técnicas e animações:** por orientação posterior do usuário, cabo, lâmina, ponteira e melhoria do machado ficam no menu de equipamentos. A [árvore v02](../../assets/production_drafts/2026-10-24/skill-tree-v02/README.md) usa Técnicas de Combate, com golpes especiais e respostas. Os [estudos de movimento](../../assets/production_drafts/2026-10-24/combat-motion-v01/README.md) e o [plano antes do Unity/áudio](PREUNITY_VISUAL_AUDIO_PLAN_2026-10-24.md) detalham a próxima produção. Toda arte nova é arquivada no GitHub; versões anteriores permanecem preservadas. O README visual apresenta o acervo depois da publicação das artes.
+
 **Direção atual, esclarecida pelo usuário após a recuperação do acervo:** elaborar agora a árvore de habilidades como prancha visual na mesma direção artística dos menus. Manter **todo o jogo em 2D por enquanto, inclusive chefes e Santuário Ancestral**. A avaliação de 3D está adiada; os itens históricos abaixo não autorizam trabalho 3D nesta etapa. O pacote visual da árvore fica em `assets/production_drafts/2026-10-24/skill-tree-v01/` e não implica implementação no runtime.
 
 1. As pranchas são mapas condensados e esboços de salas side-scrolling extensas. Na implementação, manter aparências, locais e sequência dos marcos, criando distância percorrível entre eles para dar a sensação de viajar e chegar a um destino. Não transformar toda a sala em um quadrado ou uma única tela, nem ampliar a fase esticando sprites.

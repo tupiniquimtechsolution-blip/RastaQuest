@@ -1,5 +1,7 @@
 # Árvore de habilidades — Raízes do Trovão
 
+> Versão anterior preservada. A referência atual é a [v02](../skill-tree-v02/README.md), com Técnicas de Combate no lugar do ramo de melhoria do machado. Equipamentos continuam na aba própria.
+
 Prancha visual do menu de pausa de Rasta Quest, criada a pedido do usuário em 24/10/2026. Mantém a direção ilustrada de Akane Xangô, o metal dourado sobre pedra escura, os detalhes rasta e os efeitos de trovão azuis dos menus originais. É uma proposta visual completa de navegação e progressão, sem implementação no Unity/Godot.
 
 ## Composição
