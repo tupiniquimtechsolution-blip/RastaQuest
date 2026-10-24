@@ -1,0 +1,2 @@
+# Preserve the user-supplied historical text byte for byte, including line endings.
+historical-context-verbatim.txt -text -diff

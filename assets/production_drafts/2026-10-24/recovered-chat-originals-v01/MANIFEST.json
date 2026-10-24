@@ -1,0 +1,541 @@
+{
+  "date": "2026-10-24",
+  "received_image_attachments": 25,
+  "new_image_files": 24,
+  "duplicate_attachments": 1,
+  "no_image_generation": true,
+  "no_raster_edit": true,
+  "provenance": "Three successive user messages in this chat; filenames are clipboard names, original generation filenames/dates unknown.",
+  "historical_text": {
+    "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/historical-context-verbatim.txt",
+    "sha256": "ecfdc35994a578f9f2ba184543cbc1ee6d519375ccc9c1e8376f8a3b12976f62",
+    "status": "historical_context_with_user_request_to_archive_all_images; quoted assistant claims are not verified facts"
+  },
+  "files": [
+    {
+      "source_name": "codex-clipboard-f64742e0-8712-4743-8526-ce1d56ff90c2.png",
+      "path": "characters/akane-xango-animation-sheet.png",
+      "purpose": "Akane Xangô — prancha de poses e animações",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/characters/akane-xango-animation-sheet.png",
+      "sha256": "32df32a76fde22df9326d02dda78318df3001be991bef5307a9152c372176a84",
+      "git_blob_sha": "49fa4b9e1306ba992c7272bf0d03333a369aaaf2",
+      "bytes": 2273881,
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-9b158ed4-0bdd-4c8a-8d13-70095eb2e847.png",
+      "path": "enemies/cavaleiro-corrompido-animation-sheet.png",
+      "purpose": "Cavaleiro corrompido — prancha de poses e animações",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/enemies/cavaleiro-corrompido-animation-sheet.png",
+      "sha256": "3ad97f18d67cf4977e704f3f28ed4fedb8b32d17b9092081c58703700a643ecb",
+      "git_blob_sha": "0646c5226a244554e3a72b5d3f4eac70f95928bc",
+      "bytes": 2313577,
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-c4374024-aaaf-4c4b-ad31-569adb369774.png",
+      "path": "enemies/arcanista-animation-sheet.png",
+      "purpose": "Arcanista — prancha de poses e animações",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/enemies/arcanista-animation-sheet.png",
+      "sha256": "148ee31449179a9de1720ab40af457d77c906c1dd4a15a05396db6f53dc5df74",
+      "git_blob_sha": "80a8f6e9e340ae0409768f21769cc8176bc04be5",
+      "bytes": 2302979,
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-721e15b3-bba5-42a1-8b12-efad18219869.png",
+      "path": "branding/capa-rasta-quest.png",
+      "purpose": "Capa Rasta Quest",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/branding/capa-rasta-quest.png",
+      "sha256": "e39e78c9b1e2bb70fd1ca175812547c33bba24e66c342be44eaecbb83a0207b1",
+      "git_blob_sha": "c402bf709cf4fe33dcc413d18cadafd974f6a967",
+      "bytes": 3424026,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-244e99bf-616a-4412-9fc0-1f8017acb30f.png",
+      "path": "branding/icone-rasta-quest.png",
+      "purpose": "Ícone Rasta Quest",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/branding/icone-rasta-quest.png",
+      "sha256": "8fa8d74b6f33816ab2afba2e14dd88cae63d0ea301aa6bc58f0d1300e025ae67",
+      "git_blob_sha": "aae9579e839120217e6933f4275313553136ab18",
+      "bytes": 3155861,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-d1cc5786-f8bf-4636-954e-6ca6e3990601.png",
+      "path": "ui/carregamento-atualizacao.png",
+      "purpose": "Tela de carregamento e atualização — referência visual",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/ui/carregamento-atualizacao.png",
+      "sha256": "21c96d29f8ff7c4fe99e75b29f690495fb6daf249e2eead5776f8224e9f8be5a",
+      "git_blob_sha": "afb8bc7e71ec84460f13287857827b5f8bb3815b",
+      "bytes": 3275108,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-7fe60431-b00e-49d2-a363-b8dd4ada3125.png",
+      "path": "ui/menu-principal.png",
+      "purpose": "Menu principal",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/ui/menu-principal.png",
+      "sha256": "72bb6b00e40ff81c190a1a5d22096c176ca3ce017fbf93802f7f70ae2ce7df70",
+      "git_blob_sha": "731bd7acca6c7d7fd234ad311d8e8960801f924d",
+      "bytes": 3398813,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-2c625266-2071-43f1-b234-8c8076e3fff7.png",
+      "path": "systems/coletaveis-v01.png",
+      "purpose": "Sistema de coletáveis — primeira referência",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/systems/coletaveis-v01.png",
+      "sha256": "b6ca9b15c1fb31a45710fb761a41296bfabc44d76df19629b245d7b71472d9ca",
+      "git_blob_sha": "6fb6b0c866d0b96ae2face03c8c4cbc480dc6511",
+      "bytes": 3568180,
+      "dimensions": [
+        1055,
+        1491
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-1b5adde1-b8be-4cb9-8de5-6b54ea26351d.png",
+      "path": "systems/skins-premium.png",
+      "purpose": "Skins de Akane e machado — recompensa de coleção",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/systems/skins-premium.png",
+      "sha256": "ba99d5230a17412a7ebe9412c9e161640c30116270a6b7cfeb99e797070d10ed",
+      "git_blob_sha": "15f953549565d7839632af4187dde3155a446347",
+      "bytes": 3611065,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-63251175-ff25-45bb-a433-86556a5f708a.png",
+      "path": "world/lore-akane-xango.png",
+      "purpose": "Lore, origem de Akane Xangô e mundo fragmentado",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/world/lore-akane-xango.png",
+      "sha256": "71ee9054fd68058cf478182150e32de226eb40d835b93f1cf5df5812da34b62a",
+      "git_blob_sha": "bae29830b3a32cb44c065792fc4c4d376c6dd5d9",
+      "bytes": 3755126,
+      "dimensions": [
+        1055,
+        1491
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-ddafd71f-6ff6-41fa-8aca-50b6bfc864c0.png",
+      "path": "systems/coletaveis-e-progressao-v02.png",
+      "purpose": "Coletáveis, equipamentos, bênçãos de run e progressão",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/systems/coletaveis-e-progressao-v02.png",
+      "sha256": "880717280c4a529f554808c04e2c14cd09e2280d00d629b146ff968141073602",
+      "git_blob_sha": "d2b33567805a8c21fb7167f05f0c383012adec8a",
+      "bytes": 3718403,
+      "dimensions": [
+        1055,
+        1491
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-62ce0d41-1b03-4865-876f-641aafe548bc.png",
+      "path": "ui/equipamentos-atributos-poderes-run.png",
+      "purpose": "Menu de equipamentos, atributos e poderes da run",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/ui/equipamentos-atributos-poderes-run.png",
+      "sha256": "d99a20981148727fa12604fb7e3d68aaafa5cf908c4f10d89e746e38ddcf76e1",
+      "git_blob_sha": "eb363c89130134e3629fb75109db9dbb8dab8cda",
+      "bytes": 3380942,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-cd73da2d-e31a-4f03-a97b-a0b69ee7a8c1.png",
+      "path": "world/santuario-ancestral.png",
+      "purpose": "Santuário Ancestral — mapa conceitual",
+      "biome": null,
+      "room": null,
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/world/santuario-ancestral.png",
+      "sha256": "0253e559514b188c0f69205dcbf79543b737b8047044e2d9d41832c5df34dba7",
+      "git_blob_sha": "b3019ecff154b14f5b05f7df77b55780009dd355",
+      "bytes": 3692012,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-2b12ce1c-2788-404a-8afb-beb84e52fccd.png",
+      "path": "biomes/floresta/sala-02-ponte-das-raizes-profanadas.png",
+      "purpose": "Ponte das Raízes Profanadas",
+      "biome": "Floresta Corrompida",
+      "room": "02",
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-02-ponte-das-raizes-profanadas.png",
+      "sha256": "bd5b4969398a2158c47dd28047755a290125daac5743971a722487acd690b5da",
+      "git_blob_sha": "37234092be8e5d9a1d2eca8917723b6ed4639b9d",
+      "bytes": 3493721,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-9d35fb23-3a51-465d-b7c1-72539e65c1cc.png",
+      "path": "biomes/floresta/sala-03-viveiro-dos-xamas-corrompidos.png",
+      "purpose": "Viveiro dos Xamãs Corrompidos",
+      "biome": "Floresta Corrompida",
+      "room": "03",
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-03-viveiro-dos-xamas-corrompidos.png",
+      "sha256": "e659d35d92562d936143b00fede6de3afcd97e21c3a4817f62a83c0ec8bb78a7",
+      "git_blob_sha": "1fa8dc0edd3828684be6635bf29b4e4c5e56bac1",
+      "bytes": 3478111,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-ade06b80-f185-4803-9158-81bf8e123a07.png",
+      "path": "biomes/floresta/sala-04-cascata-dos-ecos-de-pedra.png",
+      "purpose": "Cascata dos Ecos de Pedra",
+      "biome": "Floresta Corrompida",
+      "room": "04",
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-04-cascata-dos-ecos-de-pedra.png",
+      "sha256": "4a34abcace8e059736fe8042ef0962808538eb43190f658893ce9cc33f317e6c",
+      "git_blob_sha": "97abd68d7349f05a3d41a9f767697f13fe71a4c2",
+      "bytes": 3546086,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-8b74b6c1-eb53-4054-9d71-e54a893065f2.png",
+      "path": "biomes/floresta/sala-05-clareira-do-julgamento-de-ogum.png",
+      "purpose": "Clareira do Julgamento de Ogum",
+      "biome": "Floresta Corrompida",
+      "room": "05",
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-05-clareira-do-julgamento-de-ogum.png",
+      "sha256": "926626f1e1e9ccdbc3ecaaa08d0eb4ba8ad608f51c4bccfb8bcc442dffb40a12",
+      "git_blob_sha": "7751e14e3194857fb4cce8d219a08d16ac14bef5",
+      "bytes": 3505455,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-39d002bd-b770-4dfa-a025-02b5a1762c88.png",
+      "path": "biomes/floresta/sala-06-coracao-da-arvore-profanada.png",
+      "purpose": "Coração da Árvore Profanada",
+      "biome": "Floresta Corrompida",
+      "room": "06",
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-06-coracao-da-arvore-profanada.png",
+      "sha256": "055c4b03059e042225a1bf8d22aedac2b1fe0a73a356695de8a716a0048e7a92",
+      "git_blob_sha": "b1c0396255ca69b03bb989e5f1cf82b83f5ea4e8",
+      "bytes": 3513089,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-829945ee-4b5d-43f5-981d-e5cba3c64d30.png",
+      "path": "biomes/floresta/sala-07-trono-da-raiz-julgadora.png",
+      "purpose": "Trono da Raiz Julgadora",
+      "biome": "Floresta Corrompida",
+      "room": "07",
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-07-trono-da-raiz-julgadora.png",
+      "sha256": "2bd6cf4cad74ab3e83e3e2606ca72368408aed99d85532b54c4fbafdbad7991e",
+      "git_blob_sha": "22cfccf6ce11ed633d492f9af815eb38591c212e",
+      "bytes": 3560296,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-e6f28701-fc94-4a7d-a22e-c46bcf10572e.png",
+      "path": "biomes/castelo/sala-01-portao-das-muralhas-quebradas.png",
+      "purpose": "Portão das Muralhas Quebradas",
+      "biome": "Castelo Fraturado",
+      "room": "01",
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-01-portao-das-muralhas-quebradas.png",
+      "sha256": "9d5742b8f35ae77819db371a58e4f8b5f09472cef5ad323697128db9efcc2af9",
+      "git_blob_sha": "e19096e25964bc81107436900f66bb7f6d4fd402",
+      "bytes": 3445237,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-7ec24d78-18dc-45f5-90b0-8bf765dea539.png",
+      "path": "biomes/castelo/sala-02-galeria-das-correntes-partidas.png",
+      "purpose": "Galeria das Correntes Partidas",
+      "biome": "Castelo Fraturado",
+      "room": "02",
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-02-galeria-das-correntes-partidas.png",
+      "sha256": "b75589978ed611d23f5ab9e05b10e773b315c5312d8eeda6cdf57bde25ce2f91",
+      "git_blob_sha": "b256a28e9eed73de14ec3568b64fd80fd6a828f9",
+      "bytes": 3507992,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-aa7ecc94-47ae-4cc0-8494-1f89d3c9ffe9.png",
+      "path": "biomes/castelo/sala-03-salao-dos-arcos-caidos.png",
+      "purpose": "Salão dos Arcos Caídos",
+      "biome": "Castelo Fraturado",
+      "room": "03",
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-03-salao-dos-arcos-caidos.png",
+      "sha256": "6b36e2d3b87273c5522f2b1d6c430e2f1bdc9d48fdcb190c46f8b09355deb4b8",
+      "git_blob_sha": "cba053e87edb79647f57ea7005c82990ea02c95b",
+      "bytes": 3474548,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-541d567d-1848-4538-bee0-41ec85a0df93.png",
+      "path": "biomes/castelo/sala-04-torre-do-sino-rachado.png",
+      "purpose": "Torre do Sino Rachado",
+      "biome": "Castelo Fraturado",
+      "room": "04",
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-04-torre-do-sino-rachado.png",
+      "sha256": "5ed34d3ba19c21630b3c9d033a63d5bb328957e4ba9ae64cfbad3c85a15519b1",
+      "git_blob_sha": "ede550327298e9505c6f316695d5807bc188972a",
+      "bytes": 3471906,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-772eae03-b02a-449f-8256-64d3a1dd9a74.png",
+      "path": "biomes/castelo/sala-05-forja-do-ferro-sagrado.png",
+      "purpose": "Forja do Ferro Sagrado — reenvio",
+      "biome": "Castelo Fraturado",
+      "room": "05",
+      "repository_path": "assets/production_drafts/2026-10-24/biome-continuation-v01/reference-castelo-sala05.png",
+      "sha256": "da73e052d4bff6cf7e1fd38a6b77c69577139b1ffb5846ff5a1a75b0524749d7",
+      "git_blob_sha": "cec6a68a7884ea0969b41885addf90a78f79d3f6",
+      "bytes": 3512038,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": true,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    },
+    {
+      "source_name": "codex-clipboard-ecc110c9-a918-41c3-a841-560dc740cd04.png",
+      "path": "biomes/floresta/sala-01-original.png",
+      "purpose": "Floresta Corrompida — sala 01, identificada pelo usuario",
+      "biome": "Floresta Corrompida",
+      "room": "01",
+      "repository_path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-01-original.png",
+      "sha256": "298b9768353d1c8f222101266016520e8e287477990ee635e720aa5e2e3dab29",
+      "git_blob_sha": "6393b2b9105acafa88847dc736bbda05449a54d6",
+      "bytes": 3370881,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "user_resubmitted_original",
+      "duplicate_of_existing": false,
+      "byte_identical_to_attachment": true,
+      "runtime_ready": false,
+      "original_generation_date": null
+    }
+  ]
+}

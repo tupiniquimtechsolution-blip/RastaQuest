@@ -16,16 +16,16 @@ O foco imediato deste registro é conservar as ideias e conferir os arquivos. A 
 
 ## Resultado da conferência
 
-**O repositório ainda não contém o conjunto completo das 21 pranchas identificadas por sala. Foram confirmadas 10; 11 não foram localizadas nos heads atuais.**
+**Atualização após os reenvios do usuário: 21/21 pranchas de salas arquivadas na branch do PR #84. Não falta nenhuma das sete salas de cada um dos três biomas.** O levantamento inicial encontrou 10/21; os anexos seguintes recuperaram as 11 restantes. O JSON conserva esse levantamento em `initial_snapshot` e registra a recuperação em `recovery_update`.
 
 | Bioma | Pranchas confirmadas no GitHub | Não localizadas | Na main |
 |---|---|---|---|
-| Floresta Corrompida | 0/7 | 01–07 | 0/7 |
-| Castelo Fraturado | 3/7: 05, 06, 07 | 01–04 | 0/7 |
+| Floresta Corrompida | 7/7: 01–07 | nenhuma | 0/7 |
+| Castelo Fraturado | 7/7: 01–07 | nenhuma | 0/7 |
 | Cavernas dos Ecos | 7/7: 01–07 | nenhuma | 0/7 |
-| Total | 10/21 | 11 | 0/21 |
+| Total | 21/21 | nenhuma | 0/21 |
 
-As 10 confirmadas estão em `assets/production_drafts/2026-10-24/biome-continuation-v01/`, na branch `design/biome-continuation-castle06-caves07-20261024`, commit auditado `dbe7148b974c07a07673cde9fe3dc823bbe1a59a` ([PR #84](https://github.com/tupiniquimtechsolution-blip/RastaQuest/pull/84)). São nove pranchas novas e a sala 05 original enviada pelo usuário.
+As 10 inicialmente confirmadas estão em `assets/production_drafts/2026-10-24/biome-continuation-v01/`, na branch `design/biome-continuation-castle06-caves07-20261024`, commit inicialmente auditado `dbe7148b974c07a07673cde9fe3dc823bbe1a59a` ([PR #84](https://github.com/tupiniquimtechsolution-blip/RastaQuest/pull/84)). São nove pranchas novas e a sala 05 original enviada pelo usuário. As 11 salas recuperadas estão em [recovered-chat-originals-v01](../../assets/production_drafts/2026-10-24/recovered-chat-originals-v01/README.md), junto de 13 outras artes de personagens, identidade, telas, menus, lore, coletáveis e santuário. Os 25 anexos recebidos correspondem a 24 novos arquivos e um reenvio idêntico do Castelo 05, sem duplicar essa sala.
 
 A sala 05 também está em `art/chat-originals-archive-20261024`, caminho `assets/production_drafts/chat-history-2026-10-24/castelo-fraturado-sala-05-original.png`. As duas cópias têm o mesmo Git blob SHA `cec6a68a7884ea0969b41885addf90a78f79d3f6`; contam como uma prancha, não duas. O manifesto dessa branch declara recuperação incompleta e lista Floresta 01–07/Castelo 01–04 como inacessíveis.
 
@@ -42,8 +42,8 @@ Não foi feita busca de todos os commits históricos ou branches apagadas. “N�
 
 ## Próximo passo
 
-Recuperação acompanhada na [Issue #86](https://github.com/tupiniquimtechsolution-blip/RastaQuest/issues/86), prioridade P1, com critérios de aceite por grupo de salas.
+Recuperação acompanhada na [Issue #86](https://github.com/tupiniquimtechsolution-blip/RastaQuest/issues/86). As 11 salas foram recuperadas; o encerramento depende da conferência da árvore publicada no GitHub.
 
-Recuperar e arquivar **os originais** de Floresta 01–07 e Castelo 01–04, a partir dos anexos/exportação do chat ou de arquivos fornecidos pelo usuário. Manter nomes/procedência e conferir hashes; atualizar o inventário após cada recuperação. Não gerar substitutos, usar capturas de protótipo como equivalentes ou declarar o acervo completo para encobrir a lacuna.
+Com o acervo de salas completo, preservar as artes originais como referência para montagem das fases e uso visual/promocional indicado pelo usuário. Revisar as inconsistências históricas de textos e contagem ilustrada na especificação de implementação, sem alterar os originais. Prosseguir depois com o layout da árvore de habilidades no menu de pausa, conservando a avaliação de 2D/3D como trabalho futuro.
 
-Nenhuma imagem ou sala foi modificada nesta auditoria. As ideias preservadas continuam registradas independentemente da lacuna de arquivamento. Não houve merge, build Unity, Play Mode, publicação de release ou mudança de gameplay.
+Nenhuma imagem ou sala foi redesenhada. As cópias dos anexos foram verificadas byte a byte. As ideias preservadas continuam registradas. Não houve merge, build Unity, Play Mode, publicação de release ou mudança de gameplay.

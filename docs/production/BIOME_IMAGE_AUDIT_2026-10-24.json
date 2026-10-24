@@ -1,10 +1,10 @@
 {
   "date": "2026-10-24",
   "expected": 21,
-  "confirmed": 10,
-  "not_located": 11,
+  "confirmed": 21,
+  "not_located": 0,
   "main_confirmed": 0,
-  "scope": "Current heads of all 50 branches returned by GitHub; git ls-tree by exact SHA, plus untruncated GitHub trees for main, continuation, originals archive and imagens-novas. Not a search of every deleted ref or historical commit.",
+  "scope": "Initial audit covered current heads of 50 branches at recorded SHAs; subsequent user attachments recover 11 missing rooms. See initial_snapshot and recovery_update. Presence reconciled against archived PNG bytes; published tree checked after push.",
   "main_sha": "dd12bb3d188686e5010395b690de9161949b8d7f",
   "continuation_branch": "design/biome-continuation-castle06-caves07-20261024",
   "continuation_audited_sha": "dbe7148b974c07a07673cde9fe3dc823bbe1a59a",
@@ -25,90 +25,101 @@
     {
       "biome": "Floresta Corrompida",
       "room": "01",
-      "status": "not_located_in_current_branch_heads",
-      "path": null,
-      "git_blob_sha": null,
-      "on_main": false
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-01-original.png",
+      "git_blob_sha": "6393b2b9105acafa88847dc736bbda05449a54d6",
+      "on_main": false,
+      "recovery_source": "user_attachment"
     },
     {
       "biome": "Floresta Corrompida",
       "room": "02",
-      "status": "not_located_in_current_branch_heads",
-      "path": null,
-      "git_blob_sha": null,
-      "on_main": false
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-02-ponte-das-raizes-profanadas.png",
+      "git_blob_sha": "37234092be8e5d9a1d2eca8917723b6ed4639b9d",
+      "on_main": false,
+      "recovery_source": "user_attachment"
     },
     {
       "biome": "Floresta Corrompida",
       "room": "03",
-      "status": "not_located_in_current_branch_heads",
-      "path": null,
-      "git_blob_sha": null,
-      "on_main": false
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-03-viveiro-dos-xamas-corrompidos.png",
+      "git_blob_sha": "1fa8dc0edd3828684be6635bf29b4e4c5e56bac1",
+      "on_main": false,
+      "recovery_source": "user_attachment"
     },
     {
       "biome": "Floresta Corrompida",
       "room": "04",
-      "status": "not_located_in_current_branch_heads",
-      "path": null,
-      "git_blob_sha": null,
-      "on_main": false
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-04-cascata-dos-ecos-de-pedra.png",
+      "git_blob_sha": "97abd68d7349f05a3d41a9f767697f13fe71a4c2",
+      "on_main": false,
+      "recovery_source": "user_attachment"
     },
     {
       "biome": "Floresta Corrompida",
       "room": "05",
-      "status": "not_located_in_current_branch_heads",
-      "path": null,
-      "git_blob_sha": null,
-      "on_main": false
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-05-clareira-do-julgamento-de-ogum.png",
+      "git_blob_sha": "7751e14e3194857fb4cce8d219a08d16ac14bef5",
+      "on_main": false,
+      "recovery_source": "user_attachment"
     },
     {
       "biome": "Floresta Corrompida",
       "room": "06",
-      "status": "not_located_in_current_branch_heads",
-      "path": null,
-      "git_blob_sha": null,
-      "on_main": false
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-06-coracao-da-arvore-profanada.png",
+      "git_blob_sha": "b1c0396255ca69b03bb989e5f1cf82b83f5ea4e8",
+      "on_main": false,
+      "recovery_source": "user_attachment"
     },
     {
       "biome": "Floresta Corrompida",
       "room": "07",
-      "status": "not_located_in_current_branch_heads",
-      "path": null,
-      "git_blob_sha": null,
-      "on_main": false
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-07-trono-da-raiz-julgadora.png",
+      "git_blob_sha": "22cfccf6ce11ed633d492f9af815eb38591c212e",
+      "on_main": false,
+      "recovery_source": "user_attachment"
     },
     {
       "biome": "Castelo Fraturado",
       "room": "01",
-      "status": "not_located_in_current_branch_heads",
-      "path": null,
-      "git_blob_sha": null,
-      "on_main": false
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-01-portao-das-muralhas-quebradas.png",
+      "git_blob_sha": "e19096e25964bc81107436900f66bb7f6d4fd402",
+      "on_main": false,
+      "recovery_source": "user_attachment"
     },
     {
       "biome": "Castelo Fraturado",
       "room": "02",
-      "status": "not_located_in_current_branch_heads",
-      "path": null,
-      "git_blob_sha": null,
-      "on_main": false
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-02-galeria-das-correntes-partidas.png",
+      "git_blob_sha": "b256a28e9eed73de14ec3568b64fd80fd6a828f9",
+      "on_main": false,
+      "recovery_source": "user_attachment"
     },
     {
       "biome": "Castelo Fraturado",
       "room": "03",
-      "status": "not_located_in_current_branch_heads",
-      "path": null,
-      "git_blob_sha": null,
-      "on_main": false
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-03-salao-dos-arcos-caidos.png",
+      "git_blob_sha": "cba053e87edb79647f57ea7005c82990ea02c95b",
+      "on_main": false,
+      "recovery_source": "user_attachment"
     },
     {
       "biome": "Castelo Fraturado",
       "room": "04",
-      "status": "not_located_in_current_branch_heads",
-      "path": null,
-      "git_blob_sha": null,
-      "on_main": false
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-04-torre-do-sino-rachado.png",
+      "git_blob_sha": "ede550327298e9505c6f316695d5807bc188972a",
+      "on_main": false,
+      "recovery_source": "user_attachment"
     },
     {
       "biome": "Castelo Fraturado",
@@ -116,7 +127,8 @@
       "status": "present_on_work_branch",
       "path": "assets/production_drafts/2026-10-24/biome-continuation-v01/reference-castelo-sala05.png",
       "git_blob_sha": "cec6a68a7884ea0969b41885addf90a78f79d3f6",
-      "on_main": false
+      "on_main": false,
+      "recovery_source": "user_attachment"
     },
     {
       "biome": "Castelo Fraturado",
@@ -392,5 +404,17 @@
       "branch": "work/preunity-gates-20261024",
       "commit": "7190f760f130c510eab448cec846714243eb6297"
     }
-  ]
+  ],
+  "initial_snapshot": {
+    "confirmed": 10,
+    "not_located": 11,
+    "continuation_audited_sha": "dbe7148b974c07a07673cde9fe3dc823bbe1a59a",
+    "scope": "Current heads of all 50 branches returned by GitHub; git ls-tree by exact SHA, plus untruncated GitHub trees for main, continuation, originals archive and imagens-novas. Not a search of every deleted ref or historical commit."
+  },
+  "recovery_update": {
+    "date": "2026-10-24",
+    "source": "25 user image attachments and pasted historical context",
+    "manifest": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/MANIFEST.json",
+    "new_recovered_rooms": 11
+  }
 }
