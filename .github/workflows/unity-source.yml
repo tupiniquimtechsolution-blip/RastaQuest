@@ -2,10 +2,10 @@ name: Unity Source Contracts (not Editor or APK)
 
 on:
   pull_request:
-    paths: ["unity/**", "tools/sync_unity_review.py", "tools/check_unity_source_contracts.py", "tools/validate_unity_art_contract.py", "tools/test_validate_unity_art_contract.py", "assets/production_drafts/2026-10-24/unity-illustrated-production/**", ".github/workflows/unity-source.yml"]
+    paths: ["unity/**", "tools/sync_unity_review.py", "tools/check_unity_source_contracts.py", "tools/validate_unity_art_contract.py", "tools/test_validate_unity_art_contract.py", "tools/validate_unity_content_pack.py", "tools/test_validate_unity_content_pack.py", "docs/production/content_drafts/**", "assets/production_drafts/2026-10-24/unity-illustrated-production/**", ".github/workflows/unity-source.yml"]
   push:
     branches: [main]
-    paths: ["unity/**", "tools/sync_unity_review.py", "tools/check_unity_source_contracts.py", "tools/validate_unity_art_contract.py", "tools/test_validate_unity_art_contract.py", "assets/production_drafts/2026-10-24/unity-illustrated-production/**", ".github/workflows/unity-source.yml"]
+    paths: ["unity/**", "tools/sync_unity_review.py", "tools/check_unity_source_contracts.py", "tools/validate_unity_art_contract.py", "tools/test_validate_unity_art_contract.py", "tools/validate_unity_content_pack.py", "tools/test_validate_unity_content_pack.py", "docs/production/content_drafts/**", "assets/production_drafts/2026-10-24/unity-illustrated-production/**", ".github/workflows/unity-source.yml"]
 
 permissions:
   contents: read
@@ -23,6 +23,10 @@ jobs:
         run: |
           python -B tools/validate_unity_art_contract.py
           python -B -m unittest discover -s tools -p test_validate_unity_art_contract.py -v
+      - name: Validate content, translations and Godot save source
+        run: |
+          python -B tools/validate_unity_content_pack.py
+          python -B -m unittest discover -s tools -p test_validate_unity_content_pack.py -v
       - name: Compile and execute independent C# rules
         shell: pwsh
         run: |
