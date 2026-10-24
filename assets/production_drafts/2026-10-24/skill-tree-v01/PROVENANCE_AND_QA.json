@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-24",
+  "tool": "image_gen.imagegen",
+  "status": "visual_proposal_not_runtime",
+  "current_game_direction": "2D_only_3D_evaluation_deferred",
+  "files": [
+    {
+      "file": "skill-tree-pause-menu.png",
+      "size": [
+        1672,
+        941
+      ],
+      "bytes": 2951654,
+      "sha256": "3f3ae75ddfaa8ee3d820b02a8c95c9abc1e1f5706f0a6d435940d745d8303c7f"
+    },
+    {
+      "file": "skill-tree-branches.png",
+      "size": [
+        1672,
+        941
+      ],
+      "bytes": 3087600,
+      "sha256": "d4746a154be5cfc3a4132d296e36fb73c93f9b35a8cb80af0eb8ecadcbb6d1ff"
+    }
+  ],
+  "references": [
+    {
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/ui/equipamentos-atributos-poderes-run.png",
+      "sha256": "d99a20981148727fa12604fb7e3d68aaafa5cf908c4f10d89e746e38ddcf76e1"
+    },
+    {
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/world/lore-akane-xango.png",
+      "sha256": "71ee9054fd68058cf478182150e32de226eb40d835b93f1cf5df5812da34b62a"
+    }
+  ],
+  "prompts": [
+    "PROMPT_PAUSE_MENU.txt",
+    "PROMPT_BRANCHES.txt"
+  ],
+  "correction": "Pause menu tier II Vigor/Machado/Movimento/Tempestade set to unlocked/checkmark, so available tier III nodes have fulfilled prerequisites; no other art redesigned.",
+  "checks": {
+    "png_integrity": "PASS",
+    "dimensions": "PASS",
+    "branches": 5,
+    "skills": 25,
+    "unique_ids": "PASS",
+    "dependencies": "PASS",
+    "visual_example_prerequisites": "PASS",
+    "costs_unset": true
+  },
+  "assistant_visual_review": "Both boards inspected; 5x5 medallions and labels, branch order and selected shield detail reviewed. Art not a clickable UI.",
+  "remaining": [
+    "Human artistic/cultural/rights review",
+    "Mobile typography and touch validation",
+    "Engine UI implementation and persistence",
+    "Effects and numerical costs/balance decisions"
+  ],
+  "unity_build": "not_executed",
+  "merge": "not_performed",
+  "release": "not_claimed"
+}

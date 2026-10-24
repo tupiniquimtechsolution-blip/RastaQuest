@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-24",
+  "generation_tool": "image_gen.imagegen",
+  "status": "visual_studies_not_runtime",
+  "references": [
+    {
+      "path": "assets/production_drafts/2026-10-24/skill-tree-v01/skill-tree-pause-menu.png",
+      "sha256": "3f3ae75ddfaa8ee3d820b02a8c95c9abc1e1f5706f0a6d435940d745d8303c7f"
+    },
+    {
+      "path": "assets/production_drafts/2026-10-24/skill-tree-v01/skill-tree-branches.png",
+      "sha256": "d4746a154be5cfc3a4132d296e36fb73c93f9b35a8cb80af0eb8ecadcbb6d1ff"
+    }
+  ],
+  "files": [
+    {
+      "file": "skill-tree-pause-menu.png",
+      "repository_path": "assets/production_drafts/2026-10-24/skill-tree-v02/skill-tree-pause-menu.png",
+      "bytes": 2846051,
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "c26c214d3c7202720a0f3fdc6b64ff793ae5313fbfbbafbe6e4129fbd21fb900",
+      "git_blob_sha": "76cc3b68a5b494bfeda54136fd8ce66424ec6102"
+    },
+    {
+      "file": "skill-tree-branches.png",
+      "repository_path": "assets/production_drafts/2026-10-24/skill-tree-v02/skill-tree-branches.png",
+      "bytes": 2850463,
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "3d17504d8d8048f375bd250bf6cff562ba70a677259ef1ae9daaaf0e5e9a3f28",
+      "git_blob_sha": "5e04c36ece118bcdf6e01ae01cdae0dc7c736ceb"
+    }
+  ],
+  "checks": [
+    "PNG integrity and dimensions",
+    "25 unique skill IDs and dependencies",
+    "12 motion IDs and 60 key-pose entries",
+    "skill-to-motion references",
+    "42 planned cue IDs and motion-to-cue references"
+  ],
+  "assistant_visual_review": "Revised technique branch and 3x5 pose grids inspected; stages and enemy-response labels reviewed. Fine grip, axe alignment and timing still need deterministic animation production.",
+  "human_acceptance": "pending",
+  "cultural_and_rights_review": "pending",
+  "audio_generated": false,
+  "unity_build": "not_executed",
+  "merge": "not_performed",
+  "release": "not_claimed"
+}

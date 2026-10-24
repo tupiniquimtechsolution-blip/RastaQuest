@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-24",
+  "received_attachments": 25,
+  "new_pngs": 24,
+  "duplicate_pngs": 1,
+  "attachment_sha256_matches_git_index": 25,
+  "pasted_text_byte_preserved": true,
+  "unique_rooms": 21,
+  "per_biome": {
+    "Floresta Corrompida": 7,
+    "Castelo Fraturado": 7,
+    "Cavernas dos Ecos": 7
+  },
+  "missing_rooms": [],
+  "checks": [
+    "PNG integrity and source/destination byte identity during copy",
+    "Git index bytes match each attachment SHA256",
+    "21 unique room IDs and matching Git blob SHAs",
+    "git diff --cached --check"
+  ],
+  "no_runtime_test": true,
+  "no_merge": true
+}

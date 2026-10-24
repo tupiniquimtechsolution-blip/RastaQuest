@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-24",
+  "source": "Connected Higgsfield models_list(type=audio), read-only; no generation submitted",
+  "has_more": false,
+  "items": [
+    {
+      "id": "seed_audio",
+      "name": "Seed Audio 1.0",
+      "description": "Seed Audio 1.0 — text-to-audio synthesis with optional voice/audio reference or a single image reference.",
+      "tags": [
+        "audio",
+        "text-to-speech",
+        "tts",
+        "bytedance",
+        "seed-audio",
+        "unlim"
+      ],
+      "parameters": [
+        {
+          "name": "format",
+          "required": "optional",
+          "type": "string",
+          "description": "Output audio container format.",
+          "options": [
+            "wav",
+            "mp3",
+            "pcm",
+            "ogg_opus"
+          ],
+          "default": "wav"
+        },
+        {
+          "name": "sample_rate",
+          "required": "optional",
+          "type": "number",
+          "description": "Output sample rate in Hz.",
+          "options": [
+            8000,
+            16000,
+            24000,
+            32000,
+            44100,
+            48000
+          ],
+          "default": 24000
+        },
+        {
+          "name": "speech_rate",
+          "required": "optional",
+          "type": "number",
+          "description": "Speech speed adjustment. 0 keeps the default speed; positive values are faster. Whole number.",
+          "min": -50,
+          "max": 100,
+          "default": 0
+        },
+        {
+          "name": "loudness_rate",
+          "required": "optional",
+          "type": "number",
+          "description": "Loudness adjustment. 0 keeps the default loudness. Whole number.",
+          "min": -50,
+          "max": 100,
+          "default": 0
+        },
+        {
+          "name": "pitch_rate",
+          "required": "optional",
+          "type": "number",
+          "description": "Pitch adjustment in provider units. 0 keeps the default pitch. Whole number.",
+          "min": -12,
+          "max": 12,
+          "default": 0
+        },
+        {
+          "name": "voice_type",
+          "required": "optional",
+          "type": "string",
+          "description": "Optional voice source: 'preset' for a built-in voice id, or 'element' for a workspace voice reference element. Must be sent together with voice_id.",
+          "options": [
+            "preset",
+            "element"
+          ],
+          "nullable": true
+        },
+        {
+          "name": "voice_id",
+          "required": "optional",
+          "type": "string",
+          "description": "Voice id: a preset voice id when voice_type='preset', or a voice reference element id when voice_type='element'. Must be sent together with voice_type.",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "id": "sonilo_music",
+      "name": "Sonilo Music",
+      "description": "Text-to-music generation with controllable duration. Game pipeline only.",
+      "tags": [
+        "audio",
+        "music",
+        "text-to-music",
+        "fal",
+        "sonilo"
+      ],
+      "parameters": [
+        {
+          "name": "duration",
+          "required": "required",
+          "type": "number",
+          "description": "Duration in seconds (e.g. 8)."
+        }
+      ]
+    },
+    {
+      "id": "mirelo_text_to_audio",
+      "name": "Mirelo Text to Audio",
+      "description": "Text-to-audio sound effect generation with controllable duration. Game pipeline only.",
+      "tags": [
+        "audio",
+        "sfx",
+        "sound-effects",
+        "text-to-audio",
+        "fal",
+        "mirelo",
+        "unlim"
+      ],
+      "parameters": [
+        {
+          "name": "duration",
+          "required": "required",
+          "type": "number",
+          "description": "Duration in seconds (e.g. 2)."
+        }
+      ]
+    }
+  ],
+  "viability": "catalog_only_not_tested",
+  "pricing": "not_quoted",
+  "audio_files_created": 0
+}

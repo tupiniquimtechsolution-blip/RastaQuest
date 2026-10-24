@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-24",
+  "files": [
+    {
+      "path": "assets/production_drafts/2026-10-24/parallax-v01/forest-far.png",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "sha256": "8be5a1623eb85e60d183ac65f2e14b5f8a8c3872ceb8e3095591f754021d3569",
+      "prompt": "Create ONE NEW reusable environmental art layer for RASTA QUEST 2D side-scrolling parallax, landscape16:9. Supplied image is a STYLE REFERENCE only, not an edit target. Maintain the same exquisite detailed hand-painted dark fantasy art, materials, light and color. Do NOT recreate a new numbered room or modify approved layouts. Floresta Corrompida: dark red corrupted roots, dense forest, ancient stone ruin silhouettes, waterfalls and blue storm haze. Keep reference's red/gold/green and dark stone palette. OPAQUE FAR BACKGROUND plate. Atmospheric distant environment only, hazy and lower contrast so game actors remain legible. No sharp foreground props, no walkable platform or floor. The bottom half is quiet dark atmospheric space. Fill the full canvas with art; no transparency. All illustration in side-scrolling side view, no top-down view, no 3D rendering. No characters, no enemies, no collectibles, no cowries, no UI, no logo, no text, no arrows, no map, no labels. Preserve clean visual hierarchy and separation for compositing later. Consistent horizontal camera framing. Asset is a separate production study, not a flattened screenshot.",
+      "tool": "image_gen.imagegen",
+      "production_acceptance": "pending"
+    },
+    {
+      "path": "assets/production_drafts/2026-10-24/parallax-v01/forest-middle.png",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "6abfe8192e16a6514c1b5ea95eeb049ca16c22cfbf209485dc625cb0eccf44ee",
+      "prompt": "Create ONE NEW reusable environmental art layer for RASTA QUEST 2D side-scrolling parallax, landscape16:9. Supplied image is a STYLE REFERENCE only, not an edit target. Maintain the same exquisite detailed hand-painted dark fantasy art, materials, light and color. Do NOT recreate a new numbered room or modify approved layouts. Floresta Corrompida: dark red corrupted roots, dense forest, ancient stone ruin silhouettes, waterfalls and blue storm haze. Keep reference's red/gold/green and dark stone palette. TRANSPARENT MIDGROUND layer: several isolated ancient ruin silhouettes, stone arches and biome-specific framing props distributed mainly on left and right and bottom 20%, with an open transparent central 60% play area. Not a complete scene: genuinely transparent alpha behind and between the ruins. No sky, no solid background color, no checkerboard artwork, no opaque central wall, no ground that implies collision. All illustration in side-scrolling side view, no top-down view, no 3D rendering. No characters, no enemies, no collectibles, no cowries, no UI, no logo, no text, no arrows, no map, no labels. Preserve clean visual hierarchy and separation for compositing later. Consistent horizontal camera framing. Asset is a separate production study, not a flattened screenshot.",
+      "tool": "image_gen.imagegen",
+      "production_acceptance": "pending"
+    },
+    {
+      "path": "assets/production_drafts/2026-10-24/parallax-v01/forest-front.png",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "7ba11269a81f647ed3765a8a01f1566ea50ef60e34bea14403e96b3b6c9d7631",
+      "prompt": "Create ONE NEW reusable environmental art layer for RASTA QUEST 2D side-scrolling parallax, landscape16:9. Supplied image is a STYLE REFERENCE only, not an edit target. Maintain the same exquisite detailed hand-painted dark fantasy art, materials, light and color. Do NOT recreate a new numbered room or modify approved layouts. Floresta Corrompida: dark red corrupted roots, dense forest, ancient stone ruin silhouettes, waterfalls and blue storm haze. Keep reference's red/gold/green and dark stone palette. TRANSPARENT FOREGROUND layer: a sparse decorative frame of biome-specific close roots/foliage, chains or crystals at extreme left/right edges and lower corners. Keep entire central 75% and upper half transparent. Small dark details with gentle rim lighting, no broad black silhouette across screen. Genuinely transparent alpha, no backdrop, no checkerboard pattern. All illustration in side-scrolling side view, no top-down view, no 3D rendering. No characters, no enemies, no collectibles, no cowries, no UI, no logo, no text, no arrows, no map, no labels. Preserve clean visual hierarchy and separation for compositing later. Consistent horizontal camera framing. Asset is a separate production study, not a flattened screenshot.",
+      "tool": "image_gen.imagegen",
+      "production_acceptance": "pending"
+    },
+    {
+      "path": "assets/production_drafts/2026-10-24/parallax-v01/castle-far.png",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "sha256": "454702e444ad122c7defd6aac6c02598dcd509dda32e58f9dbc977b44b791684",
+      "prompt": "Create ONE NEW reusable environmental art layer for RASTA QUEST 2D side-scrolling parallax, landscape16:9. Supplied image is a STYLE REFERENCE only, not an edit target. Maintain the same exquisite detailed hand-painted dark fantasy art, materials, light and color. Do NOT recreate a new numbered room or modify approved layouts. Castelo Fraturado: gothic black stone towers, burgundy red banners with gold emblems, chains, distant blue storm sky and restrained orange firelight. OPAQUE FAR BACKGROUND plate. Atmospheric distant environment only, hazy and lower contrast so game actors remain legible. No sharp foreground props, no walkable platform or floor. The bottom half is quiet dark atmospheric space. Fill the full canvas with art; no transparency. All illustration in side-scrolling side view, no top-down view, no 3D rendering. No characters, no enemies, no collectibles, no cowries, no UI, no logo, no text, no arrows, no map, no labels. Preserve clean visual hierarchy and separation for compositing later. Consistent horizontal camera framing. Asset is a separate production study, not a flattened screenshot.",
+      "tool": "image_gen.imagegen",
+      "production_acceptance": "pending"
+    },
+    {
+      "path": "assets/production_drafts/2026-10-24/parallax-v01/castle-middle.png",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "5b5f84325b690b83180f038921147a875d7319d3a64c8dc19548369b8c17c41c",
+      "prompt": "Create ONE NEW reusable environmental art layer for RASTA QUEST 2D side-scrolling parallax, landscape16:9. Supplied image is a STYLE REFERENCE only, not an edit target. Maintain the same exquisite detailed hand-painted dark fantasy art, materials, light and color. Do NOT recreate a new numbered room or modify approved layouts. Castelo Fraturado: gothic black stone towers, burgundy red banners with gold emblems, chains, distant blue storm sky and restrained orange firelight. TRANSPARENT MIDGROUND layer: several isolated ancient ruin silhouettes, stone arches and biome-specific framing props distributed mainly on left and right and bottom 20%, with an open transparent central 60% play area. Not a complete scene: genuinely transparent alpha behind and between the ruins. No sky, no solid background color, no checkerboard artwork, no opaque central wall, no ground that implies collision. All illustration in side-scrolling side view, no top-down view, no 3D rendering. No characters, no enemies, no collectibles, no cowries, no UI, no logo, no text, no arrows, no map, no labels. Preserve clean visual hierarchy and separation for compositing later. Consistent horizontal camera framing. Asset is a separate production study, not a flattened screenshot.",
+      "tool": "image_gen.imagegen",
+      "production_acceptance": "pending"
+    },
+    {
+      "path": "assets/production_drafts/2026-10-24/parallax-v01/castle-front.png",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "5eb74d6215343711a3b8309917208c5d333594d9fbcd48569c667f9d86c196e7",
+      "prompt": "Create ONE NEW reusable environmental art layer for RASTA QUEST 2D side-scrolling parallax, landscape16:9. Supplied image is a STYLE REFERENCE only, not an edit target. Maintain the same exquisite detailed hand-painted dark fantasy art, materials, light and color. Do NOT recreate a new numbered room or modify approved layouts. Castelo Fraturado: gothic black stone towers, burgundy red banners with gold emblems, chains, distant blue storm sky and restrained orange firelight. TRANSPARENT FOREGROUND layer: a sparse decorative frame of biome-specific close roots/foliage, chains or crystals at extreme left/right edges and lower corners. Keep entire central 75% and upper half transparent. Small dark details with gentle rim lighting, no broad black silhouette across screen. Genuinely transparent alpha, no backdrop, no checkerboard pattern. All illustration in side-scrolling side view, no top-down view, no 3D rendering. No characters, no enemies, no collectibles, no cowries, no UI, no logo, no text, no arrows, no map, no labels. Preserve clean visual hierarchy and separation for compositing later. Consistent horizontal camera framing. Asset is a separate production study, not a flattened screenshot.",
+      "tool": "image_gen.imagegen",
+      "production_acceptance": "pending"
+    },
+    {
+      "path": "assets/production_drafts/2026-10-24/parallax-v01/caves-far.png",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "sha256": "016017fc686dce224fceaab7216aaecb8a46f57a74157de4958f63c20307b688",
+      "prompt": "Create ONE NEW reusable environmental art layer for RASTA QUEST 2D side-scrolling parallax, landscape16:9. Supplied image is a STYLE REFERENCE only, not an edit target. Maintain the same exquisite detailed hand-painted dark fantasy art, materials, light and color. Do NOT recreate a new numbered room or modify approved layouts. Cavernas dos Ecos: deep dark stone caverns, turquoise/violet mineral formations, restrained electrical blue seams, distant dimensional instability and occasional ancient stone arches. OPAQUE FAR BACKGROUND plate. Atmospheric distant environment only, hazy and lower contrast so game actors remain legible. No sharp foreground props, no walkable platform or floor. The bottom half is quiet dark atmospheric space. Fill the full canvas with art; no transparency. All illustration in side-scrolling side view, no top-down view, no 3D rendering. No characters, no enemies, no collectibles, no cowries, no UI, no logo, no text, no arrows, no map, no labels. Preserve clean visual hierarchy and separation for compositing later. Consistent horizontal camera framing. Asset is a separate production study, not a flattened screenshot.",
+      "tool": "image_gen.imagegen",
+      "production_acceptance": "pending"
+    },
+    {
+      "path": "assets/production_drafts/2026-10-24/parallax-v01/caves-middle.png",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "bf332f73fe0aef6186c2b0a19746904315a94dbff3f57feb1011963f7f2880fe",
+      "prompt": "Create ONE NEW reusable environmental art layer for RASTA QUEST 2D side-scrolling parallax, landscape16:9. Supplied image is a STYLE REFERENCE only, not an edit target. Maintain the same exquisite detailed hand-painted dark fantasy art, materials, light and color. Do NOT recreate a new numbered room or modify approved layouts. Cavernas dos Ecos: deep dark stone caverns, turquoise/violet mineral formations, restrained electrical blue seams, distant dimensional instability and occasional ancient stone arches. TRANSPARENT MIDGROUND layer: several isolated ancient ruin silhouettes, stone arches and biome-specific framing props distributed mainly on left and right and bottom 20%, with an open transparent central 60% play area. Not a complete scene: genuinely transparent alpha behind and between the ruins. No sky, no solid background color, no checkerboard artwork, no opaque central wall, no ground that implies collision. All illustration in side-scrolling side view, no top-down view, no 3D rendering. No characters, no enemies, no collectibles, no cowries, no UI, no logo, no text, no arrows, no map, no labels. Preserve clean visual hierarchy and separation for compositing later. Consistent horizontal camera framing. Asset is a separate production study, not a flattened screenshot.",
+      "tool": "image_gen.imagegen",
+      "production_acceptance": "pending"
+    },
+    {
+      "path": "assets/production_drafts/2026-10-24/parallax-v01/caves-front.png",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "ddc3f7d3f2a097bec9acbb905ca04192afd7198b05119056ebd2f47df70e50b8",
+      "prompt": "Create ONE NEW reusable environmental art layer for RASTA QUEST 2D side-scrolling parallax, landscape16:9. Supplied image is a STYLE REFERENCE only, not an edit target. Maintain the same exquisite detailed hand-painted dark fantasy art, materials, light and color. Do NOT recreate a new numbered room or modify approved layouts. Cavernas dos Ecos: deep dark stone caverns, turquoise/violet mineral formations, restrained electrical blue seams, distant dimensional instability and occasional ancient stone arches. TRANSPARENT FOREGROUND layer: a sparse decorative frame of biome-specific close roots/foliage, chains or crystals at extreme left/right edges and lower corners. Keep entire central 75% and upper half transparent. Small dark details with gentle rim lighting, no broad black silhouette across screen. Genuinely transparent alpha, no backdrop, no checkerboard pattern. All illustration in side-scrolling side view, no top-down view, no 3D rendering. No characters, no enemies, no collectibles, no cowries, no UI, no logo, no text, no arrows, no map, no labels. Preserve clean visual hierarchy and separation for compositing later. Consistent horizontal camera framing. Asset is a separate production study, not a flattened screenshot.",
+      "tool": "image_gen.imagegen",
+      "production_acceptance": "pending"
+    }
+  ],
+  "pixel_editing": false,
+  "checks": "PNG read and alpha extrema; byte identity to generated original. Not seamless/phone/performance/skinning acceptance."
+}

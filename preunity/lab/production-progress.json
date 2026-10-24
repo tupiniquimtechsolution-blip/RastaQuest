@@ -1,0 +1,34 @@
+{
+  "fronts": [
+    {
+      "name": "Modelo e rig",
+      "delivered": "Modelo neutro transparente + hierarquia articulada executável.",
+      "remaining": "Recorte em peças, skinning, sockets, pivôs e aprovação artística."
+    },
+    {
+      "name": "Animações",
+      "delivered": "12 linhas do tempo com interpolação e controle de pose; 60 poses de referência.",
+      "remaining": "Quadros/rig texturizado de produção, foot locking e ritmo de gameplay."
+    },
+    {
+      "name": "Reações",
+      "delivered": "Simulação testável de parry, rebatida, guarda e esquiva por tipo de ataque.",
+      "remaining": "Clips finais dos inimigos, cancelamentos e validação no combate real."
+    },
+    {
+      "name": "Cenários e VFX",
+      "delivered": "9 camadas de parallax e prévia elétrica interativa.",
+      "remaining": "Tiles/colisões, repetição de borda, montagem das salas e desempenho mobile."
+    },
+    {
+      "name": "Interface e habilidades",
+      "delivered": "Árvore de 25 nós navegável com pré-requisitos e estados de demonstração.",
+      "remaining": "Custos/efeitos finais, integração no save e UI da engine."
+    },
+    {
+      "name": "Áudio",
+      "delivered": "16 SFX gerados: 12 pilotos e 4 gravações específicas de locomoção; catálogo ampliado para 84 cues.",
+      "remaining": "68 cues aguardam geração por falta de créditos; dano/morte têm prioridade na retomada. Faltam audição, variações, edição e mixagem."
+    }
+  ]
+}

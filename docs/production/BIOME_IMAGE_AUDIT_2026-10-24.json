@@ -1,0 +1,420 @@
+{
+  "date": "2026-10-24",
+  "expected": 21,
+  "confirmed": 21,
+  "not_located": 0,
+  "main_confirmed": 0,
+  "scope": "Initial audit covered current heads of 50 branches at recorded SHAs; subsequent user attachments recover 11 missing rooms. See initial_snapshot and recovery_update. Presence reconciled against archived PNG bytes; published tree checked after push.",
+  "main_sha": "dd12bb3d188686e5010395b690de9161949b8d7f",
+  "continuation_branch": "design/biome-continuation-castle06-caves07-20261024",
+  "continuation_audited_sha": "dbe7148b974c07a07673cde9fe3dc823bbe1a59a",
+  "reference05_duplicate_archive": {
+    "branch": "art/chat-originals-archive-20261024",
+    "path": "assets/production_drafts/chat-history-2026-10-24/castelo-fraturado-sala-05-original.png",
+    "git_blob_sha": "cec6a68a7884ea0969b41885addf90a78f79d3f6",
+    "counts_as_additional_board": false
+  },
+  "not_substitutes": [
+    "Old world visual bible",
+    "Environment studies",
+    "Runtime captures",
+    "Sprites",
+    "Rejected general board"
+  ],
+  "rooms": [
+    {
+      "biome": "Floresta Corrompida",
+      "room": "01",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-01-original.png",
+      "git_blob_sha": "6393b2b9105acafa88847dc736bbda05449a54d6",
+      "on_main": false,
+      "recovery_source": "user_attachment"
+    },
+    {
+      "biome": "Floresta Corrompida",
+      "room": "02",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-02-ponte-das-raizes-profanadas.png",
+      "git_blob_sha": "37234092be8e5d9a1d2eca8917723b6ed4639b9d",
+      "on_main": false,
+      "recovery_source": "user_attachment"
+    },
+    {
+      "biome": "Floresta Corrompida",
+      "room": "03",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-03-viveiro-dos-xamas-corrompidos.png",
+      "git_blob_sha": "1fa8dc0edd3828684be6635bf29b4e4c5e56bac1",
+      "on_main": false,
+      "recovery_source": "user_attachment"
+    },
+    {
+      "biome": "Floresta Corrompida",
+      "room": "04",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-04-cascata-dos-ecos-de-pedra.png",
+      "git_blob_sha": "97abd68d7349f05a3d41a9f767697f13fe71a4c2",
+      "on_main": false,
+      "recovery_source": "user_attachment"
+    },
+    {
+      "biome": "Floresta Corrompida",
+      "room": "05",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-05-clareira-do-julgamento-de-ogum.png",
+      "git_blob_sha": "7751e14e3194857fb4cce8d219a08d16ac14bef5",
+      "on_main": false,
+      "recovery_source": "user_attachment"
+    },
+    {
+      "biome": "Floresta Corrompida",
+      "room": "06",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-06-coracao-da-arvore-profanada.png",
+      "git_blob_sha": "b1c0396255ca69b03bb989e5f1cf82b83f5ea4e8",
+      "on_main": false,
+      "recovery_source": "user_attachment"
+    },
+    {
+      "biome": "Floresta Corrompida",
+      "room": "07",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-07-trono-da-raiz-julgadora.png",
+      "git_blob_sha": "22cfccf6ce11ed633d492f9af815eb38591c212e",
+      "on_main": false,
+      "recovery_source": "user_attachment"
+    },
+    {
+      "biome": "Castelo Fraturado",
+      "room": "01",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-01-portao-das-muralhas-quebradas.png",
+      "git_blob_sha": "e19096e25964bc81107436900f66bb7f6d4fd402",
+      "on_main": false,
+      "recovery_source": "user_attachment"
+    },
+    {
+      "biome": "Castelo Fraturado",
+      "room": "02",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-02-galeria-das-correntes-partidas.png",
+      "git_blob_sha": "b256a28e9eed73de14ec3568b64fd80fd6a828f9",
+      "on_main": false,
+      "recovery_source": "user_attachment"
+    },
+    {
+      "biome": "Castelo Fraturado",
+      "room": "03",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-03-salao-dos-arcos-caidos.png",
+      "git_blob_sha": "cba053e87edb79647f57ea7005c82990ea02c95b",
+      "on_main": false,
+      "recovery_source": "user_attachment"
+    },
+    {
+      "biome": "Castelo Fraturado",
+      "room": "04",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-04-torre-do-sino-rachado.png",
+      "git_blob_sha": "ede550327298e9505c6f316695d5807bc188972a",
+      "on_main": false,
+      "recovery_source": "user_attachment"
+    },
+    {
+      "biome": "Castelo Fraturado",
+      "room": "05",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/biome-continuation-v01/reference-castelo-sala05.png",
+      "git_blob_sha": "cec6a68a7884ea0969b41885addf90a78f79d3f6",
+      "on_main": false,
+      "recovery_source": "user_attachment"
+    },
+    {
+      "biome": "Castelo Fraturado",
+      "room": "06",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/biome-continuation-v01/castelo-06.png",
+      "git_blob_sha": "beeac7583966b7409dcafe2a4d34bc752b06e0f9",
+      "on_main": false
+    },
+    {
+      "biome": "Castelo Fraturado",
+      "room": "07",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/biome-continuation-v01/castelo-07.png",
+      "git_blob_sha": "d10d41b8e76bbf21bb6b211fdcb3592bd34f6cf1",
+      "on_main": false
+    },
+    {
+      "biome": "Cavernas dos Ecos",
+      "room": "01",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-01.png",
+      "git_blob_sha": "634e960fc1c8d4071f57deb5907a4d683418bf8d",
+      "on_main": false
+    },
+    {
+      "biome": "Cavernas dos Ecos",
+      "room": "02",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-02.png",
+      "git_blob_sha": "39683d5746346381c78512748beda0e207112d67",
+      "on_main": false
+    },
+    {
+      "biome": "Cavernas dos Ecos",
+      "room": "03",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-03.png",
+      "git_blob_sha": "8e100f233f5805c5ae29f3ac9d654e798d96ba7c",
+      "on_main": false
+    },
+    {
+      "biome": "Cavernas dos Ecos",
+      "room": "04",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-04.png",
+      "git_blob_sha": "6fa123c919d626941b65f3393e9147d31dda5b6f",
+      "on_main": false
+    },
+    {
+      "biome": "Cavernas dos Ecos",
+      "room": "05",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-05.png",
+      "git_blob_sha": "4ad625fb2d0c61651afa063a2a2bedb77782abb3",
+      "on_main": false
+    },
+    {
+      "biome": "Cavernas dos Ecos",
+      "room": "06",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-06.png",
+      "git_blob_sha": "cc664456a8df6c062051d4fbe41d5b8996346b86",
+      "on_main": false
+    },
+    {
+      "biome": "Cavernas dos Ecos",
+      "room": "07",
+      "status": "present_on_work_branch",
+      "path": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-07.png",
+      "git_blob_sha": "6e3997ca3214ecf9608b9040a1a34e2c096daa73",
+      "on_main": false
+    }
+  ],
+  "branch_heads": [
+    {
+      "branch": "art/airborne-pose-prototypes",
+      "commit": "762a9f7e1a94ee74760ad0df752b789c9684877e"
+    },
+    {
+      "branch": "art/chat-originals-archive-20261024",
+      "commit": "91f850b3b78cfc8ff292fda86d83afa0bf079b5b"
+    },
+    {
+      "branch": "art/combat-reaction-prototypes",
+      "commit": "cbfb3394fc9282e3dc471f014ec7ffc72ba3c564"
+    },
+    {
+      "branch": "art/forest-chaser-polish",
+      "commit": "105a9ad843e61b980861721d58d18a38a914ac70"
+    },
+    {
+      "branch": "art/forest-chaser-room-proof",
+      "commit": "c8791b4abc2b8e7db649956380bae1df8375c0f0"
+    },
+    {
+      "branch": "art/idle-axe-2x",
+      "commit": "d56edbc22d1c47f92adf1dff3600693d203f891a"
+    },
+    {
+      "branch": "art/independent-effects-2x",
+      "commit": "a97bfb0ef8ae92f65d6a0098b560a039ee1248dd"
+    },
+    {
+      "branch": "art/playable-visual-integration",
+      "commit": "d897e67d77295e5335b4b2f8a9b5e7563bcdd787"
+    },
+    {
+      "branch": "art/remaining-biomes-roster",
+      "commit": "b35b5108c479f10ea0f42b92508f1e531a2fcd5f"
+    },
+    {
+      "branch": "art/run-prototype-2x",
+      "commit": "a2ff56e80e300fed851e54effab22da50083b1de"
+    },
+    {
+      "branch": "art/visual-production-2x",
+      "commit": "b016a56831282ad6d0830e19446c1f9c4bdc9b31"
+    },
+    {
+      "branch": "art/119-lateral-model-v02",
+      "commit": "6bc3e8a5cd56d233fd76381dc09ca535b74834a6"
+    },
+    {
+      "branch": "art/119-neutral-model-v03",
+      "commit": "271618a128bab41f78f64870aaa30056c7562d90"
+    },
+    {
+      "branch": "build/android-commercial-preflight",
+      "commit": "1090bde75fbae8d09f07802a23317a30d2c3f34c"
+    },
+    {
+      "branch": "chore/art-direction-canonicalization",
+      "commit": "7b04fc8324a2ca6befd9d15e2e433cb8ade1e596"
+    },
+    {
+      "branch": "chore/commercial-evidence-packet",
+      "commit": "255f4132bedc37246cac7e4af8055c0666f5b56f"
+    },
+    {
+      "branch": "chore/release-acceptance-hardening",
+      "commit": "f1eb1f2efcb9d3e77be9e66a32b06538133e91c4"
+    },
+    {
+      "branch": "chore/repository-professionalization",
+      "commit": "a50d8893978566cf3b536e24faa1057ff6e14f7f"
+    },
+    {
+      "branch": "chore/40-remove-root-art-duplicates",
+      "commit": "79336b2175b9ee58fbf9d31be0cb4894e37d8d85"
+    },
+    {
+      "branch": "design/biome-continuation-castle06-caves07-20261024",
+      "commit": "dbe7148b974c07a07673cde9fe3dc823bbe1a59a"
+    },
+    {
+      "branch": "design/combat-direction-hud-framing",
+      "commit": "f3e0cb0f91f8e41d5e6b089c1e6da230c9c227c2"
+    },
+    {
+      "branch": "docs/art-production-specs-35-38",
+      "commit": "f6329eed142dc8070a8d8f72f3329af1d91f5351"
+    },
+    {
+      "branch": "docs/canonical-rastaquest-v1-plan",
+      "commit": "3a2b8d976b64228855f9e8932ce7e8d720777573"
+    },
+    {
+      "branch": "feat/a13-combat-controls-worlds",
+      "commit": "ee4c840b02726fecffb56cf906738999e6ca3ad1"
+    },
+    {
+      "branch": "feat/a13-flow-defense-jumps",
+      "commit": "161c2e9d2cac8fc4e8ae1b32bacf9f182e8a4b3e"
+    },
+    {
+      "branch": "feat/portal-drop-review",
+      "commit": "55c4263916cb7555f66c861ea7cf93c701c34b87"
+    },
+    {
+      "branch": "feature/rq-001-godot-bootstrap",
+      "commit": "73d5d79dab3f61398c9708a407d62a75d3210158"
+    },
+    {
+      "branch": "feature/rq-002-player-feel",
+      "commit": "eb8d0708d623f753ea92291239511d61e9980023"
+    },
+    {
+      "branch": "feature/rq-003-combat-core",
+      "commit": "eef2edc97e81137c9fa98870b14b388d50a9395c"
+    },
+    {
+      "branch": "feature/rq-004-enemy-framework",
+      "commit": "e5fde6292a0af48497ca14cd89e9a790879c27bf"
+    },
+    {
+      "branch": "feature/rq-005-roguelike-core",
+      "commit": "b08dfab53a471abdad366fc2299bc4370ff4c5d0"
+    },
+    {
+      "branch": "feature/rq-006-vertical-slice",
+      "commit": "0d485f5ec8b654f45340d59292c5146d835acf73"
+    },
+    {
+      "branch": "feature/rq-007-alpha-content-spine",
+      "commit": "c2f1e774bb53da01d5bda5743c8f8178f4ada8ed"
+    },
+    {
+      "branch": "feature/rq-007-alpha-spine",
+      "commit": "1b05eecf94e3c8bbaae721ee30be54cfe9561002"
+    },
+    {
+      "branch": "feature/rq-008-ux-accessibility",
+      "commit": "b28fb8b381569123ee28327b67712a72b432d0bb"
+    },
+    {
+      "branch": "feature/rq-009-beta-hardening",
+      "commit": "7983c12b33fbe7e5c3e96e11a8a732bee98bb1b1"
+    },
+    {
+      "branch": "feature/rq-009-beta-hardening-clean",
+      "commit": "f33f95bc5da2dfd1289d54b7e15c6d6f72dd88c7"
+    },
+    {
+      "branch": "feature/rq-010-release-candidate-prep",
+      "commit": "5f6974be2dcdbc2046f9761d421cf25fec8652ad"
+    },
+    {
+      "branch": "fix/hostile-attacks-commercial",
+      "commit": "3bccbfb889bee093633d6fcae13d3edb5e7fa76b"
+    },
+    {
+      "branch": "fix/player-death-presentation",
+      "commit": "c415af85aecd56035eff31ed873aa4a467293887"
+    },
+    {
+      "branch": "fix/player-settings-access",
+      "commit": "91a381ca8222ff22f318fc1fc4966fb8a6273fe6"
+    },
+    {
+      "branch": "fix/43-atomic-save",
+      "commit": "da87259833af56eb093248aa07e9df198bf503d9"
+    },
+    {
+      "branch": "imagens-novas",
+      "commit": "27acb4fe8b07111fb7150bb244a8e03288564fa7"
+    },
+    {
+      "branch": "main",
+      "commit": "dd12bb3d188686e5010395b690de9161949b8d7f"
+    },
+    {
+      "branch": "ops/art-review-capture",
+      "commit": "804480313360f9ddc6c3d5346bb957319f06c011"
+    },
+    {
+      "branch": "polish/a13-animation-feedback",
+      "commit": "6b420753cc349404f3dea002079fd72d45ed1fcd"
+    },
+    {
+      "branch": "release/rq-011-gold-preflight",
+      "commit": "fa51c49667581b53bee7c50ab135f7e781ba85d3"
+    },
+    {
+      "branch": "release/test-green-2026-10-14",
+      "commit": "0d878ccc461fc0f378a2df126e53a45378678f2e"
+    },
+    {
+      "branch": "work/agenor-art-security-execution",
+      "commit": "7cf9ccca8b2795b12d7086a97ee1a2556f49aaa2"
+    },
+    {
+      "branch": "work/preunity-gates-20261024",
+      "commit": "7190f760f130c510eab448cec846714243eb6297"
+    }
+  ],
+  "initial_snapshot": {
+    "confirmed": 10,
+    "not_located": 11,
+    "continuation_audited_sha": "dbe7148b974c07a07673cde9fe3dc823bbe1a59a",
+    "scope": "Current heads of all 50 branches returned by GitHub; git ls-tree by exact SHA, plus untruncated GitHub trees for main, continuation, originals archive and imagens-novas. Not a search of every deleted ref or historical commit."
+  },
+  "recovery_update": {
+    "date": "2026-10-24",
+    "source": "25 user image attachments and pasted historical context",
+    "manifest": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/MANIFEST.json",
+    "new_recovered_rooms": 11
+  }
+}

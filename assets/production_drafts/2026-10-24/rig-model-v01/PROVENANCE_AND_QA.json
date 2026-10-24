@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-24",
+  "files": [
+    {
+      "path": "assets/production_drafts/2026-10-24/rig-model-v01/akane-neutral.png",
+      "size": [
+        1155,
+        1362
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "5da87a17787111c5868fdc36dc00eeccbc4963f439f5ad4a93bf389b973cc8e0",
+      "prompt": "Create ONE clean full-body neutral rest-pose character cutout of Akane Xangô, based EXACTLY on the supplied approved character sheet. Preserve dark skin, face, dreadlocks, red/yellow/green headband, cream sleeveless torn tunic, green trousers, brown boots, waist cloth colors and ONE engraved silver double-headed axe with a single fixed wooden wrapped shaft. Detailed hand-painted 2D side-scrolling illustrated game art, same proportions and visual identity as reference, not pixel art or 3D. Character faces RIGHT in clear side/three-quarter side view, ready but relaxed balanced stance with both feet visibly planted on same ground level, knees slightly flexed. Axe held low with natural stable grip; keep every blade and shaft end entirely inside canvas, hands anatomically correct. Both arms, legs, boots and head visible, no cropped hair or fingers. Neutral pose suitable as model reference for rig anchor placement, not an action pose. NO electrical VFX, no motion trail, no enemy, no text, no border, no platform or shadow ground shape. Genuinely transparent background, generous clear margin around every extremity. One character only, not a sprite sheet, not multiple poses.",
+      "tool": "image_gen.imagegen",
+      "production_acceptance": "pending"
+    }
+  ],
+  "pixel_editing": false,
+  "checks": "PNG read and alpha extrema; byte identity to generated original. Not seamless/phone/performance/skinning acceptance."
+}
