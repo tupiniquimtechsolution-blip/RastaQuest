@@ -21,7 +21,14 @@ namespace RastaQuest.Unity
             if (Stick.y>.65f && !stickUp) { Jump(); stickUp = true; }
             if (Stick.y<.35f) stickUp = false;
         }
-        public void Cancel() { Horizontal = 0; Guard = jump = attack = stickUp = false; Stick = Vector2.zero; if (Player != null) Player.CancelInputs(); }
+        public void Cancel()
+        {
+            // Pointer-up may be swallowed by pause, focus loss, rewards or rotation.
+            foreach (var binding in FindObjectsByType<TouchBinding>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+                if (binding.Input == this) binding.Release();
+            Horizontal = 0; Guard = jump = attack = stickUp = false; Stick = Vector2.zero;
+            if (Player != null) Player.CancelInputs();
+        }
         public SlicePlayer Player;
         private void Update()
         {
@@ -54,7 +61,10 @@ namespace RastaQuest.Unity
             if (Action != "stick" || owner != e.pointerId) return;
             Vector2 point;
             RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)transform,e.position,e.pressEventCamera,out point);
-            Input.SetStick(point/70);
+            // Local coordinates use a top-left pivot; normalize from the actual center.
+            var rect = (RectTransform)transform;
+            float radius = Mathf.Max(1, Mathf.Min(rect.rect.width, rect.rect.height)*.5f);
+            Input.SetStick((point-rect.rect.center)/radius);
         }
         public void OnPointerUp(PointerEventData e) { if (owner == e.pointerId) Release(); }
         public void OnEndDrag(PointerEventData e) { OnPointerUp(e); }

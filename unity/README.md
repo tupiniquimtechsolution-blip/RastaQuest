@@ -24,6 +24,12 @@ Executar o editor real com `-batchmode -quit -projectPath <pasta-unity> -execute
 
 O comando de preparação grava cena/configuração; revisar e versionar os arquivos gerados **após executar o editor**. Não versionar Library, Temp, caches, APKs, chaves ou tokens. O editor deverá gerar o lock de pacotes real; um lock não resolvido não é fabricado aqui.
 
+## Fonte e paridade
+
+- [Matriz de paridade Unity ↔ Godot e gates de aceitação](../docs/production/UNITY_PARITY_GATE_2026-10-24.md).
+- `python -B tools/check_unity_source_contracts.py`: checks de integridade, referências e configuração em fonte; **não** executa o Editor ou APK.
+- Analógico centralizado e IDs de toques liberados após cancelamento são correções em revisão, não validações físicas.
+
 ## Verificações e limites
 
 - `tools/sync_unity_review.py --check`: confirma origem e igualdade dos bytes, não qualidade/autorizações artísticas.

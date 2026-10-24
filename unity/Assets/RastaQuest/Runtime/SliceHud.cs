@@ -95,7 +95,7 @@ namespace RastaQuest.Unity
         public void CloseRewards(){rewardAction=null;rewards.SetActive(false);Input.Cancel();Input.Paused=false;Time.timeScale=1;}
         private void Resize()
         {
-            Input.Cancel();foreach(var binding in GetComponentsInChildren<TouchBinding>()) binding.Release();
+            Input.Cancel(); // Releases touch owners before applying the new safe area.
             Rect area=Screen.safeArea;lastArea=area;lastScreen=new Vector2(Screen.width,Screen.height);
             safe.anchorMin=new Vector2(area.xMin/Screen.width,area.yMin/Screen.height);safe.anchorMax=new Vector2(area.xMax/Screen.width,area.yMax/Screen.height);safe.offsetMin=safe.offsetMax=Vector2.zero;
         }
