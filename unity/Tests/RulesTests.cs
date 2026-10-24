@@ -35,6 +35,40 @@ public static class RulesTests
         j.Step(.02f,true); j.Press(); j.Cancel(); Check(j.ConsumeVelocity() == 0, "cancel jump input");
         bool rejected = false; try { c.Step(float.NaN); } catch (ArgumentOutOfRangeException) { rejected = true; }
         Check(rejected, "invalid timestep");
+        // Contract hardening: corrupt inputs must never poison health/jump state.
+        bool invalid = false;
+        try { new CombatRules(float.NaN); } catch (ArgumentOutOfRangeException) { invalid = true; }
+        Check(invalid, "reject NaN max health");
+        invalid = false;
+        try { new CombatRules(0); } catch (ArgumentOutOfRangeException) { invalid = true; }
+        Check(invalid, "reject nonpositive max health");
+        var robust = new CombatRules(5);
+        invalid = false;
+        try { robust.Receive(float.NaN, HitKind.Melee); } catch (ArgumentOutOfRangeException) { invalid = true; }
+        Check(invalid && robust.Health == 5, "reject NaN damage without corrupting health");
+        invalid = false;
+        try { robust.Receive(-1, HitKind.Melee); } catch (ArgumentOutOfRangeException) { invalid = true; }
+        Check(invalid && robust.Health == 5, "reject negative damage");
+        invalid = false;
+        try { robust.Receive(float.PositiveInfinity, HitKind.Melee); } catch (ArgumentOutOfRangeException) { invalid = true; }
+        Check(invalid && robust.Health == 5, "reject infinite damage");
+        Check(robust.Receive(0, HitKind.Melee) == DefenseResult.Damage && robust.Health == 5,
+              "zero damage does not mutate health");
+        robust.Cycle = float.NaN; invalid = false;
+        try { robust.Step(.01f); } catch (ArgumentOutOfRangeException) { invalid = true; }
+        Check(invalid && robust.Health == 5, "reject nonfinite attack cycle");
+        invalid = false;
+        try { j.Step(float.NaN, false); } catch (ArgumentOutOfRangeException) { invalid = true; }
+        Check(invalid, "reject NaN jump step");
+        invalid = false;
+        try { j.Step(-.1f, true); } catch (ArgumentOutOfRangeException) { invalid = true; }
+        Check(invalid, "reject negative jump step");
+        var oneHit = new CombatRules(5);
+        oneHit.RequestAttack(); oneHit.Step(.06f);
+        Check(oneHit.ClaimTarget(42) && !oneHit.ClaimTarget(42), "one hit per actor per attack");
+        oneHit.Step(.25f); oneHit.Step(.01f);
+        oneHit.RequestAttack(); oneHit.Step(.06f);
+        Check(oneHit.ClaimTarget(42), "next attack resets claimed targets");
         Console.WriteLine("RQ_UNITY_CORE_OK " + count + " assertions; Unity runtime NOT tested"); return 0;
     }
 }

@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "status": "DRAFT_NOT_IN_RUNTIME",
+  "commercial_approved": false,
+  "unity_integrated": false,
+  "narrative_approved": false,
+  "reference_sources": [
+    "game/data/narrative/lore.json",
+    "game/scripts/save/save_manager.gd",
+    "game/scripts/roguelike/run_state.gd"
+  ],
+  "biome_sequence": [
+    "forest",
+    "castle",
+    "caves"
+  ],
+  "choices": [
+    {
+      "id": "heal",
+      "upgrade": "restoration",
+      "effect": "heal",
+      "label": "reward.heal",
+      "apply": "ONLY_WHEN_SELECTED"
+    },
+    {
+      "id": "speed",
+      "upgrade": "quick_hands",
+      "effect": "cooldown_reduction",
+      "label": "reward.speed",
+      "apply": "ON_SELECTION"
+    },
+    {
+      "id": "power",
+      "upgrade": "heavy_axe",
+      "effect": "damage",
+      "label": "reward.power",
+      "apply": "ON_SELECTION"
+    }
+  ],
+  "locales": {
+    "pt_BR": {
+      "ui.health": "Vida {current} / {maximum}",
+      "ui.pause": "Pausar",
+      "ui.resume": "Continuar",
+      "ui.defeat": "Derrotado",
+      "portal.hint": "Derrote os inimigos e escolha uma recompensa.",
+      "reward.heal": "Restaurar vida",
+      "reward.speed": "Mãos ágeis",
+      "reward.power": "Machado forte",
+      "story.hub": "O Santuário preserva o que restou após as fraturas.",
+      "story.forest": "A Floresta Corrompida mostra a primeira ferida no mundo.",
+      "story.castle": "O Castelo Fraturado guarda vestígios de tentativas de controlar os portais.",
+      "story.caves": "As Cavernas dos Ecos revelam rupturas ainda mais antigas.",
+      "story.final": "A origem das fraturas ainda é desconhecida.",
+      "accessibility.effects": "Reduzir efeitos",
+      "accessibility.touch": "Tamanho dos controles",
+      "save.migration": "A migração de dados ainda não está disponível nesta versão."
+    },
+    "es": {
+      "ui.health": "Vida {current} / {maximum}",
+      "ui.pause": "Pausar",
+      "ui.resume": "Continuar",
+      "ui.defeat": "Derrotado",
+      "portal.hint": "Derrota a los enemigos y elige una recompensa.",
+      "reward.heal": "Restaurar vida",
+      "reward.speed": "Manos ágiles",
+      "reward.power": "Hacha fuerte",
+      "story.hub": "El Santuario protege lo que quedó tras las fracturas.",
+      "story.forest": "El Bosque Corrupto muestra la primera herida del mundo.",
+      "story.castle": "El Castillo Fracturado guarda huellas de intentos de controlar los portales.",
+      "story.caves": "Las Cuevas de los Ecos revelan fracturas todavía más antiguas.",
+      "story.final": "El origen de las fracturas sigue siendo desconocido.",
+      "accessibility.effects": "Reducir efectos",
+      "accessibility.touch": "Tamaño de los controles",
+      "save.migration": "La migración de datos aún no está disponible en esta versión."
+    },
+    "en": {
+      "ui.health": "Health {current} / {maximum}",
+      "ui.pause": "Pause",
+      "ui.resume": "Continue",
+      "ui.defeat": "Defeated",
+      "portal.hint": "Defeat the enemies and choose a reward.",
+      "reward.heal": "Restore health",
+      "reward.speed": "Quick Hands",
+      "reward.power": "Heavy Axe",
+      "story.hub": "The Sanctuary guards what remains after the fractures.",
+      "story.forest": "The Corrupted Forest shows the world's first wound.",
+      "story.castle": "The Fractured Castle holds traces of attempts to control the portals.",
+      "story.caves": "The Caves of Echoes reveal even older fractures.",
+      "story.final": "The origin of the fractures remains unknown.",
+      "accessibility.effects": "Reduce effects",
+      "accessibility.touch": "Control size",
+      "save.migration": "Save migration is not available in this build yet."
+    }
+  },
+  "audio": [
+    {
+      "id": "ui_select",
+      "bus": "SFX",
+      "asset": null
+    },
+    {
+      "id": "axe_hit",
+      "bus": "SFX",
+      "asset": null
+    },
+    {
+      "id": "electric_proc",
+      "bus": "SFX",
+      "asset": null
+    },
+    {
+      "id": "portal_enter",
+      "bus": "SFX",
+      "asset": null
+    },
+    {
+      "id": "forest_ambience",
+      "bus": "Music",
+      "asset": null
+    },
+    {
+      "id": "boss_phase",
+      "bus": "Music",
+      "asset": null
+    }
+  ],
+  "save": {
+    "source_schema": 2,
+    "source_max_bytes": 1048576,
+    "keys": [
+      "schema_version",
+      "meta_shards",
+      "unlocks",
+      "settings",
+      "completion_flags"
+    ],
+    "migration": "NO_AUTOMATIC_MIGRATION",
+    "target_write_enabled": false,
+    "preserve_godot_save": true
+  }
+}

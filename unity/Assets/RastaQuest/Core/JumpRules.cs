@@ -11,6 +11,8 @@ namespace RastaQuest.Core
         public void Cancel() { buffer = 0; }
         public void Step(float delta, bool grounded)
         {
+            if (delta < 0 || float.IsNaN(delta) || float.IsInfinity(delta))
+                throw new ArgumentOutOfRangeException("delta");
             if (grounded) { coyote = CoyoteTime; Used = 0; }
             else coyote = Math.Max(0, coyote-delta);
             buffer = Math.Max(0, buffer-delta);

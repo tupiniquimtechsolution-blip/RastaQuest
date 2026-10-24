@@ -24,6 +24,17 @@ Executar o editor real com `-batchmode -quit -projectPath <pasta-unity> -execute
 
 O comando de preparação grava cena/configuração; revisar e versionar os arquivos gerados **após executar o editor**. Não versionar Library, Temp, caches, APKs, chaves ou tokens. O editor deverá gerar o lock de pacotes real; um lock não resolvido não é fabricado aqui.
 
+## Pacotes preparatórios A–D (24/10/2026)
+
+- [Pacote A: engenharia e testes](../docs/production/PREUNITY_ENGINEERING_2026-10-24.md)
+- [Pacote B: arte e HUD — contratos, NÃO sprites aprovados](../docs/production/UNITY_ILLUSTRATED_PRODUCTION_PACKET_2026-10-24.md)
+- [Pacote C: localização/narrativa/áudio — rascunhos](../docs/production/UNITY_CONTENT_PACKET_2026-10-24.md)
+- [Pacote C: estratégia segura de save](../docs/production/UNITY_SAVE_MIGRATION_2026-10-24.md)
+- [Pacote D: roteiro de homologação e evidências pendentes](../docs/release/acceptance/UNITY_MIGRATION_RUNBOOK_2026-10-24.md)
+- [Estado consolidado dos pacotes](../docs/production/PREUNITY_GATES_EXECUTION_2026-10-24.md)
+
+Esses pacotes existem em PR de preparação dependente do PR #82. O Editor Unity, Play Mode, APK, teste no Galaxy A13, revisão humana e arte comercial não foram validados.
+
 ## Fonte e paridade
 
 - [Matriz de paridade Unity ↔ Godot e gates de aceitação](../docs/production/UNITY_PARITY_GATE_2026-10-24.md).
