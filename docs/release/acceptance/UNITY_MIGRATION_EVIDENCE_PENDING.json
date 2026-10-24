@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "purpose": "UNITY_MIGRATION_PREPRODUCTION_EVIDENCE",
+  "classification": "PLANNING_ONLY",
+  "commercial_go": false,
+  "editor_import_verified": false,
+  "android_apk_verified": false,
+  "physical_device_verified": false,
+  "reference_godot_commit": "dd12bb3d188686e5010395b690de9161949b8d7f",
+  "unity_candidate_commit": null,
+  "unity_editor_expected": "6000.3.27f1",
+  "android_min_sdk": 25,
+  "android_target_sdk": 36,
+  "android_abis": [
+    "armeabi-v7a",
+    "arm64-v8a"
+  ],
+  "checks": [
+    {
+      "id": "unity-editor-install",
+      "issue": 80,
+      "state": "BLOCKED",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "unity-package-import",
+      "issue": 80,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "unity-csharp-compile",
+      "issue": 80,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "unity-playmode-smoke",
+      "issue": 81,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "unity-hud-controls",
+      "issue": 81,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "unity-android-debug-apk",
+      "issue": 81,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "unity-native-16kb",
+      "issue": 50,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "galaxy-a13-physical",
+      "issue": 81,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "art-protagonist-final",
+      "issue": 35,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "art-environment-final",
+      "issue": 36,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "art-enemy-final",
+      "issue": 37,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "cultural-consultation",
+      "issue": 38,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "save-compatibility",
+      "issue": 81,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    },
+    {
+      "id": "localization-audio-accessibility",
+      "issue": 23,
+      "state": "PENDING",
+      "evidence": [],
+      "artifact_sha256": null,
+      "reviewer": null
+    }
+  ],
+  "release_decision": "NO-GO",
+  "notes": "This is a future evidence template, not actual tests or an APK report."
+}
