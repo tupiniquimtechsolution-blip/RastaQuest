@@ -2,11 +2,13 @@
 
 > **Canonical product:** Rasta Quest  
 > **Phase:** RQ-002 player feel — automated implementation green, device/playtest validation pending  
-> **Engine:** Godot 4.5.1, GDScript, no .NET  
+> **Engine:** Unity 6.3 LTS / C# migration target; delivered APK remains Godot 4.5.1 / GDScript
 > **Primary release:** Android, landscape  
 > **Genre:** 2D action-platformer + light roguelike
 
 Rasta Quest is a mobile-first action-platformer built around a Rastafarian-inspired warrior, a double-bladed ritual axe inspired by Xangô iconography, electrical combat, fractured portals, escalating runs and light permanent progression.
+
+**2026-10-24 direction update:** Rodrigo chose detailed illustrated 2D art and Unity. Start with the [Unity review project](unity/README.md), [technical reference study](docs/product/COMBAT_ART_REFERENCE_STUDY_2026-10-24.md) and [migration ADR](docs/adr/0003-unity-illustrated-direction.md). The source prototype and art study do not constitute a verified replacement APK or commercial GREEN.
 
 The canonical plan intentionally merges the strongest parts of the newer **Rasta Quest** material with the useful design DNA from the historical **Portal's Edge: Last Stand** documents without allowing old technical choices to override the approved direction.
 

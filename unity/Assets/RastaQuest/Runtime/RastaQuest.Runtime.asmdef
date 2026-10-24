@@ -1,0 +1,4 @@
+{
+  "name": "RastaQuest.Runtime",
+  "references": ["RastaQuest.Core", "Unity.InputSystem", "Unity.ugui"]
+}

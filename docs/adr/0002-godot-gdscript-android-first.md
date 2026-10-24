@@ -1,6 +1,6 @@
 # ADR 0002 — Godot/GDScript Android-first architecture
 
-- **Status:** ACCEPTED
+- **Status:** Historical delivered baseline; future engine/art target superseded by [ADR 0003](0003-unity-illustrated-direction.md) on 2026-10-24
 - **Date:** 2026-10-06
 - **Supersedes:** ADR 0001 for Rasta Quest 1.0
 
