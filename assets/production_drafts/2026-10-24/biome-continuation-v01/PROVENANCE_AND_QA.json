@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-24",
+  "new_boards": 9,
+  "reference_boards": 1,
+  "generation_tool": "image_gen.imagegen",
+  "source": "User supplied Castelo Fraturado sala 05 in this chat",
+  "reference_conversation": "6adc9836-f174-83e8-97c4-382b33f33ec9",
+  "file_checks": "PNG decode/integrity, dimensions, unique SHA256",
+  "assistant_visual_review": "Titles, composition, B1-B5 in scene and map; selected corrections for missing/duplicate markers and extra-life wording",
+  "human_art_acceptance": "pending",
+  "cultural_review": "pending",
+  "rights_review": "pending",
+  "runtime_validation": "not_executed",
+  "unity_build": "not_executed",
+  "merge": "not_performed",
+  "release": "not_claimed",
+  "remaining": "Blockout must reconcile scene/map geometry and safe traversal; small typography and inherited legend labels need production editorial review. Boss identities are proposals.",
+  "files": [
+    {
+      "file": "castelo-06.png",
+      "sha256": "03bce54cc13aaadc7a5af6c9741f45e5bb075fe0e050d0c6ae53c3f98a685c8b",
+      "bytes": 3106087,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "castelo-07.png",
+      "sha256": "b827537fc1b86c2f42f03aeb5499e08ec3ea8673b610cb23749eb684d38b6708",
+      "bytes": 2879086,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "cavernas-01.png",
+      "sha256": "abf7aa654253386408d1489919ff5f72294085fb47a42b49a43508af6f178420",
+      "bytes": 3150744,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "cavernas-02.png",
+      "sha256": "0c90b2d2cfed28c77b7c875e7ac6d1501234c361e45cd247fe58b117cdba7335",
+      "bytes": 3054397,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "cavernas-03.png",
+      "sha256": "51b1fa8d21174fc2c638fe4ff0dc6d1a562ed580c3a2aecf703bb151d1e0f7d2",
+      "bytes": 2980865,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "cavernas-04.png",
+      "sha256": "b5ff4affcf68087ef6a7020cdfbd9c7250d309376b311c70b68b39217a90f24f",
+      "bytes": 2974724,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "cavernas-05.png",
+      "sha256": "dc1206dc5cdced15f7eb568f47395ecc858617fc63cb6b01c7265b08dcfc3b66",
+      "bytes": 3011327,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "cavernas-06.png",
+      "sha256": "67ad64209285ec6add19d75d434a0e1dc7bd8351e5a9a46628b553406ed1a712",
+      "bytes": 3275736,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "cavernas-07.png",
+      "sha256": "ec67a97ef576fc3bdc261d925fe91a4fdc5a2074b87e2a9a8238d3b7234343dd",
+      "bytes": 3055813,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "reference-castelo-sala05.png",
+      "sha256": "da73e052d4bff6cf7e1fd38a6b77c69577139b1ffb5846ff5a1a75b0524749d7",
+      "bytes": 3512038,
+      "dimensions": [
+        1672,
+        941
+      ]
+    }
+  ]
+}

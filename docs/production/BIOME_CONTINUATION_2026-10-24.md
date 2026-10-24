@@ -1,5 +1,7 @@
 # Continuação dos biomas — 24/10/2026
 
+> Atualização posterior nesta mesma tarefa: o usuário anexou a prancha da sala 05 (Forja do Ferro Sagrado). A partir dela foram produzidas nove pranchas novas, em [biome-continuation-v01](../../assets/production_drafts/2026-10-24/biome-continuation-v01/README.md). As menções abaixo à ausência de imagens e à arte pendente registram o estado da investigação inicial e foram superadas por essa recuperação. As imagens novas são propostas visuais para revisão, não aprovação final ou implementação.
+
 Estado: proposta de detalhamento de level design; não é prancha aprovada, implementação ou validação de runtime.
 
 ## Ponto de retomada e preservação
