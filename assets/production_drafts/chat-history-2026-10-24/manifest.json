@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "archive_date": "2026-10-24",
+  "source_conversation": "6adc9836-f174-83e8-97c4-382b33f33ec9",
+  "base_commit": "dd12bb3d188686e5010395b690de9161949b8d7f",
+  "complete": false,
+  "files": [
+    {
+      "path": "castelo-fraturado-sala-05-original.png",
+      "original_available_name": "codex-clipboard-8da5311b-d3ce-4446-bc9d-99a763177c15.png",
+      "historical_original_name": null,
+      "bytes": 3512038,
+      "sha256": "da73e052d4bff6cf7e1fd38a6b77c69577139b1ffb5846ff5a1a75b0524749d7",
+      "original_creation_date": null,
+      "user_resubmission_date": "2026-10-24",
+      "purpose": "Castelo Fraturado sala 05 — Forja do Ferro Sagrado; referência para continuidade",
+      "provenance": "Reenvio do usuário no chat 01a16e70-f867-75d3-9c6f-a933cb749117, turno 01a16e78-b2bc-7653-a21d-477f8e9cd217; cópia local idêntica ao anexo",
+      "status": "referência do usuário",
+      "approval": "Reenviada como última prancha; não implica aprovação para runtime",
+      "byte_preservation": "SHA-256 do anexo temporário e da cópia conferidos"
+    }
+  ]
+}
