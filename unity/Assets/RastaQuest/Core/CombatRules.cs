@@ -27,7 +27,12 @@ namespace RastaQuest.Core
         private bool spent;
         private readonly HashSet<int> hitTargets = new HashSet<int>();
 
-        public CombatRules(float maxHealth) { MaxHealth = maxHealth; Health = maxHealth; }
+        public CombatRules(float maxHealth)
+        {
+            if (maxHealth <= 0 || float.IsNaN(maxHealth) || float.IsInfinity(maxHealth))
+                throw new ArgumentOutOfRangeException("maxHealth");
+            MaxHealth = maxHealth; Health = maxHealth;
+        }
         public bool RequestAttack()
         {
             if (Dead || Locked || Guarding) return false;
@@ -44,6 +49,8 @@ namespace RastaQuest.Core
         public void Step(float delta)
         {
             if (delta < 0 || float.IsNaN(delta) || float.IsInfinity(delta)) throw new ArgumentOutOfRangeException("delta");
+            if (Cycle <= 0 || float.IsNaN(Cycle) || float.IsInfinity(Cycle))
+                throw new ArgumentOutOfRangeException("Cycle");
             cooldown = Math.Max(0, cooldown-delta); comboGrace = Math.Max(0, comboGrace-delta);
             invulnerability = Math.Max(0, invulnerability-delta); counterCooldown = Math.Max(0, counterCooldown-delta);
             if (Guarding) GuardAge += delta;
@@ -73,7 +80,9 @@ namespace RastaQuest.Core
         public void ReleaseGuard() { Guarding = false; GuardAge = 0; }
         public DefenseResult Receive(float amount, HitKind kind)
         {
-            if (Dead || Locked || amount <= 0 || invulnerability > 0) return DefenseResult.Damage;
+            if (float.IsNaN(amount) || float.IsInfinity(amount) || amount < 0)
+                throw new ArgumentOutOfRangeException("amount");
+            if (Dead || Locked || amount == 0 || invulnerability > 0) return DefenseResult.Damage;
             if (Guarding)
             {
                 if (kind == HitKind.Projectile) return DefenseResult.Reflected;
