@@ -8,7 +8,7 @@ class ContentPackTests(unittest.TestCase):
     def setUpClass(cls):
         cls.data = json.loads(PACK.read_text(encoding="utf-8"))
     def test_current_draft(self):
-        self.assertEqual([],validate(cls.data))
+        self.assertEqual([],validate(self.data))
     def test_placeholder_drift(self):
         d=copy.deepcopy(self.data)
         d["locales"]["es"]["ui.health"]="Vida {current}"
