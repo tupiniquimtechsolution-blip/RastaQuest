@@ -79,7 +79,7 @@ def main():
     check('Path.Combine(Application.dataPath, "Scenes")' in build and
           "Path.Combine(projectRoot,path)" in build,
           "Editor paths must resolve within Unity project")
-    for term in ("com.tupiniquim.rastaquest.unityreview", "AndroidSdkVersions)36",
+    for term in ("com.tupiniquim.rastaquest.unityreview", "AndroidSdkVersions)25", "AndroidSdkVersions)36",
                  "AndroidArchitecture.ARMv7|AndroidArchitecture.ARM64", "BuildOptions.Development"):
         check(term in build, f"Build source contract missing: {term}")
     check(not list(ASSETS.rglob("forest-art-target-v01.png")), "Concept imported into runtime")

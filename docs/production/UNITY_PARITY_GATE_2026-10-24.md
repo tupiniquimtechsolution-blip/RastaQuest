@@ -19,7 +19,7 @@ Godot automated tests and prior Galaxy A13 feedback are reference data, not proo
 | HUD, vignette and safe area | Source-generated portrait and long health bar | Captures on real screen, fractional damage and accessibility |
 | Forest/Castle/Caves | Transitional background switch | Production parallax/layers, complete traversable campaign |
 | Saves, full upgrades, localization, music | **Not migrated** | Compatibility strategy and regression before engine replacement |
-| Android release | Development build method only | Unity import/build, API36, ARMv7/ARM64, 16 KB packaging, signed tests |
+| Android release | Development build method only | Unity 6.3 minimum API25, target API36, ARMv7/ARM64, 16 KB packaging, signed tests |
 | New illustrated art | One non-runtime concept scene | Character animation/rig, separated scenery, enemies, provenance, review |
 
 ## Source corrections prepared for validation
@@ -49,3 +49,10 @@ Godot automated tests and prior Galaxy A13 feedback are reference data, not proo
 #35 protagonist: lock anatomy, dreadlock silhouette, clothing, axe grip, poses, pivots, proportions and animation; #36 Forest: separate collision-safe foreground, gameplay, midground and background; #37 Chaser/Ranged: unique attacks and telegraphs; #38 cultural review: Rastafari/Xangô-inspired references and enemy motifs. Preserve approved identity but do not copy other games. Record licenses and human acceptance. No store submission, version 1.0 tag or Godot replacement until #80/#81, art and #50 release gate are explicitly passed.
 
 References: [draft PR #82](https://github.com/tupiniquimtechsolution-blip/RastaQuest/pull/82), [Unity setup #80](https://github.com/tupiniquimtechsolution-blip/RastaQuest/issues/80), [A13 parity #81](https://github.com/tupiniquimtechsolution-blip/RastaQuest/issues/81), [art #35](https://github.com/tupiniquimtechsolution-blip/RastaQuest/issues/35), [Android #50](https://github.com/tupiniquimtechsolution-blip/RastaQuest/issues/50).
+
+## Policy and platform cross-check (24/10/2026)
+
+- Unity 6.3 minimum runtime Android 7.1 / API 25. Source review build now uses minSdk 25 rather than unsupported API 24; the previous Godot baseline and historical Android support must not be rewritten. Source: [Unity 6.3 system requirements](https://docs.unity.com/en-us/engine/6000.3/manual/get-started/install-and-upgrade/getting-started-installing-unity/system-requirements).
+- Google Play normal mobile new-app/update submissions since 31 August 2026 must target Android 16 / API 36 or higher, subject to official exceptions/extensions; Play Console account eligibility has not been reviewed. Source: [Play API-level requirements](https://support.google.com/googleplay/android-developer/answer/11926878?hl=pt-br).
+- Apps with native 64-bit libraries require correct 16 KB page support, including ELF LOAD and APK/AAB ZIP alignment; declaring an SDK target or using a supported Unity version does not prove the actual generated binary. Source: [Android 16 KB page sizes](https://developer.android.com/guide/practices/page-sizes?hl=pt-br).
+- Validate the exact Unity build toolchain, Android ABI split and 16 KB compatibility using the real editor, generated artifacts, Play diagnostics and 16 KB environment. No such binary was produced in this source audit.

@@ -33,7 +33,7 @@ namespace RastaQuest.Editor
             PlayerSettings.allowedAutorotateToLandscapeLeft=true;PlayerSettings.allowedAutorotateToLandscapeRight=true;
             PlayerSettings.allowedAutorotateToPortrait=false;PlayerSettings.allowedAutorotateToPortraitUpsideDown=false;
             PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,"com.tupiniquim.rastaquest.unityreview");
-            PlayerSettings.Android.bundleVersionCode=1000006;PlayerSettings.Android.minSdkVersion=(AndroidSdkVersions)24;PlayerSettings.Android.targetSdkVersion=(AndroidSdkVersions)36;
+            PlayerSettings.Android.bundleVersionCode=1000006;PlayerSettings.Android.minSdkVersion=(AndroidSdkVersions)25;PlayerSettings.Android.targetSdkVersion=(AndroidSdkVersions)36;
             PlayerSettings.Android.targetArchitectures=AndroidArchitecture.ARMv7|AndroidArchitecture.ARM64;
             PlayerSettings.SetScriptingBackend(UnityEditor.Build.NamedBuildTarget.Android,ScriptingImplementation.IL2CPP);
             PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.Android,false);
