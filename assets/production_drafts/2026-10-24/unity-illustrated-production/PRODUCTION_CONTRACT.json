@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "classification": "illustrated-2d-authoring-contract",
+  "status": "SPECIFICATION_ONLY",
+  "commercial_approved": false,
+  "visual_lock": false,
+  "unity_import_verified": false,
+  "device_readability_verified": false,
+  "target_engine": "Unity 6.3 LTS",
+  "target_platform": "Android landscape",
+  "source_type": "authored separated illustrated layers",
+  "reference_baseline": {
+    "godot_commit": "dd12bb3d188686e5010395b690de9161949b8d7f",
+    "pixels_per_unity_unit": 64,
+    "source_sprite_sizes": "PROPOSED_NOT_LOCKED"
+  },
+  "characters": [
+    {
+      "id": "protagonist",
+      "reference": "assets/concepts/characters/protagonist/rq-protagonist-character-bible-v01.png",
+      "silhouette": [
+        "dark skin",
+        "tied-back thick dreadlocks",
+        "red-yellow-green headband",
+        "green pants",
+        "brown boots",
+        "symmetrical double-bladed axe"
+      ],
+      "production_lock": "PENDING",
+      "clips": [
+        "idle",
+        "run",
+        "jump",
+        "fall",
+        "attack_axe",
+        "attack_axe_2",
+        "attack_axe_3",
+        "attack_axe_air",
+        "guard",
+        "parry",
+        "hurt",
+        "death",
+        "lightning_proc",
+        "portal_enter"
+      ],
+      "separate_layers": [
+        "body",
+        "dreadlocks",
+        "axe",
+        "electrical_fx"
+      ],
+      "delivery": [
+        "illustrated-front-side-model",
+        "rig-or-frame-source",
+        "frame-pivots",
+        "attack-contact-markers"
+      ]
+    },
+    {
+      "id": "chaser",
+      "reference": "assets/concepts/enemies/rq-enemy-roster-v01.png",
+      "production_lock": "PENDING",
+      "clips": [
+        "idle",
+        "move",
+        "tell",
+        "attack",
+        "hurt",
+        "death"
+      ],
+      "separate_layers": [
+        "body",
+        "weapon",
+        "shield",
+        "telegraph"
+      ],
+      "delivery": [
+        "model-sheet",
+        "timing-sheet",
+        "combat-silhouette"
+      ]
+    },
+    {
+      "id": "ranged",
+      "reference": "assets/concepts/enemies/rq-enemy-roster-v01.png",
+      "production_lock": "PENDING",
+      "clips": [
+        "idle",
+        "move",
+        "tell",
+        "attack",
+        "hurt",
+        "death"
+      ],
+      "separate_layers": [
+        "body",
+        "weapon",
+        "projectile",
+        "telegraph"
+      ],
+      "delivery": [
+        "model-sheet",
+        "timing-sheet",
+        "projectile-contrast"
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "id": "forest",
+      "reference": "assets/concepts/environments/rq-world-visual-bible-v01.png",
+      "production_lock": "PENDING",
+      "layers": [
+        "background_sky",
+        "background_canopy",
+        "midground_ruins",
+        "gameplay_terrain",
+        "foreground_occluders"
+      ],
+      "gameplay_collision_from_art": false,
+      "approved_prior_tile_reference_px": 32,
+      "unity_tile_metric": "PENDING_EDITOR_PROOF"
+    },
+    {
+      "id": "castle",
+      "reference": "assets/concepts/environments/rq-world-visual-bible-v01.png",
+      "production_lock": "PENDING",
+      "layers": [
+        "background",
+        "midground",
+        "gameplay_terrain",
+        "foreground"
+      ],
+      "gameplay_collision_from_art": false,
+      "unity_tile_metric": "PENDING_EDITOR_PROOF"
+    },
+    {
+      "id": "caves",
+      "reference": "assets/concepts/environments/rq-world-visual-bible-v01.png",
+      "production_lock": "PENDING",
+      "layers": [
+        "background",
+        "midground",
+        "gameplay_terrain",
+        "foreground"
+      ],
+      "gameplay_collision_from_art": false,
+      "unity_tile_metric": "PENDING_EDITOR_PROOF"
+    }
+  ],
+  "hud": {
+    "status": "DIRECTION_ONLY",
+    "safe_area_required": true,
+    "viewport_reference": [
+      1280,
+      720
+    ],
+    "fields": [
+      "health_fraction",
+      "max_health",
+      "portrait",
+      "pause",
+      "reward_choice",
+      "control_stick",
+      "attack",
+      "jump",
+      "guard"
+    ],
+    "forbidden_invented_fields": [
+      "mana",
+      "premium_currency",
+      "extra_lives",
+      "timer"
+    ],
+    "readability_reviews": [
+      "1280x720",
+      "640x360",
+      "Galaxy A13 both landscape orientations"
+    ],
+    "contrast_without_color_required": true,
+    "peripheral_shadow_reduced_effects": true
+  },
+  "pipeline": {
+    "source": "assets/production_drafts/",
+    "review": "assets/production_drafts/",
+    "runtime": "unity/Assets/RastaQuest/ProductionArt/",
+    "shipping_material_present": false,
+    "requirements": [
+      "editable-separate-layers",
+      "deterministic-clip-timing",
+      "consistent-silhouette",
+      "weapon-pivot-source",
+      "source-and-export-hashes",
+      "terms-and-rights-evidence",
+      "independent-mobile-review",
+      "cultural-consultation-evidence"
+    ]
+  },
+  "gates": [
+    {
+      "id": "35-protagonist",
+      "state": "PENDING"
+    },
+    {
+      "id": "36-environment",
+      "state": "PENDING"
+    },
+    {
+      "id": "37-enemies",
+      "state": "PENDING"
+    },
+    {
+      "id": "38-cultural",
+      "state": "PENDING"
+    }
+  ]
+}
