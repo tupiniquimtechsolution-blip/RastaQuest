@@ -23,7 +23,7 @@ namespace RastaQuest.Editor
         [MenuItem("Rasta Quest/Preparar sala Unity")]
         public static void Prepare()
         {
-            Directory.CreateDirectory("Assets/Scenes");
+            Directory.CreateDirectory(Path.Combine(Application.dataPath, "Scenes"));
             var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
             new GameObject("RastaQuestUnityReview").AddComponent<SliceBootstrap>();
             EditorSceneManager.SaveScene(scene,Scene);EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene(Scene,true)};
@@ -50,8 +50,11 @@ namespace RastaQuest.Editor
         }
         private static void Build(BuildTarget target,string path)
         {
-            Directory.CreateDirectory(Path.GetDirectoryName(path));
-            var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{Scene},locationPathName=path,target=target,options=BuildOptions.Development});
+            // Resolve beneath the Unity project, regardless of the CLI working directory.
+            string projectRoot=Directory.GetParent(Application.dataPath).FullName;
+            string outputPath=Path.GetFullPath(Path.Combine(projectRoot,path));
+            Directory.CreateDirectory(Path.GetDirectoryName(outputPath));
+            var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{Scene},locationPathName=outputPath,target=target,options=BuildOptions.Development});
             if(report.summary.result!=BuildResult.Succeeded)throw new System.Exception("Unity review build failed: "+report.summary.result);
             Debug.Log("RQ_UNITY_BUILD_OK "+target+" bytes="+report.summary.totalSize);
         }
