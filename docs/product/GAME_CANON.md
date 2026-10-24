@@ -1,20 +1,22 @@
 # Rasta Quest — Canonical Game Definition
 
 **Status:** APPROVED  
-**Version:** 1.0-preproduction  
-**Recorded:** 2026-10-06
+**Version:** 1.1-direction — Unity migration authorized; delivered baseline remains Godot
+**Recorded:** 2026-10-24 (original definition: 2026-10-06)
+
+Rodrigo explicitly selected detailed illustrated 2D art and Unity on 2026-10-24. See [ADR 0003](../adr/0003-unity-illustrated-direction.md) and the [reference study and migration gates](COMBAT_ART_REFERENCE_STUDY_2026-10-24.md). Direction approval does not certify the new art, runtime or commercial release.
 
 ## 1. Canonical identity
 
 | Item | Decision |
 |---|---|
 | Product name | **Rasta Quest** |
-| Engine | **Godot 4.5.1** |
-| Language | **GDScript, no .NET** |
+| Engine | **Unity 6.3 LTS target; Godot 4.5.1 delivered baseline** |
+| Language | **C# target; GDScript in existing Godot build** |
 | Primary platform | **Android** |
 | Orientation | **Landscape** |
 | Genre | **2D action-platformer + light roguelike** |
-| Visual direction | Pixel-art / hand-drawn pixel aesthetic, readable on mobile |
+| Visual direction | Detailed hand-illustrated 2D with its own identity; current pixel sprites are transitional |
 | Protagonist | Rastafarian-inspired medieval warrior |
 | Signature weapon | Double-bladed ritual axe inspired by Xangô axe imagery |
 | Signature power | Controlled electrical effects |
@@ -58,7 +60,7 @@ UI, controls, effects, enemy tells and level layouts must remain understandable 
 
 The historical Portal's Edge material contributed a strong world premise: reality has fractured, unstable portals connect corrupted places, and each run reveals more about the collapse.
 
-Rasta Quest reinterprets that premise through its medieval/pixel-art identity.
+Rasta Quest reinterprets that premise through its own illustrated medieval identity.
 
 ### Canonical premise
 
@@ -128,7 +130,7 @@ They may be backed by richer AnimationTree states later, but gameplay code must 
 5. electrical proc chance;
 6. later V1 polish may extend the ground attack into a short 1-2-3 combo without changing the core input contract.
 
-A heavy/charged attack, guard/defense and dash are **not baseline requirements**. They are candidates only after the vertical slice proves the core feel.
+Held all-around defense, timed parry and reflected projectiles are now part of the implemented Godot baseline and Unity parity target. Heavy/charged attacks and dash remain later candidates; their inclusion needs a concrete balance and control specification.
 
 ## 7. Roguelike loop
 
@@ -259,10 +261,10 @@ Save data must be versioned and recoverable.
 
 ## 13. Art direction
 
-- pixel-art readability before detail;
-- consistent pixel density and silhouette;
+- detailed hand-illustrated 2D, preserving mobile readability and silhouette;
+- consistent materials, contours, anatomy and animation scale;
 - transparent character sheets;
-- no antialiasing/blur in production sprites;
+- authored contours and intentional sampling for illustrated assets; retain point sampling only for transitional pixel sprites;
 - weapon anatomy must remain consistent;
 - axe must remain readable as a double-bladed ritual axe, not drift into a scythe;
 - effects should preserve silhouette readability;
@@ -326,8 +328,9 @@ These can be reconsidered only after 1.0 is stable.
 | Historical element | 1.0 treatment |
 |---|---|
 | Rasta warrior + axe | Canonical |
-| Xangô-inspired lightning | Canonical, culturally reviewed |
-| Godot/GDScript/Android | Canonical |
+| Xangô-inspired lightning | Canonical reference; new illustrations require version-specific cultural review |
+| Godot/GDScript/Android | Delivered baseline, retained during migration |
+| Unity/C#/Android | Authorized target, migration and physical validation pending |
 | Side-scrolling platformer | Canonical |
 | Portal runs | Canonical |
 | Three-choice upgrades | Canonical |
@@ -341,7 +344,7 @@ These can be reconsidered only after 1.0 is stable.
 | 360° arena combat | Superseded |
 | C++ engine-agnostic core | Superseded for 1.0 |
 | PS3 gate | Post-1.0 research |
-| Unity/PortalAscendant | Legacy |
+| Historical PortalAscendant Unity prototype | Legacy; not evidence that the new Unity migration is complete |
 | F2P battle pass/revives | Deferred, non-canonical for 1.0 |
 | 20 portals | Post-1.0 content library |
 | Co-op/endless | Post-1.0 candidates |

@@ -1,7 +1,11 @@
 # Current State — Rasta Quest
 
-**Date:** 2026-10-23
+**Date:** 2026-10-24
 **Repository:** `tupiniquimtechsolution-blip/RastaQuest`
+
+## New direction — Unity and detailed illustrated 2D
+
+Rodrigo selected detailed illustrated 2D and requested Unity for graphics, movement and polish. [ADR 0003](../adr/0003-unity-illustrated-direction.md) records the migration target; [the technical study](../product/COMBAT_ART_REFERENCE_STUDY_2026-10-24.md) separates verified reference mechanics, image observations and original proposals. `unity/` is a separate review prototype, with the Godot APK retained as functional baseline. Runtime/build verification and final illustrated animation remain gates; Godot CI green is not proof of Unity readiness. See [Unity project status](../../unity/README.md).
 
 ## Latest A13 feedback — 2026-10-23
 
