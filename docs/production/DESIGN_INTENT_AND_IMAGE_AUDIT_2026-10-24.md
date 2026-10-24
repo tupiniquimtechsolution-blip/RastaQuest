@@ -6,6 +6,8 @@ Em 24/10/2026 o usuário reapresentou a mensagem anterior à interrupção e ped
 
 ## Direção preservada
 
+**Direção atual, esclarecida pelo usuário após a recuperação do acervo:** elaborar agora a árvore de habilidades como prancha visual na mesma direção artística dos menus. Manter **todo o jogo em 2D por enquanto, inclusive chefes e Santuário Ancestral**. A avaliação de 3D está adiada; os itens históricos abaixo não autorizam trabalho 3D nesta etapa. O pacote visual da árvore fica em `assets/production_drafts/2026-10-24/skill-tree-v01/` e não implica implementação no runtime.
+
 1. As pranchas são mapas condensados e esboços de salas side-scrolling extensas. Na implementação, manter aparências, locais e sequência dos marcos, criando distância percorrível entre eles para dar a sensação de viajar e chegar a um destino. Não transformar toda a sala em um quadrado ou uma única tela, nem ampliar a fase esticando sprites.
 2. Preparar posteriormente o **layout completo da árvore de habilidades no menu de pausa**. Preservar essa intenção como próxima frente de design; este registro não inventa nós, preços, equipamentos ou progressão, nem declara a árvore implementada. Conciliar seus estados com o menu e as regras já aprovadas quando esse trabalho começar.
 3. Avaliar futuramente trechos em 3D para **lutas de chefes** e para o **Santuário Ancestral**, mantendo campanha e sala de aproximação ao chefe em 2D side-scrolling. A transição de câmera é uma possibilidade a estudar, não uma decisão de converter o jogo inteiro ou implementar 3D agora.
