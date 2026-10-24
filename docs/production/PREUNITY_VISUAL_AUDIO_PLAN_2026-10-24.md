@@ -1,5 +1,7 @@
 # Próximos trabalhos antes do Unity — visual, animação e som
 
+> Registro inicial preservado. O avanço posterior está em [Execução das seis frentes](PREUNITY_EXECUTION_2026-10-24.md): bancada executável, dez novos PNGs e 12 SFX gerados. As afirmações abaixo sobre ausência de áudio descrevem a inspeção anterior à geração; o JSON de cues já reflete os arquivos atuais.
+
 ## O que esta entrega conclui
 
 - Duas pranchas da [árvore v02](../../assets/production_drafts/2026-10-24/skill-tree-v02/README.md), com Técnicas de Combate no lugar do ramo de melhoria de arma.

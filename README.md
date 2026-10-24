@@ -15,6 +15,16 @@ Rasta Quest é um jogo de ação e plataforma em **2D**, com exploração latera
 
 As artes desta retomada estão na branch do [PR #84](https://github.com/tupiniquimtechsolution-blip/RastaQuest/pull/84), em rascunho. Arquivo publicado em branch não significa integração na main, build Unity ou release.
 
+## Bancada interativa antes do Unity
+
+[Abrir instruções da bancada 2D](preunity/README.md): movimentos articulados, respostas de combate, árvore clicável, parallax e biblioteca sonora para avaliação local.
+
+![Camada distante da floresta](assets/production_drafts/2026-10-24/parallax-v01/forest-far.png)
+
+Esta etapa acrescenta **nove camadas de cenário, um modelo neutro de Akane e 12 SFX piloto**. [Registro das seis frentes e pendências](docs/production/PREUNITY_EXECUTION_2026-10-24.md) · [Arquivos sonoros e procedência](assets/production_drafts/2026-10-24/sfx-pilot-v01/MANIFEST.json).
+
+O rig ainda é estrutural, sem arte vinculada aos ossos; as camadas precisam virar cenários jogáveis. Os sons aguardam audição e acabamento. Os 30 cues restantes continuam planejados.
+
 ## Árvore de habilidades — Raízes do Trovão
 
 ![Árvore no menu de pausa — versão atual](assets/production_drafts/2026-10-24/skill-tree-v02/skill-tree-pause-menu.png)

@@ -1,0 +1,79 @@
+{
+  "status": "articulated_debug_rig_not_skinned_character",
+  "reference": "../../assets/production_drafts/2026-10-24/rig-model-v01/akane-neutral.png",
+  "units": "authoring units, not gameplay dimensions",
+  "bones": [
+    {
+      "id": "torso",
+      "parent": null,
+      "length": 70,
+      "angle": -90
+    },
+    {
+      "id": "head",
+      "parent": "torso",
+      "length": 30,
+      "angle": 0
+    },
+    {
+      "id": "armL",
+      "parent": "torso",
+      "length": 38,
+      "angle": 125
+    },
+    {
+      "id": "foreL",
+      "parent": "armL",
+      "length": 38,
+      "angle": -40
+    },
+    {
+      "id": "armR",
+      "parent": "torso",
+      "length": 40,
+      "angle": 80
+    },
+    {
+      "id": "foreR",
+      "parent": "armR",
+      "length": 40,
+      "angle": 35
+    },
+    {
+      "id": "axe",
+      "parent": "foreR",
+      "length": 58,
+      "angle": -85
+    },
+    {
+      "id": "thighL",
+      "parent": null,
+      "length": 65,
+      "angle": 100
+    },
+    {
+      "id": "shinL",
+      "parent": "thighL",
+      "length": 65,
+      "angle": -10
+    },
+    {
+      "id": "thighR",
+      "parent": null,
+      "length": 65,
+      "angle": 80
+    },
+    {
+      "id": "shinR",
+      "parent": "thighR",
+      "length": 65,
+      "angle": 10
+    }
+  ],
+  "remaining": [
+    "separate approved body and weapon layers",
+    "bind textured pieces/mesh",
+    "hand sockets and foot constraints",
+    "artist review"
+  ]
+}

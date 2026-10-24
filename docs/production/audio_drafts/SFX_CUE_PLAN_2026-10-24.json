@@ -19,7 +19,7 @@
   "existing_audio_scan": "No wav/ogg/mp3/flac/aiff found under assets/game/unity in this checkout; game audio manager currently creates Music and SFX buses, which is not a sound library.",
   "master_target": "WAV PCM 48 kHz 24-bit after format verification; preserve generated originals before any conversion",
   "runtime_formats": "decide after mobile audition and engine import; no codec or compression claim yet",
-  "generation_status": "No audio submitted, quoted, generated or auditioned",
+  "generation_status": "12 pilot cues generated, unreviewed; other 30 cues still planned. No final mix/loop or runtime acceptance.",
   "cues": [
     {
       "id": "axe_swing_light",
@@ -32,9 +32,9 @@
       "channels_target": "mono",
       "trigger": "Corte leve — gatilho de apresentação a ligar posteriormente",
       "prompt": "Short fast double-headed axe air whoosh with cloth movement. Isolated game sound effect. No speech, no music, no unrelated background. Preserve a clean attack and decay.",
-      "status": "planned_not_generated",
-      "file": null,
-      "sha256": null
+      "status": "generated_pilot_pending_audition",
+      "file": "assets/production_drafts/2026-10-24/sfx-pilot-v01/axe_swing_light.mp3",
+      "sha256": "6d3dbd68b77ef2b10f0de9eb3ef406e44e42d65e72c256cfdc9ccc7581d05f39"
     },
     {
       "id": "axe_swing_heavy",
@@ -107,9 +107,9 @@
       "channels_target": "mono",
       "trigger": "Impacto em armadura — gatilho de apresentação a ligar posteriormente",
       "prompt": "Axe hits worn steel armor, metallic transient and short body. Isolated game sound effect. No speech, no music, no unrelated background. Preserve a clean attack and decay.",
-      "status": "planned_not_generated",
-      "file": null,
-      "sha256": null
+      "status": "generated_pilot_pending_audition",
+      "file": "assets/production_drafts/2026-10-24/sfx-pilot-v01/hit_armor.mp3",
+      "sha256": "11b43d6b5451527d51e398b9b3240df8eb575ecb9bde3788dce28874a4253e0e"
     },
     {
       "id": "guard_impact",
@@ -137,9 +137,9 @@
       "channels_target": "mono",
       "trigger": "Defesa precisa — gatilho de apresentação a ligar posteriormente",
       "prompt": "Bright crisp metal parry with compact blue-electric snap. Isolated game sound effect. No speech, no music, no unrelated background. Preserve a clean attack and decay.",
-      "status": "planned_not_generated",
-      "file": null,
-      "sha256": null
+      "status": "generated_pilot_pending_audition",
+      "file": "assets/production_drafts/2026-10-24/sfx-pilot-v01/parry_perfect.mp3",
+      "sha256": "95de09bebdefbc674bffd1c203693130cf98b1683fa144d42b191bc17068acf4"
     },
     {
       "id": "projectile_rebate",
@@ -152,9 +152,9 @@
       "channels_target": "mono",
       "trigger": "Rebatida de projétil — gatilho de apresentação a ligar posteriormente",
       "prompt": "Magical projectile deflection with sharp electric ping and outgoing tail. Isolated game sound effect. No speech, no music, no unrelated background. Preserve a clean attack and decay.",
-      "status": "planned_not_generated",
-      "file": null,
-      "sha256": null
+      "status": "generated_pilot_pending_audition",
+      "file": "assets/production_drafts/2026-10-24/sfx-pilot-v01/projectile_rebate.mp3",
+      "sha256": "e701239522bb76d4a7edf8f9ad6fbd6f14ebe5f21d29a46e056ab637eacc1fe5"
     },
     {
       "id": "guard_break",
@@ -182,9 +182,9 @@
       "channels_target": "mono",
       "trigger": "Carga de trovão — gatilho de apresentação a ligar posteriormente",
       "prompt": "Controlled electrical charge rising briefly without exploding. Isolated game sound effect. No speech, no music, no unrelated background. Preserve a clean attack and decay.",
-      "status": "planned_not_generated",
-      "file": null,
-      "sha256": null
+      "status": "generated_pilot_pending_audition",
+      "file": "assets/production_drafts/2026-10-24/sfx-pilot-v01/thunder_charge.mp3",
+      "sha256": "6e255c32796aca95b439a1bb3b14abec9283cbf7ae42b9dfbe672313a7faee7e"
     },
     {
       "id": "thunder_wave",
@@ -197,9 +197,9 @@
       "channels_target": "mono",
       "trigger": "Onda do trovão — gatilho de apresentação a ligar posteriormente",
       "prompt": "Short low electric wave launches forward with crackling tail. Isolated game sound effect. No speech, no music, no unrelated background. Preserve a clean attack and decay.",
-      "status": "planned_not_generated",
-      "file": null,
-      "sha256": null
+      "status": "generated_pilot_pending_audition",
+      "file": "assets/production_drafts/2026-10-24/sfx-pilot-v01/thunder_wave.mp3",
+      "sha256": "2a310cd10ca8eda357bc8b5444de064ebaabae241754f3c6bbfef2a5233c29f5"
     },
     {
       "id": "storm_burst",
@@ -272,9 +272,9 @@
       "channels_target": "mono",
       "trigger": "Passo em pedra — gatilho de apresentação a ligar posteriormente",
       "prompt": "Single brown leather boot step on weathered stone. Isolated game sound effect. No speech, no music, no unrelated background. Preserve a clean attack and decay.",
-      "status": "planned_not_generated",
-      "file": null,
-      "sha256": null
+      "status": "generated_pilot_pending_audition",
+      "file": "assets/production_drafts/2026-10-24/sfx-pilot-v01/step_stone.mp3",
+      "sha256": "f5ae9c6ace28c12f923f36cf2cbd0026e7316c287c1e3eccdaaf68b71a190a22"
     },
     {
       "id": "step_wood",
@@ -347,9 +347,9 @@
       "channels_target": "mono",
       "trigger": "Avanço e esquiva — gatilho de apresentação a ligar posteriormente",
       "prompt": "Quick low dash or retreat air rush with controlled boot scrape. Isolated game sound effect. No speech, no music, no unrelated background. Preserve a clean attack and decay.",
-      "status": "planned_not_generated",
-      "file": null,
-      "sha256": null
+      "status": "generated_pilot_pending_audition",
+      "file": "assets/production_drafts/2026-10-24/sfx-pilot-v01/dash.mp3",
+      "sha256": "f4e9ae1b3052849715a74d23e32075ebb6cfa3874265b214031df88f6d0e807c"
     },
     {
       "id": "knight_tell",
@@ -527,9 +527,9 @@
       "channels_target": "mono",
       "trigger": "Navegar — gatilho de apresentação a ligar posteriormente",
       "prompt": "Very short soft stone and gold interface focus tick. Isolated game sound effect. No speech, no music, no unrelated background. Preserve a clean attack and decay.",
-      "status": "planned_not_generated",
-      "file": null,
-      "sha256": null
+      "status": "generated_pilot_pending_audition",
+      "file": "assets/production_drafts/2026-10-24/sfx-pilot-v01/ui_focus.mp3",
+      "sha256": "fd23aa619c01490d7361b70b8381d17faaba68427251e69a38a5b7c341908a22"
     },
     {
       "id": "ui_confirm",
@@ -542,9 +542,9 @@
       "channels_target": "mono",
       "trigger": "Confirmar — gatilho de apresentação a ligar posteriormente",
       "prompt": "Short warm metallic interface confirmation. Isolated game sound effect. No speech, no music, no unrelated background. Preserve a clean attack and decay.",
-      "status": "planned_not_generated",
-      "file": null,
-      "sha256": null
+      "status": "generated_pilot_pending_audition",
+      "file": "assets/production_drafts/2026-10-24/sfx-pilot-v01/ui_confirm.mp3",
+      "sha256": "85f536ae4297491a1e44485cbbd9e8f92716cc5aec67186262e76bcdcc1f9286"
     },
     {
       "id": "ui_back",
@@ -602,9 +602,9 @@
       "channels_target": "mono",
       "trigger": "Búzio coletado — gatilho de apresentação a ligar posteriormente",
       "prompt": "Tiny organic shell click and warm airy shimmer. Isolated game sound effect. No speech, no music, no unrelated background. Preserve a clean attack and decay.",
-      "status": "planned_not_generated",
-      "file": null,
-      "sha256": null
+      "status": "generated_pilot_pending_audition",
+      "file": "assets/production_drafts/2026-10-24/sfx-pilot-v01/cowrie_pickup.mp3",
+      "sha256": "55716f233d60af8363d341474e5a3d8f8a0b332973831ebb6de235cf22ba276f"
     },
     {
       "id": "life_extra",
@@ -617,9 +617,9 @@
       "channels_target": "mono",
       "trigger": "Vida extra por cinco búzios — gatilho de apresentação a ligar posteriormente",
       "prompt": "Distinct short rewarding warm chime with small thunder accent. Isolated game sound effect. No speech, no music, no unrelated background. Preserve a clean attack and decay.",
-      "status": "planned_not_generated",
-      "file": null,
-      "sha256": null
+      "status": "generated_pilot_pending_audition",
+      "file": "assets/production_drafts/2026-10-24/sfx-pilot-v01/life_extra.mp3",
+      "sha256": "de2fc0da1211cc257f5596757916f9106b96abd2e33675a9fc7e803450fedb2e"
     },
     {
       "id": "chest_open",

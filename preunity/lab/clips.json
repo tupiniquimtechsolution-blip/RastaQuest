@@ -1,0 +1,953 @@
+{
+  "status": "12 executable structural motion prototypes, not finished textured animations",
+  "clips": [
+    {
+      "id": "combat_ascending_cut",
+      "name": "Corte Ascendente",
+      "board": "../../assets/production_drafts/2026-10-24/combat-motion-v01/poses-attacks.png",
+      "duration_ms": 1200,
+      "timing_status": "debug visualization only, not combat balance",
+      "keys": [
+        {
+          "t": 0.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "torso": 0
+          }
+        },
+        {
+          "t": 0.25,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -50.0,
+            "foreR": -10.0,
+            "torso": -4.0
+          }
+        },
+        {
+          "t": 0.5,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -100,
+            "foreR": -20,
+            "torso": -8
+          }
+        },
+        {
+          "t": 0.75,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -65.0,
+            "foreR": -13.0,
+            "torso": -5.2
+          }
+        },
+        {
+          "t": 1.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "torso": 0
+          }
+        }
+      ],
+      "sfx": [
+        "axe_swing_up",
+        "hit_armor"
+      ]
+    },
+    {
+      "id": "combat_low_sweep",
+      "name": "Varredura Baixa",
+      "board": "../../assets/production_drafts/2026-10-24/combat-motion-v01/poses-attacks.png",
+      "duration_ms": 1200,
+      "timing_status": "debug visualization only, not combat balance",
+      "keys": [
+        {
+          "t": 0.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "torso": 0,
+            "thighL": 0,
+            "shinL": 0
+          }
+        },
+        {
+          "t": 0.25,
+          "root": [
+            0,
+            7.5
+          ],
+          "angles": {
+            "armR": 22.5,
+            "foreR": -27.5,
+            "torso": 12.5,
+            "thighL": 7.5,
+            "shinL": -12.5
+          }
+        },
+        {
+          "t": 0.5,
+          "root": [
+            0,
+            15
+          ],
+          "angles": {
+            "armR": 45,
+            "foreR": -55,
+            "torso": 25,
+            "thighL": 15,
+            "shinL": -25
+          }
+        },
+        {
+          "t": 0.75,
+          "root": [
+            0,
+            9.75
+          ],
+          "angles": {
+            "armR": 29.25,
+            "foreR": -35.75,
+            "torso": 16.25,
+            "thighL": 9.75,
+            "shinL": -16.25
+          }
+        },
+        {
+          "t": 1.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "torso": 0,
+            "thighL": 0,
+            "shinL": 0
+          }
+        }
+      ],
+      "sfx": [
+        "axe_sweep_low",
+        "hit_flesh"
+      ]
+    },
+    {
+      "id": "combat_guard_break",
+      "name": "Quebra de Guarda",
+      "board": "../../assets/production_drafts/2026-10-24/combat-motion-v01/poses-attacks.png",
+      "duration_ms": 1200,
+      "timing_status": "debug visualization only, not combat balance",
+      "keys": [
+        {
+          "t": 0.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "axe": 0,
+            "torso": 0
+          }
+        },
+        {
+          "t": 0.25,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -150,
+            "foreR": -7.5,
+            "axe": -7.5,
+            "torso": 7.5
+          }
+        },
+        {
+          "t": 0.5,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 60,
+            "foreR": -15,
+            "axe": -15,
+            "torso": 15
+          }
+        },
+        {
+          "t": 0.75,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 70,
+            "foreR": -9.75,
+            "axe": -9.75,
+            "torso": 9.75
+          }
+        },
+        {
+          "t": 1.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "axe": 0,
+            "torso": 0
+          }
+        }
+      ],
+      "sfx": [
+        "axe_swing_heavy",
+        "guard_impact",
+        "guard_break"
+      ]
+    },
+    {
+      "id": "defense_perfect_parry",
+      "name": "Defesa Precisa",
+      "board": "../../assets/production_drafts/2026-10-24/combat-motion-v01/poses-defenses.png",
+      "duration_ms": 1200,
+      "timing_status": "debug visualization only, not combat balance",
+      "keys": [
+        {
+          "t": 0.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "axe": 0,
+            "torso": 0
+          }
+        },
+        {
+          "t": 0.25,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -30.0,
+            "foreR": -15.0,
+            "axe": 35.0,
+            "torso": -2.5
+          }
+        },
+        {
+          "t": 0.5,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -60,
+            "foreR": -30,
+            "axe": 70,
+            "torso": -5
+          }
+        },
+        {
+          "t": 0.75,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -39.0,
+            "foreR": -19.5,
+            "axe": 45.5,
+            "torso": -3.25
+          }
+        },
+        {
+          "t": 1.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "axe": 0,
+            "torso": 0
+          }
+        }
+      ],
+      "sfx": [
+        "guard_impact",
+        "parry_perfect"
+      ]
+    },
+    {
+      "id": "defense_projectile_rebate",
+      "name": "Rebatida Precisa",
+      "board": "../../assets/production_drafts/2026-10-24/combat-motion-v01/poses-defenses.png",
+      "duration_ms": 1200,
+      "timing_status": "debug visualization only, not combat balance",
+      "keys": [
+        {
+          "t": 0.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "axe": 0,
+            "torso": 0
+          }
+        },
+        {
+          "t": 0.25,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -30.0,
+            "foreR": -15.0,
+            "axe": 35.0,
+            "torso": -2.5
+          }
+        },
+        {
+          "t": 0.5,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -60,
+            "foreR": -30,
+            "axe": 70,
+            "torso": -5
+          }
+        },
+        {
+          "t": 0.75,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -39.0,
+            "foreR": -19.5,
+            "axe": 45.5,
+            "torso": -3.25
+          }
+        },
+        {
+          "t": 1.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "axe": 0,
+            "torso": 0
+          }
+        }
+      ],
+      "sfx": [
+        "projectile_rebate"
+      ]
+    },
+    {
+      "id": "defense_front_shield",
+      "name": "Escudo do Trovão",
+      "board": "../../assets/production_drafts/2026-10-24/combat-motion-v01/poses-defenses.png",
+      "duration_ms": 1200,
+      "timing_status": "debug visualization only, not combat balance",
+      "keys": [
+        {
+          "t": 0.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "axe": 0,
+            "torso": 0
+          }
+        },
+        {
+          "t": 0.25,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -30.0,
+            "foreR": -15.0,
+            "axe": 35.0,
+            "torso": -2.5
+          }
+        },
+        {
+          "t": 0.5,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -60,
+            "foreR": -30,
+            "axe": 70,
+            "torso": -5
+          }
+        },
+        {
+          "t": 0.75,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -39.0,
+            "foreR": -19.5,
+            "axe": 45.5,
+            "torso": -3.25
+          }
+        },
+        {
+          "t": 1.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "axe": 0,
+            "torso": 0
+          }
+        }
+      ],
+      "sfx": [
+        "shield_raise",
+        "shield_hit",
+        "shield_end"
+      ]
+    },
+    {
+      "id": "move_dash",
+      "name": "Avanço Ágil",
+      "board": "../../assets/production_drafts/2026-10-24/combat-motion-v01/poses-mobility.png",
+      "duration_ms": 1200,
+      "timing_status": "debug visualization only, not combat balance",
+      "keys": [
+        {
+          "t": 0.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "torso": 0,
+            "armR": 0,
+            "thighR": 0,
+            "shinR": 0,
+            "thighL": 0,
+            "shinL": 0
+          }
+        },
+        {
+          "t": 0.25,
+          "root": [
+            24,
+            5.0
+          ],
+          "angles": {
+            "torso": 12.5,
+            "armR": 35.0,
+            "thighR": -17.5,
+            "shinR": 22.5,
+            "thighL": 15.0,
+            "shinL": -15.0
+          }
+        },
+        {
+          "t": 0.5,
+          "root": [
+            48,
+            10
+          ],
+          "angles": {
+            "torso": 25,
+            "armR": 70,
+            "thighR": -35,
+            "shinR": 45,
+            "thighL": 30,
+            "shinL": -30
+          }
+        },
+        {
+          "t": 0.75,
+          "root": [
+            72,
+            6.5
+          ],
+          "angles": {
+            "torso": 16.25,
+            "armR": 45.5,
+            "thighR": -22.75,
+            "shinR": 29.25,
+            "thighL": 19.5,
+            "shinL": -19.5
+          }
+        },
+        {
+          "t": 1.0,
+          "root": [
+            96,
+            0
+          ],
+          "angles": {
+            "torso": 0,
+            "armR": 0,
+            "thighR": 0,
+            "shinR": 0,
+            "thighL": 0,
+            "shinL": 0
+          }
+        }
+      ],
+      "sfx": [
+        "dash"
+      ]
+    },
+    {
+      "id": "move_precision_jump",
+      "name": "Salto Preciso",
+      "board": "../../assets/production_drafts/2026-10-24/combat-motion-v01/poses-mobility.png",
+      "duration_ms": 1200,
+      "timing_status": "debug visualization only, not combat balance",
+      "keys": [
+        {
+          "t": 0.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "thighR": 0,
+            "shinR": 0,
+            "thighL": 0,
+            "shinL": 0,
+            "armR": 0
+          }
+        },
+        {
+          "t": 0.25,
+          "root": [
+            12,
+            -45.0
+          ],
+          "angles": {
+            "thighR": -17.5,
+            "shinR": 30.0,
+            "thighL": 17.5,
+            "shinL": -27.5,
+            "armR": 12.5
+          }
+        },
+        {
+          "t": 0.5,
+          "root": [
+            24,
+            -90
+          ],
+          "angles": {
+            "thighR": -35,
+            "shinR": 60,
+            "thighL": 35,
+            "shinL": -55,
+            "armR": 25
+          }
+        },
+        {
+          "t": 0.75,
+          "root": [
+            36,
+            -58.5
+          ],
+          "angles": {
+            "thighR": -22.75,
+            "shinR": 39.0,
+            "thighL": 22.75,
+            "shinL": -35.75,
+            "armR": 16.25
+          }
+        },
+        {
+          "t": 1.0,
+          "root": [
+            48,
+            0
+          ],
+          "angles": {
+            "thighR": 0,
+            "shinR": 0,
+            "thighL": 0,
+            "shinL": 0,
+            "armR": 0
+          }
+        }
+      ],
+      "sfx": [
+        "jump_takeoff",
+        "land_soft"
+      ]
+    },
+    {
+      "id": "move_charge_evade",
+      "name": "Esquiva de Investida",
+      "board": "../../assets/production_drafts/2026-10-24/combat-motion-v01/poses-mobility.png",
+      "duration_ms": 1200,
+      "timing_status": "debug visualization only, not combat balance",
+      "keys": [
+        {
+          "t": 0.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "torso": 0,
+            "thighR": 0,
+            "thighL": 0,
+            "shinL": 0
+          }
+        },
+        {
+          "t": 0.25,
+          "root": [
+            -15,
+            2.5
+          ],
+          "angles": {
+            "torso": -4.0,
+            "thighR": -10.0,
+            "thighL": 12.5,
+            "shinL": -10.0
+          }
+        },
+        {
+          "t": 0.5,
+          "root": [
+            -30,
+            5
+          ],
+          "angles": {
+            "torso": -8,
+            "thighR": -20,
+            "thighL": 25,
+            "shinL": -20
+          }
+        },
+        {
+          "t": 0.75,
+          "root": [
+            -45,
+            3.25
+          ],
+          "angles": {
+            "torso": -5.2,
+            "thighR": -13.0,
+            "thighL": 16.25,
+            "shinL": -13.0
+          }
+        },
+        {
+          "t": 1.0,
+          "root": [
+            -60,
+            0
+          ],
+          "angles": {
+            "torso": 0,
+            "thighR": 0,
+            "thighL": 0,
+            "shinL": 0
+          }
+        }
+      ],
+      "sfx": [
+        "charger_tell",
+        "dash"
+      ]
+    },
+    {
+      "id": "storm_wave",
+      "name": "Onda do Trovão",
+      "board": "../../assets/production_drafts/2026-10-24/combat-motion-v01/poses-storm.png",
+      "duration_ms": 1200,
+      "timing_status": "debug visualization only, not combat balance",
+      "keys": [
+        {
+          "t": 0.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "axe": 0,
+            "torso": 0
+          }
+        },
+        {
+          "t": 0.25,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -15.0,
+            "foreR": -25.0,
+            "axe": 17.5,
+            "torso": 6.0
+          }
+        },
+        {
+          "t": 0.5,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -30,
+            "foreR": -50,
+            "axe": 35,
+            "torso": 12
+          }
+        },
+        {
+          "t": 0.75,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -19.5,
+            "foreR": -32.5,
+            "axe": 22.75,
+            "torso": 7.800000000000001
+          }
+        },
+        {
+          "t": 1.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "axe": 0,
+            "torso": 0
+          }
+        }
+      ],
+      "sfx": [
+        "thunder_charge",
+        "thunder_wave"
+      ]
+    },
+    {
+      "id": "storm_fury",
+      "name": "Fúria da Tempestade",
+      "board": "../../assets/production_drafts/2026-10-24/combat-motion-v01/poses-storm.png",
+      "duration_ms": 1200,
+      "timing_status": "debug visualization only, not combat balance",
+      "keys": [
+        {
+          "t": 0.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "axe": 0,
+            "torso": 0
+          }
+        },
+        {
+          "t": 0.25,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -150,
+            "foreR": -7.5,
+            "axe": -7.5,
+            "torso": 7.5
+          }
+        },
+        {
+          "t": 0.5,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 60,
+            "foreR": -15,
+            "axe": -15,
+            "torso": 15
+          }
+        },
+        {
+          "t": 0.75,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 70,
+            "foreR": -9.75,
+            "axe": -9.75,
+            "torso": 9.75
+          }
+        },
+        {
+          "t": 1.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "axe": 0,
+            "torso": 0
+          }
+        }
+      ],
+      "sfx": [
+        "thunder_charge",
+        "storm_burst"
+      ]
+    },
+    {
+      "id": "combat_ancestral_chain",
+      "name": "Sequência Ancestral",
+      "board": "../../assets/production_drafts/2026-10-24/combat-motion-v01/poses-storm.png",
+      "duration_ms": 1200,
+      "timing_status": "debug visualization only, not combat balance",
+      "keys": [
+        {
+          "t": 0.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "torso": 0
+          }
+        },
+        {
+          "t": 0.25,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 45,
+            "foreR": -17.5,
+            "torso": 5.0
+          }
+        },
+        {
+          "t": 0.5,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": -100,
+            "foreR": -35,
+            "torso": 10
+          }
+        },
+        {
+          "t": 0.75,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 65,
+            "foreR": -22.75,
+            "torso": 6.5
+          }
+        },
+        {
+          "t": 1.0,
+          "root": [
+            0,
+            0
+          ],
+          "angles": {
+            "armR": 0,
+            "foreR": 0,
+            "torso": 0
+          }
+        }
+      ],
+      "sfx": [
+        "axe_swing_light",
+        "axe_sweep_low",
+        "axe_swing_up",
+        "storm_burst"
+      ]
+    }
+  ]
+}
