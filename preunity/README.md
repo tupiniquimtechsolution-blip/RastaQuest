@@ -16,7 +16,7 @@ Abra http://127.0.0.1:8768/preunity/lab/ no navegador. Não abra o HTML diretame
 | Reações | Defesa precisa, rebatida, escudo e esquiva contra tipos de ataque | Simulação isolada; não implementa regras no jogo |
 | Cenários e VFX | Três biomas, nove camadas, travessia e prévia elétrica | Sem tiles, colisões, bordas repetíveis ou salas montadas |
 | Habilidades | 25 nós, detalhes, pré-requisitos e desbloqueio demonstrativo | Custos indefinidos; localStorage separado do save |
-| Áudio | 12 MP3s originais com volume e reprodução individual | Pilotos sem aprovação auditiva, edição ou mixagem final |
+| Áudio | 16 MP3s originais, busca e filtro por família; pendências opcionais | Catálogo de 84 cues; 68 aguardando geração. Sem aprovação auditiva, edição ou mixagem final |
 | Andamento | Produzido e restante em cada frente | Protótipo não equivale a integração na engine |
 
 Os 1.200 ms das linhas do tempo são unidades de demonstração, não balanceamento de golpes. Os estudos visuais existentes são referências, não sprites finais. O reset limpa apenas a demonstração de habilidades; não propõe respec no jogo. Efeitos reduzidos começam ativados.
@@ -29,3 +29,5 @@ node --check preunity/lab/lab.mjs
 ```
 
 [Registro da entrega e pendências](../docs/production/PREUNITY_EXECUTION_2026-10-24.md).
+
+[Cobertura sonora: personagens, armas, dano/morte e ambientes](../docs/production/audio_drafts/SFX_EVENT_MAPPING_2026-10-24.md).

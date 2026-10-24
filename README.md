@@ -21,9 +21,9 @@ As artes desta retomada estão na branch do [PR #84](https://github.com/tupiniqu
 
 ![Camada distante da floresta](assets/production_drafts/2026-10-24/parallax-v01/forest-far.png)
 
-Esta etapa acrescenta **nove camadas de cenário, um modelo neutro de Akane e 12 SFX piloto**. [Registro das seis frentes e pendências](docs/production/PREUNITY_EXECUTION_2026-10-24.md) · [Arquivos sonoros e procedência](assets/production_drafts/2026-10-24/sfx-pilot-v01/MANIFEST.json).
+Esta etapa acrescenta **nove camadas de cenário, um modelo neutro de Akane e 16 SFX gerados** (12 pilotos + quatro gravações específicas de locomoção). [Registro das seis frentes](docs/production/PREUNITY_EXECUTION_2026-10-24.md) · [Expansão sonora, armas, dano/morte e ambientes](docs/production/audio_drafts/SFX_EVENT_MAPPING_2026-10-24.md).
 
-O rig ainda é estrutural, sem arte vinculada aos ossos; as camadas precisam virar cenários jogáveis. Os sons aguardam audição e acabamento. Os 30 cues restantes continuam planejados.
+O rig ainda é estrutural, sem arte vinculada aos ossos; as camadas precisam virar cenários jogáveis. Os sons aguardam audição e acabamento. O catálogo ampliado tem 84 cues: 16 arquivos gerados e 68 aguardando geração por indisponibilidade de créditos. A bancada permite buscar e filtrar os sons, incluindo as pendências.
 
 ## Árvore de habilidades — Raízes do Trovão
 

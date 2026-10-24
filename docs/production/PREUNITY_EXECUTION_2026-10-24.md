@@ -1,5 +1,7 @@
 # Avanço das seis frentes — 24/10/2026
 
+> Expansão posterior: [SFX específicos e eventos](audio_drafts/SFX_EVENT_MAPPING_2026-10-24.md). O estado inicial de 12/42 sons abaixo foi ampliado para 16 arquivos em um catálogo de 84 cues; 68 aguardam geração por créditos insuficientes.
+
 Esta entrega avança as seis frentes autorizadas antes do Unity. A [bancada local](../../preunity/README.md) permite avaliar os arquivos e interações. Não encerra a produção de todos os assets ou sua integração.
 
 | Frente | Arquivos entregues | Próximo trabalho de produção |

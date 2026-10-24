@@ -4,7 +4,8 @@ const base='../../assets/production_drafts/2026-10-24/';
 async function json(path){const r=await fetch(path);if(!r.ok)throw Error('Não foi possível abrir '+path);return r.json();}
 function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
 try {
-const [rig,animation,skills,sounds,progress]=await Promise.all([json('rig.json'),json('clips.json'),json(base+'skill-tree-v02/SKILL_TREE_DESIGN.json'),json(base+'sfx-pilot-v01/MANIFEST.json'),json('production-progress.json')]);
+const [rig,animation,skills,pilot,specific,catalog,progress]=await Promise.all([json('rig.json'),json('clips.json'),json(base+'skill-tree-v02/SKILL_TREE_DESIGN.json'),json(base+'sfx-pilot-v01/MANIFEST.json'),json(base+'sfx-specific-v01/MANIFEST.json'),json('../../docs/production/audio_drafts/SFX_CUE_PLAN_2026-10-24.json'),json('production-progress.json')]);
+const sounds={files:[...pilot.files,...specific.files]};
 let tab='rig',playing=false,time=0,last=performance.now(),clip=animation.clips[0],burstUntil=0;
 const soundMap=new Map(sounds.files.map(s=>[s.cue_id,s]));let currentAudio;
 function playSound(id){const s=soundMap.get(id);if(!s)return;if(currentAudio)currentAudio.pause();currentAudio=new Audio('../../'+s.file);currentAudio.volume=Number($('volume').value)/100;currentAudio.play().then(()=>{$('audioState').textContent='Reproduzindo: '+id;}).catch(()=>{$('audioState').textContent='Use o botão Reproduzir para permitir áudio neste navegador.';});}
@@ -32,7 +33,19 @@ function drawSkills(){$('skillGrid').replaceChildren();for(const branch of skill
 function details(){if(!selected)return;$('skillName').textContent=selected.name;const req=selected.requires.map(id=>all.find(n=>n.id===id)?.name||'Raiz Ancestral').join(', ');$('skillDetail').textContent='Pré-requisito: '+req+'. Custo: a definir. Movimentos de referência: '+(selected.motion_studies.join(', ')||'pose compartilhada / efeito passivo')+'.';$('previewUnlock').disabled=unlocked.has(selected.id)||!canPreviewUnlock(selected,unlocked);}
 $('previewUnlock').addEventListener('click',()=>{if(selected&&canPreviewUnlock(selected,unlocked)){unlocked.add(selected.id);persist();drawSkills();details();playSound('ui_confirm');}});
 $('resetPreview').addEventListener('click',()=>{unlocked.clear();persist();drawSkills();details();});drawSkills();
-for(const s of sounds.files){const card=el('article');card.append(el('h3',s.cue_id),el('p',s.duration_seconds_from_frames+' s · '+s.sample_rate_hz+' Hz · MP3 original'),el('p','Piloto gerado · audição pendente','pill'));const b=el('button','Reproduzir');b.addEventListener('click',()=>playSound(s.cue_id));card.append(b);$('audioList').append(card);}
+const familyNames={combate:'Combate',personagem:'Akane: dano e morte',movimento:'Movimento',inimigos:'Inimigos',armas:'Armas',ambientes:'Ambientes',trovao:'Trovão',interface_progressao:'Interface e progressão'};
+const audioControls=el('div',undefined,'controls'),search=el('input'),family=el('select'),pendingLabel=el('label'),pending=el('input'),audioCount=el('p');
+search.type='search';search.placeholder='Buscar ação, personagem ou arma';search.setAttribute('aria-label','Buscar som');
+family.setAttribute('aria-label','Família de sons');const any=el('option','Todas as famílias');any.value='';family.append(any);
+for(const f of [...new Set(catalog.cues.map(c=>c.family))].sort()){const o=el('option',familyNames[f]||f);o.value=f;family.append(o);}
+pending.type='checkbox';pendingLabel.append(pending,document.createTextNode(' Mostrar também sons pendentes'));
+audioControls.append(search,family,pendingLabel);$('audioList').before(audioControls,audioCount);
+function drawAudio(){const q=search.value.trim().toLocaleLowerCase('pt-BR');const cues=catalog.cues.filter(c=>(pending.checked||soundMap.has(c.id))&&(!family.value||c.family===family.value)&&(!q||(c.label+' '+c.id).toLocaleLowerCase('pt-BR').includes(q)));$('audioList').replaceChildren();
+audioCount.textContent=cues.length+' nesta seleção · '+sounds.files.length+' arquivos gerados · '+(catalog.cues.length-sounds.files.length)+' aguardam geração.';
+for(const c of cues){const s=soundMap.get(c.id),card=el('article');card.append(el('h3',c.label),el('p',(familyNames[c.family]||c.family)+' · '+c.id));
+if(s){card.append(el('p',s.duration_seconds_from_frames+' s · '+s.sample_rate_hz+' Hz · MP3 original'),el('p','Gerado · audição e edição pendentes','pill'));const b=el('button','Reproduzir '+c.label);b.addEventListener('click',()=>playSound(c.id));card.append(b);}
+else{card.append(el('p','Aguardando geração · serviço sem créditos','pill'));} $('audioList').append(card);}}
+search.addEventListener('input',drawAudio);family.addEventListener('change',drawAudio);pending.addEventListener('change',drawAudio);drawAudio();
 $('volume').addEventListener('input',()=>{if(currentAudio)currentAudio.volume=Number($('volume').value)/100;});
 for(const f of progress.fronts){const card=el('article');card.append(el('h3',f.name),el('p',f.delivered),el('p','Ainda falta: '+f.remaining));$('progress').append(card);}
 function frame(now){const dt=Math.min(100,now-last);last=now;if(playing&&tab==='rig'){time=Math.min(1,time+dt/clip.duration_ms);$('scrub').value=Math.round(time*100);if(time>=1){playing=false;$('play').textContent='Reproduzir';}}if(tab==='rig')drawRig();if(tab==='scene')drawFX(now);requestAnimationFrame(frame);}requestAnimationFrame(frame);
