@@ -76,6 +76,9 @@ def main():
     check(packages.get("com.unity.inputsystem") == "1.20.1" and
           packages.get("com.unity.ugui") == "2.0.0", "Package version drift")
     build = (ASSETS/"RastaQuest/Editor/ReviewBuild.cs").read_text()
+    check('Path.Combine(Application.dataPath, "Scenes")' in build and
+          "Path.Combine(projectRoot,path)" in build,
+          "Editor paths must resolve within Unity project")
     for term in ("com.tupiniquim.rastaquest.unityreview", "AndroidSdkVersions)36",
                  "AndroidArchitecture.ARMv7|AndroidArchitecture.ARM64", "BuildOptions.Development"):
         check(term in build, f"Build source contract missing: {term}")
