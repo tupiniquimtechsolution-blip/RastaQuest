@@ -2,10 +2,10 @@ name: Unity Source Contracts (not Editor or APK)
 
 on:
   pull_request:
-    paths: ["unity/**", "tools/sync_unity_review.py", ".github/workflows/unity-source.yml"]
+    paths: ["unity/**", "tools/sync_unity_review.py", "tools/check_unity_source_contracts.py", "tools/check_unity_source.py", ".github/workflows/unity-source.yml"]
   push:
     branches: [main]
-    paths: ["unity/**", "tools/sync_unity_review.py", ".github/workflows/unity-source.yml"]
+    paths: ["unity/**", "tools/sync_unity_review.py", "tools/check_unity_source_contracts.py", "tools/check_unity_source.py", ".github/workflows/unity-source.yml"]
 
 permissions:
   contents: read
@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify copied review assets
         run: python -B tools/sync_unity_review.py --check
+      - name: Audit bridge and source-only release boundaries
+        run: python -B tools/check_unity_source_contracts.py
       - name: Compile and execute independent C# rules
         shell: pwsh
         run: |

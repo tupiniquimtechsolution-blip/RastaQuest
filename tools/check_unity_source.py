@@ -28,7 +28,8 @@ def main():
     patterns = ['unity/Assets/RastaQuest/**/*.cs', 'unity/Assets/RastaQuest/**/*.asmdef',
                 'unity/Tests/*.cs', 'unity/Packages/manifest.json', 'unity/ProjectSettings/*',
                 'unity/Assets/Resources/ReviewArt/IMPORT_MANIFEST.json',
-                'tools/sync_unity_review.py', 'tools/check_unity_source.py']
+                'tools/sync_unity_review.py', 'tools/check_unity_source_contracts.py',
+                'tools/check_unity_source.py']
     for pattern in patterns:
         for path in sorted(ROOT.glob(pattern)):
             if path.is_file():
@@ -41,6 +42,7 @@ def main():
         binary = output/'core-tests.exe'
         commands = [
             ('asset_bridge', [sys.executable, '-B', str(ROOT/'tools/sync_unity_review.py'), '--check']),
+            ('source_contracts', [sys.executable, '-B', str(ROOT/'tools/check_unity_source_contracts.py')]),
             ('compile_core', [str(compiler), '/nologo', '/out:'+str(binary),
                               *map(str, sorted((ROOT/'unity/Assets/RastaQuest/Core').glob('*.cs'))),
                               str(ROOT/'unity/Tests/RulesTests.cs')]),

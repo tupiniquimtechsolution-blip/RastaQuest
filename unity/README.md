@@ -20,9 +20,15 @@ Os controles e as strings desta sala são de revisão. Idioma PT/ES e sombra red
 
 ## Build reproduzível
 
-Executar o editor real com `-batchmode -quit -projectPath <pasta-unity> -executeMethod RastaQuest.Editor.ReviewBuild.Windows -logFile <arquivo>` para Windows, ou `RastaQuest.Editor.ReviewBuild.Android` para Android. Resultados vão para `Builds/`, ignorada pelo Git. O build Android é de desenvolvimento, pacote `com.tupiniquim.rastaquest.unityreview`, versão `1.0.0-unity.1`, código 1000006, ARMv7+ARM64, SDK mínimo 24/alvo 36, GLES3, rotação horizontal nos dois sentidos.
+Executar o editor real com `-batchmode -quit -projectPath <pasta-unity> -executeMethod RastaQuest.Editor.ReviewBuild.Windows -logFile <arquivo>` para Windows, ou `RastaQuest.Editor.ReviewBuild.Android` para Android. Resultados vão para `Builds/`, ignorada pelo Git. O build Android é de desenvolvimento, pacote `com.tupiniquim.rastaquest.unityreview`, versão `1.0.0-unity.1`, código 1000006, ARMv7+ARM64, SDK mínimo 25 (Android 7.1, piso do Unity 6.3)/alvo 36, GLES3, rotação horizontal nos dois sentidos.
 
 O comando de preparação grava cena/configuração; revisar e versionar os arquivos gerados **após executar o editor**. Não versionar Library, Temp, caches, APKs, chaves ou tokens. O editor deverá gerar o lock de pacotes real; um lock não resolvido não é fabricado aqui.
+
+## Fonte e paridade
+
+- [Matriz de paridade Unity ↔ Godot e gates de aceitação](../docs/production/UNITY_PARITY_GATE_2026-10-24.md).
+- `python -B tools/check_unity_source_contracts.py`: checks de integridade, referências e configuração em fonte; **não** executa o Editor ou APK.
+- Analógico centralizado e IDs de toques liberados após cancelamento são correções em revisão, não validações físicas.
 
 ## Verificações e limites
 

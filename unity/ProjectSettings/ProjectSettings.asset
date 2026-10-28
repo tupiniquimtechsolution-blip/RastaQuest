@@ -18,5 +18,5 @@ PlayerSettings:
   activeInputHandler: 1
   bundleVersion: 1.0.0-unity.1
   AndroidBundleVersionCode: 1000006
-  AndroidMinSdkVersion: 24
+  AndroidMinSdkVersion: 25
   AndroidTargetSdkVersion: 36

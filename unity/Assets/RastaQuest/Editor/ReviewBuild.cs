@@ -23,7 +23,7 @@ namespace RastaQuest.Editor
         [MenuItem("Rasta Quest/Preparar sala Unity")]
         public static void Prepare()
         {
-            Directory.CreateDirectory("Assets/Scenes");
+            Directory.CreateDirectory(Path.Combine(Application.dataPath, "Scenes"));
             var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
             new GameObject("RastaQuestUnityReview").AddComponent<SliceBootstrap>();
             EditorSceneManager.SaveScene(scene,Scene);EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene(Scene,true)};
@@ -33,7 +33,7 @@ namespace RastaQuest.Editor
             PlayerSettings.allowedAutorotateToLandscapeLeft=true;PlayerSettings.allowedAutorotateToLandscapeRight=true;
             PlayerSettings.allowedAutorotateToPortrait=false;PlayerSettings.allowedAutorotateToPortraitUpsideDown=false;
             PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,"com.tupiniquim.rastaquest.unityreview");
-            PlayerSettings.Android.bundleVersionCode=1000006;PlayerSettings.Android.minSdkVersion=(AndroidSdkVersions)24;PlayerSettings.Android.targetSdkVersion=(AndroidSdkVersions)36;
+            PlayerSettings.Android.bundleVersionCode=1000006;PlayerSettings.Android.minSdkVersion=(AndroidSdkVersions)25;PlayerSettings.Android.targetSdkVersion=(AndroidSdkVersions)36;
             PlayerSettings.Android.targetArchitectures=AndroidArchitecture.ARMv7|AndroidArchitecture.ARM64;
             PlayerSettings.SetScriptingBackend(UnityEditor.Build.NamedBuildTarget.Android,ScriptingImplementation.IL2CPP);
             PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.Android,false);
@@ -50,8 +50,11 @@ namespace RastaQuest.Editor
         }
         private static void Build(BuildTarget target,string path)
         {
-            Directory.CreateDirectory(Path.GetDirectoryName(path));
-            var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{Scene},locationPathName=path,target=target,options=BuildOptions.Development});
+            // Resolve beneath the Unity project, regardless of the CLI working directory.
+            string projectRoot=Directory.GetParent(Application.dataPath).FullName;
+            string outputPath=Path.GetFullPath(Path.Combine(projectRoot,path));
+            Directory.CreateDirectory(Path.GetDirectoryName(outputPath));
+            var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{Scene},locationPathName=outputPath,target=target,options=BuildOptions.Development});
             if(report.summary.result!=BuildResult.Succeeded)throw new System.Exception("Unity review build failed: "+report.summary.result);
             Debug.Log("RQ_UNITY_BUILD_OK "+target+" bytes="+report.summary.totalSize);
         }
