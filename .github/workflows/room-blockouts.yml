@@ -1,0 +1,25 @@
+name: Side-Scrolling Room Plan Contracts
+
+on:
+  pull_request:
+    paths:
+      - "docs/production/room_blockouts/**"
+      - "docs/production/ROOM_BLOCKOUT_PIPELINE_2026-10-27.md"
+      - "tools/validate_room_blockouts.py"
+      - "tools/test_room_blockouts.py"
+      - ".github/workflows/room-blockouts.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  room-plan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate 21 room references, 105 cowrie IDs and bosses
+        run: |
+          python -B tools/validate_room_blockouts.py
+          python -B -m unittest discover -s tools -p test_room_blockouts.py -v
+      - name: Source-only boundary
+        run: echo "No actual Unity scenes, physics or Android APK are tested in this workflow."
