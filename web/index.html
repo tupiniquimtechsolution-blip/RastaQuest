@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10211e">
+  <meta name="description" content="Protótipo 2D de revisão de Rasta Quest, jogável no navegador.">
+  <title>Rasta Quest · Protótipo web</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span><span>RASTA<span class="brand-light">QUEST</span></span><small>PROTÓTIPO WEB</small></div>
+      <div class="top-actions"><button id="helpButton" class="text-button" type="button">Como jogar</button><button id="restartButton" class="text-button" type="button">Recomeçar</button></div>
+    </header>
+
+    <main>
+      <section class="game-panel" aria-label="Jogo">
+        <div class="hud" aria-live="polite">
+          <div class="hud-room"><span class="eyebrow" id="biomeName">FLORESTA</span><strong id="roomName">Carregando sala…</strong></div>
+          <div class="hud-metrics"><span id="health" title="Vida">♥ ♥ ♥</span><span id="lives" title="Vidas">VIDAS 03</span><span id="shells" title="Búzios nesta sala">BÚZIOS 0/5</span><span id="total" title="Búzios na jornada">TOTAL 0/105</span></div>
+        </div>
+
+        <div class="canvas-wrap">
+          <canvas id="game" width="960" height="540" role="img" aria-label="Cena do jogo Rasta Quest em visão lateral">Seu navegador não suporta canvas.</canvas>
+          <div id="startOverlay" class="overlay"><div class="overlay-card"><span class="eyebrow">JORNADA EM 21 SALAS</span><h1>Entre na trilha</h1><p>Corra, salte, enfrente guardiões e encontre os cinco búzios de cada sala.</p><button id="startButton" class="primary-button" type="button">Jogar agora <span aria-hidden="true">→</span></button><small>Teclado ou controles na tela</small></div></div>
+          <div id="endOverlay" class="overlay hidden"><div class="overlay-card"><span class="eyebrow" id="endEyebrow">JORNADA CONCLUÍDA</span><h2 id="endTitle">Vitória!</h2><p id="endBody"></p><button id="endButton" class="primary-button" type="button">Jogar novamente <span aria-hidden="true">↻</span></button></div></div>
+        </div>
+
+        <div class="stage-footer"><div class="route"><span class="eyebrow">ROTA</span><div id="routeTrack" class="route-track" aria-label="Progresso da rota"></div></div><div id="message" class="stage-message" role="status">A entrada está à esquerda. Siga até o portal à direita.</div></div>
+      </section>
+
+      <section class="below-game">
+        <div class="controls-info"><strong>Controles</strong><span><kbd>A</kbd>/<kbd>D</kbd> ou <kbd>←</kbd>/<kbd>→</kbd> mover</span><span><kbd>W</kbd>/<kbd>↑</kbd>/<kbd>Espaço</kbd> saltar</span><span><kbd>J</kbd> atacar</span><span><kbd>E</kbd> entrar no portal</span></div>
+        <div class="review-note"><strong>Prévia de revisão</strong><span>Arte e regras em desenvolvimento. Esta versão web serve para testar navegação e combate; não representa a compilação Unity.</span></div>
+      </section>
+
+      <nav class="touch-controls" aria-label="Controles de toque"><div class="touch-cluster"><button data-control="left" type="button" aria-label="Mover para esquerda">◀</button><button data-control="right" type="button" aria-label="Mover para direita">▶</button></div><div class="touch-cluster"><button data-control="attack" type="button" aria-label="Atacar">⚔<small>ATAQUE</small></button><button data-control="jump" type="button" aria-label="Saltar">↑<small>SALTO</small></button><button data-control="interact" type="button" aria-label="Entrar no portal">✦<small>ENTRAR</small></button></div></nav>
+    </main>
+  </div>
+
+  <dialog id="helpDialog"><div class="dialog-head"><h2>Como jogar</h2><button id="closeHelp" class="icon-button" type="button" aria-label="Fechar">×</button></div><p>Explore as 21 salas, sete por bioma. Cada sala tem cinco búzios físicos; pegar os cinco concede uma vida extra uma única vez nessa sala. Checkpoints acendem ao passar. Derrote os inimigos para abrir a saída e pressione <kbd>E</kbd> junto ao portal.</p><p>Use <kbd>A</kbd>/<kbd>D</kbd> para andar, <kbd>W</kbd> ou <kbd>Espaço</kbd> para saltar e <kbd>J</kbd> para atacar. No celular, use os botões abaixo do jogo.</p><p class="dialog-foot">A arte de revisão tem procedência registrada, com aprovações comercial e cultural pendentes.</p></dialog>
+  <script type="module" src="./main.mjs"></script>
+</body>
+</html>
