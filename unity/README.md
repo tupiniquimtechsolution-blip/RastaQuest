@@ -16,7 +16,7 @@ As 274 imagens copiadas são **artes de revisão transitórias**, idênticas às
 4. Usar o menu **Rasta Quest → Preparar sala Unity**, abrir `Assets/Scenes/UnityReview.unity` e pressionar Play.
 5. Teclado: A/D ou setas movem; W/seta para cima/espaço pulam; J ataca; K defende; Esc pausa. No toque, analógico esquerdo, gesto para cima e botões circulares à direita. O botão II abre pausa, idioma PT/ES e redução da sombra.
 
-Os controles e as strings desta sala são de revisão. Não substituem o sistema completo de configurações/traduções/saves do jogo entregue. A morte encerra a sala; reiniciar Play recupera o estado. Menu de morte e persistência são gates de paridade.
+Os controles e as strings desta sala são de revisão. Idioma PT/ES e sombra reduzida ficam salvos localmente; não substituem as configurações, traduções e saves da campanha. Após a derrota há botão de reinício da tentativa, que limpa melhorias e retorna à Floresta. Veja o [roteiro e limites do primeiro teste real](../docs/production/UNITY_PRETEST_HANDOFF_2026-10-28.md).
 
 ## Build reproduzível
 
@@ -28,6 +28,7 @@ O comando de preparação grava cena/configuração; revisar e versionar os arqu
 
 - `tools/sync_unity_review.py --check`: confirma origem e igualdade dos bytes, não qualidade/autorizações artísticas.
 - `Tests/RulesTests.cs`: executável C# independente com casos de tempo de ataque, hit único, combo, cancelamento, parry, reflexão, cura e salto. Não depende do Unity e não comprova importação/Play Mode.
+- `python -B tools/check_unity_source.py`: repete sincronismo, compilação/execução de todas as regras C# e checagem de whitespace; grava relatório e hashes em `Builds/SourceChecks/` sem declarar runtime testado.
 - `RastaQuest.Editor.ReviewBuild.Prepare/Windows/Android`: somente o sucesso do editor real comprova cada etapa.
 - Próximos gates: regressão de input/colisão/portal em Play Mode, capturas nativas, APK real, instalação/rotação/desempenho no A13, equipamentos alinhados, todos os arquétipos e chefes, saves/progressão, áudio e narrativa.
 - URP 2D, luzes e sombras dinâmicas são a etapa seguinte após a paridade inicial; não estão configurados neste protótipo. O estudo ilustrado exige produção de assets separados e animação nova.

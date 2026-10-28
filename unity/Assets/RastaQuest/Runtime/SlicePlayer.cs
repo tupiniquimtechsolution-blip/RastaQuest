@@ -30,7 +30,7 @@ namespace RastaQuest.Unity
         {
             if (Input == null || Time.timeScale == 0) return;
             float dt = Time.deltaTime; Rules.Step(dt); hurt = Mathf.Max(0,hurt-dt);
-            bool grounded = Physics2D.OverlapBox((Vector2)transform.position+Vector2.down*.42f,new Vector2(.31f,.06f),0,1) != null;
+            bool grounded = Body.linearVelocity.y <= .05f && Physics2D.OverlapBox((Vector2)transform.position+Vector2.down*.42f,new Vector2(.31f,.06f),0,1) != null;
             Jumps.Step(dt,grounded);
             if (Input.TakeJump() && !Rules.Dead && !Rules.Locked && hurt <= 0) Jumps.Press();
             if (Input.TakeAttack() && hurt <= 0) Rules.RequestAttack();

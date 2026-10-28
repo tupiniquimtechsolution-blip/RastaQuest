@@ -31,6 +31,7 @@ namespace RastaQuest.Unity
     public sealed class ClipPlayer : MonoBehaviour
     {
         public string Actor = "player";
+        public float RenderScale = .575f;
         private SpriteRenderer body;
         private readonly SpriteRenderer[] equipment = new SpriteRenderer[2];
         private string key;
@@ -39,7 +40,7 @@ namespace RastaQuest.Unity
         public void Initialize(string actor)
         {
             Actor = actor; body = gameObject.AddComponent<SpriteRenderer>(); body.sortingOrder = 10;
-            transform.localScale = Vector3.one*.575f;
+            transform.localScale = Vector3.one*RenderScale;
             for (int i = 0; i < equipment.Length; i++)
             {
                 var part = new GameObject("Equipment").AddComponent<SpriteRenderer>();
@@ -57,7 +58,7 @@ namespace RastaQuest.Unity
             int index = 0;
             while (index < sequence.frames.Length-1 && time >= sequence.frames[index].seconds) { time -= sequence.frames[index].seconds; index++; }
             var frame = sequence.frames[index]; body.sprite = ReviewArt.Sprite(frame.file);
-            transform.localScale = new Vector3(.575f*facing,.575f,1);
+            transform.localScale = new Vector3(RenderScale*facing,RenderScale,1);
             for (int i = 0; i < equipment.Length; i++)
             {
                 equipment[i].enabled = frame.equipment != null && i < frame.equipment.Length;

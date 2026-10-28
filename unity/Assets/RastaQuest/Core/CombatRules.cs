@@ -73,10 +73,12 @@ namespace RastaQuest.Core
         public void ReleaseGuard() { Guarding = false; GuardAge = 0; }
         public DefenseResult Receive(float amount, HitKind kind)
         {
-            if (Dead || Locked || amount <= 0 || invulnerability > 0) return DefenseResult.Damage;
+            if (Dead || Locked || amount <= 0 || float.IsNaN(amount) || float.IsInfinity(amount)) return DefenseResult.Damage;
+            // Damage immunity must not swallow a held-guard projectile reflection.
+            if (Guarding && kind == HitKind.Projectile) return DefenseResult.Reflected;
+            if (invulnerability > 0) return DefenseResult.Damage;
             if (Guarding)
             {
-                if (kind == HitKind.Projectile) return DefenseResult.Reflected;
                 if (kind == HitKind.Melee && !spent && GuardAge <= PerfectWindow && counterCooldown <= 0)
                 { spent = true; counterCooldown = .22f; return DefenseResult.Parried; }
                 Health = Math.Max(0, Health-amount*.5f); invulnerability = .35f;

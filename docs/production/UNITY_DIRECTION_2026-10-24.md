@@ -28,3 +28,7 @@ Riscos a resolver ao executar o editor: importação/configuração nativa, APIs
 [Issue #80 — instalação/importação/build](https://github.com/tupiniquimtechsolution-blip/RastaQuest/issues/80) depende do acesso de administrador. Depois, [Issue #81 — prova da primeira sala e HUD no A13](https://github.com/tupiniquimtechsolution-blip/RastaQuest/issues/81). As issues #35–38 continuam abertas para arte/cultura e #50 mantém o gate Android API 36/alinhamento 16 KB. Registro do PR e CI fica na conversa e no checkpoint de entrega; o rascunho não é integrado enquanto o código Unity não puder ser validado.
 
 **GREEN comercial: NO-GO.** Aprovação da direção não é aceite dos ativos, da migração ou da versão final.
+
+## Avanço de 28/10/2026
+
+O [roteiro pré-teste](UNITY_PRETEST_HANDOFF_2026-10-28.md) registra correção do analógico, vida do portal, pausa/modal/foco, tradução PT/ES, derrota/reinício e a prova nativa ampliada ainda não executada. O núcleo C# independente passou **72 asserções** e as 274 cópias transitórias permanecem idênticas. Editor e módulo Android continuam aguardando acesso de administrador; portanto importação, build, APK e aceite físico permanecem pendentes.

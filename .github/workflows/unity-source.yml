@@ -22,7 +22,8 @@ jobs:
         run: |
           $compiler = Join-Path $env:WINDIR 'Microsoft.NET/Framework64/v4.0.30319/csc.exe'
           $binary = Join-Path $env:RUNNER_TEMP 'rasta-quest-unity-core-tests.exe'
-          & $compiler /nologo "/out:$binary" 'unity\Assets\RastaQuest\Core\CombatRules.cs' 'unity\Assets\RastaQuest\Core\JumpRules.cs' 'unity\Tests\RulesTests.cs'
+          $sources = @(Get-ChildItem 'unity/Assets/RastaQuest/Core/*.cs' | ForEach-Object FullName)
+          & $compiler /nologo "/out:$binary" @sources 'unity\Tests\RulesTests.cs'
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           & $binary
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
