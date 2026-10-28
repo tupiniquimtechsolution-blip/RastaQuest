@@ -1,0 +1,2069 @@
+{
+  "version": 1,
+  "date": "2026-10-27",
+  "status": "BLOCKOUT_PLAN_ONLY",
+  "predecessor_pr": 84,
+  "all_in_2d": true,
+  "expected_cowries": 105,
+  "visual_source_count": 21,
+  "units": "gameplay_camera_widths_not_world_pixels",
+  "physical_testing": false,
+  "unity_editor_testing": false,
+  "commercial_approved": false,
+  "rooms": [
+    {
+      "id": "forest-01",
+      "biome": "forest",
+      "room_number": 1,
+      "title": "Sala 01 — original sem título",
+      "reference_image": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-01-original.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 6,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Trilha inicial",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Ponte natural",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Primeira arena",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Plataformas",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Nicho de segredo",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Saída",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 3.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "forest-01-b1",
+          "number": 1,
+          "approx_screen": 0.5,
+          "near": "Trilha inicial",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-01-b2",
+          "number": 2,
+          "approx_screen": 1.35,
+          "near": "Ponte natural",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-01-b3",
+          "number": 3,
+          "approx_screen": 2.25,
+          "near": "Primeira arena",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-01-b4",
+          "number": 4,
+          "approx_screen": 3.25,
+          "near": "Plataformas",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-01-b5",
+          "number": 5,
+          "approx_screen": 4.55,
+          "near": "Nicho de segredo",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "forest-02",
+      "biome": "forest",
+      "room_number": 2,
+      "title": "Ponte das Raízes Profanadas",
+      "reference_image": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-02-ponte-das-raizes-profanadas.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 6,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Raízes",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Ponte fraturada",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Argolas",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Arqueiro no mirante",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Baú na alcova",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Travessia final",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 3.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "forest-02-b1",
+          "number": 1,
+          "approx_screen": 0.5,
+          "near": "Raízes",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-02-b2",
+          "number": 2,
+          "approx_screen": 1.35,
+          "near": "Ponte fraturada",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-02-b3",
+          "number": 3,
+          "approx_screen": 2.25,
+          "near": "Argolas",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-02-b4",
+          "number": 4,
+          "approx_screen": 3.25,
+          "near": "Arqueiro no mirante",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-02-b5",
+          "number": 5,
+          "approx_screen": 4.55,
+          "near": "Baú na alcova",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "forest-03",
+      "biome": "forest",
+      "room_number": 3,
+      "title": "Viveiro dos Xamãs Corrompidos",
+      "reference_image": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-03-viveiro-dos-xamas-corrompidos.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 7,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Entrada",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Passarelas",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Mirante xamã",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Escada de raízes",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Arena ritual",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Desvio alto",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Saída",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 4.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "forest-03-b1",
+          "number": 1,
+          "approx_screen": 0.6,
+          "near": "Entrada",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-03-b2",
+          "number": 2,
+          "approx_screen": 1.8,
+          "near": "Passarelas",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-03-b3",
+          "number": 3,
+          "approx_screen": 3,
+          "near": "Escada de raízes",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-03-b4",
+          "number": 4,
+          "approx_screen": 4.3,
+          "near": "Arena ritual",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-03-b5",
+          "number": 5,
+          "approx_screen": 5.5,
+          "near": "Desvio alto",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "forest-04",
+      "biome": "forest",
+      "room_number": 4,
+      "title": "Cascata dos Ecos de Pedra",
+      "reference_image": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-04-cascata-dos-ecos-de-pedra.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 7,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Trilha",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Ponte molhada",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Galeria da água",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Argolas altas",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Arena rochosa",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Caverna secreta",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Saída",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 4.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "forest-04-b1",
+          "number": 1,
+          "approx_screen": 0.6,
+          "near": "Trilha",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-04-b2",
+          "number": 2,
+          "approx_screen": 1.8,
+          "near": "Ponte molhada",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-04-b3",
+          "number": 3,
+          "approx_screen": 3,
+          "near": "Argolas altas",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-04-b4",
+          "number": 4,
+          "approx_screen": 4.3,
+          "near": "Arena rochosa",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-04-b5",
+          "number": 5,
+          "approx_screen": 5.5,
+          "near": "Caverna secreta",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "forest-05",
+      "biome": "forest",
+      "room_number": 5,
+      "title": "Clareira do Julgamento de Ogum",
+      "reference_image": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-05-clareira-do-julgamento-de-ogum.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 7,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Entrada da clareira",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Torre de arqueiro",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Escalada",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Arena do duelista",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Desvio alto",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Baú das botas",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Saída",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 4.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "forest-05-b1",
+          "number": 1,
+          "approx_screen": 0.6,
+          "near": "Entrada da clareira",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-05-b2",
+          "number": 2,
+          "approx_screen": 1.8,
+          "near": "Torre de arqueiro",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-05-b3",
+          "number": 3,
+          "approx_screen": 3,
+          "near": "Arena do duelista",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-05-b4",
+          "number": 4,
+          "approx_screen": 4.3,
+          "near": "Desvio alto",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-05-b5",
+          "number": 5,
+          "approx_screen": 5.5,
+          "near": "Baú das botas",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "forest-06",
+      "biome": "forest",
+      "room_number": 6,
+      "title": "Coração da Árvore Profanada",
+      "reference_image": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-06-coracao-da-arvore-profanada.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 7,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Caminho de raízes",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Ponte",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Mirante",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Arena de raízes",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Rota alta",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Antecâmara",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Portão do chefe",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 4.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "forest-06-b1",
+          "number": 1,
+          "approx_screen": 0.6,
+          "near": "Caminho de raízes",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-06-b2",
+          "number": 2,
+          "approx_screen": 1.8,
+          "near": "Ponte",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-06-b3",
+          "number": 3,
+          "approx_screen": 3,
+          "near": "Arena de raízes",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-06-b4",
+          "number": 4,
+          "approx_screen": 4.3,
+          "near": "Rota alta",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-06-b5",
+          "number": 5,
+          "approx_screen": 5.5,
+          "near": "Antecâmara",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "forest-07",
+      "biome": "forest",
+      "room_number": 7,
+      "title": "Trono da Raiz Julgadora",
+      "reference_image": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/floresta/sala-07-trono-da-raiz-julgadora.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 5,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Entrada",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Baú lateral",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Preparação",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Arena de chefe",
+          "role": "boss"
+        },
+        {
+          "index": 4,
+          "name": "Saída ao castelo",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 2.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "forest-07-b1",
+          "number": 1,
+          "approx_screen": 0.35,
+          "near": "Entrada",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-07-b2",
+          "number": 2,
+          "approx_screen": 0.85,
+          "near": "Entrada",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-07-b3",
+          "number": 3,
+          "approx_screen": 1.4,
+          "near": "Baú lateral",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-07-b4",
+          "number": 4,
+          "approx_screen": 2.05,
+          "near": "Preparação",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "forest-07-b5",
+          "number": 5,
+          "approx_screen": 2.72,
+          "near": "Preparação",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": true,
+      "boss_start_screen": 3,
+      "exit_rule": "BIOME_BOSS_DEFEATED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "castle-01",
+      "biome": "castle",
+      "room_number": 1,
+      "title": "Portão das Muralhas Quebradas",
+      "reference_image": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-01-portao-das-muralhas-quebradas.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 6,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Chegada",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Pátio",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Passarela",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Cavaleiros",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Torre alta",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Porta de correntes",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 3.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "castle-01-b1",
+          "number": 1,
+          "approx_screen": 0.5,
+          "near": "Chegada",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-01-b2",
+          "number": 2,
+          "approx_screen": 1.35,
+          "near": "Pátio",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-01-b3",
+          "number": 3,
+          "approx_screen": 2.25,
+          "near": "Passarela",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-01-b4",
+          "number": 4,
+          "approx_screen": 3.25,
+          "near": "Cavaleiros",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-01-b5",
+          "number": 5,
+          "approx_screen": 4.55,
+          "near": "Torre alta",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "castle-02",
+      "biome": "castle",
+      "room_number": 2,
+      "title": "Galeria das Correntes Partidas",
+      "reference_image": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-02-galeria-das-correntes-partidas.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 7,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Entrada",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Correntes baixas",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Elevador",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Argolas altas",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Armadilha de grade",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Baú elevado",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Saída",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 4.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "castle-02-b1",
+          "number": 1,
+          "approx_screen": 0.6,
+          "near": "Entrada",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-02-b2",
+          "number": 2,
+          "approx_screen": 1.8,
+          "near": "Correntes baixas",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-02-b3",
+          "number": 3,
+          "approx_screen": 3,
+          "near": "Argolas altas",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-02-b4",
+          "number": 4,
+          "approx_screen": 4.3,
+          "near": "Armadilha de grade",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-02-b5",
+          "number": 5,
+          "approx_screen": 5.5,
+          "near": "Baú elevado",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "castle-03",
+      "biome": "castle",
+      "room_number": 3,
+      "title": "Salão dos Arcos Caídos",
+      "reference_image": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-03-salao-dos-arcos-caidos.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 7,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Entrada",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Galeria",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Arcanista alto",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Arena de arcos",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Ponte caída",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Tesouro",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Saída",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 4.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "castle-03-b1",
+          "number": 1,
+          "approx_screen": 0.6,
+          "near": "Entrada",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-03-b2",
+          "number": 2,
+          "approx_screen": 1.8,
+          "near": "Galeria",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-03-b3",
+          "number": 3,
+          "approx_screen": 3,
+          "near": "Arena de arcos",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-03-b4",
+          "number": 4,
+          "approx_screen": 4.3,
+          "near": "Ponte caída",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-03-b5",
+          "number": 5,
+          "approx_screen": 5.5,
+          "near": "Tesouro",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "castle-04",
+      "biome": "castle",
+      "room_number": 4,
+      "title": "Torre do Sino Rachado",
+      "reference_image": "assets/production_drafts/2026-10-24/recovered-chat-originals-v01/biomes/castelo/sala-04-torre-do-sino-rachado.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 8,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Porta baixa",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Base do sino",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Primeira subida",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Repouso",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Argolas",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Arcanista",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Descida",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 7,
+          "name": "Saída da forja",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 5.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "castle-04-b1",
+          "number": 1,
+          "approx_screen": 0.65,
+          "near": "Porta baixa",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-04-b2",
+          "number": 2,
+          "approx_screen": 2,
+          "near": "Primeira subida",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-04-b3",
+          "number": 3,
+          "approx_screen": 3.4,
+          "near": "Repouso",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-04-b4",
+          "number": 4,
+          "approx_screen": 5.1,
+          "near": "Arcanista",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-04-b5",
+          "number": 5,
+          "approx_screen": 6.5,
+          "near": "Descida",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "castle-05",
+      "biome": "castle",
+      "room_number": 5,
+      "title": "Forja do Ferro Sagrado",
+      "reference_image": "assets/production_drafts/2026-10-24/biome-continuation-v01/reference-castelo-sala05.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 8,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Entrada",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Ponte de metal",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Oficina",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Corredor da forja",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Lava",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Guarda",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Metal raro",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 7,
+          "name": "Saída",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 5.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "castle-05-b1",
+          "number": 1,
+          "approx_screen": 0.65,
+          "near": "Entrada",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-05-b2",
+          "number": 2,
+          "approx_screen": 2,
+          "near": "Oficina",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-05-b3",
+          "number": 3,
+          "approx_screen": 3.4,
+          "near": "Corredor da forja",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-05-b4",
+          "number": 4,
+          "approx_screen": 5.1,
+          "near": "Guarda",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-05-b5",
+          "number": 5,
+          "approx_screen": 6.5,
+          "near": "Metal raro",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "castle-06",
+      "biome": "castle",
+      "room_number": 6,
+      "title": "Galeria da Última Vigília",
+      "reference_image": "assets/production_drafts/2026-10-24/biome-continuation-v01/castelo-06.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 6,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Entrada",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Cavaleiro",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Galeria de arcos",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Ponte partida",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Memória oculta",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Porta do chefe",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 3.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "castle-06-b1",
+          "number": 1,
+          "approx_screen": 0.5,
+          "near": "Entrada",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-06-b2",
+          "number": 2,
+          "approx_screen": 1.35,
+          "near": "Cavaleiro",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-06-b3",
+          "number": 3,
+          "approx_screen": 2.25,
+          "near": "Galeria de arcos",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-06-b4",
+          "number": 4,
+          "approx_screen": 3.25,
+          "near": "Ponte partida",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-06-b5",
+          "number": 5,
+          "approx_screen": 4.55,
+          "near": "Memória oculta",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "castle-07",
+      "biome": "castle",
+      "room_number": 7,
+      "title": "Câmara do Castelo Fraturado",
+      "reference_image": "assets/production_drafts/2026-10-24/biome-continuation-v01/castelo-07.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 5,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Vestíbulo",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Nicho lateral",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Preparação",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Arena do chefe",
+          "role": "boss"
+        },
+        {
+          "index": 4,
+          "name": "Saída das cavernas",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 2.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "castle-07-b1",
+          "number": 1,
+          "approx_screen": 0.35,
+          "near": "Vestíbulo",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-07-b2",
+          "number": 2,
+          "approx_screen": 0.85,
+          "near": "Vestíbulo",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-07-b3",
+          "number": 3,
+          "approx_screen": 1.4,
+          "near": "Nicho lateral",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-07-b4",
+          "number": 4,
+          "approx_screen": 2.05,
+          "near": "Preparação",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "castle-07-b5",
+          "number": 5,
+          "approx_screen": 2.72,
+          "near": "Preparação",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": true,
+      "boss_start_screen": 3,
+      "exit_rule": "BIOME_BOSS_DEFEATED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "caves-01",
+      "biome": "caves",
+      "room_number": 1,
+      "title": "Boca dos Ecos",
+      "reference_image": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-01.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 6,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Descida",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Túnel",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Fenda mineral",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Primeiro pulso",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Corredor cristalino",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Saída",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 3.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "caves-01-b1",
+          "number": 1,
+          "approx_screen": 0.5,
+          "near": "Descida",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-01-b2",
+          "number": 2,
+          "approx_screen": 1.35,
+          "near": "Túnel",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-01-b3",
+          "number": 3,
+          "approx_screen": 2.25,
+          "near": "Fenda mineral",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-01-b4",
+          "number": 4,
+          "approx_screen": 3.25,
+          "near": "Primeiro pulso",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-01-b5",
+          "number": 5,
+          "approx_screen": 4.55,
+          "near": "Corredor cristalino",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "caves-02",
+      "biome": "caves",
+      "room_number": 2,
+      "title": "Galerias Ressonantes",
+      "reference_image": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-02.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 7,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Entrada",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Cristais",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Desvio superior",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Mirante do arcanista",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Arena de controle",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Retorno",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Saída",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 4.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "caves-02-b1",
+          "number": 1,
+          "approx_screen": 0.6,
+          "near": "Entrada",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-02-b2",
+          "number": 2,
+          "approx_screen": 1.8,
+          "near": "Cristais",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-02-b3",
+          "number": 3,
+          "approx_screen": 3,
+          "near": "Mirante do arcanista",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-02-b4",
+          "number": 4,
+          "approx_screen": 4.3,
+          "near": "Arena de controle",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-02-b5",
+          "number": 5,
+          "approx_screen": 5.5,
+          "near": "Retorno",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "caves-03",
+      "biome": "caves",
+      "room_number": 3,
+      "title": "Travessia das Fendas",
+      "reference_image": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-03.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 7,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Margem",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Ponte 1",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Ponte 2",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Ilha segura",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Galeria baixa",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Pista do charger",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Saída",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 4.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "caves-03-b1",
+          "number": 1,
+          "approx_screen": 0.6,
+          "near": "Margem",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-03-b2",
+          "number": 2,
+          "approx_screen": 1.8,
+          "near": "Ponte 1",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-03-b3",
+          "number": 3,
+          "approx_screen": 3,
+          "near": "Ilha segura",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-03-b4",
+          "number": 4,
+          "approx_screen": 4.3,
+          "near": "Galeria baixa",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-03-b5",
+          "number": 5,
+          "approx_screen": 5.5,
+          "near": "Pista do charger",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "caves-04",
+      "biome": "caves",
+      "room_number": 4,
+      "title": "Câmara das Correntes",
+      "reference_image": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-04.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 8,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Túnel",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Veios",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Plataforma segura",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Arena de controle",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Repouso",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Ponte alta",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Segundo combate",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 7,
+          "name": "Saída",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 5.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "caves-04-b1",
+          "number": 1,
+          "approx_screen": 0.65,
+          "near": "Túnel",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-04-b2",
+          "number": 2,
+          "approx_screen": 2,
+          "near": "Plataforma segura",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-04-b3",
+          "number": 3,
+          "approx_screen": 3.4,
+          "near": "Arena de controle",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-04-b4",
+          "number": 4,
+          "approx_screen": 5.1,
+          "near": "Ponte alta",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-04-b5",
+          "number": 5,
+          "approx_screen": 6.5,
+          "near": "Segundo combate",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "caves-05",
+      "biome": "caves",
+      "room_number": 5,
+      "title": "Núcleo Instável",
+      "reference_image": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-05.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 8,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Chegada",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Abrigo",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Rochas partidas",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Arena",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Observatório",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Pulsos",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Guarda elite",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 7,
+          "name": "Saída",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 5.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "caves-05-b1",
+          "number": 1,
+          "approx_screen": 0.65,
+          "near": "Chegada",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-05-b2",
+          "number": 2,
+          "approx_screen": 2,
+          "near": "Rochas partidas",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-05-b3",
+          "number": 3,
+          "approx_screen": 3.4,
+          "near": "Arena",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-05-b4",
+          "number": 4,
+          "approx_screen": 5.1,
+          "near": "Pulsos",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-05-b5",
+          "number": 5,
+          "approx_screen": 6.5,
+          "near": "Guarda elite",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "caves-06",
+      "biome": "caves",
+      "room_number": 6,
+      "title": "Limiar do Último Eco",
+      "reference_image": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-06.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 8,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Galeria longa",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Encontro 1",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Mirante",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Encontro 2",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Silêncio",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 5,
+          "name": "Rota lateral",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 6,
+          "name": "Antecâmara",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 7,
+          "name": "Porta final",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 5.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "caves-06-b1",
+          "number": 1,
+          "approx_screen": 0.65,
+          "near": "Galeria longa",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-06-b2",
+          "number": 2,
+          "approx_screen": 2,
+          "near": "Mirante",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-06-b3",
+          "number": 3,
+          "approx_screen": 3.4,
+          "near": "Encontro 2",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-06-b4",
+          "number": 4,
+          "approx_screen": 5.1,
+          "near": "Rota lateral",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-06-b5",
+          "number": 5,
+          "approx_screen": 6.5,
+          "near": "Antecâmara",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": false,
+      "boss_start_screen": null,
+      "exit_rule": "ENCOUNTER_CLEARED",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    },
+    {
+      "id": "caves-07",
+      "biome": "caves",
+      "room_number": 7,
+      "title": "Arena do Último Eco",
+      "reference_image": "assets/production_drafts/2026-10-24/biome-continuation-v01/cavernas-07.png",
+      "source_status": "CONCEPT_NOT_COLLISION_GEOMETRY",
+      "planned_camera_widths": 6,
+      "projection": "2D_LANDSCAPE_SIDE_SCROLL",
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "Antecâmara",
+          "role": "entry"
+        },
+        {
+          "index": 1,
+          "name": "Nicho",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 2,
+          "name": "Aproximação",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 3,
+          "name": "Pedestal",
+          "role": "traversal_or_encounter"
+        },
+        {
+          "index": 4,
+          "name": "Arena do chefe final",
+          "role": "boss"
+        },
+        {
+          "index": 5,
+          "name": "Epílogo",
+          "role": "exit"
+        }
+      ],
+      "checkpoint_screen": 3.2,
+      "side_route": {
+        "rejoins_main": true,
+        "requires_unreleased_ability": false
+      },
+      "cowries": [
+        {
+          "id": "caves-07-b1",
+          "number": 1,
+          "approx_screen": 0.45,
+          "near": "Antecâmara",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-07-b2",
+          "number": 2,
+          "approx_screen": 1.2,
+          "near": "Nicho",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-07-b3",
+          "number": 3,
+          "approx_screen": 1.95,
+          "near": "Nicho",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-07-b4",
+          "number": 4,
+          "approx_screen": 2.7,
+          "near": "Aproximação",
+          "status": "CANDIDATE_UNTESTED"
+        },
+        {
+          "id": "caves-07-b5",
+          "number": 5,
+          "approx_screen": 3.55,
+          "near": "Pedestal",
+          "status": "CANDIDATE_UNTESTED"
+        }
+      ],
+      "reward_for_five": {
+        "extra_lives": 1,
+        "repeat_policy": "NOT_DECIDED"
+      },
+      "boss_room": true,
+      "boss_start_screen": 4,
+      "exit_rule": "FINAL_VICTORY",
+      "approval": "PLANNING_ONLY",
+      "unity_tested": false,
+      "android_tested": false
+    }
+  ]
+}
