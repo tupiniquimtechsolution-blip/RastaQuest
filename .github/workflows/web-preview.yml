@@ -1,0 +1,35 @@
+name: Web Preview
+
+on:
+  pull_request:
+    paths:
+      - 'web/**'
+      - 'docs/production/room_blockouts/ROOM_BLOCKOUTS_V1.json'
+      - '.github/workflows/web-preview.yml'
+  push:
+    paths:
+      - 'web/**'
+      - 'docs/production/room_blockouts/ROOM_BLOCKOUTS_V1.json'
+      - '.github/workflows/web-preview.yml'
+
+jobs:
+  web-contracts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: |
+          node --check web/engine.mjs
+          node --check web/renderer.mjs
+          node --check web/main.mjs
+          node --check web/serve.mjs
+          node --check web/verify.mjs
+      - name: Verify room data and assets
+        run: node web/verify.mjs
+      - name: Test gameplay rules
+        run: node --test web/engine.test.mjs
