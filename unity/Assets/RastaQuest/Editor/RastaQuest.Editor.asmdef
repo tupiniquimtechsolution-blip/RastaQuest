@@ -1,0 +1,5 @@
+{
+  "name": "RastaQuest.Editor",
+  "references": ["RastaQuest.Runtime"],
+  "includePlatforms": ["Editor"]
+}

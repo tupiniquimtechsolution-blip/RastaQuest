@@ -3,6 +3,8 @@
 **Status:** APPROVED framework  
 **Purpose:** keep character identity consistent and convert legacy/reference material into production-ready mobile assets.
 
+**2026-10-24 amendment:** the new approved direction is detailed hand-illustrated 2D and Unity, per [ADR 0003](../adr/0003-unity-illustrated-direction.md). Pixel cleanup below describes the existing Godot payload. New production requires illustrated model/animation consistency, separated layers/equipment and native Unity import review. No concept image, copied review sprite or green Godot check automatically becomes approved Unity production art. Review provenance, culture, mobile readability and the exact built version before promotion.
+
 ## 1. Source → review → production flow
 
 ```text

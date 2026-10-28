@@ -1,7 +1,19 @@
 # Current State — Rasta Quest
 
-**Date:** 2026-10-23
+**Date:** 2026-10-28
 **Repository:** `tupiniquimtechsolution-blip/RastaQuest`
+
+## 2026-10-28 Unity pre-test continuation (draft PR #82)
+
+[Pre-test handoff](../production/UNITY_PRETEST_HANDOFF_2026-10-28.md) records the analog, modal, pause, portal, death/restart and PT/ES improvements, 72 independent C# assertions, review asset/source checks and the native probe prepared for the first real Unity run. Unity Editor and Android modules remain blocked on administrator access; no new APK or physical approval was produced. The draft remains NO-GO for commercial release.
+
+## 2026-10-24 Unity source hardening (draft PR #82)
+
+[Unity parity matrix](../production/UNITY_PARITY_GATE_2026-10-24.md) tracks touch-center correction, pointer ownership cleanup, source CI and evidence gates. Source checks do not replace Editor build or device acceptance; #80/#81 and Gold remain open.
+
+## New direction — Unity and detailed illustrated 2D
+
+Rodrigo selected detailed illustrated 2D and requested Unity for graphics, movement and polish. [ADR 0003](../adr/0003-unity-illustrated-direction.md) records the migration target; [the technical study](../product/COMBAT_ART_REFERENCE_STUDY_2026-10-24.md) separates verified reference mechanics, image observations and original proposals. `unity/` is a separate review prototype, with the Godot APK retained as functional baseline. Runtime/build verification and final illustrated animation remain gates; Godot CI green is not proof of Unity readiness. See [Unity project status](../../unity/README.md).
 
 ## Latest A13 feedback — 2026-10-23
 

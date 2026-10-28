@@ -1,0 +1,1589 @@
+{
+  "commercialApproved": false,
+  "actors": [
+    {
+      "key": "player",
+      "clips": [
+        {
+          "key": "idle",
+          "frames": [
+            {
+              "file": "ReviewArt/player/idle_01",
+              "seconds": 0.2
+            },
+            {
+              "file": "ReviewArt/player/idle_02",
+              "seconds": 0.2
+            },
+            {
+              "file": "ReviewArt/player/idle_03",
+              "seconds": 0.2
+            },
+            {
+              "file": "ReviewArt/player/idle_04",
+              "seconds": 0.2
+            }
+          ]
+        },
+        {
+          "key": "run",
+          "frames": [
+            {
+              "file": "ReviewArt/player/flow_run_01",
+              "seconds": 0.06
+            },
+            {
+              "file": "ReviewArt/player/flow_run_02",
+              "seconds": 0.06
+            },
+            {
+              "file": "ReviewArt/player/flow_run_03",
+              "seconds": 0.06
+            },
+            {
+              "file": "ReviewArt/player/flow_run_04",
+              "seconds": 0.06
+            },
+            {
+              "file": "ReviewArt/player/flow_run_05",
+              "seconds": 0.06
+            },
+            {
+              "file": "ReviewArt/player/flow_run_06",
+              "seconds": 0.06
+            },
+            {
+              "file": "ReviewArt/player/flow_run_07",
+              "seconds": 0.06
+            },
+            {
+              "file": "ReviewArt/player/flow_run_08",
+              "seconds": 0.06
+            }
+          ]
+        },
+        {
+          "key": "jump",
+          "frames": [
+            {
+              "file": "ReviewArt/player/jump_01",
+              "seconds": 0.1
+            }
+          ]
+        },
+        {
+          "key": "fall",
+          "frames": [
+            {
+              "file": "ReviewArt/player/fall_01",
+              "seconds": 0.1
+            }
+          ]
+        },
+        {
+          "key": "attack_axe",
+          "frames": [
+            {
+              "file": "ReviewArt/player/flow_attack_axe_01",
+              "seconds": 0.025
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_02",
+              "seconds": 0.025
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_03",
+              "seconds": 0.035
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_04",
+              "seconds": 0.035
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_05",
+              "seconds": 0.045
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_06",
+              "seconds": 0.045
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_07",
+              "seconds": 0.045
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_08",
+              "seconds": 0.045
+            }
+          ]
+        },
+        {
+          "key": "attack_axe_air",
+          "frames": [
+            {
+              "file": "ReviewArt/player/attack_axe_air_01",
+              "seconds": 0.05
+            },
+            {
+              "file": "ReviewArt/player/attack_axe_air_02",
+              "seconds": 0.14
+            },
+            {
+              "file": "ReviewArt/player/attack_axe_air_03",
+              "seconds": 0.11
+            }
+          ]
+        },
+        {
+          "key": "hurt",
+          "frames": [
+            {
+              "file": "ReviewArt/player/hurt_01",
+              "seconds": 0.09
+            },
+            {
+              "file": "ReviewArt/player/hurt_02",
+              "seconds": 0.09
+            }
+          ]
+        },
+        {
+          "key": "death",
+          "frames": [
+            {
+              "file": "ReviewArt/player/death_01",
+              "seconds": 0.12
+            },
+            {
+              "file": "ReviewArt/player/death_02",
+              "seconds": 0.14
+            },
+            {
+              "file": "ReviewArt/player/death_03",
+              "seconds": 0.16
+            },
+            {
+              "file": "ReviewArt/player/death_04",
+              "seconds": 0.18
+            }
+          ]
+        },
+        {
+          "key": "attack_axe_2",
+          "frames": [
+            {
+              "file": "ReviewArt/player/flow_attack_axe_2_01",
+              "seconds": 0.025
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_2_02",
+              "seconds": 0.025
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_2_03",
+              "seconds": 0.035
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_2_04",
+              "seconds": 0.035
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_2_05",
+              "seconds": 0.045
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_2_06",
+              "seconds": 0.045
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_2_07",
+              "seconds": 0.045
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_2_08",
+              "seconds": 0.045
+            }
+          ]
+        },
+        {
+          "key": "attack_axe_3",
+          "frames": [
+            {
+              "file": "ReviewArt/player/flow_attack_axe_3_01",
+              "seconds": 0.025
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_3_02",
+              "seconds": 0.025
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_3_03",
+              "seconds": 0.035
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_3_04",
+              "seconds": 0.035
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_3_05",
+              "seconds": 0.045
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_3_06",
+              "seconds": 0.045
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_3_07",
+              "seconds": 0.045
+            },
+            {
+              "file": "ReviewArt/player/flow_attack_axe_3_08",
+              "seconds": 0.045
+            }
+          ]
+        },
+        {
+          "key": "portal_enter",
+          "frames": [
+            {
+              "file": "ReviewArt/player/portal_enter_01",
+              "seconds": 0.09
+            },
+            {
+              "file": "ReviewArt/player/portal_enter_02",
+              "seconds": 0.09
+            },
+            {
+              "file": "ReviewArt/player/portal_enter_03",
+              "seconds": 0.09
+            },
+            {
+              "file": "ReviewArt/player/portal_enter_04",
+              "seconds": 0.09
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "chaser",
+      "clips": [
+        {
+          "key": "idle",
+          "frames": [
+            {
+              "file": "ReviewArt/chaser/chaser_idle_01",
+              "seconds": 0.24,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -31,
+                7,
+                -12,
+                10,
+                7,
+                -8
+              ]
+            },
+            {
+              "file": "ReviewArt/chaser/chaser_idle_02",
+              "seconds": 0.24,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -25,
+                7,
+                -10,
+                11,
+                7,
+                -8
+              ]
+            }
+          ]
+        },
+        {
+          "key": "move",
+          "frames": [
+            {
+              "file": "ReviewArt/chaser/chaser_move_01",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -39,
+                7,
+                -12,
+                6,
+                7,
+                -6
+              ]
+            },
+            {
+              "file": "ReviewArt/chaser/chaser_move_02",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -37,
+                18,
+                -8,
+                15,
+                20,
+                -6
+              ]
+            },
+            {
+              "file": "ReviewArt/chaser/chaser_move_03",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -32,
+                10,
+                -10,
+                14,
+                18,
+                -10
+              ]
+            },
+            {
+              "file": "ReviewArt/chaser/chaser_move_04",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -35,
+                14,
+                -12,
+                14,
+                13,
+                -8
+              ]
+            },
+            {
+              "file": "ReviewArt/chaser/chaser_move_05",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -35,
+                19,
+                -8,
+                10,
+                20,
+                -6
+              ]
+            },
+            {
+              "file": "ReviewArt/chaser/chaser_move_06",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -40,
+                13,
+                -12,
+                9,
+                15,
+                -6
+              ]
+            }
+          ]
+        },
+        {
+          "key": "tell",
+          "frames": [
+            {
+              "file": "ReviewArt/chaser/chaser_tell_01",
+              "seconds": 0.1,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -44,
+                -10,
+                -40,
+                10,
+                5,
+                -15
+              ]
+            },
+            {
+              "file": "ReviewArt/chaser/chaser_tell_02",
+              "seconds": 0.15,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -10,
+                -51,
+                65,
+                -43,
+                2,
+                -22
+              ]
+            }
+          ]
+        },
+        {
+          "key": "attack",
+          "frames": [
+            {
+              "file": "ReviewArt/chaser/chaser_attack_01",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -82,
+                -11,
+                0,
+                1,
+                23,
+                -12
+              ]
+            },
+            {
+              "file": "ReviewArt/chaser/chaser_attack_02",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -77,
+                -3,
+                -8,
+                0,
+                26,
+                -12
+              ]
+            }
+          ]
+        },
+        {
+          "key": "hurt",
+          "frames": [
+            {
+              "file": "ReviewArt/chaser/chaser_hurt_01",
+              "seconds": 0.05,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -28,
+                -14,
+                -25,
+                14,
+                16,
+                10
+              ]
+            },
+            {
+              "file": "ReviewArt/chaser/chaser_hurt_02",
+              "seconds": 0.05,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -33,
+                5,
+                -12,
+                11,
+                16,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "death",
+          "frames": [
+            {
+              "file": "ReviewArt/chaser/chaser_death_01",
+              "seconds": 0.12,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -44,
+                52,
+                15,
+                -2,
+                41,
+                20
+              ]
+            },
+            {
+              "file": "ReviewArt/chaser/chaser_death_02",
+              "seconds": 0.2,
+              "equipment": [
+                "ReviewArt/chaser/sword",
+                "ReviewArt/chaser/shield"
+              ],
+              "transforms": [
+                -19,
+                52,
+                0,
+                18,
+                47,
+                80
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ranged",
+      "clips": [
+        {
+          "key": "idle",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/ranged/idle_01",
+              "seconds": 0.2,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -52,
+                -20,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/ranged/idle_02",
+              "seconds": 0.2,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -69,
+                -18,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "move",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/ranged/move_01",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -83,
+                -19,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/ranged/move_02",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -100,
+                -18,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/ranged/move_03",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -62,
+                -28,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/ranged/move_04",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -70,
+                -24,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/ranged/move_05",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -77,
+                -23,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/ranged/move_06",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -93,
+                -21,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "tell",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/ranged/tell_01",
+              "seconds": 0.1,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -58,
+                -13,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/ranged/tell_02",
+              "seconds": 0.1,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -64,
+                -13,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "attack",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/ranged/attack_01",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -101,
+                -37,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/ranged/attack_02",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -102,
+                -37,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "hurt",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/ranged/hurt_01",
+              "seconds": 0.07,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -57,
+                -17,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/ranged/hurt_02",
+              "seconds": 0.07,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -70,
+                -17,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "death",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/ranged/death_01",
+              "seconds": 0.16,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -63,
+                50,
+                15
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/ranged/death_02",
+              "seconds": 0.16,
+              "equipment": [
+                "ReviewArt/polished/equipment/crossbow"
+              ],
+              "transforms": [
+                -89,
+                50,
+                82
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "controller",
+      "clips": [
+        {
+          "key": "idle",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/controller/idle_01",
+              "seconds": 0.2,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -30,
+                -36,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/controller/idle_02",
+              "seconds": 0.2,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -60,
+                -35,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "move",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/controller/move_01",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -71,
+                -35,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/controller/move_02",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -86,
+                -37,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/controller/move_03",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -50,
+                -37,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/controller/move_04",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -46,
+                -39,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/controller/move_05",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -70,
+                -37,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/controller/move_06",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -78,
+                -33,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "tell",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/controller/tell_01",
+              "seconds": 0.1,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -49,
+                -32,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/controller/tell_02",
+              "seconds": 0.1,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -50,
+                -11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "attack",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/controller/attack_01",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -91,
+                -38,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/controller/attack_02",
+              "seconds": 0.08,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -118,
+                -39,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "hurt",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/controller/hurt_01",
+              "seconds": 0.07,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -43,
+                -25,
+                0
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/controller/hurt_02",
+              "seconds": 0.07,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -51,
+                -30,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "death",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/controller/death_01",
+              "seconds": 0.16,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -58,
+                50,
+                15
+              ]
+            },
+            {
+              "file": "ReviewArt/polished/actors/controller/death_02",
+              "seconds": 0.16,
+              "equipment": [
+                "ReviewArt/polished/equipment/staff"
+              ],
+              "transforms": [
+                -87,
+                50,
+                82
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "charger",
+      "clips": [
+        {
+          "key": "idle",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/charger/idle_01",
+              "seconds": 0.2
+            },
+            {
+              "file": "ReviewArt/polished/actors/charger/idle_02",
+              "seconds": 0.2
+            }
+          ]
+        },
+        {
+          "key": "move",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/charger/move_01",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/polished/actors/charger/move_02",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/polished/actors/charger/move_03",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/polished/actors/charger/move_04",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/polished/actors/charger/move_05",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/polished/actors/charger/move_06",
+              "seconds": 0.08
+            }
+          ]
+        },
+        {
+          "key": "tell",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/charger/tell_01",
+              "seconds": 0.1
+            },
+            {
+              "file": "ReviewArt/polished/actors/charger/tell_02",
+              "seconds": 0.1
+            }
+          ]
+        },
+        {
+          "key": "attack",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/charger/attack_01",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/polished/actors/charger/attack_02",
+              "seconds": 0.08
+            }
+          ]
+        },
+        {
+          "key": "hurt",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/charger/hurt_01",
+              "seconds": 0.07
+            },
+            {
+              "file": "ReviewArt/polished/actors/charger/hurt_02",
+              "seconds": 0.07
+            }
+          ]
+        },
+        {
+          "key": "death",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/charger/death_01",
+              "seconds": 0.16
+            },
+            {
+              "file": "ReviewArt/polished/actors/charger/death_02",
+              "seconds": 0.16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "exploder",
+      "clips": [
+        {
+          "key": "idle",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/exploder/idle_01",
+              "seconds": 0.2
+            },
+            {
+              "file": "ReviewArt/polished/actors/exploder/idle_02",
+              "seconds": 0.2
+            }
+          ]
+        },
+        {
+          "key": "move",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/exploder/move_01",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/polished/actors/exploder/move_02",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/polished/actors/exploder/move_03",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/polished/actors/exploder/move_04",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/polished/actors/exploder/move_05",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/polished/actors/exploder/move_06",
+              "seconds": 0.08
+            }
+          ]
+        },
+        {
+          "key": "tell",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/exploder/tell_01",
+              "seconds": 0.1
+            },
+            {
+              "file": "ReviewArt/polished/actors/exploder/tell_02",
+              "seconds": 0.1
+            }
+          ]
+        },
+        {
+          "key": "attack",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/exploder/attack_01",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/polished/actors/exploder/attack_02",
+              "seconds": 0.08
+            }
+          ]
+        },
+        {
+          "key": "hurt",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/exploder/hurt_01",
+              "seconds": 0.07
+            },
+            {
+              "file": "ReviewArt/polished/actors/exploder/hurt_02",
+              "seconds": 0.07
+            }
+          ]
+        },
+        {
+          "key": "death",
+          "frames": [
+            {
+              "file": "ReviewArt/polished/actors/exploder/death_01",
+              "seconds": 0.16
+            },
+            {
+              "file": "ReviewArt/polished/actors/exploder/death_02",
+              "seconds": 0.16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "storm_warden",
+      "clips": [
+        {
+          "key": "idle",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/storm_warden/idle_01",
+              "seconds": 0.24
+            },
+            {
+              "file": "ReviewArt/remaining/actors/storm_warden/idle_02",
+              "seconds": 0.24
+            }
+          ]
+        },
+        {
+          "key": "move",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/storm_warden/move_01",
+              "seconds": 0.12
+            },
+            {
+              "file": "ReviewArt/remaining/actors/storm_warden/move_02",
+              "seconds": 0.12
+            }
+          ]
+        },
+        {
+          "key": "tell_storm_slam",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/storm_warden/tell_storm_slam_01",
+              "seconds": 0.16
+            }
+          ]
+        },
+        {
+          "key": "attack_storm_slam",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/storm_warden/attack_storm_slam_01",
+              "seconds": 0.16
+            }
+          ]
+        },
+        {
+          "key": "tell_chain_burst",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/storm_warden/tell_chain_burst_01",
+              "seconds": 0.16
+            }
+          ]
+        },
+        {
+          "key": "attack_chain_burst",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/storm_warden/attack_chain_burst_01",
+              "seconds": 0.16
+            }
+          ]
+        },
+        {
+          "key": "hurt",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/storm_warden/hurt_01",
+              "seconds": 0.1
+            },
+            {
+              "file": "ReviewArt/remaining/actors/storm_warden/hurt_02",
+              "seconds": 0.1
+            }
+          ]
+        },
+        {
+          "key": "death",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/storm_warden/death_01",
+              "seconds": 0.12
+            },
+            {
+              "file": "ReviewArt/remaining/actors/storm_warden/death_02",
+              "seconds": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "rift_sovereign",
+      "clips": [
+        {
+          "key": "idle",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/rift_sovereign/idle_01",
+              "seconds": 0.24
+            }
+          ]
+        },
+        {
+          "key": "move",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/rift_sovereign/move_01",
+              "seconds": 0.12
+            }
+          ]
+        },
+        {
+          "key": "tell_rift_slam",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/rift_sovereign/tell_rift_slam_01",
+              "seconds": 0.16
+            }
+          ]
+        },
+        {
+          "key": "attack_rift_slam",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/rift_sovereign/attack_rift_slam_01",
+              "seconds": 0.16
+            }
+          ]
+        },
+        {
+          "key": "tell_portal_burst",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/rift_sovereign/tell_portal_burst_01",
+              "seconds": 0.16
+            }
+          ]
+        },
+        {
+          "key": "attack_portal_burst",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/rift_sovereign/attack_portal_burst_01",
+              "seconds": 0.16
+            }
+          ]
+        },
+        {
+          "key": "tell_fracture_storm",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/rift_sovereign/tell_fracture_storm_01",
+              "seconds": 0.16
+            }
+          ]
+        },
+        {
+          "key": "attack_fracture_storm",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/rift_sovereign/attack_fracture_storm_01",
+              "seconds": 0.16
+            }
+          ]
+        },
+        {
+          "key": "hurt",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/rift_sovereign/hurt_01",
+              "seconds": 0.1
+            },
+            {
+              "file": "ReviewArt/remaining/actors/rift_sovereign/hurt_02",
+              "seconds": 0.1
+            }
+          ]
+        },
+        {
+          "key": "death",
+          "frames": [
+            {
+              "file": "ReviewArt/remaining/actors/rift_sovereign/death_01",
+              "seconds": 0.12
+            },
+            {
+              "file": "ReviewArt/remaining/actors/rift_sovereign/death_02",
+              "seconds": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "portal",
+      "clips": [
+        {
+          "key": "idle",
+          "frames": [
+            {
+              "file": "ReviewArt/portal/idle",
+              "seconds": 0.2
+            }
+          ]
+        },
+        {
+          "key": "enter",
+          "frames": [
+            {
+              "file": "ReviewArt/portal/enter_01",
+              "seconds": 0.09
+            },
+            {
+              "file": "ReviewArt/portal/enter_02",
+              "seconds": 0.09
+            },
+            {
+              "file": "ReviewArt/portal/enter_03",
+              "seconds": 0.09
+            },
+            {
+              "file": "ReviewArt/portal/enter_04",
+              "seconds": 0.09
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "effect",
+      "clips": [
+        {
+          "key": "hit",
+          "frames": [
+            {
+              "file": "ReviewArt/effects/hit_01",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/hit_02",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/hit_03",
+              "seconds": 0.08
+            }
+          ]
+        },
+        {
+          "key": "hostile_projectile",
+          "frames": [
+            {
+              "file": "ReviewArt/effects/hostile_projectile_01",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/hostile_projectile_02",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/hostile_projectile_03",
+              "seconds": 0.08
+            }
+          ]
+        },
+        {
+          "key": "hostile_area",
+          "frames": [
+            {
+              "file": "ReviewArt/effects/hostile_area_01",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/hostile_area_02",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/hostile_area_03",
+              "seconds": 0.08
+            }
+          ]
+        },
+        {
+          "key": "reward",
+          "frames": [
+            {
+              "file": "ReviewArt/effects/reward_01",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/reward_02",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/reward_03",
+              "seconds": 0.08
+            }
+          ]
+        },
+        {
+          "key": "electric_chain",
+          "frames": [
+            {
+              "file": "ReviewArt/effects/electric_chain_01",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/electric_chain_02",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/electric_chain_03",
+              "seconds": 0.08
+            }
+          ]
+        },
+        {
+          "key": "electric_area",
+          "frames": [
+            {
+              "file": "ReviewArt/effects/electric_area_01",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/electric_area_02",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/electric_area_03",
+              "seconds": 0.08
+            }
+          ]
+        },
+        {
+          "key": "electric_onkill",
+          "frames": [
+            {
+              "file": "ReviewArt/effects/electric_onkill_01",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/electric_onkill_02",
+              "seconds": 0.08
+            },
+            {
+              "file": "ReviewArt/effects/electric_onkill_03",
+              "seconds": 0.08
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "key": "forest",
+      "background": "ReviewArt/environments/forest/background",
+      "tile": "ReviewArt/environments/forest/terrain_top_1"
+    },
+    {
+      "key": "castle",
+      "background": "ReviewArt/environments/castle/background",
+      "tile": "ReviewArt/environments/castle/terrain_top_1"
+    },
+    {
+      "key": "caves",
+      "background": "ReviewArt/environments/caves/background",
+      "tile": "ReviewArt/environments/caves/terrain_top_1"
+    },
+    {
+      "key": "hub",
+      "background": "ReviewArt/environments/hub/background",
+      "tile": "ReviewArt/environments/hub/terrain_top_1"
+    }
+  ]
+}

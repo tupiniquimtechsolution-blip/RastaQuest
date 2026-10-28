@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!129 &1
+PlayerSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 28
+  companyName: Tupiniquim
+  productName: Rasta Quest Unity Review
+  defaultScreenWidth: 1280
+  defaultScreenHeight: 720
+  defaultIsNativeResolution: 0
+  resizableWindow: 1
+  defaultScreenOrientation: 4
+  allowedAutorotateToPortrait: 0
+  allowedAutorotateToPortraitUpsideDown: 0
+  allowedAutorotateToLandscapeRight: 1
+  allowedAutorotateToLandscapeLeft: 1
+  activeInputHandler: 1
+  bundleVersion: 1.0.0-unity.1
+  AndroidBundleVersionCode: 1000006
+  AndroidMinSdkVersion: 25
+  AndroidTargetSdkVersion: 36
