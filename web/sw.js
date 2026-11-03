@@ -1,8 +1,8 @@
 /* Prototype offline shell cache. Bump version when changing deploy assets. */
-const VERSION = 'rasta-quest-preview-20261103-v4';
+const VERSION = 'rasta-quest-preview-20261103-v5';
 const SHELL = [
   './', './index.html', './style.css', './main.mjs', './engine.mjs',
-  './progression.mjs', './run-save.mjs', './loot.mjs', './renderer.mjs', './data/rooms.json', './data/skills.json',
+  './progression.mjs', './transfer.mjs', './run-save.mjs', './loot.mjs', './renderer.mjs', './data/rooms.json', './data/skills.json',
   './manifest.webmanifest', './app-icon.svg'
 ];
 self.addEventListener('install', event => {
