@@ -235,7 +235,7 @@ function movePlayer(state, input, dt) {
 
   const previousTop = player.y;
   const previousBottom = player.y + player.h;
-  player.vy = clamp(player.vy + GRAVITY * dt, -JUMP_SPEED, MAX_FALL_SPEED);
+  player.vy = clamp(player.vy + GRAVITY * dt, -(JUMP_SPEED + skillBonus(state.profile,'jump')), MAX_FALL_SPEED);
   player.y += player.vy * dt;
   player.grounded = false;
   if (player.vy >= 0) {
