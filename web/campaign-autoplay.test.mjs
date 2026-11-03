@@ -48,11 +48,14 @@ test('whole 21-room campaign can be traversed using only player input and combat
   const game=createGame(plan,makeProfile());
   const start=Date.now();
   let count=0,lastRoom=0,stuck=0,lastX=game.player.x;
+  const checkpoints=[];
   for(;count<160000 && game.status==='playing';count++){
     const input=control(game);
     step(game,input,1/60);
     if(game.roomIndex!==lastRoom){lastRoom=game.roomIndex;stuck=0;lastX=game.player.x;}
     if(count%120===0){
+      checkpoints.push({tick:count,room:game.room.id,x:Math.round(game.player.x),hp:game.player.hp,lives:game.player.lives,mana:game.player.mana,enemies:game.enemies.filter(e=>e.alive).map(e=>[e.id,Math.round(e.x),e.hp])});
+      if(checkpoints.length>20)checkpoints.shift();
       if(Math.abs(game.player.x-lastX)<10)stuck++;
       else stuck=0;
       lastX=game.player.x;
@@ -62,7 +65,7 @@ test('whole 21-room campaign can be traversed using only player input and combat
   const dbg={status:game.status,room:game.room.id,roomIndex:game.roomIndex,
     x:Math.round(game.player.x),y:Math.round(game.player.y),
     collected:game.roomCollected,total:game.totalCollected,lives:game.player.lives,
-    enemies:game.enemies.filter(e=>e.alive).map(e=>e.id),steps:count,stuck,seconds:(Date.now()-start)/1000};
+    enemies:game.enemies.filter(e=>e.alive).map(e=>e.id),steps:count,stuck,recent:checkpoints,seconds:(Date.now()-start)/1000};
   assert.equal(game.status,'won','Input-only campaign failed: '+JSON.stringify(dbg));
   assert.equal(game.totalCollected,105,'Input-only campaign missed shells: '+JSON.stringify(dbg));
 });
