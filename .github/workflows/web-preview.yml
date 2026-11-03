@@ -30,9 +30,10 @@ jobs:
           node --check web/progression.test.mjs
           node --check web/content.mjs
           node --check web/browser-smoke.mjs
+          node --check web/campaign-autoplay.test.mjs
           node --check web/skills.mjs
           node --check web/sanctuary.mjs
-          node --check web/skills-sanctuary.test.mjs
+          node --check web/skills-sanctuary.test.mjs web/campaign-autoplay.test.mjs
           node --check web/run-save.mjs
           node --check web/run-save.test.mjs
           node --check web/gameplay.test.mjs
