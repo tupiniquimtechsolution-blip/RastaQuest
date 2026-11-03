@@ -26,11 +26,12 @@ jobs:
         run: |
           node --check web/sw.js
           node --check web/pwa.test.mjs
+          node --check web/skills.test.mjs
           node --check web/build-standalone.mjs
           node --check web/standalone.test.mjs
           node --check web/loot.mjs
           node --check web/loot.test.mjs
-          node --check web/loot-integration.test.mjs
+          node --check web/loot-integration.test.mjs web/skills.test.mjs
           node --check web/run-save.mjs
           node --check web/run-save.test.mjs
           node --check web/geometry.test.mjs
