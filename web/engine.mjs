@@ -117,6 +117,7 @@ function enterRoom(state, index) {
   state.player.invuln = 0.7;
   state.cameraX = 0;
   state.roomCollected = 0;
+  state.runRevision = (state.runRevision ?? 0) + 1;
   state.jumpHeld = false;
   state.interactHeld = false;
   announce(state, `Sala ${index + 1}/21 · ${room.title}`, 3.5);
@@ -128,6 +129,7 @@ export function createGame(plan, profile = null) {
     rooms: plan.rooms,
     profile,
     profileRevision: 0,
+    runRevision: 0,
     roomIndex: 0,
     room: null,
     worldWidth: 0,
@@ -164,6 +166,7 @@ function takeDamage(state) {
   announce(state, "Akane sofreu um golpe!");
   if (player.hp > 0) return;
   player.lives -= 1;
+  state.runRevision += 1;
   if (player.lives <= 0) {
     player.hp = 0;
     state.status = "gameover";
@@ -256,6 +259,7 @@ function attackEnemies(state, input) {
     if (enemy.hp <= 0) {
       enemy.hp = 0;
       enemy.alive = false;
+      state.runRevision += 1;
       if (state.profile && awardEssence(state.profile, enemy.boss ? 20 : 5)) state.profileRevision += 1;
     }
   }
@@ -292,6 +296,7 @@ function collectCowries(state) {
     if (Math.hypot(cowrie.x - nearestX, cowrie.y - nearestY) > cowrie.r + 8) continue;
     cowrie.collected = true;
     state.collectedIds.add(cowrie.id);
+    state.runRevision += 1;
     if (state.profile && recordCowrie(state.profile, cowrie.id, { rooms: state.rooms })) state.profileRevision += 1;
     state.totalCollected += 1;
     state.roomCollected += 1;
@@ -300,6 +305,7 @@ function collectCowries(state) {
   if (state.roomCollected === 5 && !state.rewardedRooms.has(state.room.id)) {
     state.rewardedRooms.add(state.room.id);
     player.lives += 1;
+    state.runRevision += 1;
     announce(state, "5 búzios! +1 vida extra", 3.2);
   }
 }
@@ -342,10 +348,64 @@ export function step(state, input = {}, seconds = 1 / 60) {
   collectCowries(state);
   if (!state.checkpoint.activated && player.x + player.w / 2 >= state.checkpoint.x) {
     state.checkpoint.activated = true;
+    state.runRevision += 1;
     announce(state, "Checkpoint ativado.");
   }
   handleExit(state, input);
   state.interactHeld = Boolean(input.interact);
   state.cameraX = clamp(player.x + player.w / 2 - VIEW_WIDTH * 0.42, 0, Math.max(0, state.worldWidth - VIEW_WIDTH));
+  return state;
+}
+
+
+/**
+ * Safe, versioned resume at the current room entrance or activated checkpoint.
+ * Position is deliberately NOT persisted: restore never drops Akane inside a
+ * collider, and room progress keeps physical cowrie and enemy identities.
+ */
+export function snapshotRun(state) {
+  if (!state || state.status !== "playing") return null;
+  return {
+    version: 1,
+    roomIndex: state.roomIndex,
+    hp: state.player.hp,
+    lives: state.player.lives,
+    collectedIds: [...state.collectedIds].sort(),
+    rewardedRooms: [...state.rewardedRooms].sort(),
+    checkpointActivated: state.checkpoint.activated,
+    defeatedEnemyIds: state.enemies.filter(enemy => !enemy.alive).map(enemy => enemy.id),
+  };
+}
+
+export function resumeGame(plan, profile, snapshot) {
+  const fresh = () => createGame(plan, profile);
+  if (!snapshot || snapshot.version !== 1 || !Number.isInteger(snapshot.roomIndex) ||
+      snapshot.roomIndex < 0 || snapshot.roomIndex >= plan.rooms.length ||
+      !Number.isInteger(snapshot.hp) || !Number.isInteger(snapshot.lives) ||
+      snapshot.hp < 1 || snapshot.lives < 1 || snapshot.lives > 30 ||
+      !Array.isArray(snapshot.collectedIds) || !Array.isArray(snapshot.rewardedRooms) ||
+      !Array.isArray(snapshot.defeatedEnemyIds)) return fresh();
+  const state = fresh();
+  if (snapshot.roomIndex) enterRoom(state, snapshot.roomIndex);
+  state.player.hp = clamp(snapshot.hp, 1, state.player.maxHp);
+  state.player.lives = snapshot.lives;
+  const ids = new Set(plan.rooms.flatMap(room => room.cowries.map(shell => shell.id)));
+  state.collectedIds = new Set(snapshot.collectedIds.filter(id => typeof id === "string" && ids.has(id)));
+  const roomIds = new Set(plan.rooms.map(room => room.id));
+  state.rewardedRooms = new Set(snapshot.rewardedRooms.filter(id => typeof id === "string" && roomIds.has(id)));
+  state.totalCollected = state.collectedIds.size;
+  for (const cowrie of state.cowries) cowrie.collected = state.collectedIds.has(cowrie.id);
+  state.roomCollected = state.cowries.filter(cowrie => cowrie.collected).length;
+  const defeated = new Set(snapshot.defeatedEnemyIds.filter(id => typeof id === "string"));
+  for (const enemy of state.enemies) {
+    if (defeated.has(enemy.id)) { enemy.alive = false; enemy.hp = 0; }
+  }
+  state.exit.ready = state.enemies.every(enemy => !enemy.alive);
+  state.checkpoint.activated = snapshot.checkpointActivated === true;
+  state.player.x = state.checkpoint.activated ? state.checkpoint.x : state.entrance.x;
+  state.player.y = GROUND_Y - state.player.h;
+  state.player.invuln = 1.5;
+  state.cameraX = clamp(state.player.x - VIEW_WIDTH * .42, 0, Math.max(0, state.worldWidth - VIEW_WIDTH));
+  announce(state, "Jornada retomada no checkpoint seguro.", 3);
   return state;
 }

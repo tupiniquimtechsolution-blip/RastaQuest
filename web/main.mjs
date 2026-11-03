@@ -1,4 +1,5 @@
-import { createGame, step } from './engine.mjs';
+import { createGame, step, resumeGame } from './engine.mjs';
+import { loadRun, saveRun, clearRun } from './run-save.mjs';
 import { loadSprites, render } from './renderer.mjs';
 import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost } from './progression.mjs';
 
@@ -13,6 +14,7 @@ const keys = new Set();
 const touch = new Set();
 let plan, state, profile, sprites = {}, started = false, lastFrame = 0;
 let savedRevision = -1;
+let savedRunRevision = -1;
 const profileStore = (() => { try { return window.localStorage; } catch { return null; } })();
 
 const keyMap = new Map([
@@ -72,6 +74,12 @@ function frame(timestamp) {
   lastFrame = timestamp;
   if (state) {
     if (started && !helpDialog.open && !pauseDialog.open && state.status === 'playing') step(state, currentInput(), elapsed);
+    if (state.status !== 'playing') {
+      if (savedRunRevision !== -2) { clearRun(profileStore); savedRunRevision = -2; }
+    } else if (state.runRevision !== savedRunRevision) {
+      saveRun(profileStore, state);
+      savedRunRevision = state.runRevision;
+    }
     if (profile && state.profileRevision !== savedRevision) {
       saveProfile(profileStore, profile);
       savedRevision = state.profileRevision;
@@ -85,7 +93,9 @@ function frame(timestamp) {
 
 function restart() {
   if (!plan) return;
+  clearRun(profileStore);
   state = createGame(plan, profile);
+  savedRunRevision = -1;
   savedRevision = -1;
   started = true;
   keys.clear(); touch.clear();
@@ -160,6 +170,7 @@ document.querySelector('#upgradeButtons').addEventListener('click', event => {
     const newMaxHp = 3 + profile.upgrades.vitality;
     if (newMaxHp > state.player.maxHp) state.player.hp += newMaxHp - state.player.maxHp;
     state.player.maxHp = newMaxHp;
+    state.runRevision += 1;
     refreshUpgrades(); syncHud();
   }
 });
@@ -184,8 +195,13 @@ async function boot() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     plan = await response.json();
     profile = loadProfile(profileStore, plan);
-    state = createGame(plan, profile);
+    const snapshot = loadRun(profileStore);
+    state = resumeGame(plan, profile, snapshot);
     savedRevision = state.profileRevision;
+    savedRunRevision = snapshot ? state.runRevision : -1;
+    if (snapshot && state.roomIndex >= 0) {
+      document.querySelector('#startButton').textContent = 'Continuar jornada';
+    }
     refreshUpgrades();
     setupRoute(); syncHud();
     sprites = await loadSprites();
@@ -203,3 +219,8 @@ boot();
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
 }
+
+// On mobile, preserve recent checkpoint/room events before tab suspension.
+window.addEventListener('pagehide', () => {
+  if (state?.status === 'playing') saveRun(profileStore, state);
+});
