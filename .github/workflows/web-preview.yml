@@ -26,6 +26,8 @@ jobs:
         run: |
           node --check web/sw.js
           node --check web/pwa.test.mjs
+          node --check web/build-standalone.mjs
+          node --check web/standalone.test.mjs
           node --check web/loot.mjs
           node --check web/loot.test.mjs
           node --check web/loot-integration.test.mjs
@@ -43,6 +45,11 @@ jobs:
         run: node web/verify.mjs
       - name: Test gameplay rules
         run: node --test web/engine.test.mjs web/progression.test.mjs web/pwa.test.mjs web/run-save.test.mjs web/geometry.test.mjs web/loot.test.mjs web/loot-integration.test.mjs
+
+      - name: Build self-contained offline HTML
+        run: node web/build-standalone.mjs
+      - name: Verify standalone HTML bundle
+        run: node --test web/standalone.test.mjs
 
       - name: Package browser preview for manual testing
         uses: actions/upload-artifact@v4
