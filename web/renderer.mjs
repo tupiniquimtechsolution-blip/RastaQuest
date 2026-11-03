@@ -223,6 +223,17 @@ function drawGameplayDetails(ctx, state) {
     ctx.fillStyle='#2b2b2b';ctx.fillRect(x+chest.w/2-3,chest.y+13,6,10);
     if(!chest.opened) label(ctx,chest.kind==='rare'?'BAÚ RARO':'BAÚ',x+chest.w/2,chest.y-20,chest.kind==='rare'?'#ffcd8e':'#d7e0bc');
   }
+  const tablet=state.tablet;
+  if(tablet && !tablet.discovered) {
+    const x=tablet.x-camera;
+    if(x>-60&&x<VIEW_WIDTH+60) {
+      ctx.fillStyle='#547a7f';ctx.fillRect(x-18,tablet.y-18,36,52);
+      ctx.strokeStyle='#a7f0ea';ctx.lineWidth=3;ctx.strokeRect(x-18,tablet.y-18,36,52);
+      ctx.fillStyle='#ddf5ec';ctx.font='bold 25px serif';ctx.textAlign='center';
+      ctx.fillText('✦',x,tablet.y+14);
+      label(ctx,'MEMÓRIA',x,tablet.y-25,'#c2f4dc');
+    }
+  }
   for (const enemy of state.enemies) {
     if(!enemy.boss || !enemy.alive || enemy.windup<=0) continue;
     const x=enemy.x-camera+enemy.w/2;
