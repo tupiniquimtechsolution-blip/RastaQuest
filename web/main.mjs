@@ -1,6 +1,7 @@
 import { createGame, step } from './engine.mjs';
 import { loadSprites, render } from './renderer.mjs';
-import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost } from './progression.mjs';
+import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost, equipItem } from './progression.mjs';
+import { EQUIPMENT, SLOTS, equipmentBonus } from './content.mjs';
 
 const canvas = document.querySelector('#game');
 const ctx = canvas.getContext('2d');
@@ -19,7 +20,7 @@ const keyMap = new Map([
   ['ArrowLeft', 'left'], ['KeyA', 'left'],
   ['ArrowRight', 'right'], ['KeyD', 'right'],
   ['ArrowUp', 'jump'], ['KeyW', 'jump'], ['Space', 'jump'],
-  ['KeyJ', 'attack'], ['KeyK', 'attack'],
+  ['KeyJ', 'attack'], ['KeyK', 'special'], ['KeyL', 'special'],
   ['KeyE', 'interact'], ['Enter', 'interact'],
 ]);
 
@@ -39,9 +40,11 @@ function syncHud() {
   updateText('roomName', state.room.title);
   updateText('health', '♥ '.repeat(p.hp).trim() + '♡ '.repeat(Math.max(0, p.maxHp - p.hp)).trim());
   updateText('lives', `VIDAS ${String(p.lives).padStart(2, '0')}`);
+  updateText('mana', `MANA ${p.mana}/${p.maxMana}`);
   updateText('shells', `BÚZIOS ${state.roomCollected}/5`);
   updateText('total', `ÁLBUM ${profile?.collectedCowries.length ?? 0}/105`);
   updateText('essence', `ESSÊNCIA ${profile?.essence ?? 0}`);
+  updateText('runBuff', `BÊNÇÃOS +${state.runBuffs.damage}D / +${state.runBuffs.mana}M / +${state.runBuffs.mobility}V`);
   updateText('upgradeStatus', profile ? `VIDA +${profile.upgrades.vitality} · DANO +${profile.upgrades.strength} · CORRIDA +${profile.upgrades.mobility} · SKINS ${profile.skins.length}/2` : '');
   const fallback = state.exit.ready ? 'Portal aberto: aproxime-se e pressione E ou ENTRAR.' : 'Explore a rota, pegue os búzios e derrote os inimigos.';
   updateText('message', state.message || fallback);
@@ -63,7 +66,20 @@ function syncHud() {
 
 function currentInput() {
   const values = new Set([...keys, ...touch]);
-  return Object.fromEntries(['left', 'right', 'jump', 'attack', 'interact'].map(control => [control, values.has(control)]));
+  try {
+    const pad = navigator.getGamepads?.()[0];
+    if (pad) {
+      const buttons = pad.buttons;
+      if (pad.axes[0] < -0.28 || buttons[14]?.pressed) values.add('left');
+      if (pad.axes[0] > 0.28 || buttons[15]?.pressed) values.add('right');
+      if (buttons[0]?.pressed) values.add('jump');
+      if (buttons[2]?.pressed) values.add('attack');
+      if (buttons[3]?.pressed) values.add('special');
+      if (buttons[1]?.pressed) values.add('interact');
+    }
+  } catch { /* Some privacy profiles disable the Gamepad API. */ }
+  return Object.fromEntries(['left', 'right', 'jump', 'attack', 'special', 'interact']
+    .map(control => [control, values.has(control)]));
 }
 
 function frame(timestamp) {
@@ -150,6 +166,16 @@ document.querySelector('#pauseButton').addEventListener('click', () => {
   keys.clear(); touch.clear(); refreshUpgrades(); pauseDialog.showModal();
 });
 document.querySelector('#closePause').addEventListener('click', () => pauseDialog.close());
+document.querySelector('#equipmentInventory').addEventListener('click', event => {
+  const button = event.target.closest('button[data-equip]');
+  if (!button || !profile || !equipItem(profile, button.dataset.equip)) return;
+  saveProfile(profileStore, profile);
+  state.player.maxHp = 3 + profile.upgrades.vitality + equipmentBonus(profile, 'vitality');
+  state.player.hp = Math.min(state.player.hp, state.player.maxHp);
+  state.player.maxMana = 3 + profile.upgrades.spirit + equipmentBonus(profile, 'mana') + state.runBuffs.mana;
+  state.player.mana = Math.min(state.player.mana, state.player.maxMana);
+  refreshUpgrades(); syncHud();
+});
 document.querySelector('#upgradeButtons').addEventListener('click', event => {
   const button = event.target.closest('button[data-upgrade]');
   if (!button || !profile) return;
@@ -157,16 +183,18 @@ document.querySelector('#upgradeButtons').addEventListener('click', event => {
     saveProfile(profileStore, profile);
     savedRevision = state.profileRevision;
     // Equipped permanent vitality is immediately reflected in the active run.
-    const newMaxHp = 3 + profile.upgrades.vitality;
+    const newMaxHp = 3 + profile.upgrades.vitality + equipmentBonus(profile, 'vitality');
     if (newMaxHp > state.player.maxHp) state.player.hp += newMaxHp - state.player.maxHp;
     state.player.maxHp = newMaxHp;
+    state.player.maxMana = 3 + profile.upgrades.spirit + equipmentBonus(profile, 'mana') + state.runBuffs.mana;
+    state.player.mana = Math.min(state.player.maxMana, state.player.mana + 1);
     refreshUpgrades(); syncHud();
   }
 });
 
 function refreshUpgrades() {
   if (!profile) return;
-  const names = { vitality: 'Vida máxima', strength: 'Dano do machado', mobility: 'Corrida' };
+  const names = { vitality: 'Vida máxima', strength: 'Dano do machado', mobility: 'Corrida', spirit: 'Mana máxima' };
   for (const button of document.querySelectorAll('[data-upgrade]')) {
     const type = button.dataset.upgrade;
     const cost = upgradeCost(profile, type);
@@ -176,6 +204,31 @@ function refreshUpgrades() {
   updateText('albumProgress', `${profile.collectedCowries.length}/105 búzios únicos`);
   updateText('cosmeticRewards', profile.skins.length ? 'Skins de Akane e do machado desbloqueadas — equipar visuais: em desenvolvimento' : 'Skins de Akane e do machado desbloqueadas ao completar 105/105');
   updateText('essenceBalance', `${profile.essence} essências vermelhas disponíveis`);
+  const inventory = document.getElementById('equipmentInventory');
+  if (inventory) {
+    inventory.replaceChildren();
+    for (const slot of SLOTS) {
+      const title = document.createElement('strong');
+      title.textContent = {blade:'Lâmina',haft:'Cabo',boots:'Botas',amulet:'Amuleto'}[slot];
+      inventory.append(title);
+      const owned = profile.equipment.owned.filter(id => EQUIPMENT[id].slot === slot);
+      if (!owned.length) {
+        const placeholder = document.createElement('span');
+        placeholder.textContent = 'Nenhuma peça encontrada';
+        inventory.append(placeholder);
+      }
+      for (const id of owned) {
+        const item = EQUIPMENT[id];
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.dataset.equip = id;
+        const active = profile.equipment.equipped[slot] === id;
+        button.textContent = `${active ? '✓ ' : ''}${item.name} (${item.stat} +${item.value})`;
+        button.disabled = active;
+        inventory.append(button);
+      }
+    }
+  }
 }
 
 async function boot() {
