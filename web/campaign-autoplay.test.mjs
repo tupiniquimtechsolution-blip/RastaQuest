@@ -22,8 +22,8 @@ function control(state) {
     Math.abs((p.y+p.h)-(e.y+e.h))<85);
   if(threat) {
     const gap=middle(threat)-center;
-    if(Math.abs(gap)>75){input.left=gap<0;input.right=gap>0;}
-    else {input.left=false;input.right=false;}
+    // Keep facing the threat even inside attack range; standing still can leave the foe behind the axe hitbox.
+    input.left=gap< -5;input.right=gap>5;
     input.special=p.mana>0 && Math.abs(gap)<139;
     input.attack=true;
   }
