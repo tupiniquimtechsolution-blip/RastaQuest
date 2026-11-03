@@ -111,3 +111,25 @@ Unity/Android permanece em outra trilha de QA.
 A versão web continua experimental: os baús são representações técnicas,
 sem efeitos de áudio/partículas finais. Não existe publicação HTTPS de preview,
 homologação em aparelho, ou validação Unity nesta entrega.
+
+## Jogar sem instalar nada — arquivo HTML offline
+
+O CI Web Preview agora também executa `node web/build-standalone.mjs`
+e empacota `web/dist/rasta-quest-offline.html` no artefato ZIP do workflow.
+É um **arquivo HTML autocontido**: inclui os módulos do jogo, o plano
+de 21 salas, CSS e imagens embutidas, e abre localmente em um navegador
+de desktop sem servidor web, Node, Unity ou conexão.
+
+Na página do GitHub Actions da branch, abra o run `Web Preview`, baixe
+`rasta-quest-web-preview` (é necessário login no GitHub para baixar
+artefatos Actions em alguns contextos), extraia o ZIP, navegue até
+`dist/rasta-quest-offline.html` e abra-o no navegador do computador.
+Em Android, abrir HTML por `file://` depende das restrições do navegador
+e do gerenciador de arquivos; **PWA/HTTPS continua o caminho preferido**.
+
+O arquivo offline é uma conveniência de **playtest**, não substitui
+uma URL HTTPS verificada, não é nativo Windows/Android, não se
+autoupdate e não sincroniza progresso entre arquivos/origens.
+O perfil continua usando armazenamento local quando o navegador
+permitir; abas `file://` podem bloquear ou isolar armazenamento.
+Não copie este HTML para produção sem aprovação de arte/direitos.
