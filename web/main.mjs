@@ -1,5 +1,6 @@
 import { createGame, step, resumeGame } from './engine.mjs';
 import { loadRun, saveRun, clearRun } from './run-save.mjs';
+import { EQUIPMENT, equipEquipment } from './loot.mjs';
 import { loadSprites, render } from './renderer.mjs';
 import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost } from './progression.mjs';
 
@@ -21,7 +22,7 @@ const keyMap = new Map([
   ['ArrowLeft', 'left'], ['KeyA', 'left'],
   ['ArrowRight', 'right'], ['KeyD', 'right'],
   ['ArrowUp', 'jump'], ['KeyW', 'jump'], ['Space', 'jump'],
-  ['KeyJ', 'attack'], ['KeyK', 'attack'],
+  ['KeyJ', 'attack'], ['KeyK', 'special'],
   ['KeyE', 'interact'], ['Enter', 'interact'],
 ]);
 
@@ -44,6 +45,7 @@ function syncHud() {
   updateText('shells', `BÚZIOS ${state.roomCollected}/5`);
   updateText('total', `ÁLBUM ${profile?.collectedCowries.length ?? 0}/105`);
   updateText('essence', `ESSÊNCIA ${profile?.essence ?? 0}`);
+  updateText('mana', `MANA ${p.mana}/${p.maxMana}`);
   updateText('upgradeStatus', profile ? `VIDA +${profile.upgrades.vitality} · DANO +${profile.upgrades.strength} · CORRIDA +${profile.upgrades.mobility} · SKINS ${profile.skins.length}/2` : '');
   const fallback = state.exit.ready ? 'Portal aberto: aproxime-se e pressione E ou ENTRAR.' : 'Explore a rota, pegue os búzios e derrote os inimigos.';
   updateText('message', state.message || fallback);
@@ -65,7 +67,7 @@ function syncHud() {
 
 function currentInput() {
   const values = new Set([...keys, ...touch]);
-  return Object.fromEntries(['left', 'right', 'jump', 'attack', 'interact'].map(control => [control, values.has(control)]));
+  return Object.fromEntries(['left', 'right', 'jump', 'attack', 'special', 'interact'].map(control => [control, values.has(control)]));
 }
 
 function frame(timestamp) {
@@ -160,6 +162,15 @@ document.querySelector('#pauseButton').addEventListener('click', () => {
   keys.clear(); touch.clear(); refreshUpgrades(); pauseDialog.showModal();
 });
 document.querySelector('#closePause').addEventListener('click', () => pauseDialog.close());
+document.querySelector('#equipmentButtons').addEventListener('click', event => {
+  const btn = event.target.closest('button[data-equipment]');
+  if (!btn || !profile) return;
+  if (equipEquipment(profile, btn.dataset.equipment)) {
+    saveProfile(profileStore, profile);
+    state.runRevision += 1;
+    refreshUpgrades(); syncHud();
+  }
+});
 document.querySelector('#upgradeButtons').addEventListener('click', event => {
   const button = event.target.closest('button[data-upgrade]');
   if (!button || !profile) return;
@@ -187,6 +198,21 @@ function refreshUpgrades() {
   updateText('albumProgress', `${profile.collectedCowries.length}/105 búzios únicos`);
   updateText('cosmeticRewards', profile.skins.length ? 'Skins de Akane e do machado desbloqueadas — equipar visuais: em desenvolvimento' : 'Skins de Akane e do machado desbloqueadas ao completar 105/105');
   updateText('essenceBalance', `${profile.essence} essências vermelhas disponíveis`);
+  const gearPanel = document.querySelector('#equipmentButtons');
+  gearPanel.replaceChildren();
+  for (const id of profile.items) {
+    const item = EQUIPMENT[id];
+    if (!item) continue;
+    const button = document.createElement('button');
+    button.type = 'button'; button.dataset.equipment = id;
+    button.textContent = `${item.name} · ${profile.equipped[item.slot] === id ? 'EQUIPADO' : 'EQUIPAR'}`;
+    button.disabled = profile.equipped[item.slot] === id;
+    gearPanel.append(button);
+  }
+  if (profile.items.length === 0) {
+    const empty = document.createElement('span'); empty.textContent = 'Encontre equipamentos em baús raros escondidos.';
+    gearPanel.append(empty);
+  }
 }
 
 async function boot() {
