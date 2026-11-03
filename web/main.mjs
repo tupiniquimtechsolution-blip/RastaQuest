@@ -1,6 +1,7 @@
 import { createGame, step, resumeGame } from './engine.mjs';
 import { loadRun, saveRun, clearRun } from './run-save.mjs';
 import { EQUIPMENT, equipEquipment } from './loot.mjs';
+import { serializeTransfer, parseTransfer, MAX_PROFILE_BYTES } from './transfer.mjs';
 import { loadSprites, render } from './renderer.mjs';
 import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost } from './progression.mjs';
 
@@ -169,6 +170,37 @@ document.querySelector('#equipmentButtons').addEventListener('click', event => {
     saveProfile(profileStore, profile);
     state.runRevision += 1;
     refreshUpgrades(); syncHud();
+  }
+});
+document.querySelector('#exportSave').addEventListener('click', () => {
+  if (!profile || !plan) return;
+  const data = serializeTransfer(profile, plan);
+  const blob = new Blob([data], { type: 'application/json;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'rasta-quest-perfil-v1.json';
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  updateText('transferMessage', 'Arquivo exportado. Guarde-o em local seguro.');
+});
+document.querySelector('#importSave').addEventListener('change', async event => {
+  const input = event.currentTarget;
+  const file = input.files?.[0];
+  input.value = '';
+  if (!file || !plan) return;
+  try {
+    if (file.size > MAX_PROFILE_BYTES) throw Error('Arquivo excede o limite permitido.');
+    const imported = parseTransfer(await file.text(), plan);
+    if (!window.confirm('Importar perfil e substituir o progresso local? A run atual será reiniciada.')) return;
+    if (!saveProfile(profileStore, imported)) throw Error('Armazenamento local indisponível neste navegador.');
+    profile = imported;
+    restart();
+    refreshUpgrades();
+    updateText('transferMessage', 'Perfil importado. A nova jornada foi iniciada.');
+    pauseDialog.close();
+  } catch (error) {
+    updateText('transferMessage', 'Não foi possível importar: ' + error.message);
   }
 });
 document.querySelector('#upgradeButtons').addEventListener('click', event => {
