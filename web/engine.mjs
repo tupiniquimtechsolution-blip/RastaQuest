@@ -7,6 +7,7 @@
  * all collision geometry here is authored specifically for this web preview.
  */
 import { recordCowrie, awardEssence } from './progression.mjs';
+import { chestsForRoom, discoverEquipment, equipmentStat, EQUIPMENT } from './loot.mjs';
 export const VIEW_WIDTH = 960;
 export const VIEW_HEIGHT = 540;
 export const GROUND_Y = 460;
@@ -94,7 +95,7 @@ function makeRoomGeometry(room) {
         speed: 82, facing: -1, cooldown: 0.5, hurt: 0 });
     }
   }
-  return { width, platforms, cowries, enemies };
+  return { width, platforms, cowries, enemies, chests: chestsForRoom(room, VIEW_WIDTH, GROUND_Y) };
 }
 
 function enterRoom(state, index) {
@@ -105,6 +106,7 @@ function enterRoom(state, index) {
   state.worldWidth = geometry.width;
   state.platforms = geometry.platforms;
   state.cowries = geometry.cowries;
+  state.chests = geometry.chests;
   state.enemies = geometry.enemies;
   state.entrance = { x: 82, y: GROUND_Y - PLAYER_HEIGHT };
   state.exit = { x: geometry.width - 105, y: GROUND_Y - 104, w: 58, h: 104, ready: false };
@@ -136,13 +138,14 @@ export function createGame(plan, profile = null) {
     platforms: [],
     enemies: [],
     cowries: [],
+    chests: [],
     entrance: null,
     exit: null,
     checkpoint: null,
     cameraX: 0,
     player: { x: 0, y: 0, w: PLAYER_WIDTH, h: PLAYER_HEIGHT, vx: 0, vy: 0,
-      hp: 3 + (profile?.upgrades.vitality ?? 0), maxHp: 3 + (profile?.upgrades.vitality ?? 0), lives: 3, invuln: 0, grounded: true, facing: 1,
-      attackCooldown: 0, attackTime: 0 },
+      hp: 3 + (profile?.upgrades.vitality ?? 0), maxHp: 3 + (profile?.upgrades.vitality ?? 0), lives: 3, mana: 3, maxMana: 3, invuln: 0, grounded: true, facing: 1,
+      attackCooldown: 0, attackTime: 0, specialTime: 0 },
     totalCollected: 0,
     roomCollected: 0,
     collectedIds: new Set(),
@@ -192,7 +195,7 @@ function takeDamage(state) {
 function movePlayer(state, input, dt) {
   const player = state.player;
   const direction = Number(Boolean(input.right)) - Number(Boolean(input.left));
-  player.vx = direction * (SPEED + (state.profile?.upgrades.mobility ?? 0) * 18);
+  player.vx = direction * (SPEED + (state.profile?.upgrades.mobility ?? 0) * 18 + (equipmentStat(state.profile, 'boots') === 'iansa-boots' ? 28 : 0));
   if (direction) player.facing = direction;
   if (input.jump && !state.jumpHeld && player.grounded) {
     player.vy = -JUMP_SPEED;
@@ -241,19 +244,22 @@ function movePlayer(state, input, dt) {
 
 function attackEnemies(state, input) {
   const player = state.player;
-  if (!input.attack || player.attackCooldown > 0) return;
-  player.attackCooldown = 0.34;
-  player.attackTime = 0.2;
+  const special = Boolean(input.special);
+  if ((!input.attack && !special) || player.attackCooldown > 0) return;
+  if (special && player.mana < 1) { announce(state, 'Mana insuficiente para o especial.'); return; }
+  if (special) { player.mana -= 1; player.specialTime = 0.3; state.runRevision += 1; }
+  player.attackCooldown = (equipmentStat(state.profile, 'haft') === 'oak-haft' ? 0.27 : 0.34) + (special ? 0.22 : 0);
+  player.attackTime = special ? 0.3 : 0.2;
   const hitbox = {
-    x: player.facing > 0 ? player.x + player.w - 4 : player.x - 84,
+    x: player.facing > 0 ? player.x + player.w - 4 : player.x - (special ? 145 : 84),
     y: player.y + 10,
-    w: 88,
-    h: 62,
+    w: special ? 150 : 88,
+    h: special ? 85 : 62,
   };
   let hits = 0;
   for (const enemy of state.enemies) {
     if (!enemy.alive || !overlap(hitbox, enemy)) continue;
-    enemy.hp -= 1 + (state.profile?.upgrades.strength ?? 0);
+    enemy.hp -= 1 + (state.profile?.upgrades.strength ?? 0) + (special ? 2 : 0) + (equipmentStat(state.profile, 'blade') === 'ogum-metal' ? 1 : 0);
     enemy.hurt = 0.2;
     hits += 1;
     if (enemy.hp <= 0) {
@@ -310,6 +316,31 @@ function collectCowries(state) {
   }
 }
 
+function handleChests(state, input) {
+  if (!input.interact || state.interactHeld) return;
+  const player = state.player;
+  for (const chest of state.chests) {
+    if (chest.opened || Math.abs(player.x + player.w / 2 - chest.x) > 90) continue;
+    const onElevatedRoute = player.y + player.h < GROUND_Y - 50;
+    if (chest.kind === 'rare' && !onElevatedRoute) continue;
+    chest.opened = true;
+    state.runRevision += 1;
+    if (chest.kind === 'rare') {
+      const newlyUnlocked = state.profile && discoverEquipment(state.profile, chest.reward);
+      if (newlyUnlocked) state.profileRevision += 1;
+      announce(state, newlyUnlocked ? `Relíquia: ${EQUIPMENT[chest.reward].name} (permanente)` :
+        'Baú raro descoberto! Equipamento já registrado.', 3.5);
+    } else if (chest.reward === 'health') {
+      player.hp = Math.min(player.maxHp, player.hp + 2);
+      announce(state, 'Baú encontrado: +2 de vida.');
+    } else {
+      player.mana = Math.min(player.maxMana, player.mana + 2);
+      announce(state, 'Baú encontrado: +2 de mana.');
+    }
+    break;
+  }
+}
+
 function handleExit(state, input) {
   state.exit.ready = state.enemies.every(enemy => !enemy.alive);
   const player = state.player;
@@ -342,6 +373,7 @@ export function step(state, input = {}, seconds = 1 / 60) {
   player.invuln = Math.max(0, player.invuln - dt);
   player.attackCooldown = Math.max(0, player.attackCooldown - dt);
   player.attackTime = Math.max(0, player.attackTime - dt);
+  player.specialTime = Math.max(0, player.specialTime - dt);
   movePlayer(state, input, dt);
   attackEnemies(state, input);
   updateEnemies(state, dt);
@@ -351,6 +383,7 @@ export function step(state, input = {}, seconds = 1 / 60) {
     state.runRevision += 1;
     announce(state, "Checkpoint ativado.");
   }
+  handleChests(state, input);
   handleExit(state, input);
   state.interactHeld = Boolean(input.interact);
   state.cameraX = clamp(player.x + player.w / 2 - VIEW_WIDTH * 0.42, 0, Math.max(0, state.worldWidth - VIEW_WIDTH));
@@ -369,11 +402,13 @@ export function snapshotRun(state) {
     version: 1,
     roomIndex: state.roomIndex,
     hp: state.player.hp,
+    mana: state.player.mana,
     lives: state.player.lives,
     collectedIds: [...state.collectedIds].sort(),
     rewardedRooms: [...state.rewardedRooms].sort(),
     checkpointActivated: state.checkpoint.activated,
     defeatedEnemyIds: state.enemies.filter(enemy => !enemy.alive).map(enemy => enemy.id),
+    openedChestIds: state.chests.filter(chest => chest.opened).map(chest => chest.id),
   };
 }
 
@@ -388,6 +423,7 @@ export function resumeGame(plan, profile, snapshot) {
   const state = fresh();
   if (snapshot.roomIndex) enterRoom(state, snapshot.roomIndex);
   state.player.hp = clamp(snapshot.hp, 1, state.player.maxHp);
+  if (Number.isInteger(snapshot.mana)) state.player.mana = clamp(snapshot.mana, 0, state.player.maxMana);
   state.player.lives = snapshot.lives;
   const ids = new Set(plan.rooms.flatMap(room => room.cowries.map(shell => shell.id)));
   state.collectedIds = new Set(snapshot.collectedIds.filter(id => typeof id === "string" && ids.has(id)));
@@ -399,6 +435,10 @@ export function resumeGame(plan, profile, snapshot) {
   const defeated = new Set(snapshot.defeatedEnemyIds.filter(id => typeof id === "string"));
   for (const enemy of state.enemies) {
     if (defeated.has(enemy.id)) { enemy.alive = false; enemy.hp = 0; }
+  }
+  if (Array.isArray(snapshot.openedChestIds)) {
+    const opened = new Set(snapshot.openedChestIds.filter(id => typeof id === 'string'));
+    for (const chest of state.chests) chest.opened = opened.has(chest.id);
   }
   state.exit.ready = state.enemies.every(enemy => !enemy.alive);
   state.checkpoint.activated = snapshot.checkpointActivated === true;

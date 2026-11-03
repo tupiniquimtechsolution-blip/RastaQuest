@@ -202,10 +202,46 @@ function drawPlayer(ctx, state, camera, sprites) {
     ctx.fillStyle = '#eed681'; ctx.fillRect(p.x - camera, p.y, p.w, p.h);
   }
   if (p.attackTime > 0) {
-    ctx.strokeStyle = '#f9d98cd0'; ctx.lineWidth = 7; ctx.beginPath();
-    ctx.arc(x + p.facing * 26, p.y + 28, 40, p.facing > 0 ? -.9 : 2.1, p.facing > 0 ? 1.1 : 4.1); ctx.stroke();
+    ctx.strokeStyle = p.specialTime > 0 ? '#a9ebff' : '#f9d98cd0'; ctx.lineWidth = 7; ctx.beginPath();
+    ctx.arc(x + p.facing * 26, p.y + 28, p.specialTime > 0 ? 65 : 40, p.facing > 0 ? -.9 : 2.1, p.facing > 0 ? 1.1 : 4.1); ctx.stroke();
   }
   ctx.restore();
+}
+
+function drawLandmarks(ctx, state, camera, palette) {
+  for (const mark of state.room.landmarks ?? []) {
+    const x = (mark.index + 0.42) * VIEW_WIDTH - camera;
+    if (x < -130 || x > VIEW_WIDTH + 130) continue;
+    const y = 178 + (mark.index % 2) * 33;
+    ctx.save();
+    ctx.globalAlpha = 0.8;
+    ctx.fillStyle = palette.ground;
+    ctx.fillRect(x - 6, y + 10, 12, 104);
+    ctx.fillStyle = '#ead0a3';
+    ctx.beginPath(); ctx.moveTo(x - 70, y - 18); ctx.lineTo(x + 70, y - 18);
+    ctx.lineTo(x + 82, y + 12); ctx.lineTo(x - 82, y + 12); ctx.closePath(); ctx.fill();
+    ctx.restore();
+    const text = String(mark.name || '').slice(0, 28).toUpperCase();
+    label(ctx, text, x, y + 7, palette.glow);
+  }
+}
+function drawChests(ctx, state, camera) {
+  for (const chest of state.chests ?? []) {
+    if (chest.opened) continue;
+    const x = chest.x - camera;
+    if (x < -60 || x > VIEW_WIDTH + 60) continue;
+    const y = chest.y;
+    ctx.save();
+    ctx.shadowColor = chest.kind === 'rare' ? '#e7cc6b' : '#a1e1dc';
+    ctx.shadowBlur = chest.kind === 'rare' ? 18 : 8;
+    ctx.fillStyle = chest.kind === 'rare' ? '#765125' : '#5a4a34';
+    ctx.fillRect(x - 20, y - 11, 40, 24);
+    ctx.fillStyle = '#d6b578'; ctx.fillRect(x - 22, y - 17, 44, 10);
+    ctx.strokeStyle = '#f3d48d'; ctx.lineWidth = 2; ctx.strokeRect(x - 19, y - 10, 38, 22);
+    ctx.fillStyle = '#f5e2a1'; ctx.fillRect(x - 3, y - 5, 6, 12);
+    ctx.restore();
+    label(ctx, chest.kind === 'rare' ? 'BAÚ RARO · E' : 'BAÚ · E', x, y - 34, '#f9dd97');
+  }
 }
 
 export function render(ctx, state, sprites = {}) {
@@ -214,6 +250,8 @@ export function render(ctx, state, sprites = {}) {
   drawBackdrop(ctx, state, palette);
   const tile = sprites[`${state.room.biome}Tile`];
   for (const platform of state.platforms) drawPlatform(ctx, platform, state.cameraX, palette, tile);
+  drawLandmarks(ctx, state, state.cameraX, palette);
+  drawChests(ctx, state, state.cameraX);
   drawMarkers(ctx, state, state.cameraX, sprites, palette);
   for (const shell of state.cowries) drawShell(ctx, shell, state.cameraX, state.time, palette);
   drawEnemies(ctx, state, state.cameraX, sprites);

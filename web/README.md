@@ -84,3 +84,30 @@ node --check web/sw.js
 PWA no Android e no Windows, testar atualização/limpeza do cache, 21 salas e
 bosses sem teleporte, conferir persistência e acessibilidade touch. Compilação
 Unity/Android permanece em outra trilha de QA.
+
+## Baús, equipamentos, especiais e marcos de cenário (branch após #95)
+
+- **J** ataca normalmente; **K** usa um golpe elétrico de maior alcance e dano,
+  gastando 1 unidade de mana (até 3 no protótipo). Controles de toque incluem ESPECIAL.
+- **E** junto a um baú abre a recompensa uma vez na run. Baús comuns recuperam
+  vida ou mana; baús raros exigem alcançar uma plataforma alta e registram
+  equipamentos **permanentes** no perfil. A coleta do baú é restaurada pelo
+  save da run; não pode ser aberta duas vezes após recarregar.
+- O protótipo de equipamento oferece Cabo de Carvalho Consagrado (manejo),
+  Metal da Lança de Ogum (dano) e Botas do Vento de Iansã (velocidade).
+  As peças são **propostas de produção**, não ativos finais; requerem revisão
+  narrativa, cultural, visual, balanceamento e aceite comercial.
+- **Pausa / Equipar** lista as peças encontradas e permite equipar as disponíveis.
+  Itens já desbloqueados ficam no perfil local do navegador e sobrevivem à
+  morte/reinício da run.
+- Os nomes dos **marcos já presentes no catálogo de salas** agora aparecem
+  nas passagens horizontais; são sinalização temporária para evitar percursos
+  genéricos. Não equivalem à geometria final das 21 pranchas aprovadas.
+- O botão "Continuar jornada" usa o snapshot de run na mesma máquina, no
+  checkpoint ou entrada segura da sala, com HP, mana, vidas, pickups e inimigos
+  derrotados. Não é sincronização entre plataformas/contas. Recomeçar apaga
+  somente o snapshot da run, não o progresso permanente.
+
+A versão web continua experimental: os baús são representações técnicas,
+sem efeitos de áudio/partículas finais. Não existe publicação HTTPS de preview,
+homologação em aparelho, ou validação Unity nesta entrega.
