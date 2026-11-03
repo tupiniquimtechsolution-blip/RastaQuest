@@ -10,7 +10,7 @@ export const SKIN_REWARDS = Object.freeze(['akane-ancestral', 'axe-thunder']);
 export function makeProfile() {
   return { version: SAVE_VERSION, collectedCowries: [], essence: 0,
     upgrades: { vitality: 0, strength: 0, mobility: 0, spirit: 0 },
-    equipment: { owned: [], equipped: { blade: null, haft: null, boots: null, amulet: null } }, skills: [], skins: [] };
+    equipment: { owned: [], equipped: { blade: null, haft: null, boots: null, amulet: null } }, skills: [], skins: [], selectedSkins: { akane: 'base', axe: 'base' } };
 }
 
 export function allCowrieIds(plan) {
@@ -41,6 +41,12 @@ export function sanitizeProfile(candidate, plan) {
   // Unlocks are recomputed, never accepted from forged saved flags.
   if (clean.collectedCowries.length === allowed.size && allowed.size === 105) {
     clean.skins = [...SKIN_REWARDS];
+  }
+  if (clean.skins.includes('akane-ancestral') && candidate.selectedSkins?.akane === 'akane-ancestral') {
+    clean.selectedSkins.akane = 'akane-ancestral';
+  }
+  if (clean.skins.includes('axe-thunder') && candidate.selectedSkins?.axe === 'axe-thunder') {
+    clean.selectedSkins.axe = 'axe-thunder';
   }
   return clean;
 }
@@ -96,5 +102,13 @@ export function equipItem(profile,id) {
   const item = EQUIPMENT[id];
   if (!item || !profile.equipment.owned.includes(id)) return false;
   profile.equipment.equipped[item.slot] = id;
+  return true;
+}
+
+/** Equip prototype color treatments only when collection has unlocked them. */
+export function equipSkin(profile,slot,skin) {
+  const allowed={akane:'akane-ancestral',axe:'axe-thunder'};
+  if(!(slot in allowed) || (skin !== 'base' && (skin !== allowed[slot] || !profile.skins.includes(skin)))) return false;
+  profile.selectedSkins[slot]=skin;
   return true;
 }
