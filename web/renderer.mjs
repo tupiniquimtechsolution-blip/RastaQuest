@@ -188,7 +188,50 @@ function drawEnemies(ctx, state, camera, sprites) {
     const width = enemy.boss ? 92 : 54;
     ctx.fillStyle = '#1b1419'; ctx.fillRect(x - width / 2, enemy.y - 17, width, 7);
     ctx.fillStyle = enemy.boss ? '#da9fe4' : '#ec927f'; ctx.fillRect(x - width / 2, enemy.y - 17, width * Math.max(0, enemy.hp / enemy.maxHp), 7);
-    if (enemy.boss) label(ctx, 'GUARDIÃO', x, enemy.y - 29, '#f0b4e6');
+    if (enemy.boss) label(ctx, `GUARDIÃO · FASE ${enemy.phase || 1}`, x, enemy.y - 29, '#f0b4e6');
+  }
+}
+
+function drawGameplayDetails(ctx, state) {
+  const camera=state.cameraX;
+  for (const landmark of state.room.landmarks ?? []) {
+    const x=landmark.index*VIEW_WIDTH+VIEW_WIDTH*.55-camera;
+    if (x < -130 || x > VIEW_WIDTH+130 || landmark.role==='entry' || landmark.role==='exit') continue;
+    ctx.save();ctx.globalAlpha=.48;
+    const color=state.room.biome==='forest'?'#a8ce77':state.room.biome==='castle'?'#c5a88d':'#80d6ed';
+    ctx.strokeStyle=color;ctx.lineWidth=4;
+    ctx.beginPath();ctx.arc(x,GROUND_Y-70,32,Math.PI,Math.PI*2);ctx.stroke();
+    ctx.fillStyle=color;ctx.fillRect(x-5,GROUND_Y-66,10,54);
+    ctx.restore();
+    label(ctx,landmark.name.slice(0,30).toUpperCase(),x,GROUND_Y-113,color);
+  }
+  for (const ring of state.rings ?? []) {
+    const x=ring.x-camera;
+    if(x < -50 || x > VIEW_WIDTH+50) continue;
+    ctx.strokeStyle='#f4c975';ctx.lineWidth=7;
+    ctx.beginPath();ctx.arc(x,ring.y,18,0,Math.PI*2);ctx.stroke();
+    ctx.strokeStyle='#efdbb8';ctx.lineWidth=3;
+    ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,ring.y-21);ctx.stroke();
+  }
+  for (const chest of state.chests ?? []) {
+    const x=chest.x-camera;
+    if(x < -80 || x > VIEW_WIDTH+80) continue;
+    ctx.fillStyle=chest.kind==='rare'?'#8c6653':'#5f654c';
+    ctx.fillRect(x,chest.y+11,chest.w,chest.h-11);
+    ctx.fillStyle=chest.opened?'#605949':'#d9ae61';
+    ctx.fillRect(x-2,chest.y+(chest.opened?-7:1),chest.w+4,12);
+    ctx.fillStyle='#2b2b2b';ctx.fillRect(x+chest.w/2-3,chest.y+13,6,10);
+    if(!chest.opened) label(ctx,chest.kind==='rare'?'BAÚ RARO':'BAÚ',x+chest.w/2,chest.y-20,chest.kind==='rare'?'#ffcd8e':'#d7e0bc');
+  }
+  for (const enemy of state.enemies) {
+    if(!enemy.boss || !enemy.alive || enemy.windup<=0) continue;
+    const x=enemy.x-camera+enemy.w/2;
+    ctx.save();
+    ctx.globalAlpha=.27+.15*Math.sin(state.time*24);
+    ctx.fillStyle=enemy.phase===2?'#ff5656':'#fca36d';
+    const w=enemy.phase===2?340:260;
+    ctx.fillRect(x-w/2,GROUND_Y-11,w,11);
+    ctx.restore();
   }
 }
 
@@ -202,7 +245,7 @@ function drawPlayer(ctx, state, camera, sprites) {
     ctx.fillStyle = '#eed681'; ctx.fillRect(p.x - camera, p.y, p.w, p.h);
   }
   if (p.attackTime > 0) {
-    ctx.strokeStyle = '#f9d98cd0'; ctx.lineWidth = 7; ctx.beginPath();
+    ctx.strokeStyle = p.attackSpecial ? '#7adfff' : '#f9d98cd0'; ctx.lineWidth = 7; ctx.beginPath();
     ctx.arc(x + p.facing * 26, p.y + 28, 40, p.facing > 0 ? -.9 : 2.1, p.facing > 0 ? 1.1 : 4.1); ctx.stroke();
   }
   ctx.restore();
@@ -214,6 +257,7 @@ export function render(ctx, state, sprites = {}) {
   drawBackdrop(ctx, state, palette);
   const tile = sprites[`${state.room.biome}Tile`];
   for (const platform of state.platforms) drawPlatform(ctx, platform, state.cameraX, palette, tile);
+  drawGameplayDetails(ctx,state);
   drawMarkers(ctx, state, state.cameraX, sprites, palette);
   for (const shell of state.cowries) drawShell(ctx, shell, state.cameraX, state.time, palette);
   drawEnemies(ctx, state, state.cameraX, sprites);
