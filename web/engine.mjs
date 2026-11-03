@@ -6,9 +6,10 @@
  * The canonical room plan supplies IDs and approximate camera-width positions;
  * all collision geometry here is authored specifically for this web preview.
  */
-import { recordCowrie, awardEssence, awardEquipment } from './progression.mjs';
+import { recordCowrie, awardEssence, awardEquipment, recordLore } from './progression.mjs';
 import { buildChests, buildRings, blessingForNextRoom, equipmentBonus } from './content.mjs';
 import { skillBonus } from './skills.mjs';
+import { LORE } from './lore.mjs';
 export const VIEW_WIDTH = 960;
 export const VIEW_HEIGHT = 540;
 export const GROUND_Y = 460;
@@ -96,7 +97,8 @@ function makeRoomGeometry(room) {
         speed: 82, facing: -1, cooldown: 0.5, hurt: 0 });
     }
   }
-  return { width, platforms, cowries, enemies, chests: buildChests(room, VIEW_WIDTH, GROUND_Y), rings: buildRings(room, VIEW_WIDTH) };
+  return { width, platforms, cowries, enemies, chests: buildChests(room, VIEW_WIDTH, GROUND_Y), rings: buildRings(room, VIEW_WIDTH),
+    tablet: {id:room.id,x:Math.min(width-640,VIEW_WIDTH*2.65),y:GROUND_Y-90,discovered:false} };
 }
 
 function enterRoom(state, index) {
@@ -110,6 +112,7 @@ function enterRoom(state, index) {
   state.enemies = geometry.enemies;
   state.chests = geometry.chests;
   state.rings = geometry.rings;
+  state.tablet = geometry.tablet;
   state.entrance = { x: 82, y: GROUND_Y - PLAYER_HEIGHT };
   state.exit = { x: geometry.width - 105, y: GROUND_Y - 104, w: 58, h: 104, ready: false };
   state.checkpoint = { x: room.checkpoint_screen * VIEW_WIDTH, y: GROUND_Y - PLAYER_HEIGHT, activated: false };
@@ -379,6 +382,13 @@ function handleOptionalInteractions(state, input) {
     }
     return true;
   }
+  if (state.tablet && !state.tablet.discovered &&
+    Math.abs(cx-state.tablet.x)<82 && Math.abs(cy-state.tablet.y)<98) {
+    state.tablet.discovered=true;
+    if(state.profile && recordLore(state.profile,state.tablet.id)) state.profileRevision+=1;
+    announce(state,'Memória encontrada: '+LORE[state.tablet.id]?.title,3.5);
+    return true;
+  }
   if (!p.grounded) {
     const ring = state.rings.find(ring => Math.abs(cx - ring.x) < 80 && Math.abs(cy - ring.y) < 85);
     if (ring) {
@@ -456,6 +466,7 @@ export function snapshotRun(state) {
     rewardedRooms: [...state.rewardedRooms].sort(),
     killedEnemies: state.enemies.filter(e => !e.alive).map(e => e.id),
     openedChests: state.chests.filter(c => c.opened).map(c => c.id),
+    tabletDiscovered: Boolean(state.tablet?.discovered),
     checkpoint: Boolean(state.checkpoint.activated),
     runBuffs: { ...state.runBuffs },
   };
@@ -504,6 +515,7 @@ export function restoreRun(plan, profile, snapshot) {
   for (const enemy of fresh.enemies) if(killed.has(enemy.id)) { enemy.alive = false; enemy.hp = 0; }
   const opened = new Set(Array.isArray(snapshot.openedChests) ? snapshot.openedChests : []);
   for (const chest of fresh.chests) if(opened.has(chest.id)) chest.opened = true;
+  if(fresh.tablet) fresh.tablet.discovered=Boolean(snapshot.tabletDiscovered);
   fresh.checkpoint.activated = Boolean(snapshot.checkpoint);
   fresh.player.x = fresh.checkpoint.activated ? fresh.checkpoint.x : fresh.entrance.x;
   fresh.player.y = GROUND_Y - fresh.player.h;
