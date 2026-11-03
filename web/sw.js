@@ -1,9 +1,13 @@
 /* Prototype offline shell cache. Bump version when changing deploy assets. */
-const VERSION = 'rasta-quest-preview-20261103-v1';
+const VERSION = 'rasta-quest-preview-20261103-v2';
 const SHELL = [
   './', './index.html', './style.css', './main.mjs', './engine.mjs',
-  './progression.mjs', './renderer.mjs', './data/rooms.json',
-  './manifest.webmanifest', './app-icon.svg'
+  './progression.mjs', './skills.mjs', './sanctuary.mjs', './run-save.mjs',
+  './content.mjs', './renderer.mjs', './data/rooms.json',
+  './manifest.webmanifest', './app-icon.svg',
+  ...['player-idle','player-run','player-jump','player-attack','enemy-idle',
+     'enemy-attack','portal','boss-forest','boss-castle','boss-caves',
+     'terrain-forest','terrain-castle','terrain-caves'].map(name => './assets/' + name + '.png')
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(VERSION).then(cache => cache.addAll(SHELL)));
