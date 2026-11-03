@@ -1,6 +1,7 @@
 /** Rasta Quest web progression v1. Local-only, independent of run state. */
 import { EQUIPMENT, SLOTS } from './content.mjs';
 import { sanitizeSkills } from './skills.mjs';
+import { validLoreIds } from './lore.mjs';
 export const SAVE_KEY = 'rasta-quest:web-profile:v1';
 export const SAVE_VERSION = 1;
 export const UPGRADE_TYPES = Object.freeze(['vitality', 'strength', 'mobility', 'spirit']);
@@ -10,7 +11,7 @@ export const SKIN_REWARDS = Object.freeze(['akane-ancestral', 'axe-thunder']);
 export function makeProfile() {
   return { version: SAVE_VERSION, collectedCowries: [], essence: 0,
     upgrades: { vitality: 0, strength: 0, mobility: 0, spirit: 0 },
-    equipment: { owned: [], equipped: { blade: null, haft: null, boots: null, amulet: null } }, skills: [], skins: [], selectedSkins: { akane: 'base', axe: 'base' } };
+    equipment: { owned: [], equipped: { blade: null, haft: null, boots: null, amulet: null } }, skills: [], loreIds: [], skins: [], selectedSkins: { akane: 'base', axe: 'base' } };
 }
 
 export function allCowrieIds(plan) {
@@ -38,6 +39,7 @@ export function sanitizeProfile(candidate, plan) {
     if (clean.equipment.owned.includes(id) && EQUIPMENT[id]?.slot === slot) clean.equipment.equipped[slot] = id;
   }
   clean.skills = sanitizeSkills(candidate.skills);
+  clean.loreIds = validLoreIds(candidate.loreIds);
   // Unlocks are recomputed, never accepted from forged saved flags.
   if (clean.collectedCowries.length === allowed.size && allowed.size === 105) {
     clean.skins = [...SKIN_REWARDS];
@@ -110,5 +112,11 @@ export function equipSkin(profile,slot,skin) {
   const allowed={akane:'akane-ancestral',axe:'axe-thunder'};
   if(!(slot in allowed) || (skin !== 'base' && (skin !== allowed[slot] || !profile.skins.includes(skin)))) return false;
   profile.selectedSkins[slot]=skin;
+  return true;
+}
+
+export function recordLore(profile,id) {
+  if(!validLoreIds([id]).length || profile.loreIds.includes(id)) return false;
+  profile.loreIds.push(id);profile.loreIds.sort();
   return true;
 }
