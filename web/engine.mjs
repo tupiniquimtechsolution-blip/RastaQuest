@@ -424,3 +424,79 @@ export function step(state, input = {}, seconds = 1 / 60) {
   state.cameraX = clamp(player.x + player.w / 2 - VIEW_WIDTH * 0.42, 0, Math.max(0, state.worldWidth - VIEW_WIDTH));
   return state;
 }
+
+/** Run snapshot is separate from profile/metaprogression. It resumes safely at
+ * a checkpoint (or entrance) rather than serializing live physics internals. */
+export const RUN_VERSION = 1;
+
+export function snapshotRun(state) {
+  if (!state || state.status !== 'playing') return null;
+  return {
+    version: RUN_VERSION,
+    roomIndex: state.roomIndex,
+    roomId: state.room.id,
+    lives: state.player.lives,
+    hp: state.player.hp,
+    mana: state.player.mana,
+    collectedIds: [...state.collectedIds].sort(),
+    rewardedRooms: [...state.rewardedRooms].sort(),
+    killedEnemies: state.enemies.filter(e => !e.alive).map(e => e.id),
+    openedChests: state.chests.filter(c => c.opened).map(c => c.id),
+    checkpoint: Boolean(state.checkpoint.activated),
+    runBuffs: { ...state.runBuffs },
+  };
+}
+
+export function restoreRun(plan, profile, snapshot) {
+  const fresh = createGame(plan, profile);
+  if (!snapshot || snapshot.version !== RUN_VERSION ||
+      !Number.isInteger(snapshot.roomIndex) || snapshot.roomIndex < 0 ||
+      snapshot.roomIndex >= plan.rooms.length ||
+      snapshot.roomId !== plan.rooms[snapshot.roomIndex].id) return fresh;
+
+  const validIds = new Set(plan.rooms.flatMap(room => room.cowries.map(c => c.id)));
+  const uniqueIds = [...new Set(Array.isArray(snapshot.collectedIds) ?
+    snapshot.collectedIds.filter(id => typeof id === 'string' && validIds.has(id)) : [])];
+  const awarded = new Set();
+  for (const room of plan.rooms) {
+    if (room.cowries.every(c => uniqueIds.includes(c.id)) &&
+      Array.isArray(snapshot.rewardedRooms) &&
+      snapshot.rewardedRooms.includes(room.id)) awarded.add(room.id);
+  }
+  if (snapshot.roomIndex > 0) enterRoom(fresh,snapshot.roomIndex);
+  const buffs = snapshot.runBuffs ?? {};
+  fresh.runBuffs = {
+    damage: Number.isInteger(buffs.damage) ? clamp(buffs.damage,0,3) : 0,
+    mana: Number.isInteger(buffs.mana) ? clamp(buffs.mana,0,3) : 0,
+    mobility: Number.isInteger(buffs.mobility) ? clamp(buffs.mobility,0,90) : 0,
+  };
+  fresh.player.maxMana = 3 + (profile?.upgrades.spirit ?? 0) +
+    equipmentBonus(profile,'mana') + fresh.runBuffs.mana;
+  fresh.player.mana = Number.isInteger(snapshot.mana) ?
+    clamp(snapshot.mana,0,fresh.player.maxMana) : fresh.player.maxMana;
+  fresh.player.lives = Number.isInteger(snapshot.lives) ?
+    clamp(snapshot.lives,1,99) : fresh.player.lives;
+  fresh.player.hp = Number.isInteger(snapshot.hp) ?
+    clamp(snapshot.hp,1,fresh.player.maxHp) : fresh.player.maxHp;
+  fresh.collectedIds = new Set(uniqueIds);
+  fresh.totalCollected = uniqueIds.length;
+  fresh.rewardedRooms = awarded;
+  let roomCount=0;
+  for(const cowrie of fresh.cowries) {
+    if (fresh.collectedIds.has(cowrie.id)) { cowrie.collected = true; roomCount++; }
+  }
+  fresh.roomCollected = roomCount;
+  const killed = new Set(Array.isArray(snapshot.killedEnemies) ? snapshot.killedEnemies : []);
+  for (const enemy of fresh.enemies) if(killed.has(enemy.id)) { enemy.alive = false; enemy.hp = 0; }
+  const opened = new Set(Array.isArray(snapshot.openedChests) ? snapshot.openedChests : []);
+  for (const chest of fresh.chests) if(opened.has(chest.id)) chest.opened = true;
+  fresh.checkpoint.activated = Boolean(snapshot.checkpoint);
+  fresh.player.x = fresh.checkpoint.activated ? fresh.checkpoint.x : fresh.entrance.x;
+  fresh.player.y = GROUND_Y - fresh.player.h;
+  fresh.player.vx = 0; fresh.player.vy = 0; fresh.player.grounded = true;
+  fresh.player.invuln = 1.5;
+  fresh.cameraX = clamp(fresh.player.x - VIEW_WIDTH*.42,0,Math.max(0,fresh.worldWidth-VIEW_WIDTH));
+  fresh.exit.ready = fresh.enemies.every(enemy => !enemy.alive);
+  announce(fresh, 'Jornada restaurada do checkpoint.',3);
+  return fresh;
+}
