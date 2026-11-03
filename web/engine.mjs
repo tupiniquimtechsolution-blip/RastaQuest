@@ -175,7 +175,7 @@ export function createGame(plan, profile = null) {
   return state;
 }
 
-function takeDamage(state) {
+function takeDamage(state, source = null) {
   const player = state.player;
   if (player.invuln > 0 || state.status !== "playing") return;
   if (player.blocking && skillBonus(state.profile,'defense')>0 && player.mana>0) {
@@ -185,7 +185,13 @@ function takeDamage(state) {
     return;
   }
   player.hp -= 1;
-  player.invuln = 1.15;
+  player.invuln = 1.3;
+  if (source) {
+    const side = player.x + player.w/2 < source.x + source.w/2 ? -1 : 1;
+    player.x = clamp(player.x + side*72,0,state.worldWidth-player.w);
+    player.vy = -260;
+    player.grounded = false;
+  }
   announce(state, "Akane sofreu um golpe!");
   if (player.hp > 0) return;
   player.lives -= 1;
@@ -317,7 +323,7 @@ function updateEnemies(state, dt) {
         enemy.windup = Math.max(0, enemy.windup - dt);
         if (!enemy.windup) {
           const attackDistance = Math.abs(player.x + player.w / 2 - (enemy.x + enemy.w / 2));
-          if (attackDistance < (enemy.phase === 2 ? 170 : 130) && sameLevel) takeDamage(state);
+          if (attackDistance < (enemy.phase === 2 ? 170 : 130) && sameLevel) takeDamage(state,enemy);
           enemy.cooldown = enemy.phase === 2 ? 1.05 : 1.5;
         }
       } else if (Math.abs(distance) < 190 && sameLevel && enemy.cooldown <= 0) {
@@ -325,7 +331,7 @@ function updateEnemies(state, dt) {
         announce(state, enemy.phase === 2 ? 'O guardião acelera! Desvie do impacto!' : 'O guardião prepara um golpe!', 0.8);
       }
     } else if (close && sameLevel && enemy.cooldown <= 0) {
-      takeDamage(state);
+      takeDamage(state,enemy);
       enemy.cooldown = 1.35;
     }
   }
