@@ -6,6 +6,7 @@
  * The canonical room plan supplies IDs and approximate camera-width positions;
  * all collision geometry here is authored specifically for this web preview.
  */
+import { recordCowrie, awardEssence } from './progression.mjs';
 export const VIEW_WIDTH = 960;
 export const VIEW_HEIGHT = 540;
 export const GROUND_Y = 460;
@@ -121,10 +122,12 @@ function enterRoom(state, index) {
   announce(state, `Sala ${index + 1}/21 · ${room.title}`, 3.5);
 }
 
-export function createGame(plan) {
+export function createGame(plan, profile = null) {
   validatePlan(plan);
   const state = {
     rooms: plan.rooms,
+    profile,
+    profileRevision: 0,
     roomIndex: 0,
     room: null,
     worldWidth: 0,
@@ -136,7 +139,7 @@ export function createGame(plan) {
     checkpoint: null,
     cameraX: 0,
     player: { x: 0, y: 0, w: PLAYER_WIDTH, h: PLAYER_HEIGHT, vx: 0, vy: 0,
-      hp: 3, maxHp: 3, lives: 3, invuln: 0, grounded: true, facing: 1,
+      hp: 3 + (profile?.upgrades.vitality ?? 0), maxHp: 3 + (profile?.upgrades.vitality ?? 0), lives: 3, invuln: 0, grounded: true, facing: 1,
       attackCooldown: 0, attackTime: 0 },
     totalCollected: 0,
     roomCollected: 0,
@@ -186,7 +189,7 @@ function takeDamage(state) {
 function movePlayer(state, input, dt) {
   const player = state.player;
   const direction = Number(Boolean(input.right)) - Number(Boolean(input.left));
-  player.vx = direction * SPEED;
+  player.vx = direction * (SPEED + (state.profile?.upgrades.mobility ?? 0) * 18);
   if (direction) player.facing = direction;
   if (input.jump && !state.jumpHeld && player.grounded) {
     player.vy = -JUMP_SPEED;
@@ -247,12 +250,13 @@ function attackEnemies(state, input) {
   let hits = 0;
   for (const enemy of state.enemies) {
     if (!enemy.alive || !overlap(hitbox, enemy)) continue;
-    enemy.hp -= 1;
+    enemy.hp -= 1 + (state.profile?.upgrades.strength ?? 0);
     enemy.hurt = 0.2;
     hits += 1;
     if (enemy.hp <= 0) {
       enemy.hp = 0;
       enemy.alive = false;
+      if (state.profile && awardEssence(state.profile, enemy.boss ? 20 : 5)) state.profileRevision += 1;
     }
   }
   if (hits) announce(state, state.enemies.every(e => !e.alive) ? "Caminho liberado! Procure a saída." : "Golpe certeiro!", 1.4);
@@ -288,6 +292,7 @@ function collectCowries(state) {
     if (Math.hypot(cowrie.x - nearestX, cowrie.y - nearestY) > cowrie.r + 8) continue;
     cowrie.collected = true;
     state.collectedIds.add(cowrie.id);
+    if (state.profile && recordCowrie(state.profile, cowrie.id, { rooms: state.rooms })) state.profileRevision += 1;
     state.totalCollected += 1;
     state.roomCollected += 1;
     announce(state, `Búzio ${state.roomCollected}/5 desta sala`);
@@ -318,7 +323,7 @@ function handleExit(state, input) {
 
 export function step(state, input = {}, seconds = 1 / 60) {
   if (state.status !== "playing") {
-    if (input.restart) Object.assign(state, createGame({ rooms: state.rooms }));
+    if (input.restart) Object.assign(state, createGame({ rooms: state.rooms }, state.profile));
     return state;
   }
   const dt = clamp(Number.isFinite(seconds) ? seconds : 0, 0, 1 / 30);
