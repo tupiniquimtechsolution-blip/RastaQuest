@@ -9,7 +9,7 @@ test('offline preview has no external runtime dependencies and includes all thre
   assert.match(bundled, /caves-07/);
   assert.match(bundled, /Raízes do Trovão/);
   assert.match(bundled, /defesa_5/);
-  assert.doesNotMatch(bundled, /fetch\\(['"]\\.\\/data\\/skills\\.json/);
+  assert.equal(bundled.includes("fetch('./data/skills.json"), false);
   assert.match(bundled, /data:image\/png;base64,/);
   assert.doesNotMatch(bundled, /<script[^>]+src=/);
   assert.doesNotMatch(bundled, /<link[^>]+stylesheet/);
