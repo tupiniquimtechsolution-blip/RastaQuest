@@ -6,7 +6,8 @@
  * The canonical room plan supplies IDs and approximate camera-width positions;
  * all collision geometry here is authored specifically for this web preview.
  */
-import { recordCowrie, awardEssence } from './progression.mjs';
+import { recordCowrie, awardEssence, awardEquipment } from './progression.mjs';
+import { buildChests, buildRings, blessingForNextRoom, equipmentBonus } from './content.mjs';
 export const VIEW_WIDTH = 960;
 export const VIEW_HEIGHT = 540;
 export const GROUND_Y = 460;
@@ -84,7 +85,7 @@ function makeRoomGeometry(room) {
   const enemies = [];
   if (room.boss_room) {
     const x = room.boss_start_screen * VIEW_WIDTH + 180;
-    enemies.push({ id: `${room.id}-boss`, x, y: GROUND_Y - 96, w: 72, h: 96, hp: 7, maxHp: 7,
+    enemies.push({ id: `${room.id}-boss`, x, y: GROUND_Y - 96, w: 72, h: 96, hp: 10, maxHp: 10, phase: 1, windup: 0,
       alive: true, boss: true, anchorX: x, patrol: 280, speed: 74, facing: -1, cooldown: 0.8, hurt: 0 });
   } else {
     for (let screen = 1; screen < room.planned_camera_widths - 1; screen += 2) {
@@ -94,7 +95,7 @@ function makeRoomGeometry(room) {
         speed: 82, facing: -1, cooldown: 0.5, hurt: 0 });
     }
   }
-  return { width, platforms, cowries, enemies };
+  return { width, platforms, cowries, enemies, chests: buildChests(room, VIEW_WIDTH, GROUND_Y), rings: buildRings(room, VIEW_WIDTH) };
 }
 
 function enterRoom(state, index) {
@@ -106,6 +107,8 @@ function enterRoom(state, index) {
   state.platforms = geometry.platforms;
   state.cowries = geometry.cowries;
   state.enemies = geometry.enemies;
+  state.chests = geometry.chests;
+  state.rings = geometry.rings;
   state.entrance = { x: 82, y: GROUND_Y - PLAYER_HEIGHT };
   state.exit = { x: geometry.width - 105, y: GROUND_Y - 104, w: 58, h: 104, ready: false };
   state.checkpoint = { x: room.checkpoint_screen * VIEW_WIDTH, y: GROUND_Y - PLAYER_HEIGHT, activated: false };
@@ -117,6 +120,14 @@ function enterRoom(state, index) {
   state.player.invuln = 0.7;
   state.cameraX = 0;
   state.roomCollected = 0;
+  if (index > 0) {
+    const buff = blessingForNextRoom(index);
+    const old = state.runBuffs[buff.effect] || 0;
+    const cap = buff.effect === 'mobility' ? 90 : 3;
+    state.runBuffs[buff.effect] = Math.min(cap, old + buff.value);
+  }
+  state.player.maxMana = 3 + (state.profile?.upgrades.spirit ?? 0) + equipmentBonus(state.profile, 'mana') + (state.runBuffs.mana || 0);
+  state.player.mana = state.player.maxMana;
   state.jumpHeld = false;
   state.interactHeld = false;
   announce(state, `Sala ${index + 1}/21 · ${room.title}`, 3.5);
@@ -127,6 +138,7 @@ export function createGame(plan, profile = null) {
   const state = {
     rooms: plan.rooms,
     profile,
+    runBuffs: { damage: 0, mana: 0, mobility: 0 },
     profileRevision: 0,
     roomIndex: 0,
     room: null,
@@ -134,12 +146,18 @@ export function createGame(plan, profile = null) {
     platforms: [],
     enemies: [],
     cowries: [],
+    chests: [], rings: [],
     entrance: null,
     exit: null,
     checkpoint: null,
     cameraX: 0,
     player: { x: 0, y: 0, w: PLAYER_WIDTH, h: PLAYER_HEIGHT, vx: 0, vy: 0,
-      hp: 3 + (profile?.upgrades.vitality ?? 0), maxHp: 3 + (profile?.upgrades.vitality ?? 0), lives: 3, invuln: 0, grounded: true, facing: 1,
+      hp: 3 + (profile?.upgrades.vitality ?? 0) + equipmentBonus(profile,'vitality'),
+      maxHp: 3 + (profile?.upgrades.vitality ?? 0) + equipmentBonus(profile,'vitality'),
+      mana: 3 + (profile?.upgrades.spirit ?? 0) + equipmentBonus(profile,'mana'),
+      maxMana: 3 + (profile?.upgrades.spirit ?? 0) + equipmentBonus(profile,'mana'),
+      lives: 3, invuln: 0, grounded: true, facing: 1, grappleBoost: 0,
+      attackSpecial: false,
       attackCooldown: 0, attackTime: 0 },
     totalCollected: 0,
     roomCollected: 0,
@@ -182,6 +200,7 @@ function takeDamage(state) {
     enemy.hp = enemy.maxHp;
     enemy.alive = true;
     enemy.cooldown = 0.7;
+    if (enemy.boss) { enemy.windup = 0; enemy.phase = 1; }
   }
   announce(state, state.checkpoint.activated ? "Retorno ao checkpoint." : "Retorno à entrada.");
 }
@@ -189,7 +208,9 @@ function takeDamage(state) {
 function movePlayer(state, input, dt) {
   const player = state.player;
   const direction = Number(Boolean(input.right)) - Number(Boolean(input.left));
-  player.vx = direction * (SPEED + (state.profile?.upgrades.mobility ?? 0) * 18);
+  player.grappleBoost = Math.max(0, player.grappleBoost - dt);
+  const mobility = equipmentBonus(state.profile, 'mobility') + (state.runBuffs.mobility || 0);
+  player.vx = direction * (SPEED + (state.profile?.upgrades.mobility ?? 0) * 18 + mobility + (player.grappleBoost > 0 ? 160 : 0));
   if (direction) player.facing = direction;
   if (input.jump && !state.jumpHeld && player.grounded) {
     player.vy = -JUMP_SPEED;
@@ -238,19 +259,26 @@ function movePlayer(state, input, dt) {
 
 function attackEnemies(state, input) {
   const player = state.player;
-  if (!input.attack || player.attackCooldown > 0) return;
-  player.attackCooldown = 0.34;
-  player.attackTime = 0.2;
+  const special = Boolean(input.special) && player.mana > 0;
+  if ((!input.attack && !input.special) || player.attackCooldown > 0) return;
+  if (input.special && !special && !input.attack) {
+    announce(state, 'Mana insuficiente para o ataque especial.', 0.7);
+    return;
+  }
+  if (special) player.mana -= 1;
+  player.attackSpecial = special;
+  player.attackCooldown = Math.max(0.19, (special ? 0.48 : 0.34) - equipmentBonus(state.profile, 'handling') * 0.025);
+  player.attackTime = special ? 0.28 : 0.2;
   const hitbox = {
-    x: player.facing > 0 ? player.x + player.w - 4 : player.x - 84,
-    y: player.y + 10,
-    w: 88,
-    h: 62,
+    x: player.facing > 0 ? player.x + player.w - 4 : player.x - (special ? 142 : 84),
+    y: player.y + (special ? -8 : 10),
+    w: special ? 146 : 88,
+    h: special ? 90 : 62,
   };
   let hits = 0;
   for (const enemy of state.enemies) {
     if (!enemy.alive || !overlap(hitbox, enemy)) continue;
-    enemy.hp -= 1 + (state.profile?.upgrades.strength ?? 0);
+    enemy.hp -= 1 + (special ? 2 : 0) + (state.profile?.upgrades.strength ?? 0) + equipmentBonus(state.profile, 'damage') + (state.runBuffs.damage || 0);
     enemy.hurt = 0.2;
     hits += 1;
     if (enemy.hp <= 0) {
@@ -276,9 +304,22 @@ function updateEnemies(state, dt) {
     }
     const close = Math.abs(distance) < (enemy.boss ? 91 : 62);
     const sameLevel = Math.abs((player.y + player.h) - (enemy.y + enemy.h)) < 72;
-    if (close && sameLevel && enemy.cooldown <= 0) {
+    if (enemy.boss) {
+      enemy.phase = enemy.hp <= Math.ceil(enemy.maxHp / 2) ? 2 : 1;
+      if (enemy.windup > 0) {
+        enemy.windup = Math.max(0, enemy.windup - dt);
+        if (!enemy.windup) {
+          const attackDistance = Math.abs(player.x + player.w / 2 - (enemy.x + enemy.w / 2));
+          if (attackDistance < (enemy.phase === 2 ? 170 : 130) && sameLevel) takeDamage(state);
+          enemy.cooldown = enemy.phase === 2 ? 1.05 : 1.5;
+        }
+      } else if (Math.abs(distance) < 190 && sameLevel && enemy.cooldown <= 0) {
+        enemy.windup = enemy.phase === 2 ? 0.38 : 0.65;
+        announce(state, enemy.phase === 2 ? 'O guardião acelera! Desvie do impacto!' : 'O guardião prepara um golpe!', 0.8);
+      }
+    } else if (close && sameLevel && enemy.cooldown <= 0) {
       takeDamage(state);
-      enemy.cooldown = enemy.boss ? 1.1 : 1.35;
+      enemy.cooldown = 1.35;
     }
   }
 }
@@ -302,6 +343,39 @@ function collectCowries(state) {
     player.lives += 1;
     announce(state, "5 búzios! +1 vida extra", 3.2);
   }
+}
+
+function handleOptionalInteractions(state, input) {
+  if (!input.interact || state.interactHeld) return false;
+  const p = state.player;
+  const cx = p.x + p.w / 2, cy = p.y + p.h / 2;
+  // Chests are interactable in ground and elevated secret routes.
+  const chest = state.chests.find(c => !c.opened && Math.abs(cx - (c.x + c.w / 2)) < 76 && Math.abs(cy - (c.y + c.h / 2)) < 85);
+  if (chest) {
+    chest.opened = true;
+    if (chest.kind === 'rare') {
+      if (state.profile && awardEquipment(state.profile, chest.equipmentId)) {
+        state.profileRevision += 1;
+        announce(state, 'Equipamento permanente encontrado! Veja Pausa / Equipar.', 3);
+      } else announce(state, 'Baú raro explorado.', 2);
+    } else {
+      const gain = state.roomIndex % 2 === 0 ? 'hp' : 'mana';
+      const max = gain === 'hp' ? 'maxHp' : 'maxMana';
+      p[gain] = Math.min(p[max], p[gain] + 2);
+      announce(state, gain === 'hp' ? 'Baú: vida recuperada!' : 'Baú: mana recuperada!');
+    }
+    return true;
+  }
+  if (!p.grounded) {
+    const ring = state.rings.find(ring => Math.abs(cx - ring.x) < 80 && Math.abs(cy - ring.y) < 85);
+    if (ring) {
+      p.vy = -720;
+      p.grappleBoost = 0.32;
+      announce(state, 'Impulso na argola!');
+      return true;
+    }
+  }
+  return false;
 }
 
 function handleExit(state, input) {
@@ -340,11 +414,12 @@ export function step(state, input = {}, seconds = 1 / 60) {
   attackEnemies(state, input);
   updateEnemies(state, dt);
   collectCowries(state);
+  const interacted = handleOptionalInteractions(state, input);
   if (!state.checkpoint.activated && player.x + player.w / 2 >= state.checkpoint.x) {
     state.checkpoint.activated = true;
     announce(state, "Checkpoint ativado.");
   }
-  handleExit(state, input);
+  if (!interacted) handleExit(state, input);
   state.interactHeld = Boolean(input.interact);
   state.cameraX = clamp(player.x + player.w / 2 - VIEW_WIDTH * 0.42, 0, Math.max(0, state.worldWidth - VIEW_WIDTH));
   return state;
