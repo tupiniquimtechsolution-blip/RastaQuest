@@ -24,6 +24,7 @@ jobs:
           node-version: '22'
       - name: Check JavaScript syntax
         run: |
+          node --check web/browser-smoke.mjs
           node --check web/sw.js
           node --check web/pwa.test.mjs
           node --check web/transfer.mjs
@@ -53,6 +54,9 @@ jobs:
         run: node web/build-standalone.mjs
       - name: Verify standalone HTML bundle
         run: node --test web/standalone.test.mjs
+
+      - name: Smoke served and offline previews in headless Chrome
+        run: node web/browser-smoke.mjs
 
       - name: Package browser preview for manual testing
         uses: actions/upload-artifact@v4
