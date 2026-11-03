@@ -20,7 +20,7 @@ if (skillDesign.branches?.reduce((total, branch) => total + branch.nodes.length,
 if (plan.rooms?.length !== 21 || plan.expected_cowries !== 105) {
   throw new Error('Unexpected room plan, refusing to build offline preview');
 }
-const modules = ['loot.mjs', 'progression.mjs', 'engine.mjs',
+const modules = ['loot.mjs', 'progression.mjs', 'transfer.mjs', 'engine.mjs',
   'run-save.mjs', 'renderer.mjs', 'main.mjs'];
 const assetNames = [
   'player-idle.png', 'player-run.png', 'player-jump.png',
