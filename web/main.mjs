@@ -2,7 +2,7 @@ import { createGame, step, restoreRun } from './engine.mjs';
 import { readSavedRun, writeSavedRun, eraseSavedRun } from './run-save.mjs';
 import { loadSprites, render, renderSanctuary } from './renderer.mjs';
 import { createSanctuary, stepSanctuary } from './sanctuary.mjs';
-import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost, equipItem } from './progression.mjs';
+import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost, equipItem, equipSkin } from './progression.mjs';
 import { EQUIPMENT, SLOTS, equipmentBonus } from './content.mjs';
 import { SKILL_TREE, skillBonus, canPurchaseSkill, purchaseSkill } from './skills.mjs';
 
@@ -265,6 +265,16 @@ function refreshSkills() {
     grid.append(section);
   }
 }
+document.querySelector('#skinControls').addEventListener('click', event => {
+  const button=event.target.closest('button[data-skin-slot]');
+  if(!button || !profile)return;
+  const slot=button.dataset.skinSlot,id=slot==='akane'?'akane-ancestral':'axe-thunder';
+  const next=profile.selectedSkins[slot]===id?'base':id;
+  if(equipSkin(profile,slot,next)){
+    saveProfile(profileStore,profile);
+    refreshUpgrades();syncHud();
+  }
+});
 document.querySelector('#equipmentInventory').addEventListener('click', event => {
   const button = event.target.closest('button[data-equip]');
   if (!button || !profile || !equipItem(profile, button.dataset.equip)) return;
@@ -296,6 +306,13 @@ function refreshUpgrades() {
   updateText('albumProgress', `${profile.collectedCowries.length}/105 búzios únicos`);
   updateText('cosmeticRewards', profile.skins.length ? 'Skins de Akane e do machado desbloqueadas — equipar visuais: em desenvolvimento' : 'Skins de Akane e do machado desbloqueadas ao completar 105/105');
   updateText('essenceBalance', `${profile.essence} essências vermelhas disponíveis`);
+  for(const button of document.querySelectorAll('[data-skin-slot]')) {
+    const slot=button.dataset.skinSlot;
+    const id=slot==='akane'?'akane-ancestral':'axe-thunder';
+    const unlocked=profile.skins.includes(id);
+    button.disabled=!unlocked;
+    button.textContent=`${slot==='akane'?'Akane':'Machado'}: ${unlocked ? (profile.selectedSkins[slot]===id?'Visual ancestral ativo · retornar ao base':'Equipar visual conquistado') : 'Bloqueado até 105/105'}`;
+  }
   const inventory = document.getElementById('equipmentInventory');
   if (inventory) {
     inventory.replaceChildren();
