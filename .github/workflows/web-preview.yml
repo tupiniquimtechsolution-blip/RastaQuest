@@ -28,6 +28,7 @@ jobs:
           node --check web/pwa.test.mjs
           node --check web/run-save.mjs
           node --check web/run-save.test.mjs
+          node --check web/geometry.test.mjs
           node --check web/progression.mjs
           node --check web/progression.test.mjs
           node --check web/engine.mjs
