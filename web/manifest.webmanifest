@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "Rasta Quest — Prévia Jogável",
+  "short_name": "Rasta Quest",
+  "description": "Prévia ilustrada 2D de Rasta Quest, para testar no navegador.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#10211e",
+  "theme_color": "#10211e",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "./app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

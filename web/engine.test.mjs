@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { createGame, step, validatePlan, VIEW_WIDTH, GROUND_Y } from './engine.mjs';
+import { makeProfile } from './progression.mjs';
 
 const planPath = fileURLToPath(new URL('./data/rooms.json', import.meta.url));
 const plan = JSON.parse(readFileSync(planPath, 'utf8'));
@@ -127,4 +128,38 @@ test('boss rooms keep all cowries before the arena and final exit wins', () => {
   step(game, { restart: true }, 1 / 60);
   assert.equal(game.status, 'playing');
   assert.equal(game.roomIndex, 0);
+});
+
+
+test('permanent upgrades affect run stats and enemy essence is awarded once per kill', () => {
+  const profile = makeProfile();
+  profile.upgrades.vitality = 2;
+  profile.upgrades.strength = 2;
+  profile.upgrades.mobility = 1;
+  const game = createGame(plan, profile);
+  assert.equal(game.player.hp, 5);
+  assert.equal(game.player.maxHp, 5);
+  const enemy = game.enemies[0];
+  game.player.x = enemy.x - game.player.w - 8;
+  game.player.y = enemy.y;
+  enemy.cooldown = 999;
+  step(game, { attack: true }, 1 / 60);
+  assert.equal(enemy.alive, false);
+  assert.equal(profile.essence, 5);
+  assert.equal(game.profileRevision, 1);
+  for (let n = 0; n < 20; n++) step(game, { attack: true }, 1 / 60);
+  assert.equal(profile.essence, 5);
+});
+
+test('collecting cowries in repeated journeys does not duplicate profile discoveries', () => {
+  const profile = makeProfile();
+  for (let pass = 0; pass < 2; pass++) {
+    const game = createGame(plan, profile);
+    const first = game.cowries[0];
+    game.player.x = first.x - game.player.w / 2;
+    game.player.y = first.y - game.player.h / 2;
+    step(game, {}, 1 / 60);
+    assert.equal(game.roomCollected, 1);
+  }
+  assert.equal(profile.collectedCowries.length, 1);
 });
