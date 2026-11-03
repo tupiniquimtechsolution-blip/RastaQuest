@@ -198,3 +198,8 @@ async function boot() {
 }
 
 boot();
+
+// HTTPS and localhost allow the preview to install and work offline after first load.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+}
