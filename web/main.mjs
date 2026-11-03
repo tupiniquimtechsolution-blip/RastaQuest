@@ -3,6 +3,7 @@ import { readSavedRun, writeSavedRun, eraseSavedRun } from './run-save.mjs';
 import { loadSprites, render } from './renderer.mjs';
 import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost, equipItem } from './progression.mjs';
 import { EQUIPMENT, SLOTS, equipmentBonus } from './content.mjs';
+import { SKILL_TREE, skillBonus, canPurchaseSkill, purchaseSkill } from './skills.mjs';
 
 const canvas = document.querySelector('#game');
 const ctx = canvas.getContext('2d');
@@ -10,6 +11,7 @@ const startOverlay = document.querySelector('#startOverlay');
 const endOverlay = document.querySelector('#endOverlay');
 const helpDialog = document.querySelector('#helpDialog');
 const pauseDialog = document.querySelector('#pauseDialog');
+const skillsDialog = document.querySelector('#skillsDialog');
 const touchButtons = [...document.querySelectorAll('[data-control]')];
 const keys = new Set();
 const touch = new Set();
@@ -23,6 +25,7 @@ const keyMap = new Map([
   ['ArrowRight', 'right'], ['KeyD', 'right'],
   ['ArrowUp', 'jump'], ['KeyW', 'jump'], ['Space', 'jump'],
   ['KeyJ', 'attack'], ['KeyK', 'special'], ['KeyL', 'special'],
+  ['KeyQ', 'block'],
   ['KeyE', 'interact'], ['Enter', 'interact'],
 ]);
 
@@ -47,7 +50,7 @@ function syncHud() {
   updateText('total', `ÁLBUM ${profile?.collectedCowries.length ?? 0}/105`);
   updateText('essence', `ESSÊNCIA ${profile?.essence ?? 0}`);
   updateText('runBuff', `BÊNÇÃOS +${state.runBuffs.damage}D / +${state.runBuffs.mana}M / +${state.runBuffs.mobility}V`);
-  updateText('upgradeStatus', profile ? `VIDA +${profile.upgrades.vitality} · DANO +${profile.upgrades.strength} · CORRIDA +${profile.upgrades.mobility} · SKINS ${profile.skins.length}/2` : '');
+  updateText('upgradeStatus', profile ? `VIDA +${profile.upgrades.vitality} · DANO +${profile.upgrades.strength} · MANA +${profile.upgrades.spirit} · HABILIDADES ${profile.skills.length}/25 · SKINS ${profile.skins.length}/2` : '');
   const fallback = state.exit.ready ? 'Portal aberto: aproxime-se e pressione E ou ENTRAR.' : 'Explore a rota, pegue os búzios e derrote os inimigos.';
   updateText('message', state.message || fallback);
   const dots = document.querySelectorAll('.route-dot');
@@ -78,9 +81,10 @@ function currentInput() {
       if (buttons[2]?.pressed) values.add('attack');
       if (buttons[3]?.pressed) values.add('special');
       if (buttons[1]?.pressed) values.add('interact');
+      if (buttons[4]?.pressed) values.add('block');
     }
   } catch { /* Some privacy profiles disable the Gamepad API. */ }
-  return Object.fromEntries(['left', 'right', 'jump', 'attack', 'special', 'interact']
+  return Object.fromEntries(['left', 'right', 'jump', 'attack', 'special', 'block', 'interact']
     .map(control => [control, values.has(control)]));
 }
 
@@ -89,7 +93,7 @@ function frame(timestamp) {
   const elapsed = Math.min((timestamp - lastFrame) / 1000, 1 / 30);
   lastFrame = timestamp;
   if (state) {
-    if (started && !helpDialog.open && !pauseDialog.open && state.status === 'playing') step(state, currentInput(), elapsed);
+    if (started && !helpDialog.open && !pauseDialog.open && !skillsDialog.open && state.status === 'playing') step(state, currentInput(), elapsed);
     if (started && state.status === 'playing' && timestamp - lastRunSaveAt >= 3000) {
       writeSavedRun(profileStore,state);
       lastRunSaveAt=timestamp;
@@ -138,11 +142,14 @@ function setupRoute() {
 
 window.addEventListener('keydown', event => {
   if (event.code === 'Escape' && !helpDialog.open && started) {
-    event.preventDefault(); pauseDialog.open ? pauseDialog.close() : pauseDialog.showModal();
+    event.preventDefault();
+    if(skillsDialog.open) {skillsDialog.close();pauseDialog.showModal();}
+    else if(pauseDialog.open) pauseDialog.close();
+    else pauseDialog.showModal();
     keys.clear(); touch.clear(); return;
   }
   const control = keyMap.get(event.code);
-  if (!control || helpDialog.open || pauseDialog.open) return;
+  if (!control || helpDialog.open || pauseDialog.open || skillsDialog.open) return;
   event.preventDefault();
   keys.add(control);
 });
@@ -179,14 +186,61 @@ document.querySelector('#pauseButton').addEventListener('click', () => {
   keys.clear(); touch.clear(); refreshUpgrades(); pauseDialog.showModal();
 });
 document.querySelector('#closePause').addEventListener('click', () => pauseDialog.close());
+document.querySelector('#skillOpen').addEventListener('click', () => {
+  pauseDialog.close();
+  refreshSkills();
+  skillsDialog.showModal();
+});
+document.querySelector('#closeSkills').addEventListener('click', () => {
+  skillsDialog.close(); refreshUpgrades(); pauseDialog.showModal();
+});
+document.querySelector('#skillGrid').addEventListener('click', event => {
+  const button=event.target.closest('button[data-skill]');
+  if(!button || !profile) return;
+  const id=button.dataset.skill;
+  if(purchaseSkill(profile,id)) {
+    saveProfile(profileStore,profile);
+    applyProfileStats();
+    refreshSkills(); refreshUpgrades(); syncHud();
+    updateText('skillMessage','Habilidade adquirida e salva!');
+  } else updateText('skillMessage','Requisitos ou essência insuficientes.');
+});
+
+function applyProfileStats() {
+  if(!state || !profile) return;
+  const p=state.player;
+  const maxHp=3+profile.upgrades.vitality+equipmentBonus(profile,'vitality')+skillBonus(profile,'vitality');
+  p.hp=Math.min(maxHp,Math.max(1,p.hp+Math.max(0,maxHp-p.maxHp)));
+  p.maxHp=maxHp;
+  const maxMana=3+profile.upgrades.spirit+equipmentBonus(profile,'mana')+skillBonus(profile,'mana')+state.runBuffs.mana;
+  p.mana=Math.min(maxMana,Math.max(0,p.mana+Math.max(0,maxMana-p.maxMana)));
+  p.maxMana=maxMana;
+}
+function refreshSkills() {
+  if(!profile) return;
+  const grid=document.querySelector('#skillGrid');
+  grid.replaceChildren();
+  for(const branch of SKILL_TREE.branches) {
+    const section=document.createElement('section');section.className='skill-branch';
+    const heading=document.createElement('h3');heading.textContent=branch.title;section.append(heading);
+    for(const node of branch.nodes) {
+      const owned=profile.skills.includes(node.id);
+      const requires=node.requires.every(req=>req===SKILL_TREE.root || profile.skills.includes(req));
+      const button=document.createElement('button');
+      button.type='button';button.dataset.skill=node.id;
+      button.disabled=owned || !requires;
+      button.className=owned?'skill-owned':requires?'skill-available':'skill-locked';
+      button.textContent=`${owned?'✓ ':requires?'＋ ':'🔒 '}${node.name} · ${owned?'Adquirida':node.cost+' essência'}`;
+      section.append(button);
+    }
+    grid.append(section);
+  }
+}
 document.querySelector('#equipmentInventory').addEventListener('click', event => {
   const button = event.target.closest('button[data-equip]');
   if (!button || !profile || !equipItem(profile, button.dataset.equip)) return;
   saveProfile(profileStore, profile);
-  state.player.maxHp = 3 + profile.upgrades.vitality + equipmentBonus(profile, 'vitality');
-  state.player.hp = Math.min(state.player.hp, state.player.maxHp);
-  state.player.maxMana = 3 + profile.upgrades.spirit + equipmentBonus(profile, 'mana') + state.runBuffs.mana;
-  state.player.mana = Math.min(state.player.mana, state.player.maxMana);
+  applyProfileStats();
   refreshUpgrades(); syncHud();
 });
 document.querySelector('#upgradeButtons').addEventListener('click', event => {
@@ -196,11 +250,7 @@ document.querySelector('#upgradeButtons').addEventListener('click', event => {
     saveProfile(profileStore, profile);
     savedRevision = state.profileRevision;
     // Equipped permanent vitality is immediately reflected in the active run.
-    const newMaxHp = 3 + profile.upgrades.vitality + equipmentBonus(profile, 'vitality');
-    if (newMaxHp > state.player.maxHp) state.player.hp += newMaxHp - state.player.maxHp;
-    state.player.maxHp = newMaxHp;
-    state.player.maxMana = 3 + profile.upgrades.spirit + equipmentBonus(profile, 'mana') + state.runBuffs.mana;
-    state.player.mana = Math.min(state.player.maxMana, state.player.mana + 1);
+    applyProfileStats();
     refreshUpgrades(); syncHud();
   }
 });
