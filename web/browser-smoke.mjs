@@ -71,6 +71,8 @@ try{
   assert(shell,'first cowrie cannot be collected by walking');
   assert(await evalJS("document.querySelector('#total').textContent.includes('1/105')"),'persistent album counter did not update');
   assert(await evalJS("document.querySelector('#pauseButton') && document.querySelector('#mana') && document.querySelector('#skillOpen')"),'new gameplay UI is missing');
+  const skillsCount=await evalJS("(() => {document.querySelector('#pauseButton').click();document.querySelector('#skillOpen').click();const n=document.querySelectorAll('[data-skill]').length;document.querySelector('#closeSkills').click();document.querySelector('#closePause').click();return n})()");
+  assert(skillsCount===25,'pause menu did not render 25 canonical skill nodes');
   await mkdir(screenshotDir,{recursive:true});
   let screen=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
   await writeFile(join(screenshotDir,'desktop-first-cowrie.png'),Buffer.from(screen.data,'base64'));
@@ -84,8 +86,15 @@ try{
   const sw=await waitUntil(async()=>await evalJS("navigator.serviceWorker?.controller ? true : false"),12000);
   assert(sw,'PWA service worker did not take control');
   assert(await evalJS("fetch('./manifest.webmanifest').then(r=>r.ok)"),'manifest cannot be fetched');
+  await call('Network.enable');
+  await call('Network.emulateNetworkConditions',{offline:true,latency:0,downloadThroughput:0,uploadThroughput:0});
+  await call('Page.reload',{ignoreCache:true});
+  await waitUntil(async()=>await evalJS("!!document.querySelector('#startButton') && !document.querySelector('#startButton').disabled"),12000);
+  assert(await evalJS("document.querySelector('#total').textContent.includes('1/105')"),
+    'album should remain available after offline reload');
+  await call('Network.emulateNetworkConditions',{offline:false,latency:0,downloadThroughput:-1,uploadThroughput:-1});
   assert(exceptions.length===0,'Browser exceptions: '+exceptions.join('; '));
-  console.log('BROWSER SMOKE OK: real Chrome, 21-room route, start, keyboard, first cowrie, persistent HUD, mobile controls, PWA; screenshots saved.');
+  console.log('BROWSER SMOKE OK: real Chrome, 21-room route, start, keyboard, first cowrie, 25-node skills, mobile controls, PWA offline reload; screenshots saved.');
 }finally{
   try{ws?.close();}catch{}
   try{chrome?.kill('SIGTERM');}catch{}
