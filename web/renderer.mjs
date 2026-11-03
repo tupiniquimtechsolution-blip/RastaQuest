@@ -239,13 +239,18 @@ function drawPlayer(ctx, state, camera, sprites) {
   const p = state.player;
   const x = p.x - camera + p.w / 2;
   ctx.save();
+  const ancestral = state.profile?.selectedSkins?.akane === 'akane-ancestral';
+  const thunderAxe = state.profile?.selectedSkins?.axe === 'axe-thunder';
+  if (ancestral) ctx.filter='sepia(.55) saturate(1.75) hue-rotate(48deg) brightness(1.12)';
   if (p.invuln > 0 && Math.floor(state.time * 12) % 2 === 0) ctx.globalAlpha = .55;
   const sprite = p.attackTime > 0 ? sprites.attack : !p.grounded ? sprites.jump : Math.abs(p.vx) > 20 ? (Math.floor(state.time * 8) % 2 ? sprites.run1 : sprites.run2) : sprites.idle;
   if (!drawSprite(ctx, sprite, x, p.y + p.h + 5, 91, p.facing)) {
     ctx.fillStyle = '#eed681'; ctx.fillRect(p.x - camera, p.y, p.w, p.h);
   }
+  ctx.filter='none';
   if (p.attackTime > 0) {
-    ctx.strokeStyle = p.attackSpecial ? '#7adfff' : '#f9d98cd0'; ctx.lineWidth = 7; ctx.beginPath();
+    ctx.strokeStyle = (thunderAxe || p.attackSpecial) ? '#77daff' : '#f9d98cd0';
+    if(thunderAxe){ctx.shadowColor='#8fdffb';ctx.shadowBlur=22;} ctx.lineWidth = 7; ctx.beginPath();
     ctx.arc(x + p.facing * 26, p.y + 28, 40, p.facing > 0 ? -.9 : 2.1, p.facing > 0 ? 1.1 : 4.1); ctx.stroke();
   }
   ctx.restore();
