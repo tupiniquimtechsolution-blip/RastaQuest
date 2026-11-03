@@ -18,7 +18,7 @@ test('HTML declares manifest and web UI remains a game canvas', () => {
 });
 test('offline shell includes runtime and room data', () => {
   const worker = read('sw.js');
-  for (const path of ['engine.mjs','progression.mjs','renderer.mjs','data/rooms.json','index.html']) {
+  for (const path of ['engine.mjs','progression.mjs','skills.mjs','sanctuary.mjs','run-save.mjs','content.mjs','renderer.mjs','data/rooms.json','index.html','player-idle','boss-forest']) {
     assert.ok(worker.includes(path), path);
   }
 });
