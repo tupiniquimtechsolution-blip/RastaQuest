@@ -135,15 +135,64 @@ function label(ctx, text, x, y, color = '#f4eddb') {
 
 function drawShell(ctx, shell, camera, time, palette) {
   if (shell.collected) return;
-  const x = shell.x - camera, y = shell.y + Math.sin(time * 4 + shell.x * .01) * 4;
-  if (x < -30 || x > VIEW_WIDTH + 30) return;
-  ctx.save(); ctx.translate(x, y);
-  ctx.shadowColor = palette.glow; ctx.shadowBlur = 16;
-  ctx.fillStyle = '#fae6b2'; ctx.strokeStyle = '#8b653e'; ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.moveTo(-13, 6); ctx.bezierCurveTo(-18, -15, 14, -18, 13, 6); ctx.bezierCurveTo(6, 19, -6, 19, -13, 6); ctx.fill(); ctx.stroke();
-  ctx.shadowBlur = 0; ctx.strokeStyle = '#8b653e';
-  for (let k = -2; k <= 2; k++) { ctx.beginPath(); ctx.moveTo(k * 4, -8); ctx.lineTo(k * 2.5, 7); ctx.stroke(); }
-  ctx.fillStyle = '#795335'; ctx.beginPath(); ctx.ellipse(0, 7, 5, 3, 0, 0, Math.PI * 2); ctx.fill();
+  const x = shell.x - camera;
+  const y = shell.y + Math.sin(time * 4 + shell.x * .01) * 4;
+  if (x < -32 || x > VIEW_WIDTH + 32) return;
+
+  // Original vector cowrie: rounded ivory mantle, elongated ventral slit,
+  // and alternating tooth ridges. Do not replace with a coin silhouette.
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.rotate(-0.16);
+  ctx.shadowColor = palette.glow;
+  ctx.shadowBlur = 13;
+
+  const ivory = ctx.createLinearGradient(-15, -17, 15, 17);
+  ivory.addColorStop(0, '#fffdf5');
+  ivory.addColorStop(.35, '#f8eccd');
+  ivory.addColorStop(.76, '#d9bf8a');
+  ivory.addColorStop(1, '#a9804e');
+  ctx.fillStyle = ivory;
+  ctx.strokeStyle = '#977347';
+  ctx.lineWidth = 1.6;
+  ctx.beginPath();
+  ctx.moveTo(0, -17);
+  ctx.bezierCurveTo(10, -17, 16, -9, 16, -1);
+  ctx.bezierCurveTo(17, 9, 9, 17, 0, 17);
+  ctx.bezierCurveTo(-10, 17, -17, 9, -16, -1);
+  ctx.bezierCurveTo(-16, -11, -9, -17, 0, -17);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.shadowBlur = 0;
+  ctx.fillStyle = '#fcf7e6';
+  ctx.beginPath();
+  ctx.ellipse(-7, -4, 3.9, 9.8, -.22, 0, Math.PI * 2);
+  ctx.fill();
+
+  // The dark narrow opening is vertical, as on the underside of a cauri.
+  ctx.fillStyle = '#6d4c32';
+  ctx.beginPath();
+  ctx.moveTo(-2, -13);
+  ctx.bezierCurveTo(3, -11, 4, -4, 3, 0);
+  ctx.bezierCurveTo(3, 6, 2, 12, 0, 13);
+  ctx.bezierCurveTo(-4, 9, -4, 1, -4, -3);
+  ctx.bezierCurveTo(-4, -8, -4, -11, -2, -13);
+  ctx.fill();
+
+  // Small ridges interlock over the slit; keep visible at native gameplay size.
+  ctx.strokeStyle = '#f3dfb4';
+  ctx.lineWidth = 1.5;
+  ctx.lineCap = 'round';
+  for (let row = -10; row <= 10; row += 3.25) {
+    ctx.beginPath();
+    ctx.moveTo(-7, row - .7);
+    ctx.lineTo(-1.2, row + 1);
+    ctx.moveTo(6, row - .5);
+    ctx.lineTo(1, row + 1.1);
+    ctx.stroke();
+  }
   ctx.restore();
 }
 
