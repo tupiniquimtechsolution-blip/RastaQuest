@@ -276,3 +276,61 @@ export function render(ctx, state, sprites = {}) {
     ctx.font = '20px Trebuchet MS, sans-serif'; ctx.fillText('Recomece para tentar outra vez', VIEW_WIDTH / 2, 290);
   }
 }
+
+/** A lightweight illustrated 2D hub for between-run navigation. */
+export function renderSanctuary(ctx,hub,sprites={}) {
+  const camera=hub.cameraX;
+  ctx.clearRect(0,0,VIEW_WIDTH,VIEW_HEIGHT);
+  const sky=ctx.createLinearGradient(0,0,0,VIEW_HEIGHT);
+  sky.addColorStop(0,'#142b30');sky.addColorStop(.72,'#386251');sky.addColorStop(1,'#9b7955');
+  ctx.fillStyle=sky;ctx.fillRect(0,0,VIEW_WIDTH,VIEW_HEIGHT);
+  // Distant ancestral grove and layered stone relief: not a stretched concept board.
+  ridge(ctx,'#254a47',camera,.08,330,38,139);
+  ridge(ctx,'#315e55',camera,.20,390,17,92);
+  for(let i=0;i<25;i++) {
+    const wx=i*175+45,x=wx-camera*.55;
+    if(x<-90||x>VIEW_WIDTH+90)continue;
+    ctx.fillStyle='#264c40';ctx.fillRect(x,185,20,280);
+    ctx.fillStyle=i%2?'#44745d':'#4e886b';
+    ctx.beginPath();ctx.arc(x+10,171,50,0,Math.PI*2);ctx.fill();
+  }
+  // One continuous traversable floor through the whole refuge.
+  ctx.fillStyle='#3a372e';ctx.fillRect(0,460,960,80);
+  ctx.fillStyle='#b6a378';ctx.fillRect(0,459,960,9);
+  ctx.fillStyle='#24382f';for(let i=0;i<40;i++){
+    const x=((i*101-camera)%1000+1000)%1000;
+    ctx.fillRect(x,479+(i%3)*10,36,4);
+  }
+  const stations=[
+    [420,'Ancestrais','#d6ba82','◌'],[940,'Forja','#ed8f60','⚒'],
+    [1490,'Habilidades','#a4d6ff','✦'],[2070,'Fonte','#88dbeb','◈'],
+    [2820,'Retorno','#bcf0be','◇'],
+  ];
+  for(const [world,name,color,glyph] of stations) {
+    const x=world-camera;
+    if(x<-160||x>VIEW_WIDTH+160)continue;
+    ctx.fillStyle='#283a33';ctx.fillRect(x-63,332,126,126);
+    ctx.strokeStyle=color;ctx.lineWidth=6;ctx.strokeRect(x-58,335,116,118);
+    ctx.fillStyle=color;ctx.textAlign='center';ctx.font='bold 48px serif';
+    ctx.fillText(glyph,x,412);
+    label(ctx,name.toUpperCase(),x,321,color);
+    if(Math.abs(hub.playerX-world)<100)label(ctx,'E · INTERAGIR',x,280,'#fff3c7');
+  }
+  // Hero uses the same isolated protagonist sprite as gameplay.
+  const px=hub.playerX-camera;
+  if(!drawSprite(ctx,sprites.idle,px,465,95,1)){
+    ctx.fillStyle='#e5c684';ctx.fillRect(px-22,390,44,70);
+  }
+  ctx.fillStyle='#10251fe8';ctx.fillRect(0,0,VIEW_WIDTH,85);
+  ctx.fillStyle='#f4daa0';ctx.font='bold 27px Trebuchet MS,sans-serif';ctx.textAlign='left';
+  ctx.fillText('SANTUÁRIO ANCESTRAL',24,35);
+  ctx.fillStyle='#e5f0db';ctx.font='15px Trebuchet MS,sans-serif';
+  ctx.fillText('Caminhe, converse, melhore Akane e inicie uma nova jornada',24,62);
+  const msg=hub.message;
+  ctx.fillStyle='#10241ee6';ctx.fillRect(0,492,VIEW_WIDTH,48);
+  ctx.font='bold 14px Trebuchet MS,sans-serif';ctx.textAlign='center';ctx.fillStyle='#f9efd2';
+  // Wrap long lore into two lines without hiding gameplay.
+  const limit=112;
+  if(msg.length>limit){ctx.fillText(msg.slice(0,limit),VIEW_WIDTH/2,508);ctx.fillText(msg.slice(limit,limit*2),VIEW_WIDTH/2,528);}
+  else ctx.fillText(msg,VIEW_WIDTH/2,521);
+}
