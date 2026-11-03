@@ -22,8 +22,10 @@ function control(state) {
     Math.abs((p.y+p.h)-(e.y+e.h))<85);
   if(threat) {
     const gap=middle(threat)-center;
-    // Keep facing the threat even inside attack range; standing still can leave the foe behind the axe hitbox.
-    input.left=gap< -5;input.right=gap>5;
+    // Hold a safe axe reach rather than walking into the enemy on every frame.
+    // A one-frame approach turns Akane when a threat has crossed behind him.
+    const approach=Math.abs(gap)>102 || (Math.sign(gap)!==p.facing && Math.abs(gap)>5);
+    input.left=approach && gap<0;input.right=approach && gap>0;
     input.special=p.mana>0 && Math.abs(gap)<139;
     input.attack=true;
   }
