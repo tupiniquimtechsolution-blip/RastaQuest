@@ -8,6 +8,7 @@
  */
 import { recordCowrie, awardEssence, awardEquipment } from './progression.mjs';
 import { buildChests, buildRings, blessingForNextRoom, equipmentBonus } from './content.mjs';
+import { skillBonus } from './skills.mjs';
 export const VIEW_WIDTH = 960;
 export const VIEW_HEIGHT = 540;
 export const GROUND_Y = 460;
@@ -126,7 +127,7 @@ function enterRoom(state, index) {
     const cap = buff.effect === 'mobility' ? 90 : 3;
     state.runBuffs[buff.effect] = Math.min(cap, old + buff.value);
   }
-  state.player.maxMana = 3 + (state.profile?.upgrades.spirit ?? 0) + equipmentBonus(state.profile, 'mana') + (state.runBuffs.mana || 0);
+  state.player.maxMana = 3 + (state.profile?.upgrades.spirit ?? 0) + equipmentBonus(state.profile, 'mana') + skillBonus(state.profile,'mana') + (state.runBuffs.mana || 0);
   state.player.mana = state.player.maxMana;
   state.jumpHeld = false;
   state.interactHeld = false;
@@ -152,10 +153,10 @@ export function createGame(plan, profile = null) {
     checkpoint: null,
     cameraX: 0,
     player: { x: 0, y: 0, w: PLAYER_WIDTH, h: PLAYER_HEIGHT, vx: 0, vy: 0,
-      hp: 3 + (profile?.upgrades.vitality ?? 0) + equipmentBonus(profile,'vitality'),
-      maxHp: 3 + (profile?.upgrades.vitality ?? 0) + equipmentBonus(profile,'vitality'),
-      mana: 3 + (profile?.upgrades.spirit ?? 0) + equipmentBonus(profile,'mana'),
-      maxMana: 3 + (profile?.upgrades.spirit ?? 0) + equipmentBonus(profile,'mana'),
+      hp: 3 + (profile?.upgrades.vitality ?? 0) + equipmentBonus(profile,'vitality') + skillBonus(profile,'vitality'),
+      maxHp: 3 + (profile?.upgrades.vitality ?? 0) + equipmentBonus(profile,'vitality') + skillBonus(profile,'vitality'),
+      mana: 3 + (profile?.upgrades.spirit ?? 0) + equipmentBonus(profile,'mana') + skillBonus(profile,'mana'),
+      maxMana: 3 + (profile?.upgrades.spirit ?? 0) + equipmentBonus(profile,'mana') + skillBonus(profile,'mana'),
       lives: 3, invuln: 0, grounded: true, facing: 1, grappleBoost: 0,
       attackSpecial: false,
       attackCooldown: 0, attackTime: 0 },
@@ -177,6 +178,12 @@ export function createGame(plan, profile = null) {
 function takeDamage(state) {
   const player = state.player;
   if (player.invuln > 0 || state.status !== "playing") return;
+  if (player.blocking && skillBonus(state.profile,'defense')>0 && player.mana>0) {
+    player.mana-=1;
+    player.invuln=.42;
+    announce(state,'Defesa: energia absorvida!');
+    return;
+  }
   player.hp -= 1;
   player.invuln = 1.15;
   announce(state, "Akane sofreu um golpe!");
@@ -209,11 +216,11 @@ function movePlayer(state, input, dt) {
   const player = state.player;
   const direction = Number(Boolean(input.right)) - Number(Boolean(input.left));
   player.grappleBoost = Math.max(0, player.grappleBoost - dt);
-  const mobility = equipmentBonus(state.profile, 'mobility') + (state.runBuffs.mobility || 0);
+  const mobility = equipmentBonus(state.profile, 'mobility') + skillBonus(state.profile,'mobility') + (state.runBuffs.mobility || 0);
   player.vx = direction * (SPEED + (state.profile?.upgrades.mobility ?? 0) * 18 + mobility + (player.grappleBoost > 0 ? 160 : 0));
   if (direction) player.facing = direction;
   if (input.jump && !state.jumpHeld && player.grounded) {
-    player.vy = -JUMP_SPEED;
+    player.vy = -(JUMP_SPEED + skillBonus(state.profile,'jump'));
     player.grounded = false;
   }
   state.jumpHeld = Boolean(input.jump);
@@ -278,7 +285,7 @@ function attackEnemies(state, input) {
   let hits = 0;
   for (const enemy of state.enemies) {
     if (!enemy.alive || !overlap(hitbox, enemy)) continue;
-    enemy.hp -= 1 + (special ? 2 : 0) + (state.profile?.upgrades.strength ?? 0) + equipmentBonus(state.profile, 'damage') + (state.runBuffs.damage || 0);
+    enemy.hp -= 1 + (special ? 2 + skillBonus(state.profile,'special') : 0) + (state.profile?.upgrades.strength ?? 0) + equipmentBonus(state.profile, 'damage') + skillBonus(state.profile,'damage') + (state.runBuffs.damage || 0);
     enemy.hurt = 0.2;
     hits += 1;
     if (enemy.hp <= 0) {
@@ -408,6 +415,7 @@ export function step(state, input = {}, seconds = 1 / 60) {
   }
   const player = state.player;
   player.invuln = Math.max(0, player.invuln - dt);
+  player.blocking = Boolean(input.block);
   player.attackCooldown = Math.max(0, player.attackCooldown - dt);
   player.attackTime = Math.max(0, player.attackTime - dt);
   movePlayer(state, input, dt);
@@ -471,7 +479,7 @@ export function restoreRun(plan, profile, snapshot) {
     mobility: Number.isInteger(buffs.mobility) ? clamp(buffs.mobility,0,90) : 0,
   };
   fresh.player.maxMana = 3 + (profile?.upgrades.spirit ?? 0) +
-    equipmentBonus(profile,'mana') + fresh.runBuffs.mana;
+    equipmentBonus(profile,'mana') + skillBonus(profile,'mana') + fresh.runBuffs.mana;
   fresh.player.mana = Number.isInteger(snapshot.mana) ?
     clamp(snapshot.mana,0,fresh.player.maxMana) : fresh.player.maxMana;
   fresh.player.lives = Number.isSafeInteger(snapshot.lives) && snapshot.lives >= 1 && snapshot.lives <= 99 ?
