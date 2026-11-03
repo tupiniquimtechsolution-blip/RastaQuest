@@ -1,0 +1,472 @@
+{
+  "version": 2,
+  "status": "visual_design_proposal_not_runtime",
+  "title": "Raízes do Trovão",
+  "placement": "Menu de pausa > Habilidades",
+  "current_direction": "Entire game remains 2D, including bosses and sanctuary. 3D evaluation deferred.",
+  "progression": "permanent_separate_from_equipment_and_temporary_run_buffs",
+  "currency": "essencia_vermelha_existing_concept",
+  "costs": null,
+  "numerical_balance": null,
+  "root": {
+    "id": "raiz_ancestral",
+    "name": "Raiz Ancestral",
+    "purchasable": false
+  },
+  "branches": [
+    {
+      "id": "vigor",
+      "title": "Vigor Ancestral",
+      "nodes": [
+        {
+          "id": "vigor_1",
+          "name": "Raízes Vivas",
+          "tier": 1,
+          "requires": [
+            "raiz_ancestral"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [],
+          "motion_policy": "shared_existing_pose_and_optional_vfx_not_a_new_clip_required"
+        },
+        {
+          "id": "vigor_2",
+          "name": "Fôlego Ancestral",
+          "tier": 2,
+          "requires": [
+            "vigor_1"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [],
+          "motion_policy": "shared_existing_pose_and_optional_vfx_not_a_new_clip_required"
+        },
+        {
+          "id": "vigor_3",
+          "name": "Corpo Firme",
+          "tier": 3,
+          "requires": [
+            "vigor_2"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [],
+          "motion_policy": "shared_existing_pose_and_optional_vfx_not_a_new_clip_required"
+        },
+        {
+          "id": "vigor_4",
+          "name": "Coração da Terra",
+          "tier": 4,
+          "requires": [
+            "vigor_3"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [],
+          "motion_policy": "shared_existing_pose_and_optional_vfx_not_a_new_clip_required"
+        },
+        {
+          "id": "vigor_5",
+          "name": "Vigor Pleno",
+          "tier": 5,
+          "requires": [
+            "vigor_4"
+          ],
+          "cost": null,
+          "capstone": true,
+          "motion_studies": [],
+          "motion_policy": "shared_existing_pose_and_optional_vfx_not_a_new_clip_required"
+        }
+      ]
+    },
+    {
+      "id": "tecnicas",
+      "title": "Técnicas de Combate",
+      "nodes": [
+        {
+          "id": "tecnicas_1",
+          "name": "Corte Ascendente",
+          "tier": 1,
+          "requires": [
+            "raiz_ancestral"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "combat_ascending_cut"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "tecnicas_2",
+          "name": "Varredura Baixa",
+          "tier": 2,
+          "requires": [
+            "tecnicas_1"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "combat_low_sweep"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "tecnicas_3",
+          "name": "Quebra de Guarda",
+          "tier": 3,
+          "requires": [
+            "tecnicas_2"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "combat_guard_break"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "tecnicas_4",
+          "name": "Rebatida Precisa",
+          "tier": 4,
+          "requires": [
+            "tecnicas_3"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "defense_projectile_rebate"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "tecnicas_5",
+          "name": "Sequência Ancestral",
+          "tier": 5,
+          "requires": [
+            "tecnicas_4"
+          ],
+          "cost": null,
+          "capstone": true,
+          "motion_studies": [
+            "combat_ancestral_chain"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        }
+      ]
+    },
+    {
+      "id": "movimento",
+      "title": "Movimento do Guerreiro",
+      "nodes": [
+        {
+          "id": "movimento_1",
+          "name": "Passo Leve",
+          "tier": 1,
+          "requires": [
+            "raiz_ancestral"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [],
+          "motion_policy": "shared_existing_pose_and_optional_vfx_not_a_new_clip_required"
+        },
+        {
+          "id": "movimento_2",
+          "name": "Salto Preciso",
+          "tier": 2,
+          "requires": [
+            "movimento_1"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "move_precision_jump"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "movimento_3",
+          "name": "Avanço Ágil",
+          "tier": 3,
+          "requires": [
+            "movimento_2"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "move_dash"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "movimento_4",
+          "name": "Travessia Fluida",
+          "tier": 4,
+          "requires": [
+            "movimento_3"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "move_precision_jump",
+            "move_charge_evade"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "movimento_5",
+          "name": "Liberdade de Movimento",
+          "tier": 5,
+          "requires": [
+            "movimento_4"
+          ],
+          "cost": null,
+          "capstone": true,
+          "motion_studies": [
+            "move_dash",
+            "move_precision_jump",
+            "move_charge_evade"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        }
+      ]
+    },
+    {
+      "id": "defesa",
+      "title": "Defesa e Equilíbrio",
+      "nodes": [
+        {
+          "id": "defesa_1",
+          "name": "Guarda Firme",
+          "tier": 1,
+          "requires": [
+            "raiz_ancestral"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [],
+          "motion_policy": "shared_existing_pose_and_optional_vfx_not_a_new_clip_required"
+        },
+        {
+          "id": "defesa_2",
+          "name": "Defesa Precisa",
+          "tier": 2,
+          "requires": [
+            "defesa_1"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "defense_perfect_parry"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "defesa_3",
+          "name": "Escudo do Trovão",
+          "tier": 3,
+          "requires": [
+            "defesa_2"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "defense_front_shield"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "defesa_4",
+          "name": "Retorno de Energia",
+          "tier": 4,
+          "requires": [
+            "defesa_3"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "defense_projectile_rebate"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "defesa_5",
+          "name": "Guardião do Equilíbrio",
+          "tier": 5,
+          "requires": [
+            "defesa_4"
+          ],
+          "cost": null,
+          "capstone": true,
+          "motion_studies": [
+            "defense_perfect_parry",
+            "defense_front_shield"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        }
+      ]
+    },
+    {
+      "id": "tempestade",
+      "title": "Poder da Tempestade",
+      "nodes": [
+        {
+          "id": "tempestade_1",
+          "name": "Centelha",
+          "tier": 1,
+          "requires": [
+            "raiz_ancestral"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [],
+          "motion_policy": "shared_existing_pose_and_optional_vfx_not_a_new_clip_required"
+        },
+        {
+          "id": "tempestade_2",
+          "name": "Elo Elétrico",
+          "tier": 2,
+          "requires": [
+            "tempestade_1"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "storm_wave"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "tempestade_3",
+          "name": "Onda do Trovão",
+          "tier": 3,
+          "requires": [
+            "tempestade_2"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "storm_wave"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "tempestade_4",
+          "name": "Fúria da Tempestade",
+          "tier": 4,
+          "requires": [
+            "tempestade_3"
+          ],
+          "cost": null,
+          "capstone": false,
+          "motion_studies": [
+            "storm_fury"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        },
+        {
+          "id": "tempestade_5",
+          "name": "Maestria Ancestral",
+          "tier": 5,
+          "requires": [
+            "tempestade_4"
+          ],
+          "cost": null,
+          "capstone": true,
+          "motion_studies": [
+            "combat_ancestral_chain",
+            "storm_fury"
+          ],
+          "motion_policy": "unique_or_reused_study"
+        }
+      ]
+    }
+  ],
+  "states": {
+    "unlocked": {
+      "icon": "check",
+      "appearance": "gold filled medallion, illuminated path"
+    },
+    "available": {
+      "icon": "plus",
+      "appearance": "amber outline"
+    },
+    "locked": {
+      "icon": "padlock",
+      "appearance": "dim medallion, dim path"
+    },
+    "focused": {
+      "appearance": "double focus outline",
+      "independent_of_unlock_state": true
+    }
+  },
+  "detail_panel": {
+    "selected_node": "defesa_3",
+    "prerequisite": "defesa_2",
+    "body": "Canalize a energia do machado para proteger Akane.",
+    "cost_label": "Custo em essência — a definir",
+    "action": "Desbloquear"
+  },
+  "input_design": {
+    "controller": [
+      "navegar",
+      "selecionar",
+      "detalhes",
+      "voltar"
+    ],
+    "touch": [
+      "tocar no nó para selecionar",
+      "arrastar ou ampliar a árvore quando necessário",
+      "confirmar no painel de detalhes",
+      "botão voltar visível"
+    ]
+  },
+  "notes": [
+    "All node names and branch topology are proposed visual design, not balance approval.",
+    "Root is a structural emblem, not a 26th purchasable skill.",
+    "Unlocks must be permanent; buffs remain on Poderes da run, not skill tree.",
+    "Main image is an illustrated layout proposal; structured node list defines exact 25-node count.",
+    "No reset, respec, store, extra currency, 3D work or save migration included.",
+    "V2 combat-technique names replace equipment-like skills. Existing equipment menu unchanged. Motion studies are key poses, not finished clips."
+  ],
+  "visual_example_node_states": {
+    "vigor_1": "unlocked",
+    "vigor_2": "unlocked",
+    "vigor_3": "available",
+    "vigor_4": "locked",
+    "vigor_5": "locked",
+    "tecnicas_1": "unlocked",
+    "tecnicas_2": "unlocked",
+    "tecnicas_3": "available",
+    "tecnicas_4": "locked",
+    "tecnicas_5": "locked",
+    "movimento_1": "unlocked",
+    "movimento_2": "unlocked",
+    "movimento_3": "available",
+    "movimento_4": "locked",
+    "movimento_5": "locked",
+    "defesa_1": "unlocked",
+    "defesa_2": "unlocked",
+    "defesa_3": "available",
+    "defesa_4": "locked",
+    "defesa_5": "locked",
+    "tempestade_1": "unlocked",
+    "tempestade_2": "unlocked",
+    "tempestade_3": "available",
+    "tempestade_4": "locked",
+    "tempestade_5": "locked"
+  },
+  "visual_example_focus": "defesa_3",
+  "supersedes": "skill-tree-v01 visual proposal; prior images preserved",
+  "equipment_boundary": {
+    "equipment_menu": [
+      "cabo",
+      "lamina",
+      "ponteira",
+      "aparencia e melhoria do item"
+    ],
+    "skill_tree": "tecnicas e respostas de combate; nao melhoria de pecas"
+  }
+}

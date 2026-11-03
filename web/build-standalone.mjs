@@ -13,6 +13,10 @@ import { dirname, join } from 'node:path';
 const root = dirname(fileURLToPath(import.meta.url));
 const read = path => readFileSync(join(root, path), 'utf8');
 const plan = JSON.parse(read('data/rooms.json'));
+const skillDesign = JSON.parse(read('data/skills.json'));
+if (skillDesign.branches?.reduce((total, branch) => total + branch.nodes.length, 0) !== 25) {
+  throw new Error('Unexpected skill tree version');
+}
 if (plan.rooms?.length !== 21 || plan.expected_cowries !== 105) {
   throw new Error('Unexpected room plan, refusing to build offline preview');
 }
@@ -45,12 +49,18 @@ const fetchClause = `    const response = await fetch('./data/rooms.json', { cac
     plan = await response.json();`;
 if (!js.includes(fetchClause)) throw new Error('Room-plan loader changed; update bundler');
 js = js.replace(fetchClause, '    plan = __RASTA_EMBEDDED_PLAN__;');
+const skillsClause = `      const skillResponse = await fetch('./data/skills.json', { cache: 'no-store' });
+      if (!skillResponse.ok) throw new Error('skill-design ' + skillResponse.status);
+      const skillDesign = await skillResponse.json();`;
+if (!js.includes(skillsClause)) throw new Error('Skill design loader changed; update bundler');
+js = js.replace(skillsClause, '      const skillDesign = __RASTA_EMBEDDED_SKILLS__;');
 const serviceWorkerClause = `if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
 }`;
 if (!js.includes(serviceWorkerClause)) throw new Error('Service worker setup changed; update bundler');
 js = js.replace(serviceWorkerClause, '// No service worker registration in file:// distribution.');
-js = 'const __RASTA_EMBEDDED_PLAN__ = ' + JSON.stringify(plan) + ';\n' + js;
+js = 'const __RASTA_EMBEDDED_PLAN__ = ' + JSON.stringify(plan) + ';\n' +
+  'const __RASTA_EMBEDDED_SKILLS__ = ' + JSON.stringify(skillDesign) + ';\n' + js;
 
 // Validates the complete assembled script, including duplicate declarations.
 new Function(js);

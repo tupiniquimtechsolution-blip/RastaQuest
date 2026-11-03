@@ -215,11 +215,46 @@ function refreshUpgrades() {
   }
 }
 
+function renderSkillTree(design) {
+  const container = document.querySelector('#skillTree');
+  if (!container) return;
+  container.replaceChildren();
+  for (const branch of design.branches ?? []) {
+    const group = document.createElement('section');
+    group.className = 'skill-branch';
+    const heading = document.createElement('h4');
+    heading.textContent = branch.title;
+    group.append(heading);
+    const nodes = document.createElement('ol');
+    for (const node of branch.nodes ?? []) {
+      const item = document.createElement('li');
+      const name = document.createElement('strong');
+      name.textContent = node.name;
+      const context = document.createElement('small');
+      context.textContent = 'Nível ' + node.tier + (node.capstone ? ' · Maestria' : '') +
+        ' · Custo e efeito a definir';
+      item.append(name, context);
+      nodes.append(item);
+    }
+    group.append(nodes);
+    container.append(group);
+  }
+}
+
 async function boot() {
   try {
     const response = await fetch('./data/rooms.json', { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     plan = await response.json();
+    try {
+      const skillResponse = await fetch('./data/skills.json', { cache: 'no-store' });
+      if (!skillResponse.ok) throw new Error('skill-design ' + skillResponse.status);
+      const skillDesign = await skillResponse.json();
+      renderSkillTree(skillDesign);
+    } catch {
+      // A missing study should not block the playable preview.
+      document.querySelector('#skillTree').textContent = 'Árvore indisponível nesta prévia.';
+    }
     profile = loadProfile(profileStore, plan);
     const snapshot = loadRun(profileStore);
     state = resumeGame(plan, profile, snapshot);
