@@ -40,3 +40,10 @@
 .skin-controls button{padding:10px 12px;border-radius:8px;background:#294c45;color:#f0e4c8;border:1px solid #b9a36b}
 .skin-controls button:disabled{opacity:.45}
 @media(max-width:480px){.skin-controls{grid-template-columns:1fr}}
+
+#loreDialog{width:min(96vw,770px);max-height:87dvh;overflow:auto}
+.lore-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:12px 0}
+.lore-list button{background:#27473d;color:#f9e9c4;padding:10px 7px;border:1px solid #7c9a7e;border-radius:7px;font-size:12px;text-align:left}
+.lore-list button:disabled{opacity:.43;cursor:not-allowed}
+#loreDetail{background:#172f2b;padding:14px;border-left:3px solid #dbc08b;line-height:1.65}
+@media(max-width:560px){.lore-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
