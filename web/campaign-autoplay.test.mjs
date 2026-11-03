@@ -29,8 +29,10 @@ function control(state) {
   }
 
   // Step up when nearing low collisions, or jump onto the high cowrie platforms.
-  const obstacle=state.platforms.find(s=>s.kind==='block' && s.x-(p.x+p.w)>=0 &&
-    s.x-(p.x+p.w)<105 && s.y-(p.y+p.h)<=0);
+  const obstacle=state.platforms.find(s=>s.kind==='block' &&
+    ((input.right && s.x-(p.x+p.w)>=0 && s.x-(p.x+p.w)<105) ||
+     (input.left && p.x-(s.x+s.w)>=0 && p.x-(s.x+s.w)<105)) &&
+    s.y-(p.y+p.h)<=0);
   const upper=cowrie?.upper && Math.abs(delta)<140;
   if(p.grounded && (upper||obstacle))input.jump=true;
   if(upper && !p.grounded){
