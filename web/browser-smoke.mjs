@@ -103,6 +103,19 @@ async function startBrowser() {
   }
 }
 
+async function captureEvidence(page, label) {
+  await page.eval('document.querySelector("#pauseDialog")?.close()');
+  await page.eval('document.querySelector("#game")?.scrollIntoView({block:"center"})');
+  await sleep(160);
+  const image = await page.send('Page.captureScreenshot', {
+    format: 'png', captureBeyondViewport: false, fromSurface: true
+  });
+  if (!image.data) throw Error('Chrome screenshot unavailable: ' + label);
+  const path = join(root, 'dist', 'smoke-' + label + '.png');
+  writeFileSync(path, Buffer.from(image.data, 'base64'));
+  return path;
+}
+
 async function smoke(page, url, name) {
   await page.navigate(url);
   await until(async () => page.eval('Boolean(document.querySelector("#startButton") && !document.querySelector("#startButton").disabled && document.querySelector("#routeTrack")?.children.length === 21)'),
@@ -128,6 +141,7 @@ async function smoke(page, url, name) {
       !String(observed.mana).includes('MANA') || observed.skills !== 5) {
     throw Error(name + ': gameplay assertion failed ' + JSON.stringify({ before: x0, observed }));
   }
+  await captureEvidence(page, name);
   console.log(name + ': PASSED ' + JSON.stringify(observed));
   return observed;
 }
@@ -172,6 +186,7 @@ async function smokeMobile(page) {
       screenWidth: innerWidth,
       scrollWidth: document.documentElement.scrollWidth
     })`);
+    await captureEvidence(page, 'mobile-landscape');
     console.log('mobile-landscape: PASSED ' + JSON.stringify(observed));
     return observed;
   } finally {
