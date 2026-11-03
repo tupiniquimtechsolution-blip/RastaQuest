@@ -38,3 +38,49 @@ A pasta `web/` pode ser servida por qualquer hospedagem estática. Em Cloudflare
 ## Próximos gates
 
 Validar sensação dos controles e leitura das salas em desktop e celular; substituir o guardião provisório da floresta; ajustar colisão e arte final após revisão visual/cultural/direitos; executar testes nativos Unity quando houver ambiente apropriado. Os gates web não afirmam que esses gates nativos passaram.
+
+## Progresso local e instalação em outros dispositivos (PR #93)
+
+A partir desta branch, o protótipo registra **um perfil local versionado** no navegador:
+descobertas de búzios únicos (até 105), essência vermelha de inimigos e melhorias
+permanentes de vida, dano e corrida. O menu **Pausa / Equipar** (ou Escape) compra
+melhorias. O álbum reconhece 105/105 e registra skins de Akane/machado como
+desbloqueadas; **a aplicação gráfica das skins ainda não está implementada**.
+
+O perfil é exclusivo do navegador, não sincroniza contas/dispositivos e pode sumir
+se os dados do site forem apagados. A jornada/run corrente ainda reinicia ao
+recarregar ou fechar a página. As vidas extras continuam limitadas a uma vez por
+sala na run, e o álbum reconhece cada ID uma única vez entre runs.
+
+O projeto inclui `manifest.webmanifest` e `sw.js`, permitindo uso offline
+**depois de uma primeira visita completa via HTTPS/localhost**, desde que o
+navegador permita armazenamento e service workers. Os sprites são guardados
+conforme usados. O ícone SVG é provisório. Instalação como aplicativo pode variar
+por navegador; **não é um APK, AAB ou executável Windows nativo**.
+
+Para testar no Windows ou Android, abra uma URL HTTPS da preview no Edge/Chrome
+e use o menu de instalação/adicionar à tela inicial, quando disponível.
+O jogo requer orientação paisagem para melhor ergonomia. Ainda faltam testes
+em aparelhos físicos, cobertura de navegadores e ícones PNG finais.
+
+### Hospedar preview web de branch — ação manual necessária
+
+A pasta estática de publicação é **`web/`**; não precisa de build ou npm.
+No Cloudflare Pages ou host similar, conecte a branch aprovada, defina
+diretório de saída `web`, e use um endereço **temporário de preview**.
+Não há URL pública validada neste PR; a publicação requer credenciais,
+configuração de domínio e aprovação para colocar a arte provisória online.
+Não configure domínio de produção nem autorize pagamentos/publicação comercial.
+
+Verificações:
+```sh
+node web/verify.mjs
+node --test web/engine.test.mjs web/progression.test.mjs web/pwa.test.mjs
+node --check web/main.mjs
+node --check web/sw.js
+```
+
+**Próximos gates:** executar smoke real em navegador HTTPS, confirmar instalação
+PWA no Android e no Windows, testar atualização/limpeza do cache, 21 salas e
+bosses sem teleporte, conferir persistência e acessibilidade touch. Compilação
+Unity/Android permanece em outra trilha de QA.
