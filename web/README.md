@@ -149,3 +149,18 @@ de combate, balanceamento, acessibilidade, save e revisão cultural.
 
 O preview PWA guarda a árvore no cache offline; o HTML autocontido
 inclui a mesma árvore no arquivo final.
+
+## Backup e transferência manual do perfil entre dispositivos
+
+No menu **Pausa / Equipar**, escolha **Exportar perfil** para salvar
+`rasta-quest-perfil-v1.json`. Leve o arquivo para outro aparelho e use
+**Importar perfil**. O jogo valida formato/tamanho, IDs de búzios,
+equipamentos, níveis e versões; nenhum campo arbitrário ou status de skin
+forjado é aceito. A importação exige confirmação explícita na interface,
+substitui **o perfil local** e reinicia a **run atual**. Não carrega a
+posição exata de uma partida em outro aparelho.
+
+Esse backup é local, voluntário e não envia dados a servidores. Não contém
+nome, e-mail, senha ou token. O usuário deve guardar o arquivo e pode
+perdê-lo. A sincronização automática entre dispositivos não existe nesta
+etapa; um backend seria um produto/dependência separado.
