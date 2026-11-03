@@ -45,11 +45,11 @@ A partir desta branch, o protótipo registra **um perfil local versionado** no n
 descobertas de búzios únicos (até 105), essência vermelha de inimigos e melhorias
 permanentes de vida, dano e corrida. O menu **Pausa / Equipar** (ou Escape) compra
 melhorias. O álbum reconhece 105/105 e registra skins de Akane/machado como
-desbloqueadas; **a aplicação gráfica das skins ainda não está implementada**.
+desbloqueadas. A seleção com efeitos gráficos provisórios é descrita na seção de Cosméticos.
 
 O perfil é exclusivo do navegador, não sincroniza contas/dispositivos e pode sumir
-se os dados do site forem apagados. A jornada/run corrente ainda reinicia ao
-recarregar ou fechar a página. As vidas extras continuam limitadas a uma vez por
+se os dados do site forem apagados. O snapshot da run permite retornar à entrada
+ou ao checkpoint seguro da sala após recarregar; a posição exata não é salva. As vidas extras continuam limitadas a uma vez por
 sala na run, e o álbum reconhece cada ID uma única vez entre runs.
 
 O projeto inclui `manifest.webmanifest` e `sw.js`, permitindo uso offline
