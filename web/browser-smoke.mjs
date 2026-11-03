@@ -122,6 +122,7 @@ async function smoke(page, url, name) {
     name + ': game boot');
   await page.eval('document.querySelector("#startButton").click()');
   const x0 = await page.eval('document.querySelector("#shells")?.textContent');
+  if (!String(x0).includes('0/5')) throw Error(name + ': fresh browser must start with 0/5, got ' + x0);
   await page.send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'd', code: 'KeyD', windowsVirtualKeyCode: 68 });
   try { await until(async () => String(await page.eval('document.querySelector("#shells")?.textContent')).includes('1/5'),
       name + ': physically collect first cowrie', 8500); }
@@ -147,7 +148,6 @@ async function smoke(page, url, name) {
 }
 
 async function smokeMobile(page) {
-  await page.eval('localStorage.clear()');
   await page.send('Emulation.setDeviceMetricsOverride', {
     width: 844, height: 390, deviceScaleFactor: 2, mobile: true, screenWidth: 844, screenHeight: 390
   });
@@ -165,6 +165,8 @@ async function smokeMobile(page) {
     if (layout.scroll > layout.inner + 2 || !layout.controlVisible || layout.controls < 5) {
       throw Error('Landscape touch layout fails: ' + JSON.stringify(layout));
     }
+    const originalShellCount = await page.eval('document.querySelector("#shells")?.textContent');
+    if (!String(originalShellCount).includes('0/5')) throw Error('mobile session did not start fresh: ' + originalShellCount);
     await page.eval('document.querySelector("#startButton").click()');
     const target = await page.eval(`(() => {
       const button = document.querySelector('[data-control="right"]');
@@ -199,6 +201,7 @@ const offline = join(root, 'dist', 'rasta-quest-offline.html');
 if (!existsSync(offline)) throw Error('Build web/dist/rasta-quest-offline.html before browser smoke.');
 const server = spawn(process.execPath, [join(root, 'serve.mjs'), '4173'], { stdio: 'ignore' });
 let chrome;
+let mobileChrome;
 try {
   await until(async () => {
     try { return (await fetch('http://127.0.0.1:4173/')).ok; }
@@ -206,8 +209,11 @@ try {
   }, 'local HTTP preview server');
   chrome = await startBrowser();
   const hosted = await smoke(chrome, 'http://127.0.0.1:4173/', 'hosted');
-  const mobile = await smokeMobile(chrome);
   const file = await smoke(chrome, 'file://' + resolve(offline), 'offline');
+  // Isolated Chrome data directory prevents desktop pagehide from saving
+  // its run into the mobile test's localStorage and giving a false positive.
+  mobileChrome = await startBrowser();
+  const mobile = await smokeMobile(mobileChrome);
   const report = { status: 'passed', executed_at: new Date().toISOString(), chrome: binary,
     checks: ['boot', 'movement', 'first cowrie', 'pause', 'five canonical skill branches', 'mana HUD'],
     hosted, mobile, offline: file };
@@ -215,8 +221,10 @@ try {
 } catch (error) {
   console.error('E2E browser smoke FAILED:', error.message);
   console.error('Chrome page errors:', JSON.stringify(chrome?.exceptions ?? []));
+  console.error('Mobile Chrome page errors:', JSON.stringify(mobileChrome?.exceptions ?? []));
   throw error;
 } finally {
   if (chrome) await chrome.close();
+  if (mobileChrome) await mobileChrome.close();
   server.kill('SIGTERM');
 }
