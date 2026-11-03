@@ -133,3 +133,19 @@ autoupdate e não sincroniza progresso entre arquivos/origens.
 O perfil continua usando armazenamento local quando o navegador
 permitir; abas `file://` podem bloquear ou isolar armazenamento.
 Não copie este HTML para produção sem aprovação de arte/direitos.
+
+## Árvore de habilidades — Raízes do Trovão (design v02)
+
+O menu **Pausa / Equipar** agora exibe uma prévia consultável das cinco
+ramificações, com 25 nós reproduzidos **sem modificação** da fonte
+`assets/production_drafts/2026-10-24/skill-tree-v02/SKILL_TREE_DESIGN.json`.
+
+A cópia `web/data/skills.json` é validada contra o original pelo CI.
+A interface informa nomes, tiers e se o nó é de maestria; ela é
+**somente leitura** porque custos e balanceamento ainda estão nulos
+no design original. Não se inventou economia, habilidades jogáveis,
+efeitos nem animações. A aquisição real dos nós é um gate posterior
+de combate, balanceamento, acessibilidade, save e revisão cultural.
+
+O preview PWA guarda a árvore no cache offline; o HTML autocontido
+inclui a mesma árvore no arquivo final.
