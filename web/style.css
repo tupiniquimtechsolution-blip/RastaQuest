@@ -10,3 +10,12 @@
 .upgrade-actions button:not(:disabled):hover{background:#38634c}
 #pauseDialog{max-height:85dvh;overflow:auto}
 @media(max-width:850px){.top-actions{gap:3px}.top-actions .text-button{font-size:11px;padding:7px 8px}.hud-metrics{flex-wrap:wrap}}
+
+.equipment-inventory{display:grid;grid-template-columns:minmax(85px,125px) 1fr;align-items:center;gap:7px 10px;margin:16px 0}
+.equipment-inventory strong{font-size:13px;color:#eecf8a}
+.equipment-inventory span{font-size:12px;color:#b5c7b6}
+.equipment-inventory button{background:#244737;color:#fcf3db;border:1px solid #7a9e79;border-radius:7px;padding:9px 10px;text-align:left}
+.equipment-inventory button:disabled{opacity:.66;border-color:#caaa62}
+#mana{color:#91cfff}
+#runBuff{color:#e5c991}
+@media(max-width:560px){.touch-controls button{width:48px;min-width:48px;height:54px}.touch-cluster{gap:3px}.hud-metrics{justify-content:flex-start}}
