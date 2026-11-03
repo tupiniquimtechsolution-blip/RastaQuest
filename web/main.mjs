@@ -1,4 +1,5 @@
-import { createGame, step } from './engine.mjs';
+import { createGame, step, restoreRun } from './engine.mjs';
+import { readSavedRun, writeSavedRun, eraseSavedRun } from './run-save.mjs';
 import { loadSprites, render } from './renderer.mjs';
 import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost, equipItem } from './progression.mjs';
 import { EQUIPMENT, SLOTS, equipmentBonus } from './content.mjs';
@@ -14,6 +15,7 @@ const keys = new Set();
 const touch = new Set();
 let plan, state, profile, sprites = {}, started = false, lastFrame = 0;
 let savedRevision = -1;
+let lastRunSaveAt = 0, runEnded = false;
 const profileStore = (() => { try { return window.localStorage; } catch { return null; } })();
 
 const keyMap = new Map([
@@ -88,6 +90,14 @@ function frame(timestamp) {
   lastFrame = timestamp;
   if (state) {
     if (started && !helpDialog.open && !pauseDialog.open && state.status === 'playing') step(state, currentInput(), elapsed);
+    if (started && state.status === 'playing' && timestamp - lastRunSaveAt >= 3000) {
+      writeSavedRun(profileStore,state);
+      lastRunSaveAt=timestamp;
+    }
+    if (started && state.status !== 'playing' && !runEnded) {
+      eraseSavedRun(profileStore);
+      runEnded=true;
+    }
     if (profile && state.profileRevision !== savedRevision) {
       saveProfile(profileStore, profile);
       savedRevision = state.profileRevision;
@@ -101,7 +111,9 @@ function frame(timestamp) {
 
 function restart() {
   if (!plan) return;
+  eraseSavedRun(profileStore);
   state = createGame(plan, profile);
+  lastRunSaveAt = 0; runEnded=false;
   savedRevision = -1;
   started = true;
   keys.clear(); touch.clear();
@@ -158,6 +170,7 @@ for (const button of touchButtons) {
 
 document.querySelector('#startButton').addEventListener('click', () => { started = true; startOverlay.classList.add('hidden'); });
 document.querySelector('#restartButton').addEventListener('click', restart);
+document.querySelector('#newGameButton').addEventListener('click',restart);
 document.querySelector('#endButton').addEventListener('click', restart);
 document.querySelector('#helpButton').addEventListener('click', () => { keys.clear(); touch.clear(); helpDialog.showModal(); });
 document.querySelector('#closeHelp').addEventListener('click', () => helpDialog.close());
@@ -237,8 +250,15 @@ async function boot() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     plan = await response.json();
     profile = loadProfile(profileStore, plan);
-    state = createGame(plan, profile);
+    const existing=readSavedRun(profileStore);
+    state = restoreRun(plan,profile,existing);
+    const resumable=Boolean(existing && existing.roomId===state.room.id && existing.version===1);
+    if(resumable) {
+      document.querySelector('#startButton').textContent='Continuar jornada';
+      document.querySelector('#newGameButton').hidden=false;
+    }
     savedRevision = state.profileRevision;
+    runEnded=false;
     refreshUpgrades();
     setupRoute(); syncHud();
     sprites = await loadSprites();
@@ -249,6 +269,10 @@ async function boot() {
   }
   requestAnimationFrame(frame);
 }
+
+window.addEventListener('pagehide', () => {
+  if(started && state?.status === 'playing') writeSavedRun(profileStore,state);
+});
 
 boot();
 
