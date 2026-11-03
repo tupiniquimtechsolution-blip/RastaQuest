@@ -33,7 +33,8 @@ jobs:
           node --check web/campaign-autoplay.test.mjs
           node --check web/skills.mjs
           node --check web/sanctuary.mjs
-          node --check web/skills-sanctuary.test.mjs web/campaign-autoplay.test.mjs
+          node --check web/skills-sanctuary.test.mjs
+          node --check web/campaign-autoplay.test.mjs
           node --check web/run-save.mjs
           node --check web/run-save.test.mjs
           node --check web/gameplay.test.mjs
@@ -45,7 +46,7 @@ jobs:
       - name: Verify room data and assets
         run: node web/verify.mjs
       - name: Test gameplay rules
-        run: node --test web/engine.test.mjs web/progression.test.mjs web/pwa.test.mjs web/gameplay.test.mjs web/run-save.test.mjs web/skills-sanctuary.test.mjs
+        run: node --test web/engine.test.mjs web/progression.test.mjs web/pwa.test.mjs web/gameplay.test.mjs web/run-save.test.mjs web/skills-sanctuary.test.mjs web/campaign-autoplay.test.mjs
 
       - name: Real Chromium browser smoke (desktop, mobile, PWA)
         timeout-minutes: 3
