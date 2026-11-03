@@ -37,3 +37,11 @@ jobs:
         run: node web/verify.mjs
       - name: Test gameplay rules
         run: node --test web/engine.test.mjs web/progression.test.mjs web/pwa.test.mjs
+
+      - name: Package browser preview for manual testing
+        uses: actions/upload-artifact@v4
+        with:
+          name: rasta-quest-web-preview
+          path: web/
+          if-no-files-found: error
+          retention-days: 14
