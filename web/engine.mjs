@@ -474,8 +474,8 @@ export function restoreRun(plan, profile, snapshot) {
     equipmentBonus(profile,'mana') + fresh.runBuffs.mana;
   fresh.player.mana = Number.isInteger(snapshot.mana) ?
     clamp(snapshot.mana,0,fresh.player.maxMana) : fresh.player.maxMana;
-  fresh.player.lives = Number.isInteger(snapshot.lives) ?
-    clamp(snapshot.lives,1,99) : fresh.player.lives;
+  fresh.player.lives = Number.isSafeInteger(snapshot.lives) && snapshot.lives >= 1 && snapshot.lives <= 99 ?
+    snapshot.lives : fresh.player.lives;
   fresh.player.hp = Number.isInteger(snapshot.hp) ?
     clamp(snapshot.hp,1,fresh.player.maxHp) : fresh.player.maxHp;
   fresh.collectedIds = new Set(uniqueIds);
