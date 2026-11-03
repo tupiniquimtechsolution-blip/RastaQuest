@@ -1,6 +1,7 @@
 import { createGame, step, restoreRun } from './engine.mjs';
 import { readSavedRun, writeSavedRun, eraseSavedRun } from './run-save.mjs';
-import { loadSprites, render } from './renderer.mjs';
+import { loadSprites, render, renderSanctuary } from './renderer.mjs';
+import { createSanctuary, stepSanctuary } from './sanctuary.mjs';
 import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost, equipItem } from './progression.mjs';
 import { EQUIPMENT, SLOTS, equipmentBonus } from './content.mjs';
 import { SKILL_TREE, skillBonus, canPurchaseSkill, purchaseSkill } from './skills.mjs';
@@ -18,6 +19,7 @@ const touch = new Set();
 let plan, state, profile, sprites = {}, started = false, lastFrame = 0;
 let savedRevision = -1;
 let lastRunSaveAt = 0, runEnded = false;
+let hubActive=false, hub=null;
 const profileStore = (() => { try { return window.localStorage; } catch { return null; } })();
 
 const keyMap = new Map([
@@ -93,6 +95,22 @@ function frame(timestamp) {
   const elapsed = Math.min((timestamp - lastFrame) / 1000, 1 / 30);
   lastFrame = timestamp;
   if (state) {
+    if (hubActive) {
+      if(started && !helpDialog.open && !pauseDialog.open && !skillsDialog.open) {
+        const action=stepSanctuary(hub,currentInput(),elapsed);
+        if(action==='new_run') restart();
+        else if(action==='equipment') {refreshUpgrades();pauseDialog.showModal();}
+        else if(action==='skills') {refreshSkills();skillsDialog.showModal();}
+      }
+      if(hubActive) {
+        renderSanctuary(ctx,hub,sprites);
+        updateText('biomeName','SANTUÁRIO');
+        updateText('roomName','Pátio dos Ancestrais');
+        updateText('message','Ande até as estações e pressione E/ENTRAR.');
+        requestAnimationFrame(frame);
+        return;
+      }
+    }
     if (started && !helpDialog.open && !pauseDialog.open && !skillsDialog.open && state.status === 'playing') step(state, currentInput(), elapsed);
     if (started && state.status === 'playing' && timestamp - lastRunSaveAt >= 3000) {
       writeSavedRun(profileStore,state);
@@ -118,6 +136,7 @@ function restart() {
   eraseSavedRun(profileStore);
   state = createGame(plan, profile);
   lastRunSaveAt = 0; runEnded=false;
+  hubActive=false; hub=null;
   savedRevision = -1;
   started = true;
   keys.clear(); touch.clear();
@@ -179,6 +198,16 @@ document.querySelector('#startButton').addEventListener('click', () => { started
 document.querySelector('#restartButton').addEventListener('click', restart);
 document.querySelector('#newGameButton').addEventListener('click',restart);
 document.querySelector('#endButton').addEventListener('click', restart);
+document.querySelector('#sanctuaryButton').addEventListener('click', () => {
+  if(!profile || !started) return;
+  eraseSavedRun(profileStore);
+  hub=createSanctuary();
+  hubActive=true;
+  runEnded=true;
+  endOverlay.classList.add('hidden');
+  keys.clear();touch.clear();
+  refreshUpgrades();
+});
 document.querySelector('#helpButton').addEventListener('click', () => { keys.clear(); touch.clear(); helpDialog.showModal(); });
 document.querySelector('#closeHelp').addEventListener('click', () => helpDialog.close());
 document.querySelector('#pauseButton').addEventListener('click', () => {
