@@ -29,6 +29,9 @@ jobs:
           node --check web/progression.mjs
           node --check web/progression.test.mjs
           node --check web/content.mjs
+          node --check web/skills.mjs
+          node --check web/sanctuary.mjs
+          node --check web/skills-sanctuary.test.mjs
           node --check web/run-save.mjs
           node --check web/run-save.test.mjs
           node --check web/gameplay.test.mjs
@@ -40,7 +43,7 @@ jobs:
       - name: Verify room data and assets
         run: node web/verify.mjs
       - name: Test gameplay rules
-        run: node --test web/engine.test.mjs web/progression.test.mjs web/pwa.test.mjs web/gameplay.test.mjs web/run-save.test.mjs
+        run: node --test web/engine.test.mjs web/progression.test.mjs web/pwa.test.mjs web/gameplay.test.mjs web/run-save.test.mjs web/skills-sanctuary.test.mjs
 
       - name: Package browser preview for manual testing
         uses: actions/upload-artifact@v4
