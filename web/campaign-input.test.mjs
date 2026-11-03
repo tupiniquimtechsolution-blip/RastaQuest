@@ -10,13 +10,12 @@ const plan = JSON.parse(readFileSync(new URL('./data/rooms.json', import.meta.ur
  * It cannot teleport, rewrite enemies, collect shells through state edits,
  * bypass a portal, or skip any room. This is NOT a human/baseline balance test.
  */
-test('max-upgrade input-only route clears 21 rooms, 3 guardians, 105 real-world shell slots', () => {
+function verifyCampaign(upgrades, maxFrames) {
   const profile = makeProfile();
-  Object.assign(profile.upgrades, { vitality: 5, strength: 5, mobility: 5 });
+  Object.assign(profile.upgrades, upgrades);
   const state = createGame(plan, profile);
   const cleared = [];
   const bossesVisited = new Set();
-  const maxFrames = 30000;
   let frames = 0;
   while (state.status === 'playing' && frames++ < maxFrames) {
     const p = state.player;
@@ -57,7 +56,12 @@ test('max-upgrade input-only route clears 21 rooms, 3 guardians, 105 real-world 
     const foes = state.enemies.filter(enemy => enemy.alive);
     if (foes.length) {
       const near = foes.reduce((a, b) => Math.abs(b.x - p.x) < Math.abs(a.x - p.x) ? b : a);
-      if (Math.abs(near.x - p.x) < 85 && p.x > near.x + near.w) direction = -1;
+      const dist = (near.x + near.w / 2) - (p.x + p.w / 2);
+      const sameLevel = Math.abs((p.y + p.h) - (near.y + near.h)) < 70;
+      if (Math.abs(dist) < 130 && sameLevel) {
+        const face = dist >= 0 ? 1 : -1;
+        direction = p.facing === face ? 0 : face;
+      }
     }
     const interact = !shells.length && foes.length === 0 && Math.abs(state.exit.x - p.x) < 100;
     const oldIndex = state.roomIndex;
@@ -78,5 +82,13 @@ test('max-upgrade input-only route clears 21 rooms, 3 guardians, 105 real-world 
   assert.deepEqual(profile.skins, SKIN_REWARDS);
   assert.equal(state.rewardedRooms.size, 21);
   assert.ok(state.player.lives > 0);
-  console.log('Input-only upgraded-profile campaign completed in ' + frames + ' simulated frames.');
+  console.log('Input-only ' + (upgrades.vitality ? 'upgraded' : 'default') + ' profile campaign completed in ' + frames + ' frames.');
+}
+
+test('no-upgrade input-only route clears all 21 rooms and 105 cowries', () => {
+  verifyCampaign({ vitality: 0, strength: 0, mobility: 0 }, 40000);
+});
+
+test('max-upgrade input-only route clears all 21 rooms and 105 cowries', () => {
+  verifyCampaign({ vitality: 5, strength: 5, mobility: 5 }, 30000);
 });
