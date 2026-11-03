@@ -342,10 +342,6 @@ function handleChests(state, input) {
 }
 
 function handleExit(state, input) {
-  if (Array.isArray(snapshot.openedChestIds)) {
-    const opened = new Set(snapshot.openedChestIds.filter(id => typeof id === 'string'));
-    for (const chest of state.chests) chest.opened = opened.has(chest.id);
-  }
   state.exit.ready = state.enemies.every(enemy => !enemy.alive);
   const player = state.player;
   const near = Math.abs(player.x + player.w / 2 - (state.exit.x + state.exit.w / 2)) < 105;
@@ -439,6 +435,10 @@ export function resumeGame(plan, profile, snapshot) {
   const defeated = new Set(snapshot.defeatedEnemyIds.filter(id => typeof id === "string"));
   for (const enemy of state.enemies) {
     if (defeated.has(enemy.id)) { enemy.alive = false; enemy.hp = 0; }
+  }
+  if (Array.isArray(snapshot.openedChestIds)) {
+    const opened = new Set(snapshot.openedChestIds.filter(id => typeof id === 'string'));
+    for (const chest of state.chests) chest.opened = opened.has(chest.id);
   }
   state.exit.ready = state.enemies.every(enemy => !enemy.alive);
   state.checkpoint.activated = snapshot.checkpointActivated === true;
