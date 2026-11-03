@@ -3,7 +3,7 @@ import { loadRun, saveRun, clearRun } from './run-save.mjs';
 import { EQUIPMENT, equipEquipment } from './loot.mjs';
 import { serializeTransfer, parseTransfer, MAX_PROFILE_BYTES } from './transfer.mjs';
 import { loadSprites, render } from './renderer.mjs';
-import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost } from './progression.mjs';
+import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost, equipSkin } from './progression.mjs';
 
 const canvas = document.querySelector('#game');
 const ctx = canvas.getContext('2d');
@@ -172,6 +172,16 @@ document.querySelector('#equipmentButtons').addEventListener('click', event => {
     refreshUpgrades(); syncHud();
   }
 });
+document.querySelector('#cosmeticButtons').addEventListener('click', event => {
+  const button = event.target.closest('button[data-skin][data-slot]');
+  if (!button || !profile) return;
+  if (equipSkin(profile, button.dataset.slot, button.dataset.skin)) {
+    state.profileRevision += 1;
+    saveProfile(profileStore, profile);
+    refreshUpgrades();
+    syncHud();
+  }
+});
 document.querySelector('#exportSave').addEventListener('click', () => {
   if (!profile || !plan) return;
   const data = serializeTransfer(profile, plan);
@@ -228,7 +238,27 @@ function refreshUpgrades() {
     button.textContent = `${names[type]} · nível ${profile.upgrades[type]}/5 · ${cost === null ? 'MÁXIMO' : cost + ' essências'}`;
   }
   updateText('albumProgress', `${profile.collectedCowries.length}/105 búzios únicos`);
-  updateText('cosmeticRewards', profile.skins.length ? 'Skins de Akane e do machado desbloqueadas — equipar visuais: em desenvolvimento' : 'Skins de Akane e do machado desbloqueadas ao completar 105/105');
+  updateText('cosmeticRewards', profile.skins.length
+    ? 'Você concluiu o álbum: escolha seus visuais desbloqueados abaixo.'
+    : 'Encontre os 105 búzios únicos para desbloquear novas skins.');
+  const cosmetics = document.querySelector('#cosmeticButtons');
+  cosmetics.replaceChildren();
+  for (const [slot, id, label] of [
+    ['character', 'base', 'Akane · aparência original'],
+    ['character', 'akane-ancestral', 'Akane · ancestral (prévia)'],
+    ['axe', 'base', 'Machado · aparência original'],
+    ['axe', 'axe-thunder', 'Machado · trovão (prévia)']
+  ]) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.dataset.skin = id;
+    button.dataset.slot = slot;
+    const unlocked = id === 'base' || profile.skins.includes(id);
+    const equipped = profile.cosmetics?.[slot] === id;
+    button.disabled = !unlocked || equipped;
+    button.textContent = label + ' · ' + (!unlocked ? 'BLOQUEADO (105/105)' : equipped ? 'EQUIPADO' : 'EQUIPAR');
+    cosmetics.append(button);
+  }
   updateText('essenceBalance', `${profile.essence} essências vermelhas disponíveis`);
   const gearPanel = document.querySelector('#equipmentButtons');
   gearPanel.replaceChildren();

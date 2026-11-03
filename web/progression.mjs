@@ -9,7 +9,8 @@ export const SKIN_REWARDS = Object.freeze(['akane-ancestral', 'axe-thunder']);
 export function makeProfile() {
   return { version: SAVE_VERSION, collectedCowries: [], essence: 0,
     upgrades: { vitality: 0, strength: 0, mobility: 0 }, skins: [],
-    items: [], equipped: { haft: null, blade: null, boots: null } };
+    items: [], equipped: { haft: null, blade: null, boots: null },
+    cosmetics: { character: 'base', axe: 'base' } };
 }
 
 export function allCowrieIds(plan) {
@@ -37,6 +38,8 @@ export function sanitizeProfile(candidate, plan) {
   if (clean.collectedCowries.length === allowed.size && allowed.size === 105) {
     clean.skins = [...SKIN_REWARDS];
   }
+  if (candidate.cosmetics?.character === 'akane-ancestral' && clean.skins.includes('akane-ancestral')) clean.cosmetics.character = 'akane-ancestral';
+  if (candidate.cosmetics?.axe === 'axe-thunder' && clean.skins.includes('axe-thunder')) clean.cosmetics.axe = 'axe-thunder';
   return clean;
 }
 
@@ -75,5 +78,15 @@ export function purchaseUpgrade(profile, type) {
   if (cost === null || profile.essence < cost) return false;
   profile.essence -= cost;
   profile.upgrades[type] += 1;
+  return true;
+}
+
+/** Equip cosmetic only after global album unlock; no gameplay stats. */
+export function equipSkin(profile, slot, id) {
+  if (!profile?.cosmetics || !['character', 'axe'].includes(slot)) return false;
+  const known = slot === 'character' ? 'akane-ancestral' : 'axe-thunder';
+  if (id !== 'base' && (id !== known || !profile.skins.includes(id))) return false;
+  if (profile.cosmetics[slot] === id) return false;
+  profile.cosmetics[slot] = id;
   return true;
 }

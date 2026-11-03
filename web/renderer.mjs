@@ -247,11 +247,25 @@ function drawPlayer(ctx, state, camera, sprites) {
   ctx.save();
   if (p.invuln > 0 && Math.floor(state.time * 12) % 2 === 0) ctx.globalAlpha = .55;
   const sprite = p.attackTime > 0 ? sprites.attack : !p.grounded ? sprites.jump : Math.abs(p.vx) > 20 ? (Math.floor(state.time * 8) % 2 ? sprites.run1 : sprites.run2) : sprites.idle;
+  const ancestralSkin = state.profile?.cosmetics?.character === 'akane-ancestral';
+  const thunderAxe = state.profile?.cosmetics?.axe === 'axe-thunder';
+  if (ancestralSkin) {
+    ctx.filter = 'sepia(.4) saturate(1.35) hue-rotate(165deg)';
+    ctx.shadowColor = '#8fd2e9'; ctx.shadowBlur = 13;
+  }
   if (!drawSprite(ctx, sprite, x, p.y + p.h + 5, 91, p.facing)) {
     ctx.fillStyle = '#eed681'; ctx.fillRect(p.x - camera, p.y, p.w, p.h);
   }
+  ctx.filter = 'none'; ctx.shadowBlur = 0;
+  if (thunderAxe && p.attackTime <= 0) {
+    ctx.strokeStyle = '#82dafa'; ctx.lineWidth = 2.5; ctx.globalAlpha = 0.7;
+    ctx.beginPath(); ctx.moveTo(x + p.facing * 20, p.y + 23);
+    ctx.lineTo(x + p.facing * 33, p.y + 18);
+    ctx.lineTo(x + p.facing * 27, p.y + 35); ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
   if (p.attackTime > 0) {
-    ctx.strokeStyle = p.specialTime > 0 ? '#a9ebff' : '#f9d98cd0'; ctx.lineWidth = 7; ctx.beginPath();
+    ctx.strokeStyle = (p.specialTime > 0 || thunderAxe) ? '#8bdcff' : '#f9d98cd0'; ctx.lineWidth = 7; ctx.beginPath();
     ctx.arc(x + p.facing * 26, p.y + 28, p.specialTime > 0 ? 65 : 40, p.facing > 0 ? -.9 : 2.1, p.facing > 0 ? 1.1 : 4.1); ctx.stroke();
   }
   ctx.restore();

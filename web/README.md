@@ -45,11 +45,11 @@ A partir desta branch, o protótipo registra **um perfil local versionado** no n
 descobertas de búzios únicos (até 105), essência vermelha de inimigos e melhorias
 permanentes de vida, dano e corrida. O menu **Pausa / Equipar** (ou Escape) compra
 melhorias. O álbum reconhece 105/105 e registra skins de Akane/machado como
-desbloqueadas; **a aplicação gráfica das skins ainda não está implementada**.
+desbloqueadas. A seleção com efeitos gráficos provisórios é descrita na seção de Cosméticos.
 
 O perfil é exclusivo do navegador, não sincroniza contas/dispositivos e pode sumir
-se os dados do site forem apagados. A jornada/run corrente ainda reinicia ao
-recarregar ou fechar a página. As vidas extras continuam limitadas a uma vez por
+se os dados do site forem apagados. O snapshot da run permite retornar à entrada
+ou ao checkpoint seguro da sala após recarregar; a posição exata não é salva. As vidas extras continuam limitadas a uma vez por
 sala na run, e o álbum reconhece cada ID uma única vez entre runs.
 
 O projeto inclui `manifest.webmanifest` e `sw.js`, permitindo uso offline
@@ -164,3 +164,17 @@ Esse backup é local, voluntário e não envia dados a servidores. Não contém
 nome, e-mail, senha ou token. O usuário deve guardar o arquivo e pode
 perdê-lo. A sincronização automática entre dispositivos não existe nesta
 etapa; um backend seria um produto/dependência separado.
+
+## Cosméticos equipáveis — recompensa do álbum completo (estudo web)
+
+Ao registrar os **105 búzios únicos**, o perfil libera dois cosméticos
+independentes: **Akane Ancestral** e **Machado do Trovão**. Em
+**Pausa / Equipar → Visuais**, escolha a aparência original ou a variante
+desbloqueada para cada slot. A escolha é preservada no perfil local e no
+backup/exportação JSON, mas não muda dano, vida nem mobilidade. Dados
+forjados de skins continuam inválidos sem a coleção completa.
+
+**Importante:** o personagem usa um filtro ilustrado provisório e o
+machado recebe sinais elétricos diferenciados; isso **não substitui**
+sprites finais, rig, animação, aprovação cultural ou direitos visuais.
+O equipamento permanente de combate permanece separado dos visuais.
