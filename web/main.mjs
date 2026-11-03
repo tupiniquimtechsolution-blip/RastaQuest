@@ -13,6 +13,7 @@ const keys = new Set();
 const touch = new Set();
 let plan, state, profile, sprites = {}, started = false, lastFrame = 0;
 let savedRevision = -1;
+const profileStore = (() => { try { return window.localStorage; } catch { return null; } })();
 
 const keyMap = new Map([
   ['ArrowLeft', 'left'], ['KeyA', 'left'],
@@ -72,7 +73,7 @@ function frame(timestamp) {
   if (state) {
     if (started && !helpDialog.open && !pauseDialog.open && state.status === 'playing') step(state, currentInput(), elapsed);
     if (profile && state.profileRevision !== savedRevision) {
-      saveProfile(localStorage, profile);
+      saveProfile(profileStore, profile);
       savedRevision = state.profileRevision;
       refreshUpgrades();
     }
@@ -153,7 +154,7 @@ document.querySelector('#upgradeButtons').addEventListener('click', event => {
   const button = event.target.closest('button[data-upgrade]');
   if (!button || !profile) return;
   if (purchaseUpgrade(profile, button.dataset.upgrade)) {
-    saveProfile(localStorage, profile);
+    saveProfile(profileStore, profile);
     savedRevision = state.profileRevision;
     // Equipped permanent vitality is immediately reflected in the active run.
     const newMaxHp = 3 + profile.upgrades.vitality;
@@ -182,7 +183,7 @@ async function boot() {
     const response = await fetch('./data/rooms.json', { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     plan = await response.json();
-    profile = loadProfile(localStorage, plan);
+    profile = loadProfile(profileStore, plan);
     state = createGame(plan, profile);
     savedRevision = state.profileRevision;
     refreshUpgrades();
