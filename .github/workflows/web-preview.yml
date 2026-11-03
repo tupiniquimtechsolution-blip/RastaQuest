@@ -24,6 +24,7 @@ jobs:
           node-version: '22'
       - name: Check JavaScript syntax
         run: |
+          node --check web/campaign-input.test.mjs
           node --check web/browser-smoke.mjs
           node --check web/sw.js
           node --check web/pwa.test.mjs
@@ -48,7 +49,7 @@ jobs:
       - name: Verify room data and assets
         run: node web/verify.mjs
       - name: Test gameplay rules
-        run: node --test web/engine.test.mjs web/progression.test.mjs web/pwa.test.mjs web/run-save.test.mjs web/geometry.test.mjs web/loot.test.mjs web/loot-integration.test.mjs web/skills.test.mjs web/transfer.test.mjs
+        run: node --test web/engine.test.mjs web/progression.test.mjs web/pwa.test.mjs web/run-save.test.mjs web/geometry.test.mjs web/loot.test.mjs web/loot-integration.test.mjs web/skills.test.mjs web/transfer.test.mjs web/campaign-input.test.mjs
 
       - name: Build self-contained offline HTML
         run: node web/build-standalone.mjs
