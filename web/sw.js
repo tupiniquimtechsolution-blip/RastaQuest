@@ -1,10 +1,10 @@
 /* Prototype offline shell cache. Bump version when changing deploy assets. */
-const VERSION = 'rasta-quest-preview-20261103-v2';
+const VERSION = 'rasta-quest-preview-20261103-v3';
 const SHELL = [
   './', './index.html', './style.css', './main.mjs', './engine.mjs',
   './progression.mjs', './skills.mjs', './sanctuary.mjs', './run-save.mjs',
   './content.mjs', './renderer.mjs', './data/rooms.json',
-  './manifest.webmanifest', './app-icon.svg',
+  './manifest.webmanifest', './app-icon.svg', './icon-192.png', './icon-512.png',
   ...['player-idle','player-run','player-jump','player-attack','enemy-idle',
      'enemy-attack','portal','boss-forest','boss-castle','boss-caves',
      'terrain-forest','terrain-castle','terrain-caves'].map(name => './assets/' + name + '.png')
