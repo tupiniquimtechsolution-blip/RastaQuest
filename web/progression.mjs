@@ -1,4 +1,5 @@
 /** Rasta Quest web progression v1. Local-only, independent of run state. */
+import { sanitizeEquipment } from './loot.mjs';
 export const SAVE_KEY = 'rasta-quest:web-profile:v1';
 export const SAVE_VERSION = 1;
 export const UPGRADE_TYPES = Object.freeze(['vitality', 'strength', 'mobility']);
@@ -7,7 +8,8 @@ export const SKIN_REWARDS = Object.freeze(['akane-ancestral', 'axe-thunder']);
 
 export function makeProfile() {
   return { version: SAVE_VERSION, collectedCowries: [], essence: 0,
-    upgrades: { vitality: 0, strength: 0, mobility: 0 }, skins: [] };
+    upgrades: { vitality: 0, strength: 0, mobility: 0 }, skins: [],
+    items: [], equipped: { haft: null, blade: null, boots: null } };
 }
 
 export function allCowrieIds(plan) {
@@ -28,6 +30,9 @@ export function sanitizeProfile(candidate, plan) {
     const value = candidate.upgrades?.[key];
     if (Number.isInteger(value) && value >= 0 && value <= UPGRADE_MAX) clean.upgrades[key] = value;
   }
+  const gear = sanitizeEquipment(candidate.items, candidate.equipped);
+  clean.items = gear.items;
+  clean.equipped = gear.equipped;
   // Unlocks are recomputed, never accepted from forged saved flags.
   if (clean.collectedCowries.length === allowed.size && allowed.size === 105) {
     clean.skins = [...SKIN_REWARDS];
