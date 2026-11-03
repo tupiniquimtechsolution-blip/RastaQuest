@@ -5,6 +5,7 @@ import { createSanctuary, stepSanctuary } from './sanctuary.mjs';
 import { loadProfile, saveProfile, purchaseUpgrade, upgradeCost, equipItem, equipSkin } from './progression.mjs';
 import { EQUIPMENT, SLOTS, equipmentBonus } from './content.mjs';
 import { SKILL_TREE, skillBonus, canPurchaseSkill, purchaseSkill } from './skills.mjs';
+import { LORE } from './lore.mjs';
 
 const canvas = document.querySelector('#game');
 const ctx = canvas.getContext('2d');
@@ -13,6 +14,7 @@ const endOverlay = document.querySelector('#endOverlay');
 const helpDialog = document.querySelector('#helpDialog');
 const pauseDialog = document.querySelector('#pauseDialog');
 const skillsDialog = document.querySelector('#skillsDialog');
+const loreDialog = document.querySelector('#loreDialog');
 const touchButtons = [...document.querySelectorAll('[data-control]')];
 const keys = new Set();
 const touch = new Set();
@@ -51,6 +53,7 @@ function syncHud() {
   updateText('shells', `BÚZIOS ${state.roomCollected}/5`);
   updateText('total', `ÁLBUM ${profile?.collectedCowries.length ?? 0}/105`);
   updateText('essence', `ESSÊNCIA ${profile?.essence ?? 0}`);
+  updateText('loreProgress', `${profile?.loreIds?.length ?? 0}/21`);
   updateText('runBuff', `BÊNÇÃOS +${state.runBuffs.damage}D / +${state.runBuffs.mana}M / +${state.runBuffs.mobility}V`);
   updateText('upgradeStatus', profile ? `VIDA +${profile.upgrades.vitality} · DANO +${profile.upgrades.strength} · MANA +${profile.upgrades.spirit} · HABILIDADES ${profile.skills.length}/25 · SKINS ${profile.skins.length}/2` : '');
   const fallback = state.exit.ready ? 'Portal aberto: aproxime-se e pressione E ou ENTRAR.' : 'Explore a rota, pegue os búzios e derrote os inimigos.';
@@ -96,7 +99,7 @@ function frame(timestamp) {
   lastFrame = timestamp;
   if (state) {
     if (hubActive) {
-      if(started && !helpDialog.open && !pauseDialog.open && !skillsDialog.open) {
+      if(started && !helpDialog.open && !pauseDialog.open && !skillsDialog.open && !loreDialog.open) {
         const action=stepSanctuary(hub,currentInput(),elapsed);
         if(action==='new_run') restart();
         else if(action==='equipment') {refreshUpgrades();pauseDialog.showModal();}
@@ -111,7 +114,7 @@ function frame(timestamp) {
         return;
       }
     }
-    if (started && !helpDialog.open && !pauseDialog.open && !skillsDialog.open && state.status === 'playing') step(state, currentInput(), elapsed);
+    if (started && !helpDialog.open && !pauseDialog.open && !skillsDialog.open && !loreDialog.open && state.status === 'playing') step(state, currentInput(), elapsed);
     if (started && state.status === 'playing' && timestamp - lastRunSaveAt >= 3000) {
       writeSavedRun(profileStore,state);
       lastRunSaveAt=timestamp;
@@ -162,13 +165,14 @@ function setupRoute() {
 window.addEventListener('keydown', event => {
   if (event.code === 'Escape' && !helpDialog.open && started) {
     event.preventDefault();
-    if(skillsDialog.open) {skillsDialog.close();pauseDialog.showModal();}
+    if(loreDialog.open) {loreDialog.close();pauseDialog.showModal();}
+    else if(skillsDialog.open) {skillsDialog.close();pauseDialog.showModal();}
     else if(pauseDialog.open) pauseDialog.close();
     else pauseDialog.showModal();
     keys.clear(); touch.clear(); return;
   }
   const control = keyMap.get(event.code);
-  if (!control || helpDialog.open || pauseDialog.open || skillsDialog.open) return;
+  if (!control || helpDialog.open || pauseDialog.open || skillsDialog.open || loreDialog.open) return;
   event.preventDefault();
   keys.add(control);
 });
@@ -215,6 +219,28 @@ document.querySelector('#pauseButton').addEventListener('click', () => {
   keys.clear(); touch.clear(); refreshUpgrades(); pauseDialog.showModal();
 });
 document.querySelector('#closePause').addEventListener('click', () => pauseDialog.close());
+document.querySelector('#loreOpen').addEventListener('click', () => {
+  pauseDialog.close();refreshLore();loreDialog.showModal();
+});
+document.querySelector('#closeLore').addEventListener('click', () => {
+  loreDialog.close();pauseDialog.showModal();
+});
+document.querySelector('#loreList').addEventListener('click',event=>{
+  const button=event.target.closest('button[data-lore]');
+  if(button) updateText('loreDetail',LORE[button.dataset.lore]?.body ?? '');
+});
+function refreshLore(){
+  if(!profile)return;
+  const list=document.querySelector('#loreList');list.replaceChildren();
+  for(const entry of Object.values(LORE)){
+    const owned=profile.loreIds.includes(entry.id),button=document.createElement('button');
+    button.type='button';button.dataset.lore=entry.id;
+    button.disabled=!owned;
+    button.textContent=owned?entry.title:`${entry.id.toUpperCase()} · Não descoberta`;
+    list.append(button);
+  }
+  updateText('loreProgress',`${profile.loreIds.length}/21`);
+}
 document.querySelector('#skillOpen').addEventListener('click', () => {
   pauseDialog.close();
   refreshSkills();
