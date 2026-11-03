@@ -164,3 +164,17 @@ Esse backup é local, voluntário e não envia dados a servidores. Não contém
 nome, e-mail, senha ou token. O usuário deve guardar o arquivo e pode
 perdê-lo. A sincronização automática entre dispositivos não existe nesta
 etapa; um backend seria um produto/dependência separado.
+
+## Cosméticos equipáveis — recompensa do álbum completo (estudo web)
+
+Ao registrar os **105 búzios únicos**, o perfil libera dois cosméticos
+independentes: **Akane Ancestral** e **Machado do Trovão**. Em
+**Pausa / Equipar → Visuais**, escolha a aparência original ou a variante
+desbloqueada para cada slot. A escolha é preservada no perfil local e no
+backup/exportação JSON, mas não muda dano, vida nem mobilidade. Dados
+forjados de skins continuam inválidos sem a coleção completa.
+
+**Importante:** o personagem usa um filtro ilustrado provisório e o
+machado recebe sinais elétricos diferenciados; isso **não substitui**
+sprites finais, rig, animação, aprovação cultural ou direitos visuais.
+O equipamento permanente de combate permanece separado dos visuais.
