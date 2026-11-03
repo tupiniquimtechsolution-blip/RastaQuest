@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { makeProfile, sanitizeProfile, loadProfile, saveProfile, recordCowrie,
-  awardEssence, upgradeCost, purchaseUpgrade, SKIN_REWARDS } from './progression.mjs';
+  awardEssence, upgradeCost, purchaseUpgrade, awardEquipment, equipItem, equipSkin, SKIN_REWARDS } from './progression.mjs';
 const plan = JSON.parse(readFileSync(new URL('./data/rooms.json', import.meta.url), 'utf8'));
 const ids = plan.rooms.flatMap(room => room.cowries.map(cowrie => cowrie.id));
 
@@ -23,7 +23,7 @@ test('invalid, forged, old or duplicated saved data cannot mint skins', () => {
   assert.equal(p.collectedCowries.length, 1);
   assert.deepEqual(p.skins, []);
   assert.equal(p.essence, 0);
-  assert.deepEqual(p.upgrades, { vitality: 0, strength: 2, mobility: 0 });
+  assert.deepEqual(p.upgrades, { vitality: 0, strength: 2, mobility: 0, spirit: 0 });
   assert.deepEqual(sanitizeProfile({ version: 999, collectedCowries: ids }, plan), makeProfile());
 });
 
@@ -49,4 +49,38 @@ test('localStorage failures are nonfatal and valid data round-trips', () => {
   assert.deepEqual(loadProfile(storage, plan), p);
   assert.equal(saveProfile({ setItem() { throw new Error('denied'); } }, p), false);
   assert.deepEqual(loadProfile({ getItem() { throw new Error('denied'); } }, plan), makeProfile());
+});
+
+
+test('equipment is awarded once and only owned equipment can be selected', () => {
+  const p = makeProfile();
+  assert.equal(awardEquipment(p, 'fake-rare'), false);
+  assert.equal(equipItem(p,'castle-02'),false);
+  assert.equal(awardEquipment(p,'castle-02'),true);
+  assert.equal(awardEquipment(p,'castle-02'),false);
+  assert.equal(p.equipment.equipped.boots,'castle-02');
+  assert.equal(awardEquipment(p,'forest-05'),true);
+  assert.equal(equipItem(p,'forest-05'),true);
+  assert.equal(p.equipment.equipped.boots,'forest-05');
+  assert.deepEqual(sanitizeProfile(p,plan),p);
+  const forged = sanitizeProfile({...p,equipment:{owned:['forest-05','bogus'],equipped:{boots:'bogus',blade:'castle-02'}}},plan);
+  assert.deepEqual(forged.equipment.owned,['forest-05']);
+  assert.equal(forged.equipment.equipped.boots,null);
+  assert.equal(forged.equipment.equipped.blade,null);
+});
+
+
+test('hero and axe visual skin selection is locked until 105/105 and survives profile save',()=>{
+  const p=makeProfile();
+  assert.equal(equipSkin(p,'akane','akane-ancestral'),false);
+  assert.equal(equipSkin(p,'axe','axe-thunder'),false);
+  const ids=plan.rooms.flatMap(r=>r.cowries.map(c=>c.id));
+  for(const id of ids)recordCowrie(p,id,plan);
+  assert.equal(equipSkin(p,'akane','akane-ancestral'),true);
+  assert.equal(equipSkin(p,'axe','axe-thunder'),true);
+  assert.equal(equipSkin(p,'axe','akane-ancestral'),false);
+  assert.equal(sanitizeProfile(p,plan).selectedSkins.akane,'akane-ancestral');
+  assert.equal(sanitizeProfile(p,plan).selectedSkins.axe,'axe-thunder');
+  const forged=sanitizeProfile({...p,collectedCowries:ids.slice(0,2)},plan);
+  assert.deepEqual(forged.selectedSkins,{akane:'base',axe:'base'});
 });

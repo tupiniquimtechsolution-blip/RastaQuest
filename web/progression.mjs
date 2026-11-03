@@ -1,13 +1,17 @@
 /** Rasta Quest web progression v1. Local-only, independent of run state. */
+import { EQUIPMENT, SLOTS } from './content.mjs';
+import { sanitizeSkills } from './skills.mjs';
+import { validLoreIds } from './lore.mjs';
 export const SAVE_KEY = 'rasta-quest:web-profile:v1';
 export const SAVE_VERSION = 1;
-export const UPGRADE_TYPES = Object.freeze(['vitality', 'strength', 'mobility']);
+export const UPGRADE_TYPES = Object.freeze(['vitality', 'strength', 'mobility', 'spirit']);
 export const UPGRADE_MAX = 5;
 export const SKIN_REWARDS = Object.freeze(['akane-ancestral', 'axe-thunder']);
 
 export function makeProfile() {
   return { version: SAVE_VERSION, collectedCowries: [], essence: 0,
-    upgrades: { vitality: 0, strength: 0, mobility: 0 }, skins: [] };
+    upgrades: { vitality: 0, strength: 0, mobility: 0, spirit: 0 },
+    equipment: { owned: [], equipped: { blade: null, haft: null, boots: null, amulet: null } }, skills: [], loreIds: [], skins: [], selectedSkins: { akane: 'base', axe: 'base' } };
 }
 
 export function allCowrieIds(plan) {
@@ -28,9 +32,23 @@ export function sanitizeProfile(candidate, plan) {
     const value = candidate.upgrades?.[key];
     if (Number.isInteger(value) && value >= 0 && value <= UPGRADE_MAX) clean.upgrades[key] = value;
   }
+  const owned = candidate.equipment?.owned;
+  if (Array.isArray(owned)) clean.equipment.owned = [...new Set(owned.filter(id => typeof id === 'string' && EQUIPMENT[id]))].sort();
+  for (const slot of SLOTS) {
+    const id = candidate.equipment?.equipped?.[slot];
+    if (clean.equipment.owned.includes(id) && EQUIPMENT[id]?.slot === slot) clean.equipment.equipped[slot] = id;
+  }
+  clean.skills = sanitizeSkills(candidate.skills);
+  clean.loreIds = validLoreIds(candidate.loreIds);
   // Unlocks are recomputed, never accepted from forged saved flags.
   if (clean.collectedCowries.length === allowed.size && allowed.size === 105) {
     clean.skins = [...SKIN_REWARDS];
+  }
+  if (clean.skins.includes('akane-ancestral') && candidate.selectedSkins?.akane === 'akane-ancestral') {
+    clean.selectedSkins.akane = 'akane-ancestral';
+  }
+  if (clean.skins.includes('axe-thunder') && candidate.selectedSkins?.axe === 'axe-thunder') {
+    clean.selectedSkins.axe = 'axe-thunder';
   }
   return clean;
 }
@@ -70,5 +88,35 @@ export function purchaseUpgrade(profile, type) {
   if (cost === null || profile.essence < cost) return false;
   profile.essence -= cost;
   profile.upgrades[type] += 1;
+  return true;
+}
+
+export function awardEquipment(profile, id) {
+  const item = EQUIPMENT[id];
+  if (!item || profile.equipment.owned.includes(id)) return false;
+  profile.equipment.owned.push(id);
+  profile.equipment.owned.sort();
+  if (!profile.equipment.equipped[item.slot]) profile.equipment.equipped[item.slot] = id;
+  return true;
+}
+
+export function equipItem(profile,id) {
+  const item = EQUIPMENT[id];
+  if (!item || !profile.equipment.owned.includes(id)) return false;
+  profile.equipment.equipped[item.slot] = id;
+  return true;
+}
+
+/** Equip prototype color treatments only when collection has unlocked them. */
+export function equipSkin(profile,slot,skin) {
+  const allowed={akane:'akane-ancestral',axe:'axe-thunder'};
+  if(!(slot in allowed) || (skin !== 'base' && (skin !== allowed[slot] || !profile.skins.includes(skin)))) return false;
+  profile.selectedSkins[slot]=skin;
+  return true;
+}
+
+export function recordLore(profile,id) {
+  if(!validLoreIds([id]).length || profile.loreIds.includes(id)) return false;
+  profile.loreIds.push(id);profile.loreIds.sort();
   return true;
 }

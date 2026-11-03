@@ -10,3 +10,40 @@
 .upgrade-actions button:not(:disabled):hover{background:#38634c}
 #pauseDialog{max-height:85dvh;overflow:auto}
 @media(max-width:850px){.top-actions{gap:3px}.top-actions .text-button{font-size:11px;padding:7px 8px}.hud-metrics{flex-wrap:wrap}}
+
+.equipment-inventory{display:grid;grid-template-columns:minmax(85px,125px) 1fr;align-items:center;gap:7px 10px;margin:16px 0}
+.equipment-inventory strong{font-size:13px;color:#eecf8a}
+.equipment-inventory span{font-size:12px;color:#b5c7b6}
+.equipment-inventory button{background:#244737;color:#fcf3db;border:1px solid #7a9e79;border-radius:7px;padding:9px 10px;text-align:left}
+.equipment-inventory button:disabled{opacity:.66;border-color:#caaa62}
+#mana{color:#91cfff}
+#runBuff{color:#e5c991}
+@media(max-width:560px){.touch-controls button{width:48px;min-width:48px;height:54px}.touch-cluster{gap:3px}.hud-metrics{justify-content:flex-start}}
+
+/* Skill-tree pause menu; five branches, 25 permanent nodes from v02. */
+#skillsDialog{width:min(96vw,980px);max-height:88dvh;overflow:auto}
+.skill-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:16px}
+.skill-branch{background:#152820;border:1px solid #577259;border-radius:11px;padding:9px;display:flex;flex-direction:column;gap:8px}
+.skill-branch h3{font-size:13px;color:#f5d898;line-height:1.25;min-height:33px;margin:0}
+.skill-branch button{font-size:11px;line-height:1.35;min-height:66px;padding:8px;border-radius:8px;border:1px solid #8da47b;background:#294535;color:#f4ebd4;text-align:left}
+.skill-branch button.skill-owned{background:#735d2e;color:#fff4cd;border-color:#ffd285}
+.skill-branch button.skill-locked{opacity:.48;filter:saturate(.6)}
+.skill-branch button.skill-available{border-color:#e2bc6f;box-shadow:inset 0 0 12px #cda75324}
+@media(max-width:770px){.skill-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:520px){.skill-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skill-branch button{min-height:60px}}
+#sanctuaryButton{display:block;margin:0 auto 10px}
+
+/* Touch devices wider than 850px (e.g. landscape tablets) need visible controls. */
+@media(pointer:coarse){.touch-controls{display:flex}}
+
+.skin-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.skin-controls button{padding:10px 12px;border-radius:8px;background:#294c45;color:#f0e4c8;border:1px solid #b9a36b}
+.skin-controls button:disabled{opacity:.45}
+@media(max-width:480px){.skin-controls{grid-template-columns:1fr}}
+
+#loreDialog{width:min(96vw,770px);max-height:87dvh;overflow:auto}
+.lore-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:12px 0}
+.lore-list button{background:#27473d;color:#f9e9c4;padding:10px 7px;border:1px solid #7c9a7e;border-radius:7px;font-size:12px;text-align:left}
+.lore-list button:disabled{opacity:.43;cursor:not-allowed}
+#loreDetail{background:#172f2b;padding:14px;border-left:3px solid #dbc08b;line-height:1.65}
+@media(max-width:560px){.lore-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
