@@ -22,3 +22,16 @@ test('offline shell includes runtime and room data', () => {
     assert.ok(worker.includes(path), path);
   }
 });
+
+
+test('install icons are real PNGs with correct advertised pixel dimensions', () => {
+  const manifest=JSON.parse(read('manifest.webmanifest'));
+  for(const size of [192,512]) {
+    const icon=manifest.icons.find(i=>i.src===`./icon-${size}.png`);
+    assert.ok(icon && icon.type==='image/png');
+    const bytes=readFileSync(here+`icon-${size}.png`);
+    assert.equal(bytes.subarray(0,8).toString('hex'),'89504e470d0a1a0a');
+    assert.equal(bytes.readUInt32BE(16),size);
+    assert.equal(bytes.readUInt32BE(20),size);
+  }
+});
