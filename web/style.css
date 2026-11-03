@@ -32,3 +32,6 @@
 @media(max-width:770px){.skill-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:520px){.skill-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skill-branch button{min-height:60px}}
 #sanctuaryButton{display:block;margin:0 auto 10px}
+
+/* Touch devices wider than 850px (e.g. landscape tablets) need visible controls. */
+@media(pointer:coarse){.touch-controls{display:flex}}
