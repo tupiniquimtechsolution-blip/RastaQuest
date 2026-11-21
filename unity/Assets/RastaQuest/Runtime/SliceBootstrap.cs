@@ -16,6 +16,7 @@ namespace RastaQuest.Unity
         private float defeatDelay;
         private Camera cameraView;
         private float cameraVelocity;
+        private bool initialized;
         private readonly string[] worlds={"forest","castle","caves"};
         private void Start()
         {
@@ -29,6 +30,7 @@ namespace RastaQuest.Unity
             input=gameObject.AddComponent<SliceInput>(); CreatePlayer();
             Hud=new GameObject("PortraitHealthHud").AddComponent<SliceHud>();Hud.Initialize(Player,input,this);
             BuildRoom();
+            initialized=true;
             if(System.Array.IndexOf(System.Environment.GetCommandLineArgs(),"--rq-probe")>=0)gameObject.AddComponent<NativeReviewProbe>();
         }
         private void BuildRoom()
@@ -83,7 +85,9 @@ namespace RastaQuest.Unity
         }
         private void LateUpdate()
         {
-            if(Player==null||Flow.Paused)return;
+            // HUD creation may fail during a bad first import. Avoid flooding
+            // the Console with secondary portalArt NullReference exceptions.
+            if(!initialized||Player==null||Flow.Paused)return;
             portalArt.Pose("idle",1,Time.deltaTime);
             float halfWidth=cameraView.orthographicSize*cameraView.aspect;
             float x=Mathf.Clamp(Player.transform.position.x+Player.Facing*1.8f,halfWidth,60-halfWidth);
