@@ -1,12 +1,12 @@
 #requires -Version 5.1
 <#
-Rasta Quest: first real Unity 6.3 native validation on Windows.
+Rasta Quest: native validation on Windows for the editor pinned in ProjectVersion.txt.
 No downloads, installs, licensing changes, secrets, merges or store publishing.
 Usage:
   .\tools\unity_native_gate_windows.ps1 -CheckOnly
   .\tools\unity_native_gate_windows.ps1 -RunProbe
   .\tools\unity_native_gate_windows.ps1 -SkipAndroid -RunProbe
-  .\tools\unity_native_gate_windows.ps1 -UnityExe 'D:\Unity\6000.3.27f1\Editor\Unity.exe' -RunProbe
+  .\tools\unity_native_gate_windows.ps1 -UnityExe 'D:\Unity\6000.6.10f1\Editor\Unity.exe' -RunProbe
 Close any open Unity Editor using this project before full batchmode validation.
 #>
 [CmdletBinding()]
