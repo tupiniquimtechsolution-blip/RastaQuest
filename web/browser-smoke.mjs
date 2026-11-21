@@ -147,6 +147,40 @@ async function smoke(page, url, name) {
   return observed;
 }
 
+/** Exercise the installed PWA while Chromium has networking disabled.
+ * This checks the real service-worker fetch path rather than only reading
+ * a manifest or asserting that sprite names appear in source code.
+ */
+async function smokeOfflinePwa(page) {
+  await until(async () => page.eval('Boolean(navigator.serviceWorker?.controller)'),
+    'PWA: active service worker controls the page', 30000);
+  const resources = [
+    './', './index.html', './main.mjs', './engine.mjs',
+    './data/rooms.json', './data/skills.json',
+    './assets/player-idle.png', './assets/boss-forest.png',
+    './assets/terrain-castle.png', './assets/terrain-caves.png'
+  ];
+  await page.send('Network.enable');
+  await page.send('Network.emulateNetworkConditions', {
+    offline: true, latency: 0, downloadThroughput: 0, uploadThroughput: 0
+  });
+  try {
+    const results = await page.eval('(async () => Promise.all(' +
+      JSON.stringify(resources) +
+      '.map(async (path) => { try { const response = await fetch(path); return { path, status: response.status, bytes: (await response.arrayBuffer()).byteLength }; } catch (error) { return { path, error: String(error) }; } })))()');
+    for (const result of results) {
+      if (result.status !== 200 || result.bytes <= 0) {
+        throw Error('PWA offline fetch failed: ' + JSON.stringify(result));
+      }
+    }
+    console.log('pwa-offline: PASSED ' + JSON.stringify({ checked: results.length }));
+  } finally {
+    await page.send('Network.emulateNetworkConditions', {
+      offline: false, latency: 0, downloadThroughput: -1, uploadThroughput: -1
+    });
+  }
+}
+
 async function smokeMobile(page) {
   await page.send('Emulation.setDeviceMetricsOverride', {
     width: 844, height: 390, deviceScaleFactor: 2, mobile: true, screenWidth: 844, screenHeight: 390
@@ -209,6 +243,7 @@ try {
   }, 'local HTTP preview server');
   chrome = await startBrowser();
   const hosted = await smoke(chrome, 'http://127.0.0.1:4173/', 'hosted');
+  await smokeOfflinePwa(chrome);
   const file = await smoke(chrome, 'file://' + resolve(offline), 'offline');
   // Isolated Chrome data directory prevents desktop pagehide from saving
   // its run into the mobile test's localStorage and giving a false positive.
