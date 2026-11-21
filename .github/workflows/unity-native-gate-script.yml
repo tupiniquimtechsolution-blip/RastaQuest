@@ -1,0 +1,40 @@
+name: Unity Windows Native Gate Script Contracts (no Editor)
+
+on:
+  pull_request:
+    paths:
+      - 'tools/unity_native_gate_windows.ps1'
+      - 'docs/production/UNITY_PC_NATIVE_SETUP_2026-11-21.md'
+      - '.github/workflows/unity-native-gate-script.yml'
+  push:
+    paths:
+      - 'tools/unity_native_gate_windows.ps1'
+      - 'docs/production/UNITY_PC_NATIVE_SETUP_2026-11-21.md'
+      - '.github/workflows/unity-native-gate-script.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  powershell-parse:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse PowerShell script, without executing local Unity
+        shell: pwsh
+        run: |
+          $script = Resolve-Path 'tools/unity_native_gate_windows.ps1'
+          $tokens = $null
+          $parseErrors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile($script.Path, [ref]$tokens, [ref]$parseErrors) | Out-Null
+          if ($parseErrors.Count -gt 0) {
+            $parseErrors | ForEach-Object { Write-Error $_.ToString() }
+            throw "Invalid PowerShell syntax: $($parseErrors.Count) errors."
+          }
+          Write-Output 'RQ_UNITY_GATE_SCRIPT_SYNTAX_OK — Unity Editor/Windows/Android not executed'
+      - name: Verify source contracts remain unchanged
+        run: |
+          python -B tools/sync_unity_review.py --check
+          python -B tools/check_unity_source_contracts.py
+      - name: Evidence boundary
+        run: Write-Output 'This workflow only checks syntax/source. Real Unity Editor imports, build outputs and physical QA must be executed on an equipped workstation.'
