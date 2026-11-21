@@ -87,6 +87,17 @@ def main():
           "public int HitTargetId" in enemy, "Hit-target IDs must be unique and gameplay-scoped")
     check("WhiteSprite=UnityEngine.Sprite.Create(" in bootstrap,
           "Sprite factory must be qualified to avoid collision with helper method")
+    hud = (ASSETS/"RastaQuest/Runtime/SliceHud.cs").read_text()
+    editor = (ASSETS/"RastaQuest/Editor/ReviewBuild.cs").read_text()
+    check("VerifyReviewSprites();" in editor and "LoadAssetAtPath<Sprite>" in editor and
+          "TextureImporterType.Sprite" in editor and "SaveAndReimport()" in editor,
+          "Unity 6.6 review scene must reimport sprites before creating HUD")
+    check("if(!initialized || Player==null) return;" in hud and
+          "ReviewArt player idle is not imported as Sprite" in hud,
+          "HUD must report missing sprite once and avoid per-frame exceptions")
+    check("if(!initialized||Player==null||Flow.Paused)return;" in bootstrap,
+          "Bootstrap cannot update portal before room initialization")
+
     build = (ASSETS/"RastaQuest/Editor/ReviewBuild.cs").read_text()
     settings = (ROOT/"unity/ProjectSettings/ProjectSettings.asset").read_text()
     check("AndroidMinSdkVersion: 25" in settings and "AndroidTargetSdkVersion: 36" in settings,
