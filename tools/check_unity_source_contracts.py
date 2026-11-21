@@ -75,6 +75,18 @@ def main():
     packages = json.loads((ROOT/"unity/Packages/manifest.json").read_text())["dependencies"]
     check(packages.get("com.unity.inputsystem") == "1.20.1" and
           packages.get("com.unity.ugui") == "2.0.0", "Package version drift")
+    # Unity 6.6 no longer resolves this legacy built-in module by package ID.
+    check("com.unity.modules.textrendering" not in packages,
+          "Obsolete text rendering package breaks Unity 6.6 import")
+    player = (ASSETS/"RastaQuest/Runtime/SlicePlayer.cs").read_text()
+    enemy = (ASSETS/"RastaQuest/Runtime/SliceEnemy.cs").read_text()
+    bootstrap = (ASSETS/"RastaQuest/Runtime/SliceBootstrap.cs").read_text()
+    check("GetInstanceID()" not in player and "Rules.ClaimTarget(foe.HitTargetId)" in player,
+          "Unity 6.6 combat must not use obsolete InstanceID or integer EntityId hashes")
+    check("System.Threading.Interlocked.Increment(ref nextHitTargetId)" in enemy and
+          "public int HitTargetId" in enemy, "Hit-target IDs must be unique and gameplay-scoped")
+    check("WhiteSprite=UnityEngine.Sprite.Create(" in bootstrap,
+          "Sprite factory must be qualified to avoid collision with helper method")
     build = (ASSETS/"RastaQuest/Editor/ReviewBuild.cs").read_text()
     settings = (ROOT/"unity/ProjectSettings/ProjectSettings.asset").read_text()
     check("AndroidMinSdkVersion: 25" in settings and "AndroidTargetSdkVersion: 36" in settings,
