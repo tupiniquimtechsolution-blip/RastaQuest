@@ -50,7 +50,7 @@ namespace RastaQuest.Unity
                 foreach (var hit in Physics2D.OverlapBoxAll(center,new Vector2(.9f,.85f),0,1<<9))
                 {
                     var foe = hit.GetComponent<SliceEnemy>();
-                    if (foe != null && Rules.ClaimTarget(foe.GetInstanceID())) foe.Damage(Damage,Facing*1.5f);
+                    if (foe != null && Rules.ClaimTarget(foe.HitTargetId)) foe.Damage(Damage,Facing*1.5f);
                 }
             }
             if (transform.position.y < -6 && !Rules.Dead) Rules.Receive(100,HitKind.Area);
