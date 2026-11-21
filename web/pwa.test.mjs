@@ -22,3 +22,20 @@ test('offline shell includes runtime and room data', () => {
     assert.ok(worker.includes(path), path);
   }
 });
+
+test('first successful service-worker install precaches all thirteen review sprites', () => {
+  const worker = read('sw.js');
+  const names = [
+    'player-idle.png', 'player-run.png', 'player-jump.png',
+    'player-attack.png', 'enemy-idle.png', 'enemy-attack.png',
+    'portal.png', 'boss-forest.png', 'boss-castle.png',
+    'boss-caves.png', 'terrain-forest.png', 'terrain-castle.png',
+    'terrain-caves.png'
+  ];
+  for (const name of names) {
+    assert.ok(worker.includes("'./assets/" + name + "'"), 'Missing offline sprite: ' + name);
+    assert.ok(readFileSync(here + 'assets/' + name).byteLength > 0, 'Invalid sprite: ' + name);
+  }
+  assert.match(worker, /cache\.addAll\(SHELL\)/, 'install must cache complete shell');
+  assert.match(worker, /rasta-quest-preview-20261121-v6/, 'offline cache needs a new version');
+});

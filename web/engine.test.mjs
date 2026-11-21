@@ -163,3 +163,22 @@ test('collecting cowries in repeated journeys does not duplicate profile discove
   }
   assert.equal(profile.collectedCowries.length, 1);
 });
+
+
+test('nonlethal enemy damage changes run snapshot revision for safe recovery', () => {
+  const game = createGame(plan);
+  const enemy = game.enemies[0];
+  // Skip initial spawn invulnerability and start within melee contact.
+  game.player.invuln = 0;
+  game.player.hp = game.player.maxHp;
+  game.player.x = enemy.x + 3;
+  game.player.y = enemy.y;
+  enemy.cooldown = 0;
+  const before = game.runRevision;
+  step(game, {}, 1 / 60);
+  assert.equal(game.player.hp, game.player.maxHp - 1);
+  assert.equal(game.runRevision, before + 1);
+  const after = game.runRevision;
+  step(game, {}, 1 / 60);
+  assert.equal(game.runRevision, after, 'invulnerable frames cannot trigger more damage');
+});
