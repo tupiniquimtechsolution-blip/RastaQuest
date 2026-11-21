@@ -23,6 +23,9 @@ namespace RastaQuest.Editor
         [MenuItem("Rasta Quest/Preparar sala Unity")]
         public static void Prepare()
         {
+            // A first import with compile errors can leave bare .png.meta files
+            // imported as Texture2D instead of Sprite. Repair before entering Play.
+            VerifyReviewSprites();
             Directory.CreateDirectory(Path.Combine(Application.dataPath, "Scenes"));
             var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
             new GameObject("RastaQuestUnityReview").AddComponent<SliceBootstrap>();
@@ -39,6 +42,47 @@ namespace RastaQuest.Editor
             PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.Android,false);
             PlayerSettings.SetGraphicsAPIs(BuildTarget.Android,new[]{UnityEngine.Rendering.GraphicsDeviceType.OpenGLES3});
             AssetDatabase.SaveAssets();Debug.Log("RQ_UNITY_PREPARE_OK — review only, final art and physical QA pending");
+        }
+        private static void VerifyReviewSprites()
+        {
+            string resourceFolder=Path.Combine(Application.dataPath,"Resources/ReviewArt");
+            if(!Directory.Exists(resourceFolder))
+                throw new System.InvalidOperationException("ReviewArt folder missing: "+resourceFolder);
+            string[] pngFiles=Directory.GetFiles(resourceFolder,"*.png",SearchOption.AllDirectories);
+            if(pngFiles.Length!=274)
+                throw new System.InvalidOperationException("Expected 274 review PNGs, found "+pngFiles.Length);
+            int reimported=0;
+            foreach(string pngFile in pngFiles)
+            {
+                string assetPath="Assets"+pngFile.Substring(Application.dataPath.Length).Replace('\\','/');
+                var importer=AssetImporter.GetAtPath(assetPath) as TextureImporter;
+                if(importer==null)
+                    throw new System.InvalidOperationException("Missing TextureImporter: "+assetPath);
+                if(importer.textureType!=TextureImporterType.Sprite ||
+                   importer.spriteImportMode!=SpriteImportMode.Single)
+                {
+                    importer.textureType=TextureImporterType.Sprite;
+                    importer.spriteImportMode=SpriteImportMode.Single;
+                    importer.spritePixelsPerUnit=64;
+                    importer.filterMode=FilterMode.Point;
+                    importer.wrapMode=TextureWrapMode.Clamp;
+                    importer.alphaIsTransparency=true;
+                    importer.textureCompression=TextureImporterCompression.Uncompressed;
+                    importer.mipmapEnabled=false;
+                    importer.SaveAndReimport();
+                    reimported++;
+                }
+                if(AssetDatabase.LoadAssetAtPath<Sprite>(assetPath)==null)
+                {
+                    // Force a clean import for sprites imported before
+                    // the ReviewImporter AssetPostprocessor compiled.
+                    AssetDatabase.ImportAsset(assetPath,ImportAssetOptions.ForceUpdate);
+                    reimported++;
+                }
+                if(AssetDatabase.LoadAssetAtPath<Sprite>(assetPath)==null)
+                    throw new System.InvalidOperationException("Review asset is not a Sprite: "+assetPath);
+            }
+            Debug.Log("RQ_UNITY_REVIEW_SPRITES_OK total="+pngFiles.Length+" reimported="+reimported);
         }
         public static void Windows()
         {
