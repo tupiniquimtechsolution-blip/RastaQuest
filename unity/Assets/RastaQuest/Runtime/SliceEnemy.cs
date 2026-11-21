@@ -8,6 +8,10 @@ namespace RastaQuest.Unity
         public SlicePlayer Target;
         public bool Ranged;
         public float Health = 3;
+        // Pure combat rules use int encounter IDs, not Unity EntityId or lossy hashes.
+        // Generate one unique ID per runtime enemy instance for hit deduplication.
+        private static int nextHitTargetId;
+        public int HitTargetId { get; private set; }
         public bool Alive { get { return Health > 0; } }
         public bool Telling { get { return windup > 0; } }
         public float TellFraction { get { return 1-windup/.6f; } }
@@ -18,6 +22,7 @@ namespace RastaQuest.Unity
         public void Initialize(SlicePlayer target, bool ranged)
         {
             Target = target; Ranged = ranged; gameObject.layer = 9;
+            if (HitTargetId == 0) HitTargetId = System.Threading.Interlocked.Increment(ref nextHitTargetId);
             body = gameObject.AddComponent<Rigidbody2D>(); body.freezeRotation = true; body.gravityScale = 2.4f;
             body.interpolation = RigidbodyInterpolation2D.Interpolate;
             var collider = gameObject.AddComponent<CapsuleCollider2D>(); collider.size = new Vector2(.45f,.9f);
