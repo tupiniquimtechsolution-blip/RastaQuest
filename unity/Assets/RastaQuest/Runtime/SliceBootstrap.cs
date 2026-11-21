@@ -23,7 +23,7 @@ namespace RastaQuest.Unity
             Screen.autorotateToPortrait=false;Screen.autorotateToPortraitUpsideDown=false;
             Screen.autorotateToLandscapeLeft=true;Screen.autorotateToLandscapeRight=true;Screen.orientation=ScreenOrientation.AutoRotation;
             Physics2D.IgnoreLayerCollision(8,9,true);Physics2D.IgnoreLayerCollision(9,9,true);
-            var texture=new Texture2D(1,1);texture.SetPixel(0,0,Color.white);texture.Apply();WhiteSprite=Sprite.Create(texture,new Rect(0,0,1,1),Vector2.one*.5f,1);
+            var texture=new Texture2D(1,1);texture.SetPixel(0,0,Color.white);texture.Apply();WhiteSprite=UnityEngine.Sprite.Create(texture,new Rect(0,0,1,1),Vector2.one*.5f,1);
             cameraView=new GameObject("SideScrollingCamera").AddComponent<Camera>();cameraView.tag="MainCamera";
             cameraView.orthographic=true;cameraView.orthographicSize=5.625f;cameraView.backgroundColor=new Color(.07f,.13f,.13f);cameraView.transform.position=new Vector3(10,4.375f,-10);
             input=gameObject.AddComponent<SliceInput>(); CreatePlayer();
