@@ -70,7 +70,7 @@ def main():
         used.add(resource(e["background"]))
         used.add(resource(e["tile"]))
     check(used <= names, f"Missing referenced sprites: {sorted(used-names)[:8]}")
-    check("6000.3.27f1" in (ROOT/"unity/ProjectSettings/ProjectVersion.txt").read_text(),
+    check("m_EditorVersion: 6000.6.10f1" in (ROOT/"unity/ProjectSettings/ProjectVersion.txt").read_text(),
           "Editor version drift")
     packages = json.loads((ROOT/"unity/Packages/manifest.json").read_text())["dependencies"]
     check(packages.get("com.unity.inputsystem") == "1.20.1" and
