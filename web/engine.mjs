@@ -166,10 +166,12 @@ function takeDamage(state) {
   if (player.invuln > 0 || state.status !== "playing") return;
   player.hp -= 1;
   player.invuln = 1.15;
+  // Save damage immediately, including nonfatal hits. A suspended mobile
+  // tab must not roll HP back to an earlier checkpoint snapshot.
+  state.runRevision += 1;
   announce(state, "Akane sofreu um golpe!");
   if (player.hp > 0) return;
   player.lives -= 1;
-  state.runRevision += 1;
   if (player.lives <= 0) {
     player.hp = 0;
     state.status = "gameover";
