@@ -33,3 +33,15 @@ powershell.exe -NoProfile -File .\tools\unity_native_gate_windows.ps1 -RunProbe
 Os workflows GitHub desta branch **apenas** validam script PowerShell, inventário dos 274 PNGs de revisão, referências e regras C# independentes quando acionadas. Não instalam o Unity e não executam Play Mode ou APK. O smoke Android físico continua pendente na [issue #81](https://github.com/tupiniquimtechsolution-blip/RastaQuest/issues/81); a instalação e builds reais são o gate [#80](https://github.com/tupiniquimtechsolution-blip/RastaQuest/issues/80).
 
 **Estado:** compatibilidade Unity 6.6 **A TESTAR**, jogo 2D em evolução, **NO-GO comercial**. Evitar criar `packages-lock.json` artificial, mudar Target API por suposição ou converter a linha `main`.
+
+## Correções do primeiro teste real (21/11/2026)
+
+Ao abrir o projeto no Unity 6000.6.10f1, o titular observou o Package Manager rejeitar `com.unity.modules.textrendering@1.0.0`; depois de remover a entrada localmente, a compilação indicou:
+
+- `SlicePlayer.cs(53,58) CS0619` — Unity 6.6 não aceita `Object.GetInstanceID()`. Não converter `EntityId` para `int` ou usar `GetHashCode()`: a regra de combate C# exige identificação única por inimigo para não acertar duas vezes em um único golpe. O adapter Unity agora atribui `HitTargetId` via `Interlocked.Increment` durante `SliceEnemy.Initialize()`, preservando `CombatRules.ClaimTarget(int)` e os testes C# independentes.
+- `SliceBootstrap.cs(26,106) CS0119` — `SliceBootstrap.Sprite(...)` oculta o símbolo do tipo `Sprite` na chamada `Sprite.Create`. A linha usa `UnityEngine.Sprite.Create` explicitamente.
+- `unity/Packages/manifest.json` remove a dependência `com.unity.modules.textrendering`, conforme correção de importação confirmada pelo proprietário.
+
+As alterações foram versionadas nesta branch de compatibilidade; não sobrescrever o projeto histórico 6.3. O workflow valida sintaxe/contratos, **não recompila scripts Unity**. Após aplicar a versão corrigida ao checkout local, sair do Safe Mode apenas quando a Console não tiver erros vermelhos. Atualizar os registros de #80/PR #107 com o resultado real.
+
+Referência oficial: [migração de InstanceID para EntityId na Unity 6000.6](https://docs.unity.com/en-us/engine/6000.6/manual/scripting/get-started/instanceid-to-entityid-migration). Os IDs de hit nesta camada são inteiros internos de encontro, não uma conversão dos identificadores Unity.
