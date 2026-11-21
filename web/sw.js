@@ -1,9 +1,24 @@
 /* Prototype offline shell cache. Bump version when changing deploy assets. */
-const VERSION = 'rasta-quest-preview-20261103-v5';
+const VERSION = 'rasta-quest-preview-20261121-v6';
 const SHELL = [
   './', './index.html', './style.css', './main.mjs', './engine.mjs',
   './progression.mjs', './transfer.mjs', './run-save.mjs', './loot.mjs', './renderer.mjs', './data/rooms.json', './data/skills.json',
-  './manifest.webmanifest', './app-icon.svg'
+  './manifest.webmanifest', './app-icon.svg',
+  // Precache all sprites: first-visit image loads may precede SW control,
+  // so runtime-only caching cannot guarantee an offline second visit.
+  './assets/player-idle.png',
+  './assets/player-run.png',
+  './assets/player-jump.png',
+  './assets/player-attack.png',
+  './assets/enemy-idle.png',
+  './assets/enemy-attack.png',
+  './assets/portal.png',
+  './assets/boss-forest.png',
+  './assets/boss-castle.png',
+  './assets/boss-caves.png',
+  './assets/terrain-forest.png',
+  './assets/terrain-castle.png',
+  './assets/terrain-caves.png'
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(VERSION).then(cache => cache.addAll(SHELL)));
