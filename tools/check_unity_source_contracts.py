@@ -118,6 +118,26 @@ def main():
           "HUD must report missing sprite once and avoid per-frame exceptions")
     check("if(!initialized||Player==null||Flow.Paused)return;" in bootstrap,
           "Bootstrap cannot update portal before room initialization")
+    check("o.AddComponent<CanvasRenderer>()" in hud and
+          "typeof(Graphic).IsAssignableFrom(typeof(T))" in hud and
+          "portraitFrame.raycastTarget=false" in hud and
+          "barFrame.raycastTarget=false" in hud,
+          "Unity 6.6 HUD graphics must have CanvasRenderer and noninteractive frames cannot block clicks")
+    check("RQ_UNITY_RESTART_BUTTON_CLICK" in hud and
+          "Keyboard.current.rKey.wasPressedThisFrame" in hud and
+          "slice.RestartRun();" in hud,
+          "Defeat must expose working button diagnostics and a keyboard retry fallback")
+    check("Tecla R ou botão" in (ASSETS/"RastaQuest/Core/ReviewText.cs").read_text(),
+          "Defeat modal must tell players how to restart")
+    enemy_code = (ASSETS/"RastaQuest/Runtime/SliceEnemy.cs").read_text()
+    check("art.AuthoredFacing = -1;" in enemy_code and
+          "RenderScale*facing*AuthoredFacing" in art_code,
+          "Enemy facing must account for left-facing source sprites and preserve equipment mirroring")
+    probe_code = (ASSETS/"RastaQuest/Runtime/NativeReviewProbe.cs").read_text()
+    check("HUD Graphic missing CanvasRenderer" in probe_code and
+          "restart button center blocked" in probe_code and
+          "buttons[0].onClick.Invoke();" in probe_code,
+          "Native probe must check HUD renderers and restart button input reachability")
 
     build = (ASSETS/"RastaQuest/Editor/ReviewBuild.cs").read_text()
     settings = (ROOT/"unity/ProjectSettings/ProjectSettings.asset").read_text()
