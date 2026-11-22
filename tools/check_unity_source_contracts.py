@@ -103,13 +103,16 @@ def main():
           "ReviewArt must cache runtime sprites without touching PNGs or GUIDs")
     check("ReviewSpriteRepair.Repair();" not in editor,
           "Scene preparation must not force known-failing metadata repair")
-    check("AssetDatabase.ForceReserializeAssets(" in repair and
-          "ForceReserializeAssetsOptions.ReserializeMetadata" in repair and
-          "TextureImporterType.Sprite" in repair and "SaveAndReimport()" in repair and
-          "AssetDatabase.LoadAssetAtPath<Sprite>" in repair,
-          "ReviewArt repair must persist upgraded importer settings and validate each Sprite")
-    check("File.Delete" not in repair and "DeleteAsset(" not in repair,
-          "ReviewArt repair must preserve GUIDs and image files")
+    check("Verificar sprites da revisao (somente leitura)" in repair and
+          "RQ_UNITY_REVIEW_META_CHECK_OK" in repair and
+          "AssetDatabase.LoadAssetAtPath<Sprite>" in repair and
+          "Regex.IsMatch(yaml," in repair and
+          "HashSet<string>" in repair,
+          "Unity 6.6 review Sprite diagnostics must be read-only, check GUIDs and validate import")
+    check("ForceReserializeAssets(" not in repair and
+          "importer.SaveAndReimport();" not in repair and
+          "File.Delete(" not in repair and "DeleteAsset(" not in repair,
+          "Deprecated repair menu must not mutate Sprite metadata or image bytes")
     check("LoadAssetAtPath<Sprite>" in editor and
           "LoadAssetAtPath<Texture2D>" in editor,
           "Unity 6.6 scene must validate Sprite or Texture2D before HUD")
