@@ -127,7 +127,7 @@ def main():
           "Keyboard.current.rKey.wasPressedThisFrame" in hud and
           "slice.RestartRun();" in hud,
           "Defeat must expose working button diagnostics and a keyboard retry fallback")
-    check("Tecla R ou botão" in (ASSETS/"RastaQuest/Core/ReviewText.cs").read_text(),
+    check("Tecla R ou botão" in (ASSETS/"RastaQuest/Core/ReviewText.cs").read_text(encoding="utf-8"),
           "Defeat modal must tell players how to restart")
     enemy_code = (ASSETS/"RastaQuest/Runtime/SliceEnemy.cs").read_text()
     check("art.AuthoredFacing = -1;" in enemy_code and
