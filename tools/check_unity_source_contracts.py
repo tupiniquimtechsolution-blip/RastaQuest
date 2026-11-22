@@ -89,9 +89,19 @@ def main():
           "Sprite factory must be qualified to avoid collision with helper method")
     hud = (ASSETS/"RastaQuest/Runtime/SliceHud.cs").read_text()
     editor = (ASSETS/"RastaQuest/Editor/ReviewBuild.cs").read_text()
-    check("VerifyReviewSprites();" in editor and "LoadAssetAtPath<Sprite>" in editor and
-          "TextureImporterType.Sprite" in editor and "SaveAndReimport()" in editor,
-          "Unity 6.6 review scene must reimport sprites before creating HUD")
+    repair = (ASSETS/"RastaQuest/Editor/ReviewSpriteRepair.cs").read_text()
+    check("ReviewSpriteRepair.Repair();" in editor and "VerifyReviewSprites();" in editor,
+          "Unity 6.6 preparation must repair skeletal .meta before verifying sprites")
+    check("AssetDatabase.ForceReserializeAssets(" in repair and
+          "ForceReserializeAssetsOptions.ReserializeMetadata" in repair and
+          "TextureImporterType.Sprite" in repair and "SaveAndReimport()" in repair and
+          "AssetDatabase.LoadAssetAtPath<Sprite>" in repair,
+          "ReviewArt repair must persist upgraded importer settings and validate each Sprite")
+    check("File.Delete" not in repair and "DeleteAsset(" not in repair,
+          "ReviewArt repair must preserve GUIDs and image files")
+    check("LoadAssetAtPath<Sprite>" in editor and
+          "TextureImporterType.Sprite" in editor,
+          "Unity 6.6 scene must validate Sprite import before HUD")
     check("if(!initialized || Player==null) return;" in hud and
           "ReviewArt player idle is not imported as Sprite" in hud,
           "HUD must report missing sprite once and avoid per-frame exceptions")
