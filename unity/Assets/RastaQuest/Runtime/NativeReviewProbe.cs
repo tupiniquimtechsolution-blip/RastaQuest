@@ -27,7 +27,7 @@ namespace RastaQuest.Unity
         }
         private IEnumerator Watchdog()
         {
-            yield return new WaitForSecondsRealtime(120);
+            yield return new WaitForSecondsRealtime(180);
             if(!finished){failures.Add("probe timed out before completion");Finish();}
         }
         private void Check(bool ok,string message){if(!ok){failures.Add(message);Debug.LogError("RQ_UNITY_PROBE: "+message);}}
@@ -42,6 +42,8 @@ namespace RastaQuest.Unity
         }
         private IEnumerator Start()
         {
+            // Drive physics and frame-based inputs with the same elapsed time on slower hosts.
+            Time.captureDeltaTime = Time.fixedDeltaTime;
             output=Path.Combine(Application.persistentDataPath,"unity-review-probe");
             foreach(string arg in Environment.GetCommandLineArgs())if(arg.StartsWith("--rq-output="))output=arg.Substring(12);
             Directory.CreateDirectory(output);StartCoroutine(Watchdog());yield return Frames(20);
@@ -80,10 +82,14 @@ namespace RastaQuest.Unity
             yield return Capture("pause");slice.Hud.ToggleSettings();
             player.Input.SetStick(Vector2.right);float before=player.transform.position.x;yield return Seconds(.5f);player.Input.Cancel();
             Check(player.transform.position.x>before+.5f,"movement does not advance");
-            player.Input.Jump();yield return Seconds(.08f);float first=player.Body.linearVelocity.y;player.Input.Jump();yield return Seconds(.05f);
+            player.Input.Jump();
+            yield return Frames(4);
+            float first = player.Body.linearVelocity.y;
+            player.Input.Jump();
+            yield return Frames(4);
             Check(first>0&&player.Jumps.Used==2&&player.Body.linearVelocity.y>0,"double jump failed");
             player.Body.position=new Vector2(5,.45f);player.Body.linearVelocity=Vector2.zero;yield return Seconds(.2f);
-            player.Input.Attack();yield return Seconds(.08f);
+            player.Input.Attack();yield return Frames(4);
             Check(player.Rules.AttackId>0&&player.Rules.Phase!=AttackPhase.Idle,"attack phases failed");
             yield return Capture("attack");yield return Seconds(.5f);
             player.Input.Guard=true;yield return Seconds(.04f);
@@ -193,7 +199,7 @@ namespace RastaQuest.Unity
 
         private void Finish()
         {
-            if(finished)return;finished=true;
+            if(finished)return;finished=true;Time.captureDeltaTime=0;
             var result=new Result{engine=Application.unityVersion,version=Application.version,status=failures.Count==0?"PASS":"FAIL",failures=failures.ToArray(),captures=captures.ToArray()};
             File.WriteAllText(Path.Combine(output,"NATIVE_REPORT.json"),JsonUtility.ToJson(result,true));
             Debug.Log(failures.Count==0?"RQ_UNITY_NATIVE_OK":"RQ_UNITY_NATIVE_FAILED");Application.Quit(failures.Count==0?0:1);
