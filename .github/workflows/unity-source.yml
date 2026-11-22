@@ -2,10 +2,10 @@ name: Unity Source Contracts (not Editor or APK)
 
 on:
   pull_request:
-    paths: ["unity/**", "tools/sync_unity_review.py", "tools/check_unity_source_contracts.py", "tools/check_unity_source.py", ".github/workflows/unity-source.yml"]
+    paths: ["unity/**", "tools/sync_unity_review.py", "tools/unity_review_texture_importer.yaml", "tools/check_unity_source_contracts.py", "tools/check_unity_source.py", ".github/workflows/unity-source.yml"]
   push:
     branches: [main]
-    paths: ["unity/**", "tools/sync_unity_review.py", "tools/check_unity_source_contracts.py", "tools/check_unity_source.py", ".github/workflows/unity-source.yml"]
+    paths: ["unity/**", "tools/sync_unity_review.py", "tools/unity_review_texture_importer.yaml", "tools/check_unity_source_contracts.py", "tools/check_unity_source.py", ".github/workflows/unity-source.yml"]
 
 permissions:
   contents: read

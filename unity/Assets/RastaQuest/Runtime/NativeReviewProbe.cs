@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.UI;
 using RastaQuest.Core;
 
@@ -45,7 +47,7 @@ namespace RastaQuest.Unity
             Directory.CreateDirectory(output);StartCoroutine(Watchdog());yield return Frames(20);
             var slice=GetComponent<SliceBootstrap>();var player=slice.Player;
             Check(player!=null&&slice.Hud!=null,"scene failed to initialize");
-            if(player==null){Finish();yield break;}
+            if(player==null||slice.Hud==null){Finish();yield break;}
             Check(player.GetComponentInChildren<SpriteRenderer>().sprite!=null,"player sprite missing");
             // Unity 6000.6 must have CanvasRenderer on EVERY generated Graphic.
             // The manual first playtest flooded the Console on PortraitFrame.
@@ -85,19 +87,19 @@ namespace RastaQuest.Unity
             Check(player.Rules.AttackId>0&&player.Rules.Phase!=AttackPhase.Idle,"attack phases failed");
             yield return Capture("attack");yield return Seconds(.5f);
             player.Input.Guard=true;yield return Seconds(.04f);
-            var enemy=FindFirstObjectByType<SliceEnemy>();Check(enemy!=null,"enemy missing");if(enemy==null){Finish();yield break;}float enemyHp=enemy.Health;
+            var enemy=FindAnyObjectByType<SliceEnemy>();Check(enemy!=null,"enemy missing");if(enemy==null){Finish();yield break;}float enemyHp=enemy.Health;
             Check(player.Receive(1,HitKind.Melee,enemy)==DefenseResult.Parried&&enemy.Health==enemyHp-.5f,"Unity parry/counter response failed");
             yield return Capture("guard_parry");player.Input.Cancel();yield return Seconds(.42f);
             player.Receive(1,HitKind.Melee,null);Check(player.Rules.Health==4,"damage did not reach HUD model");
             yield return Capture("health_damage");
-            foreach(var foe in FindObjectsByType<SliceEnemy>(FindObjectsSortMode.None))foe.Damage(99,0);
+            foreach(var foe in FindObjectsByType<SliceEnemy>())foe.Damage(99,0);
             yield return Frames(2);Check(slice.Flow.Phase==RoomPhase.Rewards&&Time.timeScale==0,"reward modal failed");
             yield return Capture("reward_choices");slice.ChooseReward(0);
             player.Body.position=new Vector2(55,.45f);yield return Seconds(1.1f);
             Check(player.Rules.Health==5&&player.transform.position.x<6&&!player.Rules.Locked&&slice.Flow.Biome==1,"portal restoration/transition failed");
             yield return Capture("portal_destination");
             player.Receive(1,HitKind.Melee,null);
-            foreach(var foe in FindObjectsByType<SliceEnemy>(FindObjectsSortMode.None))foe.Damage(99,0);
+            foreach(var foe in FindObjectsByType<SliceEnemy>())foe.Damage(99,0);
             yield return Frames(2);float hp=player.Rules.Health;slice.ChooseReward(2);slice.ChooseReward(2);
             Check(player.Damage==2,"duplicate reward applied");
             player.Body.position=new Vector2(55,.45f);yield return Frames(2);slice.Hud.PauseForFocus();
@@ -106,45 +108,89 @@ namespace RastaQuest.Unity
             slice.Hud.ToggleSettings();yield return Seconds(1.1f);
             Check(player.Rules.Health==hp&&slice.Flow.Biome==2,"non-healing choice restored life or failed transition");
             yield return Capture("non_healing_destination");
-            player.Receive(99,HitKind.Area,null);yield return Seconds(.7f);
+            player.Receive(99,HitKind.Area,null);
+            yield return new WaitUntil(() => slice.Flow.Phase == RoomPhase.Defeated);
             Check(slice.Flow.Phase==RoomPhase.Defeated&&Time.timeScale==0,"defeat screen failed");
-            var defeatPanel=slice.Hud.transform.Find("ModalInputShield/ModalSafeArea/Defeat");
-            Check(defeatPanel!=null&&defeatPanel.gameObject.activeInHierarchy,
+            var defeatPanel = slice.Hud.transform.Find("ModalInputShield/ModalSafeArea/Defeat");
+            Check(defeatPanel != null && defeatPanel.gameObject.activeInHierarchy,
                 "defeat panel not visible when player dies");
-            if(defeatPanel!=null)
-            {
-                var buttons=defeatPanel.GetComponentsInChildren<Button>(true);
-                Check(buttons.Length==1&&buttons[0].interactable,
-                    "defeat restart button missing or disabled");
-                if(buttons.Length==1 && EventSystem.current!=null)
-                {
-                    var bounds=new Vector3[4];
-                    ((RectTransform)buttons[0].transform).GetWorldCorners(bounds);
-                    var click=new PointerEventData(EventSystem.current) {
-                        position=RectTransformUtility.WorldToScreenPoint(null,(bounds[0]+bounds[2])*.5f)
-                    };
-                    var hits=new List<RaycastResult>();
-                    EventSystem.current.RaycastAll(click,hits);
-                    Check(hits.Count>0 && (hits[0].gameObject==buttons[0].gameObject ||
-                          hits[0].gameObject.transform.IsChildOf(buttons[0].transform)),
-                          "restart button center blocked by another UI Graphic");
-                }
-            }
+            var button = defeatPanel != null ? defeatPanel.GetComponentInChildren<Button>() : null;
+            Check(button != null && button.interactable && EventSystem.current != null,
+                "defeat restart button or event system unavailable");
+            if (button == null || EventSystem.current == null) { Finish(); yield break; }
+
+            var bounds = new Vector3[4];
+            ((RectTransform)button.transform).GetWorldCorners(bounds);
+            var position = RectTransformUtility.WorldToScreenPoint(null, (bounds[0] + bounds[2]) * .5f);
+            var restartPointer = new PointerEventData(EventSystem.current) { position = position };
+            var hits = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(restartPointer, hits);
+            Check(hits.Count > 0 && (hits[0].gameObject == button.gameObject ||
+                hits[0].gameObject.transform.IsChildOf(button.transform)),
+                "restart button center blocked by another UI Graphic");
             yield return Capture("defeat");
-            // Invoke the wired UI button, not the bootstrap method directly.
-            // This validates onClick assignment while the raycast test above
-            // separately checks pointer reachability.
-            if(defeatPanel!=null)
-            {
-                var buttons=defeatPanel.GetComponentsInChildren<Button>(true);
-                if(buttons.Length==1)buttons[0].onClick.Invoke();
-                else slice.RestartRun();
-            }
-            else slice.RestartRun();
+
+            var mouse = InputSystem.AddDevice<Mouse>();
+            InputSystem.QueueStateEvent(mouse, new MouseState { position = position });
+            yield return Frames(3);
+            InputSystem.QueueStateEvent(mouse, new MouseState { position = position }.WithButton(MouseButton.Left));
+            yield return Frames(3);
+            InputSystem.QueueStateEvent(mouse, new MouseState { position = position });
             yield return Frames(5);
-            Check(slice.Player!=player&&slice.Player.Rules.Health==5&&slice.Player.Damage==1&&slice.Flow.Biome==0&&Time.timeScale==1,"restart did not reset run");
-            yield return Capture("restart");Finish();
+            InputSystem.RemoveDevice(mouse);
+            CheckRestart(slice, player, "mouse click");
+            yield return Capture("restart");
+
+            player = slice.Player;
+            if (slice.Flow.Phase == RoomPhase.Defeated) { Finish(); yield break; }
+            player.Receive(99, HitKind.Area, null);
+            yield return new WaitUntil(() => slice.Flow.Phase == RoomPhase.Defeated);
+            Check(slice.Flow.Phase == RoomPhase.Defeated, "second defeat failed");
+            var keyboard = InputSystem.AddDevice<Keyboard>();
+            InputSystem.QueueStateEvent(keyboard, new KeyboardState(Key.R));
+            yield return Frames(5);
+            InputSystem.RemoveDevice(keyboard);
+            CheckRestart(slice, player, "keyboard R after second defeat");
+            yield return Capture("restart_keyboard");
+            yield return CaptureEnemyFacing(slice);
+            Finish();
         }
+
+        private IEnumerator CaptureEnemyFacing(SliceBootstrap slice)
+        {
+            var enemies = FindObjectsByType<SliceEnemy>();
+            var chaser = Array.Find(enemies, enemy => !enemy.Ranged);
+            var ranged = Array.Find(enemies, enemy => enemy.Ranged);
+            Check(chaser != null && ranged != null, "missing enemy archetype for facing capture");
+            if (chaser == null || ranged == null) yield break;
+
+            var playerBody = slice.Player.Body;
+            chaser.GetComponent<Rigidbody2D>().position = new Vector2(27, .5f);
+            ranged.GetComponent<Rigidbody2D>().position = new Vector2(29, .5f);
+            foreach (int side in new[] { -1, 1 })
+            {
+                playerBody.position = new Vector2(28 + side * 5, .45f);
+                playerBody.linearVelocity = Vector2.zero;
+                yield return Seconds(.35f);
+                foreach (var enemy in new[] { chaser, ranged })
+                {
+                    var visual = enemy.GetComponentInChildren<ClipPlayer>();
+                    Check(Mathf.Sign(visual.transform.localScale.x) == -side,
+                        enemy.name + " did not mirror toward player, side " + side);
+                }
+                yield return Capture(side < 0 ? "enemies_facing_left" : "enemies_facing_right");
+            }
+        }
+
+        private void CheckRestart(SliceBootstrap slice, SlicePlayer previous, string input)
+        {
+            var player = slice.Player;
+            Check(player != previous && player.Rules.Health == 5 && player.Damage == 1 &&
+                slice.Flow.Biome == 0 && Time.timeScale == 1 && player.transform.position.x < 6 &&
+                !player.Input.Paused && FindObjectsByType<SliceEnemy>().Length == 4,
+                "restart did not reset run: " + input);
+        }
+
         private void Finish()
         {
             if(finished)return;finished=true;

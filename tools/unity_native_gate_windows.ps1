@@ -57,8 +57,10 @@ function Locate-Editor {
 function Invoke-Editor([string]$Method, [string]$BuildTarget, [string]$StepName) {
     $logFile = Join-Path $evidenceDir ($StepName + '.log')
     Write-Host ("Running Unity {0} ({1})" -f $Method,$BuildTarget)
-    & $script:editorPath -batchmode -quit -projectPath $script:project -buildTarget $BuildTarget -executeMethod $Method -logFile $logFile
-    $code = $LASTEXITCODE
+    $arguments = @('-batchmode', '-quit', '-projectPath', ('"' + $script:project + '"'),
+        '-buildTarget', $BuildTarget, '-executeMethod', $Method, '-logFile', ('"' + $logFile + '"'))
+    $editor = Start-Process -FilePath $script:editorPath -ArgumentList $arguments -Wait -PassThru -WindowStyle Hidden
+    $code = $editor.ExitCode
     if ($code -ne 0) { throw "$StepName failed: Unity.exe exit=$code; log=$logFile" }
     $marker = if ($Method -eq 'RastaQuest.Editor.ReviewBuild.Prepare') { 'RQ_UNITY_PREPARE_OK' } else { 'RQ_UNITY_BUILD_OK' }
     if (-not (Test-Path -LiteralPath $logFile) -or -not (Select-String -Path $logFile -Pattern $marker -SimpleMatch -Quiet)) {
@@ -85,7 +87,7 @@ try {
         throw "Editor mismatch: installed $installedVersionFolder but project requests $requiredVersion"
     }
     Add-Step 'editor-presence' 'PASS' $editorPath
-    if (Get-Command git -ErrorAction SilentlyContinue) {
+    if ((Test-Path -LiteralPath (Join-Path $root '.git')) -and (Get-Command git -ErrorAction SilentlyContinue)) {
         $head = (& git -C $root rev-parse HEAD 2>$null)
         if ($LASTEXITCODE -eq 0) { $report.repository_head = "$head".Trim() }
     }

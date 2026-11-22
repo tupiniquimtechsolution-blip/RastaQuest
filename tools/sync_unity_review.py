@@ -70,12 +70,33 @@ def build():
     return files
 
 
+def is_review_png(path):
+    return path.suffix == '.png' and path.is_relative_to(DEST)
+
+
+def verify_review_importer(meta, text):
+    required = ('TextureImporter:', '  serializedVersion: 13', '  spriteMode: 1',
+                '  textureType: 8', '  spritePixelsToUnits: 64')
+    lines = text.splitlines()
+    if not all(setting in lines for setting in required):
+        raise ValueError(f'Incomplete Unity review Sprite importer: {meta}')
+
+
 def metadata():
+    importer = Path(__file__).with_name('unity_review_texture_importer.yaml').read_text(encoding='utf-8')
     for path in sorted((ROOT/'unity/Assets').rglob('*')):
         if path.suffix == '.meta':
             continue
         meta = Path(str(path)+'.meta')
         if meta.exists():
+            if is_review_png(path):
+                existing = meta.read_text(encoding='utf-8')
+                if 'TextureImporter:' not in existing.splitlines():
+                    candidate = existing.rstrip() + '\n' + importer
+                    verify_review_importer(meta, candidate)
+                    meta.write_text(candidate, encoding='utf-8', newline='\n')
+                else:
+                    verify_review_importer(meta, existing)
             continue
         guid = uuid.uuid5(uuid.NAMESPACE_URL, 'rastaquest/'+path.relative_to(ROOT).as_posix()).hex
         text = f'fileFormatVersion: 2\nguid: {guid}\n'
@@ -83,7 +104,9 @@ def metadata():
             text += 'folderAsset: yes\nDefaultImporter:\n  externalObjects: {}\n  userData: \n  assetBundleName: \n  assetBundleVariant: \n'
         elif path.suffix == '.cs':
             text += 'MonoImporter:\n  externalObjects: {}\n  serializedVersion: 2\n  defaultReferences: []\n  executionOrder: 0\n  icon: {instanceID: 0}\n  userData: \n  assetBundleName: \n  assetBundleVariant: \n'
-        # Texture import settings are applied by ReviewImporter on the first real Editor import.
+        elif is_review_png(path):
+            text += importer
+            verify_review_importer(meta, text)
         meta.write_text('\n'.join(line.rstrip() for line in text.splitlines())+'\n', encoding='utf-8', newline='\n')
 
 
@@ -107,7 +130,10 @@ def main():
             continue
         meta = Path(str(path)+'.meta')
         assert meta.exists(), f'Missing Unity metadata: {path}'
-        guid = next(line[6:] for line in meta.read_text(encoding='utf-8').splitlines() if line.startswith('guid: '))
+        text = meta.read_text(encoding='utf-8')
+        if is_review_png(path):
+            verify_review_importer(meta, text)
+        guid = next(line[6:] for line in text.splitlines() if line.startswith('guid: '))
         assert len(guid) == 32 and all(c in '0123456789abcdef' for c in guid), path
         guids.append(guid)
     assert len(guids) == len(set(guids)), 'Duplicate Unity GUID'

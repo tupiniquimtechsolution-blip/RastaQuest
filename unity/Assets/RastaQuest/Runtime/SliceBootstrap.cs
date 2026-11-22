@@ -36,7 +36,7 @@ namespace RastaQuest.Unity
         private void BuildRoom()
         {
             if(room!=null) {room.gameObject.SetActive(false);Destroy(room.gameObject);}
-            foreach(var shot in FindObjectsByType<SliceShot>(FindObjectsSortMode.None)){shot.gameObject.SetActive(false);Destroy(shot.gameObject);}
+            foreach(var shot in FindObjectsByType<SliceShot>()){shot.gameObject.SetActive(false);Destroy(shot.gameObject);}
             room=new GameObject("PortalRegion_"+worlds[Flow.Biome]).transform;
             var spec=System.Array.Find(ReviewArt.Data.environments,e=>e.key==worlds[Flow.Biome]);
             var backdrop=new GameObject("ParallaxBackground").transform;backdrop.SetParent(room);

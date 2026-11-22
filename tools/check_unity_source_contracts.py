@@ -136,7 +136,8 @@ def main():
     probe_code = (ASSETS/"RastaQuest/Runtime/NativeReviewProbe.cs").read_text()
     check("HUD Graphic missing CanvasRenderer" in probe_code and
           "restart button center blocked" in probe_code and
-          "buttons[0].onClick.Invoke();" in probe_code,
+          "InputSystem.QueueStateEvent(mouse" in probe_code and
+          "new KeyboardState(Key.R)" in probe_code,
           "Native probe must check HUD renderers and restart button input reachability")
 
     build = (ASSETS/"RastaQuest/Editor/ReviewBuild.cs").read_text()
