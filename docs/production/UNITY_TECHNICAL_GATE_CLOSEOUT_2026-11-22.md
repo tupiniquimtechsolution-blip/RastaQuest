@@ -50,7 +50,15 @@ A branch substituiu a entrada de menu que havia falhado em 274/274 sprites (`Rep
 
 **R1 — Editorial (já executado nesta branch):** desativar fluxo quebrado de reparação de Sprites no Editor, obrigar checker somente leitura e atualizar documentação.
 
-**R2 — Preservar artefatos (executável no PC):** entregar **relatório SANITIZADO** `NATIVE_GATE_REPORT.json`, `NATIVE_REPORT.json`, lista 16 capturas e hashes **SHA-256** de ZIP Windows/APK/versão Git. Não versionar `Library`, `Builds`, APK/ZIP binários, backups pessoais, nem caminhos de usuário. Somente relatório resumido e URLs/IDs se autorizados.
+**R2 — Preservar artefatos (executável no PC):** temos o coletor read-only `tools/unity_native_evidence_summary.py` e seu teste offline `tools/test_unity_native_evidence_summary.py`. O coletor extrai dados somente permitidos de `NATIVE_GATE_REPORT.json` e `NATIVE_REPORT.json`, verifica hash dos artefatos ainda presentes e presença das capturas, **não copia caminhos, logs ou detalhes pessoais**. O resultado pode ser anexado como **relatório sanitizado** (jamais anexar os relatórios brutos sem revisão).
+```powershell
+# Executar na raiz do repositório atualizado; fechar o Editor apenas se rodar build de novo.
+python -B tools/unity_native_evidence_summary.py `
+  --gate "CAMINHO_LOCAL\NativeGate\NATIVE_GATE_REPORT.json" `
+  --probe "CAMINHO_LOCAL\NativeProbe\NATIVE_REPORT.json" `
+  --output "CAMINHO_FORA_DO_REPO\UNITY_NATIVE_EVIDENCE_SUMMARY.json"
+```
+Opcional: `--source-commit <SHA-completo>` só se o relatório não registrar HEAD; o campo será **operator_asserted_not_independently_verified**, nunca `native_gate_git_head` inventado. **Não versionar** `Library`, `Builds`, EXE/APK/ZIP, backups pessoais nem caminhos de usuário. Para fechar a trilha, anexar apenas o JSON gerado, com SHA-256 dos builds e fonte, e descrever limites do QA.
 
 **R3 — Verificar menu read-only (Editor local):** sincronizar branch da PR #107, abrir o projeto na Unity 6000.6.10f1, esperar compilação, acionar somente `Rasta Quest > Verificar sprites da revisao (somente leitura)`, esperar `RQ_UNITY_REVIEW_META_CHECK_OK total=274 importedSprites=274 guids=274 readOnly=true`. Confirmar hashes dos `.png.meta` inalterados. Se falhar, trazer primeira exceção.
 
