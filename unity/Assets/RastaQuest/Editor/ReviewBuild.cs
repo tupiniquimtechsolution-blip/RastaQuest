@@ -23,8 +23,22 @@ namespace RastaQuest.Editor
         [MenuItem("Rasta Quest/Preparar sala Unity")]
         public static void Prepare()
         {
-            // A first import with compile errors can leave bare .png.meta files
-            // imported as Texture2D instead of Sprite. Repair before entering Play.
+            // The transition bridge shipped PNG meta files containing only GUIDs.
+            // On Unity 6.6 a Reimport does not necessarily upgrade importer YAML.
+            // Repair GUID-preserving metadata once before building the review scene.
+            string artRoot = Path.Combine(Application.dataPath, "Resources/ReviewArt");
+            if (Directory.Exists(artRoot))
+            {
+                foreach (string path in Directory.GetFiles(artRoot, "*.png", SearchOption.AllDirectories))
+                {
+                    string meta = path + ".meta";
+                    if (!File.Exists(meta) || !File.ReadAllText(meta).Contains("TextureImporter:"))
+                    {
+                        ReviewSpriteRepair.Repair();
+                        break;
+                    }
+                }
+            }
             VerifyReviewSprites();
             Directory.CreateDirectory(Path.Combine(Application.dataPath, "Scenes"));
             var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
