@@ -40,8 +40,8 @@ def clean_capture_names(captures) -> list[str]:
     for name in captures:
         if not isinstance(name, str) or not name.endswith(".png"):
             raise ValueError("Unexpected screenshot name in probe")
-        if re.search(r"[\\/:]", name) or name in (".", ".."):
-            raise ValueError("Screenshot entries must be basenames only")
+        if not re.fullmatch(r"[A-Za-z0-9_-]+_[0-9]+x[0-9]+\\.png", name):
+            raise ValueError("Unexpected or potentially sensitive screenshot basename")
         names.append(name)
     if len(set(names)) != len(names):
         raise ValueError("Duplicate screenshot entries in probe")
@@ -86,7 +86,7 @@ def summarize(gate_path: Path, probe_path: Path, asserted_source: str = "") -> d
             if actual_sha != recorded_sha or actual_size != recorded_size:
                 raise ValueError("Current artifact differs from reported SHA-256 or byte size")
         artifacts.append({
-            "kind": str(item.get("type", "unknown"))[:80],
+            "kind": re.sub(r"[^A-Za-z0-9_-]", "_", str(item.get("type", "unknown")))[:80],
             "bytes": recorded_size,
             "sha256_from_gate": recorded_sha,
             "current_local_file_verified": verified,
@@ -102,8 +102,8 @@ def summarize(gate_path: Path, probe_path: Path, asserted_source: str = "") -> d
             "native_gate_git_head" if source else
             "operator_asserted_not_independently_verified" if asserted_source else "missing"
         ),
-        "editor_version_from_gate": str(gate.get("required_unity", ""))[:40],
-        "engine_version_from_probe": str(probe.get("engine", ""))[:40],
+        "editor_version_from_gate": str(gate.get("required_unity", "")) if re.fullmatch(r"[0-9]+\\.[0-9]+\\.[0-9]+[a-z][0-9]+", str(gate.get("required_unity", ""))) else "unknown",
+        "engine_version_from_probe": str(probe.get("engine", "")) if re.fullmatch(r"[0-9]+\\.[0-9]+\\.[0-9]+[a-z][0-9]+", str(probe.get("engine", ""))) else "unknown",
         "native_gate_status": "PASS",
         "native_probe_status": "PASS",
         "probe_failure_count": 0,
