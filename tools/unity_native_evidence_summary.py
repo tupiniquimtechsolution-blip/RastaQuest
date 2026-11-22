@@ -40,7 +40,7 @@ def clean_capture_names(captures) -> list[str]:
     for name in captures:
         if not isinstance(name, str) or not name.endswith(".png"):
             raise ValueError("Unexpected screenshot name in probe")
-        if not re.fullmatch(r"[A-Za-z0-9_-]+_[0-9]+x[0-9]+\\.png", name):
+        if not re.fullmatch(r"[A-Za-z0-9_-]+_[0-9]+x[0-9]+\.png", name):
             raise ValueError("Unexpected or potentially sensitive screenshot basename")
         names.append(name)
     if len(set(names)) != len(names):
@@ -102,8 +102,8 @@ def summarize(gate_path: Path, probe_path: Path, asserted_source: str = "") -> d
             "native_gate_git_head" if source else
             "operator_asserted_not_independently_verified" if asserted_source else "missing"
         ),
-        "editor_version_from_gate": str(gate.get("required_unity", "")) if re.fullmatch(r"[0-9]+\\.[0-9]+\\.[0-9]+[a-z][0-9]+", str(gate.get("required_unity", ""))) else "unknown",
-        "engine_version_from_probe": str(probe.get("engine", "")) if re.fullmatch(r"[0-9]+\\.[0-9]+\\.[0-9]+[a-z][0-9]+", str(probe.get("engine", ""))) else "unknown",
+        "editor_version_from_gate": str(gate.get("required_unity", "")) if re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+[a-z][0-9]+", str(gate.get("required_unity", ""))) else "unknown",
+        "engine_version_from_probe": str(probe.get("engine", "")) if re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+[a-z][0-9]+", str(probe.get("engine", ""))) else "unknown",
         "native_gate_status": "PASS",
         "native_probe_status": "PASS",
         "probe_failure_count": 0,
