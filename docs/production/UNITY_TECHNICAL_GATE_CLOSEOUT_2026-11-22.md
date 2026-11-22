@@ -27,7 +27,7 @@
 
 ## 2. Correções editoriais e de segurança realizadas após o probe
 
-A branch substituiu a entrada de menu que havia falhado em 274/274 sprites (`Reparar metadados dos sprites`) por `Rasta Quest > Verificar sprites da revisao (somente leitura)`. O novo comando **não reimporta nem escreve**; confere inventário/GUI D e Sprite. `tools/check_unity_source_contracts.py` impede o retorno acidental de `ForceReserializeAssets` e `SaveAndReimport` ao helper. A auditoria e o guia de compatibilidade foram atualizados para distinguir procedimentos históricos dos atuais.
+A branch substituiu a entrada de menu que havia falhado em 274/274 sprites (`Reparar metadados dos sprites`) por `Rasta Quest > Verificar sprites da revisao (somente leitura)`. O novo comando **não reimporta nem escreve**; confere inventário, GUID e Sprite. `tools/check_unity_source_contracts.py` impede o retorno acidental de `ForceReserializeAssets` e `SaveAndReimport` ao helper. A auditoria e o guia de compatibilidade foram atualizados para distinguir procedimentos históricos dos atuais.
 
 **Status deste ajuste final:** código + CI fonte no GitHub; **nova entrada do menu ainda não validada no Editor real**. Nenhuma reinstalação ou limpeza de `Library` é necessária para realizar essa verificação. Não executar mais o menu de reparo obsoleto.
 
