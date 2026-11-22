@@ -23,22 +23,9 @@ namespace RastaQuest.Editor
         [MenuItem("Rasta Quest/Preparar sala Unity")]
         public static void Prepare()
         {
-            // The transition bridge shipped PNG meta files containing only GUIDs.
-            // On Unity 6.6 a Reimport does not necessarily upgrade importer YAML.
-            // Repair GUID-preserving metadata once before building the review scene.
-            string artRoot = Path.Combine(Application.dataPath, "Resources/ReviewArt");
-            if (Directory.Exists(artRoot))
-            {
-                foreach (string path in Directory.GetFiles(artRoot, "*.png", SearchOption.AllDirectories))
-                {
-                    string meta = path + ".meta";
-                    if (!File.Exists(meta) || !File.ReadAllText(meta).Contains("TextureImporter:"))
-                    {
-                        ReviewSpriteRepair.Repair();
-                        break;
-                    }
-                }
-            }
+            // Missing Sprite subassets in Unity 6.6 do not require destructive
+            // .meta rewrites. ReviewArt.Sprite creates a cached runtime Sprite
+            // from an imported Texture2D as a transitional fallback.
             VerifyReviewSprites();
             Directory.CreateDirectory(Path.Combine(Application.dataPath, "Scenes"));
             var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
@@ -59,44 +46,43 @@ namespace RastaQuest.Editor
         }
         private static void VerifyReviewSprites()
         {
-            string resourceFolder=Path.Combine(Application.dataPath,"Resources/ReviewArt");
-            if(!Directory.Exists(resourceFolder))
-                throw new System.InvalidOperationException("ReviewArt folder missing: "+resourceFolder);
-            string[] pngFiles=Directory.GetFiles(resourceFolder,"*.png",SearchOption.AllDirectories);
-            if(pngFiles.Length!=274)
-                throw new System.InvalidOperationException("Expected 274 review PNGs, found "+pngFiles.Length);
-            int reimported=0;
-            foreach(string pngFile in pngFiles)
+            string resourceFolder = Path.Combine(Application.dataPath, "Resources/ReviewArt");
+            if (!Directory.Exists(resourceFolder))
+                throw new System.InvalidOperationException("ReviewArt folder missing: " + resourceFolder);
+
+            string[] pngFiles = Directory.GetFiles(resourceFolder, "*.png", SearchOption.AllDirectories);
+            if (pngFiles.Length != 274)
+                throw new System.InvalidOperationException("Expected 274 review PNGs, found " + pngFiles.Length);
+
+            int spriteCount = 0, textureCount = 0;
+            foreach (string pngFile in pngFiles)
             {
-                string assetPath="Assets"+pngFile.Substring(Application.dataPath.Length).Replace('\\','/');
-                var importer=AssetImporter.GetAtPath(assetPath) as TextureImporter;
-                if(importer==null)
-                    throw new System.InvalidOperationException("Missing TextureImporter: "+assetPath);
-                if(importer.textureType!=TextureImporterType.Sprite ||
-                   importer.spriteImportMode!=SpriteImportMode.Single)
+                string assetPath = "Assets" + pngFile.Substring(Application.dataPath.Length).Replace('\\', '/');
+                if (AssetDatabase.LoadAssetAtPath<Sprite>(assetPath) != null)
                 {
-                    importer.textureType=TextureImporterType.Sprite;
-                    importer.spriteImportMode=SpriteImportMode.Single;
-                    importer.spritePixelsPerUnit=64;
-                    importer.filterMode=FilterMode.Point;
-                    importer.wrapMode=TextureWrapMode.Clamp;
-                    importer.alphaIsTransparency=true;
-                    importer.textureCompression=TextureImporterCompression.Uncompressed;
-                    importer.mipmapEnabled=false;
-                    importer.SaveAndReimport();
-                    reimported++;
+                    spriteCount++;
+                    continue;
                 }
-                if(AssetDatabase.LoadAssetAtPath<Sprite>(assetPath)==null)
+                if (AssetDatabase.LoadAssetAtPath<Texture2D>(assetPath) != null)
                 {
-                    // Force a clean import for sprites imported before
-                    // the ReviewImporter AssetPostprocessor compiled.
-                    AssetDatabase.ImportAsset(assetPath,ImportAssetOptions.ForceUpdate);
-                    reimported++;
+                    // Texture2D is a valid review source: runtime uses Sprite.Create.
+                    textureCount++;
+                    continue;
                 }
-                if(AssetDatabase.LoadAssetAtPath<Sprite>(assetPath)==null)
-                    throw new System.InvalidOperationException("Review asset is not a Sprite: "+assetPath);
+                throw new System.InvalidOperationException(
+                    "ReviewArt PNG missing as Sprite AND Texture2D: " + assetPath +
+                    ". Check image import errors, not the GameView resolution.");
             }
-            Debug.Log("RQ_UNITY_REVIEW_SPRITES_OK total="+pngFiles.Length+" reimported="+reimported);
+
+            // Avoid creating the scene unless the same resources are loadable
+            // by the player, not just by the Editor asset database.
+            const string example = "ReviewArt/chaser/chaser_attack_01";
+            if (Resources.Load<Sprite>(example) == null && Resources.Load<Texture2D>(example) == null)
+                throw new System.InvalidOperationException(
+                    "ReviewArt example cannot be loaded by Resources: " + example);
+
+            Debug.Log("RQ_UNITY_REVIEW_ASSETS_OK total=" + pngFiles.Length +
+                      " importedSprites=" + spriteCount + " textureFallbacks=" + textureCount);
         }
         public static void Windows()
         {
