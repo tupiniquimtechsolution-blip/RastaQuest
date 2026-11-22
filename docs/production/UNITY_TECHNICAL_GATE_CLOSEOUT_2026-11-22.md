@@ -75,3 +75,13 @@ Opcional: `--source-commit <SHA-completo>` só se o relatório não registrar HE
 - [Agenor / Notion — checkpoint](https://app.notion.com/p/420189310488812d809be2952a01923b) · [Miro](https://miro.com/app/board/uXjVHl4fqwQ=/).
 
 **Princípio:** `CI estático` ≠ `Player Windows executado` ≠ `toque humano Android` ≠ `GO comercial`. Decisões e status devem sempre indicar a camada de evidência.
+
+## 6. Adendo de rastreabilidade — 22/11/2026 (verificação posterior do repositório)
+
+- **HEAD atual da PR #107 ao verificar:** `dc7f7bcf63b650b941a372711cbb918945d10b13`. O SHA `54f4b9e65069a2b2b025bbd3c31bb8762d48c57d` **continua sendo a base declarada da execução nativa Windows**, não deve ser substituído retroativamente pelo HEAD novo.
+- **GitHub Actions no novo HEAD `dc7f7bc`:** Repository Health, Unity Source Contracts (not Editor or APK) e Unity Windows Native Gate Script Contracts (no Editor) = **completed / success**. São verificações de fonte, **não** uma segunda execução do Unity Editor ou dos binários.
+- O commit `dc7f7bc` ajusta o escaping de expressões regulares na validação do coletor de evidência sanitizada; os commits mais recentes acrescentaram restrições de nomes/tipos aceitos. O coletor depende dos relatórios/artefatos que estão no computador; sem eles, nenhum JSON sanitizado real foi gerado nesta verificação.
+- **Status mantido:** #80 encerrada estritamente para Windows; #81 aberta para Android físico e correspondência exata entre fonte/build/hashes; novo menu read-only ainda exige confirmação no Editor após atualização; campanha Unity, arte/cultura e release **NO-GO**.
+- **Sem alteração de governança:** PR #107 draft, `main` no SHA `dd12bb3d188686e5010395b690de9161949b8d7f`, sem merge ou publicação.
+
+Este adendo é auditoria documental do GitHub; não substitui os relatórios locais, nem certifica execução nativa da versão `dc7f7bc`.
