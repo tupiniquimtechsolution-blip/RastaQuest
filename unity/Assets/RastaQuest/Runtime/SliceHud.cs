@@ -91,7 +91,10 @@ namespace RastaQuest.Unity
             defeat=Panel(modalSafe,"Defeat");
             var title=Text(defeat.transform,"",new Vector2(40,30),new Vector2(380,42),24,Gold);labels.Add(title,ReviewLabel.Defeated);
             var hint=Text(defeat.transform,"",new Vector2(40,85),new Vector2(380,70),18,Color.white);labels.Add(hint,ReviewLabel.RestartHint);
-            LabelButton(defeat.transform,ReviewLabel.Restart,180,()=>slice.RestartRun());
+            LabelButton(defeat.transform,ReviewLabel.Restart,180,()=>{
+                Debug.Log("RQ_UNITY_RESTART_BUTTON_CLICK");
+                slice.RestartRun();
+            });
             Resize();RefreshMode();RefreshText();initialized=true;
         }
         private static GameObject Panel(Transform parent,string name)
