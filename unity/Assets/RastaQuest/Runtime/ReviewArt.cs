@@ -12,6 +12,11 @@ namespace RastaQuest.Unity
     public static class ReviewArt
     {
         public static ReviewBridge Data;
+        // Unity 6.6 may import transitional PNGs as textures without Sprite subassets.
+        // Keep GUIDs untouched and cache runtime sprites for this review-only bridge.
+        private static readonly System.Collections.Generic.Dictionary<string, Sprite> fallbackSprites =
+            new System.Collections.Generic.Dictionary<string, Sprite>();
+        private static bool fallbackReported;
         public static void Load()
         {
             var json = Resources.Load<TextAsset>("ReviewArt/bridge");
@@ -19,7 +24,37 @@ namespace RastaQuest.Unity
             Data = JsonUtility.FromJson<ReviewBridge>(json.text);
             if (Data.commercialApproved) throw new InvalidOperationException("Review payload cannot claim commercial acceptance.");
         }
-        public static Sprite Sprite(string file) { return Resources.Load<Sprite>(file); }
+        public static Sprite Sprite(string file)
+        {
+            if (string.IsNullOrEmpty(file))
+                throw new InvalidOperationException("ReviewArt image path is empty.");
+
+            var imported = Resources.Load<Sprite>(file);
+            if (imported != null) return imported;
+
+            Sprite cached;
+            if (fallbackSprites.TryGetValue(file, out cached) && cached != null)
+                return cached;
+
+            var texture = Resources.Load<Texture2D>(file);
+            if (texture == null)
+                throw new InvalidOperationException(
+                    "ReviewArt image unavailable as Sprite and Texture2D: " + file +
+                    ". Check PNG imports in Assets/Resources/ReviewArt.");
+
+            cached = UnityEngine.Sprite.Create(texture,
+                new Rect(0, 0, texture.width, texture.height),
+                new Vector2(.5f, .5f), 64, 0, SpriteMeshType.FullRect);
+            cached.name = "ReviewTextureFallback_" + texture.name;
+            fallbackSprites[file] = cached;
+            if (!fallbackReported)
+            {
+                Debug.LogWarning("RQ_REVIEW_TEXTURE_FALLBACK_ACTIVE: ReviewArt PNG imported as " +
+                    "Texture2D; displaying cached runtime sprites (transitional art only).");
+                fallbackReported = true;
+            }
+            return cached;
+        }
         public static ReviewClip Clip(string actor, string key)
         {
             foreach (var a in Data.actors) if (a.key == actor)
