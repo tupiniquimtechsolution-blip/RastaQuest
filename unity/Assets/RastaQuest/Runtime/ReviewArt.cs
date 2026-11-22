@@ -67,6 +67,9 @@ namespace RastaQuest.Unity
     {
         public string Actor = "player";
         public float RenderScale = .575f;
+        // +1: source art faces right; -1: source art faces left.
+        // The chaser/ranged transitional sheets are authored facing left.
+        public int AuthoredFacing = 1;
         private SpriteRenderer body;
         private readonly SpriteRenderer[] equipment = new SpriteRenderer[2];
         private string key;
@@ -93,7 +96,7 @@ namespace RastaQuest.Unity
             int index = 0;
             while (index < sequence.frames.Length-1 && time >= sequence.frames[index].seconds) { time -= sequence.frames[index].seconds; index++; }
             var frame = sequence.frames[index]; body.sprite = ReviewArt.Sprite(frame.file);
-            transform.localScale = new Vector3(RenderScale*facing,RenderScale,1);
+            transform.localScale = new Vector3(RenderScale*facing*AuthoredFacing,RenderScale,1);
             for (int i = 0; i < equipment.Length; i++)
             {
                 equipment[i].enabled = frame.equipment != null && i < frame.equipment.Length;
