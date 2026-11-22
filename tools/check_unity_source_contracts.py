@@ -121,12 +121,12 @@ def main():
 
     build = (ASSETS/"RastaQuest/Editor/ReviewBuild.cs").read_text()
     settings = (ROOT/"unity/ProjectSettings/ProjectSettings.asset").read_text()
-    check("AndroidMinSdkVersion: 25" in settings and "AndroidTargetSdkVersion: 36" in settings,
+    check("AndroidMinSdkVersion: 26" in settings and "AndroidTargetSdkVersion: 36" in settings,
           "ProjectSettings Android floor/target drift")
     check('Path.Combine(Application.dataPath, "Scenes")' in build and
           "Path.Combine(projectRoot,path)" in build,
           "Editor paths must resolve within Unity project")
-    for term in ("com.tupiniquim.rastaquest.unityreview", "AndroidSdkVersions)25", "AndroidSdkVersions)36",
+    for term in ("com.tupiniquim.rastaquest.unityreview", "AndroidSdkVersions.AndroidApiLevel26", "AndroidSdkVersions)36",
                  "AndroidArchitecture.ARMv7|AndroidArchitecture.ARM64", "BuildOptions.Development"):
         check(term in build, f"Build source contract missing: {term}")
     check(not list(ASSETS.rglob("forest-art-target-v01.png")), "Concept imported into runtime")
