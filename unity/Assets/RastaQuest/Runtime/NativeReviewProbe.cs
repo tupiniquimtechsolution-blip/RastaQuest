@@ -116,8 +116,32 @@ namespace RastaQuest.Unity
                 var buttons=defeatPanel.GetComponentsInChildren<Button>(true);
                 Check(buttons.Length==1&&buttons[0].interactable,
                     "defeat restart button missing or disabled");
+                if(buttons.Length==1 && EventSystem.current!=null)
+                {
+                    var bounds=new Vector3[4];
+                    ((RectTransform)buttons[0].transform).GetWorldCorners(bounds);
+                    var click=new PointerEventData(EventSystem.current) {
+                        position=RectTransformUtility.WorldToScreenPoint(null,(bounds[0]+bounds[2])*.5f)
+                    };
+                    var hits=new List<RaycastResult>();
+                    EventSystem.current.RaycastAll(click,hits);
+                    Check(hits.Count>0 && (hits[0].gameObject==buttons[0].gameObject ||
+                          hits[0].gameObject.transform.IsChildOf(buttons[0].transform)),
+                          "restart button center blocked by another UI Graphic");
+                }
             }
-            yield return Capture("defeat");slice.RestartRun();yield return Frames(5);
+            yield return Capture("defeat");
+            // Invoke the wired UI button, not the bootstrap method directly.
+            // This validates onClick assignment while the raycast test above
+            // separately checks pointer reachability.
+            if(defeatPanel!=null)
+            {
+                var buttons=defeatPanel.GetComponentsInChildren<Button>(true);
+                if(buttons.Length==1)buttons[0].onClick.Invoke();
+                else slice.RestartRun();
+            }
+            else slice.RestartRun();
+            yield return Frames(5);
             Check(slice.Player!=player&&slice.Player.Rules.Health==5&&slice.Player.Damage==1&&slice.Flow.Biome==0&&Time.timeScale==1,"restart did not reset run");
             yield return Capture("restart");Finish();
         }
