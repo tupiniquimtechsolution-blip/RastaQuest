@@ -1,5 +1,28 @@
 # Rasta Quest — Unity 6000.6.10f1: ensaio de compatibilidade, não migração homologada
 
+## Checkpoint atualizado — 22/11/2026: o que realmente foi executado
+
+**Este checkpoint prevalece sobre os passos históricos abaixo.** O plano de 21/11 foi executado no Windows segundo relatório do agente Unity; a [PR #107](https://github.com/tupiniquimtechsolution-blip/RastaQuest/pull/107) continua **draft** e não foi mesclada na main.
+
+| Componente | Estado | Fonte e limite |
+| --- | --- | --- |
+| Unity Editor 6000.6.10f1 | Executado no PC | Checkout novo, 274 Sprites e preparo de cena verificados pelo agente |
+| Metadados .png.meta / gerador | Versionados | 274 TextureImporters e template determinístico em `tools/sync_unity_review.py`; preservar GUIDs |
+| Windows player / NativeReviewProbe | PASS nativo reportado | 1280×720, 16 capturas, zero falhas; relatórios/EXE/hashes ainda locais no PC |
+| HUD/reinício/facing | PASS no probe relatado | Clique/toque **sintético**, tecla R, HP 5/5 e direção Chaser/Ranged; toque real Android ainda não testado |
+| Avisos C# obsoletos | Resolvidos no build reportado | Sete CS0618 eliminados |
+| Android APK development | Gerado/inspecionado pelo agente | IL2CPP, ARMv7/ARM64, min API26, target36, paisagem, v2/zipalign, ARM64 ELF 16 KB; falta teste físico |
+| QA físico Galaxy A13 / distribuição | **PENDENTE / NO-GO** | [Issue #81](https://github.com/tupiniquimtechsolution-blip/RastaQuest/issues/81) |
+
+**O antigo menu `Rasta Quest > Reparar metadados dos sprites (Unity 6.6)` foi uma tentativa histórica malsucedida**: no Editor, falhou para todos os 274 arquivos, mesmo após ForceReserialize e SaveAndReimport. **Nunca o executar novamente.** Em vez de modificar metadados, a branch atual oferece `Rasta Quest > Verificar sprites da revisao (somente leitura)`, que confere os 274 GUIDs, o TextureImporter e o Sprite importado sem gravar arquivos. A nova entrada requer compilação e verificação no Unity local antes de ser declarada aprovada nativamente.
+
+Para cópia nova, **clonar a branch atual e abrir no Unity**, sem aplicar scripts de reparo manuais. Não apagar `Library` da instalação funcional, não substituir os `.meta` saneados por backups antigos e não refazer preparação de sala sem motivo.
+
+**Falta para encerrar o gate técnico como um todo:** (1) verificar que o menu read-only funciona no Editor local, (2) arquivar relatório sanitizado com hashes EXE/APK e identificador da fonte, (3) instalar/testar APK no aparelho físico (toques simultâneos, morte/reinício, rotação, safe area, FPS e ciclo de vida), e (4) documentar a distinção entre suporte ARM64 16 KB estático e funcionamento real em ambiente de páginas 16 KB. Esses resultados não equivalem a lançamento comercial; a campanha de 21 salas é outra etapa.
+
+---
+
+
 **Data:** 21/11/2026. **Motivo:** o proprietário informou que o PC Windows está instalando o Editor Unity 6000.6.10f1 (grafia oficial: sem ponto entre "10" e "f1").
 
 ## Decisão de risco
