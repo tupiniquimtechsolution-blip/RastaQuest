@@ -1,4 +1,43 @@
 # Rasta Quest — Auditoria consolidada do Unity, pendências e gates
+
+## ATUALIZAÇÃO DE ACEITE TÉCNICO — 22/11/2026 (após relatório nativo; prevalece sobre as listas históricas abaixo)
+
+**Estado:** estabilização técnica Unity 6000.6.10f1 **substancialmente concluída no Windows**, sem homologação Android físico nem comercial. As seções mais antigas abaixo foram preservadas como auditoria histórica; checkboxes pendentes ali não substituem este checkpoint novo.
+
+**Fonte verificável no GitHub:** PR [#107](https://github.com/tupiniquimtechsolution-blip/RastaQuest/pull/107) em branch isolada (draft; não mesclada na main); 3 workflows de contratos de fonte/scripts/saúde concluíram SUCCESS para o SHA `54f4b9e`. O repositório contém os 274 `.png.meta` com `TextureImporter`, o gerador corrigido `tools/sync_unity_review.py` e o template `tools/unity_review_texture_importer.yaml`. O menu **Reparar metadados** que falhou historicamente em todos os 274 assets foi substituído, na sequência desta auditoria, por **Verificar sprites da revisão (somente leitura)**; essa última mudança depende de recompilação no Editor e dos checks do GitHub no novo HEAD.
+
+**Execução nativa relatada pelo agente Unity no PC do proprietário (artefatos não anexados ao GitHub e não auditados independentemente neste chat):**
+- Checkout novo: 274 Sprites importados sem fallback nem reparo manual; GUIDs/PNGs preservados.
+- Windows: EXE de desenvolvimento, probe Unity Player real 1280×720; 16 capturas e zero falhas. Cliques/toques **sintéticos** no botão Tentar novamente e tecla R acionaram reinícios: Floresta, 5/5 de vida, dano inicial, inimigos/input e timeScale=1. Chaser/Ranged orientados bilateralmente; movimento, salto duplo, parry, plataforma, projétil refletido, pausa, recompensas e transições cobertos.
+- Avisos CS0618 (sete) resolvidos na fonte de compilação local.
+- APK Android de desenvolvimento produzido: IL2CPP, ARMv7 + ARM64, min API26/target36, atividade paisagem, assinatura v2 e zipalign; todos ELF ARM64 relatados com alinhamento 16 KB; `libc++_shared.so` ARMv7 tem alinhamento 4 KB. O APK foi construído com versão anterior apenas do probe QA; mesmo código gameplay segundo agente. **Não inferir compatibilidade completa de dispositivos/Play do ABI ou da análise estática.**
+
+**Gates e status:**
+
+| Gate | Situação | Evidência/condição remanescente |
+| --- | --- | --- |
+| Importação Unity 6.6 e preparo | PASS técnico reportado | 274 sprites e checkout limpo |
+| Jogabilidade/reinício Windows sintético | PASS técnico reportado | Capturas e NATIVE_REPORT.json no PC, não anexados; teste humano opcional para UX |
+| Metadados e geração reproduzível | PASS técnico reportado | Fonte versionada; CI estático verde no SHA 54f4b9e |
+| Windows build nativo | PASS técnico reportado | EXE e hashes locais; publicar resumo sanitizado dos relatórios |
+| Android build APK development | PRODUZIDO/INSPECIONADO | APK local, sem instalação física; alinhar hash SHA do APK e snapshot de fonte/probe |
+| **Android físico** | **PENDENTE / gate externo** | Instalar no aparelho, iniciar, testar 2+ dedos, clique de derrota, rotação e safe area, foco/pausa, temperatura/FPS/crash logs, 16 KB quando houver dispositivo/ambiente |
+| Primeira Floresta 01 longa + 21 salas | BACKLOG DE PRODUÇÃO | Não confundir UnityReview de 3 biomas com jogo completo |
+| Comercial / main / Play Store | **NO-GO** | Direitos, revisão cultural, QA integral, saves, assinatura e autorização |
+
+**Checklist de fechamento residual (ações independentes, sem retrabalho):**
+- [x] Metadados de 274 Sprites e gerador versionados na PR de revisão.
+- [x] Probe nativo Windows/reinício/facing reportado com zero falhas e 16 capturas.
+- [x] APK Android debug produzido e inspecionado estaticamente.
+- [ ] Validar no Unity local a nova entrada read-only do menu, sem executar a antiga reserialização de `.meta`.
+- [ ] Anexar **um relatório sanitizado**, com Unity versão, SHA do commit fonte, SHA-256 EXE/APK, relatório PASS do probe, total de capturas, ABI/SDK/zipalign e limitações. Não publicar paths pessoais, certificados de assinatura privados, logs com dados de usuário, APK comercial nem backups.
+- [ ] QA do APK **em Android físico**, sem apagar dados de instalações anteriores e usando o identificador exclusivo `com.tupiniquim.rastaquest.unityreview`; registrar ID real do pacote no APK antes de instalar.
+- [ ] Manter PR #107 em draft, issue #81 como gate físico e release comercial NO-GO. O fechamento Windows de issue #80 pode ser separado do gate Android.
+
+**Próximo ciclo após estabilização:** vertical slice Floresta 01 longa com cinco búzios e checkpoint, depois replicar metodologia para as 20 salas restantes. Não iniciar uma campanha genérica apenas para declarar 21 salas concluídas.
+
+---
+
 **Checkpoint:** 2026-11-22 (São Paulo); **branch auditada:** `compat/unity-6000-6-10f1-review-20261121`; **HEAD fonte:** `293114b0587dbddbb438d990423b68b60cad0642`; **PR:** [#107](https://github.com/tupiniquimtechsolution-blip/RastaQuest/pull/107); **release:** NO-GO.
 
 ## Decisões e escopo
