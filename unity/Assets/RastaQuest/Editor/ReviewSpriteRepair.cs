@@ -1,105 +1,68 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
 namespace RastaQuest.Editor
 {
     /// <summary>
-    /// Repairs the GUID-only PNG .meta files shipped with transitional ReviewArt.
-    /// Never deletes/recreates meta files; the GUIDs remain stable.
-    /// Works around Unity 6000.6 TextureImporter metadata reserialization issues.
+    /// Read-only Unity 6.6 diagnostic for the 274 versioned review sprites.
+    /// The former ForceReserializeAssets/SaveAndReimport repair was tried on
+    /// 22 Nov 2026 and failed for all 274 assets when meta files lacked
+    /// TextureImporter. Valid import metadata is now versioned in Git.
+    /// Never rewrite sprites or GUIDs from an Editor menu.
     /// </summary>
     public static class ReviewSpriteRepair
     {
-        [MenuItem("Rasta Quest/Reparar metadados dos sprites (Unity 6.6)")]
-        public static void RepairFromMenu()
-        {
-            Repair();
-        }
-
-        public static void Repair()
+        [MenuItem("Rasta Quest/Verificar sprites da revisao (somente leitura)")]
+        public static void VerifyFromMenu()
         {
             string folder = Path.Combine(Application.dataPath, "Resources/ReviewArt");
             if (!Directory.Exists(folder))
-                throw new InvalidOperationException("ReviewArt not found: " + folder);
+                throw new InvalidOperationException("ReviewArt folder missing: " + folder);
 
             string[] files = Directory.GetFiles(folder, "*.png", SearchOption.AllDirectories);
             if (files.Length != 274)
-                throw new InvalidOperationException("Expected 274 ReviewArt PNGs, got " + files.Length);
-
-            var paths = new List<string>(files.Length);
-            foreach (string file in files)
-                paths.Add("Assets" + file.Substring(Application.dataPath.Length).Replace('\\', '/'));
-            paths.Sort(StringComparer.Ordinal);
-
-            // Unity 6.6 can keep warning about obsolete TextureImporter .meta YAML
-            // after a normal Reimport. Rewrite metadata rather than removing it.
-            // This retains all Unity asset GUIDs and does not edit image bytes.
-            Debug.Log("RQ_REVIEW_META_REPAIR_BEGIN sprites=" + paths.Count);
-            AssetDatabase.ForceReserializeAssets(
-                paths, ForceReserializeAssetsOptions.ReserializeMetadata);
-
-            var failed = new List<string>();
-            try
-            {
-                for (int i = 0; i < paths.Count; i++)
-                {
-                    string path = paths[i];
-                    if (i % 10 == 0)
-                        EditorUtility.DisplayProgressBar(
-                            "Rasta Quest - reparar sprites",
-                            "Atualizando " + (i + 1) + "/" + paths.Count + ": " + path,
-                            (float)i / paths.Count);
-
-                    var importer = AssetImporter.GetAtPath(path) as TextureImporter;
-                    if (importer == null)
-                    {
-                        failed.Add(path + " (TextureImporter ausente)");
-                        continue;
-                    }
-
-                    importer.textureType = TextureImporterType.Sprite;
-                    importer.spriteImportMode = SpriteImportMode.Single;
-                    importer.spritePixelsPerUnit = 64;
-                    importer.filterMode = FilterMode.Point;
-                    importer.wrapMode = TextureWrapMode.Clamp;
-                    importer.alphaIsTransparency = true;
-                    importer.mipmapEnabled = false;
-                    importer.textureCompression = TextureImporterCompression.Uncompressed;
-                    importer.maxTextureSize = 2048;
-
-                    // Always save, including when getters already reported Sprite.
-                    // A mere ForceUpdate without metadata serialization was insufficient.
-                    importer.SaveAndReimport();
-
-                    if (AssetDatabase.LoadAssetAtPath<Sprite>(path) == null)
-                    {
-                        AssetDatabase.ImportAsset(path,
-                            ImportAssetOptions.ForceSynchronousImport |
-                            ImportAssetOptions.ForceUpdate);
-                    }
-                    if (AssetDatabase.LoadAssetAtPath<Sprite>(path) == null)
-                        failed.Add(path + " (Sprite ainda ausente)");
-                }
-            }
-            finally
-            {
-                EditorUtility.ClearProgressBar();
-                AssetDatabase.SaveAssets();
-            }
-
-            if (failed.Count != 0)
                 throw new InvalidOperationException(
-                    "RQ_REVIEW_META_REPAIR_FAILED: " + failed.Count +
-                    " imagens sem Sprite. Primeiras: " +
-                    string.Join("; ", failed.GetRange(0, Math.Min(5, failed.Count)).ToArray()));
+                    "RQ_UNITY_REVIEW_META_CHECK_FAILED expected=274 found=" + files.Length);
 
-            Debug.Log("RQ_REVIEW_META_REPAIR_OK total=" + paths.Count);
+            var guids = new HashSet<string>(StringComparer.Ordinal);
+            var failures = new List<string>();
+            Array.Sort(files, StringComparer.Ordinal);
+            foreach (string file in files)
+            {
+                string assetPath = "Assets" + file.Substring(Application.dataPath.Length).Replace('\\', '/');
+                string meta = file + ".meta";
+                if (!File.Exists(meta))
+                {
+                    failures.Add(assetPath + " (.meta absent)");
+                    continue;
+                }
+                string yaml = File.ReadAllText(meta);
+                Match guid = Regex.Match(yaml, @"(?m)^guid: ([0-9a-f]{32})\s*$");
+                if (!guid.Success || !guids.Add(guid.Groups[1].Value))
+                    failures.Add(assetPath + " (invalid or duplicate GUID)");
+                if (!Regex.IsMatch(yaml, @"(?m)^TextureImporter:\s*$") ||
+                    !Regex.IsMatch(yaml, @"(?m)^  spriteMode: 1\s*$") ||
+                    !Regex.IsMatch(yaml, @"(?m)^  textureType: 8\s*$") ||
+                    !Regex.IsMatch(yaml, @"(?m)^  spritePixelsToUnits: 64\s*$"))
+                    failures.Add(assetPath + " (Sprite TextureImporter metadata absent)");
+                if (AssetDatabase.LoadAssetAtPath<Sprite>(assetPath) == null)
+                    failures.Add(assetPath + " (Unity does not import a Sprite)");
+            }
+
+            if (failures.Count != 0)
+                throw new InvalidOperationException(
+                    "RQ_UNITY_REVIEW_META_CHECK_FAILED problems=" + failures.Count +
+                    ". First: " + string.Join("; ", failures.GetRange(0, Math.Min(5, failures.Count)).ToArray()) +
+                    ". Restore the reviewed .meta files from the Unity 6.6 Git branch; " +
+                    "do not use the obsolete automatic repair menu.");
+
+            Debug.Log("RQ_UNITY_REVIEW_META_CHECK_OK total=274 importedSprites=274 guids=274 readOnly=true");
             EditorUtility.DisplayDialog("Rasta Quest",
-                "274 sprites verificados. Agora clique em Rasta Quest > Preparar sala Unity.",
-                "OK");
+                "274 Sprites e GUIDs verificados. Nenhum arquivo foi alterado.", "OK");
         }
     }
 }
