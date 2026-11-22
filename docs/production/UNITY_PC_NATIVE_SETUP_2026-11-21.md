@@ -1,18 +1,18 @@
-# Unity 6.3 — primeiro teste nativo no PC Windows
+# Unity 6.6 — revisão de compatibilidade para primeiro teste nativo Windows
 
-**Checkpoint:** 21/11/2026 · **Branch:** `tools/unity-windows-native-gate-20261121` · **Base:** PR #82.  
+**Checkpoint:** 21/11/2026 · **Branch:** `compat/unity-6000-6-10f1-review-20261121` · **Base:** PR #106 → #82.  
 **Status:** execução local **pendente**; o script e os contratos de fonte não constituem prova de importação/build. **Release: NO-GO**.
 
 ## 1. O que já existe
 
-O projeto `unity/` da branch contém uma **sala técnica de revisão**, não as 21 salas da campanha web. Possui `RastaQuest.Editor.ReviewBuild.Prepare`, `.Windows`, `.Android`, e `NativeReviewProbe` para capturas e relatório de runtime. O alvo é **Unity Editor 6000.3.27f1**; `ProjectVersion.txt` e `Packages/manifest.json` fixam a versão e Input System/uGUI. Os 274 PNG de Resources são revisão transitória e ainda exigem aceite de arte, direitos e cultura.
+O projeto `unity/` da branch contém uma **sala técnica de revisão**, não as 21 salas da campanha web. Possui `RastaQuest.Editor.ReviewBuild.Prepare`, `.Windows`, `.Android`, e `NativeReviewProbe` para capturas e relatório de runtime. O alvo **desta branch de compatibilidade** é **Unity Editor 6000.6.10f1**; `ProjectVersion.txt` e `Packages/manifest.json` fixam a versão e Input System/uGUI. Os 274 PNG de Resources são revisão transitória e ainda exigem aceite de arte, direitos e cultura.
 
 O bloqueio antigo da issue [#80](https://github.com/tupiniquimtechsolution-blip/RastaQuest/issues/80) era elevação de privilégios no Windows. O proprietário informou que **o computador atual pode instalar e testar**. Isso elimina a restrição declarada, mas não é evidência de que o Editor já tenha sido instalado.
 
 ## 2. Instalação do Editor e dos módulos
 
 1. No PC Windows, instalar [Unity Hub oficial](https://unity.com/download), abrir o Hub e ativar a licença na **conta do proprietário**. Não compartilhar login, senhas ou chaves de licença no repositório/chat.
-2. Na área **Installs**, instalar **exatamente 6000.3.27f1** ([release oficial](https://unity.com/releases/editor/whats-new/6000.3.27f1)). Se a versão não estiver listada no Hub, buscá-la no Unity Download Archive.
+2. Na área **Installs**, instalar **exatamente 6000.6.10f1** ([release oficial](https://unity.com/releases/editor/whats-new/6000.6.10f1)). Se a versão não estiver listada no Hub, buscá-la no Unity Download Archive.
 3. Na mesma instalação, selecionar **Android Build Support** e os submódulos **Android SDK & NDK Tools** e **OpenJDK**. Para Windows, o Editor já consegue o build de revisão padrão; instalar Windows Build Support/IL2CPP adicional quando necessário à estratégia de build final.
 4. Verificar requisitos do Windows/GPU/disco conforme [Unity 6.3 requisitos oficiais](https://docs.unity.com/en-us/engine/6000.3/manual/get-started/install-and-upgrade/getting-started-installing-unity/system-requirements). Evitar SDK/NDK instalados manualmente de versões incompatíveis: preferir os módulos do Hub.
 5. Instalar Git for Windows para clonar o repositório, se ainda não estiver disponível. Python 3 é opcional para os checks de fonte; o executor PowerShell usa apenas recursos do Windows/Unity instalados.
@@ -29,7 +29,7 @@ cd RastaQuest-Unity-Review
 powershell.exe -NoProfile -File .\tools\unity_native_gate_windows.ps1 -CheckOnly
 ```
 
-Se o Editor está em outra pasta, passar `-UnityExe "D:\Unity\6000.3.27f1\Editor\Unity.exe"`. `-CheckOnly` verifica caminhos, Editor solicitado e módulos Android; **não abre Editor, não ativa licença e não comprova compilação**. Se o PowerShell bloquear scripts locais, seguir a política da organização, sem alterar permanentemente a política de execução.
+Se o Editor está em outra pasta, passar `-UnityExe "D:\Unity\6000.6.10f1\Editor\Unity.exe"`. `-CheckOnly` verifica caminhos, Editor solicitado e módulos Android; **não abre Editor, não ativa licença e não comprova compilação**. Se o PowerShell bloquear scripts locais, seguir a política da organização, sem alterar permanentemente a política de execução.
 
 Antes da importação, conferir (se Python instalado):
 
@@ -41,7 +41,7 @@ py -3 -B tools\check_unity_source_contracts.py
 ## 4. Importação e Play Mode
 
 1. Unity Hub → **Add project from disk** → escolher `RastaQuest-Unity-Review\unity`.
-2. Usar **6000.3.27f1**, resolver os pacotes e aguardar a importação; anotar e corrigir qualquer erro da Console. Não criar um `packages-lock.json` fictício. O Editor produzirá o real quando cabível.
+2. Usar **6000.6.10f1**, resolver os pacotes e aguardar a importação; anotar e corrigir qualquer erro da Console. Não criar um `packages-lock.json` fictício. O Editor produzirá o real quando cabível.
 3. No Unity, menu **Rasta Quest → Preparar sala Unity**. Abrir `Assets/Scenes/UnityReview.unity`, pressionar Play.
 4. Conferir movimento A/D, salto duplo, J ataque, K defesa/parry, Chaser/Ranged, retrato/barra, sombra periférica, portal, três escolhas, cura explícita, derrota/reinício, idioma PT/ES e pausa. Comparar com a matriz [UNITY_PARITY_GATE_2026-10-24.md](UNITY_PARITY_GATE_2026-10-24.md).
 5. **Fechar o Unity Editor** antes do executor batchmode: não abrir simultaneamente o mesmo projeto em duas instâncias.

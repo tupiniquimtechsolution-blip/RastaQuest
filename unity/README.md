@@ -1,6 +1,6 @@
 # Rasta Quest — migração Unity em revisão
 
-Direção autorizada por Rodrigo em 24/10/2026: **Unity + ilustração 2D detalhada com identidade própria**. Editor selecionado: **6000.3.27f1 (6.3 LTS)**. A instalação foi autorizada, incluindo módulo Android, SDK/NDK e Java. Consulte o registro de entrega para o resultado real da instalação e validação; a presença destes fontes não significa que já existe APK Unity testado.
+Direção autorizada por Rodrigo em 24/10/2026: **Unity + ilustração 2D detalhada com identidade própria**. Versão original de referência: **6000.3.27f1 (6.3 LTS)**. Esta **branch de compatibilidade isolada** está fixada em **6000.6.10f1 (Unity 6.6)**, informada como versão em instalação no PC em 21/11/2026. Compatibilidade real ainda não homologada. A instalação foi autorizada, incluindo módulo Android, SDK/NDK e Java. Consulte o registro de entrega para o resultado real da instalação e validação; a presença destes fontes não significa que já existe APK Unity testado.
 
 ## Escopo deste projeto
 
@@ -10,7 +10,7 @@ As 274 imagens copiadas são **artes de revisão transitórias**, idênticas às
 
 ## Preparar e executar
 
-1. Instalar/ativar Unity 6000.3.27f1 pelo Hub com Android Build Support e seus módulos filhos. Login/licença são do titular; não colocar credenciais no repositório.
+1. Instalar/ativar Unity 6000.6.10f1 pelo Hub com Android Build Support e seus módulos filhos. Login/licença são do titular; não colocar credenciais no repositório.
 2. Na raiz do repositório: `python -B tools/sync_unity_review.py --check`. Se os assets de origem mudarem, executar sem `--check` e revisar o diff.
 3. No Hub, abrir esta pasta `unity/`, aguardar a importação de Input System 1.20.1 e uGUI 2.0.0.
 4. Usar o menu **Rasta Quest → Preparar sala Unity**, abrir `Assets/Scenes/UnityReview.unity` e pressionar Play.

@@ -18,5 +18,12 @@ PlayerSettings:
   activeInputHandler: 1
   bundleVersion: 1.0.0-unity.1
   AndroidBundleVersionCode: 1000006
-  AndroidMinSdkVersion: 25
+  AndroidMinSdkVersion: 26
   AndroidTargetSdkVersion: 36
+  AndroidTargetArchitectures: 3
+  scriptingBackend:
+    Android: 1
+  m_BuildTargetGraphicsAPIs:
+  - m_BuildTarget: AndroidPlayer
+    m_APIs: 0b000000i
+    m_Automatic: 0

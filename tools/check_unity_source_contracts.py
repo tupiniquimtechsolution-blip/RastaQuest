@@ -70,19 +70,87 @@ def main():
         used.add(resource(e["background"]))
         used.add(resource(e["tile"]))
     check(used <= names, f"Missing referenced sprites: {sorted(used-names)[:8]}")
-    check("6000.3.27f1" in (ROOT/"unity/ProjectSettings/ProjectVersion.txt").read_text(),
+    check("m_EditorVersion: 6000.6.10f1" in (ROOT/"unity/ProjectSettings/ProjectVersion.txt").read_text(),
           "Editor version drift")
     packages = json.loads((ROOT/"unity/Packages/manifest.json").read_text())["dependencies"]
     check(packages.get("com.unity.inputsystem") == "1.20.1" and
           packages.get("com.unity.ugui") == "2.0.0", "Package version drift")
+    # Unity 6.6 no longer resolves this legacy built-in module by package ID.
+    check("com.unity.modules.textrendering" not in packages,
+          "Obsolete text rendering package breaks Unity 6.6 import")
+    player = (ASSETS/"RastaQuest/Runtime/SlicePlayer.cs").read_text()
+    enemy = (ASSETS/"RastaQuest/Runtime/SliceEnemy.cs").read_text()
+    bootstrap = (ASSETS/"RastaQuest/Runtime/SliceBootstrap.cs").read_text()
+    check("GetInstanceID()" not in player and "Rules.ClaimTarget(foe.HitTargetId)" in player,
+          "Unity 6.6 combat must not use obsolete InstanceID or integer EntityId hashes")
+    check("System.Threading.Interlocked.Increment(ref nextHitTargetId)" in enemy and
+          "public int HitTargetId" in enemy, "Hit-target IDs must be unique and gameplay-scoped")
+    check("WhiteSprite=UnityEngine.Sprite.Create(" in bootstrap,
+          "Sprite factory must be qualified to avoid collision with helper method")
+    hud = (ASSETS/"RastaQuest/Runtime/SliceHud.cs").read_text()
+    editor = (ASSETS/"RastaQuest/Editor/ReviewBuild.cs").read_text()
+    repair = (ASSETS/"RastaQuest/Editor/ReviewSpriteRepair.cs").read_text()
+    check("VerifyReviewSprites();" in editor and
+          "LoadAssetAtPath<Texture2D>" in editor and
+          "Resources.Load<Texture2D>" in editor and
+          "RQ_UNITY_REVIEW_ASSETS_OK" in editor,
+          "Unity 6.6 review bridge must accept Texture2D imports with runtime fallback")
+    art_code = (ASSETS/"RastaQuest/Runtime/ReviewArt.cs").read_text()
+    check("Resources.Load<Sprite>(file)" in art_code and
+          "Resources.Load<Texture2D>(file)" in art_code and
+          "UnityEngine.Sprite.Create(texture," in art_code and
+          "fallbackSprites[file] = cached" in art_code,
+          "ReviewArt must cache runtime sprites without touching PNGs or GUIDs")
+    check("ReviewSpriteRepair.Repair();" not in editor,
+          "Scene preparation must not force known-failing metadata repair")
+    check("Verificar sprites da revisao (somente leitura)" in repair and
+          "RQ_UNITY_REVIEW_META_CHECK_OK" in repair and
+          "AssetDatabase.LoadAssetAtPath<Sprite>" in repair and
+          "Regex.IsMatch(yaml," in repair and
+          "HashSet<string>" in repair,
+          "Unity 6.6 review Sprite diagnostics must be read-only, check GUIDs and validate import")
+    check("ForceReserializeAssets(" not in repair and
+          "importer.SaveAndReimport();" not in repair and
+          "File.Delete(" not in repair and "DeleteAsset(" not in repair,
+          "Deprecated repair menu must not mutate Sprite metadata or image bytes")
+    check("LoadAssetAtPath<Sprite>" in editor and
+          "LoadAssetAtPath<Texture2D>" in editor,
+          "Unity 6.6 scene must validate Sprite or Texture2D before HUD")
+    check("if(!initialized || Player==null) return;" in hud and
+          "ReviewArt player idle is not imported as Sprite" in hud,
+          "HUD must report missing sprite once and avoid per-frame exceptions")
+    check("if(!initialized||Player==null||Flow.Paused)return;" in bootstrap,
+          "Bootstrap cannot update portal before room initialization")
+    check("o.AddComponent<CanvasRenderer>()" in hud and
+          "typeof(Graphic).IsAssignableFrom(typeof(T))" in hud and
+          "portraitFrame.raycastTarget=false" in hud and
+          "barFrame.raycastTarget=false" in hud,
+          "Unity 6.6 HUD graphics must have CanvasRenderer and noninteractive frames cannot block clicks")
+    check("RQ_UNITY_RESTART_BUTTON_CLICK" in hud and
+          "Keyboard.current.rKey.wasPressedThisFrame" in hud and
+          "slice.RestartRun();" in hud,
+          "Defeat must expose working button diagnostics and a keyboard retry fallback")
+    check("Tecla R ou botão" in (ASSETS/"RastaQuest/Core/ReviewText.cs").read_text(encoding="utf-8"),
+          "Defeat modal must tell players how to restart")
+    enemy_code = (ASSETS/"RastaQuest/Runtime/SliceEnemy.cs").read_text()
+    check("art.AuthoredFacing = -1;" in enemy_code and
+          "RenderScale*facing*AuthoredFacing" in art_code,
+          "Enemy facing must account for left-facing source sprites and preserve equipment mirroring")
+    probe_code = (ASSETS/"RastaQuest/Runtime/NativeReviewProbe.cs").read_text()
+    check("HUD Graphic missing CanvasRenderer" in probe_code and
+          "restart button center blocked" in probe_code and
+          "InputSystem.QueueStateEvent(mouse" in probe_code and
+          "new KeyboardState(Key.R)" in probe_code,
+          "Native probe must check HUD renderers and restart button input reachability")
+
     build = (ASSETS/"RastaQuest/Editor/ReviewBuild.cs").read_text()
     settings = (ROOT/"unity/ProjectSettings/ProjectSettings.asset").read_text()
-    check("AndroidMinSdkVersion: 25" in settings and "AndroidTargetSdkVersion: 36" in settings,
+    check("AndroidMinSdkVersion: 26" in settings and "AndroidTargetSdkVersion: 36" in settings,
           "ProjectSettings Android floor/target drift")
     check('Path.Combine(Application.dataPath, "Scenes")' in build and
           "Path.Combine(projectRoot,path)" in build,
           "Editor paths must resolve within Unity project")
-    for term in ("com.tupiniquim.rastaquest.unityreview", "AndroidSdkVersions)25", "AndroidSdkVersions)36",
+    for term in ("com.tupiniquim.rastaquest.unityreview", "AndroidSdkVersions.AndroidApiLevel26", "AndroidSdkVersions)36",
                  "AndroidArchitecture.ARMv7|AndroidArchitecture.ARM64", "BuildOptions.Development"):
         check(term in build, f"Build source contract missing: {term}")
     check(not list(ASSETS.rglob("forest-art-target-v01.png")), "Concept imported into runtime")

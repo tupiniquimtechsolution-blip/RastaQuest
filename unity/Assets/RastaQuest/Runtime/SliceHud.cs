@@ -21,6 +21,8 @@ namespace RastaQuest.Unity
         private GameObject controls, modal, defeat;
         private GameObject events;
         private Sprite portraitSprite;
+        private bool ownsPortraitSprite;
+        private bool initialized;
         private const string LanguageKey="rastaquest.review.language", ShadowKey="rastaquest.review.reducedShadow";
         private FrameGraphic vignette;
         private bool spanish, reduced;
@@ -32,6 +34,14 @@ namespace RastaQuest.Unity
         public void Initialize(SlicePlayer player, SliceInput input, SliceBootstrap owner)
         {
             Player=player; Input=input; slice=owner;
+            // Validate art before creating UI objects. A failed initial import
+            // must produce one actionable error, not an exception every frame.
+            var idle=ReviewArt.Clip("player","idle");
+            if(idle==null || idle.frames==null || idle.frames.Length==0)
+                throw new System.InvalidOperationException("ReviewArt player idle clip missing; check ReviewArt/bridge.json.");
+            var portraitSource=ReviewArt.Sprite(idle.frames[0].file);
+            if(portraitSource==null || portraitSource.texture==null)
+                throw new System.InvalidOperationException("ReviewArt player idle is not imported as Sprite: "+idle.frames[0].file+". Run Rasta Quest > Preparar sala Unity again to reimport review art.");
             spanish=PlayerPrefs.GetString(LanguageKey,"pt")=="es";
             reduced=PlayerPrefs.GetInt(ShadowKey,0)==1;
             Input.Backgrounded=PauseForFocus;
@@ -43,13 +53,18 @@ namespace RastaQuest.Unity
             safe=Node<RectTransform>(transform,"SafeArea",Vector2.zero,Vector2.zero); Stretch(safe);
             var panel=Node<Image>(safe,"PortraitBackground",new Vector2(22,22),new Vector2(76,84)); panel.color=new Color(.035f,.055f,.055f,.9f);
             var portrait=Node<Image>(safe,"Portrait",new Vector2(26,25),new Vector2(68,77));
-            var texture=ReviewArt.Sprite(ReviewArt.Clip("player","idle").frames[0].file).texture;
-            portraitSprite=Sprite.Create(texture,new Rect(112,146,40,54),Vector2.one*.5f,64); portrait.sprite=portraitSprite; portrait.preserveAspect=true;
-            var portraitFrame=Node<FrameGraphic>(safe,"PortraitFrame",new Vector2(20,20),new Vector2(80,88)); portraitFrame.color=Gold;
+            var texture=portraitSource.texture;
+            // Some review crops may be smaller than the authored portrait rect.
+            // Use the original sprite instead of aborting HUD initialization.
+            var crop=new Rect(112,146,40,54);
+            ownsPortraitSprite=texture.width>=crop.xMax && texture.height>=crop.yMax;
+            portraitSprite=ownsPortraitSprite ? UnityEngine.Sprite.Create(texture,crop,Vector2.one*.5f,64) : portraitSource;
+            portrait.sprite=portraitSprite; portrait.preserveAspect=true;
+            var portraitFrame=Node<FrameGraphic>(safe,"PortraitFrame",new Vector2(20,20),new Vector2(80,88)); portraitFrame.color=Gold; portraitFrame.raycastTarget=false;
             Text(safe,"RASTA QUEST",new Vector2(110,19),new Vector2(310,24),19,Gold);
             var bg=Node<Image>(safe,"HealthBackground",new Vector2(109,46),new Vector2(294,22)); bg.color=new Color(.035f,.045f,.05f,.95f);
             health=Node<Image>(safe,"Health",new Vector2(113,50),new Vector2(286,14)); health.color=new Color(.85f,.72f,.3f);
-            var barFrame=Node<FrameGraphic>(safe,"HealthFrame",new Vector2(107,44),new Vector2(298,26)); barFrame.color=Gold;
+            var barFrame=Node<FrameGraphic>(safe,"HealthFrame",new Vector2(107,44),new Vector2(298,26)); barFrame.color=Gold; barFrame.raycastTarget=false;
             life=Text(safe,"",new Vector2(110,76),new Vector2(300,23),17,Color.white);
             status=Text(safe,"",new Vector2(22,118),new Vector2(650,45),16,new Color(.88f,.88f,.8f));
             healed=Text(safe,"",new Vector2(110,99),new Vector2(300,24),17,new Color(.6f,1,.75f));
@@ -76,8 +91,11 @@ namespace RastaQuest.Unity
             defeat=Panel(modalSafe,"Defeat");
             var title=Text(defeat.transform,"",new Vector2(40,30),new Vector2(380,42),24,Gold);labels.Add(title,ReviewLabel.Defeated);
             var hint=Text(defeat.transform,"",new Vector2(40,85),new Vector2(380,70),18,Color.white);labels.Add(hint,ReviewLabel.RestartHint);
-            LabelButton(defeat.transform,ReviewLabel.Restart,180,()=>slice.RestartRun());
-            Resize();RefreshMode();RefreshText();
+            LabelButton(defeat.transform,ReviewLabel.Restart,180,()=>{
+                Debug.Log("RQ_UNITY_RESTART_BUTTON_CLICK");
+                slice.RestartRun();
+            });
+            Resize();RefreshMode();RefreshText();initialized=true;
         }
         private static GameObject Panel(Transform parent,string name)
         {
@@ -99,6 +117,11 @@ namespace RastaQuest.Unity
             var o=new GameObject(name,typeof(RectTransform)); o.transform.SetParent(parent,false);
             var r=(RectTransform)o.transform; r.anchorMin=r.anchorMax=new Vector2(at.x<0?1:0,1); r.pivot=new Vector2(0,1); r.anchoredPosition=new Vector2(at.x,-at.y); r.sizeDelta=size;
             if(typeof(T)==typeof(RectTransform)) return o.GetComponent<T>();
+            // Unity 6000.6 may not auto-add CanvasRenderer for custom Graphic
+            // subclasses. UI raycasting otherwise throws every pointer frame,
+            // breaking touch and the defeat/restart modal.
+            if(typeof(Graphic).IsAssignableFrom(typeof(T)) && o.GetComponent<CanvasRenderer>()==null)
+                o.AddComponent<CanvasRenderer>();
             return o.AddComponent<T>();
         }
         private static void Stretch(RectTransform r) {r.anchorMin=Vector2.zero;r.anchorMax=Vector2.one;r.offsetMin=r.offsetMax=Vector2.zero;}
@@ -157,7 +180,7 @@ namespace RastaQuest.Unity
         }
         private void Update()
         {
-            if(Player==null) return;
+            if(!initialized || Player==null) return;
             if(Screen.safeArea!=lastArea || lastScreen!=new Vector2(Screen.width,Screen.height)) Resize();
             float hp=Player.Rules.Health;if(hp>previous)healNotice=1.2f;previous=hp;healNotice=Mathf.Max(0,healNotice-Time.unscaledDeltaTime);
             health.rectTransform.sizeDelta=new Vector2(286*Mathf.Clamp01(hp/Player.Rules.MaxHealth),14);
@@ -169,14 +192,22 @@ namespace RastaQuest.Unity
                 phase==RoomPhase.Rewards?ReviewLabel.Rewards:phase==RoomPhase.Ready?ReviewLabel.PortalReady:
                 phase==RoomPhase.Transition?ReviewLabel.Transition:ReviewLabel.Encounter;
             status.text=ReviewText.Get(label,spanish);
-            if(Keyboard.current!=null && Keyboard.current.escapeKey.wasPressedThisFrame) ToggleSettings();
+            if(Keyboard.current!=null)
+            {
+                // Update continues when Time.timeScale is 0. Provide a reliable
+                // desktop restart even if the touch/mouse modal cannot be clicked.
+                if(phase==RoomPhase.Defeated && Keyboard.current.rKey.wasPressedThisFrame)
+                    slice.RestartRun();
+                else if(Keyboard.current.escapeKey.wasPressedThisFrame)
+                    ToggleSettings();
+            }
         }
         private void OnDestroy()
         {
             Time.timeScale=1;
             if(Input!=null){Input.Backgrounded=null;Input.Cancel();}
             if(events!=null)Destroy(events);
-            if(portraitSprite!=null)Destroy(portraitSprite);
+            if(ownsPortraitSprite && portraitSprite!=null)Destroy(portraitSprite);
         }
     }
 }

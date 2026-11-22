@@ -16,6 +16,7 @@ namespace RastaQuest.Unity
         private float defeatDelay;
         private Camera cameraView;
         private float cameraVelocity;
+        private bool initialized;
         private readonly string[] worlds={"forest","castle","caves"};
         private void Start()
         {
@@ -23,18 +24,19 @@ namespace RastaQuest.Unity
             Screen.autorotateToPortrait=false;Screen.autorotateToPortraitUpsideDown=false;
             Screen.autorotateToLandscapeLeft=true;Screen.autorotateToLandscapeRight=true;Screen.orientation=ScreenOrientation.AutoRotation;
             Physics2D.IgnoreLayerCollision(8,9,true);Physics2D.IgnoreLayerCollision(9,9,true);
-            var texture=new Texture2D(1,1);texture.SetPixel(0,0,Color.white);texture.Apply();WhiteSprite=Sprite.Create(texture,new Rect(0,0,1,1),Vector2.one*.5f,1);
+            var texture=new Texture2D(1,1);texture.SetPixel(0,0,Color.white);texture.Apply();WhiteSprite=UnityEngine.Sprite.Create(texture,new Rect(0,0,1,1),Vector2.one*.5f,1);
             cameraView=new GameObject("SideScrollingCamera").AddComponent<Camera>();cameraView.tag="MainCamera";
             cameraView.orthographic=true;cameraView.orthographicSize=5.625f;cameraView.backgroundColor=new Color(.07f,.13f,.13f);cameraView.transform.position=new Vector3(10,4.375f,-10);
             input=gameObject.AddComponent<SliceInput>(); CreatePlayer();
             Hud=new GameObject("PortraitHealthHud").AddComponent<SliceHud>();Hud.Initialize(Player,input,this);
             BuildRoom();
+            initialized=true;
             if(System.Array.IndexOf(System.Environment.GetCommandLineArgs(),"--rq-probe")>=0)gameObject.AddComponent<NativeReviewProbe>();
         }
         private void BuildRoom()
         {
             if(room!=null) {room.gameObject.SetActive(false);Destroy(room.gameObject);}
-            foreach(var shot in FindObjectsByType<SliceShot>(FindObjectsSortMode.None)){shot.gameObject.SetActive(false);Destroy(shot.gameObject);}
+            foreach(var shot in FindObjectsByType<SliceShot>()){shot.gameObject.SetActive(false);Destroy(shot.gameObject);}
             room=new GameObject("PortalRegion_"+worlds[Flow.Biome]).transform;
             var spec=System.Array.Find(ReviewArt.Data.environments,e=>e.key==worlds[Flow.Biome]);
             var backdrop=new GameObject("ParallaxBackground").transform;backdrop.SetParent(room);
@@ -83,7 +85,9 @@ namespace RastaQuest.Unity
         }
         private void LateUpdate()
         {
-            if(Player==null||Flow.Paused)return;
+            // HUD creation may fail during a bad first import. Avoid flooding
+            // the Console with secondary portalArt NullReference exceptions.
+            if(!initialized||Player==null||Flow.Paused)return;
             portalArt.Pose("idle",1,Time.deltaTime);
             float halfWidth=cameraView.orthographicSize*cameraView.aspect;
             float x=Mathf.Clamp(Player.transform.position.x+Player.Facing*1.8f,halfWidth,60-halfWidth);
