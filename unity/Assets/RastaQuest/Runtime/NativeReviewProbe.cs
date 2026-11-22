@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using RastaQuest.Core;
 
 namespace RastaQuest.Unity
@@ -46,6 +47,11 @@ namespace RastaQuest.Unity
             Check(player!=null&&slice.Hud!=null,"scene failed to initialize");
             if(player==null){Finish();yield break;}
             Check(player.GetComponentInChildren<SpriteRenderer>().sprite!=null,"player sprite missing");
+            // Unity 6000.6 must have CanvasRenderer on EVERY generated Graphic.
+            // The manual first playtest flooded the Console on PortraitFrame.
+            foreach(var graphic in slice.Hud.GetComponentsInChildren<Graphic>(true))
+                Check(graphic.GetComponent<CanvasRenderer>()!=null,
+                    "HUD Graphic missing CanvasRenderer: "+graphic.name);
             Check(player.transform.position.y>-.2f&&player.transform.position.y<1,"ground collision/visual origin");
             yield return Capture("entry");
             TouchBinding stick=null;
@@ -102,6 +108,15 @@ namespace RastaQuest.Unity
             yield return Capture("non_healing_destination");
             player.Receive(99,HitKind.Area,null);yield return Seconds(.7f);
             Check(slice.Flow.Phase==RoomPhase.Defeated&&Time.timeScale==0,"defeat screen failed");
+            var defeatPanel=slice.Hud.transform.Find("ModalInputShield/ModalSafeArea/Defeat");
+            Check(defeatPanel!=null&&defeatPanel.gameObject.activeInHierarchy,
+                "defeat panel not visible when player dies");
+            if(defeatPanel!=null)
+            {
+                var buttons=defeatPanel.GetComponentsInChildren<Button>(true);
+                Check(buttons.Length==1&&buttons[0].interactable,
+                    "defeat restart button missing or disabled");
+            }
             yield return Capture("defeat");slice.RestartRun();yield return Frames(5);
             Check(slice.Player!=player&&slice.Player.Rules.Health==5&&slice.Player.Damage==1&&slice.Flow.Biome==0&&Time.timeScale==1,"restart did not reset run");
             yield return Capture("restart");Finish();
