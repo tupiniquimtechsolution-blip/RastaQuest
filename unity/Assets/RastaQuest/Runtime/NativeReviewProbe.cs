@@ -158,8 +158,67 @@ namespace RastaQuest.Unity
             InputSystem.RemoveDevice(keyboard);
             CheckRestart(slice, player, "keyboard R after second defeat");
             yield return Capture("restart_keyboard");
+
+            player = slice.Player;
+            if (slice.Flow.Phase == RoomPhase.Defeated) { Finish(); yield break; }
+            player.Receive(99, HitKind.Area, null);
+            yield return new WaitUntil(() => slice.Flow.Phase == RoomPhase.Defeated);
+            var touch = InputSystem.AddDevice<Touchscreen>();
+            InputSystem.QueueStateEvent(touch, new TouchState {
+                touchId = 1, position = position, phase = UnityEngine.InputSystem.TouchPhase.Began
+            });
+            yield return Frames(3);
+            InputSystem.QueueStateEvent(touch, new TouchState {
+                touchId = 1, position = position, phase = UnityEngine.InputSystem.TouchPhase.Ended
+            });
+            yield return Frames(5);
+            InputSystem.RemoveDevice(touch);
+            CheckRestart(slice, player, "touch after third defeat");
+            yield return Capture("restart_touch");
+            if (slice.Flow.Phase == RoomPhase.Defeated) { Finish(); yield break; }
+
+            yield return VerifyPlatformAndReflection(slice);
             yield return CaptureEnemyFacing(slice);
             Finish();
+        }
+
+        private IEnumerator VerifyPlatformAndReflection(SliceBootstrap slice)
+        {
+            var platform = GameObject.Find("RaisedOneWayPlatform");
+            var enemies = FindObjectsByType<SliceEnemy>();
+            var ranged = Array.Find(enemies, enemy => enemy.Ranged);
+            Check(platform != null && ranged != null, "platform or ranged enemy unavailable");
+            if (platform == null || ranged == null) yield break;
+
+            foreach (var enemy in enemies)
+            {
+                enemy.enabled = false;
+                enemy.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+            }
+            var player = slice.Player;
+            var at = (Vector2)platform.transform.position;
+            player.Body.position = at + Vector2.up * 1.5f;
+            player.Body.linearVelocity = Vector2.zero;
+            yield return Seconds(.65f);
+            Check(Mathf.Abs(player.Body.position.y - at.y - .5f) < .12f &&
+                Mathf.Abs(player.Body.linearVelocity.y) < .1f,
+                "player did not land on the one-way platform");
+            yield return Capture("platform_landing");
+
+            player.Body.position = new Vector2(5, .45f);
+            player.Body.linearVelocity = Vector2.zero;
+            ranged.GetComponent<Rigidbody2D>().position = new Vector2(7, .5f);
+            player.Input.Guard = true;
+            yield return Frames(6);
+            float health = ranged.Health;
+            float life = player.Rules.Health;
+            SliceShot.Fire(ranged, player);
+            yield return Seconds(.85f);
+            Check(ranged.Health == health - 1 && player.Rules.Health == life,
+                "the reflected projectile did not damage its owner without hurting the player");
+            yield return Capture("projectile_reflection");
+            player.Input.Cancel();
+            foreach (var enemy in enemies) enemy.enabled = true;
         }
 
         private IEnumerator CaptureEnemyFacing(SliceBootstrap slice)
