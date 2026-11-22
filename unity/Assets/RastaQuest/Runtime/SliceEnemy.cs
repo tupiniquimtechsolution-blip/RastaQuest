@@ -28,6 +28,9 @@ namespace RastaQuest.Unity
             var collider = gameObject.AddComponent<CapsuleCollider2D>(); collider.size = new Vector2(.45f,.9f);
             var visual = new GameObject("TransitionalReviewArt"); visual.transform.SetParent(transform,false);
             art = visual.AddComponent<ClipPlayer>(); art.Initialize(ranged ? "ranged" : "chaser");
+            // Both transitional enemy sprite sheets were authored facing left.
+            // Facing is AI/world direction; render must compensate for source orientation.
+            art.AuthoredFacing = -1;
             gameObject.AddComponent<CombatRing>().Enemy = this;
         }
         private void FixedUpdate()
